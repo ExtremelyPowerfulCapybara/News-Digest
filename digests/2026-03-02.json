@@ -1,59 +1,59 @@
 {
   "date": "2026-03-02",
   "digest": {
-    "editor_note": "Fellow Humans, the U.S.-Israel bombing campaign against Iran has killed Supreme Leader Khamenei and frozen tanker traffic through the Strait of Hormuz — a chokepoint carrying a third of the world's seaborne crude — and markets are only beginning to price the chaos. Brent crude is already eyeing $100, Dubai is taking missile strikes on the Palm Jumeirah, and the World Cup kicks off in three months on U.S. soil with Iran as a qualified participant. History has a remarkable sense of timing.",
+    "editor_note": "Fellow Humans, the Middle East has decisively moved from geopolitical risk to geopolitical reality: U.S. and Israeli strikes have killed Iran's Supreme Leader, closed the Strait of Hormuz, and grounded aviation across the region. Oil markets are thin on reserves and long on exposure, and the ripple effects — from stranded travelers to energy-dependent state budgets — are only beginning to price in.",
     "sentiment": {
       "label": "Risk-Off",
-      "position": 12,
-      "context": "U.S.-Israel strikes on Iran, Strait of Hormuz closure fears, oil surging 6%+, and Dubai infrastructure under attack have driven sentiment to near-extreme risk-off territory."
+      "position": 18,
+      "context": "U.S.-Israeli strikes on Iran, Khamenei's death, Strait of Hormuz closure, and a terrorism-linked mass shooting in Austin have combined to produce one of the sharpest geopolitical shock events in years, with oil markets stretched and air travel in chaos."
     },
     "stories": [
       {
-        "source": "CNBC",
-        "headline": "Crude Surges 6% as Hormuz Traffic Halts on U.S.-Iran War Fears",
-        "body": "U.S. crude jumped 5.79% to $70.90/bbl and Brent rose 6% to $77.51 after U.S.-Israeli strikes killed Supreme Leader Khamenei and froze tanker traffic through the Strait of Hormuz, which handles roughly 14 million barrels per day — about a third of global seaborne crude exports. Barclays has flagged Brent at $100 as a base-case escalation scenario, with UBS warning of potential spikes above $120 if the disruption is prolonged. Trump says operations are 'ahead of schedule' but Iran's security chief Ali Larijani has flatly rejected any negotiations.",
-        "url": "https://www.cnbc.com/2026/03/01/crude-oil-futures-iran.html",
+        "source": "Statetimes.in",
+        "headline": "Modi Chairs Emergency Security Meeting as U.S.-Israel Strikes Kill Khamenei, Shut Hormuz",
+        "body": "Prime Minister Modi convened India's Cabinet Committee on Security after U.S. and Israeli strikes on Iran killed Supreme Leader Ali Khamenei and triggered closure of the Strait of Hormuz, a critical artery for Indian oil imports. With roughly nine million Indian nationals across the Gulf and West Asia, and airspace across the region effectively shut, New Delhi is managing both an energy supply crisis and a potential mass evacuation scenario. The meeting was attended by Defence, Home, External Affairs, and Finance ministers, alongside NSA Ajit Doval and RBI veteran Shaktikanta Das.",
+        "url": "https://statetimes.in/pm-modi-chairs-ccs-meet-in-delhi-as-chaos-unfolds-in-middle-east/",
+        "tag": "Politics"
+      },
+      {
+        "source": "Slashdot.org / WSJ",
+        "headline": "Oil Markets Enter Iran Conflict With Minimal Buffer; Brent Could Hit $80",
+        "body": "Oil prices rose more than 2% following the U.S.-Israel strikes on Iran, with Barclays flagging Brent crude could reach $80 a barrel on sustained tension. The market's core vulnerability is structural: spare capacity is thin, Iranian supply is now at risk, and the Strait of Hormuz — through which roughly 20% of global oil trade passes — has been closed by Tehran. Any prolonged disruption compounds an already tight inventory picture.",
+        "url": "https://slashdot.org/firehose.pl?op=view&id=180879974",
         "tag": "Energy"
       },
       {
-        "source": "Fortune",
-        "headline": "Iran Missiles Strike Dubai's Palm Jumeirah; DP World Suspends Jebel Ali Port Operations",
-        "body": "Iranian airstrikes and drone attacks hit the Fairmont The Palm Hotel, sent smoke near the Burj Khalifa, and damaged the Etihad Towers in Abu Dhabi, triggering panic-buying and airport rushes across the UAE. DP World suspended operations at Jebel Ali — the Middle East's largest container port, accounting for 36% of Dubai's GDP — after debris from an intercepted missile sparked a fire at a berth. Former JPMorgan chief strategist Marko Kolanovic warned the situation is 'much worse' than Dubai's 2009–10 real estate crisis and 'can send shockwaves globally,' citing the city's 88% expat population and total exposure to tourism, finance, air, and shipping.",
-        "url": "https://fortune.com/2026/03/01/iran-attacks-dubai-tax-free-haven-global-elite-billionaires-global-financial-markets-shockwaves/",
+        "source": "ABC News (AU)",
+        "headline": "Thousands Stranded as Middle East Airspace Closes; Dubai Airport Damaged",
+        "body": "Iran, Iraq, Israel, Syria, Kuwait, and the UAE closed their airspace following Saturday's strikes, leaving thousands of international travelers — including hundreds of Australians — stranded in Doha, Dubai, and Abu Dhabi. Dubai International Airport, which handles approximately 300,000 passengers daily and serves as a hub for Emirates, sustained damage, as did Abu Dhabi's Zayed International, used by Etihad. The Australian Travel Industry Association warned travelers against panic-canceling flights, noting they would forfeit consumer protections by doing so.",
+        "url": "https://www.abc.net.au/news/2026-03-02/australians-stranded-in-airports-after-strikes-on-iran/106402934",
+        "tag": "Macro"
+      },
+      {
+        "source": "TheJournal.ie",
+        "headline": "Austin Mass Shooting Suspect Linked to Pro-Iranian Sentiment; FBI Probes Terror Nexus",
+        "body": "A gunman identified as Ndiaga Diagne, a U.S. citizen of Senegalese origin, killed two people and wounded 14 in Austin's entertainment district before being shot dead by police. SITE Intelligence Group flagged social media posts expressing pro-Iranian regime sentiment and hatred of Israeli and American leadership dating to 2017. The FBI's Joint Terrorism Task Force has been activated, and Texas Governor Greg Abbott has ordered heightened security at energy facilities, ports, and the southern border.",
+        "url": "https://www.thejournal.ie/texas-shooting-iran-6971390-Mar2026/",
+        "tag": "Politics"
+      },
+      {
+        "source": "New York Post",
+        "headline": "California's Iran Exposure Laid Bare as Gas Hits $4.65; Newsom's Social Media Flexing Backfires",
+        "body": "Governor Newsom's attempt to use California's sub-$5 gas prices as a rebuke of Trump's Iran policy drew immediate blowback: California imports 63% of its crude from foreign countries despite holding 1.7 billion barrels of proven in-state reserves, making it among the most exposed U.S. states to a Hormuz supply disruption. The state's average regular unleaded hit $4.646 per gallon as of Sunday against a national average of $2.984, and Valero's recent closure of its Benicia refinery has further tightened local supply. A proposed per-mile driving tax adds to the political combustibility.",
+        "url": "https://nypost.com/2026/03/01/us-news/gavin-newsom-destroyed-over-outrageous-california-gas-price-flex/",
+        "tag": "Energy"
+      },
+      {
+        "source": "Livemint",
+        "headline": "Amazon India Waives Seller Fees on All Products Under ₹1,000, Expanding Fee War",
+        "body": "Amazon India has extended its zero-commission policy to cover goods priced below ₹1,000, a tenfold expansion from the April 2025 threshold of ₹300, covering 12.5 crore products across apparel, electronics, and home goods. The company recorded a 50% surge in new seller sign-ups after the initial April policy, and the move directly escalates pressure on Meesho and Flipkart in the price-sensitive, small-seller segment that constitutes 70-80% of Amazon's 1.7 million-strong seller base. Amazon declined to quantify the revenue impact of the expanded fee waiver.",
+        "url": "https://www.livemint.com/companies/amazon-india-zero-commission-policy-products-one-thousand-sellers-business-growth-11772360566023.html",
         "tag": "Markets"
-      },
-      {
-        "source": "BBC News",
-        "headline": "Iran's World Cup Participation in Doubt After U.S.-Israel Strikes Kill Khamenei",
-        "body": "Iran's group matches at the 2026 World Cup — co-hosted by the United States — are scheduled for Los Angeles and Seattle in just over 100 days, but the head of Iran's football federation has publicly cast doubt on the team's participation following the killing of Supreme Leader Khamenei. FIFA says it is 'monitoring developments' and privately expects Iran to attend, though Chatham House's Dr. Sanam Vakil described the conflict as 'existential' for the regime and 'unlikely to end quickly.' Iraq and the UAE have been identified as potential replacement teams from the Asian Football Confederation if Iran withdraws.",
-        "url": "https://www.bbc.com/sport/football/articles/c20j8jnezl8o?xtor=AL-72-%5Bpartner%5D-%5Byahoo.north.america%5D-%5Bheadline%5D-%5Bsport%5D-%5Bbizdev%5D-%5Bisapi%5D",
-        "tag": "Politics"
-      },
-      {
-        "source": "Israelnationalnews.com",
-        "headline": "Israeli Commentary: Khamenei's Death Marks Decisive Shift in Middle East Order",
-        "body": "Israeli nationalist outlet Arutz Sheva published a pointed editorial framing the killing of Khamenei — following the deaths of Nasrallah, Haniyeh, Sinwar, and Deif — as proof that Israel's 'will to live is not negotiable,' while sharply criticizing European governments for issuing only 'lukewarm statements' in response to the U.S.-Israel operation. The piece invokes Michel Houellebecq and the 1979–1981 Iran hostage crisis to argue that Western hesitancy enabled Iran's half-century of regional aggression. The editorial reflects hardening Israeli and American right-wing sentiment that de-escalation would be a strategic error.",
-        "url": "https://www.israelnationalnews.com/news/423188",
-        "tag": "Politics"
-      },
-      {
-        "source": "OilPrice.com",
-        "headline": "China and the U.S. Race for Commercial Nuclear Fusion as Energy Policy Diverges",
-        "body": "Commonwealth Fusion Systems in the U.S. and China's BEST plasma lab are both targeting net-energy fusion milestones by 2027, with Russia also announcing a high-temperature superconductor breakthrough for more compact tokamak designs. The New York Times has noted that 'whoever conquers it could build plants around the world and forge new alliances with energy-hungry countries' — a dimension that carries additional weight as Middle East supply routes are disrupted. China is investing heavily in the energy transition while the U.S. under Trump doubles down on fossil fuels, a divergence that could define the long-term energy geopolitical balance.",
-        "url": "https://oilprice.com/Alternative-Energy/Nuclear-Power/China-and-America-Battle-for-the-Future-of-Limitless-Energy.html",
-        "tag": "Energy"
-      },
-      {
-        "source": "Times of India / Economic Times",
-        "headline": "RBI Governor Malhotra: Rates at Current Level or Lower 'for a Long Time'",
-        "body": "Reserve Bank of India Governor Sanjay Malhotra said policy rates are expected to remain at current levels or move lower for an extended period, citing benign inflation and expectations that underlying price pressures will stay subdued. Malhotra acknowledged that the outlook remains subject to growth-inflation dynamics and stressed that 'we are still living in very uncertain times.' The dovish guidance arrives as global oil prices spike on Iran war fears — a direct inflation risk for India, which imports roughly 85% of its crude.",
-        "url": "https://economictimes.indiatimes.com/news/economy/policy/we-expect-policy-rate-to-be-at-current-level-or-lower-for-a-long-time-sanjay-malhotra-governor-rbi/articleshow/128931599.cms",
-        "tag": "Rates"
       }
     ],
     "quote": {
-      "text": "Oil is the currency of currencies.",
-      "attribution": "T. Boone Pickens, CNBC interview, 2008"
+      "text": "Oil is the world's biggest industry, and it is also the world's most political commodity.",
+      "attribution": "Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991"
     }
   },
   "market": {
@@ -66,8 +66,8 @@
       },
       {
         "label": "S&P 500",
-        "value": "6,880",
-        "change": "▼ 0.4%",
+        "value": "6,874",
+        "change": "▼ 0.5%",
         "direction": "down"
       },
       {
@@ -78,57 +78,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "70,500.11",
-        "change": "▼ 1.3%",
+        "value": "70,559.53",
+        "change": "▼ 1.2%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.3180",
+        "rate": "17.3204",
         "chg_1d": {
-          "text": "▲ 0.67%",
+          "text": "▲ 0.68%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.34%",
+          "text": "▲ 0.35%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.2440",
+        "rate": "20.2347",
         "chg_1d": {
-          "text": "▼ 0.29%",
+          "text": "▼ 0.34%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 0.54%",
+          "text": "▼ 0.59%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "12.6340",
+        "rate": "12.6700",
         "chg_1d": {
-          "text": "▲ 0.44%",
+          "text": "▲ 0.73%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.25%",
+          "text": "▲ 0.53%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "119.1755",
+        "rate": "119.1921",
         "chg_1d": {
-          "text": "▲ 1.27%",
+          "text": "▲ 1.28%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.04%",
+          "text": "▼ 0.03%",
           "cls": "chg-down"
         }
       }
@@ -136,9 +136,9 @@
   },
   "weather": {
     "city": "Mexico City",
-    "temp": "22°C",
+    "temp": "25°C",
     "high_low": "25°C / 8°C",
-    "humidity": "Humidity 15%",
+    "humidity": "Humidity 7%",
     "desc": "Clear skies"
   }
 }
