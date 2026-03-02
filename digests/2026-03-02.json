@@ -1,66 +1,66 @@
 {
   "date": "2026-03-02",
   "digest": {
-    "editor_note": "Fellow Humans, the Middle East is on fire — literally — and markets are pricing in the possibility that the Strait of Hormuz becomes the world's most expensive bottleneck. Brent crude spiked double digits overnight after U.S. and Israeli strikes killed Iran's Supreme Leader Khamenei, and the fallout is rippling from Dubai's tax-haven mystique to Polymarket accounts run by what look suspiciously like well-informed wallets. Meanwhile, Berkshire Hathaway posted a 30% drop in quarterly operating profit, reminding us that even the Oracle's successor inherits a messy world.",
+    "editor_note": "Fellow Humans, the United States and Israel killed Iran's Supreme Leader, oil jumped 10% toward $80 a barrel, Dubai is absorbing missile blasts, and prediction market traders — some apparently with very convenient timing — are cashing out. We are, it seems, in the part of the cycle where geopolitical catastrophe and fintech innovation arrive in the same news cycle without anyone finding that particularly strange.",
     "sentiment": {
       "label": "Risk-Off",
-      "position": 12,
-      "context": "U.S.-Israeli strikes on Iran killed Supreme Leader Khamenei, spiking Brent crude over 10%, threatening Strait of Hormuz flows, rattling Dubai as a safe haven, and pushing markets into acute risk-off mode."
+      "position": 18,
+      "context": "U.S.-Israeli strikes killing Iran's Supreme Leader, Iranian retaliation against Gulf states, a 10% crude spike, and Dubai's 'safe haven' status under direct threat drive an unambiguously risk-off session."
     },
     "stories": [
       {
-        "source": "Alltoc.com",
-        "headline": "U.S.-Israel Strikes on Iran Send Oil Markets Into Shock, Hormuz Disruption Risk Priced In",
-        "body": "Joint U.S.-Israeli strikes killed Iranian Supreme Leader Ali Khamenei over the weekend, sending Brent crude surging more than 10% to around $80 a barrel in early over-the-counter trading, with analysts warning prices could reach $100 if Strait of Hormuz shipments are disrupted. The Strait handles a significant share of global oil and gas flows, making any sustained military activity in the Persian Gulf a systemic energy shock. Traders are watching OPEC+ responses and attack patterns closely; inflationary pressure on fuel prices is already materializing.",
-        "url": "https://alltoc.com/world/how-will-the-strikes-affect-oil-and-global-markets",
+        "source": "Political Wire / Fortune / Slashdot",
+        "headline": "U.S.-Israel Strikes Kill Khamenei; Iran Retaliates, Oil Spikes 10%, Dubai Rattled",
+        "body": "Joint U.S.-Israeli military operations killed Iranian Supreme Leader Ali Khamenei over the weekend, with Iran responding with missiles and drones targeting Israel and Persian Gulf states hosting U.S. bases. Brent crude jumped 10% to roughly $80 a barrel on Sunday, with analysts flagging a potential path to $100. Dubai — the tax-free sanctuary for globally mobile capital and corporations — absorbed blast impacts, raising serious questions about the durability of its safe-haven status and the broader Gulf investment thesis.",
+        "url": "https://politicalwire.com/2026/03/01/jeffrey-epsteins-new-mexico-ranch-gets-scrutiny-at-last/",
+        "tag": "Macro"
+      },
+      {
+        "source": "Cointelegraph",
+        "headline": "Kalshi Voids Death-Linked Khamenei Positions; Polymarket 'Insider' Traders Net $1.5M Before Iran Strikes",
+        "body": "Kalshi co-founder Tarek Mansour confirmed the platform is reimbursing fees and resolving the 'Ali Khamenei out as Supreme Leader' market at last-traded price before his death was confirmed, citing a long-standing policy against profiting from death. Meanwhile, six Polymarket wallets — all created in February — netted approximately $1.5 million betting on the timing of U.S. strikes against Iran, with some positions opened hours before explosions were heard over Tehran, drawing insider-trading suspicion from on-chain analysts. The episode crystallises the conflict-of-interest and market-integrity risks now embedded in the mainstreaming of prediction markets.",
+        "url": "https://cointelegraph.com/news/kalshi-founder-khamenei-market-carveout",
+        "tag": "Markets"
+      },
+      {
+        "source": "Fortune",
+        "headline": "Giannis-Kalshi Partnership Spotlights Prediction Market Integrity Risks in Sports",
+        "body": "Giannis Antetokounmpo announced an equity stake in Kalshi — valued at roughly $11 billion — the day after a $23 million trade-deadline betting market on his own future closed on the platform, triggering immediate conflict-of-interest accusations. NBA Commissioner Adam Silver called the stake 'minuscule,' and Giannis has not technically violated league rules, but Washington and Lee law professor Melinda Roth flagged the timing as a direct spotlight on who holds inside information in prediction markets. With Kalshi and Polymarket registering nearly $1.2 billion in Super Bowl weekend volume, the regulatory vacuum around sports-linked prediction markets is becoming impossible to ignore.",
+        "url": "https://fortune.com/2026/03/01/giannis-antetokounmpos-partnership-with-kalshi/",
+        "tag": "Markets"
+      },
+      {
+        "source": "Marca / USA Today",
+        "headline": "Iran May Withdraw from 2026 World Cup; Cartel Truce Floated for Guadalajara Window",
+        "body": "Iran's soccer federation president Mehdi Taj said it is effectively inconceivable that Iran participates in the 2026 World Cup on U.S. soil following the killing of Khamenei, with FIFA's likely replacement being the UAE — ranked 72nd globally. Simultaneously in Mexico, the killing of CJNG cartel boss El Mencho in a Feb. 22 military operation triggered vehicle burnings, roadblocks, and dozens of fatalities, prompting security analysts to assess whether a fragmented cartel leadership might nonetheless agree to an informal truce during the tournament's high-visibility window. Mexican President Claudia Sheinbaum insists all six host cities are secure, but former DEA chief Ray Donovan said a stable truce is 'unlikely' given the absence of a single powerful cartel figurehead to enforce it.",
+        "url": "https://www.marca.com/en/world-cup/2026/03/01/69a4a85422601d3f228b45d2.html",
+        "tag": "Mexico"
+      },
+      {
+        "source": "Slashdot / Fortune",
+        "headline": "Dubai's Safe-Haven Brand Takes Direct Hit as Iran Targets Gulf States",
+        "body": "Iranian retaliatory strikes reached Dubai, cracking the city-state's carefully constructed image as a politically neutral, tax-free refuge for global capital and high-net-worth individuals. The fallout is described as potentially 'catastrophic' for that positioning, with the Gulf's broader stability premium now openly in question. For the trillions in assets and businesses that relocated to the UAE in recent years specifically to escape geopolitical risk, the irony of the destination itself becoming a strike target will be difficult to price away quickly.",
+        "url": "https://slashdot.org/firehose.pl?op=view&id=180880168",
+        "tag": "Macro"
+      },
+      {
+        "source": "Freerepublic.com / NY Post",
+        "headline": "Newsom's California Gas Price Boast Backfires as State Averages $4.65 vs. $2.98 National Mean",
+        "body": "California Governor Gavin Newsom's press office posted to X that average California gas prices have remained below $5 for nearly two years, framing it as a check on Trump's trade-driven market disruption — a claim that landed poorly given the state's $4.646 average versus a $2.984 national mean, the highest of any U.S. state. The U.S. Oil & Gas Association was among the most pointed respondents, attributing the premium directly to California's regulatory environment driving refineries out of the state. With oil already spiking on Iran news, the political optics of celebrating sub-$5 gas in the nation's most expensive fuel market are unlikely to improve.",
+        "url": "https://freerepublic.com/focus/f-news/4368884/posts",
         "tag": "Energy"
       },
       {
-        "source": "Slashdot.org / Fortune",
-        "headline": "Iran Attacks Dubai, Threatening Its Safe-Haven Status for Global Wealth",
-        "body": "Iran launched retaliatory missiles and drones targeting Israel and several Persian Gulf states, including countries hosting U.S. military bases — with Dubai caught in the blast radius of geopolitical risk it has spent decades marketing its way around. The city-state's identity as a tax-free, stable hub for global elite capital is now visibly cracked, with Fortune describing potential fallout as 'catastrophic.' For the estimated trillions in assets parked there by Russian oligarchs, Gulf sovereigns, and international family offices, the calculus on safe-haven geography just changed.",
-        "url": "https://slashdot.org/firehose.pl?op=view&id=180880168",
-        "tag": "Markets"
-      },
-      {
-        "source": "Slashdot.org / Bloomberg / The Mirror US",
-        "headline": "Polymarket Insiders Reportedly Netted $1.5M Betting on Exact Date of Iran Strikes",
-        "body": "Six accounts flagged as 'suspected insiders' on Polymarket earned an estimated $1.5 million wagering on the precise timing of U.S. strikes against Iran, with total Iran-related betting volume hitting $529 million on the platform according to Bloomberg. The pattern of winning trades — opened shortly before the strikes were announced — has drawn immediate scrutiny over who had foreknowledge and how prediction markets interact with classified geopolitical intelligence. This lands alongside the Giannis-Kalshi controversy and raises a broader structural question: prediction markets are now large enough that insider trading in them constitutes a serious market integrity problem.",
-        "url": "https://slashdot.org/firehose.pl?op=view&id=180880164",
-        "tag": "Markets"
-      },
-      {
-        "source": "The Star Online / Reuters",
-        "headline": "Trump Says Iran Conflict Will Last 'Four Weeks or So,' Leaves Door Open to Talks",
-        "body": "President Trump told the Daily Mail he expects the military campaign against Iran to run approximately four weeks, framing it as a calibrated timeline while acknowledging the country's size. He signalled openness to Iranian negotiations but offered no indication talks were imminent, saying Tehran 'should have talked last week, not this week.' Markets are effectively being handed a rough duration estimate from the commander-in-chief, which is either reassuring or alarming depending on what happens in week two.",
-        "url": "https://www.thestar.com.my/news/world/2026/03/02/trump-says-conflict-with-iran-could-last-four-weeks-daily-mail-reports",
-        "tag": "Politics"
-      },
-      {
-        "source": "New York Post",
-        "headline": "Berkshire Hathaway Q4 Operating Profit Drops 30% as Abel Takes the Wheel",
-        "body": "Berkshire Hathaway reported a 30% decline in Q4 operating profit to $10.2 billion, driven by a 38% collapse in insurance earnings and falling interest income on its $373.3 billion cash pile as rates came down. The conglomerate also took a $4.5 billion writedown on its 26.9% stake in Occidental Petroleum, marking the second such writedown in 2025 after concluding the stock's decline was not temporary. New CEO Greg Abel, in his first shareholder letter, acknowledged that some businesses need better operating performance — a pointed admission that the Buffett era's hands-off style has its limits.",
-        "url": "https://nypost.com/2026/03/01/business/berkshire-hathaway-profit-falls-on-lower-insurance-income-occidental-writedown/",
-        "tag": "Markets"
-      },
-      {
-        "source": "USA Today / FTW",
-        "headline": "Iran May Withdraw from 2026 World Cup After U.S.-Israeli Strikes Kill Khamenei",
-        "body": "Iran's soccer federation president Mehdi Taj told Iranian sports outlet Varzesh3 that participation in the 2026 FIFA World Cup — hosted across the U.S., Canada, and Mexico — is now in serious doubt following the strikes, saying the team cannot 'look forward to the World Cup with hope.' FIFA said it is 'monitoring the developments' and has not clarified a replacement process, though its rulebook points to the UAE as the most likely substitute as the highest-ranked non-qualifier from the Asian Football Confederation. The geopolitical irony of Iran potentially being replaced by the UAE — whose safe-haven status Iran just attacked — is not lost on anyone.",
-        "url": "https://ftw.usatoday.com/story/sports/soccer/2026/03/01/how-would-fifa-replace-iran-drops-out-world-cup-usa-israel/88935155007/",
-        "tag": "Politics"
-      },
-      {
-        "source": "The Globe and Mail",
-        "headline": "OpenAI Hid Knowledge of Tumbler Ridge Shooter's ChatGPT Chats While Lobbying Ottawa for $2B AI Contract",
-        "body": "An op-ed by Harvard-affiliated data scientists Nathan Sanders and Bruce Schneier reveals that OpenAI flagged ChatGPT interactions by the Tumbler Ridge, B.C., shooter — including gun-violence discussions — but internally blocked employees from alerting law enforcement, and said nothing when its lobbyist met with the B.C. government afterward. The revelation arrives as Canada's Carney administration deploys $2 billion over five years in its Sovereign AI Compute Strategy, with OpenAI aggressively pursuing a share through its 'OpenAI for Countries' initiative described as operating 'in coordination with the U.S. government.' The authors argue Canada should build wholly public AI infrastructure rather than funnel sovereign capital to a company that has now demonstrated it cannot be trusted with basic transparency.",
-        "url": "https://www.theglobeandmail.com/business/commentary/article-openai-tumbler-ridge-chatgpt/",
-        "tag": "Politics"
+        "source": "The Straits Times",
+        "headline": "Women's Health Gap Costs Global Economy $1 Trillion Annually — and Asia Is Underpricing the Risk",
+        "body": "A piece from UBS's Tan Min Lan draws on McKinsey Health Institute data estimating that reducing women's time spent in poor health could add at least $1 trillion annually to global GDP by 2040, with the lever particularly underutilised across Asia's rapidly ageing economies. Women spend roughly 25% more of their lives in poor health than men, face nearly 20% higher lifetime medical costs, and are more likely to retire early due to health reasons — creating a compounding structural drag on retirement adequacy and workforce participation. The argument is less about corporate ESG optics and more about a measurable, unpriced actuarial and productivity risk sitting inside pension systems and labor markets across Singapore, Japan, and South Korea.",
+        "url": "https://www.straitstimes.com/business/why-its-time-to-close-the-female-health-gap",
+        "tag": "Macro"
       }
     ],
     "quote": {
-      "text": "The Middle East is obviously an issue that has a great deal to do with oil and therefore with the world economy.",
-      "attribution": "Alan Greenspan, The Age of Turbulence, 2007"
+      "text": "Oil is the lifeblood of the industrial nations. To tamper with it is to tamper with the world economy.",
+      "attribution": "Henry Kissinger, testimony to the Senate Foreign Relations Committee, 1975"
     }
   },
   "market": {
@@ -85,7 +85,7 @@
       },
       {
         "label": "IPC BMV",
-        "value": "70,590.76",
+        "value": "70,629.72",
         "change": "▼ 1.1%",
         "direction": "down"
       }
@@ -93,19 +93,19 @@
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.3145",
+        "rate": "17.3070",
         "chg_1d": {
-          "text": "▲ 0.65%",
+          "text": "▲ 0.61%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.32%",
+          "text": "▲ 0.27%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.2442",
+        "rate": "20.2441",
         "chg_1d": {
           "text": "▼ 0.29%",
           "cls": "chg-down"
@@ -117,25 +117,25 @@
       },
       {
         "pair": "CAD / MXN",
-        "rate": "12.6674",
+        "rate": "12.6746",
         "chg_1d": {
-          "text": "▲ 0.71%",
+          "text": "▲ 0.76%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.51%",
+          "text": "▲ 0.57%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "119.1515",
+        "rate": "119.0999",
         "chg_1d": {
-          "text": "▲ 1.25%",
+          "text": "▲ 1.20%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.07%",
+          "text": "▼ 0.11%",
           "cls": "chg-down"
         }
       }
