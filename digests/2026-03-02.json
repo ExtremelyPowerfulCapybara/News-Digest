@@ -1,80 +1,80 @@
 {
   "date": "2026-03-02",
   "digest": {
-    "editor_note": "Fellow Humans, the world woke up this morning to oil tankers sitting idle in the Persian Gulf, Brent crude up 10%, and the Strait of Hormuz effectively closed for business — the kind of geopolitical rupture that markets had been pricing as a tail risk right up until it wasn't one. The U.S.-Israel strike on Iran, and the death of Supreme Leader Khamenei, has reshuffled every macro assumption in play: inflation trajectories, rate paths, regional stability, and the fate of nine million Indian nationals in the Gulf. We are not in a drill.",
+    "editor_note": "Fellow Humans, the Middle East is on fire — literally — and markets are pricing in the possibility that the Strait of Hormuz becomes the world's most expensive bottleneck. Brent crude spiked double digits overnight after U.S. and Israeli strikes killed Iran's Supreme Leader Khamenei, and the fallout is rippling from Dubai's tax-haven mystique to Polymarket accounts run by what look suspiciously like well-informed wallets. Meanwhile, Berkshire Hathaway posted a 30% drop in quarterly operating profit, reminding us that even the Oracle's successor inherits a messy world.",
     "sentiment": {
       "label": "Risk-Off",
       "position": 12,
-      "context": "The U.S.-Israel military campaign against Iran, Strait of Hormuz disruption, a 10% oil price surge, and cascading geopolitical uncertainty across global shipping lanes have pushed sentiment to extreme risk-off territory."
+      "context": "U.S.-Israeli strikes on Iran killed Supreme Leader Khamenei, spiking Brent crude over 10%, threatening Strait of Hormuz flows, rattling Dubai as a safe haven, and pushing markets into acute risk-off mode."
     },
     "stories": [
       {
-        "source": "Fortune",
-        "headline": "Oil Surges 10% as Tankers Halt Near Strait of Hormuz Following Iran Strikes",
-        "body": "Brent crude jumped 10% to roughly $80 a barrel on Sunday after the U.S.-Israel bombing campaign against Iran brought maritime traffic through the Strait of Hormuz — a chokepoint for one-fifth of global oil supply — to a near standstill. Maersk suspended all vessel crossings, the IRGC warned ships against passage and struck three tankers with missiles, and analysts warn prices could hit $100 a barrel if the strait is formally closed. Capital Economics estimates a spike to $100 Brent would add 0.6-0.7 percentage points to global inflation, complicating rate-cutting paths at major central banks.",
-        "url": "https://fortune.com/2026/03/01/oil-prices-tanker-traffic-strait-of-hormuz-iran-attacks-us-israel-irgc-warning/",
+        "source": "Alltoc.com",
+        "headline": "U.S.-Israel Strikes on Iran Send Oil Markets Into Shock, Hormuz Disruption Risk Priced In",
+        "body": "Joint U.S.-Israeli strikes killed Iranian Supreme Leader Ali Khamenei over the weekend, sending Brent crude surging more than 10% to around $80 a barrel in early over-the-counter trading, with analysts warning prices could reach $100 if Strait of Hormuz shipments are disrupted. The Strait handles a significant share of global oil and gas flows, making any sustained military activity in the Persian Gulf a systemic energy shock. Traders are watching OPEC+ responses and attack patterns closely; inflationary pressure on fuel prices is already materializing.",
+        "url": "https://alltoc.com/world/how-will-the-strikes-affect-oil-and-global-markets",
         "tag": "Energy"
       },
       {
-        "source": "Sky News",
-        "headline": "Ship Tracking Shows Gulf Effectively Paralysed as Tankers Carrying Millions of Barrels Sit Idle",
-        "body": "Sky's data forensics team confirmed that maritime activity through the Strait of Hormuz has been nearly brought to a standstill, with vessels clustering at ports on either side of the strait rather than transiting. Analytics firm Kpler tracked five tankers with collective capacity of around 10 million barrels, all of which reversed course or exited the region by Sunday. AIS signal distortion — ships broadcasting false positions or appearing on land — is adding a dangerous layer of opacity to an already volatile corridor.",
-        "url": "https://news.sky.com/story/ship-tracking-reveals-tankers-and-millions-of-barrels-of-oil-stuck-in-the-gulf-13513961",
-        "tag": "Energy"
-      },
-      {
-        "source": "Fortune",
-        "headline": "Trump's Iran Strike Revives the Regime-Change Playbook He Once Publicly Condemned",
-        "body": "Within an hour of the first U.S.-Israeli missiles striking Iran, President Trump urged the Iranian people to \"seize control of your destiny\" — a barely veiled call for regime change from a president who in 2016 explicitly campaigned against that doctrine. Ayatollah Khamenei was confirmed dead by Iranian state media following Saturday's joint aerial bombardment, which targeted military and governmental sites. The post-strike political vacuum, Iran's surviving military capabilities, and Washington's absence of a declared postwar plan raise the same questions that haunted Iraq and Afghanistan.",
-        "url": "https://fortune.com/2026/03/01/trump-regime-change-flip-flop-what-changed-iran-iraq/",
-        "tag": "Politics"
-      },
-      {
-        "source": "BusinessLine",
-        "headline": "India's Modi Convenes Emergency Security Council as Nine Million Nationals Face West Asia Crisis",
-        "body": "Prime Minister Narendra Modi chaired an emergency Cabinet Committee on Security meeting Sunday night to address the fallout from the U.S.-Israel strikes on Iran, with the Strait of Hormuz closure threatening Indian shipping and approximately nine million Indian nationals living and working across the Gulf region. Hundreds of Indians are already stranded in Dubai and other hub airports as West Asian airspace effectively shut down, and the MEA has activated helplines across regional missions. India's exposure here is not abstract — the Gulf is its single largest remittance corridor.",
-        "url": "https://www.thehindubusinessline.com/news/pm-modi-to-chair-ccs-meeting-tonight-west-asia-situation-stranded-indians-likely-to-figure/article70692516.ece",
-        "tag": "Macro"
-      },
-      {
-        "source": "New York Post",
-        "headline": "El Mencho Is Dead, but Mexico's Cartel War Is Just Getting Started — and the Bill Is Coming Due",
-        "body": "Mexican special forces killed CJNG kingpin Nemesio \"El Mencho\" Oseguera last week in the most significant blow to organized crime in Mexico in years, but CJNG retaliated within hours by burning trucks and buildings across 20 states and killing 25 National Guard members. The New York Post editorial board argues Mexico cannot sustain the campaign without serious U.S. support — the cartels collectively earn over $40 billion annually and maintain military-grade arsenals including rocket launchers capable of downing aircraft, while Mexico spends just 0.6% of GDP on defense. With the FIFA World Cup set for June in Guadalajara — CJNG's home turf — and the USMCA renegotiation underpinning $334 billion in annual U.S.-Mexico trade on the horizon, the security calculus carries direct economic consequences.",
-        "url": "https://nypost.com/2026/03/01/opinion/trump-got-the-cartel-war-he-wanted-but-mexico-cant-win-alone/",
-        "tag": "Mexico"
-      },
-      {
-        "source": "CNBC",
-        "headline": "Options-Based 'Overlay Everything' ETFs Swell to $270 Billion as Retail Investors Hedge a Jittery Market",
-        "body": "An estimated $170 billion is now invested in synthetic income ETFs using options strategies, with another $100 billion in buffer ETFs designed for downside protection — nearly all of it from retail investors and individual advisors, according to ETF Action's Mike Akins. The trend has accelerated as the S&P 500 has returned less than half a percentage point year-to-date, mega-cap tech balance sheets are deteriorating under AI capex loads, and gold has already gained 20% in 2026. Tidal Financial's Aga Kuplinska describes the current phase as the \"overlay everything\" era, with issuers applying options income and hedging layers to virtually every asset class, including growth-oriented tech strategies that historically never needed them.",
-        "url": "https://www.cnbc.com/2026/03/01/income-stocks-market-volatility.html",
+        "source": "Slashdot.org / Fortune",
+        "headline": "Iran Attacks Dubai, Threatening Its Safe-Haven Status for Global Wealth",
+        "body": "Iran launched retaliatory missiles and drones targeting Israel and several Persian Gulf states, including countries hosting U.S. military bases — with Dubai caught in the blast radius of geopolitical risk it has spent decades marketing its way around. The city-state's identity as a tax-free, stable hub for global elite capital is now visibly cracked, with Fortune describing potential fallout as 'catastrophic.' For the estimated trillions in assets parked there by Russian oligarchs, Gulf sovereigns, and international family offices, the calculus on safe-haven geography just changed.",
+        "url": "https://slashdot.org/firehose.pl?op=view&id=180880168",
         "tag": "Markets"
       },
       {
-        "source": "Fox News",
-        "headline": "DHS Shutdown Threatens FIFA World Cup Security Planning as Congress Remains Deadlocked",
-        "body": "With the Department of Homeland Security shuttered for two weeks amid a Senate funding standoff, congressional Republicans are warning that security preparations for the FIFA World Cup — set for June across twelve U.S. host cities — are falling behind. DHS is the lead federal agency for World Cup security coordination, and Senators Josh Hawley and John Cornyn have flagged the operational risk, while Democrats and the White House remain at an impasse over ICE reform conditions. The dispute also intersects directly with the USMCA renegotiation timeline, as the U.S., Canada, and Mexico are co-hosts and security conditions in all three countries will bear on trade and diplomatic leverage.",
-        "url": "https://www.foxnews.com/politics/gop-warns-democrats-dhs-shutdown-could-jeopardize-world-cup-security",
+        "source": "Slashdot.org / Bloomberg / The Mirror US",
+        "headline": "Polymarket Insiders Reportedly Netted $1.5M Betting on Exact Date of Iran Strikes",
+        "body": "Six accounts flagged as 'suspected insiders' on Polymarket earned an estimated $1.5 million wagering on the precise timing of U.S. strikes against Iran, with total Iran-related betting volume hitting $529 million on the platform according to Bloomberg. The pattern of winning trades — opened shortly before the strikes were announced — has drawn immediate scrutiny over who had foreknowledge and how prediction markets interact with classified geopolitical intelligence. This lands alongside the Giannis-Kalshi controversy and raises a broader structural question: prediction markets are now large enough that insider trading in them constitutes a serious market integrity problem.",
+        "url": "https://slashdot.org/firehose.pl?op=view&id=180880164",
+        "tag": "Markets"
+      },
+      {
+        "source": "The Star Online / Reuters",
+        "headline": "Trump Says Iran Conflict Will Last 'Four Weeks or So,' Leaves Door Open to Talks",
+        "body": "President Trump told the Daily Mail he expects the military campaign against Iran to run approximately four weeks, framing it as a calibrated timeline while acknowledging the country's size. He signalled openness to Iranian negotiations but offered no indication talks were imminent, saying Tehran 'should have talked last week, not this week.' Markets are effectively being handed a rough duration estimate from the commander-in-chief, which is either reassuring or alarming depending on what happens in week two.",
+        "url": "https://www.thestar.com.my/news/world/2026/03/02/trump-says-conflict-with-iran-could-last-four-weeks-daily-mail-reports",
+        "tag": "Politics"
+      },
+      {
+        "source": "New York Post",
+        "headline": "Berkshire Hathaway Q4 Operating Profit Drops 30% as Abel Takes the Wheel",
+        "body": "Berkshire Hathaway reported a 30% decline in Q4 operating profit to $10.2 billion, driven by a 38% collapse in insurance earnings and falling interest income on its $373.3 billion cash pile as rates came down. The conglomerate also took a $4.5 billion writedown on its 26.9% stake in Occidental Petroleum, marking the second such writedown in 2025 after concluding the stock's decline was not temporary. New CEO Greg Abel, in his first shareholder letter, acknowledged that some businesses need better operating performance — a pointed admission that the Buffett era's hands-off style has its limits.",
+        "url": "https://nypost.com/2026/03/01/business/berkshire-hathaway-profit-falls-on-lower-insurance-income-occidental-writedown/",
+        "tag": "Markets"
+      },
+      {
+        "source": "USA Today / FTW",
+        "headline": "Iran May Withdraw from 2026 World Cup After U.S.-Israeli Strikes Kill Khamenei",
+        "body": "Iran's soccer federation president Mehdi Taj told Iranian sports outlet Varzesh3 that participation in the 2026 FIFA World Cup — hosted across the U.S., Canada, and Mexico — is now in serious doubt following the strikes, saying the team cannot 'look forward to the World Cup with hope.' FIFA said it is 'monitoring the developments' and has not clarified a replacement process, though its rulebook points to the UAE as the most likely substitute as the highest-ranked non-qualifier from the Asian Football Confederation. The geopolitical irony of Iran potentially being replaced by the UAE — whose safe-haven status Iran just attacked — is not lost on anyone.",
+        "url": "https://ftw.usatoday.com/story/sports/soccer/2026/03/01/how-would-fifa-replace-iran-drops-out-world-cup-usa-israel/88935155007/",
+        "tag": "Politics"
+      },
+      {
+        "source": "The Globe and Mail",
+        "headline": "OpenAI Hid Knowledge of Tumbler Ridge Shooter's ChatGPT Chats While Lobbying Ottawa for $2B AI Contract",
+        "body": "An op-ed by Harvard-affiliated data scientists Nathan Sanders and Bruce Schneier reveals that OpenAI flagged ChatGPT interactions by the Tumbler Ridge, B.C., shooter — including gun-violence discussions — but internally blocked employees from alerting law enforcement, and said nothing when its lobbyist met with the B.C. government afterward. The revelation arrives as Canada's Carney administration deploys $2 billion over five years in its Sovereign AI Compute Strategy, with OpenAI aggressively pursuing a share through its 'OpenAI for Countries' initiative described as operating 'in coordination with the U.S. government.' The authors argue Canada should build wholly public AI infrastructure rather than funnel sovereign capital to a company that has now demonstrated it cannot be trusted with basic transparency.",
+        "url": "https://www.theglobeandmail.com/business/commentary/article-openai-tumbler-ridge-chatgpt/",
         "tag": "Politics"
       }
     ],
     "quote": {
-      "text": "Oil is the world's blood. When the arteries are blocked, everything else follows.",
-      "attribution": "Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991"
+      "text": "The Middle East is obviously an issue that has a great deal to do with oil and therefore with the world economy.",
+      "attribution": "Alan Greenspan, The Age of Turbulence, 2007"
     }
   },
   "market": {
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.37",
-        "change": "▲ 1.0%",
+        "value": "17.31",
+        "change": "▲ 0.6%",
         "direction": "up"
       },
       {
         "label": "S&P 500",
-        "value": "6,862",
-        "change": "▼ 0.7%",
+        "value": "6,882",
+        "change": "▼ 0.4%",
         "direction": "down"
       },
       {
@@ -85,67 +85,67 @@
       },
       {
         "label": "IPC BMV",
-        "value": "70,407.72",
-        "change": "▼ 1.4%",
+        "value": "70,590.76",
+        "change": "▼ 1.1%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.3773",
+        "rate": "17.3145",
         "chg_1d": {
-          "text": "▲ 1.01%",
+          "text": "▲ 0.65%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.68%",
+          "text": "▲ 0.32%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.2968",
+        "rate": "20.2442",
         "chg_1d": {
-          "text": "▼ 0.03%",
+          "text": "▼ 0.29%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 0.28%",
+          "text": "▼ 0.54%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "12.6760",
+        "rate": "12.6674",
         "chg_1d": {
-          "text": "▲ 0.78%",
+          "text": "▲ 0.71%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.58%",
+          "text": "▲ 0.51%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "119.5836",
+        "rate": "119.1515",
         "chg_1d": {
-          "text": "▲ 1.61%",
+          "text": "▲ 1.25%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.30%",
-          "cls": "chg-up"
+          "text": "▼ 0.07%",
+          "cls": "chg-down"
         }
       }
     ]
   },
   "weather": {
     "city": "Mexico City",
-    "temp": "17°C",
+    "temp": "25°C",
     "high_low": "25°C / 8°C",
-    "humidity": "Humidity 37%",
+    "humidity": "Humidity 7%",
     "desc": "Clear skies"
   }
 }
