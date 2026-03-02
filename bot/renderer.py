@@ -4,16 +4,9 @@
 #  No flexbox, no grid, no external CSS classes.
 # ─────────────────────────────────────────────
 
-import hashlib
 from datetime import date, timedelta
-from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME, AUTHOR_NAMES, AUTHOR_TITLES
+from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME
 from archive import GITHUB_PAGES_URL
-
-# Pick a name and title that rotates daily but stays fixed within one day's run
-_seed       = int(hashlib.md5(str(date.today()).encode()).hexdigest(), 16)
-AUTHOR_BYLINE_NAME  = AUTHOR_NAMES[_seed % len(AUTHOR_NAMES)]
-AUTHOR_BYLINE_TITLE = AUTHOR_TITLES[(_seed // len(AUTHOR_NAMES)) % len(AUTHOR_TITLES)]
-AUTHOR_BYLINE       = f"{AUTHOR_BYLINE_NAME}, {AUTHOR_BYLINE_TITLE}"
 
 # ── Shared style constants ────────────────────
 BG_OUTER   = "#dde3e8"
@@ -47,6 +40,33 @@ def _divider() -> str:
             </svg>
           </td>
           <td style="height:1px; background:{BORDER}; font-size:0; line-height:0;">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>"""
+
+
+def _preheader(issue_date: str) -> str:
+    """
+    Slim top bar with 'View in browser' and 'Browse archive' links.
+    Only renders if GITHUB_PAGES_URL is set in archive.py.
+    """
+    if not GITHUB_PAGES_URL:
+        return ""
+    issue_url  = f"{GITHUB_PAGES_URL}/{issue_date}.html"
+    archive_url = f"{GITHUB_PAGES_URL}/index.html"
+    return f"""
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_OUTER};">
+  <tr>
+    <td align="center" style="padding:8px 16px;">
+      <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%;">
+        <tr>
+          <td style="font-family:{FONT_SANS}; font-size:10px; color:#888888;">
+            <a href="{issue_url}" style="color:#555555; text-decoration:none;">View in browser</a>
+            &nbsp;&middot;&nbsp;
+            <a href="{archive_url}" style="color:#555555; text-decoration:none;">Browse all issues</a>
+          </td>
         </tr>
       </table>
     </td>
@@ -122,7 +142,7 @@ def _editor_note(note: str) -> str:
   <tr>
     <td style="padding:28px 48px;">
       <p style="margin:0 0 12px 0; font-family:{FONT_SERIF}; font-style:italic; font-size:15px; color:#444444; line-height:1.8;">{note}</p>
-      <p style="margin:0; font-family:{FONT_SANS}; font-size:10px; color:#999999; letter-spacing:1px; text-transform:uppercase;">&#8212; {AUTHOR_BYLINE}</p>
+      <p style="margin:0; font-family:{FONT_SANS}; font-size:10px; color:#999999; letter-spacing:1px; text-transform:uppercase;">&#8212; {AUTHOR_NAME}</p>
     </td>
   </tr>
 </table>"""
@@ -289,13 +309,14 @@ def _footer(issue_date: str = "") -> str:
 # ── Main builder ──────────────────────────────
 
 def build_html(
-    digest:       dict,
-    tickers:      list[dict],
-    currency:     list[dict],
-    weather:      dict,
-    week_stories: list[dict],
-    issue_number: int = 1,
-    is_friday:    bool = False,
+    digest:        dict,
+    tickers:       list[dict],
+    currency:      list[dict],
+    weather:       dict,
+    week_stories:  list[dict],
+    issue_number:  int = 1,
+    is_friday:     bool = False,
+    wordcloud_b64: str | None = None,
 ) -> str:
 
     stories_html = ""
@@ -308,30 +329,23 @@ def build_html(
     if is_friday and week_stories:
         week_html = _divider() + _week_review(week_stories)
 
-    sentiment  = digest.get("sentiment", {})
-    quote      = digest.get("quote", {})
-    today_iso  = date.today().isoformat()
-
-    preheader = ""
-    if GITHUB_PAGES_URL:
-        issue_url   = f"{GITHUB_PAGES_URL}/{today_iso}.html"
-        archive_url = f"{GITHUB_PAGES_URL}/index.html"
-        preheader = f"""
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_OUTER};">
+    # Word cloud block for email (base64 embedded image)
+    wordcloud_html = ""
+    if is_friday and wordcloud_b64:
+        wordcloud_html = f"""
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
-    <td align="center" style="padding:10px 16px 4px;">
-      <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%;">
-        <tr>
-          <td style="font-family:{FONT_SANS}; font-size:10px; color:#888888;">
-            <a href="{issue_url}" style="color:#555555; text-decoration:none;">View in browser</a>
-            &nbsp;&middot;&nbsp;
-            <a href="{archive_url}" style="color:#555555; text-decoration:none;">Browse all issues</a>
-          </td>
-        </tr>
-      </table>
+    <td style="padding:24px 48px 8px;">
+      <div style="font-family:{FONT_SANS}; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT}; margin-bottom:14px;">Week in Words</div>
+      <img src="{wordcloud_b64}" width="504" style="width:100%; max-width:504px; display:block; border:1px solid {BORDER};" alt="Weekly word cloud"/>
     </td>
   </tr>
 </table>"""
+
+    sentiment = digest.get("sentiment", {})
+    quote     = digest.get("quote", {})
+    today_iso = date.today().isoformat()
+    preheader = _preheader(today_iso)
 
     return f"""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -359,6 +373,7 @@ def build_html(
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_quote(quote)}</td></tr>
         {'<tr><td>' + week_html + '</td></tr>' if week_html else ''}
+        {'<tr><td>' + wordcloud_html + '</td></tr>' if wordcloud_html else ''}
         <tr><td>{_footer(today_iso)}</td></tr>
       </table>
     </td>
@@ -366,6 +381,7 @@ def build_html(
 </table>
 </body>
 </html>"""
+
 
 def build_plain(digest: dict) -> str:
     today = date.today().strftime("%B %d, %Y")

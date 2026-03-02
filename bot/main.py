@@ -3,14 +3,15 @@
 # ─────────────────────────────────────────────
 
 import os
-from fetcher     import fetch_news
-from summarizer  import summarize_news
-from market_data import fetch_tickers, fetch_currency_table, fetch_weather
-from storage     import save_digest, get_week_stories, is_friday
-from renderer    import build_html, build_plain
-from delivery    import send_email
-from archive     import save_pretty_issue
-from config      import DIGEST_DIR
+from fetcher        import fetch_news
+from summarizer     import summarize_news
+from market_data    import fetch_tickers, fetch_currency_table, fetch_weather
+from storage        import save_digest, get_week_stories, is_friday
+from renderer       import build_html, build_plain
+from delivery       import send_email
+from archive        import save_pretty_issue
+from config         import DIGEST_DIR
+from wordcloud_gen  import generate_wordcloud, wordcloud_as_base64
 
 
 def get_issue_number() -> int:
@@ -52,14 +53,23 @@ def run():
     week_stories = get_week_stories() if friday else []
     issue_num    = get_issue_number()
 
+    # Generate word cloud on Fridays
+    wordcloud_b64      = None
+    wordcloud_filename = None
+    if friday:
+        print("  [wordcloud] Generating weekly word cloud...")
+        wordcloud_b64      = wordcloud_as_base64()
+        wordcloud_filename = generate_wordcloud()
+
     html  = build_html(
-        digest       = digest,
-        tickers      = tickers,
-        currency     = currency,
-        weather      = weather,
-        week_stories = week_stories,
-        issue_number = issue_num,
-        is_friday    = friday,
+        digest         = digest,
+        tickers        = tickers,
+        currency       = currency,
+        weather        = weather,
+        week_stories   = week_stories,
+        issue_number   = issue_num,
+        is_friday      = friday,
+        wordcloud_b64  = wordcloud_b64,
     )
     plain = build_plain(digest)
 
@@ -68,13 +78,14 @@ def run():
     # ── 6. Save pretty HTML to archive ─────────────────
     print("\n[6/6] Saving to archive...")
     save_pretty_issue(
-        digest       = digest,
-        tickers      = tickers,
-        currency     = currency,
-        weather      = weather,
-        week_stories = week_stories,
-        issue_number = issue_num,
-        is_friday    = friday,
+        digest             = digest,
+        tickers            = tickers,
+        currency           = currency,
+        weather            = weather,
+        week_stories       = week_stories,
+        issue_number       = issue_num,
+        is_friday          = friday,
+        wordcloud_filename = wordcloud_filename,
     )
 
     print("\n" + "=" * 50)

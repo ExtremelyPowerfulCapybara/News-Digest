@@ -6,13 +6,7 @@
 # ─────────────────────────────────────────────
 
 from datetime import date, timedelta
-import hashlib
-from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME, AUTHOR_NAMES, AUTHOR_TITLES
-
-_seed       = int(hashlib.md5(str(date.today()).encode()).hexdigest(), 16)
-AUTHOR_BYLINE_NAME  = AUTHOR_NAMES[_seed % len(AUTHOR_NAMES)]
-AUTHOR_BYLINE_TITLE = AUTHOR_TITLES[(_seed // len(AUTHOR_NAMES)) % len(AUTHOR_TITLES)]
-AUTHOR_BYLINE       = f"{AUTHOR_BYLINE_NAME}, {AUTHOR_BYLINE_TITLE}"
+from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME
 
 CSS = """
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -121,12 +115,12 @@ CSS = """
   /* ── Mobile ── */
   @media (max-width: 600px) {
     body { padding: 0; }
-    .wrap { border: none; }
+    .wrap { border: none; border-radius: 0; }
     .header { padding: 28px 20px 20px; }
     .pub-name { font-size: 26px; }
     .ticker { padding: 6px 8px; }
     .ticker-inner { flex-wrap: wrap; }
-    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; font-size: 11px; }
     .tick-label { font-size: 7px; }
     .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
     .weather-desc { margin-left: 0; width: 100%; }
@@ -158,13 +152,14 @@ DIVIDER = """
 
 
 def build_pretty_html(
-    digest:       dict,
-    tickers:      list[dict],
-    currency:     list[dict],
-    weather:      dict,
-    week_stories: list[dict],
-    issue_number: int = 1,
-    is_friday:    bool = False,
+    digest:            dict,
+    tickers:           list[dict],
+    currency:          list[dict],
+    weather:           dict,
+    week_stories:      list[dict],
+    issue_number:      int = 1,
+    is_friday:         bool = False,
+    wordcloud_filename: str | None = None,
 ) -> str:
 
     today      = date.today().strftime("%A, %B %d, %Y").upper()
@@ -209,14 +204,12 @@ def build_pretty_html(
     for r in currency:
         c1 = "up" if r['chg_1d']['cls'] == 'chg-up' else ("down" if r['chg_1d']['cls'] == 'chg-down' else "flat")
         c7 = "up" if r['chg_1w']['cls'] == 'chg-up' else ("down" if r['chg_1w']['cls'] == 'chg-down' else "flat")
-        chg1_color = "#4a9e6a" if c1 == "up" else ("#b84a3a" if c1 == "down" else "#aab4bc")
-        chg7_color = "#4a9e6a" if c7 == "up" else ("#b84a3a" if c7 == "down" else "#aab4bc")
         tbody += f"""
       <tr>
         <td class="pair">{r['pair']}</td>
         <td>{r['rate']}</td>
-        <td style="color:{chg1_color}; text-align:right;">{r['chg_1d']['text']}</td>
-        <td style="color:{chg7_color}; text-align:right;">{r['chg_1w']['text']}</td>
+        <td class="{c1}">{r['chg_1d']['text']}</td>
+        <td class="{c7}">{r['chg_1w']['text']}</td>
       </tr>"""
 
     # ── Quote ──
@@ -287,7 +280,7 @@ def build_pretty_html(
 
   <div class="editor-note">
     <p>{digest.get('editor_note','')}</p>
-    <div class="editor-sig">&mdash; {AUTHOR_BYLINE}</div>
+    <div class="editor-sig">&mdash; {AUTHOR_NAME}</div>
   </div>
 
   {DIVIDER}
@@ -315,7 +308,7 @@ def build_pretty_html(
     <table class="currency-table">
       <thead>
         <tr>
-          <th>Pair</th><th>Rate</th><th style="text-align:right;">Day</th><th style="text-align:right;">Week</th>
+          <th>Pair</th><th>Rate</th><th>1D</th><th>1W</th>
         </tr>
       </thead>
       <tbody>{tbody}
@@ -332,6 +325,13 @@ def build_pretty_html(
   </div>
 
   {week_html}
+
+  {f'''
+  <div style="padding:24px 48px 8px;">
+    <div class="section-title">Week in Words</div>
+    <img src="{wordcloud_filename}" style="width:100%; display:block; border:1px solid #cdd4d9;" alt="Weekly word cloud"/>
+  </div>
+  ''' if is_friday and wordcloud_filename else ''}
 
   <div class="footer">
     <span class="footer-name">{NEWSLETTER_NAME}</span>

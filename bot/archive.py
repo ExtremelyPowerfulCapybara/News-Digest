@@ -11,16 +11,18 @@ from datetime import date, datetime
 from pretty_renderer import build_pretty_html
 from config import NEWSLETTER_NAME, AUTHOR_NAME, DIGEST_DIR, ARCHIVE_DIR
 
-GITHUB_PAGES_URL = "https://extremelypowerfulcapybara.github.io/News-Digest/"  
+GITHUB_PAGES_URL = ""  # Set this after GitHub Pages is live, e.g. "https://username.github.io/mexico-finance-brief"
+
 
 def save_pretty_issue(
-    digest:       dict,
-    tickers:      list[dict],
-    currency:     list[dict],
-    weather:      dict,
-    week_stories: list[dict],
-    issue_number: int,
-    is_friday:    bool = False,
+    digest:             dict,
+    tickers:            list[dict],
+    currency:           list[dict],
+    weather:            dict,
+    week_stories:       list[dict],
+    issue_number:       int,
+    is_friday:          bool = False,
+    wordcloud_filename: str | None = None,
 ) -> str:
     os.makedirs(ARCHIVE_DIR, exist_ok=True)
     today    = date.today().isoformat()
@@ -28,13 +30,14 @@ def save_pretty_issue(
     filepath = os.path.join(ARCHIVE_DIR, filename)
 
     html = build_pretty_html(
-        digest       = digest,
-        tickers      = tickers,
-        currency     = currency,
-        weather      = weather,
-        week_stories = week_stories,
-        issue_number = issue_number,
-        is_friday    = is_friday,
+        digest             = digest,
+        tickers            = tickers,
+        currency           = currency,
+        weather            = weather,
+        week_stories       = week_stories,
+        issue_number       = issue_number,
+        is_friday          = is_friday,
+        wordcloud_filename = wordcloud_filename,
     )
 
     with open(filepath, "w", encoding="utf-8") as f:
