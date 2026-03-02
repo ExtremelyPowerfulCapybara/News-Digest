@@ -1,73 +1,80 @@
 {
   "date": "2026-03-02",
   "digest": {
-    "editor_note": "Fellow Humans, the Middle East has decisively moved from geopolitical risk to geopolitical reality: U.S. and Israeli strikes have killed Iran's Supreme Leader, closed the Strait of Hormuz, and grounded aviation across the region. Oil markets are thin on reserves and long on exposure, and the ripple effects — from stranded travelers to energy-dependent state budgets — are only beginning to price in.",
+    "editor_note": "Fellow Humans, the Middle East just broke the energy markets: oil up 6%, the Strait of Hormuz effectively closed, gold through $5,300, and rate-cut bets evaporating in real time. This is not a drill — it is what happens when a supreme leader gets killed and a refinery goes up in smoke simultaneously, and the world discovers, once again, that it has very little in reserve.",
     "sentiment": {
       "label": "Risk-Off",
       "position": 18,
-      "context": "U.S.-Israeli strikes on Iran, Khamenei's death, Strait of Hormuz closure, and a terrorism-linked mass shooting in Austin have combined to produce one of the sharpest geopolitical shock events in years, with oil markets stretched and air travel in chaos."
+      "context": "US-Israeli strikes on Iran, Strait of Hormuz disruption, oil surging 6%, and collapsing Fed rate-cut expectations are driving a sharp risk-off posture across markets."
     },
     "stories": [
       {
-        "source": "Statetimes.in",
-        "headline": "Modi Chairs Emergency Security Meeting as U.S.-Israel Strikes Kill Khamenei, Shut Hormuz",
-        "body": "Prime Minister Modi convened India's Cabinet Committee on Security after U.S. and Israeli strikes on Iran killed Supreme Leader Ali Khamenei and triggered closure of the Strait of Hormuz, a critical artery for Indian oil imports. With roughly nine million Indian nationals across the Gulf and West Asia, and airspace across the region effectively shut, New Delhi is managing both an energy supply crisis and a potential mass evacuation scenario. The meeting was attended by Defence, Home, External Affairs, and Finance ministers, alongside NSA Ajit Doval and RBI veteran Shaktikanta Das.",
-        "url": "https://statetimes.in/pm-modi-chairs-ccs-meet-in-delhi-as-chaos-unfolds-in-middle-east/",
-        "tag": "Politics"
+        "source": "Financial Post",
+        "headline": "Oil Surges 6%, Dollar Rises as Iran War Disrupts Strait of Hormuz",
+        "body": "Brent crude jumped 6% after US-Israeli strikes killed Iran's Supreme Leader Khamenei and threatened to snarl the Strait of Hormuz, which handles roughly 20% of global oil supply. Ten-year Treasury yields climbed 11 basis points to 4.05% as inflation fears mounted, while traders pushed the first expected Fed rate cut to September — a third cut in 2026 is now nearly fully priced out. Gold topped $5,300 and diesel futures in Europe surged 23%; JPMorgan and Morgan Stanley both called the selloff a buying opportunity in equities, but the bond market is telling a different story.",
+        "url": "https://financialpost.com/pmn/business-pmn/dollar-surges-as-traders-brace-for-war-impact",
+        "tag": "Energy"
       },
       {
-        "source": "Slashdot.org / WSJ",
-        "headline": "Oil Markets Enter Iran Conflict With Minimal Buffer; Brent Could Hit $80",
-        "body": "Oil prices rose more than 2% following the U.S.-Israel strikes on Iran, with Barclays flagging Brent crude could reach $80 a barrel on sustained tension. The market's core vulnerability is structural: spare capacity is thin, Iranian supply is now at risk, and the Strait of Hormuz — through which roughly 20% of global oil trade passes — has been closed by Tehran. Any prolonged disruption compounds an already tight inventory picture.",
+        "source": "Business Insider",
+        "headline": "Ships Come Under Fire Near Strait of Hormuz as Major Carriers Reroute",
+        "body": "An oil tanker, the Skylight, was attacked near the Strait of Hormuz, with its 20-person crew evacuated by Omani authorities — no party has claimed responsibility. Major shipping companies are now actively avoiding the route, though no official closure has been communicated through recognized maritime channels. The strait carries approximately 20% of the world's daily oil supply, and any sustained disruption compounds the supply shock already priced into energy markets.",
+        "url": "https://www.businessinsider.com/ships-come-under-fire-around-the-strait-of-hormuz-2026-3",
+        "tag": "Energy"
+      },
+      {
+        "source": "Slashdot / WSJ",
+        "headline": "Oil Markets Enter Iran Conflict With Minimal Spare Capacity",
+        "body": "With Brent already climbing on conflict fears, analysts at Barclays flagged that prices could reach $80 a barrel as US-Iran tensions persist — a relatively modest target that underscores how little buffer exists in global supply. The WSJ notes that oil markets have entered this conflict with negligible spare capacity, leaving prices highly sensitive to any further disruption at refineries, pipelines, or export terminals. European natural gas prices soared separately after Qatar shut the world's largest LNG export facility.",
         "url": "https://slashdot.org/firehose.pl?op=view&id=180879974",
         "tag": "Energy"
       },
       {
-        "source": "ABC News (AU)",
-        "headline": "Thousands Stranded as Middle East Airspace Closes; Dubai Airport Damaged",
-        "body": "Iran, Iraq, Israel, Syria, Kuwait, and the UAE closed their airspace following Saturday's strikes, leaving thousands of international travelers — including hundreds of Australians — stranded in Doha, Dubai, and Abu Dhabi. Dubai International Airport, which handles approximately 300,000 passengers daily and serves as a hub for Emirates, sustained damage, as did Abu Dhabi's Zayed International, used by Etihad. The Australian Travel Industry Association warned travelers against panic-canceling flights, noting they would forfeit consumer protections by doing so.",
-        "url": "https://www.abc.net.au/news/2026-03-02/australians-stranded-in-airports-after-strikes-on-iran/106402934",
-        "tag": "Macro"
-      },
-      {
-        "source": "TheJournal.ie",
-        "headline": "Austin Mass Shooting Suspect Linked to Pro-Iranian Sentiment; FBI Probes Terror Nexus",
-        "body": "A gunman identified as Ndiaga Diagne, a U.S. citizen of Senegalese origin, killed two people and wounded 14 in Austin's entertainment district before being shot dead by police. SITE Intelligence Group flagged social media posts expressing pro-Iranian regime sentiment and hatred of Israeli and American leadership dating to 2017. The FBI's Joint Terrorism Task Force has been activated, and Texas Governor Greg Abbott has ordered heightened security at energy facilities, ports, and the southern border.",
-        "url": "https://www.thejournal.ie/texas-shooting-iran-6971390-Mar2026/",
+        "source": "Statetimes.in",
+        "headline": "India Convenes Emergency Security Council Meeting as West Asia Conflict Escalates",
+        "body": "Prime Minister Narendra Modi chaired an emergency Cabinet Committee on Security meeting in New Delhi after US-Israeli strikes killed Ayatollah Khamenei, with the session focusing on the safety of roughly nine million Indian nationals living across the Gulf and West Asia. The near-total closure of West Asian airspace has left hundreds of Indians stranded in Dubai, Doha, and other regional transit hubs. Of particular strategic concern: the closure of the Strait of Hormuz, a critical artery for Indian oil imports.",
+        "url": "https://statetimes.in/pm-modi-chairs-ccs-meet-in-delhi-as-chaos-unfolds-in-middle-east/",
         "tag": "Politics"
       },
       {
         "source": "New York Post",
-        "headline": "California's Iran Exposure Laid Bare as Gas Hits $4.65; Newsom's Social Media Flexing Backfires",
-        "body": "Governor Newsom's attempt to use California's sub-$5 gas prices as a rebuke of Trump's Iran policy drew immediate blowback: California imports 63% of its crude from foreign countries despite holding 1.7 billion barrels of proven in-state reserves, making it among the most exposed U.S. states to a Hormuz supply disruption. The state's average regular unleaded hit $4.646 per gallon as of Sunday against a national average of $2.984, and Valero's recent closure of its Benicia refinery has further tightened local supply. A proposed per-mile driving tax adds to the political combustibility.",
-        "url": "https://nypost.com/2026/03/01/us-news/gavin-newsom-destroyed-over-outrageous-california-gas-price-flex/",
-        "tag": "Energy"
+        "headline": "Iran's Soccer Federation Head Doubts Country Will Participate in 2026 World Cup",
+        "body": "Iranian football federation president Mehdi Taj said Sunday that he cannot envision his country playing World Cup matches on US soil following the American-Israeli bombardment that killed Khamenei. Iran is slated to open Group G play at SoFi Stadium in Los Angeles on June 15 against New Zealand, with further matches scheduled in Seattle. A 40-day national mourning period has already suspended team preparations, and Iranian citizens are subject to a US travel ban — FIFA said it is monitoring the situation but has not commented further.",
+        "url": "https://nypost.com/2026/03/01/sports/irans-soccer-federation-head-doubts-country-will-play-in-2026-world-cup-after-us-israeli-strikes/",
+        "tag": "Politics"
       },
       {
         "source": "Livemint",
-        "headline": "Amazon India Waives Seller Fees on All Products Under ₹1,000, Expanding Fee War",
-        "body": "Amazon India has extended its zero-commission policy to cover goods priced below ₹1,000, a tenfold expansion from the April 2025 threshold of ₹300, covering 12.5 crore products across apparel, electronics, and home goods. The company recorded a 50% surge in new seller sign-ups after the initial April policy, and the move directly escalates pressure on Meesho and Flipkart in the price-sensitive, small-seller segment that constitutes 70-80% of Amazon's 1.7 million-strong seller base. Amazon declined to quantify the revenue impact of the expanded fee waiver.",
+        "headline": "Amazon India Waives Seller Fees on All Products Under ₹1,000 in Escalating Fee War",
+        "body": "Amazon India has expanded its zero-commission policy to cover goods priced under ₹1,000, up from ₹300 previously — a move that extends fee-free status to 12.5 crore products and directly targets rivals Meesho and Flipkart. The company reported a 50% surge in new seller sign-ups following its initial fee waiver in April, and estimates the policy will cover 70–80% of its 1.7 million-strong seller base. Amazon declined to disclose the revenue impact of the cuts.",
         "url": "https://www.livemint.com/companies/amazon-india-zero-commission-policy-products-one-thousand-sellers-business-growth-11772360566023.html",
+        "tag": "Markets"
+      },
+      {
+        "source": "Slashdot / Barron's",
+        "headline": "Greg Abel Faces First Real Test as Berkshire Hathaway CEO",
+        "body": "Warren Buffett's successor Greg Abel is navigating his first major public test at the helm of Berkshire Hathaway, with shareholders watching closely for signals on capital deployment of the company's substantial cash pile. Abel addressed investors directly, rejecting the characterization of Berkshire's cash reserves as a strategic problem — a defense that echoes Buffett's long-standing posture of patient accumulation. How Abel manages the geopolitical shock now hitting energy and equity markets may define his early tenure more than any single acquisition.",
+        "url": "https://slashdot.org/firehose.pl?op=view&id=180879972",
         "tag": "Markets"
       }
     ],
     "quote": {
-      "text": "Oil is the world's biggest industry, and it is also the world's most political commodity.",
-      "attribution": "Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991"
+      "text": "In the short run, the market is a voting machine, but in the long run, it is a weighing machine.",
+      "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
     }
   },
   "market": {
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.32",
-        "change": "▲ 0.7%",
+        "value": "17.31",
+        "change": "▲ 0.6%",
         "direction": "up"
       },
       {
         "label": "S&P 500",
-        "value": "6,874",
-        "change": "▼ 0.5%",
+        "value": "6,880",
+        "change": "▼ 0.4%",
         "direction": "down"
       },
       {
@@ -78,57 +85,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "70,559.53",
-        "change": "▼ 1.2%",
+        "value": "70,504.79",
+        "change": "▼ 1.3%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.3204",
+        "rate": "17.3150",
         "chg_1d": {
-          "text": "▲ 0.68%",
+          "text": "▲ 0.65%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.35%",
+          "text": "▲ 0.32%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.2347",
+        "rate": "20.2441",
         "chg_1d": {
-          "text": "▼ 0.34%",
+          "text": "▼ 0.29%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 0.59%",
+          "text": "▼ 0.54%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "12.6700",
+        "rate": "12.6606",
         "chg_1d": {
-          "text": "▲ 0.73%",
+          "text": "▲ 0.65%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.53%",
+          "text": "▲ 0.46%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "119.1921",
+        "rate": "119.1549",
         "chg_1d": {
-          "text": "▲ 1.28%",
+          "text": "▲ 1.25%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.03%",
+          "text": "▼ 0.06%",
           "cls": "chg-down"
         }
       }
