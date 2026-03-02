@@ -1,0 +1,151 @@
+{
+  "date": "2026-03-02",
+  "digest": {
+    "editor_note": "Fellow Humans, the world woke up this morning to oil tankers sitting idle in the Persian Gulf, Brent crude up 10%, and the Strait of Hormuz effectively closed for business — the kind of geopolitical rupture that markets had been pricing as a tail risk right up until it wasn't one. The U.S.-Israel strike on Iran, and the death of Supreme Leader Khamenei, has reshuffled every macro assumption in play: inflation trajectories, rate paths, regional stability, and the fate of nine million Indian nationals in the Gulf. We are not in a drill.",
+    "sentiment": {
+      "label": "Risk-Off",
+      "position": 12,
+      "context": "The U.S.-Israel military campaign against Iran, Strait of Hormuz disruption, a 10% oil price surge, and cascading geopolitical uncertainty across global shipping lanes have pushed sentiment to extreme risk-off territory."
+    },
+    "stories": [
+      {
+        "source": "Fortune",
+        "headline": "Oil Surges 10% as Tankers Halt Near Strait of Hormuz Following Iran Strikes",
+        "body": "Brent crude jumped 10% to roughly $80 a barrel on Sunday after the U.S.-Israel bombing campaign against Iran brought maritime traffic through the Strait of Hormuz — a chokepoint for one-fifth of global oil supply — to a near standstill. Maersk suspended all vessel crossings, the IRGC warned ships against passage and struck three tankers with missiles, and analysts warn prices could hit $100 a barrel if the strait is formally closed. Capital Economics estimates a spike to $100 Brent would add 0.6-0.7 percentage points to global inflation, complicating rate-cutting paths at major central banks.",
+        "url": "https://fortune.com/2026/03/01/oil-prices-tanker-traffic-strait-of-hormuz-iran-attacks-us-israel-irgc-warning/",
+        "tag": "Energy"
+      },
+      {
+        "source": "Sky News",
+        "headline": "Ship Tracking Shows Gulf Effectively Paralysed as Tankers Carrying Millions of Barrels Sit Idle",
+        "body": "Sky's data forensics team confirmed that maritime activity through the Strait of Hormuz has been nearly brought to a standstill, with vessels clustering at ports on either side of the strait rather than transiting. Analytics firm Kpler tracked five tankers with collective capacity of around 10 million barrels, all of which reversed course or exited the region by Sunday. AIS signal distortion — ships broadcasting false positions or appearing on land — is adding a dangerous layer of opacity to an already volatile corridor.",
+        "url": "https://news.sky.com/story/ship-tracking-reveals-tankers-and-millions-of-barrels-of-oil-stuck-in-the-gulf-13513961",
+        "tag": "Energy"
+      },
+      {
+        "source": "Fortune",
+        "headline": "Trump's Iran Strike Revives the Regime-Change Playbook He Once Publicly Condemned",
+        "body": "Within an hour of the first U.S.-Israeli missiles striking Iran, President Trump urged the Iranian people to \"seize control of your destiny\" — a barely veiled call for regime change from a president who in 2016 explicitly campaigned against that doctrine. Ayatollah Khamenei was confirmed dead by Iranian state media following Saturday's joint aerial bombardment, which targeted military and governmental sites. The post-strike political vacuum, Iran's surviving military capabilities, and Washington's absence of a declared postwar plan raise the same questions that haunted Iraq and Afghanistan.",
+        "url": "https://fortune.com/2026/03/01/trump-regime-change-flip-flop-what-changed-iran-iraq/",
+        "tag": "Politics"
+      },
+      {
+        "source": "BusinessLine",
+        "headline": "India's Modi Convenes Emergency Security Council as Nine Million Nationals Face West Asia Crisis",
+        "body": "Prime Minister Narendra Modi chaired an emergency Cabinet Committee on Security meeting Sunday night to address the fallout from the U.S.-Israel strikes on Iran, with the Strait of Hormuz closure threatening Indian shipping and approximately nine million Indian nationals living and working across the Gulf region. Hundreds of Indians are already stranded in Dubai and other hub airports as West Asian airspace effectively shut down, and the MEA has activated helplines across regional missions. India's exposure here is not abstract — the Gulf is its single largest remittance corridor.",
+        "url": "https://www.thehindubusinessline.com/news/pm-modi-to-chair-ccs-meeting-tonight-west-asia-situation-stranded-indians-likely-to-figure/article70692516.ece",
+        "tag": "Macro"
+      },
+      {
+        "source": "New York Post",
+        "headline": "El Mencho Is Dead, but Mexico's Cartel War Is Just Getting Started — and the Bill Is Coming Due",
+        "body": "Mexican special forces killed CJNG kingpin Nemesio \"El Mencho\" Oseguera last week in the most significant blow to organized crime in Mexico in years, but CJNG retaliated within hours by burning trucks and buildings across 20 states and killing 25 National Guard members. The New York Post editorial board argues Mexico cannot sustain the campaign without serious U.S. support — the cartels collectively earn over $40 billion annually and maintain military-grade arsenals including rocket launchers capable of downing aircraft, while Mexico spends just 0.6% of GDP on defense. With the FIFA World Cup set for June in Guadalajara — CJNG's home turf — and the USMCA renegotiation underpinning $334 billion in annual U.S.-Mexico trade on the horizon, the security calculus carries direct economic consequences.",
+        "url": "https://nypost.com/2026/03/01/opinion/trump-got-the-cartel-war-he-wanted-but-mexico-cant-win-alone/",
+        "tag": "Mexico"
+      },
+      {
+        "source": "CNBC",
+        "headline": "Options-Based 'Overlay Everything' ETFs Swell to $270 Billion as Retail Investors Hedge a Jittery Market",
+        "body": "An estimated $170 billion is now invested in synthetic income ETFs using options strategies, with another $100 billion in buffer ETFs designed for downside protection — nearly all of it from retail investors and individual advisors, according to ETF Action's Mike Akins. The trend has accelerated as the S&P 500 has returned less than half a percentage point year-to-date, mega-cap tech balance sheets are deteriorating under AI capex loads, and gold has already gained 20% in 2026. Tidal Financial's Aga Kuplinska describes the current phase as the \"overlay everything\" era, with issuers applying options income and hedging layers to virtually every asset class, including growth-oriented tech strategies that historically never needed them.",
+        "url": "https://www.cnbc.com/2026/03/01/income-stocks-market-volatility.html",
+        "tag": "Markets"
+      },
+      {
+        "source": "Fox News",
+        "headline": "DHS Shutdown Threatens FIFA World Cup Security Planning as Congress Remains Deadlocked",
+        "body": "With the Department of Homeland Security shuttered for two weeks amid a Senate funding standoff, congressional Republicans are warning that security preparations for the FIFA World Cup — set for June across twelve U.S. host cities — are falling behind. DHS is the lead federal agency for World Cup security coordination, and Senators Josh Hawley and John Cornyn have flagged the operational risk, while Democrats and the White House remain at an impasse over ICE reform conditions. The dispute also intersects directly with the USMCA renegotiation timeline, as the U.S., Canada, and Mexico are co-hosts and security conditions in all three countries will bear on trade and diplomatic leverage.",
+        "url": "https://www.foxnews.com/politics/gop-warns-democrats-dhs-shutdown-could-jeopardize-world-cup-security",
+        "tag": "Politics"
+      }
+    ],
+    "quote": {
+      "text": "Oil is the world's blood. When the arteries are blocked, everything else follows.",
+      "attribution": "Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991"
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.37",
+        "change": "▲ 1.0%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,862",
+        "change": "▼ 0.7%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.83%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "70,407.72",
+        "change": "▼ 1.4%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.3773",
+        "chg_1d": {
+          "text": "▲ 1.01%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.68%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.2968",
+        "chg_1d": {
+          "text": "▼ 0.03%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▼ 0.28%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "12.6760",
+        "chg_1d": {
+          "text": "▲ 0.78%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.58%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "119.5836",
+        "chg_1d": {
+          "text": "▲ 1.61%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.30%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "17°C",
+    "high_low": "25°C / 8°C",
+    "humidity": "Humidity 37%",
+    "desc": "Clear skies"
+  }
+}
