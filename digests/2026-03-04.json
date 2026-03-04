@@ -1,0 +1,151 @@
+{
+  "date": "2026-03-04",
+  "digest": {
+    "editor_note": "Fellow Humans, the Trump administration's trade agenda is back in the spotlight — the USTR is pushing for deeper foreign tariff cuts, USMCA fixes, and new unfair trade investigations, all one week after the Supreme Court struck down Trump's IEA-based tariffs. Meanwhile, the ECB's Philip Lane offers a more measured read on Europe's resilience, and XRP's billion-token escrow release is moving more capital than most sovereign treasury operations. It's a full morning.",
+    "sentiment": {
+      "label": "Cautious",
+      "position": 42,
+      "context": "Trade policy uncertainty following the Supreme Court tariff ruling, Middle East energy risks, and institutional crypto repositioning collectively keep markets in a watchful holding pattern."
+    },
+    "stories": [
+      {
+        "source": "BusinessLine",
+        "headline": "USTR Pushes Foreign Tariff Cuts, USMCA Overhaul in 2026 Agenda — One Week After Supreme Court Tariff Rebuke",
+        "body": "The US Trade Representative's office released its 2026 Trade Policy Agenda on Monday, pledging to reduce foreign tariffs and non-tariff barriers, enforce reciprocal trade deals, and launch new unfair trade practice investigations. The agenda lands just over a week after the Supreme Court struck down President Trump's tariffs issued under the International Emergency Economic Powers Act — a significant legal constraint on executive trade power. Markets will be watching whether Congress fills that gap or whether the administration finds alternative legal footholds.",
+        "url": "https://www.thehindubusinessline.com/news/world/ustr-to-seek-more-foreign-tariff-cuts-usmca-improvements-china-balance-in-2026/article70697910.ece",
+        "tag": "Trade"
+      },
+      {
+        "source": "Europa.eu",
+        "headline": "ECB's Lane: Europe's Growth Outpaced Expectations, AI and Green Investment Leading the Way",
+        "body": "In a Financial Times interview published March 3, ECB Chief Economist Philip Lane said eurozone growth has broadly met potential, with business investment — particularly in AI and green transition infrastructure — outperforming forecasts and compensating for weak exports. Lane warned that China's competitive rise in technology-intensive sectors is a 'first-order issue' for European industry, a structural headwind that rate cuts alone cannot address. His comments suggest the ECB sees a floor under growth but no catalyst for acceleration without productivity reform.",
+        "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in260303~768fa10188.en.html",
+        "tag": "Macro"
+      },
+      {
+        "source": "Ambcrypto",
+        "headline": "Ripple Releases 1 Billion XRP From Escrow; Derivatives Markets Unmoved",
+        "body": "Ripple's monthly escrow unlock delivered 1 billion XRP into circulation on March 1, with 700 million XRP transferred across structured releases and a concurrent $300 million USDC movement on Ethereum suggesting coordinated institutional liquidity positioning. Despite the scale — cumulative capital flow approaching $1 billion — XRP open interest held near $2.24 billion, the long/short ratio sat at a neutral 1.04, and funding rates barely registered at 0.01%. Spot volumes fell 25% within 24 hours, confirming treasury mechanics rather than speculative pressure.",
+        "url": "https://ambcrypto.com/xrp-news-today-whats-next-as-escrow-unlock-sends-1b-tokens-into-circulation/",
+        "tag": "Markets"
+      },
+      {
+        "source": "The Star Online",
+        "headline": "Malaysia Holds RON95 Petrol at RM1.99 Despite Middle East Disruptions, Maintains 4–4.5% GDP Forecast",
+        "body": "Economy Minister Akmal Nasrullah confirmed Malaysia will keep subsidised RON95 petrol at RM1.99 per litre and sees no basis for drastic policy changes despite Strait of Hormuz tensions pushing global oil prices higher. The government is also holding its 2026 GDP growth forecast at 4.0–4.5%, with any revision to be led by Bank Negara Malaysia. The dual commitment — defending both a consumer fuel subsidy and a growth target — reflects the political sensitivity of energy costs heading into an election cycle.",
+        "url": "https://www.thestar.com.my/news/nation/2026/03/03/govt-to-keep-subsidised-ron95-price-at-rm199-a-litre-no-drastic-changes-planned",
+        "tag": "Energy"
+      },
+      {
+        "source": "CoinDesk",
+        "headline": "NEAR Token Surges 17% on 'Confidential Intents' Launch, Targets Institutional DeFi Flow",
+        "body": "NEAR Protocol's token jumped 17% after its 'Confidential Intents' private execution layer went live, extending a 40% weekly rally and outperforming both the CoinDesk 20 Index and the broader privacy token sector. The feature routes transactions through a private shard on NEAR's mainnet, shielding order size and timing from MEV bots while preserving selective disclosure for compliance — a structure explicitly designed to attract institutional traders wary of transparent on-chain mempool exposure. NEAR's base-layer fees remain thin relative to its roughly $1.8 billion market cap, meaning the rally is a bet on future institutional volume rather than current revenue.",
+        "url": "https://www.coindesk.com/markets/2026/03/02/near-token-jumps-17-after-confidential-intents-launch-outpaces-privacy-tokens-sector",
+        "tag": "Markets"
+      },
+      {
+        "source": "Autocar",
+        "headline": "US Automakers Have Written Off Nearly $40 Billion in EV Investments — But Can't Walk Away",
+        "body": "American car manufacturers have collectively written down close to $40 billion in EV-related investments following regulatory rollbacks that ended Biden-era mandates requiring EVs to comprise 50% of light vehicle sales by 2030. Despite the write-downs, automakers cannot abandon electrification entirely: state-level regulations — particularly in California — and the imperative to compete with Chinese and European rivals in global markets keep EV programs alive. The result is a costly strategic limbo where capital has been destroyed but the strategic direction remains locked in.",
+        "url": "https://www.autocar.co.uk/car-news/business/why-it%E2%80%99s-not-easy-car-makers-us-ditch-electric-cars",
+        "tag": "Macro"
+      },
+      {
+        "source": "WWD",
+        "headline": "Paris Fashion Week Shrinks: 67 Runway Shows vs. 74 Last Season as Small Labels Exit",
+        "body": "The Paris Fashion Week fall 2026 calendar has contracted to 67 runway shows, down from 74 the prior season, as independent and emerging labels drop out under pressure from a shrinking wholesale sector, the Saks Global bankruptcy, and the collapse of e-commerce platforms including Ssense, Matches, and Farfetch. Valentino, Maison Margiela, Thom Browne, and Sacai are among the notable absences, several staging destination shows in Rome, Shanghai, and San Francisco instead. The pullback reflects a structural reset in fashion economics: fewer viable retail channels means fewer reasons to absorb a runway show's cost.",
+        "url": "http://wwd.com/fashion-news/fashion-features/paris-fashion-week-small-brands-skip-runway-1238633192/",
+        "tag": "Markets"
+      }
+    ],
+    "quote": {
+      "text": "The rate of change and the increasing scope of trade policy mean that businesses and investors operate today in a permanent state of uncertainty.",
+      "attribution": "Christine Lagarde, ECB Press Conference, Frankfurt, 2019"
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.74",
+        "change": "▲ 2.5%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,817",
+        "change": "▼ 0.9%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "68,436.26",
+        "change": "▼ 3.0%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.7328",
+        "chg_1d": {
+          "text": "▲ 2.48%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.35%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.5591",
+        "chg_1d": {
+          "text": "▲ 1.59%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 1.38%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "12.9568",
+        "chg_1d": {
+          "text": "▲ 2.37%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.23%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "122.7252",
+        "chg_1d": {
+          "text": "▲ 3.06%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 4.13%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "16°C",
+    "high_low": "25°C / 8°C",
+    "humidity": "Humidity 52%",
+    "desc": "Partly cloudy"
+  }
+}
