@@ -1,0 +1,151 @@
+{
+  "date": "2026-03-05",
+  "digest": {
+    "editor_note": "Fellow Humans, the U.S.-Israel strike on Iran is now five days old, oil is up 11%, gas prices just posted their largest single-day jump in four years, and Wall Street is doing its best impression of a shrug. Markets are not pricing this correctly, or they are and the rest of us are the ones who are wrong — either way, it's an uncomfortable morning to be reading futures.",
+    "sentiment": {
+      "label": "Cautious",
+      "position": 38,
+      "context": "War premium intact in oil, equity futures marginally negative, and the Fed's rate-cut path increasingly hostage to energy-driven inflation — caution is the operative word."
+    },
+    "stories": [
+      {
+        "source": "ABC News",
+        "headline": "Wall Street mixed as Iran war enters Day 5; oil up 11%, Trump floats Navy tanker escorts through Hormuz",
+        "body": "S&P 500 futures fell 0.1% and Dow futures slipped 0.2% early Wednesday as markets absorbed a fifth day of the U.S.-Israel campaign against Iran. U.S. crude steadied at $73.94/barrel and Brent at $81.03, but Mizuho Bank warned the 'war premium remains firmly intact' with insurance costs adding an estimated $5–$15 per barrel to shipping. Analysts flag that sustained energy price pressure could tie the Fed's hands on rate cuts, compressing the equity rebound case.",
+        "url": "https://abcnews.com/Business/wireStory/wall-street-mixed-oil-prices-stabilize-war-iran-130739010",
+        "tag": "Markets"
+      },
+      {
+        "source": "Memeorandum / Business Insider",
+        "headline": "U.S. average gas price posts largest single-day jump in four years",
+        "body": "AAA data shows the national average for regular gasoline rose 9 cents overnight, bringing the weekly gain to 22 cents and the current average to $3.20 per gallon. The spike compounds pre-existing pressure from refiners switching to summer blends and represents a direct consumer-facing transmission of the Iran conflict risk premium. If sustained, the gasoline surge functions as a regressive tax on households and a complicating factor for Fed dovishness.",
+        "url": "https://www.memeorandum.com/260304/p30",
+        "tag": "Energy"
+      },
+      {
+        "source": "Cointelegraph",
+        "headline": "UK House of Lords grills Coinbase on stablecoin bank-run risk and KYC as regulatory race tightens",
+        "body": "Coinbase VP Tom Duff Gordon faced pointed questioning from peers on whether fully reserved stablecoins could trigger a deposit drain from UK banks, arguing fears of disintermediation were 'wildly exaggerated' and that regulated stablecoins are 'safer than uninsured bank deposits.' Innovate Finance's Adam Jackson warned that proposed Bank of England and FCA rules on capital and holding limits risk making the UK 'more prescriptive and less competitive' than MiCA. The session underscores a widening policy gap between the UK's cautious posture and the U.S. GENIUS Act framework that could determine where stablecoin infrastructure gets built.",
+        "url": "https://cointelegraph.com/news/uk-lords-grill-coinbase-over-stablecoins",
+        "tag": "Macro"
+      },
+      {
+        "source": "GlobeNewswire",
+        "headline": "Royal Cup to acquire Farmer Brothers for $1.29/share in all-cash deal, taking FARM private",
+        "body": "Farmer Brothers (NASDAQ: FARM), a 114-year-old national coffee roaster and distributor, has agreed to be acquired by privately held Royal Cup Coffee & Tea in an all-cash transaction at $1.29 per share, with Braemont Capital providing the strategic capital. The combined entity would represent over 250 years of combined industry history with a national direct-store-delivery network serving independent restaurants through large institutional buyers. The deal is expected to close by June 30, 2026, and follows a pattern of consolidation in the foodservice distribution space as margin pressure squeezes smaller public operators.",
+        "url": "https://www.globenewswire.com/news-release/2026/03/04/3249421/14130/en/Farmer-Brothers-to-Be-Acquired-by-Royal-Cup-Creating-a-Scaled-Integrated-Beverage-Solutions-Platform.html",
+        "tag": "Markets"
+      },
+      {
+        "source": "Financial Post",
+        "headline": "Spellbook raises $40M debt facility from RBCx two months after $350M Series B, targeting legal AI acquisitions",
+        "body": "Toronto-based Spellbook, which serves nearly 4,000 law firms across 80 countries, secured a $40M USD debt facility from RBC's innovation banking arm to fund acquisitions as the legal AI market consolidates rapidly. The raise follows a $50M Series B in January that valued the company at $350M post-money, and CEO Scott Stevenson says small legal AI firms are approaching Spellbook for exits 'every few weeks.' The deal signals that debt — not just equity — is now being deployed to finance AI-sector roll-up strategies at scale.",
+        "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/spellbook-secures-40m-usd-debt-financing-from-rbcx-to-support-strategic-acquisitions-in-consolidating-legal-ai-market",
+        "tag": "Markets"
+      },
+      {
+        "source": "MarketBeat",
+        "headline": "Aroundtown reports €288M FFO1 for 2025, resumes dividend after three-year pause as European real estate stabilizes",
+        "body": "Aroundtown (ETR: AT1) posted full-year 2025 FFO1 of €288M, down from €316M in 2024, with higher finance expenses of €243M cited as the primary drag from refinancing at elevated rates. The company recorded a €1.13B reported profit — inflated by €459M in deferred tax income tied to a phased reduction in the German corporate tax rate from 15% to 10% by 2032 — and a €239M goodwill impairment that management said did not affect operating KPIs. EPRA NTA per share rose 5% to €7.8, and the resumption of dividends after a three-year pause signals cautious confidence in the European property cycle turn.",
+        "url": "https://www.marketbeat.com/instant-alerts/aroundtown-q4-earnings-call-highlights-2026-03-04/?utm_source=yahoofinance&utm_medium=yahoofinance",
+        "tag": "Macro"
+      },
+      {
+        "source": "YLE News",
+        "headline": "Finland housing starts set for record low in 2026 as oversupply, high costs, and falling prices stall recovery",
+        "body": "Industry group Rakli forecasts only 15,000–17,000 new apartment units will be started in Finland this year, extending a slump that already hit its lowest level since records began in the late 1960s in 2025. Chief economist Julia Ruotsi cited a toxic combination of housing oversupply, elevated construction costs, and declining prices as the primary brakes on new project launches, particularly in residential. Commercial construction offers a brighter outlook, but the residential data adds to a pattern of uneven European real estate recovery that Aroundtown's own results this morning only partially contradict.",
+        "url": "https://yle.fi/a/74-20213623",
+        "tag": "Macro"
+      }
+    ],
+    "quote": {
+      "text": "The market can remain irrational longer than you can remain solvent.",
+      "attribution": "John Maynard Keynes, A Tract on Monetary Reform, 1923"
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.63",
+        "change": "▼ 0.2%",
+        "direction": "down"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,870",
+        "change": "▼ 0.2%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "70,428.03",
+        "change": "▲ 0.0%",
+        "direction": "up"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.6329",
+        "chg_1d": {
+          "text": "▼ 0.21%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▲ 2.50%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.4677",
+        "chg_1d": {
+          "text": "▼ 0.24%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▲ 0.81%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "12.9261",
+        "chg_1d": {
+          "text": "▲ 0.03%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 2.76%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "121.5030",
+        "chg_1d": {
+          "text": "▼ 0.35%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▲ 3.25%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "13°C",
+    "high_low": "20°C / 12°C",
+    "humidity": "Humidity 71%",
+    "desc": "Partly cloudy"
+  }
+}

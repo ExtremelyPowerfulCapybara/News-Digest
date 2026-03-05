@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell &mdash; March 05, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  /* Header */
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* Ticker */
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  /* Weather */
+  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
+  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
+  .weather-temp { font-size: 11px; color: #ccc; }
+  .weather-humidity { font-size: 11px; color: #ccc; }
+  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+
+  /* Editor note */
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* Divider */
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  /* Sentiment gauge */
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  /* Stories */
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  /* Currency table */
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+  .up   { color: #4a9e6a; font-size: 11px; }
+  .down { color: #b84a3a; font-size: 11px; }
+  .flat { color: #aab4bc; font-size: 11px; }
+
+  /* Quote */
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  /* Week in review */
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  /* Footer */
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  /* ── Mobile ── */
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .tick-label { font-size: 7px; }
+    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
+    .weather-desc { margin-left: 0; width: 100%; }
+    .editor-note { padding: 20px 20px; }
+    .editor-note p { font-size: 14px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .story-headline { font-size: 17px; }
+    .currency { padding: 20px 20px; }
+    .currency-table { font-size: 11px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>THURSDAY, MARCH 05, 2026</span>
+      <span>ISSUE NO. 7</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">USD/MXN</span>
+        <span class="tick-val">17.63</span>
+        <span class="tick-down">▼ 0.2%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">S&P 500</span>
+        <span class="tick-val">6,870</span>
+        <span class="tick-down">▼ 0.2%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">CETES 28D</span>
+        <span class="tick-val">6.81%</span>
+        <span class="tick-up">▲ 0.00pp</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">IPC BMV</span>
+        <span class="tick-val">70,428.03</span>
+        <span class="tick-up">▲ 0.0%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather">
+    <span class="weather-city">Mexico City</span>
+    <span class="weather-temp">20°C / 12°C</span>
+    <span class="weather-humidity">Humidity 71%</span>
+    <span class="weather-desc">Partly cloudy</span>
+  </div>
+
+  <div class="editor-note">
+    <p>Fellow Humans, the U.S.-Israel strike on Iran is now five days old, oil is up 11%, gas prices just posted their largest single-day jump in four years, and Wall Street is doing its best impression of a shrug. Markets are not pricing this correctly, or they are and the rest of us are the ones who are wrong — either way, it's an uncomfortable morning to be reading futures.</p>
+    <div class="editor-sig">&mdash; Ray Tio, Custodian of Forward Guidance and Other Myths</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label">Market Sentiment</span>
+      <span class="sentiment-reading cautious">Cautious</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker cautious" style="left:38%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span>Risk-Off</span><span>Neutral</span><span>Risk-On</span>
+    </div>
+    <div class="sentiment-context">War premium intact in oil, equity futures marginally negative, and the Fed's rate-cut path increasingly hostage to energy-driven inflation — caution is the operative word.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">ABC News</span>
+    <span class="story-tag">Markets</span>
+  </div>
+  <div class="story-headline">Wall Street mixed as Iran war enters Day 5; oil up 11%, Trump floats Navy tanker escorts through Hormuz</div>
+  <div class="story-body">S&P 500 futures fell 0.1% and Dow futures slipped 0.2% early Wednesday as markets absorbed a fifth day of the U.S.-Israel campaign against Iran. U.S. crude steadied at $73.94/barrel and Brent at $81.03, but Mizuho Bank warned the 'war premium remains firmly intact' with insurance costs adding an estimated $5–$15 per barrel to shipping. Analysts flag that sustained energy price pressure could tie the Fed's hands on rate cuts, compressing the equity rebound case.</div>
+  <a href="https://abcnews.com/Business/wireStory/wall-street-mixed-oil-prices-stabilize-war-iran-130739010" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Memeorandum / Business Insider</span>
+    <span class="story-tag">Energy</span>
+  </div>
+  <div class="story-headline">U.S. average gas price posts largest single-day jump in four years</div>
+  <div class="story-body">AAA data shows the national average for regular gasoline rose 9 cents overnight, bringing the weekly gain to 22 cents and the current average to $3.20 per gallon. The spike compounds pre-existing pressure from refiners switching to summer blends and represents a direct consumer-facing transmission of the Iran conflict risk premium. If sustained, the gasoline surge functions as a regressive tax on households and a complicating factor for Fed dovishness.</div>
+  <a href="https://www.memeorandum.com/260304/p30" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Cointelegraph</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="story-headline">UK House of Lords grills Coinbase on stablecoin bank-run risk and KYC as regulatory race tightens</div>
+  <div class="story-body">Coinbase VP Tom Duff Gordon faced pointed questioning from peers on whether fully reserved stablecoins could trigger a deposit drain from UK banks, arguing fears of disintermediation were 'wildly exaggerated' and that regulated stablecoins are 'safer than uninsured bank deposits.' Innovate Finance's Adam Jackson warned that proposed Bank of England and FCA rules on capital and holding limits risk making the UK 'more prescriptive and less competitive' than MiCA. The session underscores a widening policy gap between the UK's cautious posture and the U.S. GENIUS Act framework that could determine where stablecoin infrastructure gets built.</div>
+  <a href="https://cointelegraph.com/news/uk-lords-grill-coinbase-over-stablecoins" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">GlobeNewswire</span>
+    <span class="story-tag">Markets</span>
+  </div>
+  <div class="story-headline">Royal Cup to acquire Farmer Brothers for $1.29/share in all-cash deal, taking FARM private</div>
+  <div class="story-body">Farmer Brothers (NASDAQ: FARM), a 114-year-old national coffee roaster and distributor, has agreed to be acquired by privately held Royal Cup Coffee & Tea in an all-cash transaction at $1.29 per share, with Braemont Capital providing the strategic capital. The combined entity would represent over 250 years of combined industry history with a national direct-store-delivery network serving independent restaurants through large institutional buyers. The deal is expected to close by June 30, 2026, and follows a pattern of consolidation in the foodservice distribution space as margin pressure squeezes smaller public operators.</div>
+  <a href="https://www.globenewswire.com/news-release/2026/03/04/3249421/14130/en/Farmer-Brothers-to-Be-Acquired-by-Royal-Cup-Creating-a-Scaled-Integrated-Beverage-Solutions-Platform.html" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Financial Post</span>
+    <span class="story-tag">Markets</span>
+  </div>
+  <div class="story-headline">Spellbook raises $40M debt facility from RBCx two months after $350M Series B, targeting legal AI acquisitions</div>
+  <div class="story-body">Toronto-based Spellbook, which serves nearly 4,000 law firms across 80 countries, secured a $40M USD debt facility from RBC's innovation banking arm to fund acquisitions as the legal AI market consolidates rapidly. The raise follows a $50M Series B in January that valued the company at $350M post-money, and CEO Scott Stevenson says small legal AI firms are approaching Spellbook for exits 'every few weeks.' The deal signals that debt — not just equity — is now being deployed to finance AI-sector roll-up strategies at scale.</div>
+  <a href="https://financialpost.com/pmn/business-wire-news-releases-pmn/spellbook-secures-40m-usd-debt-financing-from-rbcx-to-support-strategic-acquisitions-in-consolidating-legal-ai-market" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">MarketBeat</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="story-headline">Aroundtown reports €288M FFO1 for 2025, resumes dividend after three-year pause as European real estate stabilizes</div>
+  <div class="story-body">Aroundtown (ETR: AT1) posted full-year 2025 FFO1 of €288M, down from €316M in 2024, with higher finance expenses of €243M cited as the primary drag from refinancing at elevated rates. The company recorded a €1.13B reported profit — inflated by €459M in deferred tax income tied to a phased reduction in the German corporate tax rate from 15% to 10% by 2032 — and a €239M goodwill impairment that management said did not affect operating KPIs. EPRA NTA per share rose 5% to €7.8, and the resumption of dividends after a three-year pause signals cautious confidence in the European property cycle turn.</div>
+  <a href="https://www.marketbeat.com/instant-alerts/aroundtown-q4-earnings-call-highlights-2026-03-04/?utm_source=yahoofinance&utm_medium=yahoofinance" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">YLE News</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="story-headline">Finland housing starts set for record low in 2026 as oversupply, high costs, and falling prices stall recovery</div>
+  <div class="story-body">Industry group Rakli forecasts only 15,000–17,000 new apartment units will be started in Finland this year, extending a slump that already hit its lowest level since records began in the late 1960s in 2025. Chief economist Julia Ruotsi cited a toxic combination of housing oversupply, elevated construction costs, and declining prices as the primary brakes on new project launches, particularly in residential. Commercial construction offers a brighter outlook, but the residential data adds to a pattern of uneven European real estate recovery that Aroundtown's own results this morning only partially contradict.</div>
+  <a href="https://yle.fi/a/74-20213623" class="read-more">Read more &rarr;</a>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="section-title">Currency Table</div>
+    <table class="currency-table">
+      <thead>
+        <tr>
+          <th>Pair</th><th>Rate</th><th style="text-align:right;">Day</th><th style="text-align:right;">Week</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.6329</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.21%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 2.50%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.4677</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.24%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.81%</td>
+      </tr>
+      <tr>
+        <td class="pair">CAD / MXN</td>
+        <td>12.9261</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.03%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 2.76%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>121.5030</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.35%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 3.25%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="quote-text">The market can remain irrational longer than you can remain solvent.</div>
+    <div class="quote-attr">John Maynard Keynes, A Tract on Monetary Reform, 1923</div>
+  </div>
+
+  
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by">by Adrian</span>
+  </div>
+
+</div>
+</body>
+</html>
