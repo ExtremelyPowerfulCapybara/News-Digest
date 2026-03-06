@@ -2,49 +2,133 @@
   "date": "2026-03-06",
   "digest": {
     "es": {
-      "editor_note": "Estimados humanos, el Medio Oriente ha pasado de crisis regional a incendio estructural: Israel amenaza con convertir los suburbios de Beirut en otra Gaza mientras la guerra iniciada contra Irán el sábado pasado no muestra señales de techo. Los mercados globales procesan un escenario que hace apenas dos semanas parecía improbable, y hoy parece inevitable que empeore antes de mejorar.",
+      "editor_note": "Estimados humanos, el petróleo WTI sube casi 9% y el Estrecho de Ormuz está funcionalmente cerrado — bienvenidos al sexto día de una guerra que el mercado todavía no sabe cómo cotizar. Wall Street abre en rojo, la BMV cae casi 3%, y mientras Europa manda fragatas al Mediterráneo con cara de 'estrictamente defensivo', Hezbollah amenaza con abrir un segundo frente. Hemos visto ciclos de geopolítica antes; raramente todos convergían al mismo tiempo.",
       "sentiment": {
         "label_es": "Aversión al Riesgo",
         "label_en": "Risk-Off",
         "position": 18,
-        "context_es": "La escalada militar entre Estados Unidos, Israel e Irán —con Líbano ya dentro del conflicto— empuja a los mercados hacia activos refugio ante una prima de riesgo geopolítico que no se veía en años.",
-        "context_en": "The military escalation between the United States, Israel, and Iran—with Lebanon now drawn into the conflict—is pushing markets toward safe-haven assets amid a geopolitical risk premium not seen in years."
+        "context_es": "La guerra EU-Irán-Israel se amplía hacia Líbano, el Estrecho de Ormuz está prácticamente bloqueado y los mercados globales caen de forma generalizada ante la incertidumbre energética y geopolítica.",
+        "context_en": "The US-Iran-Israel war is spreading toward Lebanon, the Strait of Hormuz is practically blocked, and global markets are falling broadly amid energy and geopolitical uncertainty."
       },
       "stories": [
         {
-          "source": "La Nación",
-          "headline": "Israel amenaza con devastar Dahiyeh como Gaza mientras tropas entran al sur de Líbano",
-          "body": "El ministro de Finanzas israelí Bezalel Smotrich advirtió que los suburbios del sur de Beirut 'se parecerán a Khan Younis' tras una nueva escalada que ya dejó al menos 102 muertos, 638 heridos y más de 500,000 desplazados en Líbano. El Ejército israelí confirmó el ingreso de tropas en varias localidades del sur libanés el miércoles, mientras Hezbollah respondió con ataques al norte de Israel. La guerra, iniciada el sábado con la ofensiva conjunta de EE.UU. e Israel contra Irán —que incluyó la muerte del ayatollah Khamenei—, sigue expandiendo su alcance regional con ataques a instalaciones energéticas en países del Golfo.",
+          "source": "El Financiero",
+          "headline": "Ataque iraní a petrolero dispara el WTI casi 9% y el Estrecho de Ormuz pierde el 95% de su tráfico",
+          "body": "El precio del barril WTI sube 8.29% a 80.85 dólares y el Brent avanza 4.79% a 85.30 dólares, niveles no vistos desde julio de 2024, mientras Irán confirmó el ataque a un petrolero en el Golfo Pérsico. El tráfico marítimo a través del Estrecho de Ormuz —por donde transita el 20% del petróleo mundial— se ha desplomado más del 95%, y China ya ordenó suspender exportaciones de diésel y gasolina. Si se registra un ataque exitoso adicional contra infraestructura energética, analistas advierten que los precios podrían dispararse nuevamente desde niveles ya elevados.",
+          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/precio-del-petroleo-wti-brent-hoy-5-de-marzo-de-2026/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Wall Street abre en rojo: Dow Jones cae 1.61% y la BMV se desploma 2.91% por tensión en Medio Oriente",
+          "body": "El Promedio Industrial Dow Jones retrocedió 1.61% a 47,954 puntos, el S&P 500 cedió 0.56% a 6,830 y el Nasdaq perdió 0.26%, en una sesión dominada por el temor a que el conflicto en Medio Oriente se prolongue y complique la trayectoria de la política monetaria. En México, el S&P/BMV IPC cayó 2.91% a 68,379 enteros, siendo de los índices más golpeados de la jornada. Los índices europeos tampoco escaparon: el DAX alemán y el FTSE MIB italiano cedieron ambos 1.61%.",
+          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/bmv-wall-street-hoy-5-de-marzo-de-2025/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Israel amenaza con devastar Dahiyeh como Gaza y desata pánico y evacuaciones masivas en Beirut",
+          "body": "El ministro de Finanzas israelí Bezalel Smotrich advirtió que el bastión de Hezbollah en el sur de Beirut 'muy pronto se parecerá a Khan Younis', mientras el Ejército israelí ordenó la evacuación inmediata de los suburbios del sur de la capital libanesa. Las autoridades libanesas reportan al menos 102 muertos, 638 heridos y más de 500,000 desplazados desde el inicio de la campaña de bombardeos, con tropas israelíes ya operando en localidades del sur del Líbano. El escalamiento convierte a Líbano en el segundo frente activo de la guerra iniciada el sábado con la ofensiva conjunta estadounidense-israelí contra Irán.",
           "url": "https://www.lanacion.com.ar/el-mundo/israel-advierte-que-el-bastion-de-hezbollah-podria-sufrir-la-devastacion-de-gaza-y-provoca-panico-y-nid05032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Europa despliega cazas y buques al Golfo y al Mediterráneo con postura 'estrictamente defensiva'",
+          "body": "Italia confirmó el envío de sistemas de defensa aérea, equipos antidrones y misiles a países del Golfo Pérsico, mientras España oficializó el despliegue de la fragata Cristóbal Colón al Mediterráneo oriental para unirse al grupo del portaaviones francés Charles de Gaulle. Madrid mantiene su negativa a permitir el uso de las bases de Rota y Morón para ataques contra Irán, una posición que le ha valido amenazas comerciales del presidente Trump. Francia adoptó una posición intermedia: Macron calificó las operaciones iniciales como contrarias al derecho internacional, pero autorizó temporalmente la presencia de aviones estadounidenses en sus bases de la región.",
+          "url": "https://www.lanacion.com.ar/el-mundo/europa-aumenta-su-presencia-militar-y-envia-cazas-y-buques-al-golfo-y-al-mediterraneo-nid05032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "La Asamblea de Expertos de Irán sigue sin elegir sucesor de Khamenei seis días después de su muerte",
+          "body": "El órgano de 88 clérigos chiítas encargado de designar al nuevo líder supremo iraní aún no ha llegado a un acuerdo, complicado por un ataque israelí a su sede principal el martes que mató al menos a tres empleados. Entre los candidatos figura Mojtaba Khamenei, hijo del líder asesinado, considerado cercano a la Guardia Revolucionaria Islámica, que controla hasta el 40% de la economía iraní y ejerce influencia determinante sobre la sucesión. La demora genera presión interna: el exministro Abbas Akhoundi advirtió públicamente que enredarse en la disputa sucesoria es 'precisamente lo que el enemigo quiere'.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/05/por-que-se-retrasa-la-eleccion-del-nuevo-lider-supremo-de-iran-y-quien-es-su-gallo/",
+          "tag": "Política"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Reforma electoral de Sheinbaum llega al Congreso sin votos garantizados: necesita 81 diputados adicionales",
+          "body": "La iniciativa para modificar 11 artículos constitucionales requiere 334 votos de dos terceras partes; Morena cuenta con 253, lo que exige sumar 81 legisladores de otras fuerzas. El Partido del Trabajo —con 49 diputados— rechazó acompañar la reforma al calificarla de 'retroceso', mientras PAN y PRI prometieron cero votos a favor. La presidenta Sheinbaum ya anticipó que tiene un 'plan B' si la reforma no prospera, aunque no detalló en qué consiste.",
+          "url": "https://www.elfinanciero.com.mx/nacional/2026/03/05/no-hay-condiciones-cuantos-votos-necesita-morena-para-aprobar-la-reforma-electoral-de-sheinbaum/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Quiebra de Garbarino: el dueño Carlos Rosales rompe el silencio y culpa al contexto macro y a Fernández",
+          "body": "La cadena argentina de electrodomésticos Garbarino fue declarada en quiebra por el Juzgado Nacional en lo Comercial N°7, iniciando la liquidación de activos que incluyen dos plantas industriales y las marcas Garbarino y Compumundo. Carlos Rosales, quien adquirió la empresa en 2020 'cuando nadie la quiso comprar', señaló que el segundo cierre pandémico de abril de 2021 fue el golpe definitivo tras haber refinanciado cerca de 500 millones de pesos con Santander y Galicia. Rosales quedó inhabilitado por la Justicia para ejercer el comercio.",
+          "url": "https://www.lanacion.com.ar/economia/negocios/quiebra-de-garbarino-carlos-rosales-rompio-el-silencio-y-defendio-su-gestion-nid05032026/",
           "tag": "Macro"
         }
       ],
       "quote": {
-        "text": "Oil prices have historically spiked during Middle East conflicts, but the duration and severity of the shock determines whether it becomes a recession catalyst.",
-        "attribution": "Ben Bernanke, The Courage to Act, 2015"
+        "text": "Oil is like a wild animal. Whoever captures it has it.",
+        "attribution": "J. Paul Getty, How to Be Rich, 1965"
       }
     },
     "en": {
-      "editor_note": "Estimados humanos, the Middle East has moved from regional crisis to structural conflagration: Israel is threatening to turn Beirut's southern suburbs into another Gaza while the war launched against Iran last Saturday shows no signs of a ceiling. Global markets are processing a scenario that two weeks ago seemed unlikely, and today looks certain to get worse before it gets better.",
+      "editor_note": "Estimados humanos, WTI crude is up nearly 9% and the Strait of Hormuz is functionally closed — welcome to day six of a war that markets still don't know how to price. Wall Street opens in the red, Mexico's BMV drops nearly 3%, and while Europe sends frigates to the Mediterranean with its best 'strictly defensive' face, Hezbollah is threatening to open a second front. We've seen geopolitical cycles before; rarely do they all converge at once.",
       "sentiment": {
         "label_es": "Aversión al Riesgo",
         "label_en": "Risk-Off",
         "position": 18,
-        "context_es": "La escalada militar entre Estados Unidos, Israel e Irán —con Líbano ya dentro del conflicto— empuja a los mercados hacia activos refugio ante una prima de riesgo geopolítico que no se veía en años.",
-        "context_en": "The military escalation between the United States, Israel, and Iran—with Lebanon now drawn into the conflict—is pushing markets toward safe-haven assets amid a geopolitical risk premium not seen in years."
+        "context_es": "La guerra EU-Irán-Israel se amplía hacia Líbano, el Estrecho de Ormuz está prácticamente bloqueado y los mercados globales caen de forma generalizada ante la incertidumbre energética y geopolítica.",
+        "context_en": "The US-Iran-Israel war is spreading toward Lebanon, the Strait of Hormuz is practically blocked, and global markets are falling broadly amid energy and geopolitical uncertainty."
       },
       "stories": [
         {
-          "source": "La Nación",
-          "headline": "Israel Threatens to Devastate Dahiyeh Like Gaza as Troops Enter Southern Lebanon",
-          "body": "Israeli Finance Minister Bezalel Smotrich warned that Beirut's southern suburbs 'will look like Khan Younis' in the latest escalation, which has already left at least 102 dead, 638 wounded, and more than 500,000 displaced in Lebanon. The Israeli military confirmed troop incursions into several southern Lebanese towns on Wednesday, while Hezbollah responded with strikes on northern Israel. The war, launched Saturday with the joint U.S.-Israeli offensive against Iran—which included the death of Ayatollah Khamenei—continues to expand its regional reach with attacks on energy infrastructure in Gulf states.",
+          "source": "El Financiero",
+          "headline": "Iranian attack on tanker sends WTI up nearly 9% as Strait of Hormuz loses 95% of traffic",
+          "body": "WTI crude surged 8.29% to $80.85 per barrel and Brent advanced 4.79% to $85.30, levels not seen since July 2024, after Iran confirmed an attack on a tanker in the Persian Gulf. Maritime traffic through the Strait of Hormuz — through which 20% of the world's oil flows — has collapsed by more than 95%, and China has already ordered a suspension of diesel and gasoline exports. Analysts warn that any additional successful strike on energy infrastructure could send prices surging again from already elevated levels.",
+          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/precio-del-petroleo-wti-brent-hoy-5-de-marzo-de-2026/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Wall Street opens in the red: Dow Jones falls 1.61% and Mexico's BMV plunges 2.91% on Middle East tensions",
+          "body": "The Dow Jones Industrial Average fell 1.61% to 47,954 points, the S&P 500 lost 0.56% to 6,830, and the Nasdaq shed 0.26%, in a session dominated by fears that the Middle East conflict will persist and complicate the path of monetary policy. In Mexico, the S&P/BMV IPC dropped 2.91% to 68,379 points, among the worst-performing indexes of the day. European markets also declined: Germany's DAX and Italy's FTSE MIB each fell 1.61%.",
+          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/bmv-wall-street-hoy-5-de-marzo-de-2025/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Israel threatens to devastate Dahiyeh like Gaza, triggering panic and mass evacuations in Beirut",
+          "body": "Israeli Finance Minister Bezalel Smotrich warned that Hezbollah's stronghold in south Beirut 'will very soon look like Khan Younis,' as the Israeli army ordered the immediate evacuation of southern Beirut suburbs. Lebanese authorities report at least 102 dead, 638 wounded, and more than 500,000 displaced since the start of the Israeli bombing campaign, with Israeli troops already operating inside southern Lebanese towns. The escalation turns Lebanon into the second active front of the war launched Saturday with the US-Israeli offensive against Iran.",
           "url": "https://www.lanacion.com.ar/el-mundo/israel-advierte-que-el-bastion-de-hezbollah-podria-sufrir-la-devastacion-de-gaza-y-provoca-panico-y-nid05032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Europe deploys jets and warships to the Gulf and Mediterranean under a 'strictly defensive' posture",
+          "body": "Italy confirmed the dispatch of air defense systems, anti-drone equipment, and missiles to Persian Gulf countries, while Spain officially deployed the frigate Cristóbal Colón to the eastern Mediterranean to join the French carrier Charles de Gaulle group. Madrid is holding firm against allowing US use of the Rota and Morón bases for strikes on Iran, a stance that has drawn trade threats from President Trump. France took an intermediate position: Macron called the initial operations a violation of international law, but temporarily authorized US aircraft at French bases in the region.",
+          "url": "https://www.lanacion.com.ar/el-mundo/europa-aumenta-su-presencia-militar-y-envia-cazas-y-buques-al-golfo-y-al-mediterraneo-nid05032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Iran's Assembly of Experts still has not chosen Khamenei's successor six days after his death",
+          "body": "The 88-member body of Shia clerics tasked with naming a new supreme leader has yet to reach a decision, complicated by an Israeli airstrike on its headquarters Tuesday that killed at least three administrative staff. Among the candidates is Mojtaba Khamenei, the assassinated leader's son, considered close to the Islamic Revolutionary Guard Corps, which controls up to 40% of Iran's economy and holds decisive influence over the succession. The delay is generating internal pressure: former minister Abbas Akhoundi publicly warned that getting entangled in the succession dispute is 'precisely what the enemy wants.'",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/05/por-que-se-retrasa-la-eleccion-del-nuevo-lider-supremo-de-iran-y-quien-es-su-gallo/",
+          "tag": "Política"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Sheinbaum's electoral reform reaches Congress without guaranteed votes: needs 81 additional lawmakers",
+          "body": "The initiative to amend 11 constitutional articles requires 334 votes — two-thirds of Congress — but Morena holds only 253 seats, meaning it must attract 81 legislators from other parties. The Labor Party, with 49 deputies, rejected backing the reform, calling it a 'step backward,' while PAN and PRI pledged zero votes in favor. President Sheinbaum has already signaled she has a 'Plan B' if the reform fails, though she did not elaborate on what it entails.",
+          "url": "https://www.elfinanciero.com.mx/nacional/2026/03/05/no-hay-condiciones-cuantos-votos-necesita-morena-para-aprobar-la-reforma-electoral-de-sheinbaum/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Garbarino bankruptcy: owner Carlos Rosales breaks silence and blames macroeconomic context and Fernández government",
+          "body": "Argentine electronics chain Garbarino was declared bankrupt by Commercial Court No. 7, initiating the liquidation of assets including two industrial plants and the Garbarino and Compumundo brands. Carlos Rosales, who acquired the company in 2020 'when nobody wanted to buy it,' said the second pandemic lockdown of April 2021 was the killing blow after the company had refinanced roughly 500 million pesos with Santander and Galicia. Rosales has been judicially barred from engaging in commercial activity.",
+          "url": "https://www.lanacion.com.ar/economia/negocios/quiebra-de-garbarino-carlos-rosales-rompio-el-silencio-y-defendio-su-gestion-nid05032026/",
           "tag": "Macro"
         }
       ],
       "quote": {
-        "text": "Oil prices have historically spiked during Middle East conflicts, but the duration and severity of the shock determines whether it becomes a recession catalyst.",
-        "attribution": "Ben Bernanke, The Courage to Act, 2015"
+        "text": "Oil is like a wild animal. Whoever captures it has it.",
+        "attribution": "J. Paul Getty, How to Be Rich, 1965"
       }
     }
   },
@@ -52,14 +136,14 @@
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.79",
-        "change": "▲ 1.1%",
+        "value": "17.81",
+        "change": "▲ 1.2%",
         "direction": "up"
       },
       {
         "label": "S&P 500",
-        "value": "6,758",
-        "change": "▼ 1.6%",
+        "value": "6,751",
+        "change": "▼ 1.7%",
         "direction": "down"
       },
       {
@@ -70,57 +154,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "67,646.95",
-        "change": "▼ 1.1%",
+        "value": "67,722.39",
+        "change": "▼ 1.0%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.7945",
+        "rate": "17.8102",
         "chg_1d": {
-          "text": "▲ 1.14%",
+          "text": "▲ 1.23%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.76%",
+          "text": "▲ 2.85%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.6439",
+        "rate": "20.6477",
         "chg_1d": {
-          "text": "▲ 0.85%",
+          "text": "▲ 0.87%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 1.38%",
+          "text": "▲ 1.40%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "13.0934",
+        "rate": "13.1033",
         "chg_1d": {
-          "text": "▲ 1.54%",
+          "text": "▲ 1.62%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.35%",
+          "text": "▲ 3.43%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "122.7109",
+        "rate": "122.8191",
         "chg_1d": {
-          "text": "▲ 1.13%",
+          "text": "▲ 1.22%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.33%",
+          "text": "▲ 3.42%",
           "cls": "chg-up"
         }
       }
