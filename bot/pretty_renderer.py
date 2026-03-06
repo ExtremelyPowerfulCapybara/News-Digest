@@ -7,6 +7,7 @@
 
 from datetime import date, timedelta
 from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE
+from archive import GITHUB_PAGES_URL
 
 CSS = """
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -233,13 +234,15 @@ def build_pretty_html(
   </div>
 </div>"""
 
+    # Wordcloud — use full hosted URL so it works in both dev and production
     wordcloud_html = ""
     if wordcloud_filename:
+        wordcloud_url = f"{GITHUB_PAGES_URL}{wordcloud_filename}"
         wordcloud_html = f"""
 {DIVIDER}
 <div style="padding:24px 48px 8px;">
   <div class="section-title">La Semana en Palabras</div>
-  <img src="wordcloud/{wordcloud_filename}" style="width:100%; border:1px solid #cdd4d9;" alt="Nube de palabras"/>
+  <img src="{wordcloud_url}" style="width:100%; border:1px solid #cdd4d9;" alt="Nube de palabras"/>
 </div>"""
 
     return f"""<!DOCTYPE html>
