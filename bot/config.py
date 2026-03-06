@@ -88,6 +88,32 @@ LANGUAGE               = "es"
 MAX_ARTICLES_PER_TOPIC = 5
 MAX_ARTICLE_CHARS      = 3000
 
+# ── Domain allowlist ─────────────────────────
+# NewsAPI accepts up to 20 domains as a comma-separated string.
+# Only articles from these outlets will be fetched.
+NEWS_DOMAINS = [
+    # Primary: LatAm & Mexico financial
+    "bloomberglinea.com",
+    "elfinanciero.com.mx",
+    "eleconomista.com.mx",
+    "expansion.mx",
+    # Primary: Global Spanish financial
+    "elpais.com",
+    "cincodias.elpais.com",
+    "ambito.com",
+    # Primary: Wire services
+    "reuters.com",
+    "apnews.com",
+    # Secondary: Regional depth
+    "infobae.com",
+    "lanacion.com.ar",
+    "eluniversal.com.mx",
+    # Secondary: English signal layer
+    "ft.com",
+    "wsj.com",
+]
+NEWS_DOMAINS_STR = ",".join(NEWS_DOMAINS)
+
 # ── Market tickers (Yahoo Finance symbols) ────
 TICKER_SYMBOLS = [
     ("USD/MXN",   "MXN=X"),
