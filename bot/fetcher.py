@@ -13,7 +13,6 @@ from config import (
 
 def fetch_news() -> list[dict]:
     seen_urls    = set()
-    source_count = {}   # tracks how many articles we've kept per source domain
     all_articles = []
 
     for topic in TOPICS:
@@ -25,12 +24,14 @@ def fetch_news() -> list[dict]:
             f"&domains={NEWS_DOMAINS_STR}"
             f"&apiKey={NEWS_API_KEY}"
         )
-        print(f"  [fetcher] Filtering to {len(NEWS_DOMAINS_STR.split(','))} whitelisted domains")
         try:
             data = requests.get(url, timeout=10).json()
         except Exception as e:
             print(f"  [fetcher] Error: {e}")
             continue
+
+        # ── Per-source cap is per topic loop, not global ──
+        topic_source_count = {}
 
         for a in data.get("articles", []):
             article_url = a.get("url", "")
@@ -38,25 +39,28 @@ def fetch_news() -> list[dict]:
                 continue
             if "[Removed]" in a.get("title", ""):
                 continue
-            seen_urls.add(article_url)
 
-            # ── Per-source cap ────────────────────────────
             source_name = a.get("source", {}).get("name", "Unknown")
-            if source_count.get(source_name, 0) >= MAX_ARTICLES_PER_SOURCE:
+            if topic_source_count.get(source_name, 0) >= MAX_ARTICLES_PER_SOURCE:
                 continue
+
+            seen_urls.add(article_url)
 
             full_text = scrape_article(article_url, max_chars=MAX_ARTICLE_CHARS)
             content   = full_text if full_text else a.get("description", "")
             if not content:
                 continue
 
-            source_count[source_name] = source_count.get(source_name, 0) + 1
+            topic_source_count[source_name] = topic_source_count.get(source_name, 0) + 1
             all_articles.append({
                 "title":   a.get("title", "").strip(),
                 "content": content,
-                "source":  a.get("source", {}).get("name", "Unknown"),
+                "source":  source_name,
                 "url":     article_url,
             })
 
-    print(f"  [fetcher] {len(all_articles)} articles collected")
+        topic_sources = list(topic_source_count.keys())
+        print(f"  [fetcher] '{topic}': {sum(topic_source_count.values())} articles from {len(topic_sources)} sources: {topic_sources}")
+
+    print(f"  [fetcher] {len(all_articles)} articles collected total")
     return all_articles
