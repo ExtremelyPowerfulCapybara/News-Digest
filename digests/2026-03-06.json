@@ -1,0 +1,151 @@
+{
+  "date": "2026-03-06",
+  "digest": {
+    "editor_note": "Fellow Humans, the Iran war is now doing what wars do to energy markets — it's pushing gas prices up, squeezing small businesses already battered by tariffs, and sending Bitcoin into a short-squeeze whipsaw that briefly looked like recovery. The dominant story today is not any single asset class but the cascade: conflict hits oil, oil hits margins, margins hit Main Street, and leveraged crypto traders get caught in the crossfire.",
+    "sentiment": {
+      "label": "Cautious",
+      "position": 38,
+      "context": "Iran war escalation is lifting energy prices and hammering small business margins, while crypto markets show tentative stabilization after a geopolitical-driven flush — net picture is cautious with downside risks dominant."
+    },
+    "stories": [
+      {
+        "source": "CNN",
+        "headline": "Iran War Pushes Gas to $3.25/Gallon, Diesel Up 11% in a Week — Small Businesses Squeezed",
+        "body": "Average U.S. gas prices hit $3.25 a gallon, up 36 cents from last month, while diesel surged 11% week-over-week to $4.16 — a direct consequence of supply disruptions tied to the U.S.-Israel strikes on Iran. Small businesses, already reporting their weakest revenue and hiring expectations since 2020 per a Federal Reserve study released this week, are absorbing the double hit of tariff-driven input costs and now fuel price spikes. For delivery-dependent operators, margin compression is acute and price increases to consumers are increasingly unavoidable.",
+        "url": "https://www.cnn.com/2026/03/05/business/small-business-gas-prices-iran",
+        "tag": "Energy"
+      },
+      {
+        "source": "New York Magazine",
+        "headline": "Prediction Market Trader Made $553K Betting on Khamenei's Ouster — Before the Strike",
+        "body": "A Polymarket account under the username 'Magamyman' netted over $553,000 betting that Iran's Supreme Leader Ali Khamenei would be out of power — placed just before an Israeli strike killed him on Saturday. The platform, advised by Donald Trump Jr., is now facing pointed questions about whether trades were placed on material non-public information, a legal grey zone prediction markets have so far navigated by sidestepping securities law classifications. Hundreds of millions of dollars were wagered across Iran-related markets in the days preceding the strikes.",
+        "url": "http://nymag.com/intelligencer/article/is-it-illegal-to-bet-on-inside-info-about-the-iran-war.html",
+        "tag": "Politics"
+      },
+      {
+        "source": "AMBCrypto",
+        "headline": "Bitcoin Short Squeeze Wipes $272M in Positions as BTC Rebounds Above $73K",
+        "body": "Bitcoin dropped to the $63,000 zone as Iran-driven geopolitical fear collapsed open interest from ~$29B to ~$21B, flushing leveraged longs. The subsequent stabilization and rebound above $73,000 triggered a sharp short squeeze, with $272M in short positions liquidated and total crypto liquidations hitting $587.97M in 24 hours. Altcoins followed with Solana +9%, Chainlink +7%, and Hyperliquid +12% over seven days — though the Coinbase Premium Index's prior deep negative readings suggest U.S. spot demand remains structurally cautious.",
+        "url": "https://ambcrypto.com/bitcoin-shorts-lose-272m-could-btc-recovery-spark-altcoin-rally/",
+        "tag": "Markets"
+      },
+      {
+        "source": "Economic Times (Times of India)",
+        "headline": "China's 15th Five-Year Plan Bets on Tech Over Consumption Amid Deepening Economic Imbalances",
+        "body": "Beijing's new quinquennial plan doubles down on technology as the primary growth engine, explicitly deprioritizing domestic consumption despite well-documented structural imbalances in the Chinese economy. The strategy reflects a political calculation that self-sufficiency in advanced technology — driven in part by U.S. export restrictions — matters more than rebalancing household demand. With the U.S.-China tech race now framed as existential by both sides, the plan accelerates a bifurcation of global technology supply chains that carries long-term implications for multinational earnings and trade flows.",
+        "url": "https://economictimes.indiatimes.com/tech/technology/china-ramps-up-high-stakes-tech-race-with-us-as-economic-imbalances-deepen/articleshow/129089392.cms",
+        "tag": "Trade"
+      },
+      {
+        "source": "SiliconANGLE",
+        "headline": "Evervault Raises $25M Series B to Encrypt Payment Data at Point of Collection",
+        "body": "Evervault, backed by Ribbit Capital, Sequoia, and Index Ventures, has raised $25M to scale its payment data encryption platform that ensures sensitive card data never exists in plaintext — on any server, including the merchant's. The company uses AWS Nitro Enclaves and a dual-custody key model via Shamir's Secret Sharing, and claims clients can reduce their PCI DSS compliance scope to its simplest tier, saving roughly $100,000 annually. With payment fraud losses running into the tens of billions globally, the infrastructure-layer approach to eliminating plaintext data exposure is gaining traction with regulated financial institutions.",
+        "url": "https://siliconangle.com/2026/03/05/evervault-raises-25m-scale-secure-default-approach-payment-data-encryption/",
+        "tag": "Markets"
+      },
+      {
+        "source": "Financial Post / GlobeNewswire",
+        "headline": "Colliers Names New Global CFO and CIO as Veteran CEO McLernon Retires After 40 Years",
+        "body": "Colliers (NASDAQ/TSX: CIGI) has appointed Christian Mayer as Global CFO & CEO of Commercial Real Estate and Elias Mulamoottil as Global CIO & CEO of Engineering, effective immediately, as part of a planned leadership transition. The moves come alongside the pending close of the Ayesa acquisition, which will push Colliers Engineering to over 13,000 professionals across 20+ countries. Long-tenured CEO of Real Estate Services Chris McLernon will retire at end of April after nearly 40 years — a generational handoff at one of the world's largest diversified real estate and infrastructure services firms.",
+        "url": "https://financialpost.com/globe-newswire/colliers-appoints-christian-mayer-and-elias-mulamoottil-to-expanded-global-leadership-roles",
+        "tag": "Markets"
+      },
+      {
+        "source": "Capital Clean Energy Carriers (GlobeNewswire)",
+        "headline": "LNG Shipper CCEC Orders Three More Carriers, Accelerates Exit from Container Shipping",
+        "body": "Capital Clean Energy Carriers Corp. (NASDAQ: CCEC) reported Q4 2025 results highlighting continued execution of its pivot to LNG transportation, with three additional latest-technology LNG carriers ordered for 2028-2029 delivery and the sale of another Neo-Panamax container vessel completed. CEO Jerry Kalogiratos positioned the company as the largest U.S.-listed LNG shipping firm, with contracted cash flows underwriting the orderbook. The Iran conflict and associated energy supply disruptions add a near-term demand tailwind to LNG shipping rates that CCEC's contracted fleet structure is positioned to capture.",
+        "url": "https://www.globenewswire.com/news-release/2026/03/05/3249985/20327/en/Capital-Clean-Energy-Carriers-Corp-Announces-Fourth-Quarter-2025-Financial-Results.html",
+        "tag": "Energy"
+      }
+    ],
+    "quote": {
+      "text": "War is God's way of teaching Americans geography — and, I would add, oil market dynamics.",
+      "attribution": "Ambrose Bierce, The Devil's Dictionary, 1906"
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.83",
+        "change": "▲ 1.4%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,831",
+        "change": "▲ 0.2%",
+        "direction": "up"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "68,379.42",
+        "change": "▼ 2.9%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.8351",
+        "chg_1d": {
+          "text": "▲ 1.38%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 2.99%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.6241",
+        "chg_1d": {
+          "text": "▲ 0.75%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 1.28%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "13.0475",
+        "chg_1d": {
+          "text": "▲ 1.19%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 2.99%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "123.1353",
+        "chg_1d": {
+          "text": "▲ 1.48%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.69%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "10°C",
+    "high_low": "22°C / 9°C",
+    "humidity": "Humidity 69%",
+    "desc": "Clear skies"
+  }
+}
