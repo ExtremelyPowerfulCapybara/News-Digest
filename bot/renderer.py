@@ -6,7 +6,7 @@
 
 from datetime import date, timedelta
 from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE
-from config import GITHUB_PAGES_URL
+from config import GITHUB_PAGES_URL, ASSET_BASE_URL
 
 # ── Shared style constants ────────────────────
 BG_OUTER   = "#dde3e8"
@@ -360,7 +360,7 @@ def build_html(
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_quote(quote)}</td></tr>
         {'<tr><td>' + week_html + '</td></tr>' if week_html else ''}
-        {'<tr><td><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 48px 8px;"><p style="margin:0 0 14px 0; font-family:Arial,sans-serif; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc;">La Semana en Palabras</p><img src="' + GITHUB_PAGES_URL + wordcloud_filename + '" width="504" style="width:100%; max-width:504px; display:block;" alt=""/></td></tr></table></td></tr>' if wordcloud_filename else ''}
+        {'<tr><td><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 48px 8px;"><p style="margin:0 0 14px 0; font-family:Arial,sans-serif; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc;">La Semana en Palabras</p><img src="' + ASSET_BASE_URL.rstrip("/") + "/" + wordcloud_filename + '" width="504" style="width:100%; max-width:504px; display:block;" alt=""/></td></tr></table></td></tr>' if wordcloud_filename else ''}
         <tr><td>{_footer(today_iso, author)}</td></tr>
       </table>
     </td>
