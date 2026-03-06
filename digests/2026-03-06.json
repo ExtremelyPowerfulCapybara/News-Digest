@@ -2,77 +2,91 @@
   "date": "2026-03-06",
   "digest": {
     "es": {
-      "editor_note": "Estimados humanos, arrancamos la semana con Medio Oriente en llamas — literalmente — mientras Israel amenaza con convertir Beirut sur en el próximo Gaza y la sucesión del liderazgo iraní se debate entre clérigos octogenarios bajo fuego aéreo. Los mercados tienen motivos de sobra para estar nerviosos, aunque sospecho que algunos operadores aún están procesando que el ayatollah Khamenei ya no está en el organigrama.",
+      "editor_note": "Estimados humanos, el conflicto entre Estados Unidos, Israel e Irán continúa expandiéndose con una velocidad que debería inquietar a cualquier gestor de riesgo que aún no haya actualizado sus modelos. Israel amenaza ahora con convertir los suburbios de Beirut en otra Gaza mientras Irán busca sucesor para Khamenei en medio de bombardeos — una combinación de vacío de poder y escalada militar que los mercados de energía y los activos de refugio están procesando con la seriedad del caso.",
       "sentiment": {
         "label_es": "Aversión al Riesgo",
         "label_en": "Risk-Off",
-        "position": 22,
-        "context_es": "La escalada militar entre EE.UU., Israel e Irán — con Líbano ya arrastrado al conflicto — genera aversión al riesgo pronunciada, presionando activos emergentes y energía al alza.",
-        "context_en": "The military escalation between the U.S., Israel, and Iran — with Lebanon now drawn into the conflict — is driving pronounced risk aversion, pressuring emerging-market assets and pushing energy prices higher."
+        "position": 18,
+        "context_es": "La escalada militar simultánea en Irán, Israel y Líbano, combinada con la incertidumbre sobre la sucesión del liderazgo iraní, genera un entorno de máxima aversión al riesgo geopolítico.",
+        "context_en": "Simultaneous military escalation across Iran, Israel and Lebanon, combined with uncertainty over Iran's leadership succession, creates a maximum geopolitical risk-off environment."
       },
       "stories": [
         {
           "source": "La Nación",
-          "headline": "Israel amenaza con devastar el bastión de Hezbollah en Beirut al estilo Gaza; 500,000 desplazados en Líbano",
-          "body": "El ministro de Finanzas israelí Bezalel Smotrich advirtió que los suburbios del sur de Beirut, conocidos como Dahiyeh, podrían correr la misma suerte que Khan Younis en Gaza. El Ejército israelí ya ingresó a localidades del sur del Líbano y los bombardeos han dejado al menos 102 muertos, 638 heridos y más de 500,000 desplazados. La escalada se produce tras los ataques de Hezbollah del lunes, lanzados en represalia por la muerte del ayatollah Khamenei durante la ofensiva conjunta EE.UU.-Israel contra Irán.",
+          "headline": "Israel amenaza con devastar Beirut como Gaza y desata pánico masivo en el Líbano",
+          "body": "El ministro de Finanzas israelí Bezalel Smotrich advirtió que los suburbios del sur de Beirut —bastión de Hezbollah— podrían sufrir una destrucción comparable a la de Khan Younis en Gaza. El Ejército israelí ordenó evacuaciones inmediatas en la zona sur de la capital libanesa, desencadenando escenas de pánico y atascos masivos; las autoridades locales reportan al menos 102 muertos, 638 heridos y más de 500.000 desplazados desde el inicio de la ofensiva. El conflicto, iniciado el sábado con el ataque conjunto de EE.UU. e Israel contra Irán, se amplía aceleradamente hacia un frente libanés que el mercado de energía y los activos de refugio ya están descontando.",
           "url": "https://www.lanacion.com.ar/el-mundo/israel-advierte-que-el-bastion-de-hezbollah-podria-sufrir-la-devastacion-de-gaza-y-provoca-panico-y-nid05032026/",
           "tag": "Macro"
         },
         {
           "source": "El Financiero",
-          "headline": "La sucesión del liderazgo supremo iraní se retrasa seis días bajo presión de la guerra y divisiones internas",
-          "body": "La Asamblea de Expertos de Irán, compuesta por 88 clérigos chiítas — muchos de entre 80 y 90 años — no ha logrado nombrar al sucesor de Khamenei seis días después de su asesinato, un proceso que en 1989 tomó apenas 24 horas. Israel bombardeó la sede principal de la asamblea el martes, matando al menos a tres empleados. El hijo de Khamenei, Mojtaba, emerge como candidato con vínculos estrechos a la Guardia Revolucionaria, que controla hasta el 40% de la economía iraní, lo que hace que la decisión tenga implicaciones financieras y geopolíticas de primer orden.",
+          "headline": "La sucesión de Khamenei se complica: divisiones internas y la sombra de la Guardia Revolucionaria",
+          "body": "La Asamblea de Expertos de Irán —88 clérigos chiitas, muchos entre 80 y 90 años— no ha podido designar al sucesor de Khamenei seis días después de su muerte, mientras Israel destruyó parte de la sede del organismo en un ataque aéreo el martes. El hijo de Khamenei, Mojtaba, figura como candidato principal con fuertes vínculos con la Guardia Revolucionaria, que controla hasta el 40% de la economía iraní y un vasto imperio de inversiones que se extiende de Teherán a Dubái y Fráncfort. El vacío de poder en Teherán añade una capa de incertidumbre estratégica que ningún modelo de riesgo político estaba calibrado para absorber en este plazo.",
           "url": "https://www.elfinanciero.com.mx/mundo/2026/03/05/por-que-se-retrasa-la-eleccion-del-nuevo-lider-supremo-de-iran-y-quien-es-su-gallo/",
           "tag": "Política"
         },
         {
+          "source": "La Nación",
+          "headline": "Gonzalo Hevia Baillères, el empresario mexicano de IA y logística confirmado como pareja de Emma Watson",
+          "body": "La actriz Emma Watson fue fotografiada junto al empresario mexicano Gonzalo Hevia Baillères en un aeropuerto, confirmando un romance que circulaba desde diciembre en medios especializados. Hevia Baillères es fundador y CEO de HBeyond, firma de inversión con presencia en Nueva York, Miami y Ciudad de México enfocada en tecnologías transformadoras, además de haber fundado INSAITE —una compañía de inteligencia artificial— y Lok, la red de smart lockers más grande de América Latina. Pertenece a una de las familias empresariales más influyentes de México, lo que convierte esta aparición pública en un evento con resonancia tanto en el ecosistema de capital de riesgo latinoamericano como en la prensa de espectáculos.",
+          "url": "https://www.lanacion.com.ar/espectaculos/personajes/emma-watson-confirma-su-romance-con-gonzalo-hevia-bailleres-quien-es-el-nuevo-novio-de-la-actriz-nid05032026/",
+          "tag": "México"
+        },
+        {
           "source": "El Financiero",
-          "headline": "El 'efecto Ikea' en las finanzas: por qué seguimos aferrados a inversiones que ya no rinden",
-          "body": "La economía conductual documenta que las personas sobrevaloран aquello en lo que invirtieron esfuerzo propio — un fenómeno que en inversiones se traduce en mantener posiciones perdedoras por ego y en sostener negocios no rentables porque cerrarlos se vive como derrota personal. El antídoto propuesto es separar identidad y resultado: el aprendizaje tiene valor, la decisión inicial ya no. En entornos de alta volatilidad geopolítica como el actual, este sesgo puede resultar particularmente costoso.",
+          "headline": "El 'efecto Ikea' en las finanzas: cómo el esfuerzo distorsiona el valor que asignamos a nuestras inversiones",
+          "body": "La economía conductual documenta que los inversores tienden a sobrevalorar activos en los que invirtieron tiempo y esfuerzo —negocios no rentables, instrumentos investigados a fondo, posiciones que se mantienen por orgullo más que por lógica financiera. El antídoto propuesto es separar la identidad personal del resultado de la decisión, reconociendo que el aprendizaje tiene valor aunque el activo no lo tenga. El mismo mecanismo psicológico, si se canaliza hacia hábitos como presupuestar o registrar gastos, puede convertirse en un aliado en lugar de un lastre.",
           "url": "https://www.elfinanciero.com.mx/opinion/alberto-tovar/2026/03/05/el-efecto-ikea-en-tus-decisiones-financieras/",
           "tag": "Mercados"
         }
       ],
       "quote": {
-        "text": "The market can remain irrational longer than you can remain solvent.",
+        "text": "The market can stay irrational longer than you can stay solvent.",
         "attribution": "John Maynard Keynes, atribuido, circa 1930s"
       }
     },
     "en": {
-      "editor_note": "Estimados humanos, we begin the week with the Middle East literally on fire — Israel is threatening to turn south Beirut into the next Gaza while Iran's clerical succession debate unfolds under airstrikes, with octogenarian ayatollahs dodging Israeli bombs between ballots. Markets have every reason to be on edge, though I suspect some traders are still processing the fact that Khamenei is no longer on the org chart.",
+      "editor_note": "Estimados humanos, the conflict between the United States, Israel, and Iran continues to expand at a pace that should alarm any risk manager who hasn't yet updated their models. Israel is now threatening to turn Beirut's suburbs into another Gaza while Iran searches for a successor to Khamenei amid ongoing bombardment — a combination of power vacuum and military escalation that energy markets and safe-haven assets are processing with appropriate gravity.",
       "sentiment": {
         "label_es": "Aversión al Riesgo",
         "label_en": "Risk-Off",
-        "position": 22,
-        "context_es": "La escalada militar entre EE.UU., Israel e Irán — con Líbano ya arrastrado al conflicto — genera aversión al riesgo pronunciada, presionando activos emergentes y energía al alza.",
-        "context_en": "The military escalation between the U.S., Israel, and Iran — with Lebanon now drawn into the conflict — is driving pronounced risk aversion, pressuring emerging-market assets and pushing energy prices higher."
+        "position": 18,
+        "context_es": "La escalada militar simultánea en Irán, Israel y Líbano, combinada con la incertidumbre sobre la sucesión del liderazgo iraní, genera un entorno de máxima aversión al riesgo geopolítico.",
+        "context_en": "Simultaneous military escalation across Iran, Israel and Lebanon, combined with uncertainty over Iran's leadership succession, creates a maximum geopolitical risk-off environment."
       },
       "stories": [
         {
           "source": "La Nación",
-          "headline": "Israel threatens to devastate Hezbollah's Beirut stronghold Gaza-style; 500,000 displaced in Lebanon",
-          "body": "Israeli Finance Minister Bezalel Smotrich warned that south Beirut's suburbs, known as Dahiyeh, could face the same fate as Khan Younis in Gaza. The Israeli army has already entered towns in southern Lebanon, and the bombardment campaign has left at least 102 dead, 638 wounded, and more than 500,000 displaced. The escalation follows Hezbollah's Monday attacks, launched in retaliation for Ayatollah Khamenei's death during the joint U.S.-Israel offensive against Iran.",
+          "headline": "Israel threatens to devastate Beirut like Gaza, sparking mass panic across Lebanon",
+          "body": "Israeli Finance Minister Bezalel Smotrich warned that the southern suburbs of Beirut — Hezbollah's main stronghold — could face destruction comparable to that of Khan Younis in Gaza. The Israeli military ordered immediate evacuations in the area, triggering scenes of panic and massive traffic jams; local authorities report at least 102 dead, 638 injured, and over 500,000 displaced since the offensive began. The conflict, initiated Saturday with the joint U.S.-Israeli strike on Iran, is accelerating rapidly toward a Lebanese front that energy markets and safe-haven assets are already pricing in.",
           "url": "https://www.lanacion.com.ar/el-mundo/israel-advierte-que-el-bastion-de-hezbollah-podria-sufrir-la-devastacion-de-gaza-y-provoca-panico-y-nid05032026/",
           "tag": "Macro"
         },
         {
           "source": "El Financiero",
-          "headline": "Iran's supreme leadership succession stalls six days into the war amid internal divisions and airstrikes",
-          "body": "Iran's Assembly of Experts — 88 Shia clerics, many in their 80s and 90s — has failed to name a successor to Khamenei six days after his assassination, a process that took just 24 hours in 1989. Israel bombed the assembly's main headquarters on Tuesday, killing at least three administrative staff. Khamenei's son Mojtaba is emerging as a leading candidate with close ties to the Revolutionary Guard, which controls up to 40% of Iran's economy, making the outcome a matter of major financial and geopolitical consequence.",
+          "headline": "Khamenei's succession stalls: internal divisions and the shadow of the Revolutionary Guard",
+          "body": "Iran's Assembly of Experts — 88 Shia clerics, many aged between 80 and 90 — has failed to designate Khamenei's successor six days after his death, while Israel destroyed part of the body's headquarters in an airstrike on Tuesday. Khamenei's son Mojtaba is the leading candidate, with strong ties to the Revolutionary Guard, which controls up to 40% of Iran's economy and a vast investment empire stretching from Tehran to Dubai and Frankfurt. The power vacuum in Tehran adds a layer of strategic uncertainty that no political risk model was calibrated to absorb on this timeline.",
           "url": "https://www.elfinanciero.com.mx/mundo/2026/03/05/por-que-se-retrasa-la-eleccion-del-nuevo-lider-supremo-de-iran-y-quien-es-su-gallo/",
           "tag": "Política"
         },
         {
+          "source": "La Nación",
+          "headline": "Gonzalo Hevia Baillères, Mexican AI and logistics entrepreneur, confirmed as Emma Watson's partner",
+          "body": "Actress Emma Watson was photographed alongside Mexican businessman Gonzalo Hevia Baillères at an airport, confirming a romance that had been circulating in specialized media since December. Hevia Baillères is founder and CEO of HBeyond, an investment firm with offices in New York, Miami, and Mexico City focused on transformative technologies, and previously founded INSAITE — an artificial intelligence company — and Lok, Latin America's largest smart locker network. He belongs to one of Mexico's most influential business families, making this public appearance an event with resonance both in the Latin American venture capital ecosystem and the entertainment press.",
+          "url": "https://www.lanacion.com.ar/espectaculos/personajes/emma-watson-confirma-su-romance-con-gonzalo-hevia-bailleres-quien-es-el-nuevo-novio-de-la-actriz-nid05032026/",
+          "tag": "México"
+        },
+        {
           "source": "El Financiero",
-          "headline": "The 'Ikea Effect' in finance: why we keep clinging to investments that no longer deliver",
-          "body": "Behavioral economics documents that people systematically overvalue things they've built themselves — a bias that in investing translates to holding losing positions out of ego and sustaining unprofitable businesses because closing them feels like personal defeat. The proposed antidote is to separate identity from outcome: the learning retains value, the original decision does not. In high-volatility geopolitical environments like the current one, this cognitive bias can prove particularly expensive.",
+          "headline": "The 'Ikea Effect' in finance: how effort distorts the value we assign to our investments",
+          "body": "Behavioral economics documents that investors tend to overvalue assets in which they have invested time and effort — unprofitable businesses, heavily researched instruments, positions held out of pride rather than financial logic. The proposed antidote is to separate personal identity from the outcome of the decision, recognizing that the learning retains value even when the asset does not. The same psychological mechanism, if channeled toward habits like budgeting or expense tracking, can become an ally rather than a liability.",
           "url": "https://www.elfinanciero.com.mx/opinion/alberto-tovar/2026/03/05/el-efecto-ikea-en-tus-decisiones-financieras/",
           "tag": "Mercados"
         }
       ],
       "quote": {
-        "text": "The market can remain irrational longer than you can remain solvent.",
-        "attribution": "John Maynard Keynes, attributed, circa 1930s"
+        "text": "The market can stay irrational longer than you can stay solvent.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
       }
     }
   },
@@ -86,7 +100,7 @@
       },
       {
         "label": "S&P 500",
-        "value": "6,759",
+        "value": "6,758",
         "change": "▼ 1.6%",
         "direction": "down"
       },
@@ -98,7 +112,7 @@
       },
       {
         "label": "IPC BMV",
-        "value": "67,712.61",
+        "value": "67,701.60",
         "change": "▼ 1.0%",
         "direction": "down"
       }
@@ -106,49 +120,49 @@
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.7887",
+        "rate": "17.7894",
         "chg_1d": {
-          "text": "▲ 1.11%",
+          "text": "▲ 1.12%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.72%",
+          "text": "▲ 2.73%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.6362",
+        "rate": "20.6384",
         "chg_1d": {
-          "text": "▲ 0.81%",
+          "text": "▲ 0.82%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 1.34%",
+          "text": "▲ 1.35%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "13.0894",
+        "rate": "13.0938",
         "chg_1d": {
-          "text": "▲ 1.51%",
+          "text": "▲ 1.55%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.32%",
+          "text": "▲ 3.36%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "122.6854",
+        "rate": "122.6757",
         "chg_1d": {
-          "text": "▲ 1.11%",
+          "text": "▲ 1.10%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.31%",
+          "text": "▲ 3.30%",
           "cls": "chg-up"
         }
       }
