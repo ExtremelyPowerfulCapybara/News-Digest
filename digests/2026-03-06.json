@@ -2,133 +2,133 @@
   "date": "2026-03-06",
   "digest": {
     "es": {
-      "editor_note": "Estimados humanos, el petróleo WTI sube casi 9% y el Estrecho de Ormuz está funcionalmente cerrado — bienvenidos al sexto día de una guerra que el mercado todavía no sabe cómo cotizar. Wall Street abre en rojo, la BMV cae casi 3%, y mientras Europa manda fragatas al Mediterráneo con cara de 'estrictamente defensivo', Hezbollah amenaza con abrir un segundo frente. Hemos visto ciclos de geopolítica antes; raramente todos convergían al mismo tiempo.",
+      "editor_note": "Estimados humanos, el mundo amanece con una guerra en Irán que está reescribiendo las reglas del juego financiero, geopolítico y energético simultáneamente — una combinación que los mercados detestan con razón. El Ibex 35 ha perdido 70.000 millones en capitalización, las hipotecas estadounidenses vuelven a subir y España se encuentra en el centro de una tormenta diplomática que Washington amenaza con convertir en una comercial. Como siempre, la crisis llega en racimo.",
       "sentiment": {
         "label_es": "Aversión al Riesgo",
         "label_en": "Risk-Off",
-        "position": 18,
-        "context_es": "La guerra EU-Irán-Israel se amplía hacia Líbano, el Estrecho de Ormuz está prácticamente bloqueado y los mercados globales caen de forma generalizada ante la incertidumbre energética y geopolítica.",
-        "context_en": "The US-Iran-Israel war is spreading toward Lebanon, the Strait of Hormuz is practically blocked, and global markets are falling broadly amid energy and geopolitical uncertainty."
+        "position": 22,
+        "context_es": "La guerra con Irán presiona el petróleo, dispara los rendimientos de bonos y desata fricciones geopolíticas que amenazan el comercio global.",
+        "context_en": "The war with Iran is pressuring oil prices, pushing bond yields higher, and triggering geopolitical frictions that threaten global trade."
       },
       "stories": [
         {
-          "source": "El Financiero",
-          "headline": "Ataque iraní a petrolero dispara el WTI casi 9% y el Estrecho de Ormuz pierde el 95% de su tráfico",
-          "body": "El precio del barril WTI sube 8.29% a 80.85 dólares y el Brent avanza 4.79% a 85.30 dólares, niveles no vistos desde julio de 2024, mientras Irán confirmó el ataque a un petrolero en el Golfo Pérsico. El tráfico marítimo a través del Estrecho de Ormuz —por donde transita el 20% del petróleo mundial— se ha desplomado más del 95%, y China ya ordenó suspender exportaciones de diésel y gasolina. Si se registra un ataque exitoso adicional contra infraestructura energética, analistas advierten que los precios podrían dispararse nuevamente desde niveles ya elevados.",
-          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/precio-del-petroleo-wti-brent-hoy-5-de-marzo-de-2026/",
-          "tag": "Energía"
-        },
-        {
-          "source": "El Financiero",
-          "headline": "Wall Street abre en rojo: Dow Jones cae 1.61% y la BMV se desploma 2.91% por tensión en Medio Oriente",
-          "body": "El Promedio Industrial Dow Jones retrocedió 1.61% a 47,954 puntos, el S&P 500 cedió 0.56% a 6,830 y el Nasdaq perdió 0.26%, en una sesión dominada por el temor a que el conflicto en Medio Oriente se prolongue y complique la trayectoria de la política monetaria. En México, el S&P/BMV IPC cayó 2.91% a 68,379 enteros, siendo de los índices más golpeados de la jornada. Los índices europeos tampoco escaparon: el DAX alemán y el FTSE MIB italiano cedieron ambos 1.61%.",
-          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/bmv-wall-street-hoy-5-de-marzo-de-2025/",
+          "source": "El Español / Invertia",
+          "headline": "La guerra en Irán borra 70.000 millones del Ibex 35 y lo convierte en uno de los más golpeados de Europa",
+          "body": "El selectivo español encadena dos desplomes, un rebote incompleto y otra caída, acumulando una pérdida superior al 6% desde que estalló el conflicto con Irán. La exposición de España al riesgo geopolítico se amplifica por su negativa a ceder las bases de Rota y Morón, lo que ha abierto un frente comercial con Washington. Los inversores están votando con los pies, y el mensaje es inequívoco.",
+          "url": "https://www.elespanol.com/invertia/mercados/20260305/guerra-iran-borra-millones-ibex-convierte-bolsa-espanola-castigadas-europa/1003744155808_0.html",
           "tag": "Mercados"
         },
         {
-          "source": "La Nacion",
-          "headline": "Israel amenaza con devastar Dahiyeh como Gaza y desata pánico y evacuaciones masivas en Beirut",
-          "body": "El ministro de Finanzas israelí Bezalel Smotrich advirtió que el bastión de Hezbollah en el sur de Beirut 'muy pronto se parecerá a Khan Younis', mientras el Ejército israelí ordenó la evacuación inmediata de los suburbios del sur de la capital libanesa. Las autoridades libanesas reportan al menos 102 muertos, 638 heridos y más de 500,000 desplazados desde el inicio de la campaña de bombardeos, con tropas israelíes ya operando en localidades del sur del Líbano. El escalamiento convierte a Líbano en el segundo frente activo de la guerra iniciada el sábado con la ofensiva conjunta estadounidense-israelí contra Irán.",
-          "url": "https://www.lanacion.com.ar/el-mundo/israel-advierte-que-el-bastion-de-hezbollah-podria-sufrir-la-devastacion-de-gaza-y-provoca-panico-y-nid05032026/",
-          "tag": "Macro"
+          "source": "Boston Herald",
+          "headline": "Hipotecas a 30 años en EE.UU. suben a 6% al romperse tres semanas de descenso por alza del petróleo ligada a Irán",
+          "body": "La tasa referencial de hipotecas fijas a 30 años subió de 5,98% a 6% según Freddie Mac, poniendo fin a la primera lectura por debajo de ese umbral desde septiembre de 2022. El rendimiento del bono del Tesoro a 10 años escaló a 4,14% desde alrededor de 4% una semana atrás, impulsado por el repunte del crudo. El economista Joel Berner de Realtor.com advirtió que la desinflación necesaria para que las tasas sigan bajando «puede ser difícil de materializarse» si el conflicto iraní sigue encareciendo el transporte y la energía.",
+          "url": "https://www.bostonherald.com/2026/03/05/tasa-hipotecaria-promedio-a-largo-plazo-en-eeuu-sube-a-6-y-corta-racha-de-3-semanas/",
+          "tag": "Tasas"
         },
         {
-          "source": "La Nacion",
-          "headline": "Europa despliega cazas y buques al Golfo y al Mediterráneo con postura 'estrictamente defensiva'",
-          "body": "Italia confirmó el envío de sistemas de defensa aérea, equipos antidrones y misiles a países del Golfo Pérsico, mientras España oficializó el despliegue de la fragata Cristóbal Colón al Mediterráneo oriental para unirse al grupo del portaaviones francés Charles de Gaulle. Madrid mantiene su negativa a permitir el uso de las bases de Rota y Morón para ataques contra Irán, una posición que le ha valido amenazas comerciales del presidente Trump. Francia adoptó una posición intermedia: Macron calificó las operaciones iniciales como contrarias al derecho internacional, pero autorizó temporalmente la presencia de aviones estadounidenses en sus bases de la región.",
-          "url": "https://www.lanacion.com.ar/el-mundo/europa-aumenta-su-presencia-militar-y-envia-cazas-y-buques-al-golfo-y-al-mediterraneo-nid05032026/",
-          "tag": "Macro"
-        },
-        {
-          "source": "El Financiero",
-          "headline": "La Asamblea de Expertos de Irán sigue sin elegir sucesor de Khamenei seis días después de su muerte",
-          "body": "El órgano de 88 clérigos chiítas encargado de designar al nuevo líder supremo iraní aún no ha llegado a un acuerdo, complicado por un ataque israelí a su sede principal el martes que mató al menos a tres empleados. Entre los candidatos figura Mojtaba Khamenei, hijo del líder asesinado, considerado cercano a la Guardia Revolucionaria Islámica, que controla hasta el 40% de la economía iraní y ejerce influencia determinante sobre la sucesión. La demora genera presión interna: el exministro Abbas Akhoundi advirtió públicamente que enredarse en la disputa sucesoria es 'precisamente lo que el enemigo quiere'.",
-          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/05/por-que-se-retrasa-la-eleccion-del-nuevo-lider-supremo-de-iran-y-quien-es-su-gallo/",
+          "source": "HuffPost España",
+          "headline": "Israel acusa a España de «juego incomprensible» e incumplimiento de la OTAN por no apoyar la campaña contra Irán",
+          "body": "El presidente israelí Isaac Herzog afirmó que España «no solo incumple su papel como miembro de la OTAN y de la UE, sino que está jugando un juego extraño e incomprensible», tras la negativa de Madrid a autorizar el uso de las bases de Rota y Morón para operaciones militares contra Teherán. La ministra de Defensa Margarita Robles reiteró que «un dirigente político no puede imponer que otros países intervengan contra el ordenamiento jurídico internacional». Trump ya ha amenazado con cortar «todo comercio con España», lo que, sumado al desplome del Ibex, convierte esta postura en la apuesta geopolítica más cara del año para el gobierno de Sánchez.",
+          "url": "https://www.huffingtonpost.es/global/israeldice-espana-esta-jugando-juego-incomprensible-e-incumple-otan-f202603.html",
           "tag": "Política"
         },
         {
-          "source": "El Financiero",
-          "headline": "Reforma electoral de Sheinbaum llega al Congreso sin votos garantizados: necesita 81 diputados adicionales",
-          "body": "La iniciativa para modificar 11 artículos constitucionales requiere 334 votos de dos terceras partes; Morena cuenta con 253, lo que exige sumar 81 legisladores de otras fuerzas. El Partido del Trabajo —con 49 diputados— rechazó acompañar la reforma al calificarla de 'retroceso', mientras PAN y PRI prometieron cero votos a favor. La presidenta Sheinbaum ya anticipó que tiene un 'plan B' si la reforma no prospera, aunque no detalló en qué consiste.",
-          "url": "https://www.elfinanciero.com.mx/nacional/2026/03/05/no-hay-condiciones-cuantos-votos-necesita-morena-para-aprobar-la-reforma-electoral-de-sheinbaum/",
-          "tag": "México"
+          "source": "La Voz de Galicia",
+          "headline": "España activa protocolo de crisis: el Gobierno prepara escudo social ante posible impacto económico del conflicto iraní",
+          "body": "La vicepresidenta Yolanda Díaz se reunió con los agentes sociales — CC.OO., UGT y CEOE — para anticipar medidas laborales si la guerra de Irán golpea la economía española, incluyendo ERTEs, el mecanismo RED y posibles controles de precios energéticos. El gobierno acordó «monitorizar» el impacto y volver a reunirse la semana próxima. La empresarial andaluza CEA, por su parte, pidió «diplomacia inteligente» y coordinación con la UE, alertando sobre los efectos en exportaciones agroalimentarias — aceite de oliva, vino — ante la posible disrupción de rutas de transporte.",
+          "url": "https://www.lavozdegalicia.es/noticia/economia/2026/03/06/gobierno-anuncia-usara-escudo-social-ultimas-crisis-conflicto-iran-exige/0003_202603G6P7994.htm",
+          "tag": "Macro"
         },
         {
-          "source": "La Nacion",
-          "headline": "Quiebra de Garbarino: el dueño Carlos Rosales rompe el silencio y culpa al contexto macro y a Fernández",
-          "body": "La cadena argentina de electrodomésticos Garbarino fue declarada en quiebra por el Juzgado Nacional en lo Comercial N°7, iniciando la liquidación de activos que incluyen dos plantas industriales y las marcas Garbarino y Compumundo. Carlos Rosales, quien adquirió la empresa en 2020 'cuando nadie la quiso comprar', señaló que el segundo cierre pandémico de abril de 2021 fue el golpe definitivo tras haber refinanciado cerca de 500 millones de pesos con Santander y Galicia. Rosales quedó inhabilitado por la Justicia para ejercer el comercio.",
-          "url": "https://www.lanacion.com.ar/economia/negocios/quiebra-de-garbarino-carlos-rosales-rompio-el-silencio-y-defendio-su-gestion-nid05032026/",
-          "tag": "Macro"
+          "source": "Montevideo Portal",
+          "headline": "Trump destituye a Kristi Noem como secretaria de Seguridad Nacional; la reemplazará el senador Mullin el 31 de marzo",
+          "body": "El presidente Donald Trump anunció el cese de Noem vía Truth Social, designando al senador republicano Markwayne Mullin como sucesor. La destitución se produce en medio de cuestionamientos por la adjudicación sin licitación de un contrato publicitario de 220 millones de dólares a una entidad vinculada al marido de la ex portavoz del DHS, y tras la muerte de dos ciudadanos estadounidenses durante operativos migratorios en Minnesota. Noem recibe el consolation prize de «emisaria especial» para América Latina.",
+          "url": "https://www.montevideo.com.uy/Noticias/Donald-Trump-destituyo-a-Kristi-Noem-como-secretaria-de-Seguridad-Nacional-uc955007",
+          "tag": "Política"
+        },
+        {
+          "source": "CriptoNoticias",
+          "headline": "ICE — dueño de la NYSE — invierte en OKX a valuación de 25.000 millones; token OKB sube 40%",
+          "body": "Intercontinental Exchange anunció una inversión estratégica en el exchange de criptomonedas OKX, obteniendo un asiento en su directorio y la licencia para lanzar futuros de criptomonedas regulados en EE.UU. usando precios spot de OKX. A cambio, OKX podría ofrecer acceso a futuros de ICE y a «acciones tokenizadas» del NYSE a sus más de 120 millones de cuentas globales. El anuncio disparó el token OKB hasta un 40% en su pico — una señal de que los mercados de activos digitales leen esto como un paso institucional relevante, independientemente del ruido macro.",
+          "url": "https://www.criptonoticias.com/mercados/token-okb-sube-inversion-okx/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "Diario Motor",
+          "headline": "Toyota y Stellantis abandonan el pool de emisiones con Tesla, recortando una fuente de ingresos que ya caía 28%",
+          "body": "Ambos fabricantes presentaron ante la UE su salida del acuerdo de compensación de emisiones con Tesla, argumentando que pueden cumplir los objetivos europeos de CO₂ por cuenta propia gracias a su expansión en híbridos enchufables y eléctricos. Tesla ingresó 1.993 millones de dólares por créditos de emisiones en 2025 — ya un 28% menos que en 2024 — y esta salida reduce aún más ese flujo, que actualmente representa el 2% de sus ingresos totales de 94.827 millones. El pool rump seguirá con Ford, Honda, Mazda y Suzuki; dinero casi gratis, pero cada vez menos.",
+          "url": "https://www.diariomotor.com/noticia/toyota-stellantis-abandonan-pool-emisiones-tesla/",
+          "tag": "Comercio"
         }
       ],
       "quote": {
-        "text": "Oil is like a wild animal. Whoever captures it has it.",
-        "attribution": "J. Paul Getty, How to Be Rich, 1965"
+        "text": "Markets can remain irrational longer than you can remain solvent.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
       }
     },
     "en": {
-      "editor_note": "Estimados humanos, WTI crude is up nearly 9% and the Strait of Hormuz is functionally closed — welcome to day six of a war that markets still don't know how to price. Wall Street opens in the red, Mexico's BMV drops nearly 3%, and while Europe sends frigates to the Mediterranean with its best 'strictly defensive' face, Hezbollah is threatening to open a second front. We've seen geopolitical cycles before; rarely do they all converge at once.",
+      "editor_note": "Estimados humanos, the world wakes up to a war with Iran rewriting the rules of finance, geopolitics, and energy all at once — a combination markets despise for good reason. Spain's Ibex 35 has shed €70 billion in market cap, U.S. mortgage rates are climbing again, and Spain finds itself at the center of a diplomatic storm Washington is threatening to turn into a trade war. As always, crisis arrives in clusters.",
       "sentiment": {
         "label_es": "Aversión al Riesgo",
         "label_en": "Risk-Off",
-        "position": 18,
-        "context_es": "La guerra EU-Irán-Israel se amplía hacia Líbano, el Estrecho de Ormuz está prácticamente bloqueado y los mercados globales caen de forma generalizada ante la incertidumbre energética y geopolítica.",
-        "context_en": "The US-Iran-Israel war is spreading toward Lebanon, the Strait of Hormuz is practically blocked, and global markets are falling broadly amid energy and geopolitical uncertainty."
+        "position": 22,
+        "context_es": "La guerra con Irán presiona el petróleo, dispara los rendimientos de bonos y desata fricciones geopolíticas que amenazan el comercio global.",
+        "context_en": "The war with Iran is pressuring oil prices, pushing bond yields higher, and triggering geopolitical frictions that threaten global trade."
       },
       "stories": [
         {
-          "source": "El Financiero",
-          "headline": "Iranian attack on tanker sends WTI up nearly 9% as Strait of Hormuz loses 95% of traffic",
-          "body": "WTI crude surged 8.29% to $80.85 per barrel and Brent advanced 4.79% to $85.30, levels not seen since July 2024, after Iran confirmed an attack on a tanker in the Persian Gulf. Maritime traffic through the Strait of Hormuz — through which 20% of the world's oil flows — has collapsed by more than 95%, and China has already ordered a suspension of diesel and gasoline exports. Analysts warn that any additional successful strike on energy infrastructure could send prices surging again from already elevated levels.",
-          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/precio-del-petroleo-wti-brent-hoy-5-de-marzo-de-2026/",
-          "tag": "Energía"
-        },
-        {
-          "source": "El Financiero",
-          "headline": "Wall Street opens in the red: Dow Jones falls 1.61% and Mexico's BMV plunges 2.91% on Middle East tensions",
-          "body": "The Dow Jones Industrial Average fell 1.61% to 47,954 points, the S&P 500 lost 0.56% to 6,830, and the Nasdaq shed 0.26%, in a session dominated by fears that the Middle East conflict will persist and complicate the path of monetary policy. In Mexico, the S&P/BMV IPC dropped 2.91% to 68,379 points, among the worst-performing indexes of the day. European markets also declined: Germany's DAX and Italy's FTSE MIB each fell 1.61%.",
-          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/bmv-wall-street-hoy-5-de-marzo-de-2025/",
+          "source": "El Español / Invertia",
+          "headline": "Iran war wipes €70 billion from Spain's Ibex 35, making it one of Europe's worst-performing markets",
+          "body": "Spain's benchmark index has strung together two sharp selloffs, an incomplete rebound, and another drop, accumulating losses exceeding 6% since the Iran conflict erupted. Spain's geopolitical risk exposure is amplified by its refusal to grant use of the Rota and Morón bases, which has opened a trade front with Washington. Investors are voting with their feet, and the message is unambiguous.",
+          "url": "https://www.elespanol.com/invertia/mercados/20260305/guerra-iran-borra-millones-ibex-convierte-bolsa-espanola-castigadas-europa/1003744155808_0.html",
           "tag": "Mercados"
         },
         {
-          "source": "La Nacion",
-          "headline": "Israel threatens to devastate Dahiyeh like Gaza, triggering panic and mass evacuations in Beirut",
-          "body": "Israeli Finance Minister Bezalel Smotrich warned that Hezbollah's stronghold in south Beirut 'will very soon look like Khan Younis,' as the Israeli army ordered the immediate evacuation of southern Beirut suburbs. Lebanese authorities report at least 102 dead, 638 wounded, and more than 500,000 displaced since the start of the Israeli bombing campaign, with Israeli troops already operating inside southern Lebanese towns. The escalation turns Lebanon into the second active front of the war launched Saturday with the US-Israeli offensive against Iran.",
-          "url": "https://www.lanacion.com.ar/el-mundo/israel-advierte-que-el-bastion-de-hezbollah-podria-sufrir-la-devastacion-de-gaza-y-provoca-panico-y-nid05032026/",
-          "tag": "Macro"
+          "source": "Boston Herald",
+          "headline": "U.S. 30-year mortgage rate climbs back to 6%, snapping three-week decline as Iran conflict lifts oil prices",
+          "body": "The benchmark 30-year fixed mortgage rate rose from 5.98% to 6% according to Freddie Mac, ending the first reading below that threshold since September 2022. The 10-year Treasury yield climbed to 4.14% from around 4% a week earlier, driven by the crude oil rally. Realtor.com chief economist Joel Berner warned that the disinflation needed for rates to keep falling «may be difficult to materialize» if the Iran conflict continues to push energy and shipping costs higher.",
+          "url": "https://www.bostonherald.com/2026/03/05/tasa-hipotecaria-promedio-a-largo-plazo-en-eeuu-sube-a-6-y-corta-racha-de-3-semanas/",
+          "tag": "Tasas"
         },
         {
-          "source": "La Nacion",
-          "headline": "Europe deploys jets and warships to the Gulf and Mediterranean under a 'strictly defensive' posture",
-          "body": "Italy confirmed the dispatch of air defense systems, anti-drone equipment, and missiles to Persian Gulf countries, while Spain officially deployed the frigate Cristóbal Colón to the eastern Mediterranean to join the French carrier Charles de Gaulle group. Madrid is holding firm against allowing US use of the Rota and Morón bases for strikes on Iran, a stance that has drawn trade threats from President Trump. France took an intermediate position: Macron called the initial operations a violation of international law, but temporarily authorized US aircraft at French bases in the region.",
-          "url": "https://www.lanacion.com.ar/el-mundo/europa-aumenta-su-presencia-militar-y-envia-cazas-y-buques-al-golfo-y-al-mediterraneo-nid05032026/",
-          "tag": "Macro"
-        },
-        {
-          "source": "El Financiero",
-          "headline": "Iran's Assembly of Experts still has not chosen Khamenei's successor six days after his death",
-          "body": "The 88-member body of Shia clerics tasked with naming a new supreme leader has yet to reach a decision, complicated by an Israeli airstrike on its headquarters Tuesday that killed at least three administrative staff. Among the candidates is Mojtaba Khamenei, the assassinated leader's son, considered close to the Islamic Revolutionary Guard Corps, which controls up to 40% of Iran's economy and holds decisive influence over the succession. The delay is generating internal pressure: former minister Abbas Akhoundi publicly warned that getting entangled in the succession dispute is 'precisely what the enemy wants.'",
-          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/05/por-que-se-retrasa-la-eleccion-del-nuevo-lider-supremo-de-iran-y-quien-es-su-gallo/",
+          "source": "HuffPost España",
+          "headline": "Israel accuses Spain of playing an 'incomprehensible game' and failing its NATO obligations over Iran stance",
+          "body": "Israeli President Isaac Herzog stated that Spain «not only fails its role as a NATO and EU member, but is playing a strange and incomprehensible game,» following Madrid's refusal to authorize use of the Rota and Morón bases for military operations against Tehran. Defense Minister Margarita Robles reiterated that «a political leader cannot impose that other countries intervene against international law.» Trump has already threatened to cut «all trade with Spain,» making this geopolitical stance the most expensive bet of the year for the Sánchez government.",
+          "url": "https://www.huffingtonpost.es/global/israeldice-espana-esta-jugando-juego-incomprensible-e-incumple-otan-f202603.html",
           "tag": "Política"
         },
         {
-          "source": "El Financiero",
-          "headline": "Sheinbaum's electoral reform reaches Congress without guaranteed votes: needs 81 additional lawmakers",
-          "body": "The initiative to amend 11 constitutional articles requires 334 votes — two-thirds of Congress — but Morena holds only 253 seats, meaning it must attract 81 legislators from other parties. The Labor Party, with 49 deputies, rejected backing the reform, calling it a 'step backward,' while PAN and PRI pledged zero votes in favor. President Sheinbaum has already signaled she has a 'Plan B' if the reform fails, though she did not elaborate on what it entails.",
-          "url": "https://www.elfinanciero.com.mx/nacional/2026/03/05/no-hay-condiciones-cuantos-votos-necesita-morena-para-aprobar-la-reforma-electoral-de-sheinbaum/",
-          "tag": "México"
+          "source": "La Voz de Galicia",
+          "headline": "Spain activates crisis protocol: government prepares social shield against potential economic fallout from Iran conflict",
+          "body": "Deputy Prime Minister Yolanda Díaz met with social partners — CC.OO., UGT, and CEOE — to pre-position labor measures should the Iran war hit the Spanish economy, including short-time work schemes, the RED mechanism, and potential energy price controls. The government agreed to «monitor» the impact and reconvene next week. The Andalusian business confederation CEA called for «smart diplomacy» and EU coordination, warning of disruptions to agri-food exports — olive oil, wine — if transport routes are affected.",
+          "url": "https://www.lavozdegalicia.es/noticia/economia/2026/03/06/gobierno-anuncia-usara-escudo-social-ultimas-crisis-conflicto-iran-exige/0003_202603G6P7994.htm",
+          "tag": "Macro"
         },
         {
-          "source": "La Nacion",
-          "headline": "Garbarino bankruptcy: owner Carlos Rosales breaks silence and blames macroeconomic context and Fernández government",
-          "body": "Argentine electronics chain Garbarino was declared bankrupt by Commercial Court No. 7, initiating the liquidation of assets including two industrial plants and the Garbarino and Compumundo brands. Carlos Rosales, who acquired the company in 2020 'when nobody wanted to buy it,' said the second pandemic lockdown of April 2021 was the killing blow after the company had refinanced roughly 500 million pesos with Santander and Galicia. Rosales has been judicially barred from engaging in commercial activity.",
-          "url": "https://www.lanacion.com.ar/economia/negocios/quiebra-de-garbarino-carlos-rosales-rompio-el-silencio-y-defendio-su-gestion-nid05032026/",
-          "tag": "Macro"
+          "source": "Montevideo Portal",
+          "headline": "Trump fires Kristi Noem as Homeland Security Secretary; Senator Mullin to replace her on March 31",
+          "body": "President Donald Trump announced Noem's dismissal via Truth Social, naming Republican Senator Markwayne Mullin as her successor. The firing comes amid scrutiny over a $220 million no-bid advertising contract awarded to an entity linked to the husband of DHS's former spokeswoman, and following the deaths of two U.S. citizens during immigration enforcement operations in Minnesota. Noem receives the consolation prize of «special envoy» for Latin America.",
+          "url": "https://www.montevideo.com.uy/Noticias/Donald-Trump-destituyo-a-Kristi-Noem-como-secretaria-de-Seguridad-Nacional-uc955007",
+          "tag": "Política"
+        },
+        {
+          "source": "CriptoNoticias",
+          "headline": "NYSE owner ICE invests in OKX at $25 billion valuation; OKB token surges 40%",
+          "body": "Intercontinental Exchange announced a strategic investment in crypto exchange OKX, securing a board seat and a license to launch regulated crypto futures in the U.S. using OKX spot prices. In return, OKX may offer access to ICE futures and NYSE «tokenized stocks» to its 120-million-plus global accounts. The announcement sent the OKB utility token up as much as 40% at its peak — a signal that digital asset markets read this as a meaningful institutional step, regardless of the macro noise.",
+          "url": "https://www.criptonoticias.com/mercados/token-okb-sube-inversion-okx/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "Diario Motor",
+          "headline": "Toyota and Stellantis exit Tesla emissions pool, cutting a revenue stream already down 28%",
+          "body": "Both automakers filed notice with the EU of their withdrawal from Tesla's CO₂ credit-pooling arrangement, arguing they can now meet European emissions targets independently through their expanding plug-in hybrid and EV lineups. Tesla collected $1.993 billion in emissions credits in 2025 — already 28% less than in 2024 — and this exit trims that flow further, even as it now represents just 2% of Tesla's $94.827 billion in total revenue. The rump pool will continue with Ford, Honda, Mazda, and Suzuki; nearly free money, but an increasingly smaller check.",
+          "url": "https://www.diariomotor.com/noticia/toyota-stellantis-abandonan-pool-emisiones-tesla/",
+          "tag": "Comercio"
         }
       ],
       "quote": {
-        "text": "Oil is like a wild animal. Whoever captures it has it.",
-        "attribution": "J. Paul Getty, How to Be Rich, 1965"
+        "text": "Markets can remain irrational longer than you can remain solvent.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
       }
     }
   },
@@ -142,7 +142,7 @@
       },
       {
         "label": "S&P 500",
-        "value": "6,751",
+        "value": "6,754",
         "change": "▼ 1.7%",
         "direction": "down"
       },
@@ -154,7 +154,7 @@
       },
       {
         "label": "IPC BMV",
-        "value": "67,722.39",
+        "value": "67,698.60",
         "change": "▼ 1.0%",
         "direction": "down"
       }
@@ -162,49 +162,49 @@
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.8102",
+        "rate": "17.8065",
         "chg_1d": {
-          "text": "▲ 1.23%",
+          "text": "▲ 1.21%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.85%",
+          "text": "▲ 2.83%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.6477",
+        "rate": "20.6508",
         "chg_1d": {
-          "text": "▲ 0.87%",
+          "text": "▲ 0.88%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 1.40%",
+          "text": "▲ 1.41%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "13.1033",
+        "rate": "13.1065",
         "chg_1d": {
-          "text": "▲ 1.62%",
+          "text": "▲ 1.64%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.43%",
+          "text": "▲ 3.46%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "122.8191",
+        "rate": "122.7936",
         "chg_1d": {
-          "text": "▲ 1.22%",
+          "text": "▲ 1.20%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.42%",
+          "text": "▲ 3.40%",
           "cls": "chg-up"
         }
       }
