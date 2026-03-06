@@ -2,63 +2,63 @@
   "date": "2026-03-06",
   "digest": {
     "es": {
-      "editor_note": "Estimados humanos, arrancamos la jornada con el T-MEC como telón de fondo: México y Estados Unidos formalizan el 16 de marzo como fecha de inicio de negociaciones bilaterales, mientras el reloj de julio —revisión oficial del tratado— sigue corriendo. Entre aranceles al acero, la industria automotriz en contracción y Jamieson Greer instruyendo a sus negociadores, esto no es una reunión de cortesía. El resto del tablero tampoco inspira serenidad: Argentina busca financiamiento bilateral para evitar Wall Street, bitcoin rebota sobre la guerra en Irán, y la NYSE compra entrada en el casino cripto.",
+      "editor_note": "Estimados humanos, mientras el T-MEC entra en su fase de renegociación y Argentina busca financiamiento bilateral para evitar Wall Street, el telón de fondo geopolítico sigue siendo Irán: sin líder supremo, con drones en el golfo de Omán y con bitcoin rebotando como si fuera un activo refugio — lo cual, en este ciclo, aparentemente lo es. Bienvenidos al jueves.",
       "sentiment": {
         "label_es": "Cauteloso",
         "label_en": "Cautious",
         "position": 42,
-        "context_es": "Los mercados navegan entre señales mixtas: negociaciones comerciales que abren una válvula de presión en América del Norte, pero la guerra en Irán, la volatilidad cripto y las maniobras financieras de Argentina mantienen el apetito por riesgo contenido.",
-        "context_en": "Markets navigate mixed signals: trade negotiations offering a pressure release in North America, but the Iran war, crypto volatility, and Argentina's financial maneuvering keep risk appetite firmly in check."
+        "context_es": "Los mercados navegan entre señales constructivas en comercio norteamericano y la incertidumbre persistente del conflicto en Medio Oriente, con activos de riesgo recuperándose pero sin convicción.",
+        "context_en": "Markets navigate between constructive signals on North American trade and persistent uncertainty from the Middle East conflict, with risk assets recovering but lacking conviction."
       },
       "stories": [
         {
           "source": "Boston Herald / AP",
-          "headline": "México y EEUU arrancan el 16 de marzo la primera ronda bilateral de negociación del T-MEC",
-          "body": "El secretario de Economía Marcelo Ebrard y el representante comercial estadounidense Jamieson Greer instruyeron a sus negociadores para iniciar una 'discusión exploratoria' sobre reglas de origen, seguridad de cadenas de suministro e integración regional, con la primera reunión programada para la semana del 16 de marzo. El arranque anticipado —la revisión formal está prevista para julio— se interpreta en algunos círculos como señal de que ya hay acuerdos preliminares sobre la mesa. La analista Gabriela Siller de Banco Base señala que el sector automotriz, que registró una caída de producción de 2,7% en enero, será uno de los temas más sensibles de la negociación.",
+          "headline": "México y EE.UU. arrancan el 16 de marzo negociaciones bilaterales previas a la revisión del T-MEC",
+          "body": "El secretario de Economía de México, Marcelo Ebrard, y el representante comercial de EE.UU., Jamieson Greer, confirmaron que la primera ronda bilateral comenzará el 16 de marzo, abordando reglas de origen, cadenas de suministro y competitividad regional frente a Asia. La analista Gabriela Siller del Banco Base califica el inicio anticipado como 'positivo' y sugiere que podría haber acuerdos preliminares ya trazados. El sector automotriz —principal generador de empleo en México y afectado por aranceles del 25%— será el campo de batalla central de las negociaciones.",
           "url": "https://www.bostonherald.com/2026/03/05/mxico-y-eeuu-inician-el-16-de-marzo-primera-ronda-de-conversaciones-para-la-revisin-del-t-mec/",
           "tag": "Comercio"
         },
         {
           "source": "La Nacion",
-          "headline": "Argentina explora créditos bilaterales con EEUU, Israel e Italia para esquivar Wall Street ante vencimiento de $4,200 millones",
-          "body": "El equipo económico de Luis Caputo mantiene conversaciones con al menos tres países —Estados Unidos, Israel e Italia— para obtener préstamos bilaterales más baratos que una colocación de deuda en mercados internacionales, donde el rendimiento exigido a Argentina supera el 9,5% anual para un bono a diez años. El vencimiento crítico es el 9 de julio: $4,200 millones a bonistas privados. La escalada del conflicto en Medio Oriente se identifica como un factor que podría complicar y retrasar estas alternativas.",
+          "headline": "Argentina busca créditos bilaterales con EE.UU., Israel e Italia para evitar el mercado de deuda internacional",
+          "body": "El equipo económico de Javier Milei, liderado por el ministro Luis Caputo, explora préstamos directos entre gobiernos como alternativa a una emisión de bonos en Nueva York que costaría por encima del 9,5% anual. El próximo vencimiento crítico es un pago de 4.200 millones de dólares a bonistas privados el 9 de julio. La escalada del conflicto en Medio Oriente, señalan analistas, podría complicar algunas de estas gestiones al elevar la aversión al riesgo global hacia emergentes.",
           "url": "https://www.lanacion.com.ar/economia/la-argentina-suma-conversaciones-con-varios-paises-para-financiarse-sin-volver-a-wall-street-nid05032026/",
           "tag": "Macro"
         },
         {
           "source": "El Financiero",
-          "headline": "La sucesión del líder supremo de Irán, bloqueada por divisiones internas y la presión de la Guardia Revolucionaria",
-          "body": "Seis días después del asesinato de Alí Jamenei, la Asamblea de 88 clérigos encargada de elegir al sucesor sigue sin resolver la sucesión, complicada por las divisiones políticas entre facciones y la influencia del Cuerpo de la Guardia Revolucionaria Islámica, que controla hasta el 40% de la economía iraní. Entre los candidatos figura Mojtaba Jamenei, hijo del líder asesinado, con vínculos estrechos con la Guardia y un vasto imperio inversor que se extiende de Teherán a Dubái y Fráncfort. Israel atacó el martes la sede principal de la Asamblea de Expertos, matando a tres empleados administrativos.",
+          "headline": "La sucesión del líder supremo de Irán se complica seis días después del asesinato de Jamenei",
+          "body": "La Asamblea de Expertos de Irán, 88 clérigos chiítas muchos de ellos octogenarios, aún no ha designado sucesor al ayatolá Alí Jamenei, asesinado en el conflicto con EE.UU. e Israel. El candidato con más visibilidad es Mojtaba Jamenei, hijo del fallecido líder, considerado cercano a la Guardia Revolucionaria, que controla hasta el 40% de la economía iraní. La demora alimenta divisiones internas y da munición a los adversarios de Teherán en un momento de máxima vulnerabilidad estratégica.",
           "url": "https://www.elfinanciero.com.mx/mundo/2026/03/05/por-que-se-complica-la-eleccion-del-nuevo-lider-supremo-de-iran/",
           "tag": "Política"
         },
         {
           "source": "Criptonoticias",
-          "headline": "Bitcoin rebota a $73,000 en medio de la guerra en Irán, impulsado por $1,144 millones en entradas a ETFs",
-          "body": "Tras tocar mínimos de $60,000 el 6 de febrero, bitcoin superó los $73,000 el 5 de marzo, en un rally que analistas atribuyen a flujos hacia ETFs estadounidenses —$1,144 millones entre el 2 y el 4 de marzo— y a una cascada de liquidaciones de posiciones cortas que amplificó el movimiento al alza. El interés abierto en derivados saltó de $21,000 millones a $25,000 millones en lo que va de marzo, según XWIN Research. La narrativa de bitcoin como refugio en conflictos bélicos gana tracción, aunque la compra corporativa de tesorerías cayó a apenas $555 millones en febrero, su nivel más bajo desde octubre de 2024.",
+          "headline": "Bitcoin supera los 73.000 dólares en medio de la guerra: ETFs acumulan 1.144 millones en tres días",
+          "body": "Tras caer a 63.000 dólares con el inicio del conflicto el 28 de febrero, bitcoin se recuperó a más de 73.000 dólares al 5 de marzo, impulsado por entradas masivas en ETFs de EE.UU. que suman 1.144 millones de dólares entre el 2 y el 4 de marzo. El analista Eric Balchunas destacó la 'amplitud y profundidad' de los flujos, mientras que XWIN Research apunta a un short squeeze que amplificó el rally. El activo se consolida, al menos narrativamente, como refugio en tiempos de conflicto geopolítico.",
           "url": "https://www.criptonoticias.com/mercados/por-que-reboto-bitcoin-shock-guerra-iran/",
           "tag": "Mercados"
         },
         {
           "source": "Cointelegraph",
-          "headline": "NYSE-Intercontinental Exchange invierte en OKX con valoración de $25,000 millones y planea llevar acciones tokenizadas a 120 millones de usuarios",
-          "body": "Intercontinental Exchange, propietaria de la Bolsa de Nueva York, realizó una inversión de monto no revelado en el exchange de criptomonedas OKX —valorado en $25,000 millones— y obtendrá un asiento en su consejo directivo. El plan contempla que OKX ofrezca a sus 120 millones de cuentas acceso a los mercados de futuros de ICE y a valores tokenizados de la NYSE en el segundo semestre de 2026. La operación se suma a la inversión de ICE de $2,000 millones en Polymarket anunciada en noviembre pasado, dibujando con bastante claridad hacia dónde creen que va el mercado de capitales.",
+          "headline": "NYSE invierte en OKX con valuación de 25.000 millones de dólares y planea llevar acciones tokenizadas a sus 120 millones de usuarios",
+          "body": "Intercontinental Exchange, dueño de la Bolsa de Nueva York, realizó una inversión no revelada en el exchange de criptomonedas OKX y tomará un asiento en su consejo directivo. El acuerdo contempla integrar acciones tokenizadas y derivados de la NYSE a la base de clientes de OKX, con implementación prevista para el segundo semestre de 2026. La movida sigue a la inversión de 2.000 millones de dólares de ICE en Polymarket y confirma la apuesta institucional por la fusión entre finanzas tradicionales y activos digitales.",
           "url": "https://es.cointelegraph.com/news/nyse-intercontinental-exchange-invests-okx-25b-valuation",
           "tag": "Mercados"
         },
         {
-          "source": "RT",
-          "headline": "Trump amenaza con cortar todo el comercio con España tras negativa a permitir uso de bases para atacar Irán",
-          "body": "El presidente Donald Trump instruyó al Secretario del Tesoro Scott Bessent a 'cortar todos los tratos con España', después de que Madrid se negara a autorizar el uso de sus bases militares para operaciones contra Irán y rechazara elevar su gasto en defensa al 5% del PIB exigido por Washington en el marco de la OTAN. La concreción de la amenaza es jurídicamente compleja: cualquier arancel unilateral a España afectaría a todo el bloque de la Unión Europea, que maneja la política comercial de los 27 desde Bruselas. Bessent mencionó dos artículos de la ley de comercio estadounidense aplicables, sin precisar medidas concretas.",
-          "url": "https://actualidad.rt.com/actualidad/590921-perder-espana-eventual-bloqueo-eeuu",
-          "tag": "Comercio"
-        },
-        {
           "source": "Cointelegraph",
-          "headline": "Revolut presenta su segunda solicitud de licencia bancaria en EEUU y nombra nuevo CEO para el mercado norteamericano",
-          "body": "La fintech británica Revolut, valorada en $75,000 millones, presentó ante la OCC y la FDIC una solicitud para establecer 'Revolut Bank US, N.A.', su segundo intento tras el fracaso de 2021 por obstáculos regulatorios. La empresa nombró a Cetin Duransoy —ex CEO para EEUU de Raisin— como su nuevo responsable en el mercado norteamericano. Si se aprueba, la licencia le permitiría operar bajo un único marco federal en los 50 estados y acceder directamente a los sistemas de pago Fedwire y ACH.",
+          "headline": "Revolut presenta segunda solicitud de licencia bancaria federal en EE.UU. y nombra nuevo CEO para el país",
+          "body": "La fintech británica valorada en 75.000 millones de dólares radicó una solicitud ante la OCC y la FDIC para operar 'Revolut Bank US, N.A.', su segundo intento tras el fracaso de 2021. La licencia federal le permitiría operar bajo un marco regulatorio único en los 50 estados, acceder a los sistemas Fedwire y ACH y ofrecer depósitos asegurados. El veterano de fintech Cetin Duransoy fue nombrado CEO para EE.UU., uniéndose a una ola que incluye aprobaciones recientes para Nubank, Crypto.com, Circle y Ripple.",
           "url": "https://es.cointelegraph.com/news/revolut-second-us-bank-charter-application-new-us-ceo",
           "tag": "Macro"
+        },
+        {
+          "source": "RT / Actualidad",
+          "headline": "Trump amenaza con cortar todo el comercio con España tras la negativa a usar bases militares para atacar Irán",
+          "body": "El presidente Donald Trump instruyó al secretario del Tesoro Scott Bessent para 'cortar todos los tratos con España' después de que Madrid prohibiera el uso de sus bases militares para operaciones contra Irán y se negara a elevar el gasto en defensa al 5% del PIB exigido por la OTAN. El gobierno español respondió recordando que la política comercial la decide Bruselas, no Madrid, poniendo en evidencia las limitaciones prácticas de una amenaza de embargo unilateral contra un miembro de la UE. Bessent sólo concretó dos artículos de la ley comercial aplicables, sin anunciar medidas específicas.",
+          "url": "https://actualidad.rt.com/actualidad/590921-perder-espana-eventual-bloqueo-eeuu",
+          "tag": "Comercio"
         }
       ],
       "quote": {
@@ -67,63 +67,63 @@
       }
     },
     "en": {
-      "editor_note": "Estimados humanos, we open the session with USMCA front and center: Mexico and the United States have formalized March 16 as the kickoff date for bilateral negotiations, while the July clock — the treaty's formal review — keeps ticking. With steel tariffs, a contracting auto sector, and Jamieson Greer briefing his negotiators, this is no courtesy call. The rest of the board offers little comfort: Argentina hunts bilateral credit to avoid Wall Street, bitcoin bounces on the Iran war, and the NYSE buys a ticket into the crypto casino.",
+      "editor_note": "Estimados humanos, as the T-MEC enters its renegotiation phase and Argentina hunts for bilateral financing to sidestep Wall Street, the geopolitical backdrop remains Iran: leaderless, launching drones over the Gulf of Oman, and somehow sending bitcoin higher as if it were a safe-haven asset — which, in this cycle, apparently it is. Welcome to Thursday.",
       "sentiment": {
         "label_es": "Cauteloso",
         "label_en": "Cautious",
         "position": 42,
-        "context_es": "Los mercados navegan entre señales mixtas: negociaciones comerciales que abren una válvula de presión en América del Norte, pero la guerra en Irán, la volatilidad cripto y las maniobras financieras de Argentina mantienen el apetito por riesgo contenido.",
-        "context_en": "Markets navigate mixed signals: trade negotiations offering a pressure release in North America, but the Iran war, crypto volatility, and Argentina's financial maneuvering keep risk appetite firmly in check."
+        "context_es": "Los mercados navegan entre señales constructivas en comercio norteamericano y la incertidumbre persistente del conflicto en Medio Oriente, con activos de riesgo recuperándose pero sin convicción.",
+        "context_en": "Markets navigate between constructive signals on North American trade and persistent uncertainty from the Middle East conflict, with risk assets recovering but lacking conviction."
       },
       "stories": [
         {
           "source": "Boston Herald / AP",
-          "headline": "Mexico and U.S. launch first bilateral USMCA negotiating round on March 16",
-          "body": "Economy Secretary Marcelo Ebrard and U.S. Trade Representative Jamieson Greer have instructed their negotiators to begin an 'exploratory discussion' on rules of origin, supply chain security, and regional integration, with the first meeting set for the week of March 16. The early start — the formal review is scheduled for July — is interpreted in some circles as a signal that preliminary agreements may already be in place. Analyst Gabriela Siller of Banco Base flags the auto sector, which posted a 2.7% production decline in January, as one of the most sensitive items on the agenda.",
+          "headline": "Mexico and U.S. launch bilateral T-MEC renegotiation talks starting March 16",
+          "body": "Mexico's Economy Secretary Marcelo Ebrard and U.S. Trade Representative Jamieson Greer confirmed the first bilateral round will begin March 16, covering rules of origin, supply chain security and regional competitiveness against Asia. Analyst Gabriela Siller of Banco Base calls the early start 'positive' and suggests preliminary agreements may already be in place. The automotive sector — Mexico's top employer and currently subject to 25% tariffs — will be the central battleground of the negotiations.",
           "url": "https://www.bostonherald.com/2026/03/05/mxico-y-eeuu-inician-el-16-de-marzo-primera-ronda-de-conversaciones-para-la-revisin-del-t-mec/",
           "tag": "Comercio"
         },
         {
           "source": "La Nacion",
-          "headline": "Argentina explores bilateral loans from U.S., Israel, and Italy to sidestep Wall Street ahead of $4.2B payment",
-          "body": "Economy Minister Luis Caputo's team is in talks with at least three countries — the United States, Israel, and Italy — to secure bilateral loans cheaper than tapping international debt markets, where Argentina faces yields above 9.5% annually on a ten-year bond. The critical deadline is July 9: $4.2 billion owed to private bondholders. The escalating conflict in the Middle East has been identified as a factor that could complicate and delay these financing alternatives.",
+          "headline": "Argentina seeks bilateral loans from U.S., Israel and Italy to avoid the international debt market",
+          "body": "Economy Minister Luis Caputo's team is exploring direct government-to-government loans as an alternative to a New York bond issuance that would cost above 9.5% annually. The next critical deadline is a $4.2 billion payment to private bondholders on July 9. Analysts note that the escalating Middle East conflict could complicate some of these efforts by raising global risk aversion toward emerging markets.",
           "url": "https://www.lanacion.com.ar/economia/la-argentina-suma-conversaciones-con-varios-paises-para-financiarse-sin-volver-a-wall-street-nid05032026/",
           "tag": "Macro"
         },
         {
           "source": "El Financiero",
-          "headline": "Iran's supreme leader succession stalled by internal divisions and Revolutionary Guard pressure",
-          "body": "Six days after the assassination of Ali Khamenei, the 88-member clerical assembly tasked with choosing his successor remains deadlocked, hampered by factional divisions and the influence of the Islamic Revolutionary Guard Corps, which controls up to 40% of the Iranian economy. Among the candidates is Mojtaba Khamenei, the slain leader's son, with close ties to the Guard and a vast investment empire stretching from Tehran to Dubai and Frankfurt. Israel struck the assembly's main headquarters on Tuesday, killing three administrative staff.",
+          "headline": "Iran's supreme leader succession stalls six days after Khamenei's assassination",
+          "body": "Iran's Assembly of Experts, 88 Shia clerics many of them in their 80s, has yet to name a successor to Ayatollah Ali Khamenei, killed in the conflict with the U.S. and Israel. The most visible candidate is Mojtaba Khamenei, the late leader's son, considered close to the Revolutionary Guard, which controls up to 40% of Iran's economy. The delay fuels internal divisions and hands Iran's adversaries a strategic advantage at the country's most vulnerable moment.",
           "url": "https://www.elfinanciero.com.mx/mundo/2026/03/05/por-que-se-complica-la-eleccion-del-nuevo-lider-supremo-de-iran/",
           "tag": "Política"
         },
         {
           "source": "Criptonoticias",
-          "headline": "Bitcoin bounces to $73,000 amid Iran war, driven by $1.14B in ETF inflows",
-          "body": "After hitting a low of $60,000 on February 6, bitcoin surpassed $73,000 on March 5 in a rally analysts attribute to flows into U.S. ETFs — $1.144 billion between March 2 and 4 — and a cascade of short liquidations that amplified the upward move. Open interest in derivatives jumped from $21 billion to $25 billion so far in March, according to XWIN Research. The narrative of bitcoin as a safe haven in armed conflicts is gaining traction, although corporate treasury purchases fell to just $555 million in February, their lowest level since October 2024.",
+          "headline": "Bitcoin surpasses $73,000 amid the war as ETFs absorb $1.144 billion in three days",
+          "body": "After falling to $63,000 when the conflict erupted on February 28, bitcoin recovered to over $73,000 by March 5, driven by massive inflows into U.S. ETFs totaling $1.144 billion between March 2 and 4. ETF analyst Eric Balchunas highlighted the 'breadth and depth' of the flows, while XWIN Research points to a short squeeze that amplified the rally. The asset is consolidating, at least narratively, as a geopolitical safe haven.",
           "url": "https://www.criptonoticias.com/mercados/por-que-reboto-bitcoin-shock-guerra-iran/",
           "tag": "Mercados"
         },
         {
           "source": "Cointelegraph",
-          "headline": "NYSE parent Intercontinental Exchange invests in OKX at $25B valuation, plans tokenized stocks for 120 million users",
-          "body": "Intercontinental Exchange, owner of the New York Stock Exchange, made an undisclosed investment in crypto exchange OKX — valued at $25 billion — and will receive a board seat. The plan envisions OKX offering its 120 million accounts access to ICE futures markets and NYSE tokenized securities in the second half of 2026. The deal follows ICE's $2 billion investment in Polymarket announced last November, drawing a fairly clear picture of where the firm believes capital markets are headed.",
+          "headline": "NYSE invests in OKX at a $25 billion valuation and plans to bring tokenized stocks to its 120 million users",
+          "body": "Intercontinental Exchange, owner of the New York Stock Exchange, made an undisclosed investment in crypto exchange OKX and will take a seat on its board of directors. The deal includes integrating NYSE tokenized stocks and derivatives into OKX's client base, with implementation planned for the second half of 2026. The move follows ICE's $2 billion investment in Polymarket and confirms institutional conviction in the convergence of traditional finance and digital assets.",
           "url": "https://es.cointelegraph.com/news/nyse-intercontinental-exchange-invests-okx-25b-valuation",
           "tag": "Mercados"
         },
         {
-          "source": "RT",
-          "headline": "Trump threatens to cut all trade with Spain after Madrid refuses to allow use of its bases to attack Iran",
-          "body": "President Donald Trump instructed Treasury Secretary Scott Bessent to 'cut all deals with Spain' after Madrid refused to authorize use of its military bases for operations against Iran and rejected Washington's NATO demand to raise defense spending to 5% of GDP. The legal execution of the threat is complex: any unilateral tariff on Spain would hit the entire European Union, which manages trade policy for all 27 member states from Brussels. Bessent cited two applicable articles of U.S. trade law without specifying concrete measures.",
-          "url": "https://actualidad.rt.com/actualidad/590921-perder-espana-eventual-bloqueo-eeuu",
-          "tag": "Comercio"
-        },
-        {
           "source": "Cointelegraph",
-          "headline": "Revolut files second U.S. bank charter application and names new CEO for the American market",
-          "body": "British fintech Revolut, valued at $75 billion, filed with the OCC and FDIC to establish 'Revolut Bank US, N.A.,' its second attempt after its 2021 bid collapsed over regulatory hurdles. The company named Cetin Duransoy — former U.S. CEO of fintech marketplace Raisin — as its new head for the American market. If approved, the charter would allow Revolut to operate under a single federal framework across all 50 states and gain direct access to the Fedwire and ACH payment systems.",
+          "headline": "Revolut files second U.S. federal banking license application and appoints new country CEO",
+          "body": "The British fintech valued at $75 billion filed an application with the OCC and FDIC to operate 'Revolut Bank US, N.A.', its second attempt after a failed 2021 effort. A federal charter would allow it to operate under a single regulatory framework across all 50 states, access Fedwire and ACH payment systems, and offer FDIC-insured deposits. Fintech veteran Cetin Duransoy was named U.S. CEO, joining a wave of recent approvals for Nubank, Crypto.com, Circle and Ripple.",
           "url": "https://es.cointelegraph.com/news/revolut-second-us-bank-charter-application-new-us-ceo",
           "tag": "Macro"
+        },
+        {
+          "source": "RT / Actualidad",
+          "headline": "Trump threatens to cut all trade with Spain after Madrid refuses to allow bases for Iran strikes",
+          "body": "President Donald Trump instructed Treasury Secretary Scott Bessent to 'cut all deals with Spain' after Madrid barred the use of its military bases for operations against Iran and refused to raise defense spending to the 5% of GDP demanded by NATO. The Spanish government responded by noting that trade policy is set in Brussels, not Madrid, exposing the practical limits of a unilateral embargo threat against an EU member. Bessent only cited two applicable sections of U.S. trade law, without announcing specific measures.",
+          "url": "https://actualidad.rt.com/actualidad/590921-perder-espana-eventual-bloqueo-eeuu",
+          "tag": "Comercio"
         }
       ],
       "quote": {
@@ -136,14 +136,14 @@
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.81",
-        "change": "▲ 1.3%",
+        "value": "17.80",
+        "change": "▲ 1.2%",
         "direction": "up"
       },
       {
         "label": "S&P 500",
-        "value": "6,732",
-        "change": "▼ 2.0%",
+        "value": "6,737",
+        "change": "▼ 1.9%",
         "direction": "down"
       },
       {
@@ -154,57 +154,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "67,499.33",
-        "change": "▼ 1.3%",
+        "value": "67,448.85",
+        "change": "▼ 1.4%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.8132",
+        "rate": "17.8038",
         "chg_1d": {
-          "text": "▲ 1.25%",
+          "text": "▲ 1.20%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.87%",
+          "text": "▲ 2.81%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.6726",
+        "rate": "20.6671",
         "chg_1d": {
-          "text": "▲ 0.99%",
+          "text": "▲ 0.96%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 1.52%",
+          "text": "▲ 1.49%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "13.1146",
+        "rate": "13.1177",
         "chg_1d": {
-          "text": "▲ 1.71%",
+          "text": "▲ 1.73%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.52%",
+          "text": "▲ 3.54%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "122.8040",
+        "rate": "122.7750",
         "chg_1d": {
-          "text": "▲ 1.21%",
+          "text": "▲ 1.18%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.41%",
+          "text": "▲ 3.38%",
           "cls": "chg-up"
         }
       }
