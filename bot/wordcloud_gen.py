@@ -9,33 +9,36 @@ import base64
 from datetime import date, timedelta
 from config import DIGEST_DIR, ARCHIVE_DIR
 
-# Words to exclude from the cloud — bilingual (ES + EN)
+# Words to exclude from the cloud — bilingual (ES + EN).
+# All entries are lowercase ASCII (no accents) because _strip_accents()
+# normalises the text before the cloud is built, so matching is reliable.
 STOPWORDS = {
-    # ── Spanish articles & prepositions ──────────────────────────────────
+    # ── Spanish articles ──────────────────────────────────────────────────
     "el", "la", "los", "las", "un", "una", "unos", "unas",
+    # ── Spanish prepositions ──────────────────────────────────────────────
     "de", "del", "al", "a", "en", "con", "por", "para", "sin", "sobre",
     "entre", "hasta", "desde", "hacia", "ante", "bajo", "contra", "durante",
-    "mediante", "según", "tras", "versus", "via",
-    # ── Spanish conjunctions ─────────────────────────────────────────────
+    "mediante", "segun", "tras", "versus", "via",
+    # ── Spanish conjunctions ──────────────────────────────────────────────
     "y", "e", "o", "u", "ni", "que", "pero", "sino", "aunque", "porque",
     "como", "cuando", "si", "donde", "mientras", "pues", "ya", "sea",
-    # ── Spanish pronouns ─────────────────────────────────────────────────
-    "yo", "tú", "él", "ella", "nosotros", "ellos", "ellas", "se", "le",
+    # ── Spanish pronouns ──────────────────────────────────────────────────
+    "yo", "tu", "el", "ella", "nosotros", "ellos", "ellas", "se", "le",
     "lo", "les", "nos", "su", "sus", "este", "esta", "estos", "estas",
     "ese", "esa", "esos", "esas", "aquel", "aquella", "ello",
-    # ── Spanish common verbs & auxiliaries ───────────────────────────────
-    "es", "son", "fue", "ser", "estar", "ha", "han", "hay", "había",
+    # ── Spanish auxiliaries & common verbs ───────────────────────────────
+    "es", "son", "fue", "ser", "estar", "ha", "han", "hay", "habia",
     "tiene", "tienen", "tuvo", "tener", "hace", "hizo", "hacer",
     "puede", "pueden", "pudo", "poder", "dijo", "dice", "decir",
-    "va", "van", "fue", "ir", "sería", "será", "serán",
+    "va", "van", "ir", "seria", "sera", "seran",
     # ── Spanish adverbs & fillers ─────────────────────────────────────────
-    "más", "muy", "bien", "también", "así", "aún", "aun", "solo",
-    "sólo", "no", "sí", "tan", "tanto", "menos", "mismo", "misma",
-    "cada", "todo", "toda", "todos", "todas", "otro", "otra", "otros",
-    "otras", "nuevo", "nueva", "nuevos", "nuevas",
+    "mas", "muy", "bien", "tambien", "asi", "aun", "solo", "no", "si",
+    "tan", "tanto", "menos", "mismo", "misma", "cada",
+    "todo", "toda", "todos", "todas", "otro", "otra", "otros", "otras",
+    "nuevo", "nueva", "nuevos", "nuevas",
     # ── Spanish time words ────────────────────────────────────────────────
-    "año", "años", "mes", "día", "días", "semana", "hoy", "ayer",
-    "lunes", "martes", "miércoles", "jueves", "viernes",
+    "ano", "anos", "mes", "dia", "dias", "semana", "hoy", "ayer",
+    "lunes", "martes", "miercoles", "jueves", "viernes",
     "enero", "febrero", "marzo", "abril", "mayo", "junio",
     "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
     # ── English articles, prepositions & conjunctions ─────────────────────
@@ -63,6 +66,15 @@ STOPWORDS = {
 }
 
 
+def _strip_accents(text: str) -> str:
+    """Normalize accented characters to ASCII so stopword matching works."""
+    import unicodedata
+    return "".join(
+        c for c in unicodedata.normalize("NFD", text)
+        if unicodedata.category(c) != "Mn"
+    )
+
+
 def _collect_week_text() -> str:
     """Collects all headlines and story bodies from Mon-Fri digests."""
     import json
@@ -88,7 +100,7 @@ def _collect_week_text() -> str:
         except Exception as e:
             print(f"  [wordcloud] Could not load {path}: {e}")
 
-    return " ".join(text_parts)
+    return _strip_accents(" ".join(text_parts))
 
 
 def generate_wordcloud() -> str | None:
@@ -146,6 +158,7 @@ def generate_wordcloud() -> str | None:
             max_words        = 80,
             min_font_size    = 10,
             max_font_size    = 90,
+            min_word_length  = 3,
             prefer_horizontal= 0.85,
             collocations     = False,
             margin           = 8,
@@ -196,6 +209,7 @@ def wordcloud_as_base64() -> str | None:
             max_words        = 80,
             min_font_size    = 10,
             max_font_size    = 90,
+            min_word_length  = 3,
             prefer_horizontal= 0.85,
             collocations     = False,
             margin           = 8,
