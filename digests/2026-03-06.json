@@ -2,133 +2,133 @@
   "date": "2026-03-06",
   "digest": {
     "es": {
-      "editor_note": "Estimados humanos, mientras México y Estados Unidos se sientan a revisar el T-MEC el 16 de marzo, el telón de fondo geopolítico no podría ser más turbulento: España y Washington intercambian insultos sobre Irán, los mercados cripto atraviesan su propio invierno corporativo, y Argentina busca financiamiento bilateral porque Wall Street cobra demasiado caro. Vivimos tiempos en que la arquitectura del comercio global se renegocia simultáneamente en múltiples frentes, y ninguno de ellos transmite particular serenidad.",
+      "editor_note": "Estimados humanos, mientras el mundo debate si Irán puede ser bombardeado o si sus reservas de petróleo simplemente abaratan la gasolina, México y Estados Unidos deciden sentarse a hablar del T-MEC el 16 de marzo — un gesto diplomático que en otro ciclo histórico llamaríamos normalidad y que hoy cotiza como noticia positiva. El telón de fondo es un orden global en recomposición acelerada: aranceles, guerras, amenazas de embargo y la NYSE invirtiendo en exchanges de criptomonedas. Que nadie diga que los mercados se aburren.",
       "sentiment": {
         "label_es": "Cauteloso",
         "label_en": "Cautious",
-        "position": 38,
-        "context_es": "La renegociación del T-MEC y las tensiones geopolíticas en torno a Irán generan incertidumbre comercial y financiera, con señales mixtas que impiden tanto el optimismo como el pánico.",
-        "context_en": "USMCA renegotiation and geopolitical tensions around Iran inject trade and financial uncertainty, with mixed signals preventing both optimism and panic."
+        "position": 42,
+        "context_es": "Señales mixtas dominan el panorama: avances comerciales entre México y EE.UU. contrarrestan la tensión geopolítica en Medio Oriente y las fricciones entre Washington y Madrid.",
+        "context_en": "Mixed signals dominate the landscape: trade progress between Mexico and the U.S. offsets geopolitical tension in the Middle East and friction between Washington and Madrid."
       },
       "stories": [
         {
           "source": "Boston Herald / AP",
-          "headline": "México y EE.UU. arrancan el 16 de marzo la primera ronda bilateral de revisión del T-MEC",
-          "body": "El secretario de Economía Marcelo Ebrard y el representante comercial de EE.UU. Jamieson Greer confirmaron que el 16 de marzo comenzará una 'discusión exploratoria' sobre reglas de origen, integración productiva y seguridad de cadenas de suministro. La industria automotriz —que registró una caída de producción del 2,7% en enero— es el sector más observado, dado que enfrenta aranceles de 25% para vehículos no cubiertos por el acuerdo. La analista Gabriela Siller de Banco Base calificó el inicio anticipado como 'positivo', sugiriendo que ya podrían existir acuerdos previos que facilitaron la decisión.",
+          "headline": "México y EE.UU. arrancan el 16 de marzo negociaciones bilaterales del T-MEC antes de la revisión formal de julio",
+          "body": "El secretario mexicano de Economía, Marcelo Ebrard, y el representante comercial estadounidense, Jamieson Greer, confirmaron que el 16 de marzo inicia una primera ronda bilateral de conversaciones 'exploratorias' sobre reglas de origen, cadenas de suministro y competitividad regional. El arranque anticipado — la revisión formal del tratado está prevista para julio — fue interpretado por la economista de Banco Base, Gabriela Siller, como señal de que 'ya hay algunas cosas acordadas'. Las exportaciones mexicanas a EE.UU. alcanzaron 534.874 millones de dólares en 2025, un 5,8% más, pese a que sectores como el automotriz y el acero siguen gravados con aranceles de entre 25% y 50%.",
           "url": "https://www.bostonherald.com/2026/03/05/mxico-y-eeuu-inician-el-16-de-marzo-primera-ronda-de-conversaciones-para-la-revisin-del-t-mec/",
           "tag": "Comercio"
         },
         {
           "source": "Eldiario.es",
-          "headline": "Trump llama a España 'perdedora' mientras Madrid cierra sus bases al operativo militar contra Irán",
-          "body": "Donald Trump declaró al New York Post que España es 'muy hostil a la OTAN' y anunció que no jugará 'en equipo' con Madrid, un día después de que su portavoz sugiriera falsamente que España cooperaría militarmente en Irán. La ministra de Defensa Margarita Robles fue categórica: 'No se va a autorizar el uso de las bases españolas de Rota y Morón', aunque simultáneamente España envió la fragata Cristóbal Colón al Mediterráneo oriental en el marco de una misión europea de protección en Chipre. La tensión entre Washington y Madrid ilustra la fractura que la guerra contra Irán está generando dentro de la propia alianza occidental.",
+          "headline": "Trump amenaza con cortar todo el comercio con España tras el rechazo a usar bases militares para atacar Irán",
+          "body": "El presidente Donald Trump declaró al New York Post que España es 'una perdedora' y reiteró instrucciones a su secretario del Tesoro, Scott Bessent, para cortar los lazos comerciales con Madrid, después de que el gobierno de Pedro Sánchez prohibiera el uso de las bases de Rota y Morón en operaciones contra Irán. La ministra de Defensa, Margarita Robles, fue categórica: 'No se va a autorizar el uso de las bases. La violencia no es el camino'. El enredo legal es considerable: cualquier restricción comercial de EE.UU. a España afectaría a los 27 países de la Unión Europea, cuya política comercial se decide en Bruselas.",
           "url": "https://www.eldiario.es/politica/espana-mantiene-tension-eeuu-europa-crece-rechazo-guerra_1_13044348.html",
           "tag": "Macro"
         },
         {
           "source": "La Nacion",
-          "headline": "Argentina busca créditos bilaterales con EE.UU., Israel e Italia para evitar pagar tasas de mercado superiores al 9,5%",
-          "body": "El gobierno de Javier Milei mantiene conversaciones con varios países aliados para obtener financiamiento bilateral de cara al vencimiento de US$4.200 millones en bonos privados el 9 de julio, según confirmó La Nacion con fuentes directas. El ministro Luis Caputo descartó una colocación en Nueva York donde el mercado exigía rendimientos superiores al 9,5% anual para un bono a diez años, nivel que el equipo económico considera prohibitivo. En paralelo, analistas advierten que la escalada del conflicto en Medio Oriente podría complicar incluso las alternativas bilaterales al elevar la cautela global hacia mercados emergentes.",
+          "headline": "Argentina busca créditos bilaterales con EE.UU., Israel e Italia para evitar volver a Wall Street antes del vencimiento de julio",
+          "body": "El gobierno de Javier Milei explora préstamos directos entre países — con Washington, Roma y Tel Aviv como principales interlocutores — para cubrir el vencimiento de 4.200 millones de dólares con bonistas privados previsto para el 9 de julio, según fuentes con conocimiento directo citadas por La Nacion. El ministro Luis Caputo descarta una colocación en mercados internacionales mientras los rendimientos de un bono argentino a diez años superen el 9,5% anual. El gobierno advierte que no tiene apuro, aunque analistas señalan que el conflicto en Medio Oriente — con la guerra contra Irán — eleva la cautela inversora y complica el contexto para emergentes.",
           "url": "https://www.lanacion.com.ar/economia/la-argentina-suma-conversaciones-con-varios-paises-para-financiarse-sin-volver-a-wall-street-nid05032026/",
           "tag": "Macro"
         },
         {
-          "source": "RT / Eldiario.es",
-          "headline": "Europa despliega fragatas en el Mediterráneo mientras el conflicto con Irán presiona los mercados de energía",
-          "body": "Italia, Francia, España y Países Bajos enviarán unidades navales a Chipre tras un ataque con dron contra la base británica de Akrotiri, en el marco de la guerra declarada por EE.UU. e Israel contra Irán. El estrecho de Ormuz —por donde transitan aproximadamente 15 millones de barriles diarios, el 30% del comercio marítimo mundial— permanece en el centro de la atención de los mercados energéticos. El despliegue europeo subraya que el conflicto ya no es un asunto bilateral: tiene consecuencias directas sobre rutas de suministro, precios del crudo y apetito inversor global.",
-          "url": "https://actualidad.rt.com/actualidad/590952-paises-europeos-desplegar-fuerzas-militares-chipre",
-          "tag": "Energía"
-        },
-        {
-          "source": "Intercontinental Exchange / Cointelegraph",
-          "headline": "NYSE invierte en OKX a valuación de US$25.000 millones y planea llevar acciones tokenizadas a 120 millones de usuarios",
-          "body": "Intercontinental Exchange, propietaria de la Bolsa de Nueva York, adquirió una participación no revelada en el exchange de criptomonedas OKX y ocupará un asiento en su consejo directivo. El acuerdo contempla integrar acciones tokenizadas y derivados listados en NYSE a la base de 120 millones de cuentas de OKX en el segundo semestre de 2026. La operación es la señal más contundente hasta ahora de que las finanzas tradicionales y los activos digitales están convergiendo institucionalmente, independientemente de lo que opine el precio spot de Bitcoin.",
+          "source": "Cointelegraph",
+          "headline": "La NYSE invierte en OKX a una valuación de 25.000 millones de dólares y planea llevar acciones tokenizadas a 120 millones de usuarios cripto",
+          "body": "Intercontinental Exchange, propietaria de la Bolsa de Nueva York, realizó una inversión de monto no revelado en el exchange de criptomonedas OKX, que fue valorado en 25.000 millones de dólares, y ocupará un asiento en su consejo de administración. El acuerdo contempla que OKX ofrezca acceso a futuros de ICE y a valores tokenizados de la NYSE a su base de aproximadamente 120 millones de cuentas, con implementación prevista para el segundo semestre de 2026. La operación es la más reciente de una serie: en noviembre de 2025 ICE anunció una inversión de 2.000 millones de dólares en Polymarket, y en enero declaró que desarrollaba infraestructura propia de trading en blockchain.",
           "url": "https://es.cointelegraph.com/news/nyse-intercontinental-exchange-invests-okx-25b-valuation",
           "tag": "Mercados"
         },
         {
           "source": "El Financiero",
-          "headline": "Dos empresas estadounidenses invertirán US$500 millones en infraestructura de carga eléctrica en el Bajío mexicano",
-          "body": "Invisible Urban Charging (Atlanta) y ATX Smart Mobility (Miami) supervisarán una inversión de US$500 millones para desplegar 38 cargadores y 140 autobuses eléctricos en Ciudad de México, Estado de México, Puebla y Querétaro, en alianza con CBRE. México actualmente tiene una proporción de 280 autos por cargador, cuando el estándar recomendado es de 40, lo que representa una oportunidad de infraestructura masiva. La llegada de marcas chinas como BYD y Geely está acelerando la adopción, convirtiendo al país en un campo de batalla estratégico para la movilidad eléctrica en América Latina.",
+          "headline": "Dos empresas estadounidenses invertirán 500 mdd en infraestructura de carga eléctrica en el Bajío mexicano",
+          "body": "Invisible Urban Charging Inc. (Atlanta) y ATX Smart Mobility (Miami) supervisarán una inversión de 500 millones de dólares para desplegar 38 cargadores y 140 autobuses eléctricos en la región del Bajío — Ciudad de México, Estado de México, Puebla y Querétaro — en alianza con CBRE Group para la selección de ubicaciones. La apuesta responde a una brecha estructural: México tiene actualmente una proporción de 280 autos por cargador, cuando el estándar recomendado es de 40. La llegada de marcas chinas como BYD y Geely al mercado mexicano acelera la presión sobre la infraestructura de carga.",
           "url": "https://www.elfinanciero.com.mx/economia/2026/03/05/que-empresas-de-eu-invertiran-500-mdd-en-mexico-y-en-que-sectores-apostaran/",
           "tag": "México"
         },
         {
-          "source": "Criptonoticias",
-          "headline": "Compras corporativas de Bitcoin colapsan a US$555 millones en febrero, mínimo desde octubre de 2024",
-          "body": "Las tesorerías corporativas en activos digitales registraron en febrero de 2026 su nivel de acumulación más bajo en 16 meses, frente a los US$12.300 millones comprados en noviembre de 2024 tras la victoria de Trump. Bitcoin acumula una caída del 52% desde su máximo histórico de octubre de 2025, y empresas como ETHZilla —rebautizada Forum Markets— están abandonando la estrategia de acumulación pura para pivotar hacia tokenización de activos reales. El enfriamiento institucional confirma que el ciclo bajista cripto ya tiene nombre y apellido corporativo.",
-          "url": "https://www.criptonoticias.com/mercados/compras-tesorerias-bitcoin-niveles-2024/",
-          "tag": "Mercados"
+          "source": "RT",
+          "headline": "¿Qué puede perder España si EE.UU. ejecuta su amenaza de bloqueo comercial?",
+          "body": "Las amenazas de Trump contra España — que incluyeron la palabra 'embargo' — enfrentan un obstáculo jurídico de fondo: la política comercial europea es competencia de Bruselas, no de Madrid, por lo que cualquier represalia arancelaria afectaría a los 27 miembros de la UE. El secretario del Tesoro, Scott Bessent, solo aludió a dos artículos de la ley comercial estadounidense aplicables por razones de seguridad nacional o prácticas desleales, sin concretar medidas. La tensión escala en un momento en que Europa debate su posición frente a la guerra en Irán y su relación con una administración estadounidense cada vez más impredecible.",
+          "url": "https://actualidad.rt.com/actualidad/590921-perder-espana-eventual-bloqueo-eeuu",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Gobernadores argentinos activan agendas propias: Santa Fe y Neuquén acuerdan integrar proveedores industriales a Vaca Muerta",
+          "body": "Los gobernadores Maximiliano Pullaro (Santa Fe) y Rolando Figueroa (Neuquén) firmaron un acuerdo para incorporar empresas santafesinas a la cadena de valor energética de Vaca Muerta, donde ya participan unas 350 firmas de esa provincia. El pacto incluye capacitación técnica, intercambio de tecnologías y acceso al programa Invierta Neuquén, que ofrece incentivos tributarios y crediticios. En paralelo, el gobernador chubutense Ignacio Torres participó del Consejo Interamericano de Comercio y Producción junto al presidente uruguayo Yamandú Orsi, buscando oportunidades de inversión bilateral.",
+          "url": "https://www.lanacion.com.ar/politica/los-gobernadores-activan-agendas-paralelas-para-tratar-de-dinamizar-la-produccion-en-sus-provincias-nid05032026/",
+          "tag": "Energía"
         }
       ],
       "quote": {
-        "text": "The four most dangerous words in investing are: 'This time it's different.'",
-        "attribution": "Sir John Templeton, Templeton Growth Fund, 1994"
+        "text": "In the business world, the rearview mirror is always clearer than the windshield.",
+        "attribution": "Warren Buffett, carta anual a accionistas de Berkshire Hathaway, 1989"
       }
     },
     "en": {
-      "editor_note": "Estimados humanos, as Mexico and the United States sit down to review USMCA on March 16th, the geopolitical backdrop could hardly be more turbulent: Spain and Washington are trading insults over Iran, corporate crypto markets are enduring their own winter, and Argentina is shopping for bilateral loans because Wall Street charges too much. We live in a moment when the architecture of global trade is being renegotiated on multiple fronts simultaneously, and none of them projects particular calm.",
+      "editor_note": "Estimados humanos, while the world debates whether Iran should be bombed or whether its oil reserves simply make for cheap gasoline, Mexico and the United States decide to sit down and talk about USMCA on March 16th — a diplomatic gesture that in any other historical cycle we'd call normalcy, and that today trades as positive news. The backdrop is a global order in accelerated recomposition: tariffs, wars, embargo threats, and the NYSE investing in crypto exchanges. Let no one say markets are boring.",
       "sentiment": {
         "label_es": "Cauteloso",
         "label_en": "Cautious",
-        "position": 38,
-        "context_es": "La renegociación del T-MEC y las tensiones geopolíticas en torno a Irán generan incertidumbre comercial y financiera, con señales mixtas que impiden tanto el optimismo como el pánico.",
-        "context_en": "USMCA renegotiation and geopolitical tensions around Iran inject trade and financial uncertainty, with mixed signals preventing both optimism and panic."
+        "position": 42,
+        "context_es": "Señales mixtas dominan el panorama: avances comerciales entre México y EE.UU. contrarrestan la tensión geopolítica en Medio Oriente y las fricciones entre Washington y Madrid.",
+        "context_en": "Mixed signals dominate the landscape: trade progress between Mexico and the U.S. offsets geopolitical tension in the Middle East and friction between Washington and Madrid."
       },
       "stories": [
         {
           "source": "Boston Herald / AP",
-          "headline": "Mexico and U.S. launch first bilateral USMCA review round on March 16th",
-          "body": "Economy Secretary Marcelo Ebrard and U.S. Trade Representative Jamieson Greer confirmed that an 'exploratory discussion' on rules of origin, productive integration, and supply chain security will begin on March 16th. The auto industry — which saw a 2.7% production drop in January — is the most closely watched sector, as it faces 25% tariffs on vehicles not covered by the agreement. Banco Base analyst Gabriela Siller called the early start 'positive,' suggesting that preliminary agreements may already have been reached behind the scenes.",
+          "headline": "Mexico and U.S. launch bilateral USMCA talks on March 16, ahead of the formal July review",
+          "body": "Mexican Economy Secretary Marcelo Ebrard and U.S. Trade Representative Jamieson Greer confirmed that an 'exploratory' first round of bilateral talks will begin on March 16, covering rules of origin, supply chain security, and regional competitiveness. The early start — the formal treaty review is scheduled for July — was interpreted by Banco Base economist Gabriela Siller as a sign that 'some things may already be agreed upon.' Mexican exports to the U.S. reached $534.87 billion in 2025, up 5.8%, even as sectors like automotive and steel remain subject to tariffs ranging from 25% to 50%.",
           "url": "https://www.bostonherald.com/2026/03/05/mxico-y-eeuu-inician-el-16-de-marzo-primera-ronda-de-conversaciones-para-la-revisin-del-t-mec/",
           "tag": "Comercio"
         },
         {
           "source": "Eldiario.es",
-          "headline": "Trump calls Spain a 'loser' as Madrid shuts its bases to the Iran military operation",
-          "body": "Donald Trump told the New York Post that Spain is 'very hostile to NATO' and declared he would not play 'on the same team' as Madrid, one day after his spokesperson falsely implied Spain would cooperate militarily in Iran. Defense Minister Margarita Robles was categorical: 'The use of the Spanish bases at Rota and Morón will not be authorized,' even as Spain simultaneously dispatched the frigate Cristóbal Colón to the eastern Mediterranean as part of a European protection mission in Cyprus. The Washington-Madrid tension illustrates the fracture the war against Iran is creating within the Western alliance itself.",
+          "headline": "Trump threatens to cut all trade with Spain after Madrid refuses to allow military bases to be used against Iran",
+          "body": "President Donald Trump told the New York Post that Spain is 'a loser' and reiterated instructions to Treasury Secretary Scott Bessent to cut commercial ties with Madrid, following Prime Minister Pedro Sánchez's government blocking the use of Rota and Morón bases for operations against Iran. Defense Minister Margarita Robles was unequivocal: 'The use of the bases will not be authorized. Violence is not the way.' The legal tangle is considerable: any U.S. trade restriction targeting Spain would affect all 27 EU member states, whose trade policy is decided in Brussels.",
           "url": "https://www.eldiario.es/politica/espana-mantiene-tension-eeuu-europa-crece-rechazo-guerra_1_13044348.html",
           "tag": "Macro"
         },
         {
           "source": "La Nacion",
-          "headline": "Argentina seeks bilateral loans from U.S., Israel, and Italy to avoid market rates above 9.5%",
-          "body": "The Milei government is holding talks with allied nations to secure bilateral financing ahead of a US$4.2 billion private bondholder payment due July 9th, La Nacion confirmed with direct sources. Minister Luis Caputo ruled out a New York placement after the market demanded yields above 9.5% annually on a ten-year bond, a level his team considers prohibitive. Meanwhile, analysts warn that the escalating Middle East conflict could complicate even bilateral alternatives by raising global caution toward emerging markets.",
+          "headline": "Argentina seeks bilateral loans from U.S., Israel, and Italy to avoid returning to Wall Street ahead of July debt payment",
+          "body": "The Milei administration is exploring direct government-to-government loans — with Washington, Rome, and Tel Aviv as principal interlocutors — to cover a $4.2 billion payment to private bondholders due July 9, according to sources with direct knowledge cited by La Nacion. Economy Minister Luis Caputo is ruling out an international market placement while Argentine ten-year bond yields exceed 9.5% annually. The government says it is in no rush, though analysts note that the ongoing conflict in the Middle East — with the war against Iran — is raising investor caution and complicating the external environment for emerging markets.",
           "url": "https://www.lanacion.com.ar/economia/la-argentina-suma-conversaciones-con-varios-paises-para-financiarse-sin-volver-a-wall-street-nid05032026/",
           "tag": "Macro"
         },
         {
-          "source": "RT / Eldiario.es",
-          "headline": "Europe deploys frigates to the Mediterranean as the Iran conflict pressures energy markets",
-          "body": "Italy, France, Spain, and the Netherlands are sending naval units to Cyprus following a drone attack on the British base at Akrotiri, in the context of the war declared by the U.S. and Israel against Iran. The Strait of Hormuz — through which approximately 15 million barrels per day flow, some 30% of global seaborne oil trade — remains the focal point for energy markets. The European deployment underscores that the conflict is no longer bilateral: it carries direct consequences for supply routes, crude prices, and global investor appetite.",
-          "url": "https://actualidad.rt.com/actualidad/590952-paises-europeos-desplegar-fuerzas-militares-chipre",
-          "tag": "Energía"
-        },
-        {
-          "source": "Intercontinental Exchange / Cointelegraph",
-          "headline": "NYSE invests in OKX at a US$25 billion valuation, plans to bring tokenized stocks to 120 million users",
-          "body": "Intercontinental Exchange, owner of the New York Stock Exchange, acquired an undisclosed stake in crypto exchange OKX and will take a seat on its board of directors. The deal contemplates integrating tokenized equities and NYSE-listed derivatives into OKX's base of 120 million accounts by the second half of 2026. The move is the strongest institutional signal yet that traditional finance and digital assets are converging, regardless of what Bitcoin's spot price happens to be doing.",
+          "source": "Cointelegraph",
+          "headline": "NYSE parent invests in OKX at a $25 billion valuation, plans to bring tokenized stocks to 120 million crypto users",
+          "body": "Intercontinental Exchange, owner of the New York Stock Exchange, made an undisclosed investment in crypto exchange OKX — valued at $25 billion — and will take a seat on its board of directors. The deal envisions OKX offering its approximately 120 million account holders access to ICE futures and NYSE tokenized securities, with rollout planned for the second half of 2026. The move is the latest in a series: in November 2025 ICE announced a $2 billion investment in prediction market Polymarket, and in January it revealed it was building its own blockchain-based trading infrastructure.",
           "url": "https://es.cointelegraph.com/news/nyse-intercontinental-exchange-invests-okx-25b-valuation",
           "tag": "Mercados"
         },
         {
           "source": "El Financiero",
-          "headline": "Two U.S. firms to invest US$500 million in electric vehicle charging infrastructure across Mexico's Bajío region",
-          "body": "Invisible Urban Charging (Atlanta) and ATX Smart Mobility (Miami) will oversee a US$500 million investment to deploy 38 chargers and 140 electric buses across Mexico City, State of Mexico, Puebla, and Querétaro, in partnership with CBRE. Mexico currently has a ratio of 280 cars per charger versus the recommended 40, representing a massive infrastructure opportunity. The arrival of Chinese brands such as BYD and Geely is accelerating adoption, turning the country into a strategic battleground for electric mobility across Latin America.",
+          "headline": "Two U.S. firms to invest $500 million in electric vehicle charging infrastructure across Mexico's Bajío region",
+          "body": "Invisible Urban Charging Inc. (Atlanta) and ATX Smart Mobility (Miami) will oversee a $500 million investment to deploy 38 chargers and 140 electric buses across the Bajío region — Mexico City, State of Mexico, Puebla, and Querétaro — in partnership with CBRE Group for site selection. The bet responds to a structural gap: Mexico currently has a ratio of 280 cars per charger, against a recommended standard of 40. The arrival of Chinese EV brands like BYD and Geely in the Mexican market is accelerating pressure on charging infrastructure.",
           "url": "https://www.elfinanciero.com.mx/economia/2026/03/05/que-empresas-de-eu-invertiran-500-mdd-en-mexico-y-en-que-sectores-apostaran/",
           "tag": "México"
         },
         {
-          "source": "Criptonoticias",
-          "headline": "Corporate Bitcoin purchases collapse to US$555 million in February, lowest since October 2024",
-          "body": "Corporate digital asset treasuries recorded their lowest accumulation level in 16 months in February 2026, down from US$12.3 billion purchased in November 2024 following Trump's election victory. Bitcoin has fallen 52% from its October 2025 all-time high, and companies such as ETHZilla — rebranded as Forum Markets — are abandoning pure accumulation strategies in favor of real-world asset tokenization. The institutional cooling confirms that the crypto bear cycle has taken on a clear corporate identity.",
-          "url": "https://www.criptonoticias.com/mercados/compras-tesorerias-bitcoin-niveles-2024/",
-          "tag": "Mercados"
+          "source": "RT",
+          "headline": "What could Spain actually lose if the U.S. follows through on its trade blockade threat?",
+          "body": "Trump's threats against Spain — including the word 'embargo' — face a fundamental legal obstacle: European trade policy is Brussels' domain, not Madrid's, meaning any tariff retaliation would hit all 27 EU members. Treasury Secretary Scott Bessent only cited two provisions of U.S. trade law applicable on national security or unfair practice grounds, without specifying concrete measures. Tensions are escalating at a moment when Europe is debating its position on the war in Iran and its relationship with an increasingly unpredictable U.S. administration.",
+          "url": "https://actualidad.rt.com/actualidad/590921-perder-espana-eventual-bloqueo-eeuu",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentine governors pursue parallel agendas: Santa Fe and Neuquén strike deal to integrate industrial suppliers into Vaca Muerta",
+          "body": "Governors Maximiliano Pullaro (Santa Fe) and Rolando Figueroa (Neuquén) signed an agreement to incorporate Santa Fe industrial firms into Vaca Muerta's energy supply chain, where roughly 350 companies from that province already participate. The pact includes technical training, technology exchange, and access to Neuquén's Invierta Neuquén program, which offers tax and credit incentives. Separately, Chubut Governor Ignacio Torres attended the Inter-American Council for Trade and Production alongside Uruguayan President Yamandú Orsi, seeking bilateral investment opportunities.",
+          "url": "https://www.lanacion.com.ar/politica/los-gobernadores-activan-agendas-paralelas-para-tratar-de-dinamizar-la-produccion-en-sus-provincias-nid05032026/",
+          "tag": "Energía"
         }
       ],
       "quote": {
-        "text": "The four most dangerous words in investing are: 'This time it's different.'",
-        "attribution": "Sir John Templeton, Templeton Growth Fund, 1994"
+        "text": "In the business world, the rearview mirror is always clearer than the windshield.",
+        "attribution": "Warren Buffett, Berkshire Hathaway annual shareholder letter, 1989"
       }
     }
   },
@@ -162,49 +162,49 @@
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.7880",
+        "rate": "17.7915",
         "chg_1d": {
-          "text": "▲ 1.11%",
+          "text": "▲ 1.13%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.72%",
+          "text": "▲ 2.74%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.6646",
+        "rate": "20.6593",
         "chg_1d": {
-          "text": "▲ 0.95%",
+          "text": "▲ 0.93%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 1.48%",
+          "text": "▲ 1.46%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "13.1110",
+        "rate": "13.1182",
         "chg_1d": {
-          "text": "▲ 1.68%",
+          "text": "▲ 1.74%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.49%",
+          "text": "▲ 3.55%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "122.6749",
+        "rate": "122.6991",
         "chg_1d": {
-          "text": "▲ 1.10%",
+          "text": "▲ 1.12%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.30%",
+          "text": "▲ 3.32%",
           "cls": "chg-up"
         }
       }
@@ -214,7 +214,7 @@
     "city": "Mexico City",
     "temp": "21°C",
     "high_low": "21°C / 9°C",
-    "humidity": "Humidity 34%",
+    "humidity": "Humidity 32%",
     "desc": "Partly cloudy"
   }
 }
