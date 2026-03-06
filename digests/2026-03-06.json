@@ -2,133 +2,77 @@
   "date": "2026-03-06",
   "digest": {
     "es": {
-      "editor_note": "Estimados humanos, el Estrecho de Ormuz está funcionalmente bloqueado, el WTI sube casi 9% y Wall Street sangra mientras Medio Oriente arde en su sexto día de guerra — y aun así, los mercados no han capitulado del todo, lo cual dice algo sobre el umbral de dolor moderno. Irán ataca petroleros, Israel amenaza Beirut con el destino de Gaza, y Europa envía fragatas al Mediterráneo con la convicción de que eso no es 'estar en guerra'. Lo que viene a continuación es su resumen de un jueves que, sinceramente, no aburre.",
+      "editor_note": "Estimados humanos, arrancamos la semana con Medio Oriente en llamas — literalmente — mientras Israel amenaza con convertir Beirut sur en el próximo Gaza y la sucesión del liderazgo iraní se debate entre clérigos octogenarios bajo fuego aéreo. Los mercados tienen motivos de sobra para estar nerviosos, aunque sospecho que algunos operadores aún están procesando que el ayatollah Khamenei ya no está en el organigrama.",
       "sentiment": {
         "label_es": "Aversión al Riesgo",
         "label_en": "Risk-Off",
-        "position": 18,
-        "context_es": "La guerra EU-Irán en su sexto día bloquea el Estrecho de Ormuz, dispara el crudo casi 9% y desploma bolsas globales, con el peso mexicano perdiendo 1.3% y la BMV cayendo casi 3%.",
-        "context_en": "The US-Iran war in its sixth day is functionally blocking the Strait of Hormuz, sending crude up nearly 9% and crushing global equities, with the Mexican peso down 1.3% and the BMV falling nearly 3%."
+        "position": 22,
+        "context_es": "La escalada militar entre EE.UU., Israel e Irán — con Líbano ya arrastrado al conflicto — genera aversión al riesgo pronunciada, presionando activos emergentes y energía al alza.",
+        "context_en": "The military escalation between the U.S., Israel, and Iran — with Lebanon now drawn into the conflict — is driving pronounced risk aversion, pressuring emerging-market assets and pushing energy prices higher."
       },
       "stories": [
         {
-          "source": "El Financiero",
-          "headline": "Ataque iraní a petrolero dispara el WTI casi 9% y bloquea de facto el Estrecho de Ormuz",
-          "body": "En el sexto día de la guerra entre EU, Israel e Irán, el precio del barril WTI subió 8.29% hasta los 80.85 dólares — su nivel más alto desde julio de 2024 — tras el ataque de Teherán a un petrolero en el Golfo Pérsico. El tráfico a través del Estrecho de Ormuz, por donde transita el 20% del petróleo mundial, se ha desplomado más de 95% según datos de Bloomberg, con grandes petroleros evitando la ruta; China suspendió exportaciones de diésel y gasolina, y Japón pidió liberar reservas estratégicas. La principal pregunta de mercado ya no es si los precios subirán más, sino cuánto tiempo puede sostenerse una interrupción de esta magnitud antes de que el daño sea permanente.",
-          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/precio-del-petroleo-wti-brent-hoy-5-de-marzo-de-2026/",
-          "tag": "Energía"
-        },
-        {
-          "source": "La Nacion",
-          "headline": "Israel amenaza a Beirut con la devastación de Gaza mientras Líbano registra 102 muertos y 500,000 desplazados",
-          "body": "El ministro de Finanzas israelí Bezalel Smotrich advirtió que los suburbios del sur de Beirut 'pronto se parecerán a Khan Younis', desatando pánico y evacuaciones masivas en la capital libanesa. Desde que Hezbollah atacó a Israel el lunes para 'vengar' la muerte del ayatollah Khamenei, Líbano registra al menos 102 muertos, 638 heridos y más de 500,000 desplazados, con tropas israelíes ya operando en localidades del sur del país. El conflicto, iniciado el sábado con la ofensiva conjunta de Estados Unidos e Israel contra Irán, continúa expandiendo su alcance regional a una velocidad que supera cualquier marco diplomático visible.",
+          "source": "La Nación",
+          "headline": "Israel amenaza con devastar el bastión de Hezbollah en Beirut al estilo Gaza; 500,000 desplazados en Líbano",
+          "body": "El ministro de Finanzas israelí Bezalel Smotrich advirtió que los suburbios del sur de Beirut, conocidos como Dahiyeh, podrían correr la misma suerte que Khan Younis en Gaza. El Ejército israelí ya ingresó a localidades del sur del Líbano y los bombardeos han dejado al menos 102 muertos, 638 heridos y más de 500,000 desplazados. La escalada se produce tras los ataques de Hezbollah del lunes, lanzados en represalia por la muerte del ayatollah Khamenei durante la ofensiva conjunta EE.UU.-Israel contra Irán.",
           "url": "https://www.lanacion.com.ar/el-mundo/israel-advierte-que-el-bastion-de-hezbollah-podria-sufrir-la-devastacion-de-gaza-y-provoca-panico-y-nid05032026/",
           "tag": "Macro"
         },
         {
           "source": "El Financiero",
-          "headline": "Wall Street cae hasta 1.6% y el peso pierde 1.3% ante la prolongación de la guerra en Medio Oriente",
-          "body": "El Dow Jones cerró con una caída de 1.61% a 47,954 puntos, el S&P 500 retrocedió 0.56% y la Bolsa Mexicana de Valores fue de las más golpeadas a nivel regional con un desplome de 2.91% hasta 68,379 unidades. El peso mexicano se depreció 1.31% para ubicarse en 17.79 pesos por dólar, presionado por el fortalecimiento del dólar índex y las expectativas de inflación global derivadas del choque energético. Analistas de Wolfe Research estiman que si el conflicto se resuelve en semanas el Brent podría retornar hacia los 65 dólares, pero nadie en el mercado parece apostar mucho dinero a ese escenario hoy.",
-          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/bmv-wall-street-hoy-5-de-marzo-de-2025/",
+          "headline": "La sucesión del liderazgo supremo iraní se retrasa seis días bajo presión de la guerra y divisiones internas",
+          "body": "La Asamblea de Expertos de Irán, compuesta por 88 clérigos chiítas — muchos de entre 80 y 90 años — no ha logrado nombrar al sucesor de Khamenei seis días después de su asesinato, un proceso que en 1989 tomó apenas 24 horas. Israel bombardeó la sede principal de la asamblea el martes, matando al menos a tres empleados. El hijo de Khamenei, Mojtaba, emerge como candidato con vínculos estrechos a la Guardia Revolucionaria, que controla hasta el 40% de la economía iraní, lo que hace que la decisión tenga implicaciones financieras y geopolíticas de primer orden.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/05/por-que-se-retrasa-la-eleccion-del-nuevo-lider-supremo-de-iran-y-quien-es-su-gallo/",
+          "tag": "Política"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "El 'efecto Ikea' en las finanzas: por qué seguimos aferrados a inversiones que ya no rinden",
+          "body": "La economía conductual documenta que las personas sobrevaloран aquello en lo que invirtieron esfuerzo propio — un fenómeno que en inversiones se traduce en mantener posiciones perdedoras por ego y en sostener negocios no rentables porque cerrarlos se vive como derrota personal. El antídoto propuesto es separar identidad y resultado: el aprendizaje tiene valor, la decisión inicial ya no. En entornos de alta volatilidad geopolítica como el actual, este sesgo puede resultar particularmente costoso.",
+          "url": "https://www.elfinanciero.com.mx/opinion/alberto-tovar/2026/03/05/el-efecto-ikea-en-tus-decisiones-financieras/",
           "tag": "Mercados"
-        },
-        {
-          "source": "La Nacion",
-          "headline": "Europa despliega fragatas y cazas al Mediterráneo y el Golfo con la convicción de que eso no es estar en guerra",
-          "body": "Italia confirmó el envío de sistemas de defensa aérea, antidrones y misiles a países del Golfo Pérsico, mientras España oficializó el despliegue de la fragata Cristóbal Colón al Mediterráneo oriental para integrarse al grupo naval del portaaviones francés Charles de Gaulle. España mantiene su negativa a permitir el uso de las bases de Rota y Morón para ataques contra Irán, resistiendo presiones de Washington y amenazas del presidente Trump de cortar el comercio bilateral. Francia, en posición intermedia, autorizó temporalmente presencia de aviones estadounidenses en sus bases regionales mientras califica las operaciones iniciales de EU e Israel como 'fuera del derecho internacional' — una distinción que Bruselas deberá sostener con cada fragata adicional que zarpe.",
-          "url": "https://www.lanacion.com.ar/el-mundo/europa-aumenta-su-presencia-militar-y-envia-cazas-y-buques-al-golfo-y-al-mediterraneo-nid05032026/",
-          "tag": "Macro"
-        },
-        {
-          "source": "El Financiero",
-          "headline": "Hacienda de México presume colchón financiero de 280,000 mdd y proyecta crecimiento del 3% para 2026",
-          "body": "El secretario de Hacienda, Edgar Amador, detalló ante consejeros de Banamex que México dispone de reservas internacionales por 250,000 millones de dólares, una línea de crédito flexible del FMI por 24,000 millones y el Fondo de Estabilización de Ingresos Presupuestales que supera los 120,000 millones de pesos. Amador proyectó un crecimiento cercano al 3% para finales de 2026, por encima de los pronósticos de la OCDE (1.4%) y Banxico (1.6%), argumentando que el impulso de la segunda mitad de 2025 y el plan de infraestructura elevarán la capacidad productiva. El discurso transmite solidez — la credibilidad de esas cifras se pondrá a prueba precisamente mientras el precio del crudo importado se dispara y la guerra comercial global no da tregua.",
-          "url": "https://www.elfinanciero.com.mx/economia/2026/03/05/mexico-tiene-salvavidas-financiero-de-280-mil-mdd-para-2026-hacienda/",
-          "tag": "México"
-        },
-        {
-          "source": "La Nacion",
-          "headline": "Caputo promete US$26,000 millones en inversiones vía RIGI y descarta el 'riesgo kuka' para Argentina",
-          "body": "El ministro de Economía Luis Caputo afirmó en el Foro de Inversiones de Mendoza que hay 26,000 millones de dólares en proyectos aprobados bajo el Régimen de Incentivos para Grandes Inversiones (RIGI) que comenzarán a ejecutarse este año, con otros 42,000 millones en pipeline. Argentina avanzó del puesto 124 al 106 en el Índice de Libertad Económica de Heritage Foundation, registrando la mayor suba global en el período, aunque aún permanece en la categoría de países 'mayormente no libres'. Caputo descartó categóricamente un regreso kirchnerista — 'hay cero probabilidad' — y aprovechó para señalar que hace tres años los aliados de Argentina eran Venezuela e Irán, una comparación que hoy, con Irán en guerra total, resulta especialmente cargada.",
-          "url": "https://www.lanacion.com.ar/economia/negocios/luis-caputo-en-los-proximos-cuatro-anos-veremos-un-nivel-de-inversion-que-no-vimos-nunca-nid05032026/",
-          "tag": "Macro"
-        },
-        {
-          "source": "El Financiero",
-          "headline": "La sucesión del CJNG: cinco candidatos y la posibilidad de dividir el cartel tras la muerte de El Mencho",
-          "body": "El secretario de Seguridad Omar García Harfuch entregó a la presidenta Sheinbaum una lista con cinco candidatos a suceder a Nemesio Oseguera al frente del Cártel Jalisco Nueva Generación, entre ellos su hijastro Juan González Valencia, Audias Flores Silva 'El Jardinero' y Ricardo Ruiz Velasco 'El Doble R'. Fuentes de inteligencia consideran que para evitar una guerra interna entre la treintena de jefes de plaza activos en más de 25 estados, el CJNG podría dividirse operativamente en dos mandos — norte bajo El Jardinero desde Puerto Vallarta, sur bajo El Doble R desde Guadalajara. La pregunta sin respuesta es quién controlaría la ingeniería financiera central, el lavado vía criptomonedas y las alianzas internacionales que El Mencho manejaba personalmente.",
-          "url": "https://www.elfinanciero.com.mx/opinion/raymundo-riva-palacio/2026/03/04/la-sucesion-de-el-mencho/",
-          "tag": "México"
         }
       ],
       "quote": {
-        "text": "Oil is the lifeblood of the industrialised nations; to control it is to control the destiny of civilisation.",
-        "attribution": "Robert Sherrill, The Oil Follies of 1970–1980, 1983"
+        "text": "The market can remain irrational longer than you can remain solvent.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
       }
     },
     "en": {
-      "editor_note": "Estimados humanos, the Strait of Hormuz is functionally blocked, WTI is up nearly 9% and Wall Street is bleeding while the Middle East burns through day six of a regional war — and yet markets haven't fully capitulated, which says something about the modern pain threshold. Iran attacks tankers, Israel threatens Beirut with the fate of Gaza, and Europe deploys frigates to the Mediterranean with the conviction that this somehow doesn't count as being at war. What follows is your summary of a Thursday that, frankly, does not bore.",
+      "editor_note": "Estimados humanos, we begin the week with the Middle East literally on fire — Israel is threatening to turn south Beirut into the next Gaza while Iran's clerical succession debate unfolds under airstrikes, with octogenarian ayatollahs dodging Israeli bombs between ballots. Markets have every reason to be on edge, though I suspect some traders are still processing the fact that Khamenei is no longer on the org chart.",
       "sentiment": {
         "label_es": "Aversión al Riesgo",
         "label_en": "Risk-Off",
-        "position": 18,
-        "context_es": "La guerra EU-Irán en su sexto día bloquea el Estrecho de Ormuz, dispara el crudo casi 9% y desploma bolsas globales, con el peso mexicano perdiendo 1.3% y la BMV cayendo casi 3%.",
-        "context_en": "The US-Iran war in its sixth day is functionally blocking the Strait of Hormuz, sending crude up nearly 9% and crushing global equities, with the Mexican peso down 1.3% and the BMV falling nearly 3%."
+        "position": 22,
+        "context_es": "La escalada militar entre EE.UU., Israel e Irán — con Líbano ya arrastrado al conflicto — genera aversión al riesgo pronunciada, presionando activos emergentes y energía al alza.",
+        "context_en": "The military escalation between the U.S., Israel, and Iran — with Lebanon now drawn into the conflict — is driving pronounced risk aversion, pressuring emerging-market assets and pushing energy prices higher."
       },
       "stories": [
         {
-          "source": "El Financiero",
-          "headline": "Iranian attack on tanker sends WTI up nearly 9% as the Strait of Hormuz is de facto blocked",
-          "body": "On the sixth day of the US-Israel-Iran war, WTI crude rose 8.29% to $80.85 per barrel — its highest level since July 2024 — after Tehran struck a tanker in the Persian Gulf. Traffic through the Strait of Hormuz, which handles roughly 20% of global oil supply, has collapsed by more than 95% according to Bloomberg tracking data, with large tankers avoiding the route; China suspended diesel and gasoline exports, and Japan requested the release of strategic reserves. The key market question is no longer whether prices will rise further, but how long a disruption of this magnitude can persist before the damage becomes structural.",
-          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/precio-del-petroleo-wti-brent-hoy-5-de-marzo-de-2026/",
-          "tag": "Energía"
-        },
-        {
-          "source": "La Nacion",
-          "headline": "Israel threatens Beirut with Gaza's fate as Lebanon records 102 dead and 500,000 displaced",
-          "body": "Israeli Finance Minister Bezalel Smotrich warned that Beirut's southern suburbs 'will soon look like Khan Younis,' triggering panic and mass evacuations across the Lebanese capital. Since Hezbollah attacked Israel on Monday to 'avenge' the death of Ayatollah Khamenei, Lebanon has recorded at least 102 dead, 638 wounded and more than 500,000 displaced, with Israeli troops already operating in towns in the country's south. The conflict, launched Saturday with the joint US-Israeli offensive against Iran, continues to expand its regional reach at a pace that outstrips any visible diplomatic framework.",
+          "source": "La Nación",
+          "headline": "Israel threatens to devastate Hezbollah's Beirut stronghold Gaza-style; 500,000 displaced in Lebanon",
+          "body": "Israeli Finance Minister Bezalel Smotrich warned that south Beirut's suburbs, known as Dahiyeh, could face the same fate as Khan Younis in Gaza. The Israeli army has already entered towns in southern Lebanon, and the bombardment campaign has left at least 102 dead, 638 wounded, and more than 500,000 displaced. The escalation follows Hezbollah's Monday attacks, launched in retaliation for Ayatollah Khamenei's death during the joint U.S.-Israel offensive against Iran.",
           "url": "https://www.lanacion.com.ar/el-mundo/israel-advierte-que-el-bastion-de-hezbollah-podria-sufrir-la-devastacion-de-gaza-y-provoca-panico-y-nid05032026/",
           "tag": "Macro"
         },
         {
           "source": "El Financiero",
-          "headline": "Wall Street falls up to 1.6% and the peso loses 1.3% as Middle East war drags on",
-          "body": "The Dow Jones closed down 1.61% at 47,954 points, the S&P 500 fell 0.56%, and the Mexican Stock Exchange was among the hardest-hit regionally, tumbling 2.91% to 68,379 units. The Mexican peso depreciated 1.31% to 17.79 pesos per dollar, pressured by a stronger dollar index and rising global inflation expectations stemming from the energy shock. Analysts at Wolfe Research estimate that if the conflict resolves within weeks, Brent could return toward $65 per barrel — though few in the market appear to be betting heavily on that scenario today.",
-          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/bmv-wall-street-hoy-5-de-marzo-de-2025/",
+          "headline": "Iran's supreme leadership succession stalls six days into the war amid internal divisions and airstrikes",
+          "body": "Iran's Assembly of Experts — 88 Shia clerics, many in their 80s and 90s — has failed to name a successor to Khamenei six days after his assassination, a process that took just 24 hours in 1989. Israel bombed the assembly's main headquarters on Tuesday, killing at least three administrative staff. Khamenei's son Mojtaba is emerging as a leading candidate with close ties to the Revolutionary Guard, which controls up to 40% of Iran's economy, making the outcome a matter of major financial and geopolitical consequence.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/05/por-que-se-retrasa-la-eleccion-del-nuevo-lider-supremo-de-iran-y-quien-es-su-gallo/",
+          "tag": "Política"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "The 'Ikea Effect' in finance: why we keep clinging to investments that no longer deliver",
+          "body": "Behavioral economics documents that people systematically overvalue things they've built themselves — a bias that in investing translates to holding losing positions out of ego and sustaining unprofitable businesses because closing them feels like personal defeat. The proposed antidote is to separate identity from outcome: the learning retains value, the original decision does not. In high-volatility geopolitical environments like the current one, this cognitive bias can prove particularly expensive.",
+          "url": "https://www.elfinanciero.com.mx/opinion/alberto-tovar/2026/03/05/el-efecto-ikea-en-tus-decisiones-financieras/",
           "tag": "Mercados"
-        },
-        {
-          "source": "La Nacion",
-          "headline": "Europe deploys frigates and fighter jets to the Mediterranean and Gulf, insisting it is not at war",
-          "body": "Italy confirmed the dispatch of air defense systems, anti-drone equipment and missiles to Gulf countries, while Spain officially sent the frigate Cristóbal Colón to the eastern Mediterranean to join the French carrier strike group led by the Charles de Gaulle. Spain is holding firm in its refusal to allow the use of the Rota and Morón bases for strikes against Iran, resisting US pressure and Trump's threats to cut bilateral trade. France, in an intermediate position, temporarily authorized the presence of American aircraft on its regional bases while describing the initial US-Israeli operations as 'outside international law' — a distinction Brussels will have to sustain with every additional warship that sails.",
-          "url": "https://www.lanacion.com.ar/el-mundo/europa-aumenta-su-presencia-militar-y-envia-cazas-y-buques-al-golfo-y-al-mediterraneo-nid05032026/",
-          "tag": "Macro"
-        },
-        {
-          "source": "El Financiero",
-          "headline": "Mexico's Treasury touts $280bn financial cushion and projects 3% growth for 2026",
-          "body": "Finance Secretary Edgar Amador told Banamex advisors that Mexico holds $250 billion in international reserves, a $24 billion IMF Flexible Credit Line, and a budget stabilization fund exceeding 120 billion pesos. Amador projected growth close to 3% by end-2026, well above OECD (1.4%) and Banxico (1.6%) forecasts, citing the second-half 2025 momentum and the new national infrastructure plan as catalysts. The message projects confidence — its credibility will be tested precisely as imported crude prices surge and the global trade war shows no sign of abating.",
-          "url": "https://www.elfinanciero.com.mx/economia/2026/03/05/mexico-tiene-salvavidas-financiero-de-280-mil-mdd-para-2026-hacienda/",
-          "tag": "México"
-        },
-        {
-          "source": "La Nacion",
-          "headline": "Caputo pledges $26bn in RIGI investments and dismisses Kirchnerist comeback risk for Argentina",
-          "body": "Economy Minister Luis Caputo declared at the Mendoza Investment Forum that $26 billion in projects approved under the Large Investment Incentive Regime (RIGI) will begin flowing into Argentina this year, with another $42 billion in the pipeline. Argentina climbed from 124th to 106th in Heritage Foundation's Economic Freedom Index, posting the largest single-year global gain — though it still sits in the 'mostly unfree' category. Caputo flatly ruled out a Kirchnerist return — 'zero probability' — and noted that three years ago Argentina's allies were Venezuela and Iran, a comparison that, with Iran now in full-scale war, carries rather more weight than he may have intended.",
-          "url": "https://www.lanacion.com.ar/economia/negocios/luis-caputo-en-los-proximos-cuatro-anos-veremos-un-nivel-de-inversion-que-no-vimos-nunca-nid05032026/",
-          "tag": "Macro"
-        },
-        {
-          "source": "El Financiero",
-          "headline": "CJNG succession: five candidates and a possible cartel split after El Mencho's death",
-          "body": "Security Secretary Omar García Harfuch handed President Sheinbaum a shortlist of five candidates to lead the Jalisco New Generation Cartel, including El Mencho's stepson Juan González Valencia, 'El Jardinero' Audias Flores Silva and 'El Doble R' Ricardo Ruiz Velasco. Intelligence sources say the CJNG may split into two operational commands to prevent an internal war among the roughly thirty plaza bosses active across more than 25 states — with El Jardinero running the north from Puerto Vallarta and El Doble R controlling the south from Guadalajara. The unanswered question is who would control the central financial architecture, the crypto-based money laundering operations and the international alliances that El Mencho managed personally.",
-          "url": "https://www.elfinanciero.com.mx/opinion/raymundo-riva-palacio/2026/03/04/la-sucesion-de-el-mencho/",
-          "tag": "México"
         }
       ],
       "quote": {
-        "text": "Oil is the lifeblood of the industrialised nations; to control it is to control the destiny of civilisation.",
-        "attribution": "Robert Sherrill, The Oil Follies of 1970–1980, 1983"
+        "text": "The market can remain irrational longer than you can remain solvent.",
+        "attribution": "John Maynard Keynes, attributed, circa 1930s"
       }
     }
   },
@@ -136,14 +80,14 @@
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.77",
-        "change": "▲ 1.0%",
+        "value": "17.79",
+        "change": "▲ 1.1%",
         "direction": "up"
       },
       {
         "label": "S&P 500",
-        "value": "6,764",
-        "change": "▼ 1.5%",
+        "value": "6,759",
+        "change": "▼ 1.6%",
         "direction": "down"
       },
       {
@@ -154,7 +98,7 @@
       },
       {
         "label": "IPC BMV",
-        "value": "67,705.84",
+        "value": "67,712.61",
         "change": "▼ 1.0%",
         "direction": "down"
       }
@@ -162,49 +106,49 @@
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.7743",
+        "rate": "17.7887",
         "chg_1d": {
-          "text": "▲ 1.03%",
+          "text": "▲ 1.11%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.64%",
+          "text": "▲ 2.72%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.6320",
+        "rate": "20.6362",
         "chg_1d": {
-          "text": "▲ 0.79%",
+          "text": "▲ 0.81%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 1.32%",
+          "text": "▲ 1.34%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "13.0849",
+        "rate": "13.0894",
         "chg_1d": {
-          "text": "▲ 1.48%",
+          "text": "▲ 1.51%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.29%",
+          "text": "▲ 3.32%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "122.5716",
+        "rate": "122.6854",
         "chg_1d": {
-          "text": "▲ 1.02%",
+          "text": "▲ 1.11%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 3.21%",
+          "text": "▲ 3.31%",
           "cls": "chg-up"
         }
       }
