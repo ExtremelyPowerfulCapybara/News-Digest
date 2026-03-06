@@ -1,0 +1,220 @@
+{
+  "date": "2026-03-06",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, la guerra entre EEUU-Israel e Irán sigue siendo el eje gravitacional de todos los mercados esta semana: el petróleo se estabilizó en torno a los 81 dólares Brent tras rozar los 84, y Asia rebotó con fuerza mientras Wall Street recuperó parte del terreno perdido. Entre tanto, España se convirtió en protagonista involuntaria del conflicto al negarle a Trump el uso de sus bases militares, lo que derivó en amenazas de embargo comercial sobre una economía que tiene 130.000 millones en inversión estadounidense acumulada. La geopolítica ya no es un riesgo de cola; es el menú principal.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Los mercados rebotaron técnicamente tras la estabilización del petróleo, pero la guerra en Irán y las tensiones comerciales EEUU-España mantienen al mercado en guardia.",
+        "context_en": "Markets bounced technically after oil stabilized, but the Iran war and US-Spain trade tensions keep the overall tone defensive."
+      },
+      "stories": [
+        {
+          "source": "Elespanol.com",
+          "headline": "Trump amenaza con cortar el comercio con España tras negarse a ceder bases militares para atacar Irán",
+          "body": "España rechazó el uso de las bases de Rota y Morón para la ofensiva de EEUU e Israel contra Irán, lo que provocó que Trump tildara al país de 'aliado terrible' y amenazara con 'cortar todo el comercio'. El secretario del Tesoro Scott Bessent escaló la presión argumentando que la postura española 'pone en riesgo la vida de los estadounidenses'. La Casa Blanca llegó a afirmar que España había aceptado cooperar militarmente, algo que Moncloa desmintió calificando la declaración de 'fake news'.",
+          "url": "https://www.expansion.com/economia/2026/03/05/69a888d8e5fdeac3028b45b5.html",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Expansion.com",
+          "headline": "España exportó 16.700 millones a EEUU en 2025: farma, alimentos y bienes de equipo en la línea de fuego",
+          "body": "Las exportaciones españolas a Estados Unidos sumaron 16.716 millones de euros en 2025, con bienes de equipo, farmacéuticos y agroalimentario como sectores más expuestos a un posible embargo. Empresas como Almirall, Grifols, Puig, Ebro Foods y Dcoop siguen con alarma las amenazas de Trump, aunque los grandes conglomerados con filiales locales —Iberdrola, Santander, ACS— estarían en gran medida blindados. La balanza bilateral es desfavorable para España: importó 30.174 millones desde EEUU el año pasado.",
+          "url": "https://www.expansion.com/empresas/2026/03/05/69a8a406468aebd56f8b4592.html",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Boston Herald",
+          "headline": "Mercados asiáticos rebotan con fuerza: Kospi +12% y Nikkei +4,4% tras estabilización del petróleo",
+          "body": "Las bolsas asiáticas abrieron el jueves con ganancias significativas después de que Wall Street recuperara terreno el miércoles, con el S&P 500 subiendo un 0,8% y el Nasdaq un 1,3%. El detonante fue la estabilización del crudo Brent, que tras tocar brevemente los 84 dólares cerró en 81,40 dólares por barril. El Kospi surcoreano recuperó íntegramente el 12% perdido la jornada anterior, señal de que los mercados siguen operando en modo reactivo a cada titular geopolítico.",
+          "url": "https://www.bostonherald.com/2026/03/04/los-mercados-asiticos-se-disparan-tras-el-repunte-en-wall-street-y-la-calma-en-el-sector-petrolero/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "Elespanol.com",
+          "headline": "La guerra de desgaste iraní: drones de 20.000 dólares contra misiles Patriot de 4 millones",
+          "body": "Irán está librando una guerra de ecuaciones financieras: cada drone de fabricación propia que lanza cuesta 20.000 dólares, mientras que cada misil Patriot PAC-3 que lo derriba vale 4 millones. Con apenas 600 misiles PAC-3 fabricados en 2025 según Lockheed Martin, y miles ya lanzados desde que comenzaron los ataques el sábado, las reservas regionales podrían caer a niveles peligrosamente bajos en días. El Estrecho de Ormuz, por donde transita el 20% del crudo mundial, permanece como el nudo estratégico más sensible del conflicto.",
+          "url": "https://actualidad.rt.com/actualidad/590653-iran-drones-reto-defensas-antiaereas-eeuu",
+          "tag": "Energía"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "Western Union lanza stablecoin USDPT en Solana con Crossmint para revolucionar las remesas globales",
+          "body": "Western Union se asoció con Crossmint para dar soporte a su stablecoin USDPT en la blockchain de Solana, conectando pagos en blockchain con su red de más de 360.000 puntos de cobro en efectivo en más de 200 países. El movimiento apunta directamente al mercado de remesas globales, valorado en 905.000 millones de dólares en 2024, donde el costo promedio de enviar 200 dólares sigue rondando el 6%. En América Latina, las stablecoins ya representan más del 50% de las compras cripto con peso argentino, real brasileño y peso colombiano.",
+          "url": "https://es.cointelegraph.com/news/western-union-taps-crossmint-to-support-solana-based-usd-stablecoin-and-digital-asset-payout-network",
+          "tag": "FX"
+        },
+        {
+          "source": "Latercera.com",
+          "headline": "El Consejo Fiscal Autónomo de Chile reprueba al gobierno de Boric: déficit estructural de -3,6% del PIB, el peor desvío en años normales",
+          "body": "El CFA chileno publicó su informe final sobre la gestión fiscal de la administración Boric, registrando un balance estructural de -3,6% del PIB, con un desvío de 2,5 puntos porcentuales respecto a la meta original de -1,1%. El organismo fue categórico: 'no se trata de una situación transitoria' y señaló errores reiterados en la proyección de ingresos, gasto por encima de lo comprometido y escasa efectividad del plan de ajuste. Es la tercera vez consecutiva que se desvía la meta, en un año sin crisis extraordinarias.",
+          "url": "https://www.latercera.com/pulso/noticia/en-duro-informe-el-cfa-reprueba-la-gestion-y-los-resultados-fiscales-del-gobierno-de-boric/",
+          "tag": "Macro"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "Ark Invest compra 16 millones en acciones de Coinbase y Robinhood mientras el mercado cae por tensiones con Irán",
+          "body": "Cathie Wood aprovechó la caída del mercado para acumular 22.452 acciones de Coinbase —valoradas en 4,1 millones de dólares— y 158.587 acciones de Robinhood por unos 12 millones, a través de sus ETFs ARKK, ARKW y ARKF. Las compras se realizaron el martes, cuando Coinbase cedió un 1,55% y Robinhood un 3,44% en medio de la presión geopolítica. El movimiento llega tras una racha de ventas de Coinbase por parte de ARK en febrero y después de que la exchange reportara una pérdida neta de 667 millones de dólares en el cuarto trimestre de 2025.",
+          "url": "https://es.cointelegraph.com/news/ark-invest-buys-coinbase-robinhood-amid-market-selloff",
+          "tag": "Mercados"
+        }
+      ],
+      "quote": {
+        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
+        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the US-Israel war against Iran remains the gravitational axis of all markets this week: oil stabilized around $81 Brent after briefly touching $84, and Asia rebounded sharply while Wall Street recovered part of its lost ground. Meanwhile, Spain became an unlikely protagonist in the conflict by refusing Trump access to its military bases, which triggered threats of a trade embargo against an economy carrying $130 billion in accumulated US investment. Geopolitics is no longer a tail risk — it is the main course.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Los mercados rebotaron técnicamente tras la estabilización del petróleo, pero la guerra en Irán y las tensiones comerciales EEUU-España mantienen al mercado en guardia.",
+        "context_en": "Markets bounced technically after oil stabilized, but the Iran war and US-Spain trade tensions keep the overall tone defensive."
+      },
+      "stories": [
+        {
+          "source": "Elespanol.com",
+          "headline": "Trump threatens to cut all trade with Spain after it refuses to grant military base access for Iran strikes",
+          "body": "Spain rejected the use of its Rota and Morón bases for the US-Israeli offensive against Iran, prompting Trump to label the country a 'terrible ally' and threaten to 'cut all trade.' Treasury Secretary Scott Bessent escalated the pressure, arguing Spain's stance 'puts American lives at risk.' The White House even claimed Spain had agreed to military cooperation — a statement Moncloa flatly denied as 'fake news.'",
+          "url": "https://www.expansion.com/economia/2026/03/05/69a888d8e5fdeac3028b45b5.html",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Expansion.com",
+          "headline": "Spain exported €16.7 billion to the US in 2025: pharma, food, and capital goods in the crosshairs",
+          "body": "Spanish exports to the United States totaled €16.716 billion in 2025, with capital goods, pharmaceuticals, and agri-food as the sectors most exposed to a potential embargo. Companies such as Almirall, Grifols, Puig, Ebro Foods, and Dcoop are watching Trump's threats closely, though large conglomerates with local US subsidiaries — Iberdrola, Santander, ACS — would be largely shielded. The bilateral trade balance is unfavorable for Spain: it imported €30.174 billion from the US last year.",
+          "url": "https://www.expansion.com/empresas/2026/03/05/69a8a406468aebd56f8b4592.html",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Boston Herald",
+          "headline": "Asian markets surge: Kospi +12% and Nikkei +4.4% after oil stabilizes",
+          "body": "Asian stock markets opened Thursday with significant gains after Wall Street recovered ground on Wednesday, with the S&P 500 rising 0.8% and the Nasdaq gaining 1.3%. The catalyst was the stabilization of Brent crude, which after briefly touching $84 closed at $81.40 per barrel. South Korea's Kospi fully recovered the 12% it had lost the previous session, a signal that markets continue to operate in reactive mode to every geopolitical headline.",
+          "url": "https://www.bostonherald.com/2026/03/04/los-mercados-asiticos-se-disparan-tras-el-repunte-en-wall-street-y-la-calma-en-el-sector-petrolero/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "Elespanol.com",
+          "headline": "Iran's war of attrition: $20,000 drones vs. $4 million Patriot missiles",
+          "body": "Iran is fighting a war of financial equations: each domestically produced drone it launches costs $20,000, while each Patriot PAC-3 missile fired to intercept it costs $4 million. With only around 600 PAC-3 missiles manufactured in 2025 according to Lockheed Martin, and thousands already launched since Saturday's attacks began, regional stockpiles could fall to dangerously low levels within days. The Strait of Hormuz, through which 20% of global crude passes, remains the conflict's most sensitive strategic chokepoint.",
+          "url": "https://actualidad.rt.com/actualidad/590653-iran-drones-reto-defensas-antiaereas-eeuu",
+          "tag": "Energía"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "Western Union launches USDPT stablecoin on Solana with Crossmint to revolutionize global remittances",
+          "body": "Western Union partnered with Crossmint to support its USDPT stablecoin on the Solana blockchain, connecting blockchain payments to its network of over 360,000 cash payout locations across more than 200 countries. The move targets the global remittances market — valued at $905 billion in 2024 — where the average cost of sending $200 still hovers around 6%. In Latin America, stablecoins already account for more than 50% of crypto purchases made with the Argentine peso, Brazilian real, and Colombian peso.",
+          "url": "https://es.cointelegraph.com/news/western-union-taps-crossmint-to-support-solana-based-usd-stablecoin-and-digital-asset-payout-network",
+          "tag": "FX"
+        },
+        {
+          "source": "Latercera.com",
+          "headline": "Chile's Autonomous Fiscal Council condemns Boric government: structural deficit of -3.6% of GDP, worst deviation in a normal year",
+          "body": "Chile's CFA published its final report on the Boric administration's fiscal management, recording a structural balance of -3.6% of GDP — a 2.5 percentage point deviation from the original target of -1.1%. The body was categorical: 'this is not a transitory situation,' pointing to repeated errors in revenue projections, spending above committed levels, and limited effectiveness of the correction plan. It is the third consecutive year the target has been missed, in a year without any extraordinary crisis.",
+          "url": "https://www.latercera.com/pulso/noticia/en-duro-informe-el-cfa-reprueba-la-gestion-y-los-resultados-fiscales-del-gobierno-de-boric/",
+          "tag": "Macro"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "Ark Invest buys $16 million in Coinbase and Robinhood shares as markets fall on Iran tensions",
+          "body": "Cathie Wood took advantage of the market selloff to accumulate 22,452 shares of Coinbase — valued at approximately $4.1 million — and 158,587 shares of Robinhood for roughly $12 million, across her ARKK, ARKW, and ARKF ETFs. The purchases were made on Tuesday, when Coinbase fell 1.55% and Robinhood dropped 3.44% amid geopolitical pressure. The move follows a string of Coinbase sales by ARK in February and comes after the exchange reported a net loss of $667 million in Q4 2025.",
+          "url": "https://es.cointelegraph.com/news/ark-invest-buys-coinbase-robinhood-amid-market-selloff",
+          "tag": "Mercados"
+        }
+      ],
+      "quote": {
+        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
+        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.67",
+        "change": "▲ 0.4%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,831",
+        "change": "▲ 0.2%",
+        "direction": "up"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "68,379.42",
+        "change": "▼ 2.9%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.6733",
+        "chg_1d": {
+          "text": "▲ 0.46%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 2.06%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.5274",
+        "chg_1d": {
+          "text": "▲ 0.28%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.81%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "12.9406",
+        "chg_1d": {
+          "text": "▲ 0.36%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 2.15%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "122.0059",
+        "chg_1d": {
+          "text": "▲ 0.55%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 2.73%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "14°C",
+    "high_low": "22°C / 12°C",
+    "humidity": "Humidity 77%",
+    "desc": "Thunderstorms"
+  }
+}

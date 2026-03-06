@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell -- March 06, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
+  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
+  .weather-temp { font-size: 11px; color: #ccc; }
+  .weather-humidity { font-size: 11px; color: #ccc; }
+  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
+    .weather-desc { margin-left: 0; width: 100%; }
+    .editor-note { padding: 20px 20px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .currency { padding: 20px 20px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>FRIDAY, MARCH 06, 2026</span>
+      <span>EDICI&#211;N NO. 6</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">USD/MXN</span>
+        <span class="tick-val">17.67</span>
+        <span class="tick-up">▲ 0.4%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">S&P 500</span>
+        <span class="tick-val">6,831</span>
+        <span class="tick-up">▲ 0.2%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">CETES 28D</span>
+        <span class="tick-val">6.81%</span>
+        <span class="tick-up">▲ 0.00pp</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">IPC BMV</span>
+        <span class="tick-val">68,379.42</span>
+        <span class="tick-down">▼ 2.9%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather">
+    <span class="weather-city">Mexico City</span>
+    <span class="weather-temp">22°C / 12°C</span>
+    <span class="weather-humidity">Humidity 77%</span>
+    <span class="weather-desc">Thunderstorms</span>
+  </div>
+
+  <div class="editor-note">
+    <p>Estimados humanos, la guerra entre EEUU-Israel e Irán sigue siendo el eje gravitacional de todos los mercados esta semana: el petróleo se estabilizó en torno a los 81 dólares Brent tras rozar los 84, y Asia rebotó con fuerza mientras Wall Street recuperó parte del terreno perdido. Entre tanto, España se convirtió en protagonista involuntaria del conflicto al negarle a Trump el uso de sus bases militares, lo que derivó en amenazas de embargo comercial sobre una economía que tiene 130.000 millones en inversión estadounidense acumulada. La geopolítica ya no es un riesgo de cola; es el menú principal.</p>
+    <div class="editor-sig">&mdash; Bea Rish, Ambassador-at-Large for Unintended Consequences</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading cautious">Cauteloso</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker cautious" style="left:42%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span>Avers. al Riesgo</span><span>Neutral</span><span>Apetito por Riesgo</span>
+    </div>
+    <div class="sentiment-context">Los mercados rebotaron técnicamente tras la estabilización del petróleo, pero la guerra en Irán y las tensiones comerciales EEUU-España mantienen al mercado en guardia.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Elespanol.com</span>
+    <span class="story-tag">Comercio</span>
+  </div>
+  <div class="story-headline">Trump amenaza con cortar el comercio con España tras negarse a ceder bases militares para atacar Irán</div>
+  <div class="story-body">España rechazó el uso de las bases de Rota y Morón para la ofensiva de EEUU e Israel contra Irán, lo que provocó que Trump tildara al país de 'aliado terrible' y amenazara con 'cortar todo el comercio'. El secretario del Tesoro Scott Bessent escaló la presión argumentando que la postura española 'pone en riesgo la vida de los estadounidenses'. La Casa Blanca llegó a afirmar que España había aceptado cooperar militarmente, algo que Moncloa desmintió calificando la declaración de 'fake news'.</div>
+  <a href="https://www.expansion.com/economia/2026/03/05/69a888d8e5fdeac3028b45b5.html" class="read-more">Leer m&aacute;s &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Expansion.com</span>
+    <span class="story-tag">Comercio</span>
+  </div>
+  <div class="story-headline">España exportó 16.700 millones a EEUU en 2025: farma, alimentos y bienes de equipo en la línea de fuego</div>
+  <div class="story-body">Las exportaciones españolas a Estados Unidos sumaron 16.716 millones de euros en 2025, con bienes de equipo, farmacéuticos y agroalimentario como sectores más expuestos a un posible embargo. Empresas como Almirall, Grifols, Puig, Ebro Foods y Dcoop siguen con alarma las amenazas de Trump, aunque los grandes conglomerados con filiales locales —Iberdrola, Santander, ACS— estarían en gran medida blindados. La balanza bilateral es desfavorable para España: importó 30.174 millones desde EEUU el año pasado.</div>
+  <a href="https://www.expansion.com/empresas/2026/03/05/69a8a406468aebd56f8b4592.html" class="read-more">Leer m&aacute;s &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Boston Herald</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="story-headline">Mercados asiáticos rebotan con fuerza: Kospi +12% y Nikkei +4,4% tras estabilización del petróleo</div>
+  <div class="story-body">Las bolsas asiáticas abrieron el jueves con ganancias significativas después de que Wall Street recuperara terreno el miércoles, con el S&P 500 subiendo un 0,8% y el Nasdaq un 1,3%. El detonante fue la estabilización del crudo Brent, que tras tocar brevemente los 84 dólares cerró en 81,40 dólares por barril. El Kospi surcoreano recuperó íntegramente el 12% perdido la jornada anterior, señal de que los mercados siguen operando en modo reactivo a cada titular geopolítico.</div>
+  <a href="https://www.bostonherald.com/2026/03/04/los-mercados-asiticos-se-disparan-tras-el-repunte-en-wall-street-y-la-calma-en-el-sector-petrolero/" class="read-more">Leer m&aacute;s &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Elespanol.com</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="story-headline">La guerra de desgaste iraní: drones de 20.000 dólares contra misiles Patriot de 4 millones</div>
+  <div class="story-body">Irán está librando una guerra de ecuaciones financieras: cada drone de fabricación propia que lanza cuesta 20.000 dólares, mientras que cada misil Patriot PAC-3 que lo derriba vale 4 millones. Con apenas 600 misiles PAC-3 fabricados en 2025 según Lockheed Martin, y miles ya lanzados desde que comenzaron los ataques el sábado, las reservas regionales podrían caer a niveles peligrosamente bajos en días. El Estrecho de Ormuz, por donde transita el 20% del crudo mundial, permanece como el nudo estratégico más sensible del conflicto.</div>
+  <a href="https://actualidad.rt.com/actualidad/590653-iran-drones-reto-defensas-antiaereas-eeuu" class="read-more">Leer m&aacute;s &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Cointelegraph</span>
+    <span class="story-tag">FX</span>
+  </div>
+  <div class="story-headline">Western Union lanza stablecoin USDPT en Solana con Crossmint para revolucionar las remesas globales</div>
+  <div class="story-body">Western Union se asoció con Crossmint para dar soporte a su stablecoin USDPT en la blockchain de Solana, conectando pagos en blockchain con su red de más de 360.000 puntos de cobro en efectivo en más de 200 países. El movimiento apunta directamente al mercado de remesas globales, valorado en 905.000 millones de dólares en 2024, donde el costo promedio de enviar 200 dólares sigue rondando el 6%. En América Latina, las stablecoins ya representan más del 50% de las compras cripto con peso argentino, real brasileño y peso colombiano.</div>
+  <a href="https://es.cointelegraph.com/news/western-union-taps-crossmint-to-support-solana-based-usd-stablecoin-and-digital-asset-payout-network" class="read-more">Leer m&aacute;s &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Latercera.com</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="story-headline">El Consejo Fiscal Autónomo de Chile reprueba al gobierno de Boric: déficit estructural de -3,6% del PIB, el peor desvío en años normales</div>
+  <div class="story-body">El CFA chileno publicó su informe final sobre la gestión fiscal de la administración Boric, registrando un balance estructural de -3,6% del PIB, con un desvío de 2,5 puntos porcentuales respecto a la meta original de -1,1%. El organismo fue categórico: 'no se trata de una situación transitoria' y señaló errores reiterados en la proyección de ingresos, gasto por encima de lo comprometido y escasa efectividad del plan de ajuste. Es la tercera vez consecutiva que se desvía la meta, en un año sin crisis extraordinarias.</div>
+  <a href="https://www.latercera.com/pulso/noticia/en-duro-informe-el-cfa-reprueba-la-gestion-y-los-resultados-fiscales-del-gobierno-de-boric/" class="read-more">Leer m&aacute;s &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Cointelegraph</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="story-headline">Ark Invest compra 16 millones en acciones de Coinbase y Robinhood mientras el mercado cae por tensiones con Irán</div>
+  <div class="story-body">Cathie Wood aprovechó la caída del mercado para acumular 22.452 acciones de Coinbase —valoradas en 4,1 millones de dólares— y 158.587 acciones de Robinhood por unos 12 millones, a través de sus ETFs ARKK, ARKW y ARKF. Las compras se realizaron el martes, cuando Coinbase cedió un 1,55% y Robinhood un 3,44% en medio de la presión geopolítica. El movimiento llega tras una racha de ventas de Coinbase por parte de ARK en febrero y después de que la exchange reportara una pérdida neta de 667 millones de dólares en el cuarto trimestre de 2025.</div>
+  <a href="https://es.cointelegraph.com/news/ark-invest-buys-coinbase-robinhood-amid-market-selloff" class="read-more">Leer m&aacute;s &rarr;</a>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="section-title">Tipo de Cambio</div>
+    <table class="currency-table">
+      <thead>
+        <tr>
+          <th>Par</th><th>Tipo</th><th style="text-align:right;">1D</th><th style="text-align:right;">1S</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.6733</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.46%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 2.06%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.5274</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.28%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.81%</td>
+      </tr>
+      <tr>
+        <td class="pair">CAD / MXN</td>
+        <td>12.9406</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.36%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 2.15%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>122.0059</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.55%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 2.73%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="quote-text">In the short run, the market is a voting machine but in the long run, it is a weighing machine.</div>
+    <div class="quote-attr">Benjamin Graham, The Intelligent Investor, 1949</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="week">
+  <div class="section-title">Resumen Semanal &middot; Mar 02-06, 2026</div>
+  <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Lun</div>
+          <div class="tl-dot active"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Energy</span>
+          <div class="tl-headline">Oil Surges 10% as Tankers Halt Near Strait of Hormuz Following Iran Strikes</div>
+          <div class="tl-body">Brent crude jumped 10% to roughly $80 a barrel on Sunday after the U.S.-Israel bombing campaign against Iran brought maritime traffic through the Strait of Horm...</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Mié</div>
+          <div class="tl-dot active"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Macro</span>
+          <div class="tl-headline">Guerra EEUU-Israel contra Irán entra en su cuarto día: embajada estadounidense en Riad atacada y mercados en alerta máxima</div>
+          <div class="tl-body">La ofensiva conjunta —denominada 'Operación Furia Épica' por Washington y 'Operación Rugido del León' por Tel Aviv— entró en su cuarto día con Irán respondiendo...</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Vie</div>
+          <div class="tl-dot "></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Comercio</span>
+          <div class="tl-headline">Trump amenaza con cortar el comercio con España tras negarse a ceder bases militares para atacar Irán</div>
+          <div class="tl-body">España rechazó el uso de las bases de Rota y Morón para la ofensiva de EEUU e Israel contra Irán, lo que provocó que Trump tildara al país de 'aliado terrible' ...</div>
+        </div>
+      </div>
+  </div>
+</div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div style="padding:24px 48px 8px;">
+  <div class="section-title">La Semana en Palabras</div>
+  <img src="wordcloud/wordcloud-2026-W10.png" style="width:100%; border:1px solid #cdd4d9;" alt="Nube de palabras"/>
+</div>
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by">por Bea Rish, Ambassador-at-Large for Unintended Consequences</span>
+  </div>
+
+</div>
+</body>
+</html>
