@@ -61,23 +61,21 @@ def run():
     print(f"  [author] Today's byline: {author}")
 
     # Generate word cloud on Fridays
-    wordcloud_b64      = None
     wordcloud_filename = None
     if friday:
         print("  [wordcloud] Generating weekly word cloud...")
-        wordcloud_b64      = wordcloud_as_base64()
         wordcloud_filename = generate_wordcloud()
 
     html  = build_html(
-        digest         = digest_es,
-        tickers        = tickers,
-        currency       = currency,
-        weather        = weather,
-        week_stories   = week_stories,
-        issue_number   = issue_num,
-        is_friday      = friday,
-        wordcloud_b64  = wordcloud_b64,
-        author         = author,
+        digest             = digest_es,
+        tickers            = tickers,
+        currency           = currency,
+        weather            = weather,
+        week_stories       = week_stories,
+        issue_number       = issue_num,
+        is_friday          = friday,
+        wordcloud_filename = wordcloud_filename,
+        author             = author,
     )
     plain = build_plain(digest_es, author=author)
 

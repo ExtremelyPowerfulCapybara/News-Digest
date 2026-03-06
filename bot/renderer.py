@@ -287,15 +287,15 @@ def _footer(issue_date: str = "", author: str = "") -> str:
 # ── Main builder ──────────────────────────────
 
 def build_html(
-    digest:        dict,
-    tickers:       list[dict],
-    currency:      list[dict],
-    weather:       dict,
-    week_stories:  list[dict],
-    issue_number:  int = 1,
-    is_friday:     bool = False,
-    wordcloud_b64: str | None = None,
-    author:        str = "",
+    digest:             dict,
+    tickers:            list[dict],
+    currency:           list[dict],
+    weather:            dict,
+    week_stories:       list[dict],
+    issue_number:       int = 1,
+    is_friday:          bool = False,
+    wordcloud_filename: str | None = None,
+    author:             str = "",
 ) -> str:
 
     stories_html = ""
@@ -359,7 +359,7 @@ def build_html(
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_quote(quote)}</td></tr>
         {'<tr><td>' + week_html + '</td></tr>' if week_html else ''}
-        {'<tr><td><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 48px 8px;"><p style="margin:0 0 14px 0; font-family:Arial,sans-serif; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc;">La Semana en Palabras</p><img src="' + str(wordcloud_b64) + '" width="504" style="width:100%; max-width:504px; display:block;" alt=""/></td></tr></table></td></tr>' if wordcloud_b64 else ''}
+        {'<tr><td><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 48px 8px;"><p style="margin:0 0 14px 0; font-family:Arial,sans-serif; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc;">La Semana en Palabras</p><img src="' + GITHUB_PAGES_URL + wordcloud_filename + '" width="504" style="width:100%; max-width:504px; display:block;" alt=""/></td></tr></table></td></tr>' if wordcloud_filename else ''}
         <tr><td>{_footer(today_iso, author)}</td></tr>
       </table>
     </td>
