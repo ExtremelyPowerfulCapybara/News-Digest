@@ -2,133 +2,133 @@
   "date": "2026-03-06",
   "digest": {
     "es": {
-      "editor_note": "Estimados humanos, la guerra entre EEUU-Israel e Irán sigue siendo el eje gravitacional de todos los mercados esta semana: el petróleo se estabilizó en torno a los 81 dólares Brent tras rozar los 84, y Asia rebotó con fuerza mientras Wall Street recuperó parte del terreno perdido. Entre tanto, España se convirtió en protagonista involuntaria del conflicto al negarle a Trump el uso de sus bases militares, lo que derivó en amenazas de embargo comercial sobre una economía que tiene 130.000 millones en inversión estadounidense acumulada. La geopolítica ya no es un riesgo de cola; es el menú principal.",
+      "editor_note": "Estimados humanos, el Estrecho de Ormuz está funcionalmente bloqueado, el WTI sube casi 9% y Wall Street sangra mientras Medio Oriente arde en su sexto día de guerra — y aun así, los mercados no han capitulado del todo, lo cual dice algo sobre el umbral de dolor moderno. Irán ataca petroleros, Israel amenaza Beirut con el destino de Gaza, y Europa envía fragatas al Mediterráneo con la convicción de que eso no es 'estar en guerra'. Lo que viene a continuación es su resumen de un jueves que, sinceramente, no aburre.",
       "sentiment": {
-        "label_es": "Cauteloso",
-        "label_en": "Cautious",
-        "position": 42,
-        "context_es": "Los mercados rebotaron técnicamente tras la estabilización del petróleo, pero la guerra en Irán y las tensiones comerciales EEUU-España mantienen al mercado en guardia.",
-        "context_en": "Markets bounced technically after oil stabilized, but the Iran war and US-Spain trade tensions keep the overall tone defensive."
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 18,
+        "context_es": "La guerra EU-Irán en su sexto día bloquea el Estrecho de Ormuz, dispara el crudo casi 9% y desploma bolsas globales, con el peso mexicano perdiendo 1.3% y la BMV cayendo casi 3%.",
+        "context_en": "The US-Iran war in its sixth day is functionally blocking the Strait of Hormuz, sending crude up nearly 9% and crushing global equities, with the Mexican peso down 1.3% and the BMV falling nearly 3%."
       },
       "stories": [
         {
-          "source": "Elespanol.com",
-          "headline": "Trump amenaza con cortar el comercio con España tras negarse a ceder bases militares para atacar Irán",
-          "body": "España rechazó el uso de las bases de Rota y Morón para la ofensiva de EEUU e Israel contra Irán, lo que provocó que Trump tildara al país de 'aliado terrible' y amenazara con 'cortar todo el comercio'. El secretario del Tesoro Scott Bessent escaló la presión argumentando que la postura española 'pone en riesgo la vida de los estadounidenses'. La Casa Blanca llegó a afirmar que España había aceptado cooperar militarmente, algo que Moncloa desmintió calificando la declaración de 'fake news'.",
-          "url": "https://www.expansion.com/economia/2026/03/05/69a888d8e5fdeac3028b45b5.html",
-          "tag": "Comercio"
-        },
-        {
-          "source": "Expansion.com",
-          "headline": "España exportó 16.700 millones a EEUU en 2025: farma, alimentos y bienes de equipo en la línea de fuego",
-          "body": "Las exportaciones españolas a Estados Unidos sumaron 16.716 millones de euros en 2025, con bienes de equipo, farmacéuticos y agroalimentario como sectores más expuestos a un posible embargo. Empresas como Almirall, Grifols, Puig, Ebro Foods y Dcoop siguen con alarma las amenazas de Trump, aunque los grandes conglomerados con filiales locales —Iberdrola, Santander, ACS— estarían en gran medida blindados. La balanza bilateral es desfavorable para España: importó 30.174 millones desde EEUU el año pasado.",
-          "url": "https://www.expansion.com/empresas/2026/03/05/69a8a406468aebd56f8b4592.html",
-          "tag": "Comercio"
-        },
-        {
-          "source": "Boston Herald",
-          "headline": "Mercados asiáticos rebotan con fuerza: Kospi +12% y Nikkei +4,4% tras estabilización del petróleo",
-          "body": "Las bolsas asiáticas abrieron el jueves con ganancias significativas después de que Wall Street recuperara terreno el miércoles, con el S&P 500 subiendo un 0,8% y el Nasdaq un 1,3%. El detonante fue la estabilización del crudo Brent, que tras tocar brevemente los 84 dólares cerró en 81,40 dólares por barril. El Kospi surcoreano recuperó íntegramente el 12% perdido la jornada anterior, señal de que los mercados siguen operando en modo reactivo a cada titular geopolítico.",
-          "url": "https://www.bostonherald.com/2026/03/04/los-mercados-asiticos-se-disparan-tras-el-repunte-en-wall-street-y-la-calma-en-el-sector-petrolero/",
-          "tag": "Mercados"
-        },
-        {
-          "source": "Elespanol.com",
-          "headline": "La guerra de desgaste iraní: drones de 20.000 dólares contra misiles Patriot de 4 millones",
-          "body": "Irán está librando una guerra de ecuaciones financieras: cada drone de fabricación propia que lanza cuesta 20.000 dólares, mientras que cada misil Patriot PAC-3 que lo derriba vale 4 millones. Con apenas 600 misiles PAC-3 fabricados en 2025 según Lockheed Martin, y miles ya lanzados desde que comenzaron los ataques el sábado, las reservas regionales podrían caer a niveles peligrosamente bajos en días. El Estrecho de Ormuz, por donde transita el 20% del crudo mundial, permanece como el nudo estratégico más sensible del conflicto.",
-          "url": "https://actualidad.rt.com/actualidad/590653-iran-drones-reto-defensas-antiaereas-eeuu",
+          "source": "El Financiero",
+          "headline": "Ataque iraní a petrolero dispara el WTI casi 9% y bloquea de facto el Estrecho de Ormuz",
+          "body": "En el sexto día de la guerra entre EU, Israel e Irán, el precio del barril WTI subió 8.29% hasta los 80.85 dólares — su nivel más alto desde julio de 2024 — tras el ataque de Teherán a un petrolero en el Golfo Pérsico. El tráfico a través del Estrecho de Ormuz, por donde transita el 20% del petróleo mundial, se ha desplomado más de 95% según datos de Bloomberg, con grandes petroleros evitando la ruta; China suspendió exportaciones de diésel y gasolina, y Japón pidió liberar reservas estratégicas. La principal pregunta de mercado ya no es si los precios subirán más, sino cuánto tiempo puede sostenerse una interrupción de esta magnitud antes de que el daño sea permanente.",
+          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/precio-del-petroleo-wti-brent-hoy-5-de-marzo-de-2026/",
           "tag": "Energía"
         },
         {
-          "source": "Cointelegraph",
-          "headline": "Western Union lanza stablecoin USDPT en Solana con Crossmint para revolucionar las remesas globales",
-          "body": "Western Union se asoció con Crossmint para dar soporte a su stablecoin USDPT en la blockchain de Solana, conectando pagos en blockchain con su red de más de 360.000 puntos de cobro en efectivo en más de 200 países. El movimiento apunta directamente al mercado de remesas globales, valorado en 905.000 millones de dólares en 2024, donde el costo promedio de enviar 200 dólares sigue rondando el 6%. En América Latina, las stablecoins ya representan más del 50% de las compras cripto con peso argentino, real brasileño y peso colombiano.",
-          "url": "https://es.cointelegraph.com/news/western-union-taps-crossmint-to-support-solana-based-usd-stablecoin-and-digital-asset-payout-network",
-          "tag": "FX"
-        },
-        {
-          "source": "Latercera.com",
-          "headline": "El Consejo Fiscal Autónomo de Chile reprueba al gobierno de Boric: déficit estructural de -3,6% del PIB, el peor desvío en años normales",
-          "body": "El CFA chileno publicó su informe final sobre la gestión fiscal de la administración Boric, registrando un balance estructural de -3,6% del PIB, con un desvío de 2,5 puntos porcentuales respecto a la meta original de -1,1%. El organismo fue categórico: 'no se trata de una situación transitoria' y señaló errores reiterados en la proyección de ingresos, gasto por encima de lo comprometido y escasa efectividad del plan de ajuste. Es la tercera vez consecutiva que se desvía la meta, en un año sin crisis extraordinarias.",
-          "url": "https://www.latercera.com/pulso/noticia/en-duro-informe-el-cfa-reprueba-la-gestion-y-los-resultados-fiscales-del-gobierno-de-boric/",
+          "source": "La Nacion",
+          "headline": "Israel amenaza a Beirut con la devastación de Gaza mientras Líbano registra 102 muertos y 500,000 desplazados",
+          "body": "El ministro de Finanzas israelí Bezalel Smotrich advirtió que los suburbios del sur de Beirut 'pronto se parecerán a Khan Younis', desatando pánico y evacuaciones masivas en la capital libanesa. Desde que Hezbollah atacó a Israel el lunes para 'vengar' la muerte del ayatollah Khamenei, Líbano registra al menos 102 muertos, 638 heridos y más de 500,000 desplazados, con tropas israelíes ya operando en localidades del sur del país. El conflicto, iniciado el sábado con la ofensiva conjunta de Estados Unidos e Israel contra Irán, continúa expandiendo su alcance regional a una velocidad que supera cualquier marco diplomático visible.",
+          "url": "https://www.lanacion.com.ar/el-mundo/israel-advierte-que-el-bastion-de-hezbollah-podria-sufrir-la-devastacion-de-gaza-y-provoca-panico-y-nid05032026/",
           "tag": "Macro"
         },
         {
-          "source": "Cointelegraph",
-          "headline": "Ark Invest compra 16 millones en acciones de Coinbase y Robinhood mientras el mercado cae por tensiones con Irán",
-          "body": "Cathie Wood aprovechó la caída del mercado para acumular 22.452 acciones de Coinbase —valoradas en 4,1 millones de dólares— y 158.587 acciones de Robinhood por unos 12 millones, a través de sus ETFs ARKK, ARKW y ARKF. Las compras se realizaron el martes, cuando Coinbase cedió un 1,55% y Robinhood un 3,44% en medio de la presión geopolítica. El movimiento llega tras una racha de ventas de Coinbase por parte de ARK en febrero y después de que la exchange reportara una pérdida neta de 667 millones de dólares en el cuarto trimestre de 2025.",
-          "url": "https://es.cointelegraph.com/news/ark-invest-buys-coinbase-robinhood-amid-market-selloff",
+          "source": "El Financiero",
+          "headline": "Wall Street cae hasta 1.6% y el peso pierde 1.3% ante la prolongación de la guerra en Medio Oriente",
+          "body": "El Dow Jones cerró con una caída de 1.61% a 47,954 puntos, el S&P 500 retrocedió 0.56% y la Bolsa Mexicana de Valores fue de las más golpeadas a nivel regional con un desplome de 2.91% hasta 68,379 unidades. El peso mexicano se depreció 1.31% para ubicarse en 17.79 pesos por dólar, presionado por el fortalecimiento del dólar índex y las expectativas de inflación global derivadas del choque energético. Analistas de Wolfe Research estiman que si el conflicto se resuelve en semanas el Brent podría retornar hacia los 65 dólares, pero nadie en el mercado parece apostar mucho dinero a ese escenario hoy.",
+          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/bmv-wall-street-hoy-5-de-marzo-de-2025/",
           "tag": "Mercados"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Europa despliega fragatas y cazas al Mediterráneo y el Golfo con la convicción de que eso no es estar en guerra",
+          "body": "Italia confirmó el envío de sistemas de defensa aérea, antidrones y misiles a países del Golfo Pérsico, mientras España oficializó el despliegue de la fragata Cristóbal Colón al Mediterráneo oriental para integrarse al grupo naval del portaaviones francés Charles de Gaulle. España mantiene su negativa a permitir el uso de las bases de Rota y Morón para ataques contra Irán, resistiendo presiones de Washington y amenazas del presidente Trump de cortar el comercio bilateral. Francia, en posición intermedia, autorizó temporalmente presencia de aviones estadounidenses en sus bases regionales mientras califica las operaciones iniciales de EU e Israel como 'fuera del derecho internacional' — una distinción que Bruselas deberá sostener con cada fragata adicional que zarpe.",
+          "url": "https://www.lanacion.com.ar/el-mundo/europa-aumenta-su-presencia-militar-y-envia-cazas-y-buques-al-golfo-y-al-mediterraneo-nid05032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Hacienda de México presume colchón financiero de 280,000 mdd y proyecta crecimiento del 3% para 2026",
+          "body": "El secretario de Hacienda, Edgar Amador, detalló ante consejeros de Banamex que México dispone de reservas internacionales por 250,000 millones de dólares, una línea de crédito flexible del FMI por 24,000 millones y el Fondo de Estabilización de Ingresos Presupuestales que supera los 120,000 millones de pesos. Amador proyectó un crecimiento cercano al 3% para finales de 2026, por encima de los pronósticos de la OCDE (1.4%) y Banxico (1.6%), argumentando que el impulso de la segunda mitad de 2025 y el plan de infraestructura elevarán la capacidad productiva. El discurso transmite solidez — la credibilidad de esas cifras se pondrá a prueba precisamente mientras el precio del crudo importado se dispara y la guerra comercial global no da tregua.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/05/mexico-tiene-salvavidas-financiero-de-280-mil-mdd-para-2026-hacienda/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Caputo promete US$26,000 millones en inversiones vía RIGI y descarta el 'riesgo kuka' para Argentina",
+          "body": "El ministro de Economía Luis Caputo afirmó en el Foro de Inversiones de Mendoza que hay 26,000 millones de dólares en proyectos aprobados bajo el Régimen de Incentivos para Grandes Inversiones (RIGI) que comenzarán a ejecutarse este año, con otros 42,000 millones en pipeline. Argentina avanzó del puesto 124 al 106 en el Índice de Libertad Económica de Heritage Foundation, registrando la mayor suba global en el período, aunque aún permanece en la categoría de países 'mayormente no libres'. Caputo descartó categóricamente un regreso kirchnerista — 'hay cero probabilidad' — y aprovechó para señalar que hace tres años los aliados de Argentina eran Venezuela e Irán, una comparación que hoy, con Irán en guerra total, resulta especialmente cargada.",
+          "url": "https://www.lanacion.com.ar/economia/negocios/luis-caputo-en-los-proximos-cuatro-anos-veremos-un-nivel-de-inversion-que-no-vimos-nunca-nid05032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "La sucesión del CJNG: cinco candidatos y la posibilidad de dividir el cartel tras la muerte de El Mencho",
+          "body": "El secretario de Seguridad Omar García Harfuch entregó a la presidenta Sheinbaum una lista con cinco candidatos a suceder a Nemesio Oseguera al frente del Cártel Jalisco Nueva Generación, entre ellos su hijastro Juan González Valencia, Audias Flores Silva 'El Jardinero' y Ricardo Ruiz Velasco 'El Doble R'. Fuentes de inteligencia consideran que para evitar una guerra interna entre la treintena de jefes de plaza activos en más de 25 estados, el CJNG podría dividirse operativamente en dos mandos — norte bajo El Jardinero desde Puerto Vallarta, sur bajo El Doble R desde Guadalajara. La pregunta sin respuesta es quién controlaría la ingeniería financiera central, el lavado vía criptomonedas y las alianzas internacionales que El Mencho manejaba personalmente.",
+          "url": "https://www.elfinanciero.com.mx/opinion/raymundo-riva-palacio/2026/03/04/la-sucesion-de-el-mencho/",
+          "tag": "México"
         }
       ],
       "quote": {
-        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
-        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
+        "text": "Oil is the lifeblood of the industrialised nations; to control it is to control the destiny of civilisation.",
+        "attribution": "Robert Sherrill, The Oil Follies of 1970–1980, 1983"
       }
     },
     "en": {
-      "editor_note": "Estimados humanos, the US-Israel war against Iran remains the gravitational axis of all markets this week: oil stabilized around $81 Brent after briefly touching $84, and Asia rebounded sharply while Wall Street recovered part of its lost ground. Meanwhile, Spain became an unlikely protagonist in the conflict by refusing Trump access to its military bases, which triggered threats of a trade embargo against an economy carrying $130 billion in accumulated US investment. Geopolitics is no longer a tail risk — it is the main course.",
+      "editor_note": "Estimados humanos, the Strait of Hormuz is functionally blocked, WTI is up nearly 9% and Wall Street is bleeding while the Middle East burns through day six of a regional war — and yet markets haven't fully capitulated, which says something about the modern pain threshold. Iran attacks tankers, Israel threatens Beirut with the fate of Gaza, and Europe deploys frigates to the Mediterranean with the conviction that this somehow doesn't count as being at war. What follows is your summary of a Thursday that, frankly, does not bore.",
       "sentiment": {
-        "label_es": "Cauteloso",
-        "label_en": "Cautious",
-        "position": 42,
-        "context_es": "Los mercados rebotaron técnicamente tras la estabilización del petróleo, pero la guerra en Irán y las tensiones comerciales EEUU-España mantienen al mercado en guardia.",
-        "context_en": "Markets bounced technically after oil stabilized, but the Iran war and US-Spain trade tensions keep the overall tone defensive."
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 18,
+        "context_es": "La guerra EU-Irán en su sexto día bloquea el Estrecho de Ormuz, dispara el crudo casi 9% y desploma bolsas globales, con el peso mexicano perdiendo 1.3% y la BMV cayendo casi 3%.",
+        "context_en": "The US-Iran war in its sixth day is functionally blocking the Strait of Hormuz, sending crude up nearly 9% and crushing global equities, with the Mexican peso down 1.3% and the BMV falling nearly 3%."
       },
       "stories": [
         {
-          "source": "Elespanol.com",
-          "headline": "Trump threatens to cut all trade with Spain after it refuses to grant military base access for Iran strikes",
-          "body": "Spain rejected the use of its Rota and Morón bases for the US-Israeli offensive against Iran, prompting Trump to label the country a 'terrible ally' and threaten to 'cut all trade.' Treasury Secretary Scott Bessent escalated the pressure, arguing Spain's stance 'puts American lives at risk.' The White House even claimed Spain had agreed to military cooperation — a statement Moncloa flatly denied as 'fake news.'",
-          "url": "https://www.expansion.com/economia/2026/03/05/69a888d8e5fdeac3028b45b5.html",
-          "tag": "Comercio"
-        },
-        {
-          "source": "Expansion.com",
-          "headline": "Spain exported €16.7 billion to the US in 2025: pharma, food, and capital goods in the crosshairs",
-          "body": "Spanish exports to the United States totaled €16.716 billion in 2025, with capital goods, pharmaceuticals, and agri-food as the sectors most exposed to a potential embargo. Companies such as Almirall, Grifols, Puig, Ebro Foods, and Dcoop are watching Trump's threats closely, though large conglomerates with local US subsidiaries — Iberdrola, Santander, ACS — would be largely shielded. The bilateral trade balance is unfavorable for Spain: it imported €30.174 billion from the US last year.",
-          "url": "https://www.expansion.com/empresas/2026/03/05/69a8a406468aebd56f8b4592.html",
-          "tag": "Comercio"
-        },
-        {
-          "source": "Boston Herald",
-          "headline": "Asian markets surge: Kospi +12% and Nikkei +4.4% after oil stabilizes",
-          "body": "Asian stock markets opened Thursday with significant gains after Wall Street recovered ground on Wednesday, with the S&P 500 rising 0.8% and the Nasdaq gaining 1.3%. The catalyst was the stabilization of Brent crude, which after briefly touching $84 closed at $81.40 per barrel. South Korea's Kospi fully recovered the 12% it had lost the previous session, a signal that markets continue to operate in reactive mode to every geopolitical headline.",
-          "url": "https://www.bostonherald.com/2026/03/04/los-mercados-asiticos-se-disparan-tras-el-repunte-en-wall-street-y-la-calma-en-el-sector-petrolero/",
-          "tag": "Mercados"
-        },
-        {
-          "source": "Elespanol.com",
-          "headline": "Iran's war of attrition: $20,000 drones vs. $4 million Patriot missiles",
-          "body": "Iran is fighting a war of financial equations: each domestically produced drone it launches costs $20,000, while each Patriot PAC-3 missile fired to intercept it costs $4 million. With only around 600 PAC-3 missiles manufactured in 2025 according to Lockheed Martin, and thousands already launched since Saturday's attacks began, regional stockpiles could fall to dangerously low levels within days. The Strait of Hormuz, through which 20% of global crude passes, remains the conflict's most sensitive strategic chokepoint.",
-          "url": "https://actualidad.rt.com/actualidad/590653-iran-drones-reto-defensas-antiaereas-eeuu",
+          "source": "El Financiero",
+          "headline": "Iranian attack on tanker sends WTI up nearly 9% as the Strait of Hormuz is de facto blocked",
+          "body": "On the sixth day of the US-Israel-Iran war, WTI crude rose 8.29% to $80.85 per barrel — its highest level since July 2024 — after Tehran struck a tanker in the Persian Gulf. Traffic through the Strait of Hormuz, which handles roughly 20% of global oil supply, has collapsed by more than 95% according to Bloomberg tracking data, with large tankers avoiding the route; China suspended diesel and gasoline exports, and Japan requested the release of strategic reserves. The key market question is no longer whether prices will rise further, but how long a disruption of this magnitude can persist before the damage becomes structural.",
+          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/precio-del-petroleo-wti-brent-hoy-5-de-marzo-de-2026/",
           "tag": "Energía"
         },
         {
-          "source": "Cointelegraph",
-          "headline": "Western Union launches USDPT stablecoin on Solana with Crossmint to revolutionize global remittances",
-          "body": "Western Union partnered with Crossmint to support its USDPT stablecoin on the Solana blockchain, connecting blockchain payments to its network of over 360,000 cash payout locations across more than 200 countries. The move targets the global remittances market — valued at $905 billion in 2024 — where the average cost of sending $200 still hovers around 6%. In Latin America, stablecoins already account for more than 50% of crypto purchases made with the Argentine peso, Brazilian real, and Colombian peso.",
-          "url": "https://es.cointelegraph.com/news/western-union-taps-crossmint-to-support-solana-based-usd-stablecoin-and-digital-asset-payout-network",
-          "tag": "FX"
-        },
-        {
-          "source": "Latercera.com",
-          "headline": "Chile's Autonomous Fiscal Council condemns Boric government: structural deficit of -3.6% of GDP, worst deviation in a normal year",
-          "body": "Chile's CFA published its final report on the Boric administration's fiscal management, recording a structural balance of -3.6% of GDP — a 2.5 percentage point deviation from the original target of -1.1%. The body was categorical: 'this is not a transitory situation,' pointing to repeated errors in revenue projections, spending above committed levels, and limited effectiveness of the correction plan. It is the third consecutive year the target has been missed, in a year without any extraordinary crisis.",
-          "url": "https://www.latercera.com/pulso/noticia/en-duro-informe-el-cfa-reprueba-la-gestion-y-los-resultados-fiscales-del-gobierno-de-boric/",
+          "source": "La Nacion",
+          "headline": "Israel threatens Beirut with Gaza's fate as Lebanon records 102 dead and 500,000 displaced",
+          "body": "Israeli Finance Minister Bezalel Smotrich warned that Beirut's southern suburbs 'will soon look like Khan Younis,' triggering panic and mass evacuations across the Lebanese capital. Since Hezbollah attacked Israel on Monday to 'avenge' the death of Ayatollah Khamenei, Lebanon has recorded at least 102 dead, 638 wounded and more than 500,000 displaced, with Israeli troops already operating in towns in the country's south. The conflict, launched Saturday with the joint US-Israeli offensive against Iran, continues to expand its regional reach at a pace that outstrips any visible diplomatic framework.",
+          "url": "https://www.lanacion.com.ar/el-mundo/israel-advierte-que-el-bastion-de-hezbollah-podria-sufrir-la-devastacion-de-gaza-y-provoca-panico-y-nid05032026/",
           "tag": "Macro"
         },
         {
-          "source": "Cointelegraph",
-          "headline": "Ark Invest buys $16 million in Coinbase and Robinhood shares as markets fall on Iran tensions",
-          "body": "Cathie Wood took advantage of the market selloff to accumulate 22,452 shares of Coinbase — valued at approximately $4.1 million — and 158,587 shares of Robinhood for roughly $12 million, across her ARKK, ARKW, and ARKF ETFs. The purchases were made on Tuesday, when Coinbase fell 1.55% and Robinhood dropped 3.44% amid geopolitical pressure. The move follows a string of Coinbase sales by ARK in February and comes after the exchange reported a net loss of $667 million in Q4 2025.",
-          "url": "https://es.cointelegraph.com/news/ark-invest-buys-coinbase-robinhood-amid-market-selloff",
+          "source": "El Financiero",
+          "headline": "Wall Street falls up to 1.6% and the peso loses 1.3% as Middle East war drags on",
+          "body": "The Dow Jones closed down 1.61% at 47,954 points, the S&P 500 fell 0.56%, and the Mexican Stock Exchange was among the hardest-hit regionally, tumbling 2.91% to 68,379 units. The Mexican peso depreciated 1.31% to 17.79 pesos per dollar, pressured by a stronger dollar index and rising global inflation expectations stemming from the energy shock. Analysts at Wolfe Research estimate that if the conflict resolves within weeks, Brent could return toward $65 per barrel — though few in the market appear to be betting heavily on that scenario today.",
+          "url": "https://www.elfinanciero.com.mx/mercados/2026/03/05/bmv-wall-street-hoy-5-de-marzo-de-2025/",
           "tag": "Mercados"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Europe deploys frigates and fighter jets to the Mediterranean and Gulf, insisting it is not at war",
+          "body": "Italy confirmed the dispatch of air defense systems, anti-drone equipment and missiles to Gulf countries, while Spain officially sent the frigate Cristóbal Colón to the eastern Mediterranean to join the French carrier strike group led by the Charles de Gaulle. Spain is holding firm in its refusal to allow the use of the Rota and Morón bases for strikes against Iran, resisting US pressure and Trump's threats to cut bilateral trade. France, in an intermediate position, temporarily authorized the presence of American aircraft on its regional bases while describing the initial US-Israeli operations as 'outside international law' — a distinction Brussels will have to sustain with every additional warship that sails.",
+          "url": "https://www.lanacion.com.ar/el-mundo/europa-aumenta-su-presencia-militar-y-envia-cazas-y-buques-al-golfo-y-al-mediterraneo-nid05032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico's Treasury touts $280bn financial cushion and projects 3% growth for 2026",
+          "body": "Finance Secretary Edgar Amador told Banamex advisors that Mexico holds $250 billion in international reserves, a $24 billion IMF Flexible Credit Line, and a budget stabilization fund exceeding 120 billion pesos. Amador projected growth close to 3% by end-2026, well above OECD (1.4%) and Banxico (1.6%) forecasts, citing the second-half 2025 momentum and the new national infrastructure plan as catalysts. The message projects confidence — its credibility will be tested precisely as imported crude prices surge and the global trade war shows no sign of abating.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/05/mexico-tiene-salvavidas-financiero-de-280-mil-mdd-para-2026-hacienda/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Caputo pledges $26bn in RIGI investments and dismisses Kirchnerist comeback risk for Argentina",
+          "body": "Economy Minister Luis Caputo declared at the Mendoza Investment Forum that $26 billion in projects approved under the Large Investment Incentive Regime (RIGI) will begin flowing into Argentina this year, with another $42 billion in the pipeline. Argentina climbed from 124th to 106th in Heritage Foundation's Economic Freedom Index, posting the largest single-year global gain — though it still sits in the 'mostly unfree' category. Caputo flatly ruled out a Kirchnerist return — 'zero probability' — and noted that three years ago Argentina's allies were Venezuela and Iran, a comparison that, with Iran now in full-scale war, carries rather more weight than he may have intended.",
+          "url": "https://www.lanacion.com.ar/economia/negocios/luis-caputo-en-los-proximos-cuatro-anos-veremos-un-nivel-de-inversion-que-no-vimos-nunca-nid05032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "CJNG succession: five candidates and a possible cartel split after El Mencho's death",
+          "body": "Security Secretary Omar García Harfuch handed President Sheinbaum a shortlist of five candidates to lead the Jalisco New Generation Cartel, including El Mencho's stepson Juan González Valencia, 'El Jardinero' Audias Flores Silva and 'El Doble R' Ricardo Ruiz Velasco. Intelligence sources say the CJNG may split into two operational commands to prevent an internal war among the roughly thirty plaza bosses active across more than 25 states — with El Jardinero running the north from Puerto Vallarta and El Doble R controlling the south from Guadalajara. The unanswered question is who would control the central financial architecture, the crypto-based money laundering operations and the international alliances that El Mencho managed personally.",
+          "url": "https://www.elfinanciero.com.mx/opinion/raymundo-riva-palacio/2026/03/04/la-sucesion-de-el-mencho/",
+          "tag": "México"
         }
       ],
       "quote": {
-        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
-        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
+        "text": "Oil is the lifeblood of the industrialised nations; to control it is to control the destiny of civilisation.",
+        "attribution": "Robert Sherrill, The Oil Follies of 1970–1980, 1983"
       }
     }
   },
@@ -136,15 +136,15 @@
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.67",
-        "change": "▲ 0.4%",
+        "value": "17.77",
+        "change": "▲ 1.0%",
         "direction": "up"
       },
       {
         "label": "S&P 500",
-        "value": "6,831",
-        "change": "▲ 0.2%",
-        "direction": "up"
+        "value": "6,764",
+        "change": "▼ 1.5%",
+        "direction": "down"
       },
       {
         "label": "CETES 28D",
@@ -154,57 +154,57 @@
       },
       {
         "label": "IPC BMV",
-        "value": "68,379.42",
-        "change": "▼ 2.9%",
+        "value": "67,705.84",
+        "change": "▼ 1.0%",
         "direction": "down"
       }
     ],
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.6733",
+        "rate": "17.7743",
         "chg_1d": {
-          "text": "▲ 0.46%",
+          "text": "▲ 1.03%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.06%",
+          "text": "▲ 2.64%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.5274",
+        "rate": "20.6320",
         "chg_1d": {
-          "text": "▲ 0.28%",
+          "text": "▲ 0.79%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.81%",
+          "text": "▲ 1.32%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "12.9406",
+        "rate": "13.0849",
         "chg_1d": {
-          "text": "▲ 0.36%",
+          "text": "▲ 1.48%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.15%",
+          "text": "▲ 3.29%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "122.0059",
+        "rate": "122.5716",
         "chg_1d": {
-          "text": "▲ 0.55%",
+          "text": "▲ 1.02%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.73%",
+          "text": "▲ 3.21%",
           "cls": "chg-up"
         }
       }
@@ -212,9 +212,9 @@
   },
   "weather": {
     "city": "Mexico City",
-    "temp": "14°C",
-    "high_low": "22°C / 12°C",
-    "humidity": "Humidity 77%",
-    "desc": "Thunderstorms"
+    "temp": "20°C",
+    "high_low": "21°C / 9°C",
+    "humidity": "Humidity 37%",
+    "desc": "Partly cloudy"
   }
 }
