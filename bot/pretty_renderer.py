@@ -3,6 +3,11 @@
 #  for the web archive. Uses Google Fonts,
 #  flexbox, CSS classes, and the gauge.
 #  Not used for email — only for web hosting.
+#
+#  Bilingual toggle: ES/EN pill in the header
+#  swaps all translatable content via JS.
+#  lang-es blocks visible by default;
+#  lang-en blocks hidden until toggled.
 # ─────────────────────────────────────────────
 
 from datetime import date, timedelta
@@ -17,7 +22,20 @@ CSS = """
   .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
   .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
   .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
-  .pub-meta { display: flex; justify-content: space-between; font-size: 10px; color: #888; letter-spacing: 1px; }
+  .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* ── Language toggle ── */
+  .lang-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .lang-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+
+  .lang-en { display: none; }
 
   .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
   .ticker-inner { display: flex; justify-content: space-between; }
@@ -120,6 +138,27 @@ CSS = """
   }
 """
 
+LANG_TOGGLE_JS = """
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? ''  : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // swap static labels
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = lang === 'es' ? el.dataset.es : el.dataset.en;
+    });
+    localStorage.setItem('nlLang', lang);
+  }
+  (function(){
+    var saved = localStorage.getItem('nlLang') || 'es';
+    setLang(saved);
+  })();
+</script>
+"""
+
 DIVIDER = """
 <div class="divider">
   <div class="line"></div>
@@ -145,13 +184,14 @@ def build_pretty_html(
     author:             str = "",
 ) -> str:
 
-    # Bilingual support: read from digest["es"] if present, fallback for old digests
+    # Bilingual support: unwrap es/en, fallback for old flat digests
     digest_es = digest.get("es", digest)
+    digest_en = digest.get("en", digest_es)  # fall back to ES if no EN
 
     today      = date.today().strftime("%A, %B %d, %Y").upper()
     issue_date = date.today().strftime("%B %d, %Y")
 
-    # Ticker
+    # ── Ticker (language-neutral) ─────────────────────────────────────────
     tick_items = ""
     for t in tickers:
         chg_cls = "tick-up" if t["direction"] == "up" else ("tick-down" if t["direction"] == "down" else "")
@@ -162,18 +202,23 @@ def build_pretty_html(
         <span class="{chg_cls}">{t['change']}</span>
       </div>"""
 
-    # Sentiment gauge
-    s        = digest_es.get("sentiment", {})
-    label_es = s.get("label_es", s.get("label", "Cauteloso"))
-    label_en = s.get("label_en", s.get("label", "Cautious"))
-    position = max(5, min(95, int(s.get("position", 50))))
-    context  = s.get("context_es", s.get("context", ""))
-    cls_map  = {"Risk-Off": "risk-off", "Cautious": "cautious", "Risk-On": "risk-on"}
-    sent_cls = cls_map.get(label_en, "cautious")
+    # ── Sentiment gauge ───────────────────────────────────────────────────
+    s          = digest_es.get("sentiment", {})
+    label_es   = s.get("label_es", s.get("label", "Cauteloso"))
+    label_en   = s.get("label_en", s.get("label", "Cautious"))
+    position   = max(5, min(95, int(s.get("position", 50))))
+    context_es = s.get("context_es", s.get("context", ""))
+    context_en = s.get("context_en", context_es)
+    cls_map    = {"Risk-Off": "risk-off", "Cautious": "cautious", "Risk-On": "risk-on"}
+    sent_cls   = cls_map.get(label_en, "cautious")
 
-    # Stories
+    # ── Stories (both languages) ──────────────────────────────────────────
+    stories_es = digest_es.get("stories", [])
+    stories_en = digest_en.get("stories", stories_es)
+
     stories_html = ""
-    for story in digest_es.get("stories", []):
+    for i, story in enumerate(stories_es):
+        story_en = stories_en[i] if i < len(stories_en) else story
         stories_html += f"""
 {DIVIDER}
 <div class="story">
@@ -181,12 +226,19 @@ def build_pretty_html(
     <span class="story-source">{story['source']}</span>
     <span class="story-tag">{story.get('tag','')}</span>
   </div>
-  <div class="story-headline">{story['headline']}</div>
-  <div class="story-body">{story['body']}</div>
-  <a href="{story['url']}" class="read-more">Leer m&aacute;s &rarr;</a>
+  <div class="lang-es">
+    <div class="story-headline">{story['headline']}</div>
+    <div class="story-body">{story['body']}</div>
+    <a href="{story['url']}" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">{story_en.get('headline', story['headline'])}</div>
+    <div class="story-body">{story_en.get('body', story['body'])}</div>
+    <a href="{story['url']}" class="read-more">Read more &rarr;</a>
+  </div>
 </div>"""
 
-    # Currency table
+    # ── Currency table (language-neutral) ────────────────────────────────
     tbody = ""
     for r in currency:
         c1 = "up" if r['chg_1d']['cls'] == 'chg-up' else ("down" if r['chg_1d']['cls'] == 'chg-down' else "flat")
@@ -201,15 +253,16 @@ def build_pretty_html(
         <td style="color:{chg7_color}; text-align:right;">{r['chg_1w']['text']}</td>
       </tr>"""
 
-    # Quote
-    q = digest_es.get("quote", {})
+    # ── Quote (both languages) ────────────────────────────────────────────
+    q_es = digest_es.get("quote", {})
+    q_en = digest_en.get("quote", q_es)
 
-    # Week in review
+    # ── Week in review (both languages) ───────────────────────────────────
     week_html = ""
     if is_friday and week_stories:
         monday = date.today() - timedelta(days=date.today().weekday())
         friday = monday + timedelta(days=4)
-        wlabel = f"{monday.strftime('%b %d')}-{friday.strftime('%d, %Y')}"
+        wlabel = f"{monday.strftime('%b %d')}&ndash;{friday.strftime('%d, %Y')}"
         tl_items = ""
         for ws in week_stories:
             dot_cls = "active" if ws.get("active") else ""
@@ -221,28 +274,38 @@ def build_pretty_html(
           <div class="tl-line"></div>
         </div>
         <div class="tl-content">
-          <span class="tl-tag">{ws['tag']}</span>
-          <div class="tl-headline">{ws['headline']}</div>
-          <div class="tl-body">{ws['body']}</div>
+          <span class="tl-tag">{ws.get('tag','')}</span>
+          <div class="lang-es">
+            <div class="tl-headline">{ws.get('headline','')}</div>
+            <div class="tl-body">{ws.get('body','')}</div>
+          </div>
+          <div class="lang-en">
+            <div class="tl-headline">{ws.get('headline_en', ws.get('headline',''))}</div>
+            <div class="tl-body">{ws.get('body_en', ws.get('body',''))}</div>
+          </div>
         </div>
       </div>"""
         week_html = f"""
 {DIVIDER}
 <div class="week">
-  <div class="section-title">Resumen Semanal &middot; {wlabel}</div>
+  <div class="section-title"
+       data-es="Resumen Semanal &middot; {wlabel}"
+       data-en="Week in Review &middot; {wlabel}">Resumen Semanal &middot; {wlabel}</div>
   <div class="timeline">{tl_items}
   </div>
 </div>"""
 
-    # Wordcloud — use full hosted URL so it works in both dev and production
+    # ── Wordcloud ─────────────────────────────────────────────────────────
     wordcloud_html = ""
     if wordcloud_filename:
         wordcloud_url = f"{ASSET_BASE_URL.rstrip('/')}/{wordcloud_filename}"
         wordcloud_html = f"""
 {DIVIDER}
 <div style="padding:24px 48px 8px;">
-  <div class="section-title">La Semana en Palabras</div>
-  <img src="{wordcloud_url}" style="width:100%; border:1px solid #cdd4d9;" alt="Nube de palabras"/>
+  <div class="section-title"
+       data-es="La Semana en Palabras"
+       data-en="The Week in Words">La Semana en Palabras</div>
+  <img src="{wordcloud_url}" style="width:100%; border:1px solid #cdd4d9;" alt="Word cloud"/>
 </div>"""
 
     return f"""<!DOCTYPE html>
@@ -262,7 +325,11 @@ def build_pretty_html(
     <div class="pub-name">{NEWSLETTER_NAME}</div>
     <div class="pub-meta">
       <span>{today}</span>
-      <span>EDICI&#211;N NO. {issue_number}</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <span>NO. {issue_number}</span>
     </div>
   </div>
 
@@ -279,7 +346,8 @@ def build_pretty_html(
   </div>
 
   <div class="editor-note">
-    <p>{digest_es.get('editor_note','')}</p>
+    <div class="lang-es"><p>{digest_es.get('editor_note','')}</p></div>
+    <div class="lang-en"><p>{digest_en.get('editor_note', digest_es.get('editor_note',''))}</p></div>
     <div class="editor-sig">&mdash; {author}</div>
   </div>
 
@@ -287,16 +355,22 @@ def build_pretty_html(
 
   <div class="sentiment">
     <div class="sentiment-header">
-      <span class="sentiment-label">Sentimiento del D&#237;a</span>
-      <span class="sentiment-reading {sent_cls}">{label_es}</span>
+      <span class="sentiment-label"
+            data-es="Sentimiento del D&#237;a"
+            data-en="Market Sentiment">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading {sent_cls} lang-es">{label_es}</span>
+      <span class="sentiment-reading {sent_cls} lang-en">{label_en}</span>
     </div>
     <div class="gauge-track">
       <div class="gauge-marker {sent_cls}" style="left:{position}%;"></div>
     </div>
     <div class="gauge-ticks">
-      <span>Avers. al Riesgo</span><span>Neutral</span><span>Apetito por Riesgo</span>
+      <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
+      <span data-es="Neutral"          data-en="Neutral">Neutral</span>
+      <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
     </div>
-    <div class="sentiment-context">{context}</div>
+    <div class="sentiment-context lang-es">{context_es}</div>
+    <div class="sentiment-context lang-en">{context_en}</div>
   </div>
 
   {stories_html}
@@ -304,11 +378,16 @@ def build_pretty_html(
   {DIVIDER}
 
   <div class="currency">
-    <div class="section-title">Tipo de Cambio</div>
+    <div class="section-title"
+         data-es="Tipo de Cambio"
+         data-en="Exchange Rates">Tipo de Cambio</div>
     <table class="currency-table">
       <thead>
         <tr>
-          <th>Par</th><th>Tipo</th><th style="text-align:right;">1D</th><th style="text-align:right;">1S</th>
+          <th data-es="Par"  data-en="Pair">Par</th>
+          <th data-es="Tipo" data-en="Rate">Tipo</th>
+          <th style="text-align:right;">1D</th>
+          <th style="text-align:right;">1W</th>
         </tr>
       </thead>
       <tbody>{tbody}
@@ -320,8 +399,14 @@ def build_pretty_html(
 
   <div class="quote">
     <span class="quote-mark">&ldquo;</span>
-    <div class="quote-text">{q.get('text','')}</div>
-    <div class="quote-attr">{q.get('attribution','')}</div>
+    <div class="lang-es">
+      <div class="quote-text">{q_es.get('text','')}</div>
+      <div class="quote-attr">{q_es.get('attribution','')}</div>
+    </div>
+    <div class="lang-en">
+      <div class="quote-text">{q_en.get('text', q_es.get('text',''))}</div>
+      <div class="quote-attr">{q_en.get('attribution', q_es.get('attribution',''))}</div>
+    </div>
   </div>
 
   {week_html}
@@ -330,9 +415,11 @@ def build_pretty_html(
 
   <div class="footer">
     <span class="footer-name">{NEWSLETTER_NAME}</span>
-    <span class="footer-by">por {author}</span>
+    <span class="footer-by lang-es">por {author}</span>
+    <span class="footer-by lang-en">by {author}</span>
   </div>
 
 </div>
+{LANG_TOGGLE_JS}
 </body>
 </html>"""
