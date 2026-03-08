@@ -1,0 +1,220 @@
+{
+  "date": "2026-03-08",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el estrecho de Ormuz sigue cerrado, el peso mexicano perdió 3.25% en la semana y BlackRock bloqueó reembolsos en un fondo de 26,000 millones de dólares — todo en el mismo ciclo de noticias. El conflicto en Oriente Medio ya no es solo geopolítica; es el hilo que atraviesa desde las pantallas de los mercados emergentes hasta los corralitos del crédito privado en Manhattan. Abróchense.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "La escalada en Oriente Medio, el cierre del estrecho de Ormuz y los bloqueos de reembolsos en fondos de crédito privado de primer nivel generan una fuga coordinada hacia activos refugio y presionan a las divisas emergentes.",
+        "context_en": "The Middle East escalation, the closure of the Strait of Hormuz, and redemption gates at top-tier private credit funds are driving a coordinated flight to safety and pressuring emerging-market currencies."
+      },
+      "stories": [
+        {
+          "source": "Elespanol.com / Invertia",
+          "headline": "BlackRock bloquea reembolsos en fondo de deuda privada de USD 26,000M; BBVA y Blue Owl también restringen retiros",
+          "body": "BlackRock limitó las retiradas de su fondo HPS Corporate Lending Fund (HLEND) tras recibir solicitudes de reembolso de USD 1,200M contra una liquidez disponible de solo USD 620M, superando el umbral trimestral del 5%. La crisis sigue al bloqueo similar de Blue Owl a finales de febrero, mientras que en España BBVA introdujo restricciones preventivas en su propio fondo de mercados privados. Las acciones de BlackRock cayeron 7.2% en Nueva York; Blue Owl ha retrocedido un 20% desde su anuncio, sembrando dudas sobre la apertura del crédito privado al inversor minorista.",
+          "url": "https://www.elespanol.com/invertia/mis-finanzas/fondos-de-inversion/20260307/blue-owl-blackrock-bbva-corralitos-credito-privado-desatan-panico-inversores/1003744159964_0.html",
+          "tag": "Mercados"
+        },
+        {
+          "source": "Aristeguinoticias.com",
+          "headline": "Peso mexicano se deprecia 3.25% semanal y cierra en 17.80 por dólar, su nivel más débil desde enero",
+          "body": "El tipo de cambio tocó un máximo de 17.91 pesos por dólar durante la semana, nivel no visto desde el 13 de enero, mientras el dólar se fortalecía 1.36% globalmente ante la búsqueda de refugio por la guerra en Irán. Gabriela Siller, de Banco Base, señaló que el cierre del estrecho de Ormuz — por donde transita 20% de la producción petrolera mundial — está presionando fuertemente las materias primas y las divisas emergentes. En la canasta amplia, el peso mexicano fue la quinta divisa más depreciada de la semana, solo por detrás del florín húngaro, el peso chileno, el rand sudafricano y el sol peruano.",
+          "url": "https://aristeguinoticias.com/0603/dinero-y-economia/peso-se-deprecia-3-25-ante-dolar-debido-a-escalada-en-medio-oriente/",
+          "tag": "FX"
+        },
+        {
+          "source": "RT / Actualidad",
+          "headline": "EE.UU. anuncia escolta naval en el estrecho de Ormuz en las próximas dos semanas",
+          "body": "El secretario del Tesoro Scott Bessent declaró que las Fuerzas Armadas estadounidenses comenzarán a escoltar buques mercantes por el estrecho de Ormuz en una o dos semanas, en respuesta a la presión que el cierre del corredor ejerce sobre los mercados globales de energía. El estrecho conecta el golfo Pérsico con el océano Índico y canaliza cerca del 20% del suministro mundial de petróleo; su bloqueo ha disparado los precios del combustible hasta 80% según operadores del mercado organizado de gas. La señal de intervención naval alivió levemente la tensión en los mercados de futuros, aunque los analistas advierten que la ejecución logística tomará tiempo.",
+          "url": "https://actualidad.rt.com/actualidad/591268-eeuu-revela-cuando-comenzara-escoltar-buques-estrecho-ormuz",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Mundo",
+          "headline": "Presidente de Mibgas: 'Si Putin corta el gas que aún envía a Europa, los precios se dispararán de inmediato'",
+          "body": "Raúl Yunta, presidente del mercado organizado de gas natural de España y Portugal, advierte que el conflicto en Oriente Medio ya ha desbocado el precio del combustible un 80% y que cualquier interrupción adicional del suministro ruso agravaría la crisis energética europea de forma inmediata. En la plataforma Mibgas se negociaron 182.2 TWh de gas el año pasado — el equivalente a unos cien buques tanque grandes — lo que da dimensión al volumen bajo presión. La doble exposición europea, entre Rusia y el Golfo Pérsico, convierte cualquier escalada adicional en una amenaza directa a la competitividad industrial del continente.",
+          "url": "https://www.elmundo.es/economia/empresas/2026/03/07/69ab1d2521efa0f66b8b4582.html",
+          "tag": "Energía"
+        },
+        {
+          "source": "ABC España",
+          "headline": "Trump reúne en Miami a líderes de derecha latinoamericana para lanzar alianza 'Escudo de las Américas'",
+          "body": "Milei, Bukele, Noboa, Kast, Abinader, Chaves y otros mandatarios se reúnen este sábado en el Trump National Doral para articular un bloque regional alineado con Washington y explícitamente opuesto al eje Venezuela-Cuba-Nicaragua. La Casa Blanca presenta la cita como el punto de partida de una nueva arquitectura política continental que sustituiría el formato de la Cumbre de las Américas. La agenda incluye cooperación en seguridad, migración, comercio y narcotráfico, en el contexto de la reciente operación militar contra Venezuela y el anuncio de la caída de la dictadura castrista en Cuba.",
+          "url": "https://www.abc.es/internacional/trump-reune-miami-derecha-latinoamericana-bloque-eje-20260307000522-nt.html",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Caso $LIBRA: revelan borrador de acuerdo que Milei habría firmado con Hayden Davis semanas antes del colapso del criptoactivo",
+          "body": "Peritos informáticos del Ministerio Público Fiscal recuperaron del teléfono del lobista Mauricio Novelli un documento titulado 'LOI_KELSIER.docx', fechado el 29 de enero de 2025, en el que Davis figura ofreciendo a Milei 'asesoramiento en blockchain y criptomonedas'. El hallazgo contradice las declaraciones reiteradas del presidente, quien siempre negó haber firmado cualquier documento con Davis. El fiscal Eduardo Taiano recibió el reporte en noviembre pasado pero no lo subió al sistema judicial ni dio acceso a los querellantes, lo que derivó en una presentación ante el juez federal Marcelo Martínez de Giorgi.",
+          "url": "https://www.lanacion.com.ar/politica/caso-libra-revelan-el-borrador-del-acuerdo-que-javier-milei-habria-firmado-con-hayden-davis-nid06032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "Nacion.com",
+          "headline": "Sheinbaum presenta reforma electoral que recorta 25% el financiamiento a partidos, pero enfrenta resistencia de sus propios aliados",
+          "body": "La presidenta mexicana envió al Congreso una iniciativa que elimina las listas de representación proporcional — actualmente asignan 200 de 500 diputados y 32 de 128 senadores — y reduce en 25% el presupuesto público a los partidos, que este año sumó USD 445.4 millones. La propuesta cuenta con más del 80% de aprobación ciudadana según Enkoll, pero enfrenta el rechazo de los partidos Verde y del Trabajo, aliados indispensables de Morena para alcanzar la mayoría calificada necesaria para reformar la Constitución. Analistas advierten que la reforma podría debilitar a los partidos minoritarios y consolidar a Morena como un nuevo 'partido de Estado'.",
+          "url": "https://www.nacion.com/el-mundo/claudia-sheinbaum-presenta-una-arriesgada-reforma/BD5XDY3KXBAXDOLHLKXRIUMWHQ/story/",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "Las decisiones tomadas bajo momentos de euforia con máximos de las cotizaciones o en momentos de miedo, con pánico y recortes, son siempre un desastre financiero, son las peores.",
+        "attribution": "Isabel Giménez, directora general de la Fundación de Estudios Bursátiles y Financieros (FEBF), El Mundo, 2026"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the Strait of Hormuz remains closed, the Mexican peso lost 3.25% on the week, and BlackRock gated redemptions on a $26 billion fund — all in the same news cycle. The Middle East conflict is no longer just geopolitics; it is the thread running from emerging-market currency screens to private credit gates in Manhattan. Buckle up.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "La escalada en Oriente Medio, el cierre del estrecho de Ormuz y los bloqueos de reembolsos en fondos de crédito privado de primer nivel generan una fuga coordinada hacia activos refugio y presionan a las divisas emergentes.",
+        "context_en": "The Middle East escalation, the closure of the Strait of Hormuz, and redemption gates at top-tier private credit funds are driving a coordinated flight to safety and pressuring emerging-market currencies."
+      },
+      "stories": [
+        {
+          "source": "Elespanol.com / Invertia",
+          "headline": "BlackRock gates redemptions on $26B private debt fund; BBVA and Blue Owl also restrict withdrawals",
+          "body": "BlackRock limited withdrawals from its HPS Corporate Lending Fund (HLEND) after receiving $1.2 billion in redemption requests against only $620 million in available liquidity, breaching the 5% quarterly threshold. The crisis follows a similar gate imposed by Blue Owl at the end of February, while Spain's BBVA introduced preventive restrictions on its own private markets fund. BlackRock shares fell 7.2% in New York; Blue Owl has retreated 20% since its announcement, raising serious questions about the wisdom of opening private credit to retail investors.",
+          "url": "https://www.elespanol.com/invertia/mis-finanzas/fondos-de-inversion/20260307/blue-owl-blackrock-bbva-corralitos-credito-privado-desatan-panico-inversores/1003744159964_0.html",
+          "tag": "Mercados"
+        },
+        {
+          "source": "Aristeguinoticias.com",
+          "headline": "Mexican peso weakens 3.25% on the week, closes at 17.80 per dollar — weakest level since January",
+          "body": "The exchange rate touched a high of 17.91 pesos per dollar during the week, a level not seen since January 13, as the dollar strengthened 1.36% globally amid safe-haven demand driven by the Iran war. Gabriela Siller of Banco Base noted that the closure of the Strait of Hormuz — through which 20% of global oil production passes — is sharply pressuring commodities and emerging-market currencies. In the broad currency basket, the peso was the fifth most-depreciated currency of the week, trailing only the Hungarian forint, Chilean peso, South African rand, and Peruvian sol.",
+          "url": "https://aristeguinoticias.com/0603/dinero-y-economia/peso-se-deprecia-3-25-ante-dolar-debido-a-escalada-en-medio-oriente/",
+          "tag": "FX"
+        },
+        {
+          "source": "RT / Actualidad",
+          "headline": "U.S. announces naval escort through Strait of Hormuz within two weeks",
+          "body": "Treasury Secretary Scott Bessent stated that U.S. armed forces will begin escorting merchant vessels through the Strait of Hormuz within one to two weeks, responding to the pressure the corridor's closure is placing on global energy markets. The strait links the Persian Gulf to the Indian Ocean and channels roughly 20% of the world's oil supply; its blockage has sent gas prices surging as much as 80% according to operators of the organized gas market. The naval intervention signal offered modest relief to futures markets, though analysts warn that logistical execution will take time.",
+          "url": "https://actualidad.rt.com/actualidad/591268-eeuu-revela-cuando-comenzara-escoltar-buques-estrecho-ormuz",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Mundo",
+          "headline": "Mibgas president: 'If Putin cuts the gas he still sends to Europe, prices will spike immediately'",
+          "body": "Raúl Yunta, president of the organized natural gas market for Spain and Portugal, warns that the Middle East conflict has already sent fuel prices surging 80% and that any additional disruption to Russian supply would worsen Europe's energy crisis immediately. Mibgas traded 182.2 TWh of gas last year — roughly equivalent to one hundred large tanker vessels — illustrating the volume now under pressure. Europe's dual exposure to both Russian supply and the Persian Gulf makes any further escalation a direct threat to continental industrial competitiveness.",
+          "url": "https://www.elmundo.es/economia/empresas/2026/03/07/69ab1d2521efa0f66b8b4582.html",
+          "tag": "Energía"
+        },
+        {
+          "source": "ABC España",
+          "headline": "Trump gathers Latin American right-wing leaders in Miami to launch 'Shield of the Americas' alliance",
+          "body": "Milei, Bukele, Noboa, Kast, Abinader, Chaves and other heads of state are meeting this Saturday at Trump National Doral to build a regional bloc aligned with Washington and explicitly opposed to the Venezuela-Cuba-Nicaragua axis. The White House frames the gathering as the starting point of a new continental political architecture to replace the traditional Summit of the Americas format. The agenda covers security cooperation, migration, trade, and counter-narcotics, set against the backdrop of the recent military operation against Venezuela and the announced fall of the Castro dictatorship in Cuba.",
+          "url": "https://www.abc.es/internacional/trump-reune-miami-derecha-latinoamericana-bloque-eje-20260307000522-nt.html",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "$LIBRA case: draft agreement Milei allegedly signed with Hayden Davis weeks before crypto collapse revealed",
+          "body": "Forensic experts from Argentina's Federal Public Prosecutor's Office recovered from lobbyist Mauricio Novelli's phone a document titled 'LOI_KELSIER.docx,' dated January 29, 2025, in which Davis appears to offer Milei 'advisory services in blockchain and cryptocurrencies.' The finding contradicts the president's repeated statements that he never signed any document with Davis. Federal prosecutor Eduardo Taiano received the report in November but neither uploaded it to the judicial system nor granted access to plaintiffs' attorneys, prompting a filing before federal judge Marcelo Martínez de Giorgi.",
+          "url": "https://www.lanacion.com.ar/politica/caso-libra-revelan-el-borrador-del-acuerdo-que-javier-milei-habria-firmado-con-hayden-davis-nid06032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "Nacion.com",
+          "headline": "Sheinbaum unveils electoral reform cutting party funding 25%, but faces resistance from her own allies",
+          "body": "Mexico's president sent Congress an initiative that eliminates proportional representation lists — currently used to assign 200 of 500 deputies and 32 of 128 senators — and cuts public party funding by 25%, a budget that totaled USD 445.4 million this year. The proposal enjoys more than 80% public approval according to Enkoll, but faces rejection from the Verde and Labor parties, whose votes Morena needs to reach the qualified majority required for a constitutional amendment. Analysts warn the reform could weaken minority parties and consolidate Morena as a new 'party of the state.'",
+          "url": "https://www.nacion.com/el-mundo/claudia-sheinbaum-presenta-una-arriesgada-reforma/BD5XDY3KXBAXDOLHLKXRIUMWHQ/story/",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "Las decisiones tomadas bajo momentos de euforia con máximos de las cotizaciones o en momentos de miedo, con pánico y recortes, son siempre un desastre financiero, son las peores.",
+        "attribution": "Isabel Giménez, directora general de la Fundación de Estudios Bursátiles y Financieros (FEBF), El Mundo, 2026"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.88",
+        "change": "▲ 1.6%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,740",
+        "change": "▼ 1.9%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "67,313.50",
+        "change": "▼ 1.6%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.8795",
+        "chg_1d": {
+          "text": "▲ 1.00%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.25%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.6657",
+        "chg_1d": {
+          "text": "▲ 0.96%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 1.49%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "13.1095",
+        "chg_1d": {
+          "text": "▲ 1.67%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.48%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "123.4419",
+        "chg_1d": {
+          "text": "▲ 1.10%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.94%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "22°C",
+    "high_low": "25°C / 11°C",
+    "humidity": "Humidity 29%",
+    "desc": "Partly cloudy"
+  }
+}
