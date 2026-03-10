@@ -1,74 +1,143 @@
 {
   "date": "2026-03-04",
   "digest": {
-    "editor_note": "Fellow Humans, the Strait of Hormuz is functionally closed, Brent crude has spiked double digits in two sessions, and Jamie Dimon is already reaching for the skunk metaphor. Markets recovered from their intraday lows on Tuesday after Trump promised naval escorts through the strait, but the S&P still closed down nearly 1% — and the real question isn't whether this is inflationary, it's how long the Fed gets to pretend it isn't.",
-    "sentiment": {
-      "label": "Risk-Off",
-      "position": 22,
-      "context": "U.S.-Iran conflict, Strait of Hormuz closure fears, surging oil prices, and inflation overhang are driving broad equity selling and suppressing rate-cut expectations."
-    },
-    "stories": [
-      {
-        "source": "CNBC",
-        "headline": "Wall Street Slumps as Strait of Hormuz Closure Fears Rattle Markets; Oil Surges 4.7%",
-        "body": "The S&P 500 fell 0.94% to 6,816 and the Dow dropped 403 points Tuesday, recovering from intraday losses of 2.5% after Trump pledged the U.S. Navy would escort tankers through the Strait of Hormuz. Brent crude settled up 4.71% following a 6% spike Monday, with Treasury yields initially surging on renewed inflation fears before paring gains. With roughly 20% of global oil supply transiting the strait, analysts warn that a prolonged closure cannot be priced as a temporary shock.",
-        "url": "https://www.cnbc.com/2026/03/02/stock-market-today-live-updates.html",
-        "tag": "Markets"
+    "es": {
+      "editor_note": "Estimados humanos, el estrecho de Ormuz es ahora el precio de todo. Con el WTI disparándose 6.28% en una sola sesión, el gas europeo subiendo más del 20% tras el cierre de la principal refinería de GNL de Qatar, y Teherán atacando la embajada estadounidense en Riad, los mercados globales entran en modo pausa mientras calculan si esto es un shock contenido o el comienzo de algo que reordena la geopolítica energética mundial. Milei dio su discurso ante la Asamblea Legislativa casi sin mencionar el contexto; un detalle que dice más sobre Buenos Aires que sobre Medio Oriente.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 18,
+        "context_es": "El ataque de Irán a la embajada de EEUU en Riad, la amenaza de cierre del estrecho de Ormuz y el desplome de bolsas globales ante el alza del petróleo y el gas generan un entorno de fuerte aversión al riesgo.",
+        "context_en": "Iran's drone strike on the US embassy in Riyadh, threats to close the Strait of Hormuz, and collapsing global equities amid surging oil and gas prices define a sharply risk-off environment."
       },
-      {
-        "source": "New York Magazine",
-        "headline": "Oil Analyst: Hormuz Crisis Is 'Most Perilous' Oil Market Situation Since Ukraine Invasion",
-        "body": "Oil market researcher Rory Johnston told New York Magazine that markets had already priced in a $7/barrel Iran risk premium before the conflict began, with another $7-8 added Monday, bringing Brent to roughly $80. The critical variable is duration — the strait has not been formally closed but tanker traffic is near standstill, and Johnston notes that a prolonged shutdown would require a significant further re-pricing. He characterized the situation as the most dangerous for oil markets since Russia's February 2022 invasion of Ukraine.",
-        "url": "http://nymag.com/intelligencer/article/how-iran-war-could-turn-into-an-oil-shock-nightmare.html",
-        "tag": "Energy"
-      },
-      {
-        "source": "Fortune",
-        "headline": "Dimon Warns Inflation Is the 'Skunk at the Party' as Iran Conflict Threatens Fed Rate-Cut Path",
-        "body": "JPMorgan CEO Jamie Dimon, speaking at the bank's annual leveraged-finance conference, cautioned that inflation — already stuck near 3% — risks being pushed higher by the Iran conflict, particularly through oil prices and disrupted trade routes through the Strait of Hormuz and the Red Sea. He described the inflationary threat as modest in an isolated scenario but warned it compounds with medical costs, construction prices, and wages already running hot. Markets are watching whether the Fed can justify further rate cuts if energy-driven price pressures re-accelerate.",
-        "url": "https://fortune.com/2026/03/03/jamie-dimon-inflation-skunk-economic-party-fed-rates/",
-        "tag": "Rates"
-      },
-      {
-        "source": "BusinessLine",
-        "headline": "India Urges Restraint as Iran Conflict Spreads, With 10 Million Citizens at Risk in Gulf Region",
-        "body": "India's Ministry of External Affairs issued a formal statement on Tuesday expressing 'grave concern' over the rapidly deteriorating situation in Iran and the Gulf following the outbreak of conflict on February 28. New Delhi noted that nearly one crore — 10 million — Indian nationals live and work in the Gulf, with some already reported killed or missing in attacks on merchant shipping. India flagged direct risks to its energy supply chains and trade routes, underscoring that the conflict's economic consequences extend well beyond the Middle East.",
-        "url": "https://www.thehindubusinessline.com/news/india-calls-for-dialogue-amid-widening-iran-conflict-monitors-safety-of-1-crore-citizens/article70699358.ece",
-        "tag": "Macro"
-      },
-      {
-        "source": "Fox News",
-        "headline": "Trump Authorized Iran Strikes Mid-Flight; Congress Moves to Debate War Powers Limits",
-        "body": "Chairman of the Joint Chiefs Gen. Dan Caine confirmed Tuesday that President Trump authorized Operation Epic Fury while airborne en route to Corpus Christi, with members of the Texas congressional delegation on Air Force One when he gave the order. Lawmakers from both parties are now pushing for a war powers vote to limit executive authority in the region, though Trump has indicated the conflict could last more than four weeks — a timeline that is increasingly setting the market's risk calculus.",
-        "url": "https://www.foxnews.com/politics/the-right-thing-paxton-cornyn-trade-blows-texas-primary-unite-trumps-iran-strikes",
-        "tag": "Politics"
-      },
-      {
-        "source": "Crypto Briefing",
-        "headline": "Bank of Japan Launches Blockchain Settlement Experiments for Central Bank Reserves",
-        "body": "BOJ Governor Kazuo Ueda announced at the FIN/SUM 2026 conference in Tokyo that the central bank will test distributed ledger technology for settling interbank and securities transactions using central bank money. The BOJ is also participating in Project Agorá, a multi-central-bank initiative exploring tokenized reserves and atomic cross-border transactions. Ueda flagged interoperability across emerging blockchain networks as a key risk, warning that fragmentation could undermine the trust anchor function of central bank money.",
-        "url": "https://cryptobriefing.com/tokenized-central-bank-deposits-japan/",
-        "tag": "Macro"
-      },
-      {
-        "source": "Commercial Observer",
-        "headline": "Benefit Street Partners Closes $10 Billion Real Estate Debt Fund — Six Times Its Predecessor",
-        "body": "Benefit Street Partners completed its BSP Real Estate Opportunistic Debt Fund II in January at $10 billion of investable capital, oversubscribed and roughly six times the size of its first institutional drawdown vehicle. Of the $3 billion equity raise, 40% came from Asia-Pacific and 40% from U.S. investors, reflecting a broadening global appetite for real estate debt as a distinct asset class within private credit allocations. The firm's co-COO Allison Davi noted that as recently as 2022, they struggled to get meetings — a reversal that underlines how rapidly institutional acceptance of the strategy has shifted.",
-        "url": "http://commercialobserver.com/2026/03/benefit-street-partners-michael-comparato-allison-davi-debt/",
-        "tag": "Markets"
+      "stories": [
+        {
+          "source": "Eldiario.es",
+          "headline": "Guerra EEUU-Israel contra Irán entra en su cuarto día: embajada estadounidense en Riad atacada y mercados en alerta máxima",
+          "body": "La ofensiva conjunta —denominada 'Operación Furia Épica' por Washington y 'Operación Rugido del León' por Tel Aviv— entró en su cuarto día con Irán respondiendo con drones contra la embajada de EEUU en Arabia Saudí, causando daños materiales pero sin víctimas. Trump prometió respuesta 'pronto' y no descartó despliegue de tropas, mientras Netanyahu afirma que la operación no es una guerra sin fin sino el preludio a una era de paz. La Media Luna Roja reporta 787 muertos en Irán hasta el último balance publicado.",
+          "url": "https://www.eldiario.es/internacional/guerra-iran-extiende-amenaza-crisis-energetica-teheran-ataca-embajada-eeuu-riad_1_13034933.html",
+          "tag": "Macro"
+        },
+        {
+          "source": "Diario EL PAIS Uruguay",
+          "headline": "Petróleo WTI sube 6.28% y gas europeo se dispara más del 20% tras cierre de refinería de Qatar por ataque iraní",
+          "body": "El WTI cerró en 71.23 dólares por barril y el Brent en 77.74 dólares, ambos con subidas superiores al 6% en la primera sesión tras el inicio de la ofensiva EEUU-Israel. El precio del gas europeo subió más del 20% después de que Qatar cerrara su principal refinería de GNL —responsable del 20% de la producción global— tras ser atacada por drones iraníes. El dólar ganó 1% frente a otras divisas y el oro cotizó a 5.298,90 dólares la onza, mientras las bolsas de Asia y Europa se desplomaron.",
+          "url": "https://www.elpais.com.uy/mundo/petroleo-y-gas-con-fuerte-alza-las-bolsas-a-la-baja",
+          "tag": "Energía"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "Bitcoin resiste cerca de 67.000 dólares pero analistas advierten riesgo de caída a 60.000 si el petróleo alcanza 100 dólares",
+          "body": "BTC se mantuvo en torno a los 67.000 dólares durante el fin de semana, evitando una ruptura mayor pese a la volatilidad geopolítica, con los futuros del S&P 500 bajando 0.65% al momento de la publicación. JPMorgan advierte que si el petróleo escala a 100 dólares por barril el IPC de EEUU podría alcanzar 5%, niveles no vistos desde marzo de 2023 cuando la Fed subía tasas agresivamente. Arthur Hayes, ex-CEO de BitMEX, argumenta en sentido contrario: la intervención militar estadounidense en Medio Oriente históricamente termina en recortes de tasas o emisión monetaria, lo que sería alcista para BTC.",
+          "url": "https://es.cointelegraph.com/news/bitcoin-traders-eye-iran-reactions-oil-sparks-us-5-inflation-forecast",
+          "tag": "Mercados"
+        },
+        {
+          "source": "Huffingtonpost.es",
+          "headline": "El entierro de El Mencho en Guadalajara: ataúd dorado, blindaje militar y el CJNG expone su poder simbólico a 100 días del Mundial",
+          "body": "Nemesio Oseguera Cervantes fue sepultado en Zapopan bajo un operativo con Ejército, Guardia Nacional y policías estatales, en un funeral que incluyó banda regional, decenas de arreglos florales sin remitente y una corona con las siglas CJNG visibles. El operativo en Tapalpa que acabó con su vida dejó al menos 25 elementos de la Guardia Nacional y más de 30 integrantes del CJNG muertos. Guadalajara, sede del Mundial de Fútbol en 100 días, todavía se recupera del 'Código Rojo' decretado por el gobernador Pablo Lemuns tras la ola de violencia que siguió al operativo.",
+          "url": "https://www.huffingtonpost.es/global/el-ultimo-adios-mencho-entierro-ataud-dorado-musica-regional-blindaje-militar-jalisco-f202603.html",
+          "tag": "México"
+        },
+        {
+          "source": "Noticiaslatam.lat / La Nacion",
+          "headline": "Milei inaugura tercer año con agenda de reformas ante el Congreso, mientras el contexto bélico internacional queda fuera del discurso",
+          "body": "El presidente argentino abrió el período ordinario de sesiones prometiendo reformas profundas y asegurando que las nuevas industrias 'van a suplir con creces la demanda de trabajo retirada por las viejas industrias'. Analistas advierten que los apoyos legislativos esperados son 'esporádicos' y no equivalen a un cheque en blanco. La Nación señala que Milei omitió casi por completo el contexto internacional —escalada en Medio Oriente, petróleo, la AMIA y la posible visita de Marco Rubio el 12 de marzo— un silencio que, dado el alineamiento automático de Argentina con EEUU e Israel, es en sí mismo una posición.",
+          "url": "https://noticiaslatam.lat/20260303/su-mejor-momento-milei-encara-el-tercer-ano-de-gobierno-prometiendo-un-profundo-paquete-de-reformas-1172033484.html",
+          "tag": "Política"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "Adopción de criptomonedas en América Latina crece tres veces más rápido que en EEUU; volumen supera 730.000 millones de dólares en 2025",
+          "body": "Según el reporte 'Estado de la Industria Crypto 2025' de la fintech argentina Lemon, los usuarios activos de criptomonedas en LATAM crecieron 18% en 2025, triplicando el ritmo de adopción de Estados Unidos. Brasil lideró en volumen con más de 318.000 millones de dólares recibidos, mientras Argentina —con el 12% de su población como usuaria activa— registró la mayor penetración per cápita de la región, cuatro veces el promedio. El reporte señala que en mercados como Argentina y Venezuela la adopción responde principalmente a la necesidad de resguardo de valor ante la devaluación monetaria.",
+          "url": "https://es.cointelegraph.com/news/adopcion-de-criptomonedas-en-latam-crece-tres-veces-mas-rapido-que-en-estados-unidos-segun-lemon",
+          "tag": "Mercados"
+        },
+        {
+          "source": "Elcomercio.com",
+          "headline": "Ecuador y Colombia en disputa arancelaria que amenaza 3.000 millones de dólares anuales en comercio bilateral",
+          "body": "Ecuador aplica una tasa de seguridad a productos colombianos argumentando amenazas transnacionales en la frontera norte, mientras Colombia responde con medidas simétricas que encarecen exportaciones ecuatorianas. El comercio bilateral bordea los 3.000 millones de dólares anuales y casi la mitad de las importaciones desde Colombia son insumos y bienes de capital para la producción local ecuatoriana. Transportistas del Carchi se movilizan y gremios empresariales de ambos países exigen un diálogo institucional que los canales diplomáticos actuales parecen incapaces de proveer.",
+          "url": "https://www.elcomercio.com/opinion/editorial/ecuador-enfrenta-decision-clave-colombia-entre-seguridad-pedido-productivo/",
+          "tag": "Comercio"
+        }
+      ],
+      "quote": {
+        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
+        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
       }
-    ],
-    "quote": {
-      "text": "Oil is the lifeblood of the industrial nations. To disrupt it is to disrupt the entire economy.",
-      "attribution": "Henry Kissinger, Years of Upheaval, 1982"
+    },
+    "en": {
+      "editor_note": "Fellow Humans, the Strait of Hormuz is now the price of everything. With WTI surging 6.28% in a single session, European gas up more than 20% after Qatar closed its main LNG refinery following an Iranian drone strike, and Tehran hitting the US embassy in Riyadh, global markets are pausing to calculate whether this is a contained shock or the beginning of something that rewrites the energy geopolitical map. Milei delivered his congressional address with barely a mention of the context; a detail that says more about Buenos Aires than about the Middle East.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 18,
+        "context_es": "El ataque de Irán a la embajada de EEUU en Riad, la amenaza de cierre del estrecho de Ormuz y el desplome de bolsas globales ante el alza del petróleo y el gas generan un entorno de fuerte aversión al riesgo.",
+        "context_en": "Iran's drone strike on the US embassy in Riyadh, threats to close the Strait of Hormuz, and collapsing global equities amid surging oil and gas prices define a sharply risk-off environment."
+      },
+      "stories": [
+        {
+          "source": "Eldiario.es",
+          "headline": "US-Israel war against Iran enters day four: US embassy in Riyadh struck, markets on high alert",
+          "body": "The joint offensive — dubbed 'Operation Epic Fury' by Washington and 'Operation Lion's Roar' by Tel Aviv — entered its fourth day as Iran responded with drones against the US embassy in Saudi Arabia, causing material damage but no casualties. Trump promised a response 'soon' and did not rule out troop deployment, while Netanyahu insists the operation is not an endless war but the prelude to an era of peace. The Red Crescent reports 787 deaths in Iran in its latest published tally.",
+          "url": "https://www.eldiario.es/internacional/guerra-iran-extiende-amenaza-crisis-energetica-teheran-ataca-embajada-eeuu-riad_1_13034933.html",
+          "tag": "Macro"
+        },
+        {
+          "source": "Diario EL PAIS Uruguay",
+          "headline": "WTI crude surges 6.28% and European gas spikes over 20% after Qatar closes main LNG refinery following Iranian attack",
+          "body": "WTI closed at $71.23 per barrel and Brent at $77.74, both up over 6% in the first session since the US-Israel offensive began. European gas prices rose more than 20% after Qatar shut its main LNG refinery — responsible for 20% of global production — following Iranian drone strikes. The dollar gained 1% against other currencies and gold traded at $5,298.90 per ounce, while Asian and European stock markets tumbled.",
+          "url": "https://www.elpais.com.uy/mundo/petroleo-y-gas-con-fuerte-alza-las-bolsas-a-la-baja",
+          "tag": "Energy"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "Bitcoin holds near $67,000 but analysts warn of drop to $60,000 if oil reaches $100 per barrel",
+          "body": "BTC held around $67,000 over the weekend, avoiding a major breakdown despite geopolitical volatility, with S&P 500 futures down 0.65% at time of publication. JPMorgan warns that if oil escalates to $100 per barrel, US CPI could reach 5% — levels not seen since March 2023 when the Fed was aggressively hiking rates. Former BitMEX CEO Arthur Hayes argues the opposite: US military intervention in the Middle East historically ends in rate cuts or money printing, which would be bullish for BTC.",
+          "url": "https://es.cointelegraph.com/news/bitcoin-traders-eye-iran-reactions-oil-sparks-us-5-inflation-forecast",
+          "tag": "Markets"
+        },
+        {
+          "source": "Huffingtonpost.es",
+          "headline": "El Mencho buried in Guadalajara: golden coffin, military lockdown, and CJNG displays symbolic power 100 days before the World Cup",
+          "body": "Nemesio Oseguera Cervantes was laid to rest in Zapopan under a security operation involving the Army, National Guard, and state police, in a funeral featuring a regional band, dozens of floral arrangements with no sender, and a wreath displaying the CJNG initials. The Tapalpa operation that ended his life left at least 25 National Guard elements and more than 30 CJNG members dead. Guadalajara, a World Cup host city in 100 days, is still recovering from the 'Red Code' declared by Governor Pablo Lemuns after the wave of violence that followed the operation.",
+          "url": "https://www.huffingtonpost.es/global/el-ultimo-adios-mencho-entierro-ataud-dorado-musica-regional-blindaje-militar-jalisco-f202603.html",
+          "tag": "Mexico"
+        },
+        {
+          "source": "Noticiaslatam.lat / La Nacion",
+          "headline": "Milei opens third year with reform agenda before Congress while global war context goes unmentioned in his address",
+          "body": "The Argentine president opened the ordinary legislative session promising deep reforms and assuring that new industries 'will more than compensate for labor demand lost by old industries.' Analysts warn that expected legislative support is 'sporadic' and does not amount to a blank check. La Nación notes that Milei almost entirely omitted the international context — the Middle East escalation, oil prices, the AMIA case, and the possible visit of Marco Rubio on March 12 — a silence that, given Argentina's automatic alignment with the US and Israel, is itself a position.",
+          "url": "https://noticiaslatam.lat/20260303/su-mejor-momento-milei-encara-el-tercer-ano-de-gobierno-prometiendo-un-profundo-paquete-de-reformas-1172033484.html",
+          "tag": "Politics"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "Crypto adoption in Latin America grows three times faster than in the US; volume exceeds $730 billion in 2025",
+          "body": "According to Argentine fintech Lemon's 'State of the Crypto Industry 2025' report, active crypto users in LATAM grew 18% in 2025, tripling the adoption rate of the United States. Brazil led in volume with over $318 billion received, while Argentina — with 12% of its population as active users — recorded the highest per capita penetration in the region, four times the regional average. The report notes that in markets like Argentina and Venezuela, adoption is driven primarily by the need to preserve value against currency devaluation.",
+          "url": "https://es.cointelegraph.com/news/adopcion-de-criptomonedas-en-latam-crece-tres-veces-mas-rapido-que-en-estados-unidos-segun-lemon",
+          "tag": "Markets"
+        },
+        {
+          "source": "Elcomercio.com",
+          "headline": "Ecuador and Colombia locked in tariff dispute threatening $3 billion in annual bilateral trade",
+          "body": "Ecuador is applying a security fee to Colombian products, citing transnational threats on its northern border, while Colombia has responded with symmetric measures that raise the cost of Ecuadorian exports. Bilateral trade amounts to roughly $3 billion annually and nearly half of imports from Colombia are inputs and capital goods for local Ecuadorian production. Transporters in Carchi are mobilizing and business associations in both countries are demanding institutional dialogue that current diplomatic channels appear unable to deliver.",
+          "url": "https://www.elcomercio.com/opinion/editorial/ecuador-enfrenta-decision-clave-colombia-entre-seguridad-pedido-productivo/",
+          "tag": "Trade"
+        }
+      ],
+      "quote": {
+        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
+        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
+      }
     }
   },
   "market": {
     "tickers": [
       {
         "label": "USD/MXN",
-        "value": "17.60",
-        "change": "▲ 1.7%",
+        "value": "17.75",
+        "change": "▲ 2.6%",
         "direction": "up"
       },
       {
@@ -93,49 +162,49 @@
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.6000",
+        "rate": "17.7460",
         "chg_1d": {
-          "text": "▲ 1.71%",
+          "text": "▲ 2.56%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.58%",
+          "text": "▲ 3.43%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.4845",
+        "rate": "20.5680",
         "chg_1d": {
-          "text": "▲ 1.22%",
+          "text": "▲ 1.63%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 1.01%",
+          "text": "▲ 1.42%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "12.8855",
+        "rate": "12.9570",
         "chg_1d": {
-          "text": "▲ 1.81%",
+          "text": "▲ 2.38%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.66%",
+          "text": "▲ 3.23%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "121.3766",
+        "rate": "122.8325",
         "chg_1d": {
-          "text": "▲ 1.93%",
+          "text": "▲ 3.15%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 2.99%",
+          "text": "▲ 4.22%",
           "cls": "chg-up"
         }
       }
@@ -143,9 +212,9 @@
   },
   "weather": {
     "city": "Mexico City",
-    "temp": "11°C",
-    "high_low": "24°C / 10°C",
-    "humidity": "Humidity 59%",
-    "desc": "Clear skies"
+    "temp": "15°C",
+    "high_low": "25°C / 8°C",
+    "humidity": "Humidity 52%",
+    "desc": "Partly cloudy"
   }
 }

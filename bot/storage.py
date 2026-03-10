@@ -39,7 +39,7 @@ def get_week_stories() -> list[dict]:
     """
     today     = date.today()
     monday    = today - timedelta(days=today.weekday())
-    day_names = ["Mon", "Tue", "Wed", "Thu", "Fri"]
+    day_names = ["Lun", "Mar", "Mié", "Jue", "Vie"]
     stories   = []
 
     for i in range(5):
@@ -51,15 +51,17 @@ def get_week_stories() -> list[dict]:
         if not data:
             continue
 
-        top_stories = data.get("digest", {}).get("stories", [])
+        digest_obj = data.get("digest", {})
+        digest_es  = digest_obj.get("es", digest_obj)  # bilingual fallback
+        top_stories = digest_es.get("stories", [])
         if not top_stories:
             continue
 
         top = top_stories[0]
         # Mark as "active" (darker dot) if it was a high-impact day
-        # Simple heuristic: risk-off or risk-on sentiment = active
-        sentiment = data.get("digest", {}).get("sentiment", {})
-        active    = sentiment.get("label", "Cautious") != "Cautious"
+        # Simple heuristic: non-neutral sentiment = active
+        sentiment = digest_es.get("sentiment", {})
+        active    = sentiment.get("label_es", sentiment.get("label", "Cauteloso")) != "Cauteloso"
 
         stories.append({
             "day":      day_label,

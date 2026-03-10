@@ -3,29 +3,40 @@
 #  for the web archive. Uses Google Fonts,
 #  flexbox, CSS classes, and the gauge.
 #  Not used for email — only for web hosting.
+#
+#  Bilingual toggle: ES/EN pill in the header
+#  swaps all translatable content via JS.
+#  lang-es blocks visible by default;
+#  lang-en blocks hidden until toggled.
 # ─────────────────────────────────────────────
 
 from datetime import date, timedelta
-import hashlib
-from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME, AUTHOR_NAMES, AUTHOR_TITLES
-
-_seed       = int(hashlib.md5(str(date.today()).encode()).hexdigest(), 16)
-AUTHOR_BYLINE_NAME  = AUTHOR_NAMES[_seed % len(AUTHOR_NAMES)]
-AUTHOR_BYLINE_TITLE = AUTHOR_TITLES[(_seed // len(AUTHOR_NAMES)) % len(AUTHOR_TITLES)]
-AUTHOR_BYLINE       = f"{AUTHOR_BYLINE_NAME}, {AUTHOR_BYLINE_TITLE}"
+from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE
+from config import GITHUB_PAGES_URL, ASSET_BASE_URL
 
 CSS = """
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
   .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
 
-  /* Header */
   .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
   .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
   .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
-  .pub-meta { display: flex; justify-content: space-between; font-size: 10px; color: #888; letter-spacing: 1px; }
+  .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
 
-  /* Ticker */
+  /* ── Language toggle ── */
+  .lang-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .lang-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+
+  .lang-en { display: none; }
+
   .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
   .ticker-inner { display: flex; justify-content: space-between; }
   .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
@@ -35,23 +46,19 @@ CSS = """
   .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
   .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
 
-  /* Weather */
   .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
   .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
   .weather-temp { font-size: 11px; color: #ccc; }
   .weather-humidity { font-size: 11px; color: #ccc; }
   .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
 
-  /* Editor note */
   .editor-note { padding: 28px 48px; }
   .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
   .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
 
-  /* Divider */
   .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
   .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
 
-  /* Sentiment gauge */
   .sentiment { padding: 24px 48px; }
   .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
   .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
@@ -67,7 +74,6 @@ CSS = """
   .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
   .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
 
-  /* Stories */
   .story { padding: 24px 48px; }
   .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
   .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
@@ -77,7 +83,6 @@ CSS = """
   .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
   .read-more:hover { color: #555; border-color: #555; }
 
-  /* Currency table */
   .currency { padding: 24px 48px; }
   .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
   .currency-table { width: 100%; border-collapse: collapse; }
@@ -87,17 +92,12 @@ CSS = """
   .currency-table td:not(:first-child) { text-align: right; }
   .currency-table tr:last-child td { border-bottom: none; }
   .currency-table .pair { font-weight: 600; color: #1a1a1a; }
-  .up   { color: #4a9e6a; font-size: 11px; }
-  .down { color: #b84a3a; font-size: 11px; }
-  .flat { color: #aab4bc; font-size: 11px; }
 
-  /* Quote */
   .quote { padding: 28px 48px; background: #e8edf0; }
   .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
   .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
   .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
 
-  /* Week in review */
   .week { padding: 24px 48px; }
   .timeline { display: flex; flex-direction: column; }
   .tl-row { display: flex; gap: 16px; }
@@ -113,12 +113,10 @@ CSS = """
   .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
   .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
 
-  /* Footer */
   .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
   .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
   .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
 
-  /* ── Mobile ── */
   @media (max-width: 600px) {
     body { padding: 0; }
     .wrap { border: none; }
@@ -127,21 +125,38 @@ CSS = """
     .ticker { padding: 6px 8px; }
     .ticker-inner { flex-wrap: wrap; }
     .tick-item { flex: 1 1 45%; padding: 8px 4px; }
-    .tick-label { font-size: 7px; }
     .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
     .weather-desc { margin-left: 0; width: 100%; }
     .editor-note { padding: 20px 20px; }
-    .editor-note p { font-size: 14px; }
     .divider { padding: 0 20px; }
     .sentiment { padding: 20px 20px; }
     .story { padding: 20px 20px; }
-    .story-headline { font-size: 17px; }
     .currency { padding: 20px 20px; }
-    .currency-table { font-size: 11px; }
     .quote { padding: 20px 20px; }
     .week { padding: 20px 20px; }
     .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
   }
+"""
+
+LANG_TOGGLE_JS = """
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? ''  : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // swap static labels
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = lang === 'es' ? el.dataset.es : el.dataset.en;
+    });
+    localStorage.setItem('nlLang', lang);
+  }
+  (function(){
+    var saved = localStorage.getItem('nlLang') || 'es';
+    setLang(saved);
+  })();
+</script>
 """
 
 DIVIDER = """
@@ -158,19 +173,25 @@ DIVIDER = """
 
 
 def build_pretty_html(
-    digest:       dict,
-    tickers:      list[dict],
-    currency:     list[dict],
-    weather:      dict,
-    week_stories: list[dict],
-    issue_number: int = 1,
-    is_friday:    bool = False,
+    digest:             dict,
+    tickers:            list[dict],
+    currency:           list[dict],
+    weather:            dict,
+    week_stories:       list[dict],
+    issue_number:       int = 1,
+    is_friday:          bool = False,
+    wordcloud_filename: str | None = None,
+    author:             str = "",
 ) -> str:
+
+    # Bilingual support: unwrap es/en, fallback for old flat digests
+    digest_es = digest.get("es", digest)
+    digest_en = digest.get("en", digest_es)  # fall back to ES if no EN
 
     today      = date.today().strftime("%A, %B %d, %Y").upper()
     issue_date = date.today().strftime("%B %d, %Y")
 
-    # ── Ticker ──
+    # ── Ticker (language-neutral) ─────────────────────────────────────────
     tick_items = ""
     for t in tickers:
         chg_cls = "tick-up" if t["direction"] == "up" else ("tick-down" if t["direction"] == "down" else "")
@@ -181,17 +202,23 @@ def build_pretty_html(
         <span class="{chg_cls}">{t['change']}</span>
       </div>"""
 
-    # ── Sentiment gauge ──
-    s         = digest.get("sentiment", {})
-    label     = s.get("label", "Cautious")
-    position  = max(5, min(95, int(s.get("position", 50))))
-    context   = s.get("context", "")
-    cls_map   = {"Risk-Off": "risk-off", "Cautious": "cautious", "Risk-On": "risk-on"}
-    sent_cls  = cls_map.get(label, "cautious")
+    # ── Sentiment gauge ───────────────────────────────────────────────────
+    s          = digest_es.get("sentiment", {})
+    label_es   = s.get("label_es", s.get("label", "Cauteloso"))
+    label_en   = s.get("label_en", s.get("label", "Cautious"))
+    position   = max(5, min(95, int(s.get("position", 50))))
+    context_es = s.get("context_es", s.get("context", ""))
+    context_en = s.get("context_en", context_es)
+    cls_map    = {"Risk-Off": "risk-off", "Cautious": "cautious", "Risk-On": "risk-on"}
+    sent_cls   = cls_map.get(label_en, "cautious")
 
-    # ── Stories ──
+    # ── Stories (both languages) ──────────────────────────────────────────
+    stories_es = digest_es.get("stories", [])
+    stories_en = digest_en.get("stories", stories_es)
+
     stories_html = ""
-    for i, story in enumerate(digest.get("stories", [])):
+    for i, story in enumerate(stories_es):
+        story_en = stories_en[i] if i < len(stories_en) else story
         stories_html += f"""
 {DIVIDER}
 <div class="story">
@@ -199,12 +226,19 @@ def build_pretty_html(
     <span class="story-source">{story['source']}</span>
     <span class="story-tag">{story.get('tag','')}</span>
   </div>
-  <div class="story-headline">{story['headline']}</div>
-  <div class="story-body">{story['body']}</div>
-  <a href="{story['url']}" class="read-more">Read more &rarr;</a>
+  <div class="lang-es">
+    <div class="story-headline">{story['headline']}</div>
+    <div class="story-body">{story['body']}</div>
+    <a href="{story['url']}" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">{story_en.get('headline', story['headline'])}</div>
+    <div class="story-body">{story_en.get('body', story['body'])}</div>
+    <a href="{story['url']}" class="read-more">Read more &rarr;</a>
+  </div>
 </div>"""
 
-    # ── Currency table ──
+    # ── Currency table (language-neutral) ────────────────────────────────
     tbody = ""
     for r in currency:
         c1 = "up" if r['chg_1d']['cls'] == 'chg-up' else ("down" if r['chg_1d']['cls'] == 'chg-down' else "flat")
@@ -219,15 +253,16 @@ def build_pretty_html(
         <td style="color:{chg7_color}; text-align:right;">{r['chg_1w']['text']}</td>
       </tr>"""
 
-    # ── Quote ──
-    q = digest.get("quote", {})
+    # ── Quote (both languages) ────────────────────────────────────────────
+    q_es = digest_es.get("quote", {})
+    q_en = digest_en.get("quote", q_es)
 
-    # ── Week in review ──
+    # ── Week in review (both languages) ───────────────────────────────────
     week_html = ""
     if is_friday and week_stories:
         monday = date.today() - timedelta(days=date.today().weekday())
         friday = monday + timedelta(days=4)
-        wlabel = f"{monday.strftime('%b %d')}–{friday.strftime('%d, %Y')}"
+        wlabel = f"{monday.strftime('%b %d')}&ndash;{friday.strftime('%d, %Y')}"
         tl_items = ""
         for ws in week_stories:
             dot_cls = "active" if ws.get("active") else ""
@@ -239,25 +274,46 @@ def build_pretty_html(
           <div class="tl-line"></div>
         </div>
         <div class="tl-content">
-          <span class="tl-tag">{ws['tag']}</span>
-          <div class="tl-headline">{ws['headline']}</div>
-          <div class="tl-body">{ws['body']}</div>
+          <span class="tl-tag">{ws.get('tag','')}</span>
+          <div class="lang-es">
+            <div class="tl-headline">{ws.get('headline','')}</div>
+            <div class="tl-body">{ws.get('body','')}</div>
+          </div>
+          <div class="lang-en">
+            <div class="tl-headline">{ws.get('headline_en', ws.get('headline',''))}</div>
+            <div class="tl-body">{ws.get('body_en', ws.get('body',''))}</div>
+          </div>
         </div>
       </div>"""
         week_html = f"""
 {DIVIDER}
 <div class="week">
-  <div class="section-title">Week in Review &middot; {wlabel}</div>
+  <div class="section-title"
+       data-es="Resumen Semanal &middot; {wlabel}"
+       data-en="Week in Review &middot; {wlabel}">Resumen Semanal &middot; {wlabel}</div>
   <div class="timeline">{tl_items}
   </div>
 </div>"""
 
+    # ── Wordcloud ─────────────────────────────────────────────────────────
+    wordcloud_html = ""
+    if wordcloud_filename:
+        wordcloud_url = f"{ASSET_BASE_URL.rstrip('/')}/{wordcloud_filename}"
+        wordcloud_html = f"""
+{DIVIDER}
+<div style="padding:24px 48px 8px;">
+  <div class="section-title"
+       data-es="La Semana en Palabras"
+       data-en="The Week in Words">La Semana en Palabras</div>
+  <img src="{wordcloud_url}" style="width:100%; border:1px solid #cdd4d9;" alt="Word cloud"/>
+</div>"""
+
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{NEWSLETTER_NAME} &mdash; {issue_date}</title>
+  <title>{NEWSLETTER_NAME} -- {issue_date}</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>{CSS}</style>
 </head>
@@ -269,7 +325,11 @@ def build_pretty_html(
     <div class="pub-name">{NEWSLETTER_NAME}</div>
     <div class="pub-meta">
       <span>{today}</span>
-      <span>ISSUE NO. {issue_number}</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <span>NO. {issue_number}</span>
     </div>
   </div>
 
@@ -286,24 +346,31 @@ def build_pretty_html(
   </div>
 
   <div class="editor-note">
-    <p>{digest.get('editor_note','')}</p>
-    <div class="editor-sig">&mdash; {AUTHOR_BYLINE}</div>
+    <div class="lang-es"><p>{digest_es.get('editor_note','')}</p></div>
+    <div class="lang-en"><p>{digest_en.get('editor_note', digest_es.get('editor_note',''))}</p></div>
+    <div class="editor-sig">&mdash; {author}</div>
   </div>
 
   {DIVIDER}
 
   <div class="sentiment">
     <div class="sentiment-header">
-      <span class="sentiment-label">Market Sentiment</span>
-      <span class="sentiment-reading {sent_cls}">{label}</span>
+      <span class="sentiment-label"
+            data-es="Sentimiento del D&#237;a"
+            data-en="Market Sentiment">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading {sent_cls} lang-es">{label_es}</span>
+      <span class="sentiment-reading {sent_cls} lang-en">{label_en}</span>
     </div>
     <div class="gauge-track">
       <div class="gauge-marker {sent_cls}" style="left:{position}%;"></div>
     </div>
     <div class="gauge-ticks">
-      <span>Risk-Off</span><span>Neutral</span><span>Risk-On</span>
+      <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
+      <span data-es="Neutral"          data-en="Neutral">Neutral</span>
+      <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
     </div>
-    <div class="sentiment-context">{context}</div>
+    <div class="sentiment-context lang-es">{context_es}</div>
+    <div class="sentiment-context lang-en">{context_en}</div>
   </div>
 
   {stories_html}
@@ -311,11 +378,16 @@ def build_pretty_html(
   {DIVIDER}
 
   <div class="currency">
-    <div class="section-title">Currency Table</div>
+    <div class="section-title"
+         data-es="Tipo de Cambio"
+         data-en="Exchange Rates">Tipo de Cambio</div>
     <table class="currency-table">
       <thead>
         <tr>
-          <th>Pair</th><th>Rate</th><th style="text-align:right;">Day</th><th style="text-align:right;">Week</th>
+          <th data-es="Par"  data-en="Pair">Par</th>
+          <th data-es="Tipo" data-en="Rate">Tipo</th>
+          <th style="text-align:right;">1D</th>
+          <th style="text-align:right;">1W</th>
         </tr>
       </thead>
       <tbody>{tbody}
@@ -327,17 +399,27 @@ def build_pretty_html(
 
   <div class="quote">
     <span class="quote-mark">&ldquo;</span>
-    <div class="quote-text">{q.get('text','')}</div>
-    <div class="quote-attr">{q.get('attribution','')}</div>
+    <div class="lang-es">
+      <div class="quote-text">{q_es.get('text','')}</div>
+      <div class="quote-attr">{q_es.get('attribution','')}</div>
+    </div>
+    <div class="lang-en">
+      <div class="quote-text">{q_en.get('text', q_es.get('text',''))}</div>
+      <div class="quote-attr">{q_en.get('attribution', q_es.get('attribution',''))}</div>
+    </div>
   </div>
 
   {week_html}
 
+  {wordcloud_html}
+
   <div class="footer">
     <span class="footer-name">{NEWSLETTER_NAME}</span>
-    <span class="footer-by">by {AUTHOR_NAME}</span>
+    <span class="footer-by lang-es">por {author}</span>
+    <span class="footer-by lang-en">by {author}</span>
   </div>
 
 </div>
+{LANG_TOGGLE_JS}
 </body>
 </html>"""

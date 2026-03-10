@@ -5,69 +5,99 @@
 import json
 import time
 import anthropic
-from config import ANTHROPIC_API_KEY, AUTHOR_NAME
+from config import ANTHROPIC_API_KEY
 
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 
 def summarize_news(articles: list[dict]) -> dict:
     """
-    Sends articles to Claude and returns a structured digest dict with:
-    - editor_note: str
-    - sentiment: {label, context}
-    - stories: [{source, headline, body, url, tag}]
-    - quote: {text, attribution}
+    Sends articles to Claude and returns a bilingual digest dict with:
+    - "es": { editor_note, sentiment, stories, quote }  <- Spanish (primary)
+    - "en": { editor_note, sentiment, stories, quote }  <- English translation
     """
     news_text = ""
     for i, a in enumerate(articles, 1):
         news_text += f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{a['content']}\n\n"
 
-    prompt = f"""You are a sharp financial news editor producing a daily morning briefing. Address the reader as "Fellow Humans" at most once in the editor note. Voice is sharp, dry, and editorial. No fluff.
+    prompt = f"""Eres un editor de noticias financieras produciendo un briefing matutino diario para una audiencia hispanohablante sofisticada. Voz: directa, seca, ocasionalmente sardónica — como un editor de mercados veterano que ha visto cada ciclo y encuentra el actual tanto alarmante como vagamente entretenido.
 
-Analyze the articles below and return a JSON object with EXACTLY this structure:
+Analiza los artículos a continuación y devuelve un objeto JSON con EXACTAMENTE esta estructura:
 
 {{
-  "editor_note": "2-3 sentences opening the day's briefing. Always open with 'Fellow Humans,' as the first two words. Voice: sharp, dry, occasionally sardonic — like a seasoned markets editor who has seen every cycle and finds the current one both alarming and faintly amusing. Reference the dominant story. First person. Do NOT include any sign-off or signature — that is added separately. No fluff, no filler, no 'it is worth noting'.",
+  "es": {{
+    "editor_note": "2-3 oraciones abriendo el briefing del día. Siempre abre con 'Estimados humanos,' como las primeras dos palabras. Voz: directa, seca, ocasionalmente sardónica. Referencia la historia dominante. Primera persona. NO incluyas firma — se agrega por separado. Sin relleno.",
 
-  "sentiment": {{
-    "label": "Risk-Off" | "Cautious" | "Risk-On",
-    "position": <integer 5-95 where 5=extreme risk-off, 50=neutral, 95=extreme risk-on>,
-    "context": "One sentence explaining today's sentiment based on the stories."
+    "sentiment": {{
+      "label_es": "Aversión al Riesgo" | "Cauteloso" | "Apetito por Riesgo",
+      "label_en": "Risk-Off" | "Cautious" | "Risk-On",
+      "position": <entero 5-95 donde 5=aversión extrema, 50=neutral, 95=apetito extremo>,
+      "context_es": "Una oración explicando el sentimiento de hoy en español.",
+      "context_en": "One sentence explaining today's sentiment in English."
+    }},
+
+    "stories": [
+      {{
+        "source": "Nombre de la fuente",
+        "headline": "Titular conciso y específico en español",
+        "body": "2-3 oraciones en español. Incluye cifras específicas, nombres, y por qué importa. Termina naturalmente.",
+        "url": "URL original del artículo",
+        "tag": "Uno de: Macro | FX | México | Comercio | Tasas | Mercados | Energía | Política"
+      }}
+    ],
+
+    "quote": {{
+      "text": "Una cita financiera o económica relevante que conecte temáticamente con las noticias de hoy. Debe ser real y verificable. Puede estar en español o inglés.",
+      "attribution": "Nombre completo, fuente, año"
+    }}
   }},
 
-  "stories": [
-    {{
-      "source": "Source name",
-      "headline": "Concise, specific headline",
-      "body": "2-3 sentences. Include specific figures, names, and why it matters. End naturally.",
-      "url": "original article URL",
-      "tag": "One of: Macro | FX | Mexico | Trade | Rates | Markets | Energy | Politics"
-    }}
-  ],
+  "en": {{
+    "editor_note": "Faithful English translation of the editor_note above. Keep the same voice and tone.",
 
-  "quote": {{
-    "text": "A relevant financial or economic quote that connects thematically to today's news. Must be a real, verifiable quote.",
-    "attribution": "Full name, source, year"
+    "sentiment": {{
+      "label_es": "<same as above>",
+      "label_en": "<same as above>",
+      "position": <same integer as above>,
+      "context_es": "<same as above>",
+      "context_en": "<same as above>"
+    }},
+
+    "stories": [
+      {{
+        "source": "Same source name",
+        "headline": "Faithful English translation of the headline",
+        "body": "Faithful English translation of the body",
+        "url": "Same original URL",
+        "tag": "Same tag"
+      }}
+    ],
+
+    "quote": {{
+      "text": "<same quote as above>",
+      "attribution": "<same attribution as above>"
+    }}
   }}
 }}
 
-Rules:
-- Select 5-7 stories, ordered by importance
-- Skip duplicates covering the same event
-- stories must include the original URL from the article list
-- Respond ONLY with the JSON object, no preamble, no markdown fences
-- sentiment.position must be consistent with sentiment.label: Risk-Off should be 5-35, Cautious 36-64, Risk-On 65-95
+Reglas:
+- Selecciona 5-7 historias, ordenadas por importancia
+- Omite duplicados que cubran el mismo evento
+- stories debe incluir la URL original de la lista de artículos
+- Responde ÚNICAMENTE con el objeto JSON, sin preámbulo, sin markdown fences
+- sentiment.position debe ser consistente con el label: Aversión al Riesgo = 5-35, Cauteloso = 36-64, Apetito por Riesgo = 65-95
+- El bloque "en" es una traducción fiel del bloque "es" — mismas historias, mismas URLs, mismo sentimiento
 
-Articles:
+Artículos:
 {news_text}
 """
 
-    print("  [summarizer] Sending to Claude...")
+    print("  [summarizer] Sending to Claude (bilingual)...")
     for attempt in range(4):
         try:
             message = client.messages.create(
                 model="claude-sonnet-4-6",
-                max_tokens=4096,
+                max_tokens=6000,
                 messages=[{"role": "user", "content": prompt}]
             )
             break
@@ -78,7 +108,7 @@ Articles:
                 time.sleep(wait)
             else:
                 raise
-            
+
     raw = message.content[0].text.strip()
 
     # Strip markdown fences if present
@@ -86,4 +116,11 @@ Articles:
         raw = raw.split("\n", 1)[1]
         raw = raw.rsplit("```", 1)[0]
 
-    return json.loads(raw)
+    digest = json.loads(raw)
+
+    # Validate bilingual structure
+    if "es" not in digest or "en" not in digest:
+        raise ValueError(f"[summarizer] Missing bilingual keys. Got: {list(digest.keys())}")
+
+    print(f"  [summarizer] Got {len(digest['es'].get('stories', []))} stories (ES+EN)")
+    return digest

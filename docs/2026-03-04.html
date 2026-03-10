@@ -1,14 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Opening Bell &mdash; March 04, 2026</title>
+  <title>The Opening Bell &mdash; MARCH 4, 2026</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
   .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  /* ── Language toggle bar ── */
+  /* Sits above the header. Shows current language and a button to switch. */
+  .lang-bar {
+    display: flex; justify-content: flex-end; align-items: center;
+    padding: 8px 48px; background: #f0f3f5; border-bottom: 1px solid #e0e5e8;
+    gap: 10px;
+  }
+  .lang-bar span {
+    font-size: 9px; font-weight: 500; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #aab4bc;
+  }
+  .lang-toggle {
+    font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #1a1a1a;
+    background: transparent; border: 1px solid #1a1a1a;
+    padding: 4px 10px; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.15s, color 0.15s;
+  }
+  .lang-toggle:hover { background: #1a1a1a; color: #f0f3f5; }
+
+  /* ── lang-es shown by default, lang-en hidden ── */
+  /* JavaScript flips these on toggle click */
+  .lang-en { display: none; }
+  .lang-es { display: block; }
+  /* inline variants for spans/links */
+  .lang-en-inline { display: none; }
+  .lang-es-inline { display: inline; }
 
   /* Header */
   .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
@@ -53,8 +82,8 @@
   .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
   .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
   .gauge-marker.risk-off { border: 2px solid #b84a3a; }
-  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
-  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-marker.cautious  { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on   { border: 2px solid #4a9e6a; }
   .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
   .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
 
@@ -118,32 +147,38 @@
     .ticker { padding: 6px 8px; }
     .ticker-inner { flex-wrap: wrap; }
     .tick-item { flex: 1 1 45%; padding: 8px 4px; }
-    .tick-label { font-size: 7px; }
     .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
     .weather-desc { margin-left: 0; width: 100%; }
-    .editor-note { padding: 20px 20px; }
-    .editor-note p { font-size: 14px; }
-    .divider { padding: 0 20px; }
-    .sentiment { padding: 20px 20px; }
-    .story { padding: 20px 20px; }
+    .editor-note, .sentiment, .story, .currency, .quote, .week { padding: 20px 20px; }
     .story-headline { font-size: 17px; }
-    .currency { padding: 20px 20px; }
     .currency-table { font-size: 11px; }
-    .quote { padding: 20px 20px; }
-    .week { padding: 20px 20px; }
     .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+    .lang-bar { padding: 8px 20px; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
+  <!-- Language toggle bar -->
+  <!-- "reading in ES" shows current language. Button switches to the other. -->
+  <div class="lang-bar">
+    <span>Leyendo en <span id="lang-reading">ES</span></span>
+    <button class="lang-toggle" id="lang-btn">Read in English</button>
+  </div>
+
   <div class="header">
     <div class="pub-label">Context before the noise</div>
     <div class="pub-name">The Opening Bell</div>
     <div class="pub-meta">
-      <span>WEDNESDAY, MARCH 04, 2026</span>
-      <span>ISSUE NO. 6</span>
+      <span>
+        <span class="lang-es-inline">MIÉRCOLES, 04 DE MARZO DE 2026</span>
+        <span class="lang-en-inline">WEDNESDAY, MARCH 04, 2026</span>
+      </span>
+      <span>
+        <span class="lang-es-inline">EDICIÓN NO. 5</span>
+        <span class="lang-en-inline">ISSUE NO. 5</span>
+      </span>
     </div>
   </div>
 
@@ -151,8 +186,8 @@
     <div class="ticker-inner">
       <div class="tick-item">
         <span class="tick-label">USD/MXN</span>
-        <span class="tick-val">17.60</span>
-        <span class="tick-up">▲ 1.7%</span>
+        <span class="tick-val">17.75</span>
+        <span class="tick-up">▲ 2.6%</span>
       </div>
       <div class="tick-item">
         <span class="tick-label">S&P 500</span>
@@ -174,14 +209,20 @@
 
   <div class="weather">
     <span class="weather-city">Mexico City</span>
-    <span class="weather-temp">24°C / 10°C</span>
-    <span class="weather-humidity">Humidity 59%</span>
-    <span class="weather-desc">Clear skies</span>
+    <span class="weather-temp">25°C / 8°C</span>
+    <span class="weather-humidity">Humidity 52%</span>
+    <span class="weather-desc">Partly cloudy</span>
   </div>
 
+  <!-- Editor note — two versions, toggle switches between them -->
   <div class="editor-note">
-    <p>Fellow Humans, the Strait of Hormuz is functionally closed, Brent crude has spiked double digits in two sessions, and Jamie Dimon is already reaching for the skunk metaphor. Markets recovered from their intraday lows on Tuesday after Trump promised naval escorts through the strait, but the S&P still closed down nearly 1% — and the real question isn't whether this is inflationary, it's how long the Fed gets to pretend it isn't.</p>
-    <div class="editor-sig">&mdash; Art Bitrage, Senior Analyst, Office of Delayed Consequences</div>
+    <div class="lang-es">
+      <p>Estimados humanos, el estrecho de Ormuz es ahora el precio de todo. Con el WTI disparándose 6.28% en una sola sesión, el gas europeo subiendo más del 20% tras el cierre de la principal refinería de GNL de Qatar, y Teherán atacando la embajada estadounidense en Riad, los mercados globales entran en modo pausa mientras calculan si esto es un shock contenido o el comienzo de algo que reordena la geopolítica energética mundial. Milei dio su discurso ante la Asamblea Legislativa casi sin mencionar el contexto; un detalle que dice más sobre Buenos Aires que sobre Medio Oriente.</p>
+    </div>
+    <div class="lang-en">
+      <p>Fellow Humans, the Strait of Hormuz is now the price of everything. With WTI surging 6.28% in a single session, European gas up more than 20% after Qatar closed its main LNG refinery following an Iranian drone strike, and Tehran hitting the US embassy in Riyadh, global markets are pausing to calculate whether this is a contained shock or the beginning of something that rewrites the energy geopolitical map. Milei delivered his congressional address with barely a mention of the context; a detail that says more about Buenos Aires than about the Middle East.</p>
+    </div>
+    <div class="editor-sig">&mdash; Adrian</div>
   </div>
 
   
@@ -196,20 +237,39 @@
   <div class="line"></div>
 </div>
 
+  <!-- Sentiment gauge — position is universal, labels switch -->
   <div class="sentiment">
     <div class="sentiment-header">
-      <span class="sentiment-label">Market Sentiment</span>
-      <span class="sentiment-reading risk-off">Risk-Off</span>
+      <span class="sentiment-label">
+        <span class="lang-es-inline">Sentimiento del D&iacute;a</span>
+        <span class="lang-en-inline">Market Sentiment</span>
+      </span>
+      <span class="sentiment-reading risk-off">
+        <span class="lang-es-inline">Aversión al Riesgo</span>
+        <span class="lang-en-inline">Risk-Off</span>
+      </span>
     </div>
     <div class="gauge-track">
-      <div class="gauge-marker risk-off" style="left:22%;"></div>
+      <div class="gauge-marker risk-off" style="left:18%;"></div>
     </div>
     <div class="gauge-ticks">
-      <span>Risk-Off</span><span>Neutral</span><span>Risk-On</span>
+      <span>
+        <span class="lang-es-inline">Aversi&oacute;n al Riesgo</span>
+        <span class="lang-en-inline">Risk-Off</span>
+      </span>
+      <span>Neutral</span>
+      <span>
+        <span class="lang-es-inline">Apetito por Riesgo</span>
+        <span class="lang-en-inline">Risk-On</span>
+      </span>
     </div>
-    <div class="sentiment-context">U.S.-Iran conflict, Strait of Hormuz closure fears, surging oil prices, and inflation overhang are driving broad equity selling and suppressing rate-cut expectations.</div>
+    <div class="sentiment-context">
+      <div class="lang-es">El ataque de Irán a la embajada de EEUU en Riad, la amenaza de cierre del estrecho de Ormuz y el desplome de bolsas globales ante el alza del petróleo y el gas generan un entorno de fuerte aversión al riesgo.</div>
+      <div class="lang-en">Iran's drone strike on the US embassy in Riyadh, threats to close the Strait of Hormuz, and collapsing global equities amid surging oil and gas prices define a sharply risk-off environment.</div>
+    </div>
   </div>
 
+  <!-- Stories -->
   
 
 <div class="divider">
@@ -224,72 +284,20 @@
 </div>
 <div class="story">
   <div class="story-meta">
-    <span class="story-source">CNBC</span>
-    <span class="story-tag">Markets</span>
-  </div>
-  <div class="story-headline">Wall Street Slumps as Strait of Hormuz Closure Fears Rattle Markets; Oil Surges 4.7%</div>
-  <div class="story-body">The S&P 500 fell 0.94% to 6,816 and the Dow dropped 403 points Tuesday, recovering from intraday losses of 2.5% after Trump pledged the U.S. Navy would escort tankers through the Strait of Hormuz. Brent crude settled up 4.71% following a 6% spike Monday, with Treasury yields initially surging on renewed inflation fears before paring gains. With roughly 20% of global oil supply transiting the strait, analysts warn that a prolonged closure cannot be priced as a temporary shock.</div>
-  <a href="https://www.cnbc.com/2026/03/02/stock-market-today-live-updates.html" class="read-more">Read more &rarr;</a>
-</div>
-
-<div class="divider">
-  <div class="line"></div>
-  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
-    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
-  </svg>
-  <div class="line"></div>
-</div>
-<div class="story">
-  <div class="story-meta">
-    <span class="story-source">New York Magazine</span>
-    <span class="story-tag">Energy</span>
-  </div>
-  <div class="story-headline">Oil Analyst: Hormuz Crisis Is 'Most Perilous' Oil Market Situation Since Ukraine Invasion</div>
-  <div class="story-body">Oil market researcher Rory Johnston told New York Magazine that markets had already priced in a $7/barrel Iran risk premium before the conflict began, with another $7-8 added Monday, bringing Brent to roughly $80. The critical variable is duration — the strait has not been formally closed but tanker traffic is near standstill, and Johnston notes that a prolonged shutdown would require a significant further re-pricing. He characterized the situation as the most dangerous for oil markets since Russia's February 2022 invasion of Ukraine.</div>
-  <a href="http://nymag.com/intelligencer/article/how-iran-war-could-turn-into-an-oil-shock-nightmare.html" class="read-more">Read more &rarr;</a>
-</div>
-
-<div class="divider">
-  <div class="line"></div>
-  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
-    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
-  </svg>
-  <div class="line"></div>
-</div>
-<div class="story">
-  <div class="story-meta">
-    <span class="story-source">Fortune</span>
-    <span class="story-tag">Rates</span>
-  </div>
-  <div class="story-headline">Dimon Warns Inflation Is the 'Skunk at the Party' as Iran Conflict Threatens Fed Rate-Cut Path</div>
-  <div class="story-body">JPMorgan CEO Jamie Dimon, speaking at the bank's annual leveraged-finance conference, cautioned that inflation — already stuck near 3% — risks being pushed higher by the Iran conflict, particularly through oil prices and disrupted trade routes through the Strait of Hormuz and the Red Sea. He described the inflationary threat as modest in an isolated scenario but warned it compounds with medical costs, construction prices, and wages already running hot. Markets are watching whether the Fed can justify further rate cuts if energy-driven price pressures re-accelerate.</div>
-  <a href="https://fortune.com/2026/03/03/jamie-dimon-inflation-skunk-economic-party-fed-rates/" class="read-more">Read more &rarr;</a>
-</div>
-
-<div class="divider">
-  <div class="line"></div>
-  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
-    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
-  </svg>
-  <div class="line"></div>
-</div>
-<div class="story">
-  <div class="story-meta">
-    <span class="story-source">BusinessLine</span>
+    <span class="story-source">Eldiario.es</span>
     <span class="story-tag">Macro</span>
   </div>
-  <div class="story-headline">India Urges Restraint as Iran Conflict Spreads, With 10 Million Citizens at Risk in Gulf Region</div>
-  <div class="story-body">India's Ministry of External Affairs issued a formal statement on Tuesday expressing 'grave concern' over the rapidly deteriorating situation in Iran and the Gulf following the outbreak of conflict on February 28. New Delhi noted that nearly one crore — 10 million — Indian nationals live and work in the Gulf, with some already reported killed or missing in attacks on merchant shipping. India flagged direct risks to its energy supply chains and trade routes, underscoring that the conflict's economic consequences extend well beyond the Middle East.</div>
-  <a href="https://www.thehindubusinessline.com/news/india-calls-for-dialogue-amid-widening-iran-conflict-monitors-safety-of-1-crore-citizens/article70699358.ece" class="read-more">Read more &rarr;</a>
+
+  <div class="lang-es">
+    <div class="story-headline">Guerra EEUU-Israel contra Irán entra en su cuarto día: embajada estadounidense en Riad atacada y mercados en alerta máxima</div>
+    <div class="story-body">La ofensiva conjunta —denominada 'Operación Furia Épica' por Washington y 'Operación Rugido del León' por Tel Aviv— entró en su cuarto día con Irán respondiendo con drones contra la embajada de EEUU en Arabia Saudí, causando daños materiales pero sin víctimas. Trump prometió respuesta 'pronto' y no descartó despliegue de tropas, mientras Netanyahu afirma que la operación no es una guerra sin fin sino el preludio a una era de paz. La Media Luna Roja reporta 787 muertos en Irán hasta el último balance publicado.</div>
+    <a href="https://www.eldiario.es/internacional/guerra-iran-extiende-amenaza-crisis-energetica-teheran-ataca-embajada-eeuu-riad_1_13034933.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">US-Israel war against Iran enters day four: US embassy in Riyadh struck, markets on high alert</div>
+    <div class="story-body">The joint offensive — dubbed 'Operation Epic Fury' by Washington and 'Operation Lion's Roar' by Tel Aviv — entered its fourth day as Iran responded with drones against the US embassy in Saudi Arabia, causing material damage but no casualties. Trump promised a response 'soon' and did not rule out troop deployment, while Netanyahu insists the operation is not an endless war but the prelude to an era of peace. The Red Crescent reports 787 deaths in Iran in its latest published tally.</div>
+    <a href="https://www.eldiario.es/internacional/guerra-iran-extiende-amenaza-crisis-energetica-teheran-ataca-embajada-eeuu-riad_1_13034933.html" class="read-more">Read more &rarr;</a>
+  </div>
 </div>
 
 <div class="divider">
@@ -304,12 +312,20 @@
 </div>
 <div class="story">
   <div class="story-meta">
-    <span class="story-source">Fox News</span>
-    <span class="story-tag">Politics</span>
+    <span class="story-source">Diario EL PAIS Uruguay</span>
+    <span class="story-tag">Energía</span>
   </div>
-  <div class="story-headline">Trump Authorized Iran Strikes Mid-Flight; Congress Moves to Debate War Powers Limits</div>
-  <div class="story-body">Chairman of the Joint Chiefs Gen. Dan Caine confirmed Tuesday that President Trump authorized Operation Epic Fury while airborne en route to Corpus Christi, with members of the Texas congressional delegation on Air Force One when he gave the order. Lawmakers from both parties are now pushing for a war powers vote to limit executive authority in the region, though Trump has indicated the conflict could last more than four weeks — a timeline that is increasingly setting the market's risk calculus.</div>
-  <a href="https://www.foxnews.com/politics/the-right-thing-paxton-cornyn-trade-blows-texas-primary-unite-trumps-iran-strikes" class="read-more">Read more &rarr;</a>
+
+  <div class="lang-es">
+    <div class="story-headline">Petróleo WTI sube 6.28% y gas europeo se dispara más del 20% tras cierre de refinería de Qatar por ataque iraní</div>
+    <div class="story-body">El WTI cerró en 71.23 dólares por barril y el Brent en 77.74 dólares, ambos con subidas superiores al 6% en la primera sesión tras el inicio de la ofensiva EEUU-Israel. El precio del gas europeo subió más del 20% después de que Qatar cerrara su principal refinería de GNL —responsable del 20% de la producción global— tras ser atacada por drones iraníes. El dólar ganó 1% frente a otras divisas y el oro cotizó a 5.298,90 dólares la onza, mientras las bolsas de Asia y Europa se desplomaron.</div>
+    <a href="https://www.elpais.com.uy/mundo/petroleo-y-gas-con-fuerte-alza-las-bolsas-a-la-baja" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">WTI crude surges 6.28% and European gas spikes over 20% after Qatar closes main LNG refinery following Iranian attack</div>
+    <div class="story-body">WTI closed at $71.23 per barrel and Brent at $77.74, both up over 6% in the first session since the US-Israel offensive began. European gas prices rose more than 20% after Qatar shut its main LNG refinery — responsible for 20% of global production — following Iranian drone strikes. The dollar gained 1% against other currencies and gold traded at $5,298.90 per ounce, while Asian and European stock markets tumbled.</div>
+    <a href="https://www.elpais.com.uy/mundo/petroleo-y-gas-con-fuerte-alza-las-bolsas-a-la-baja" class="read-more">Read more &rarr;</a>
+  </div>
 </div>
 
 <div class="divider">
@@ -324,12 +340,20 @@
 </div>
 <div class="story">
   <div class="story-meta">
-    <span class="story-source">Crypto Briefing</span>
-    <span class="story-tag">Macro</span>
+    <span class="story-source">Cointelegraph</span>
+    <span class="story-tag">Mercados</span>
   </div>
-  <div class="story-headline">Bank of Japan Launches Blockchain Settlement Experiments for Central Bank Reserves</div>
-  <div class="story-body">BOJ Governor Kazuo Ueda announced at the FIN/SUM 2026 conference in Tokyo that the central bank will test distributed ledger technology for settling interbank and securities transactions using central bank money. The BOJ is also participating in Project Agorá, a multi-central-bank initiative exploring tokenized reserves and atomic cross-border transactions. Ueda flagged interoperability across emerging blockchain networks as a key risk, warning that fragmentation could undermine the trust anchor function of central bank money.</div>
-  <a href="https://cryptobriefing.com/tokenized-central-bank-deposits-japan/" class="read-more">Read more &rarr;</a>
+
+  <div class="lang-es">
+    <div class="story-headline">Bitcoin resiste cerca de 67.000 dólares pero analistas advierten riesgo de caída a 60.000 si el petróleo alcanza 100 dólares</div>
+    <div class="story-body">BTC se mantuvo en torno a los 67.000 dólares durante el fin de semana, evitando una ruptura mayor pese a la volatilidad geopolítica, con los futuros del S&P 500 bajando 0.65% al momento de la publicación. JPMorgan advierte que si el petróleo escala a 100 dólares por barril el IPC de EEUU podría alcanzar 5%, niveles no vistos desde marzo de 2023 cuando la Fed subía tasas agresivamente. Arthur Hayes, ex-CEO de BitMEX, argumenta en sentido contrario: la intervención militar estadounidense en Medio Oriente históricamente termina en recortes de tasas o emisión monetaria, lo que sería alcista para BTC.</div>
+    <a href="https://es.cointelegraph.com/news/bitcoin-traders-eye-iran-reactions-oil-sparks-us-5-inflation-forecast" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Bitcoin holds near $67,000 but analysts warn of drop to $60,000 if oil reaches $100 per barrel</div>
+    <div class="story-body">BTC held around $67,000 over the weekend, avoiding a major breakdown despite geopolitical volatility, with S&P 500 futures down 0.65% at time of publication. JPMorgan warns that if oil escalates to $100 per barrel, US CPI could reach 5% — levels not seen since March 2023 when the Fed was aggressively hiking rates. Former BitMEX CEO Arthur Hayes argues the opposite: US military intervention in the Middle East historically ends in rate cuts or money printing, which would be bullish for BTC.</div>
+    <a href="https://es.cointelegraph.com/news/bitcoin-traders-eye-iran-reactions-oil-sparks-us-5-inflation-forecast" class="read-more">Read more &rarr;</a>
+  </div>
 </div>
 
 <div class="divider">
@@ -344,12 +368,104 @@
 </div>
 <div class="story">
   <div class="story-meta">
-    <span class="story-source">Commercial Observer</span>
-    <span class="story-tag">Markets</span>
+    <span class="story-source">Huffingtonpost.es</span>
+    <span class="story-tag">México</span>
   </div>
-  <div class="story-headline">Benefit Street Partners Closes $10 Billion Real Estate Debt Fund — Six Times Its Predecessor</div>
-  <div class="story-body">Benefit Street Partners completed its BSP Real Estate Opportunistic Debt Fund II in January at $10 billion of investable capital, oversubscribed and roughly six times the size of its first institutional drawdown vehicle. Of the $3 billion equity raise, 40% came from Asia-Pacific and 40% from U.S. investors, reflecting a broadening global appetite for real estate debt as a distinct asset class within private credit allocations. The firm's co-COO Allison Davi noted that as recently as 2022, they struggled to get meetings — a reversal that underlines how rapidly institutional acceptance of the strategy has shifted.</div>
-  <a href="http://commercialobserver.com/2026/03/benefit-street-partners-michael-comparato-allison-davi-debt/" class="read-more">Read more &rarr;</a>
+
+  <div class="lang-es">
+    <div class="story-headline">El entierro de El Mencho en Guadalajara: ataúd dorado, blindaje militar y el CJNG expone su poder simbólico a 100 días del Mundial</div>
+    <div class="story-body">Nemesio Oseguera Cervantes fue sepultado en Zapopan bajo un operativo con Ejército, Guardia Nacional y policías estatales, en un funeral que incluyó banda regional, decenas de arreglos florales sin remitente y una corona con las siglas CJNG visibles. El operativo en Tapalpa que acabó con su vida dejó al menos 25 elementos de la Guardia Nacional y más de 30 integrantes del CJNG muertos. Guadalajara, sede del Mundial de Fútbol en 100 días, todavía se recupera del 'Código Rojo' decretado por el gobernador Pablo Lemuns tras la ola de violencia que siguió al operativo.</div>
+    <a href="https://www.huffingtonpost.es/global/el-ultimo-adios-mencho-entierro-ataud-dorado-musica-regional-blindaje-militar-jalisco-f202603.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">El Mencho buried in Guadalajara: golden coffin, military lockdown, and CJNG displays symbolic power 100 days before the World Cup</div>
+    <div class="story-body">Nemesio Oseguera Cervantes was laid to rest in Zapopan under a security operation involving the Army, National Guard, and state police, in a funeral featuring a regional band, dozens of floral arrangements with no sender, and a wreath displaying the CJNG initials. The Tapalpa operation that ended his life left at least 25 National Guard elements and more than 30 CJNG members dead. Guadalajara, a World Cup host city in 100 days, is still recovering from the 'Red Code' declared by Governor Pablo Lemuns after the wave of violence that followed the operation.</div>
+    <a href="https://www.huffingtonpost.es/global/el-ultimo-adios-mencho-entierro-ataud-dorado-musica-regional-blindaje-militar-jalisco-f202603.html" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Noticiaslatam.lat / La Nacion</span>
+    <span class="story-tag">Política</span>
+  </div>
+
+  <div class="lang-es">
+    <div class="story-headline">Milei inaugura tercer año con agenda de reformas ante el Congreso, mientras el contexto bélico internacional queda fuera del discurso</div>
+    <div class="story-body">El presidente argentino abrió el período ordinario de sesiones prometiendo reformas profundas y asegurando que las nuevas industrias 'van a suplir con creces la demanda de trabajo retirada por las viejas industrias'. Analistas advierten que los apoyos legislativos esperados son 'esporádicos' y no equivalen a un cheque en blanco. La Nación señala que Milei omitió casi por completo el contexto internacional —escalada en Medio Oriente, petróleo, la AMIA y la posible visita de Marco Rubio el 12 de marzo— un silencio que, dado el alineamiento automático de Argentina con EEUU e Israel, es en sí mismo una posición.</div>
+    <a href="https://noticiaslatam.lat/20260303/su-mejor-momento-milei-encara-el-tercer-ano-de-gobierno-prometiendo-un-profundo-paquete-de-reformas-1172033484.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Milei opens third year with reform agenda before Congress while global war context goes unmentioned in his address</div>
+    <div class="story-body">The Argentine president opened the ordinary legislative session promising deep reforms and assuring that new industries 'will more than compensate for labor demand lost by old industries.' Analysts warn that expected legislative support is 'sporadic' and does not amount to a blank check. La Nación notes that Milei almost entirely omitted the international context — the Middle East escalation, oil prices, the AMIA case, and the possible visit of Marco Rubio on March 12 — a silence that, given Argentina's automatic alignment with the US and Israel, is itself a position.</div>
+    <a href="https://noticiaslatam.lat/20260303/su-mejor-momento-milei-encara-el-tercer-ano-de-gobierno-prometiendo-un-profundo-paquete-de-reformas-1172033484.html" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Cointelegraph</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+
+  <div class="lang-es">
+    <div class="story-headline">Adopción de criptomonedas en América Latina crece tres veces más rápido que en EEUU; volumen supera 730.000 millones de dólares en 2025</div>
+    <div class="story-body">Según el reporte 'Estado de la Industria Crypto 2025' de la fintech argentina Lemon, los usuarios activos de criptomonedas en LATAM crecieron 18% en 2025, triplicando el ritmo de adopción de Estados Unidos. Brasil lideró en volumen con más de 318.000 millones de dólares recibidos, mientras Argentina —con el 12% de su población como usuaria activa— registró la mayor penetración per cápita de la región, cuatro veces el promedio. El reporte señala que en mercados como Argentina y Venezuela la adopción responde principalmente a la necesidad de resguardo de valor ante la devaluación monetaria.</div>
+    <a href="https://es.cointelegraph.com/news/adopcion-de-criptomonedas-en-latam-crece-tres-veces-mas-rapido-que-en-estados-unidos-segun-lemon" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Crypto adoption in Latin America grows three times faster than in the US; volume exceeds $730 billion in 2025</div>
+    <div class="story-body">According to Argentine fintech Lemon's 'State of the Crypto Industry 2025' report, active crypto users in LATAM grew 18% in 2025, tripling the adoption rate of the United States. Brazil led in volume with over $318 billion received, while Argentina — with 12% of its population as active users — recorded the highest per capita penetration in the region, four times the regional average. The report notes that in markets like Argentina and Venezuela, adoption is driven primarily by the need to preserve value against currency devaluation.</div>
+    <a href="https://es.cointelegraph.com/news/adopcion-de-criptomonedas-en-latam-crece-tres-veces-mas-rapido-que-en-estados-unidos-segun-lemon" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Elcomercio.com</span>
+    <span class="story-tag">Comercio</span>
+  </div>
+
+  <div class="lang-es">
+    <div class="story-headline">Ecuador y Colombia en disputa arancelaria que amenaza 3.000 millones de dólares anuales en comercio bilateral</div>
+    <div class="story-body">Ecuador aplica una tasa de seguridad a productos colombianos argumentando amenazas transnacionales en la frontera norte, mientras Colombia responde con medidas simétricas que encarecen exportaciones ecuatorianas. El comercio bilateral bordea los 3.000 millones de dólares anuales y casi la mitad de las importaciones desde Colombia son insumos y bienes de capital para la producción local ecuatoriana. Transportistas del Carchi se movilizan y gremios empresariales de ambos países exigen un diálogo institucional que los canales diplomáticos actuales parecen incapaces de proveer.</div>
+    <a href="https://www.elcomercio.com/opinion/editorial/ecuador-enfrenta-decision-clave-colombia-entre-seguridad-pedido-productivo/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Ecuador and Colombia locked in tariff dispute threatening $3 billion in annual bilateral trade</div>
+    <div class="story-body">Ecuador is applying a security fee to Colombian products, citing transnational threats on its northern border, while Colombia has responded with symmetric measures that raise the cost of Ecuadorian exports. Bilateral trade amounts to roughly $3 billion annually and nearly half of imports from Colombia are inputs and capital goods for local Ecuadorian production. Transporters in Carchi are mobilizing and business associations in both countries are demanding institutional dialogue that current diplomatic channels appear unable to deliver.</div>
+    <a href="https://www.elcomercio.com/opinion/editorial/ecuador-enfrenta-decision-clave-colombia-entre-seguridad-pedido-productivo/" class="read-more">Read more &rarr;</a>
+  </div>
 </div>
 
   
@@ -364,38 +480,52 @@
   <div class="line"></div>
 </div>
 
+  <!-- Currency table — numbers are universal, headers switch -->
   <div class="currency">
-    <div class="section-title">Currency Table</div>
+    <div class="lang-es"><div class="section-title">Tipo de Cambio</div></div>
+    <div class="lang-en"><div class="section-title">Currency Table</div></div>
     <table class="currency-table">
       <thead>
         <tr>
-          <th>Pair</th><th>Rate</th><th style="text-align:right;">Day</th><th style="text-align:right;">Week</th>
+          <th>
+            <span class="lang-es-inline">Par</span>
+            <span class="lang-en-inline">Pair</span>
+          </th>
+          <th>
+            <span class="lang-es-inline">Tipo</span>
+            <span class="lang-en-inline">Rate</span>
+          </th>
+          <th>1D</th>
+          <th>
+            <span class="lang-es-inline">1S</span>
+            <span class="lang-en-inline">1W</span>
+          </th>
         </tr>
       </thead>
       <tbody>
       <tr>
         <td class="pair">USD / MXN</td>
-        <td>17.6000</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.71%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 2.58%</td>
+        <td>17.7460</td>
+        <td class="up">▲ 2.56%</td>
+        <td class="up">▲ 3.43%</td>
       </tr>
       <tr>
         <td class="pair">EUR / MXN</td>
-        <td>20.4845</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.22%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.01%</td>
+        <td>20.5680</td>
+        <td class="up">▲ 1.63%</td>
+        <td class="up">▲ 1.42%</td>
       </tr>
       <tr>
         <td class="pair">CAD / MXN</td>
-        <td>12.8855</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.81%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 2.66%</td>
+        <td>12.9570</td>
+        <td class="up">▲ 2.38%</td>
+        <td class="up">▲ 3.23%</td>
       </tr>
       <tr>
         <td class="pair">CNY / MXN</td>
-        <td>121.3766</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.93%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 2.99%</td>
+        <td>122.8325</td>
+        <td class="up">▲ 3.15%</td>
+        <td class="up">▲ 4.22%</td>
       </tr>
       </tbody>
     </table>
@@ -413,19 +543,58 @@
   <div class="line"></div>
 </div>
 
+  <!-- Quote — same in both languages -->
   <div class="quote">
     <span class="quote-mark">&ldquo;</span>
-    <div class="quote-text">Oil is the lifeblood of the industrial nations. To disrupt it is to disrupt the entire economy.</div>
-    <div class="quote-attr">Henry Kissinger, Years of Upheaval, 1982</div>
+    <div class="quote-text">In the short run, the market is a voting machine but in the long run, it is a weighing machine.</div>
+    <div class="quote-attr">Benjamin Graham, The Intelligent Investor, 1949</div>
   </div>
 
+  <!-- Week in review -->
+  
+
+  <!-- Word cloud -->
   
 
   <div class="footer">
     <span class="footer-name">The Opening Bell</span>
-    <span class="footer-by">by Adrian</span>
+    <span class="footer-by">
+      <span class="lang-es-inline">por Adrian</span>
+      <span class="lang-en-inline">by Adrian</span>
+    </span>
   </div>
 
 </div>
+
+
+<script>
+  var currentLang = 'es';
+
+  function setLang(lang) {
+    var showCls = 'lang-' + lang;
+    var hideCls = 'lang-' + (lang === 'es' ? 'en' : 'es');
+    var showInline = 'lang-' + lang + '-inline';
+    var hideInline = 'lang-' + (lang === 'es' ? 'en' : 'es') + '-inline';
+
+    // Block elements (divs, paragraphs)
+    document.querySelectorAll('.' + showCls).forEach(function(el) { el.style.display = 'block'; });
+    document.querySelectorAll('.' + hideCls).forEach(function(el) { el.style.display = 'none'; });
+
+    // Inline elements (spans, links)
+    document.querySelectorAll('.' + showInline).forEach(function(el) { el.style.display = 'inline'; });
+    document.querySelectorAll('.' + hideInline).forEach(function(el) { el.style.display = 'none'; });
+
+    currentLang = lang;
+
+    // Update button label and the "reading in" text
+    document.getElementById('lang-btn').textContent = lang === 'es' ? 'Read in English' : 'Leer en español';
+    document.getElementById('lang-reading').textContent = lang === 'es' ? 'ES' : 'EN';
+  }
+
+  document.getElementById('lang-btn').addEventListener('click', function() {
+    setLang(currentLang === 'es' ? 'en' : 'es');
+  });
+</script>
+
 </body>
 </html>
