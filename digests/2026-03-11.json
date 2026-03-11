@@ -2,133 +2,133 @@
   "date": "2026-03-11",
   "digest": {
     "es": {
-      "editor_note": "Estimados humanos, los mercados abrieron la semana entre el pánico y la euforia: el crudo tocó 120 dólares antes de que Trump declarara la guerra 'prácticamente terminada', y los índices de Wall Street cerraron al alza como si nada hubiera pasado. Mientras tanto, el Estrecho de Ormuz sigue siendo el agujero de cinturón más importante del planeta, y la amenaza de estanflación no desapareció solo porque el presidente dijo algo tranquilizador en CBS.",
+      "editor_note": "Estimados humanos, los mercados vivieron ayer una montaña rusa que habría dejado exhausto a cualquier operador de sala de trading: el petróleo tocó 120 dólares antes del mediodía y cerró por debajo de 86, todo en una sola sesión, cortesía de un tuit presidencial. El conflicto en Irán sigue siendo la variable que determina si mañana hay desayuno o no en media economía global, y mientras Trump declara la guerra prácticamente terminada, las energéticas europeas acumulan decenas de miles de millones en capitalización bursátil. Disfruten el briefing; hoy viene con geopolítica, estanflación y un poco de cripto para los más optimistas.",
       "sentiment": {
         "label_es": "Cauteloso",
         "label_en": "Cautious",
         "position": 42,
-        "context_es": "Los mercados recuperaron terreno tras las declaraciones de Trump sobre el fin del conflicto en Irán, pero la volatilidad extrema del crudo y el fantasma de la estanflación mantienen a los inversores en guardia.",
-        "context_en": "Markets recovered ground after Trump's comments on an imminent end to the Iran conflict, but extreme oil price volatility and stagflation fears keep investors on edge."
+        "context_es": "Los mercados rebotaron con las declaraciones de Trump sobre el fin del conflicto en Irán, pero la amenaza de estanflación y el petróleo aún por encima de 85 dólares mantienen al inversor en guardia.",
+        "context_en": "Markets bounced on Trump's ceasefire signals in Iran, but stagflation risks and oil still above $85 keep investors cautious."
       },
       "stories": [
         {
           "source": "Latercera.com",
-          "headline": "Mercados rebotan tras dichos de Trump sobre Irán, pero la amenaza de estanflación no cede",
-          "body": "El petróleo WTI llegó a tocar 118,60 dólares por barril antes de cerrar con una baja del 6,4% a 85,08 dólares, luego de que Trump declarara en CBS que la guerra en Irán está 'prácticamente terminada'. Wall Street revirtió pérdidas iniciales superiores al 1% y el S&P 500 terminó al alza 0,83%, mientras las bolsas asiáticas —que cerraron antes de los comentarios— registraron derrumbes de hasta 5,96% en Seúl. El cierre del Estrecho de Ormuz, por donde transita el 20% de la producción mundial de crudo, sigue siendo la variable que ningún modelo de riesgo logra ignorar.",
+          "headline": "Petróleo toca 120 dólares y mercados globales oscilan entre el pánico y el alivio por señales de Trump sobre Irán",
+          "body": "El crudo WTI llegó a un máximo de 118,60 dólares por barril antes de desplomarse a 85,08 dólares tras declaraciones del presidente Trump quien afirmó que la guerra en Irán está 'prácticamente terminada'. Wall Street recuperó terreno —S&P 500 +0,83%, Nasdaq +1,32%— pero las bolsas asiáticas, que cerraron antes de conocerse los comentarios, pagaron el precio: el Nikkei cayó 5,20% y el Kospi de Seúl se desplomó 5,96%. El cierre del estrecho de Ormuz, por donde transita el 20% del petróleo mundial, sigue siendo la espada de Damocles sobre la economía global.",
           "url": "https://www.latercera.com/pulso/noticia/mercados-mundiales-mejoran-tras-dichos-de-trump-sobre-fin-de-guerra-en-iran-pero-asoma-amenaza-de-eventual-estanflacion/",
           "tag": "Mercados"
         },
         {
           "source": "Expansion.com",
-          "headline": "Las energéticas petroleras y gasistas ganan 46.170 millones en bolsa mientras el Brent supera los 100 dólares",
-          "body": "Una decena de energéticas europeas y estadounidenses sube más del 5% en marzo desde el inicio de la operación 'Furia épica' contra Irán, acumulando 46.170 millones de euros adicionales en capitalización bursátil hasta los 435.207 millones. El gas TTF en Europa se dispara más del 90% en el mes, superando los 60 dólares por megavatio. Bank of America advierte que picos persistentes por encima de 100 dólares 'podrían desencadenar ciclos inflacionarios persistentes', mientras Repsol lidera el Ibex 35 en marzo con una subida del 10,28%.",
+          "headline": "Energéticas europeas y estadounidenses ganan 46.170 millones en bolsa desde el inicio del conflicto con Irán",
+          "body": "Una decena de petroleras y gasistas sube más de un 5% en bolsa desde que EE.UU. e Israel atacaron a Irán a finales de febrero: Equinor avanza 15,55%, Repsol repunta 10,28% y el gas TTF europeo se dispara más de un 90% en marzo, superando los 60 dólares por megavatio. Bank of America advierte que si el petróleo por encima de 100 dólares resulta persistente, podría desencadenar 'ciclos inflacionarios persistentes'. La capitalización conjunta del sector alcanza los 435.207 millones de euros este mes.",
           "url": "https://www.expansion.com/mercados/2026/03/10/69af5699468aeb4b728b45d0.html",
           "tag": "Energía"
         },
         {
           "source": "Nacion.com",
-          "headline": "Las primeras 100 horas de la operación contra Irán costaron 3.700 millones de dólares, según el CSIS",
-          "body": "El think tank Centro de Estudios Estratégicos e Internacionales estima que la operación 'Furia épica', iniciada el 28 de febrero por EE.UU. e Israel contra Irán, consumió 891 millones de dólares diarios en su arranque, incluyendo más de 160 misiles Tomahawk a 3,6 millones cada uno. A partir del 4 de marzo se transitó hacia munición más económica como los JDAM, de 80.000 dólares la unidad, lo que sugiere que el ritmo del gasto debería moderarse. El debate sobre la 'nueva economía de la guerra' se reabrió ante la evidencia de que drones de bajo costo pueden enfrentar eficazmente misiles de última generación.",
+          "headline": "El conflicto con Irán costó 3.700 millones de dólares en sus primeras 100 horas, según el CSIS",
+          "body": "El think-tank Centro de Estudios Estratégicos e Internacionales calcula que la operación 'Furia épica', lanzada el 28 de febrero por EE.UU. e Israel, generó un gasto de 891 millones de dólares diarios en su fase inicial, incluyendo más de 160 misiles Tomahawk a 3,6 millones de dólares cada uno. A partir del 4 de marzo, Washington migró hacia munición más barata como las bombas JDAM —80.000 dólares por unidad— para sostener la campaña. La muerte del ayatolá Alí Jamenei figura entre los objetivos alcanzados en la fase de apertura.",
           "url": "https://www.nacion.com/economia/este-es-el-costo-del-conflicto-en-iran-y-el/CPGPD22CJBDFHFDT6SKVSCFTNM/story/",
           "tag": "Macro"
         },
         {
-          "source": "RT / Actualidad",
-          "headline": "Milei afirma que el alza del petróleo por el conflicto en Oriente Medio mejorará los términos de intercambio de Argentina",
-          "body": "El presidente Javier Milei, desde Nueva York, declaró que Argentina se beneficiará del encarecimiento del crudo y de las materias primas agrícolas —soja, maíz y girasol— porque el país es exportador neto de energía. Sostuvo que el contexto podría acelerar la acumulación de reservas internacionales y que Argentina podría superar su meta de 10.000 millones de dólares para este año. Las declaraciones, cargadas de optimismo, contrastan con la volatilidad extrema de los mercados energéticos y la incertidumbre sobre la duración del conflicto.",
+          "source": "RT",
+          "headline": "Milei dice que la suba del petróleo por la guerra en Irán mejorará los términos de intercambio de Argentina",
+          "body": "Desde Nueva York, donde promueve inversiones, el presidente Javier Milei afirmó que Argentina se beneficiará del encarecimiento del crudo y de los granos —soja, maíz y girasol— porque el país es exportador neto de energía y commodities agrícolas. Milei sostuvo que el contexto podría acelerar la acumulación de reservas internacionales y que Argentina podría superar la meta anual de 10.000 millones de dólares. El mandatario también reiteró el alineamiento de su gobierno con EE.UU. e Israel y calificó a Irán de 'enemigo' histórico del país.",
           "url": "https://actualidad.rt.com/actualidad/591836-milei-afirma-suba-petroleo-guerra",
           "tag": "Macro"
         },
         {
           "source": "Elcomercio.com",
-          "headline": "Aranceles del 50% entre Ecuador y Colombia cierran el paso fronterizo de Rumichaca indefinidamente",
-          "body": "Transportistas y gremios del departamento colombiano de Nariño bloquearon el Puente Internacional de Rumichaca desde el mediodía del lunes 9 de marzo, impidiendo el tránsito de carga pesada entre Ecuador y Colombia. El conflicto escala a raíz de aranceles recíprocos que alcanzan el 50% sobre ciertos productos, tras una escalada iniciada por el gobierno de Daniel Noboa, haciendo inviable el comercio formal y potenciando el contrabando. Cerca de 500 manifestantes se mantienen apostados en el puente y exigen una mesa de negociación entre cancillerías; ninguno de los dos gobiernos ha emitido aún pronunciamiento oficial.",
+          "headline": "Aranceles del 50% entre Ecuador y Colombia cierran el paso de Rumichaca de manera indefinida",
+          "body": "Transportistas y gremios del departamento colombiano de Nariño bloquearon el Puente Internacional de Rumichaca desde el mediodía del lunes 9 de marzo, en respuesta a los gravámenes recíprocos que Ecuador y Colombia se aplicaron mutuamente, con aranceles que alcanzan el 50% en algunos productos. Cerca de 500 personas del Comité Gremial de Trabajadores de la Frontera permanecen apostadas en el cruce, amenazando con desabastecer insumos clave en la región. Ninguno de los dos gobiernos ha emitido un pronunciamiento oficial que apunte a una tregua comercial.",
           "url": "https://www.elcomercio.com/actualidad/ecuador/aranceles-al-50-provocan-el-cierre-de-rumichaca-gremios-exigen-tregua/",
           "tag": "Comercio"
         },
         {
-          "source": "El Financiero",
-          "headline": "Sheinbaum y Lula acuerdan cooperación bilateral; posible visita de la presidenta a Brasil entre junio y julio",
-          "body": "La presidenta Claudia Sheinbaum sostuvo una llamada con el mandatario brasileño Luiz Inácio Lula da Silva en la que acordaron proyectos conjuntos de desarrollo económico, energía, educación y ciencia. Lula invitó a Sheinbaum a Brasil en una visita tentativa para junio o julio que incluiría un encuentro del sector privado de ambas economías, las dos mayores de América Latina. El acercamiento se produce en el contexto de la guerra comercial desatada por Trump, que ha impactado tanto a México como a Brasil.",
-          "url": "https://www.elfinanciero.com.mx/nacional/2026/03/09/claudia-sheinbaum-tiene-llamada-telefonica-con-lula-da-silva-presidente-de-brasil-de-que-hablaron/",
-          "tag": "México"
+          "source": "Cointelegraph.es",
+          "headline": "Nasdaq integra liquidación tokenizada en Europa mediante alianza con Boerse Stuttgart",
+          "body": "Nasdaq anunció que vinculará sus plataformas de trading europeas a Seturion, la plataforma de liquidación de valores tokenizados de Boerse Stuttgart Group, con el objetivo de reducir la fragmentación post-negociación en los mercados de capitales del continente. La colaboración, que arranca con productos estructurados, permitirá liquidar criptoactivos tokenizados usando dinero del banco central o efectivo on-chain, dentro del marco del DLT Pilot Regime europeo. El Banco Central Europeo ya había advertido en abril sobre la 'necesidad urgente' de integrar los fragmentados mercados de capitales de Europa.",
+          "url": "https://cointelegraph.es/news/nasdaq-partners-with-boerse-stuttgart-s-seturion-to-advance-tokenized-securities-settlement-in-europe",
+          "tag": "Mercados"
         },
         {
-          "source": "Diario EL PAIS Uruguay",
-          "headline": "Sequía en Uruguay genera pérdidas agrícolas superiores a 1.000 millones de dólares en soja y maíz",
-          "body": "El director de Fadisol, Carlos Foderé, estima que la merma en rendimientos de soja y maíz ya supera los 1.000 millones de dólares, con promedios nacionales de soja que podrían quedar entre 1.500 y 1.600 kilos por hectárea frente a los 3.000 necesarios para cubrir costos. Más del 50% de los productores debieron refinanciar su cosecha de soja tras los malos resultados de la campaña de invierno, y no podrán pagar deudas antiguas ni nuevas. El sector critica la ausencia del Ministerio de Ganadería y la exclusión de departamentos clave como Soriano y Colonia de la emergencia agropecuaria declarada.",
-          "url": "https://rurales.elpais.com.uy/agricultura/la-sequia-genera-perdidas-por-mas-de-us-1-000-millones-en-la-agricultura",
-          "tag": "Macro"
+          "source": "El Financiero",
+          "headline": "Sheinbaum y Lula acuerdan visita bilateral y profundizan lazos económicos entre México y Brasil",
+          "body": "La presidenta Claudia Sheinbaum sostuvo una llamada telefónica con su homólogo brasileño Luiz Inácio Lula da Silva, en la que acordaron una posible visita de Sheinbaum a Brasil entre junio y julio, que incluiría una reunión del sector privado de ambas economías, las mayores de América Latina. Los mandatarios dieron seguimiento a proyectos conjuntos en energía, educación y ciencia, en un contexto marcado por la guerra comercial de Donald Trump, que ha impactado a ambas naciones. La presidencia mexicana no confirmó oficialmente la fecha de la visita.",
+          "url": "https://www.elfinanciero.com.mx/nacional/2026/03/09/claudia-sheinbaum-tiene-llamada-telefonica-con-lula-da-silva-presidente-de-brasil-de-que-hablaron/",
+          "tag": "México"
         }
       ],
       "quote": {
-        "text": "An oil price spike large enough and persistent enough to cause a recession has typically required a doubling of oil prices, and we are not there yet — but we are watching.",
-        "attribution": "Janet Yellen, Secretaria del Tesoro de EE.UU., testimonio ante el Congreso, 2022"
+        "text": "Oil is the lifeblood of the industrial economies. Its presence has been a major factor in global conflict throughout the twentieth century, and the twenty-first century will be no different.",
+        "attribution": "Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991"
       }
     },
     "en": {
-      "editor_note": "Estimados humanos, markets opened the week swinging between panic and euphoria: crude touched $120 before Trump declared the war 'practically over,' and Wall Street closed higher as if nothing had happened. Meanwhile, the Strait of Hormuz remains the most consequential chokepoint on the planet, and the stagflation threat did not vanish simply because the president said something reassuring on CBS.",
+      "editor_note": "Estimados humanos, markets delivered a roller-coaster session yesterday that would have left any trading floor veteran gasping: crude touched $120 before noon only to close below $86, all in a single session, courtesy of a presidential tweet. The Iran conflict remains the variable that determines whether half the global economy gets breakfast tomorrow, and while Trump declares the war practically over, European energy companies are piling up tens of billions in market cap. Enjoy the briefing — today it comes with geopolitics, stagflation, and a touch of crypto for the optimists.",
       "sentiment": {
         "label_es": "Cauteloso",
         "label_en": "Cautious",
         "position": 42,
-        "context_es": "Los mercados recuperaron terreno tras las declaraciones de Trump sobre el fin del conflicto en Irán, pero la volatilidad extrema del crudo y el fantasma de la estanflación mantienen a los inversores en guardia.",
-        "context_en": "Markets recovered ground after Trump's comments on an imminent end to the Iran conflict, but extreme oil price volatility and stagflation fears keep investors on edge."
+        "context_es": "Los mercados rebotaron con las declaraciones de Trump sobre el fin del conflicto en Irán, pero la amenaza de estanflación y el petróleo aún por encima de 85 dólares mantienen al inversor en guardia.",
+        "context_en": "Markets bounced on Trump's ceasefire signals in Iran, but stagflation risks and oil still above $85 keep investors cautious."
       },
       "stories": [
         {
           "source": "Latercera.com",
-          "headline": "Markets rebound on Trump's Iran comments, but stagflation threat lingers",
-          "body": "WTI crude touched $118.60 per barrel before closing down 6.4% at $85.08, after Trump told CBS the war in Iran is 'practically over.' Wall Street reversed early losses of more than 1%, with the S&P 500 ending up 0.83%, while Asian markets — which closed before Trump's remarks — fell as much as 5.96% in Seoul. The closure of the Strait of Hormuz, through which roughly 20% of global oil production passes, remains the variable no risk model can afford to ignore.",
+          "headline": "Oil hits $120 and global markets swing between panic and relief on Trump's Iran signals",
+          "body": "WTI crude peaked at $118.60 per barrel before collapsing to $85.08 after President Trump declared the war in Iran 'practically over.' Wall Street recovered — S&P 500 +0.83%, Nasdaq +1.32% — but Asian markets, which closed before Trump's comments, took the hit: the Nikkei fell 5.20% and Seoul's Kospi plunged 5.96%. The closure of the Strait of Hormuz, through which roughly 20% of global oil supply transits, remains the sword of Damocles hanging over the world economy.",
           "url": "https://www.latercera.com/pulso/noticia/mercados-mundiales-mejoran-tras-dichos-de-trump-sobre-fin-de-guerra-en-iran-pero-asoma-amenaza-de-eventual-estanflacion/",
           "tag": "Mercados"
         },
         {
           "source": "Expansion.com",
-          "headline": "Oil and gas majors gain €46.17 billion in market cap as Brent surpasses $100",
-          "body": "A dozen European and U.S. energy companies have risen more than 5% in March since the launch of 'Operation Epic Fury' against Iran, adding a combined €46.17 billion in market capitalization to reach €435.21 billion. European TTF gas has surged more than 90% this month, topping $60 per megawatt-hour. Bank of America warns that persistent spikes above $100 per barrel 'could trigger persistent inflationary cycles,' while Spain's Repsol leads the Ibex 35 in March with a 10.28% gain.",
+          "headline": "European and U.S. energy companies gain €46.17 billion in market cap since the Iran conflict began",
+          "body": "A group of roughly ten oil and gas companies has risen more than 5% on stock exchanges since the U.S. and Israel struck Iran in late February: Equinor is up 15.55%, Repsol has climbed 10.28%, and European TTF natural gas has surged more than 90% in March, surpassing $60 per megawatt-hour. Bank of America warns that if oil above $100 proves persistent, it could trigger 'persistent inflationary cycles.' The sector's combined market capitalization has reached €435.207 billion this month.",
           "url": "https://www.expansion.com/mercados/2026/03/10/69af5699468aeb4b728b45d0.html",
           "tag": "Energía"
         },
         {
           "source": "Nacion.com",
-          "headline": "First 100 hours of operation against Iran cost $3.7 billion, per CSIS estimate",
-          "body": "The Center for Strategic and International Studies estimates that 'Operation Epic Fury,' launched February 28 by the U.S. and Israel against Iran, burned through $891 million per day in its opening phase, including more than 160 Tomahawk missiles at $3.6 million each. From March 4 onward, operations shifted toward cheaper munitions such as JDAMs at $80,000 per unit, suggesting the spending pace should moderate. The conflict has reignited debate over the 'new economics of war,' as low-cost drones prove capable of confronting cutting-edge missile systems.",
+          "headline": "The Iran conflict cost $3.7 billion in its first 100 hours, according to CSIS",
+          "body": "The Center for Strategic and International Studies estimates that Operation 'Epic Fury,' launched on February 28 by the U.S. and Israel, burned through $891 million per day in its opening phase, including more than 160 Tomahawk missiles at $3.6 million each. From March 4 onward, Washington shifted to cheaper munitions such as JDAM bombs — $80,000 per unit — to sustain the campaign. The death of Supreme Leader Ali Khamenei is listed among the targets struck in the opening phase.",
           "url": "https://www.nacion.com/economia/este-es-el-costo-del-conflicto-en-iran-y-el/CPGPD22CJBDFHFDT6SKVSCFTNM/story/",
           "tag": "Macro"
         },
         {
-          "source": "RT / Actualidad",
-          "headline": "Milei says Middle East oil spike will improve Argentina's terms of trade",
-          "body": "Speaking from New York, President Javier Milei said Argentina will benefit from higher crude and agricultural commodity prices — soybeans, corn, and sunflower — because the country is a net energy exporter. He argued the context could accelerate the accumulation of international reserves and that Argentina might surpass its $10 billion target for the year. The optimistic tone contrasts sharply with extreme market volatility and deep uncertainty about how long the conflict will last.",
+          "source": "RT",
+          "headline": "Milei says rising oil prices from the Iran war will improve Argentina's terms of trade",
+          "body": "Speaking from New York, where he is promoting foreign investment, President Javier Milei said Argentina will benefit from higher crude and grain prices — soybeans, corn, and sunflowers — because the country is a net exporter of energy and agricultural commodities. Milei argued the global context could accelerate the accumulation of international reserves and that Argentina might exceed its annual target of $10 billion. The president also reiterated his government's alignment with the U.S. and Israel, and labelled Iran a historical 'enemy' of Argentina.",
           "url": "https://actualidad.rt.com/actualidad/591836-milei-afirma-suba-petroleo-guerra",
           "tag": "Macro"
         },
         {
           "source": "Elcomercio.com",
-          "headline": "50% tariffs between Ecuador and Colombia shut the Rumichaca border crossing indefinitely",
-          "body": "Truckers and trade associations from Colombia's Nariño department blocked the Rumichaca International Bridge from midday on Monday, March 9, halting heavy freight traffic between Ecuador and Colombia. The conflict escalated from reciprocal tariffs reaching 50% on certain goods following measures initiated by the Noboa government, making formal trade unviable and boosting contraband risks. Some 500 protesters remain entrenched at the bridge demanding a negotiating table between the two countries' foreign ministries; neither government has issued an official response.",
+          "headline": "50% tariffs between Ecuador and Colombia shut Rumichaca border crossing indefinitely",
+          "body": "Truckers and trade associations from Colombia's Nariño department blocked the Rumichaca International Bridge from midday on Monday, March 9, in response to reciprocal tariffs that Ecuador and Colombia have imposed on each other, reaching 50% on some products. Around 500 members of the Border Workers Guild Committee remain stationed at the crossing, threatening to cut off key supplies to the surrounding region. Neither government has issued an official statement pointing toward a trade truce.",
           "url": "https://www.elcomercio.com/actualidad/ecuador/aranceles-al-50-provocan-el-cierre-de-rumichaca-gremios-exigen-tregua/",
           "tag": "Comercio"
         },
         {
-          "source": "El Financiero",
-          "headline": "Sheinbaum and Lula agree on bilateral cooperation; presidential visit to Brazil possible in June or July",
-          "body": "President Claudia Sheinbaum held a call with Brazilian President Luiz Inácio Lula da Silva, agreeing on joint projects in economic development, energy, education, and science. Lula invited Sheinbaum to Brazil for a tentative visit in June or July that would include a private-sector summit between the two largest economies in Latin America. The rapprochement comes amid the trade war unleashed by Trump, which has hit both Mexico and Brazil.",
-          "url": "https://www.elfinanciero.com.mx/nacional/2026/03/09/claudia-sheinbaum-tiene-llamada-telefonica-con-lula-da-silva-presidente-de-brasil-de-que-hablaron/",
-          "tag": "México"
+          "source": "Cointelegraph.es",
+          "headline": "Nasdaq integrates tokenized settlement in Europe through alliance with Boerse Stuttgart",
+          "body": "Nasdaq announced it will connect its European trading platforms to Seturion, Boerse Stuttgart Group's tokenized securities settlement platform, aiming to reduce post-trade fragmentation across European capital markets. The collaboration, starting with structured products, will allow tokenized crypto-assets to be settled using central bank money or on-chain cash, within the framework of the EU's DLT Pilot Regime. The European Central Bank had already flagged in April the 'urgent need' to integrate Europe's fragmented capital markets.",
+          "url": "https://cointelegraph.es/news/nasdaq-partners-with-boerse-stuttgart-s-seturion-to-advance-tokenized-securities-settlement-in-europe",
+          "tag": "Mercados"
         },
         {
-          "source": "Diario EL PAIS Uruguay",
-          "headline": "Drought in Uruguay causes agricultural losses exceeding $1 billion in soybeans and corn",
-          "body": "Fadisol director Carlos Foderé estimates that yield losses in soybeans and corn already exceed $1 billion, with national soybean averages potentially falling to 1,500–1,600 kilograms per hectare against the 3,000 needed to cover costs. More than 50% of producers had to refinance their soybean harvest after poor winter campaign results and will be unable to service either old or new debts. The sector is criticizing the absence of the Ministry of Livestock and the exclusion of key departments such as Soriano and Colonia from the declared agricultural emergency.",
-          "url": "https://rurales.elpais.com.uy/agricultura/la-sequia-genera-perdidas-por-mas-de-us-1-000-millones-en-la-agricultura",
-          "tag": "Macro"
+          "source": "El Financiero",
+          "headline": "Sheinbaum and Lula agree on bilateral visit and deepen economic ties between Mexico and Brazil",
+          "body": "President Claudia Sheinbaum held a phone call with Brazilian counterpart Luiz Inácio Lula da Silva, agreeing on a possible Sheinbaum visit to Brazil between June and July that would include a private-sector meeting between the two largest economies in Latin America. The leaders followed up on joint projects in energy, education, and science, against a backdrop shaped by Donald Trump's trade war, which has hurt both countries. The Mexican presidency did not officially confirm a date for the visit.",
+          "url": "https://www.elfinanciero.com.mx/nacional/2026/03/09/claudia-sheinbaum-tiene-llamada-telefonica-con-lula-da-silva-presidente-de-brasil-de-que-hablaron/",
+          "tag": "México"
         }
       ],
       "quote": {
-        "text": "An oil price spike large enough and persistent enough to cause a recession has typically required a doubling of oil prices, and we are not there yet — but we are watching.",
-        "attribution": "Janet Yellen, U.S. Secretary of the Treasury, Congressional testimony, 2022"
+        "text": "Oil is the lifeblood of the industrial economies. Its presence has been a major factor in global conflict throughout the twentieth century, and the twenty-first century will be no different.",
+        "attribution": "Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991"
       }
     }
   },
@@ -162,49 +162,49 @@
     "currency": [
       {
         "pair": "USD / MXN",
-        "rate": "17.5700",
+        "rate": "17.5653",
         "chg_1d": {
-          "text": "▼ 0.58%",
+          "text": "▼ 0.61%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 0.13%",
+          "text": "▼ 0.16%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "EUR / MXN",
-        "rate": "20.4139",
+        "rate": "20.4123",
         "chg_1d": {
-          "text": "▼ 0.63%",
+          "text": "▼ 0.64%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 0.27%",
+          "text": "▼ 0.28%",
           "cls": "chg-down"
         }
       },
       {
         "pair": "CAD / MXN",
-        "rate": "12.9370",
+        "rate": "12.9445",
         "chg_1d": {
-          "text": "▼ 0.53%",
+          "text": "▼ 0.47%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▲ 0.33%",
+          "text": "▲ 0.39%",
           "cls": "chg-up"
         }
       },
       {
         "pair": "CNY / MXN",
-        "rate": "120.8131",
+        "rate": "120.7808",
         "chg_1d": {
-          "text": "▼ 0.88%",
+          "text": "▼ 0.90%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 0.13%",
+          "text": "▼ 0.16%",
           "cls": "chg-down"
         }
       }
