@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell -- March 11, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* ── Language toggle ── */
+  .lang-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .lang-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+
+  .lang-en { display: none; }
+
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
+  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
+  .weather-temp { font-size: 11px; color: #ccc; }
+  .weather-humidity { font-size: 11px; color: #ccc; }
+  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
+    .weather-desc { margin-left: 0; width: 100%; }
+    .editor-note { padding: 20px 20px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .currency { padding: 20px 20px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>WEDNESDAY, MARCH 11, 2026</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <span>NO. 12</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">USD/MXN</span>
+        <span class="tick-val">17.57</span>
+        <span class="tick-down">▼ 0.6%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">S&P 500</span>
+        <span class="tick-val">6,781</span>
+        <span class="tick-up">▲ 0.6%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">CETES 28D</span>
+        <span class="tick-val">6.81%</span>
+        <span class="tick-up">▲ 0.00pp</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">IPC BMV</span>
+        <span class="tick-val">67,397.94</span>
+        <span class="tick-up">▲ 0.8%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather">
+    <span class="weather-city">Mexico City</span>
+    <span class="weather-temp">25°C / 12°C</span>
+    <span class="weather-humidity">Humidity 42%</span>
+    <span class="weather-desc">Rain showers</span>
+  </div>
+
+  <div class="editor-note">
+    <div class="lang-es"><p>Estimados humanos, los mercados abrieron la semana entre el pánico y la euforia: el crudo tocó 120 dólares antes de que Trump declarara la guerra 'prácticamente terminada', y los índices de Wall Street cerraron al alza como si nada hubiera pasado. Mientras tanto, el Estrecho de Ormuz sigue siendo el agujero de cinturón más importante del planeta, y la amenaza de estanflación no desapareció solo porque el presidente dijo algo tranquilizador en CBS.</p></div>
+    <div class="lang-en"><p>Estimados humanos, markets opened the week swinging between panic and euphoria: crude touched $120 before Trump declared the war 'practically over,' and Wall Street closed higher as if nothing had happened. Meanwhile, the Strait of Hormuz remains the most consequential chokepoint on the planet, and the stagflation threat did not vanish simply because the president said something reassuring on CBS.</p></div>
+    <div class="editor-sig">&mdash; Cliff N. Overhang, Chief Architect of Confident Uncertainty</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label"
+            data-es="Sentimiento del D&#237;a"
+            data-en="Market Sentiment">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading cautious lang-es">Cauteloso</span>
+      <span class="sentiment-reading cautious lang-en">Cautious</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker cautious" style="left:42%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
+      <span data-es="Neutral"          data-en="Neutral">Neutral</span>
+      <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
+    </div>
+    <div class="sentiment-context lang-es">Los mercados recuperaron terreno tras las declaraciones de Trump sobre el fin del conflicto en Irán, pero la volatilidad extrema del crudo y el fantasma de la estanflación mantienen a los inversores en guardia.</div>
+    <div class="sentiment-context lang-en">Markets recovered ground after Trump's comments on an imminent end to the Iran conflict, but extreme oil price volatility and stagflation fears keep investors on edge.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Latercera.com</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Mercados rebotan tras dichos de Trump sobre Irán, pero la amenaza de estanflación no cede</div>
+    <div class="story-body">El petróleo WTI llegó a tocar 118,60 dólares por barril antes de cerrar con una baja del 6,4% a 85,08 dólares, luego de que Trump declarara en CBS que la guerra en Irán está 'prácticamente terminada'. Wall Street revirtió pérdidas iniciales superiores al 1% y el S&P 500 terminó al alza 0,83%, mientras las bolsas asiáticas —que cerraron antes de los comentarios— registraron derrumbes de hasta 5,96% en Seúl. El cierre del Estrecho de Ormuz, por donde transita el 20% de la producción mundial de crudo, sigue siendo la variable que ningún modelo de riesgo logra ignorar.</div>
+    <a href="https://www.latercera.com/pulso/noticia/mercados-mundiales-mejoran-tras-dichos-de-trump-sobre-fin-de-guerra-en-iran-pero-asoma-amenaza-de-eventual-estanflacion/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Markets rebound on Trump's Iran comments, but stagflation threat lingers</div>
+    <div class="story-body">WTI crude touched $118.60 per barrel before closing down 6.4% at $85.08, after Trump told CBS the war in Iran is 'practically over.' Wall Street reversed early losses of more than 1%, with the S&P 500 ending up 0.83%, while Asian markets — which closed before Trump's remarks — fell as much as 5.96% in Seoul. The closure of the Strait of Hormuz, through which roughly 20% of global oil production passes, remains the variable no risk model can afford to ignore.</div>
+    <a href="https://www.latercera.com/pulso/noticia/mercados-mundiales-mejoran-tras-dichos-de-trump-sobre-fin-de-guerra-en-iran-pero-asoma-amenaza-de-eventual-estanflacion/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Expansion.com</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Las energéticas petroleras y gasistas ganan 46.170 millones en bolsa mientras el Brent supera los 100 dólares</div>
+    <div class="story-body">Una decena de energéticas europeas y estadounidenses sube más del 5% en marzo desde el inicio de la operación 'Furia épica' contra Irán, acumulando 46.170 millones de euros adicionales en capitalización bursátil hasta los 435.207 millones. El gas TTF en Europa se dispara más del 90% en el mes, superando los 60 dólares por megavatio. Bank of America advierte que picos persistentes por encima de 100 dólares 'podrían desencadenar ciclos inflacionarios persistentes', mientras Repsol lidera el Ibex 35 en marzo con una subida del 10,28%.</div>
+    <a href="https://www.expansion.com/mercados/2026/03/10/69af5699468aeb4b728b45d0.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Oil and gas majors gain €46.17 billion in market cap as Brent surpasses $100</div>
+    <div class="story-body">A dozen European and U.S. energy companies have risen more than 5% in March since the launch of 'Operation Epic Fury' against Iran, adding a combined €46.17 billion in market capitalization to reach €435.21 billion. European TTF gas has surged more than 90% this month, topping $60 per megawatt-hour. Bank of America warns that persistent spikes above $100 per barrel 'could trigger persistent inflationary cycles,' while Spain's Repsol leads the Ibex 35 in March with a 10.28% gain.</div>
+    <a href="https://www.expansion.com/mercados/2026/03/10/69af5699468aeb4b728b45d0.html" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Nacion.com</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Las primeras 100 horas de la operación contra Irán costaron 3.700 millones de dólares, según el CSIS</div>
+    <div class="story-body">El think tank Centro de Estudios Estratégicos e Internacionales estima que la operación 'Furia épica', iniciada el 28 de febrero por EE.UU. e Israel contra Irán, consumió 891 millones de dólares diarios en su arranque, incluyendo más de 160 misiles Tomahawk a 3,6 millones cada uno. A partir del 4 de marzo se transitó hacia munición más económica como los JDAM, de 80.000 dólares la unidad, lo que sugiere que el ritmo del gasto debería moderarse. El debate sobre la 'nueva economía de la guerra' se reabrió ante la evidencia de que drones de bajo costo pueden enfrentar eficazmente misiles de última generación.</div>
+    <a href="https://www.nacion.com/economia/este-es-el-costo-del-conflicto-en-iran-y-el/CPGPD22CJBDFHFDT6SKVSCFTNM/story/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">First 100 hours of operation against Iran cost $3.7 billion, per CSIS estimate</div>
+    <div class="story-body">The Center for Strategic and International Studies estimates that 'Operation Epic Fury,' launched February 28 by the U.S. and Israel against Iran, burned through $891 million per day in its opening phase, including more than 160 Tomahawk missiles at $3.6 million each. From March 4 onward, operations shifted toward cheaper munitions such as JDAMs at $80,000 per unit, suggesting the spending pace should moderate. The conflict has reignited debate over the 'new economics of war,' as low-cost drones prove capable of confronting cutting-edge missile systems.</div>
+    <a href="https://www.nacion.com/economia/este-es-el-costo-del-conflicto-en-iran-y-el/CPGPD22CJBDFHFDT6SKVSCFTNM/story/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">RT / Actualidad</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Milei afirma que el alza del petróleo por el conflicto en Oriente Medio mejorará los términos de intercambio de Argentina</div>
+    <div class="story-body">El presidente Javier Milei, desde Nueva York, declaró que Argentina se beneficiará del encarecimiento del crudo y de las materias primas agrícolas —soja, maíz y girasol— porque el país es exportador neto de energía. Sostuvo que el contexto podría acelerar la acumulación de reservas internacionales y que Argentina podría superar su meta de 10.000 millones de dólares para este año. Las declaraciones, cargadas de optimismo, contrastan con la volatilidad extrema de los mercados energéticos y la incertidumbre sobre la duración del conflicto.</div>
+    <a href="https://actualidad.rt.com/actualidad/591836-milei-afirma-suba-petroleo-guerra" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Milei says Middle East oil spike will improve Argentina's terms of trade</div>
+    <div class="story-body">Speaking from New York, President Javier Milei said Argentina will benefit from higher crude and agricultural commodity prices — soybeans, corn, and sunflower — because the country is a net energy exporter. He argued the context could accelerate the accumulation of international reserves and that Argentina might surpass its $10 billion target for the year. The optimistic tone contrasts sharply with extreme market volatility and deep uncertainty about how long the conflict will last.</div>
+    <a href="https://actualidad.rt.com/actualidad/591836-milei-afirma-suba-petroleo-guerra" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Elcomercio.com</span>
+    <span class="story-tag">Comercio</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Aranceles del 50% entre Ecuador y Colombia cierran el paso fronterizo de Rumichaca indefinidamente</div>
+    <div class="story-body">Transportistas y gremios del departamento colombiano de Nariño bloquearon el Puente Internacional de Rumichaca desde el mediodía del lunes 9 de marzo, impidiendo el tránsito de carga pesada entre Ecuador y Colombia. El conflicto escala a raíz de aranceles recíprocos que alcanzan el 50% sobre ciertos productos, tras una escalada iniciada por el gobierno de Daniel Noboa, haciendo inviable el comercio formal y potenciando el contrabando. Cerca de 500 manifestantes se mantienen apostados en el puente y exigen una mesa de negociación entre cancillerías; ninguno de los dos gobiernos ha emitido aún pronunciamiento oficial.</div>
+    <a href="https://www.elcomercio.com/actualidad/ecuador/aranceles-al-50-provocan-el-cierre-de-rumichaca-gremios-exigen-tregua/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">50% tariffs between Ecuador and Colombia shut the Rumichaca border crossing indefinitely</div>
+    <div class="story-body">Truckers and trade associations from Colombia's Nariño department blocked the Rumichaca International Bridge from midday on Monday, March 9, halting heavy freight traffic between Ecuador and Colombia. The conflict escalated from reciprocal tariffs reaching 50% on certain goods following measures initiated by the Noboa government, making formal trade unviable and boosting contraband risks. Some 500 protesters remain entrenched at the bridge demanding a negotiating table between the two countries' foreign ministries; neither government has issued an official response.</div>
+    <a href="https://www.elcomercio.com/actualidad/ecuador/aranceles-al-50-provocan-el-cierre-de-rumichaca-gremios-exigen-tregua/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">México</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Sheinbaum y Lula acuerdan cooperación bilateral; posible visita de la presidenta a Brasil entre junio y julio</div>
+    <div class="story-body">La presidenta Claudia Sheinbaum sostuvo una llamada con el mandatario brasileño Luiz Inácio Lula da Silva en la que acordaron proyectos conjuntos de desarrollo económico, energía, educación y ciencia. Lula invitó a Sheinbaum a Brasil en una visita tentativa para junio o julio que incluiría un encuentro del sector privado de ambas economías, las dos mayores de América Latina. El acercamiento se produce en el contexto de la guerra comercial desatada por Trump, que ha impactado tanto a México como a Brasil.</div>
+    <a href="https://www.elfinanciero.com.mx/nacional/2026/03/09/claudia-sheinbaum-tiene-llamada-telefonica-con-lula-da-silva-presidente-de-brasil-de-que-hablaron/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Sheinbaum and Lula agree on bilateral cooperation; presidential visit to Brazil possible in June or July</div>
+    <div class="story-body">President Claudia Sheinbaum held a call with Brazilian President Luiz Inácio Lula da Silva, agreeing on joint projects in economic development, energy, education, and science. Lula invited Sheinbaum to Brazil for a tentative visit in June or July that would include a private-sector summit between the two largest economies in Latin America. The rapprochement comes amid the trade war unleashed by Trump, which has hit both Mexico and Brazil.</div>
+    <a href="https://www.elfinanciero.com.mx/nacional/2026/03/09/claudia-sheinbaum-tiene-llamada-telefonica-con-lula-da-silva-presidente-de-brasil-de-que-hablaron/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Diario EL PAIS Uruguay</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Sequía en Uruguay genera pérdidas agrícolas superiores a 1.000 millones de dólares en soja y maíz</div>
+    <div class="story-body">El director de Fadisol, Carlos Foderé, estima que la merma en rendimientos de soja y maíz ya supera los 1.000 millones de dólares, con promedios nacionales de soja que podrían quedar entre 1.500 y 1.600 kilos por hectárea frente a los 3.000 necesarios para cubrir costos. Más del 50% de los productores debieron refinanciar su cosecha de soja tras los malos resultados de la campaña de invierno, y no podrán pagar deudas antiguas ni nuevas. El sector critica la ausencia del Ministerio de Ganadería y la exclusión de departamentos clave como Soriano y Colonia de la emergencia agropecuaria declarada.</div>
+    <a href="https://rurales.elpais.com.uy/agricultura/la-sequia-genera-perdidas-por-mas-de-us-1-000-millones-en-la-agricultura" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Drought in Uruguay causes agricultural losses exceeding $1 billion in soybeans and corn</div>
+    <div class="story-body">Fadisol director Carlos Foderé estimates that yield losses in soybeans and corn already exceed $1 billion, with national soybean averages potentially falling to 1,500–1,600 kilograms per hectare against the 3,000 needed to cover costs. More than 50% of producers had to refinance their soybean harvest after poor winter campaign results and will be unable to service either old or new debts. The sector is criticizing the absence of the Ministry of Livestock and the exclusion of key departments such as Soriano and Colonia from the declared agricultural emergency.</div>
+    <a href="https://rurales.elpais.com.uy/agricultura/la-sequia-genera-perdidas-por-mas-de-us-1-000-millones-en-la-agricultura" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="section-title"
+         data-es="Tipo de Cambio"
+         data-en="Exchange Rates">Tipo de Cambio</div>
+    <table class="currency-table">
+      <thead>
+        <tr>
+          <th data-es="Par"  data-en="Pair">Par</th>
+          <th data-es="Tipo" data-en="Rate">Tipo</th>
+          <th style="text-align:right;">1D</th>
+          <th style="text-align:right;">1W</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.5700</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.58%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.13%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.4139</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.63%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.27%</td>
+      </tr>
+      <tr>
+        <td class="pair">CAD / MXN</td>
+        <td>12.9370</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.53%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.33%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>120.8131</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.88%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.13%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="lang-es">
+      <div class="quote-text">An oil price spike large enough and persistent enough to cause a recession has typically required a doubling of oil prices, and we are not there yet — but we are watching.</div>
+      <div class="quote-attr">Janet Yellen, Secretaria del Tesoro de EE.UU., testimonio ante el Congreso, 2022</div>
+    </div>
+    <div class="lang-en">
+      <div class="quote-text">An oil price spike large enough and persistent enough to cause a recession has typically required a doubling of oil prices, and we are not there yet — but we are watching.</div>
+      <div class="quote-attr">Janet Yellen, U.S. Secretary of the Treasury, Congressional testimony, 2022</div>
+    </div>
+  </div>
+
+  
+
+  
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by lang-es">por Cliff N. Overhang, Chief Architect of Confident Uncertainty</span>
+    <span class="footer-by lang-en">by Cliff N. Overhang, Chief Architect of Confident Uncertainty</span>
+  </div>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? ''  : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // swap static labels
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = lang === 'es' ? el.dataset.es : el.dataset.en;
+    });
+    localStorage.setItem('nlLang', lang);
+  }
+  (function(){
+    var saved = localStorage.getItem('nlLang') || 'es';
+    setLang(saved);
+  })();
+</script>
+
+</body>
+</html>
