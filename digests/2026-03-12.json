@@ -1,0 +1,220 @@
+{
+  "date": "2026-03-12",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, la Agencia Internacional de Energía acaba de ejecutar la mayor liberación de reservas petroleras de su historia —400 millones de barriles— mientras el Estrecho de Ormuz sigue siendo un campo de batalla activo con 14 naves atacadas y el Brent recuperando niveles de 92 dólares. Los mercados oscilan entre el alivio técnico y el pánico estratégico, una danza que ya conocemos bien y que rara vez termina en empate.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 38,
+        "context_es": "Los mercados globales operan con cautela extrema: la liberación histórica de reservas petroleras ofrece alivio temporal, pero la guerra en Oriente Medio y la volatilidad del crudo mantienen a los inversores al borde del asiento.",
+        "context_en": "Global markets are operating with extreme caution: the historic strategic reserve release offers temporary relief, but the ongoing Middle East war and crude oil volatility keep investors on edge."
+      },
+      "stories": [
+        {
+          "source": "Www.df.cl",
+          "headline": "AIE libera 400 millones de barriles en intervención histórica mientras el Brent recupera los 92 dólares",
+          "body": "La Agencia Internacional de Energía aprobó por unanimidad la mayor liberación de reservas estratégicas de petróleo en sus 50 años de historia —400 millones de barriles, más del doble de los 182 millones liberados tras la invasión rusa de Ucrania en 2022— en respuesta directa a la guerra entre EE.UU., Israel e Irán. El director ejecutivo Fatih Birol calificó los desafíos como 'sin precedentes por su magnitud', mientras Japón se adelantó liberando el equivalente a un mes de sus reservas estatales. Goldman Sachs estima que la medida podría restar hasta 7 dólares al precio del crudo, aunque advierte que un conflicto prolongado anularía ese efecto.",
+          "url": "https://www.df.cl/internacional/aie-propone-la-mayor-liberacion-de-reservas-de-petroleo-de-la-historia-ante",
+          "tag": "Energía"
+        },
+        {
+          "source": "Www.df.cl",
+          "headline": "Dólar rebota en Chile, Brent sube 5% y mercados globales operan en modo de espera ante IPC de EE.UU.",
+          "body": "El peso chileno revirtió parte de su caída récord del día anterior —más de 20 pesos— cerrando con alza de 6,5 pesos a 897,5, mientras el Brent repuntaba 5,1% hasta 92 dólares tras desplomarse 11% el martes por comentarios optimistas de Trump sobre el fin de la guerra. El IPC de EE.UU. de febrero resultó en línea con proyecciones en 0,3%, pero analistas de Carson Group advierten que es 'la calma antes de la tormenta' dado el impacto energético que se verá en marzo. Chile además inauguró presidencia con José Antonio Kast, evento que el mercado había incorporado con optimismo pero que ahora enfrenta el contexto geopolítico adverso.",
+          "url": "https://www.df.cl/mercados/bolsa-monedas/dolar-hoynip4gafda3re",
+          "tag": "FX"
+        },
+        {
+          "source": "Aristeguinoticias.com",
+          "headline": "EE.UU. afirma haber destruido 'casi toda' la capacidad nuclear iraní; Irán amenaza con atacar bancos y centros económicos de EE.UU. e Israel",
+          "body": "El enviado especial Steve Witkoff declaró a CNBC que los ataques destruyeron 'casi toda' la capacidad de enriquecimiento iraní, señalando que Irán poseía 460 kilogramos de material enriquecido al 60% —suficiente para once bombas— antes del inicio de la ofensiva el 28 de febrero. En represalia, el mando unificado iraní amenazó con atacar 'centros económicos y bancos' propiedad de EE.UU. e Israel en la región, tras un bombardeo aliado a una sede bancaria iraní. El conflicto se extiende al Estrecho de Ormuz, donde fuerzas estadounidenses hundieron 16 minadores iraníes mientras nuevos ataques a buques comerciales elevan a 14 las naves afectadas.",
+          "url": "https://aristeguinoticias.com/1103/mundo/ee-uu-asegura-haber-destruido-capacidad-nuclear-irani-ataques-a-bases-y-en-ormuz/",
+          "tag": "Macro"
+        },
+        {
+          "source": "Latercera.com",
+          "headline": "Goldman Sachs: reservas de la AIE 'compran días', pero el Estrecho de Ormuz sigue siendo la variable decisiva",
+          "body": "Las acciones globales del MSCI World caían 0,07% este miércoles mientras los inversores calibraban el alcance real de la liberación de reservas, con el WTI subiendo 2% a 85,20 dólares y el Brent superando los 90. Sasha Foss, analista de Marex, fue directo: 'Este conflicto necesita terminar hacia fines de la semana; de lo contrario, veremos precios del petróleo por sobre los 100 dólares'. Goldman Sachs calcula que la medida de la AIE podría compensar solo 12 días de disrupción en exportaciones estimadas en 15,4 millones de barriles diarios.",
+          "url": "https://www.latercera.com/pulso/noticia/mercados-bolsas-y-acciones-miercoles-1103/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Caputo seduce inversores en Nueva York: 'El mayor riesgo es perder la oportunidad de invertir en Argentina'",
+          "body": "El ministro de Economía Luis Caputo ofreció un mensaje conciliador ante 400 ejecutivos en la sede del Bank of America en Manhattan, un día después de que el presidente Milei generara malestar con su embate contra los 'empresarios prebendarios'. En 11 minutos, Caputo argumentó que Argentina es distinta esta vez porque la estabilidad macro tiene respaldo político y social demostrado en las elecciones de octubre. El ministro también reveló que explora 'fuentes alternativas de financiamiento' para cubrir vencimientos de deuda, aclarando: 'No estoy acá para pelear contra el mercado, la solución es seguir pagando'.",
+          "url": "https://www.lanacion.com.ar/economia/tras-las-criticas-de-milei-caputo-expondra-sobre-el-plan-economico-ante-ejecutivos-e-inversores-en-nid11032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "Tribuna.com.mx",
+          "headline": "Trump libera 172 millones de barriles de la Reserva Estratégica de EE.UU. en 120 días para contener precios",
+          "body": "El secretario de Energía Chris Wright confirmó que EE.UU. comenzará a liberar 172 millones de barriles de su Reserva Estratégica —que actualmente acumula 415 millones, equivalente al 60% de su capacidad— a partir de la próxima semana, con entregas escalonadas durante aproximadamente 120 días. La acción representa la mayor contribución individual dentro del plan coordinado de 400 millones de barriles de la AIE. La administración planea recomprar cerca de 200 millones de barriles durante el siguiente año para reponer los niveles.",
+          "url": "https://www.tribuna.com.mx/mundo/2026/3/11/guerra-en-medio-oriente-trump-autoriza-liberar-172-millones-de-barriles-de-su-reserva-petrolera-431907.html",
+          "tag": "Energía"
+        },
+        {
+          "source": "Expansion.com",
+          "headline": "La guerra en Irán expone la obsolescencia de la defensa aérea cara: láseres y drones baratos redefinen el campo de batalla",
+          "body": "Los sistemas de defensa como el Patriot estadounidense resultan antieconómicos para interceptar los drones Shahed iraníes: por cada dólar gastado por Irán en drones, los países del Golfo gastan al menos diez veces más en derribarlos, según la analista Kelly Grieco del Centro Stimson. La guerra ha acelerado la inversión en alternativas de bajo costo —láseres, radares compactos, drones interceptores de producción masiva— con ejecutivos de cuatro startups occidentales confirmando contactos urgentes con gobiernos de Oriente Medio. El modelo ucraniano de innovación rápida y fabricación a escala emerge como la referencia obligada.",
+          "url": "https://www.expansion.com/economia/financial-times/2026/03/11/69b157d3e5fdeabb1e8b45c3.html",
+          "tag": "Política"
+        }
+      ],
+      "quote": {
+        "text": "Oil is a curse. It has made us lazy and dependent, and we should fix that.",
+        "attribution": "Fatih Birol, Director Ejecutivo de la Agencia Internacional de Energía, Financial Times, 2021"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the International Energy Agency just executed the largest strategic petroleum reserve release in its history —400 million barrels— while the Strait of Hormuz remains an active battlefield with 14 vessels attacked and Brent crude recovering to $92. Markets oscillate between technical relief and strategic panic, a dance we know well and that rarely ends in a draw.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 38,
+        "context_es": "Los mercados globales operan con cautela extrema: la liberación histórica de reservas petroleras ofrece alivio temporal, pero la guerra en Oriente Medio y la volatilidad del crudo mantienen a los inversores al borde del asiento.",
+        "context_en": "Global markets are operating with extreme caution: the historic strategic reserve release offers temporary relief, but the ongoing Middle East war and crude oil volatility keep investors on edge."
+      },
+      "stories": [
+        {
+          "source": "Www.df.cl",
+          "headline": "IEA releases 400 million barrels in historic intervention as Brent crude recovers to $92",
+          "body": "The International Energy Agency unanimously approved the largest strategic petroleum reserve release in its 50-year history —400 million barrels, more than double the 182 million released after Russia's 2022 invasion of Ukraine— in direct response to the U.S.-Israel-Iran war. Executive Director Fatih Birol called the challenges 'unprecedented in magnitude,' while Japan moved first by releasing the equivalent of one month of its state reserves. Goldman Sachs estimates the measure could cut up to $7 from crude prices, though it warns a prolonged conflict would nullify that effect.",
+          "url": "https://www.df.cl/internacional/aie-propone-la-mayor-liberacion-de-reservas-de-petroleo-de-la-historia-ante",
+          "tag": "Energía"
+        },
+        {
+          "source": "Www.df.cl",
+          "headline": "Chilean peso rebounds, Brent surges 5%, and global markets hold their breath ahead of U.S. CPI",
+          "body": "The Chilean peso reversed part of its record single-day drop —over 20 pesos— closing up 6.5 pesos at 897.5, while Brent rebounded 5.1% to $92 after plunging 11% on Tuesday following Trump's optimistic comments about the war ending. U.S. February CPI came in as expected at 0.3%, but Carson Group analysts warn it is 'the calm before the storm' given the energy price shock that will show up in March data. Chile also inaugurated José Antonio Kast as president, an event the market had priced in with optimism but which now faces an adverse geopolitical backdrop.",
+          "url": "https://www.df.cl/mercados/bolsa-monedas/dolar-hoynip4gafda3re",
+          "tag": "FX"
+        },
+        {
+          "source": "Aristeguinoticias.com",
+          "headline": "U.S. claims it destroyed 'almost all' of Iran's nuclear capacity; Iran threatens to attack U.S. and Israeli banks and economic centers",
+          "body": "Special envoy Steve Witkoff told CNBC that the strikes destroyed 'almost all' of Iran's enrichment capability, noting that Iran held 460 kilograms of material enriched to 60% —enough for eleven bombs— before the offensive began on February 28. In retaliation, Iran's unified military command threatened to strike 'economic centers and banks' owned by the U.S. and Israel in the region, following an allied bombing of an Iranian bank. The conflict has spread to the Strait of Hormuz, where U.S. forces sank 16 Iranian minelayers while new attacks on commercial vessels bring the total affected to 14 ships.",
+          "url": "https://aristeguinoticias.com/1103/mundo/ee-uu-asegura-haber-destruido-capacidad-nuclear-irani-ataques-a-bases-y-en-ormuz/",
+          "tag": "Macro"
+        },
+        {
+          "source": "Latercera.com",
+          "headline": "Goldman Sachs: IEA reserves 'buy days,' but the Strait of Hormuz remains the decisive variable",
+          "body": "Global equities in the MSCI World fell 0.07% on Wednesday as investors assessed the real scope of the reserve release, with WTI rising 2% to $85.20 and Brent topping $90. Marex analyst Sasha Foss was blunt: 'This conflict needs to end by the end of the week; otherwise, we will see oil prices surge back above $100.' Goldman Sachs calculates that the IEA measure could offset only 12 days of estimated export disruptions of 15.4 million barrels per day.",
+          "url": "https://www.latercera.com/pulso/noticia/mercados-bolsas-y-acciones-miercoles-1103/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Caputo courts investors in New York: 'The biggest risk is missing the opportunity to invest in Argentina'",
+          "body": "Economy Minister Luis Caputo delivered a conciliatory message to 400 executives at Bank of America's Manhattan headquarters, one day after President Milei unsettled the audience with his broadside against 'crony businessmen.' In 11 minutes, Caputo argued Argentina is different this time because macroeconomic stability has demonstrated political and social backing, validated by the October midterm elections. The minister also revealed he is exploring 'alternative financing sources' to cover debt maturities, clarifying: 'I'm not here to fight the market — the solution is to keep paying.'",
+          "url": "https://www.lanacion.com.ar/economia/tras-las-criticas-de-milei-caputo-expondra-sobre-el-plan-economico-ante-ejecutivos-e-inversores-en-nid11032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "Tribuna.com.mx",
+          "headline": "Trump authorizes release of 172 million barrels from U.S. Strategic Petroleum Reserve over 120 days",
+          "body": "Energy Secretary Chris Wright confirmed that the U.S. will begin releasing 172 million barrels from its Strategic Petroleum Reserve —which currently holds 415 million barrels, roughly 60% of capacity— starting next week, with deliveries phased over approximately 120 days. The action represents the largest single contribution within the IEA's coordinated 400-million-barrel plan. The administration plans to repurchase approximately 200 million barrels over the following year to replenish levels.",
+          "url": "https://www.tribuna.com.mx/mundo/2026/3/11/guerra-en-medio-oriente-trump-autoriza-liberar-172-millones-de-barriles-de-su-reserva-petrolera-431907.html",
+          "tag": "Energía"
+        },
+        {
+          "source": "Expansion.com",
+          "headline": "The Iran war exposes the obsolescence of costly air defense: cheap lasers and drones redefine the battlefield",
+          "body": "Defense systems such as the U.S. Patriot are proving uneconomical for intercepting Iranian Shahed drones: for every dollar Iran spends on drones, Gulf countries spend at least ten times more shooting them down, according to Stimson Center analyst Kelly Grieco. The war has accelerated investment in low-cost alternatives —lasers, compact radars, mass-produced interceptor drones— with executives from four Western startups confirming urgent contacts from Middle Eastern governments. Ukraine's model of rapid innovation and mass-scale production has emerged as the unavoidable reference.",
+          "url": "https://www.expansion.com/economia/financial-times/2026/03/11/69b157d3e5fdeabb1e8b45c3.html",
+          "tag": "Política"
+        }
+      ],
+      "quote": {
+        "text": "Oil is a curse. It has made us lazy and dependent, and we should fix that.",
+        "attribution": "Fatih Birol, Executive Director of the International Energy Agency, Financial Times, 2021"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.73",
+        "change": "▲ 0.8%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,776",
+        "change": "▼ 0.3%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "67,559.78",
+        "change": "▲ 0.2%",
+        "direction": "up"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.7238",
+        "chg_1d": {
+          "text": "▲ 0.76%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.12%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.4795",
+        "chg_1d": {
+          "text": "▲ 0.25%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 0.34%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "13.0368",
+        "chg_1d": {
+          "text": "▲ 0.72%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.67%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "121.7554",
+        "chg_1d": {
+          "text": "▲ 0.66%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 0.28%",
+          "cls": "chg-down"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "13°C",
+    "high_low": "22°C / 12°C",
+    "humidity": "Humidity 66%",
+    "desc": "Partly cloudy"
+  }
+}

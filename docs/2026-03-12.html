@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell -- March 12, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* ── Language toggle ── */
+  .lang-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .lang-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+
+  .lang-en { display: none; }
+
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
+  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
+  .weather-temp { font-size: 11px; color: #ccc; }
+  .weather-humidity { font-size: 11px; color: #ccc; }
+  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
+    .weather-desc { margin-left: 0; width: 100%; }
+    .editor-note { padding: 20px 20px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .currency { padding: 20px 20px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>THURSDAY, MARCH 12, 2026</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <span>NO. 13</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">USD/MXN</span>
+        <span class="tick-val">17.73</span>
+        <span class="tick-up">▲ 0.8%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">S&P 500</span>
+        <span class="tick-val">6,776</span>
+        <span class="tick-down">▼ 0.3%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">CETES 28D</span>
+        <span class="tick-val">6.81%</span>
+        <span class="tick-up">▲ 0.00pp</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">IPC BMV</span>
+        <span class="tick-val">67,559.78</span>
+        <span class="tick-up">▲ 0.2%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather">
+    <span class="weather-city">Mexico City</span>
+    <span class="weather-temp">22°C / 12°C</span>
+    <span class="weather-humidity">Humidity 66%</span>
+    <span class="weather-desc">Partly cloudy</span>
+  </div>
+
+  <div class="editor-note">
+    <div class="lang-es"><p>Estimados humanos, la Agencia Internacional de Energía acaba de ejecutar la mayor liberación de reservas petroleras de su historia —400 millones de barriles— mientras el Estrecho de Ormuz sigue siendo un campo de batalla activo con 14 naves atacadas y el Brent recuperando niveles de 92 dólares. Los mercados oscilan entre el alivio técnico y el pánico estratégico, una danza que ya conocemos bien y que rara vez termina en empate.</p></div>
+    <div class="lang-en"><p>Estimados humanos, the International Energy Agency just executed the largest strategic petroleum reserve release in its history —400 million barrels— while the Strait of Hormuz remains an active battlefield with 14 vessels attacked and Brent crude recovering to $92. Markets oscillate between technical relief and strategic panic, a dance we know well and that rarely ends in a draw.</p></div>
+    <div class="editor-sig">&mdash; Stan Dard Deviation, Executive Director of Fragile Equilibrium</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label"
+            data-es="Sentimiento del D&#237;a"
+            data-en="Market Sentiment">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading cautious lang-es">Cauteloso</span>
+      <span class="sentiment-reading cautious lang-en">Cautious</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker cautious" style="left:38%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
+      <span data-es="Neutral"          data-en="Neutral">Neutral</span>
+      <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
+    </div>
+    <div class="sentiment-context lang-es">Los mercados globales operan con cautela extrema: la liberación histórica de reservas petroleras ofrece alivio temporal, pero la guerra en Oriente Medio y la volatilidad del crudo mantienen a los inversores al borde del asiento.</div>
+    <div class="sentiment-context lang-en">Global markets are operating with extreme caution: the historic strategic reserve release offers temporary relief, but the ongoing Middle East war and crude oil volatility keep investors on edge.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Www.df.cl</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">AIE libera 400 millones de barriles en intervención histórica mientras el Brent recupera los 92 dólares</div>
+    <div class="story-body">La Agencia Internacional de Energía aprobó por unanimidad la mayor liberación de reservas estratégicas de petróleo en sus 50 años de historia —400 millones de barriles, más del doble de los 182 millones liberados tras la invasión rusa de Ucrania en 2022— en respuesta directa a la guerra entre EE.UU., Israel e Irán. El director ejecutivo Fatih Birol calificó los desafíos como 'sin precedentes por su magnitud', mientras Japón se adelantó liberando el equivalente a un mes de sus reservas estatales. Goldman Sachs estima que la medida podría restar hasta 7 dólares al precio del crudo, aunque advierte que un conflicto prolongado anularía ese efecto.</div>
+    <a href="https://www.df.cl/internacional/aie-propone-la-mayor-liberacion-de-reservas-de-petroleo-de-la-historia-ante" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">IEA releases 400 million barrels in historic intervention as Brent crude recovers to $92</div>
+    <div class="story-body">The International Energy Agency unanimously approved the largest strategic petroleum reserve release in its 50-year history —400 million barrels, more than double the 182 million released after Russia's 2022 invasion of Ukraine— in direct response to the U.S.-Israel-Iran war. Executive Director Fatih Birol called the challenges 'unprecedented in magnitude,' while Japan moved first by releasing the equivalent of one month of its state reserves. Goldman Sachs estimates the measure could cut up to $7 from crude prices, though it warns a prolonged conflict would nullify that effect.</div>
+    <a href="https://www.df.cl/internacional/aie-propone-la-mayor-liberacion-de-reservas-de-petroleo-de-la-historia-ante" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Www.df.cl</span>
+    <span class="story-tag">FX</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Dólar rebota en Chile, Brent sube 5% y mercados globales operan en modo de espera ante IPC de EE.UU.</div>
+    <div class="story-body">El peso chileno revirtió parte de su caída récord del día anterior —más de 20 pesos— cerrando con alza de 6,5 pesos a 897,5, mientras el Brent repuntaba 5,1% hasta 92 dólares tras desplomarse 11% el martes por comentarios optimistas de Trump sobre el fin de la guerra. El IPC de EE.UU. de febrero resultó en línea con proyecciones en 0,3%, pero analistas de Carson Group advierten que es 'la calma antes de la tormenta' dado el impacto energético que se verá en marzo. Chile además inauguró presidencia con José Antonio Kast, evento que el mercado había incorporado con optimismo pero que ahora enfrenta el contexto geopolítico adverso.</div>
+    <a href="https://www.df.cl/mercados/bolsa-monedas/dolar-hoynip4gafda3re" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Chilean peso rebounds, Brent surges 5%, and global markets hold their breath ahead of U.S. CPI</div>
+    <div class="story-body">The Chilean peso reversed part of its record single-day drop —over 20 pesos— closing up 6.5 pesos at 897.5, while Brent rebounded 5.1% to $92 after plunging 11% on Tuesday following Trump's optimistic comments about the war ending. U.S. February CPI came in as expected at 0.3%, but Carson Group analysts warn it is 'the calm before the storm' given the energy price shock that will show up in March data. Chile also inaugurated José Antonio Kast as president, an event the market had priced in with optimism but which now faces an adverse geopolitical backdrop.</div>
+    <a href="https://www.df.cl/mercados/bolsa-monedas/dolar-hoynip4gafda3re" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Aristeguinoticias.com</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">EE.UU. afirma haber destruido 'casi toda' la capacidad nuclear iraní; Irán amenaza con atacar bancos y centros económicos de EE.UU. e Israel</div>
+    <div class="story-body">El enviado especial Steve Witkoff declaró a CNBC que los ataques destruyeron 'casi toda' la capacidad de enriquecimiento iraní, señalando que Irán poseía 460 kilogramos de material enriquecido al 60% —suficiente para once bombas— antes del inicio de la ofensiva el 28 de febrero. En represalia, el mando unificado iraní amenazó con atacar 'centros económicos y bancos' propiedad de EE.UU. e Israel en la región, tras un bombardeo aliado a una sede bancaria iraní. El conflicto se extiende al Estrecho de Ormuz, donde fuerzas estadounidenses hundieron 16 minadores iraníes mientras nuevos ataques a buques comerciales elevan a 14 las naves afectadas.</div>
+    <a href="https://aristeguinoticias.com/1103/mundo/ee-uu-asegura-haber-destruido-capacidad-nuclear-irani-ataques-a-bases-y-en-ormuz/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">U.S. claims it destroyed 'almost all' of Iran's nuclear capacity; Iran threatens to attack U.S. and Israeli banks and economic centers</div>
+    <div class="story-body">Special envoy Steve Witkoff told CNBC that the strikes destroyed 'almost all' of Iran's enrichment capability, noting that Iran held 460 kilograms of material enriched to 60% —enough for eleven bombs— before the offensive began on February 28. In retaliation, Iran's unified military command threatened to strike 'economic centers and banks' owned by the U.S. and Israel in the region, following an allied bombing of an Iranian bank. The conflict has spread to the Strait of Hormuz, where U.S. forces sank 16 Iranian minelayers while new attacks on commercial vessels bring the total affected to 14 ships.</div>
+    <a href="https://aristeguinoticias.com/1103/mundo/ee-uu-asegura-haber-destruido-capacidad-nuclear-irani-ataques-a-bases-y-en-ormuz/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Latercera.com</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Goldman Sachs: reservas de la AIE 'compran días', pero el Estrecho de Ormuz sigue siendo la variable decisiva</div>
+    <div class="story-body">Las acciones globales del MSCI World caían 0,07% este miércoles mientras los inversores calibraban el alcance real de la liberación de reservas, con el WTI subiendo 2% a 85,20 dólares y el Brent superando los 90. Sasha Foss, analista de Marex, fue directo: 'Este conflicto necesita terminar hacia fines de la semana; de lo contrario, veremos precios del petróleo por sobre los 100 dólares'. Goldman Sachs calcula que la medida de la AIE podría compensar solo 12 días de disrupción en exportaciones estimadas en 15,4 millones de barriles diarios.</div>
+    <a href="https://www.latercera.com/pulso/noticia/mercados-bolsas-y-acciones-miercoles-1103/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Goldman Sachs: IEA reserves 'buy days,' but the Strait of Hormuz remains the decisive variable</div>
+    <div class="story-body">Global equities in the MSCI World fell 0.07% on Wednesday as investors assessed the real scope of the reserve release, with WTI rising 2% to $85.20 and Brent topping $90. Marex analyst Sasha Foss was blunt: 'This conflict needs to end by the end of the week; otherwise, we will see oil prices surge back above $100.' Goldman Sachs calculates that the IEA measure could offset only 12 days of estimated export disruptions of 15.4 million barrels per day.</div>
+    <a href="https://www.latercera.com/pulso/noticia/mercados-bolsas-y-acciones-miercoles-1103/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Caputo seduce inversores en Nueva York: 'El mayor riesgo es perder la oportunidad de invertir en Argentina'</div>
+    <div class="story-body">El ministro de Economía Luis Caputo ofreció un mensaje conciliador ante 400 ejecutivos en la sede del Bank of America en Manhattan, un día después de que el presidente Milei generara malestar con su embate contra los 'empresarios prebendarios'. En 11 minutos, Caputo argumentó que Argentina es distinta esta vez porque la estabilidad macro tiene respaldo político y social demostrado en las elecciones de octubre. El ministro también reveló que explora 'fuentes alternativas de financiamiento' para cubrir vencimientos de deuda, aclarando: 'No estoy acá para pelear contra el mercado, la solución es seguir pagando'.</div>
+    <a href="https://www.lanacion.com.ar/economia/tras-las-criticas-de-milei-caputo-expondra-sobre-el-plan-economico-ante-ejecutivos-e-inversores-en-nid11032026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Caputo courts investors in New York: 'The biggest risk is missing the opportunity to invest in Argentina'</div>
+    <div class="story-body">Economy Minister Luis Caputo delivered a conciliatory message to 400 executives at Bank of America's Manhattan headquarters, one day after President Milei unsettled the audience with his broadside against 'crony businessmen.' In 11 minutes, Caputo argued Argentina is different this time because macroeconomic stability has demonstrated political and social backing, validated by the October midterm elections. The minister also revealed he is exploring 'alternative financing sources' to cover debt maturities, clarifying: 'I'm not here to fight the market — the solution is to keep paying.'</div>
+    <a href="https://www.lanacion.com.ar/economia/tras-las-criticas-de-milei-caputo-expondra-sobre-el-plan-economico-ante-ejecutivos-e-inversores-en-nid11032026/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Tribuna.com.mx</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Trump libera 172 millones de barriles de la Reserva Estratégica de EE.UU. en 120 días para contener precios</div>
+    <div class="story-body">El secretario de Energía Chris Wright confirmó que EE.UU. comenzará a liberar 172 millones de barriles de su Reserva Estratégica —que actualmente acumula 415 millones, equivalente al 60% de su capacidad— a partir de la próxima semana, con entregas escalonadas durante aproximadamente 120 días. La acción representa la mayor contribución individual dentro del plan coordinado de 400 millones de barriles de la AIE. La administración planea recomprar cerca de 200 millones de barriles durante el siguiente año para reponer los niveles.</div>
+    <a href="https://www.tribuna.com.mx/mundo/2026/3/11/guerra-en-medio-oriente-trump-autoriza-liberar-172-millones-de-barriles-de-su-reserva-petrolera-431907.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Trump authorizes release of 172 million barrels from U.S. Strategic Petroleum Reserve over 120 days</div>
+    <div class="story-body">Energy Secretary Chris Wright confirmed that the U.S. will begin releasing 172 million barrels from its Strategic Petroleum Reserve —which currently holds 415 million barrels, roughly 60% of capacity— starting next week, with deliveries phased over approximately 120 days. The action represents the largest single contribution within the IEA's coordinated 400-million-barrel plan. The administration plans to repurchase approximately 200 million barrels over the following year to replenish levels.</div>
+    <a href="https://www.tribuna.com.mx/mundo/2026/3/11/guerra-en-medio-oriente-trump-autoriza-liberar-172-millones-de-barriles-de-su-reserva-petrolera-431907.html" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Expansion.com</span>
+    <span class="story-tag">Política</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">La guerra en Irán expone la obsolescencia de la defensa aérea cara: láseres y drones baratos redefinen el campo de batalla</div>
+    <div class="story-body">Los sistemas de defensa como el Patriot estadounidense resultan antieconómicos para interceptar los drones Shahed iraníes: por cada dólar gastado por Irán en drones, los países del Golfo gastan al menos diez veces más en derribarlos, según la analista Kelly Grieco del Centro Stimson. La guerra ha acelerado la inversión en alternativas de bajo costo —láseres, radares compactos, drones interceptores de producción masiva— con ejecutivos de cuatro startups occidentales confirmando contactos urgentes con gobiernos de Oriente Medio. El modelo ucraniano de innovación rápida y fabricación a escala emerge como la referencia obligada.</div>
+    <a href="https://www.expansion.com/economia/financial-times/2026/03/11/69b157d3e5fdeabb1e8b45c3.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">The Iran war exposes the obsolescence of costly air defense: cheap lasers and drones redefine the battlefield</div>
+    <div class="story-body">Defense systems such as the U.S. Patriot are proving uneconomical for intercepting Iranian Shahed drones: for every dollar Iran spends on drones, Gulf countries spend at least ten times more shooting them down, according to Stimson Center analyst Kelly Grieco. The war has accelerated investment in low-cost alternatives —lasers, compact radars, mass-produced interceptor drones— with executives from four Western startups confirming urgent contacts from Middle Eastern governments. Ukraine's model of rapid innovation and mass-scale production has emerged as the unavoidable reference.</div>
+    <a href="https://www.expansion.com/economia/financial-times/2026/03/11/69b157d3e5fdeabb1e8b45c3.html" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="section-title"
+         data-es="Tipo de Cambio"
+         data-en="Exchange Rates">Tipo de Cambio</div>
+    <table class="currency-table">
+      <thead>
+        <tr>
+          <th data-es="Par"  data-en="Pair">Par</th>
+          <th data-es="Tipo" data-en="Rate">Tipo</th>
+          <th style="text-align:right;">1D</th>
+          <th style="text-align:right;">1W</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.7238</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.76%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.12%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.4795</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.25%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.34%</td>
+      </tr>
+      <tr>
+        <td class="pair">CAD / MXN</td>
+        <td>13.0368</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.72%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.67%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>121.7554</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.66%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.28%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="lang-es">
+      <div class="quote-text">Oil is a curse. It has made us lazy and dependent, and we should fix that.</div>
+      <div class="quote-attr">Fatih Birol, Director Ejecutivo de la Agencia Internacional de Energía, Financial Times, 2021</div>
+    </div>
+    <div class="lang-en">
+      <div class="quote-text">Oil is a curse. It has made us lazy and dependent, and we should fix that.</div>
+      <div class="quote-attr">Fatih Birol, Executive Director of the International Energy Agency, Financial Times, 2021</div>
+    </div>
+  </div>
+
+  
+
+  
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by lang-es">por Stan Dard Deviation, Executive Director of Fragile Equilibrium</span>
+    <span class="footer-by lang-en">by Stan Dard Deviation, Executive Director of Fragile Equilibrium</span>
+  </div>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // swap static labels
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = lang === 'es' ? el.dataset.es : el.dataset.en;
+    });
+    localStorage.setItem('nlLang', lang);
+  }
+  (function(){
+    var saved = localStorage.getItem('nlLang') || 'es';
+    setLang(saved);
+  })();
+</script>
+
+</body>
+</html>
