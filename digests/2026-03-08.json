@@ -1,0 +1,220 @@
+{
+  "date": "2026-03-08",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el estrecho de Ormuz cerrado, el peso mexicano a 17.80, BlackRock bloqueando reembolsos y el Ibex cayendo 7% en la semana — todo en siete días cortesía de un conflicto en Oriente Próximo que nadie parece querer terminar. La geopolítica ha vuelto a recordarle a los mercados que los modelos de riesgo se escribieron en tiempos de paz. Abróchense.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 18,
+        "context_es": "La guerra en Oriente Próximo, el cierre del estrecho de Ormuz y los corralitos en crédito privado han empujado a los inversores globales hacia el dólar y lejos de activos emergentes y alternativos.",
+        "context_en": "The Middle East war, the closure of the Strait of Hormuz, and liquidity gates in private credit funds have pushed global investors toward the dollar and away from emerging market and alternative assets."
+      },
+      "stories": [
+        {
+          "source": "Aristegui Noticias",
+          "headline": "Peso mexicano se deprecia 3.25% semanal ante dólar por escalada bélica en Oriente Próximo",
+          "body": "El tipo de cambio cerró la semana en 17.80 pesos por dólar, su nivel más alto desde el 13 de enero, arrastrado por la aversión al riesgo global tras el inicio de la guerra contra Irán el 28 de febrero. La directora de Análisis de Banco Base, Gabriela Siller, señaló que el cierre del estrecho de Ormuz — por donde transita el 20% del suministro petrolero global — ha presionado al alza las materias primas y derrumbado divisas emergentes, con el florín húngaro (-6.07%) y el peso chileno (-4.42%) encabezando las caídas. El peso mexicano ocupó el quinto lugar entre las divisas más golpeadas de la semana.",
+          "url": "https://aristeguinoticias.com/0603/dinero-y-economia/peso-se-deprecia-3-25-ante-dolar-debido-a-escalada-en-medio-oriente/",
+          "tag": "FX"
+        },
+        {
+          "source": "El Español / Invertia",
+          "headline": "BlackRock bloquea reembolsos de fondo de crédito privado de 26,000 mdd; pánico se extiende a BBVA",
+          "body": "BlackRock limitó retiros de su fondo HPS Corporate Lending Fund (HLEND), con 26,000 millones de dólares bajo gestión, tras solicitudes de reembolso de 1,200 millones contra una liquidez disponible de solo 620 millones — menos del 5% del límite trimestral cuando los inversores pedían casi el 10%. El episodio sigue al corralito de Blue Owl a finales de febrero; las acciones de BlackRock cayeron 7.2% y las de Blue Owl acumulan -20% desde su anuncio. En España, BBVA introdujo restricciones preventivas en su fondo de mercados privados ante el riesgo de reembolsos masivos.",
+          "url": "https://www.elespanol.com/invertia/mis-finanzas/fondos-de-inversion/20260307/blue-owl-blackrock-bbva-corralitos-credito-privado-desatan-panico-inversores/1003744159964_0.html",
+          "tag": "Mercados"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mezcla mexicana sube 31.8% en una semana y toca 83.64 dólares por barril, máximo en más de dos años",
+          "body": "El precio de exportación del crudo mexicano cerró la semana en 83.64 dólares por barril, un 52.7% por encima del precio de referencia de 54.90 dólares contemplado por la Secretaría de Hacienda para 2026. El secretario Edgar Amador Zamora estimó que cada dólar adicional sobre el precio de referencia de 57.80 dólares genera aproximadamente 13,100 millones de pesos extra para las finanzas públicas. El alza diaria del viernes fue de 11.1%, el mayor incremento en una sola jornada desde el día posterior a la victoria electoral de Trump en noviembre de 2024.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/06/mezcla-mexicana-cerro-la-semana-en-8364-dolares-por-barril-su-mayor-nivel-en-mas-de-dos-anos/",
+          "tag": "Energía"
+        },
+        {
+          "source": "RT / Actualidad",
+          "headline": "EE.UU. anuncia escolta militar de buques por el estrecho de Ormuz en las próximas semanas",
+          "body": "El secretario del Tesoro Scott Bessent confirmó que la Armada estadounidense comenzará a escoltar buques mercantes por el estrecho de Ormuz en un plazo de una a dos semanas, tras el cierre de facto del corredor que concentra cerca del 20% del suministro petrolero mundial. El presidente Trump había anticipado que la escolta iniciaría \"lo antes posible\", en medio de presiones extremas sobre los mercados globales de energía. Los diferenciales de diésel y combustible de aviación han alcanzado niveles históricos, con los spreads de gasóleo ICE superando los 110 dólares por tonelada métrica.",
+          "url": "https://actualidad.rt.com/actualidad/591268-eeuu-revela-cuando-comenzara-escoltar-buques-estrecho-ormuz",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Español",
+          "headline": "España niega bases a EE.UU. para atacar Irán; Trump amenaza con represalias comerciales",
+          "body": "Madrid rechazó el uso de las bases militares de Morón y Rota para la operación Furia Épica contra Teherán, desencadenando una disputa geopolítica que derivó en amenazas de Trump de cortar relaciones comerciales con España y en calificativos de \"país hostil con la OTAN\". Francia, la Comisión Europea y el Consejo Europeo expresaron solidaridad con Sánchez, aunque exdiplomáticos y militares aliados advierten que \"Trump no se queda quieto\" y que habrá consecuencias económicas o políticas. El Ibex 35 perdió un 7% en la semana en medio de la alta volatilidad generada por el conflicto.",
+          "url": "https://www.elespanol.com/reportajes/20260307/militares-diplomaticos-aliados-advierten-trump-no-queda-quieto-actitud-sanchez-consecuencias/1003744156985_0.html",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nación (Argentina)",
+          "headline": "Revelan borrador del acuerdo que Milei habría firmado con Hayden Davis dos semanas antes del colapso de $LIBRA",
+          "body": "Peritos informáticos del Ministerio Público Fiscal recuperaron del teléfono del lobista Mauricio Novelli un archivo Word titulado \"LOI_KELSIER.docx\", enviado el 29 de enero de 2025 — víspera de la reunión entre Milei y Davis en Casa Rosada — en el que Davis se ofrecía como asesor en blockchain al presidente argentino. El documento carece de firmas y el fiscal Eduardo Taiano no lo incorporó al expediente ni lo compartió con los querellantes, quienes se enteraron por una publicación periodística. Milei ha negado sistemáticamente haber firmado cualquier documento con Davis.",
+          "url": "https://www.lanacion.com.ar/politica/caso-libra-revelan-el-borrador-del-acuerdo-que-javier-milei-habria-firmado-con-hayden-davis-nid06032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "Nación.com",
+          "headline": "Sheinbaum envía reforma electoral que recorta 25% el financiamiento a partidos y enfrenta resistencia de sus propios aliados",
+          "body": "La presidenta mexicana presentó al Congreso una iniciativa que elimina las listas de representación proporcional — actualmente usadas para designar 200 diputados y 32 senadores — y reduce en 25% los fondos públicos a los partidos, de los 445.4 millones de dólares asignados este año. Aunque el 80% de la ciudadanía apoya la medida según la encuestadora Enkoll, los partidos Verde y del Trabajo, aliados imprescindibles de Morena para la mayoría calificada constitucional, se oponen alegando que consolida a Morena como nuevo \"partido de Estado\". La reforma representa la primera prueba política de alto riesgo para Sheinbaum desde su llegada al poder.",
+          "url": "https://www.nacion.com/el-mundo/claudia-sheinbaum-presenta-una-arriesgada-reforma/BD5XDY3KXBAXDOLHLKXRIUMWHQ/story/",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
+        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the Strait of Hormuz shut, the Mexican peso at 17.80, BlackRock gating redemptions, and the Ibex down 7% on the week — all within seven days, courtesy of a Middle East conflict that nobody seems eager to end. Geopolitics has once again reminded markets that risk models were written in peacetime. Buckle up.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 18,
+        "context_es": "La guerra en Oriente Próximo, el cierre del estrecho de Ormuz y los corralitos en crédito privado han empujado a los inversores globales hacia el dólar y lejos de activos emergentes y alternativos.",
+        "context_en": "The Middle East war, the closure of the Strait of Hormuz, and liquidity gates in private credit funds have pushed global investors toward the dollar and away from emerging market and alternative assets."
+      },
+      "stories": [
+        {
+          "source": "Aristegui Noticias",
+          "headline": "Mexican peso depreciates 3.25% against the dollar as Middle East conflict escalates",
+          "body": "The exchange rate closed the week at 17.80 pesos per dollar, its highest level since January 13, dragged down by global risk aversion following the outbreak of the war against Iran on February 28. Banco Base's head of economic analysis, Gabriela Siller, noted that the closure of the Strait of Hormuz — through which 20% of global oil supply passes — has pushed commodities higher and crushed emerging-market currencies, with the Hungarian forint (-6.07%) and Chilean peso (-4.42%) leading weekly losses. The Mexican peso ranked fifth among the week's hardest-hit currencies.",
+          "url": "https://aristeguinoticias.com/0603/dinero-y-economia/peso-se-deprecia-3-25-ante-dolar-debido-a-escalada-en-medio-oriente/",
+          "tag": "FX"
+        },
+        {
+          "source": "El Español / Invertia",
+          "headline": "BlackRock gates redemptions on $26B private credit fund; panic spreads to BBVA",
+          "body": "BlackRock restricted withdrawals from its HPS Corporate Lending Fund (HLEND), which manages $26 billion in assets, after receiving redemption requests of $1.2 billion against only $620 million in available liquidity — well below the 5% quarterly threshold when investors were seeking to pull nearly 10%. The episode follows a similar gate by Blue Owl in late February; BlackRock shares fell 7.2% on the news while Blue Owl has shed 20% since its announcement. In Spain, BBVA preemptively introduced restrictions on its private markets fund to guard against mass redemptions.",
+          "url": "https://www.elespanol.com/invertia/mis-finanzas/fondos-de-inversion/20260307/blue-owl-blackrock-bbva-corralitos-credito-privado-desatan-panico-inversores/1003744159964_0.html",
+          "tag": "Mercados"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexican crude blend surges 31.8% in a week to $83.64 per barrel, a more than two-year high",
+          "body": "Mexico's export crude price closed the week at $83.64 per barrel, a level 52.7% above the $54.90 reference price built into the Finance Ministry's 2026 budget assumptions. Finance Secretary Edgar Amador Zamora estimated that each dollar above the $57.80 reference price generates approximately 13.1 billion pesos in additional public revenue. Friday's single-day gain of 11.1% was the largest daily jump since the day after Trump's electoral victory in November 2024.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/06/mezcla-mexicana-cerro-la-semana-en-8364-dolares-por-barril-su-mayor-nivel-en-mas-de-dos-anos/",
+          "tag": "Energía"
+        },
+        {
+          "source": "RT / Actualidad",
+          "headline": "U.S. announces military escort of vessels through the Strait of Hormuz within weeks",
+          "body": "Treasury Secretary Scott Bessent confirmed that the U.S. Navy will begin escorting merchant vessels through the Strait of Hormuz within one to two weeks, following the de facto closure of the corridor that carries roughly 20% of the world's oil supply. President Trump had previously said the escort would begin \"as soon as possible,\" amid extreme pressure on global energy markets. Diesel and jet fuel spreads have reached historic levels, with ICE gasoil spreads exceeding $110 per metric ton.",
+          "url": "https://actualidad.rt.com/actualidad/591268-eeuu-revela-cuando-comenzara-escoltar-buques-estrecho-ormuz",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Español",
+          "headline": "Spain denies U.S. use of military bases for Iran strikes; Trump threatens trade retaliation",
+          "body": "Madrid refused Washington access to the Morón and Rota military bases for Operation Epic Fury against Tehran, triggering a geopolitical dispute that prompted Trump to threaten to cut commercial ties with Spain and label it \"a very hostile country with NATO.\" France, the European Commission, and the European Council expressed solidarity with Prime Minister Sánchez, though allied ex-diplomats and military officers warn that \"Trump doesn't let things go\" and that economic or political consequences will follow. Spain's Ibex 35 index lost 7% on the week amid the conflict-driven volatility.",
+          "url": "https://www.elespanol.com/reportajes/20260307/militares-diplomaticos-aliados-advierten-trump-no-queda-quieto-actitud-sanchez-consecuencias/1003744156985_0.html",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nación (Argentina)",
+          "headline": "Draft agreement between Milei and Hayden Davis surfaces two weeks before $LIBRA's collapse",
+          "body": "Forensic experts from Argentina's federal prosecutor's office recovered a Word document titled \"LOI_KELSIER.docx\" from lobbyist Mauricio Novelli's phone, sent on January 29, 2025 — the eve of a meeting between Milei and Davis at the Casa Rosada — in which Davis offered his services as a blockchain adviser to the Argentine president. The document bears no signatures, and federal prosecutor Eduardo Taiano neither added it to the case file nor shared it with plaintiffs' attorneys, who only learned of it through press reports. Milei has consistently denied signing any document with Davis.",
+          "url": "https://www.lanacion.com.ar/politica/caso-libra-revelan-el-borrador-del-acuerdo-que-javier-milei-habria-firmado-con-hayden-davis-nid06032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "Nación.com",
+          "headline": "Sheinbaum sends electoral reform cutting party funding 25%, faces resistance from her own allies",
+          "body": "Mexico's president sent Congress legislation that eliminates proportional representation lists — currently used to appoint 200 deputies and 32 senators — and cuts public party funding by 25% from this year's allocation of $445.4 million. While 80% of the public backs the measure according to pollster Enkoll, the Green and Labour parties — whose votes Morena needs for the supermajority required to amend the constitution — oppose it, arguing it would entrench Morena as a new \"state party.\" The reform represents Sheinbaum's first major high-stakes political test since taking office.",
+          "url": "https://www.nacion.com/el-mundo/claudia-sheinbaum-presenta-una-arriesgada-reforma/BD5XDY3KXBAXDOLHLKXRIUMWHQ/story/",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
+        "attribution": "Benjamin Graham, The Intelligent Investor, 1949"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.88",
+        "change": "▲ 1.6%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,740",
+        "change": "▼ 1.9%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "67,313.50",
+        "change": "▼ 1.6%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.8795",
+        "chg_1d": {
+          "text": "▲ 1.00%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.25%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.6657",
+        "chg_1d": {
+          "text": "▲ 0.96%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 1.49%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "13.1095",
+        "chg_1d": {
+          "text": "▲ 1.67%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.48%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "123.4419",
+        "chg_1d": {
+          "text": "▲ 1.10%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.94%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "21°C",
+    "high_low": "25°C / 11°C",
+    "humidity": "Humidity 29%",
+    "desc": "Partly cloudy"
+  }
+}

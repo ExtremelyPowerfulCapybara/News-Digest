@@ -1,151 +1,151 @@
 {
   "date": "2026-03-02",
   "digest": {
-    "editor_note": "Estimados Humanos, hoy el telón de fondo lo pone España perdiendo competitividad al ritmo más acelerado desde 2008, mientras en Bruselas Sánchez defiende una Europa a dos velocidades y prefiere el 'buy European' como respuesta a Trump. El ahorro europeo sigue fugándose a 300.000 millones anuales hacia mercados extranjeros y el continente debatiendo si merece un mercado único de capitales — el diagnóstico lleva décadas encima de la mesa, la voluntad política sigue siendo la variable más escasa.",
+    "editor_note": "Fellow Humans, the world woke up this morning to oil tankers sitting idle in the Persian Gulf, Brent crude up 10%, and the Strait of Hormuz effectively closed for business — the kind of geopolitical rupture that markets had been pricing as a tail risk right up until it wasn't one. The U.S.-Israel strike on Iran, and the death of Supreme Leader Khamenei, has reshuffled every macro assumption in play: inflation trajectories, rate paths, regional stability, and the fate of nine million Indian nationals in the Gulf. We are not in a drill.",
     "sentiment": {
-      "label": "Cautious",
-      "position": 38,
-      "context": "Pérdida de competitividad española en máximos desde 2008, fuga de ahorro europeo y tensiones comerciales globales dominan el tono; el crecimiento del PIB y los resultados de Repsol ofrecen contrapeso, pero insuficiente para despejar la cautela."
+      "label": "Risk-Off",
+      "position": 12,
+      "context": "The U.S.-Israel military campaign against Iran, Strait of Hormuz disruption, a 10% oil price surge, and cascading geopolitical uncertainty across global shipping lanes have pushed sentiment to extreme risk-off territory."
     },
     "stories": [
       {
-        "source": "El Mundo",
-        "headline": "España registra la mayor caída de competitividad desde 2008 y pone en riesgo exportaciones e inversión",
-        "body": "El índice del Banco de España muestra una pérdida de competitividad del 2,8% interanual en diciembre, el peor dato desde la Gran Recesión, profundizando un deterioro que arrancó en 2025. Las exportaciones españolas ya se comportan peor que las del resto de economías comparables, una señal de que el problema está pasando de los índices a la realidad comercial. Si la tendencia no se corrige, el modelo de crecimiento basado en ventas externas e inversión extranjera empieza a mostrar grietas estructurales.",
-        "url": "https://www.elmundo.es/economia/macroeconomia/2026/02/22/6989d472e9cf4ae2148b4580.html",
-        "tag": "Macro"
-      },
-      {
-        "source": "Eldiario.es",
-        "headline": "España lleva a la cumbre europea el 'buy European' y la integración a dos velocidades frente a Trump y China",
-        "body": "Pedro Sánchez acude a la reunión de los 27 en el castillo de Alden Biesen con dos apuestas concretas: avanzar en la preferencia europea en licitaciones y subvenciones, y defender reformas de integración sin necesidad de unanimidad de todos los Estados miembros. El contexto es directo — España creció un 2,8% en 2025 frente al 0,2% de Alemania — lo que le da algo de palanca negociadora. El reto es que 'buy European' sin mercado único de capitales es proteccionismo a medias.",
-        "url": "https://www.eldiario.es/economia/espana-defiende-buy-european-ue-velocidades-impulsar-competitividad_1_12982881.html",
-        "tag": "Trade"
-      },
-      {
-        "source": "Elespanol.com",
-        "headline": "Pedro J. Ramírez alerta: cada año, 300.000 millones de ahorro europeo salen del continente por falta de unión de capitales",
-        "body": "En la inauguración del VI Observatorio de las Finanzas de EL ESPAÑOL e Invertia, con la presencia del gobernador del Banco de España José Luis Escrivá, Ramírez señaló que la Savings and Investment Union — antes conocida como Capital Markets Union — nace de una evidencia: hay capital ocioso en unas regiones europeas y escasez severa en otras. Sin un mercado único de inversión, Europa seguirá siendo, en sus palabras, 'rica en ahorro, pero pobre en inversión estratégica'. La soberanía tecnológica y la defensa dependen de que ese dinero deje de emigrar.",
-        "url": "https://www.elespanol.com/eventos/2026/observatorio-finanzas/20260217/pedro-ramirez-evitar-ano-salgan-millones-ahorro-europeo-extranjero/1003744133278_0.html",
-        "tag": "Macro"
-      },
-      {
-        "source": "ABC",
-        "headline": "Once bancos europeos crean Qivalis para lanzar una 'stablecoin' vinculada al euro bajo supervisión comunitaria",
-        "body": "La alianza, impulsada entre otros por BBVA, responde a un momento en que el bitcoin cae cerca de un 23% en lo que va de año y ronda los 67.000 dólares, abriendo espacio para alternativas reguladas. Qivalis busca emitir una criptomoneda estable orientada a pagos interbancarios, operaciones internacionales y liquidación de activos digitales tokenizados, compitiendo directamente con las 'stablecoins' en dólares de emisores privados no bancarios. El movimiento marca un antes y un después en la postura institucional europea ante el mercado cripto.",
-        "url": "https://www.abc.es/economia/banca-europea-mueve-ficha-criptomonedas-red-20260216045544-nt.html",
-        "tag": "Markets"
-      },
-      {
-        "source": "Eleconomista.es",
-        "headline": "Repsol gana 1.899 millones en 2025, un 8% más, y promete superar el euro de dividendo en 2026",
-        "body": "La compañía cerró el ejercicio apoyada en su modelo integrado a pesar de un entorno de precios del crudo más adverso, logrando mejorar tanto el resultado neto como el ajustado — la métrica que usa internamente para medir rendimiento operativo real. El compromiso de superar el euro por acción en dividendo para 2026 lanza una señal de confianza en la generación de caja, en un sector que lleva meses bajo presión por la transición energética y la volatilidad del mercado.",
-        "url": "https://www.eleconomista.es/energia/noticias/13784544/02/26/repsol-logra-un-beneficio-neto-de-1899-millones-un-8-mas-y-superara-el-euro-de-dividendo-en-2026.html",
+        "source": "Fortune",
+        "headline": "Oil Surges 10% as Tankers Halt Near Strait of Hormuz Following Iran Strikes",
+        "body": "Brent crude jumped 10% to roughly $80 a barrel on Sunday after the U.S.-Israel bombing campaign against Iran brought maritime traffic through the Strait of Hormuz — a chokepoint for one-fifth of global oil supply — to a near standstill. Maersk suspended all vessel crossings, the IRGC warned ships against passage and struck three tankers with missiles, and analysts warn prices could hit $100 a barrel if the strait is formally closed. Capital Economics estimates a spike to $100 Brent would add 0.6-0.7 percentage points to global inflation, complicating rate-cutting paths at major central banks.",
+        "url": "https://fortune.com/2026/03/01/oil-prices-tanker-traffic-strait-of-hormuz-iran-attacks-us-israel-irgc-warning/",
         "tag": "Energy"
       },
       {
-        "source": "Europapress.es",
-        "headline": "El SMI sube a 1.221 euros y afectará a 2,5 millones de trabajadores en España, 286.600 en Catalunya",
-        "body": "El incremento del 3,1% aprobado por el Consejo de Ministros, con efectos retroactivos desde el 1 de enero de 2026, cuenta con el respaldo de CCOO y UGT pero sin el apoyo de la patronal CEOE, que advierte del impacto en costes laborales. En Catalunya, según estimaciones del Gobierno, el alza beneficiará a 286.600 trabajadores, aunque los sindicatos propios cifran el impacto en entre 197.659 y 200.000 personas. La brecha entre el discurso de impulso al consumo y las advertencias empresariales sobre competitividad vuelve a abrirse.",
-        "url": "https://www.europapress.es/catalunya/noticia-gobierno-preve-subida-smi-beneficiara-286600-trabajadores-catalunya-20260301103252.html",
-        "tag": "España"
+        "source": "Sky News",
+        "headline": "Ship Tracking Shows Gulf Effectively Paralysed as Tankers Carrying Millions of Barrels Sit Idle",
+        "body": "Sky's data forensics team confirmed that maritime activity through the Strait of Hormuz has been nearly brought to a standstill, with vessels clustering at ports on either side of the strait rather than transiting. Analytics firm Kpler tracked five tankers with collective capacity of around 10 million barrels, all of which reversed course or exited the region by Sunday. AIS signal distortion — ships broadcasting false positions or appearing on land — is adding a dangerous layer of opacity to an already volatile corridor.",
+        "url": "https://news.sky.com/story/ship-tracking-reveals-tankers-and-millions-of-barrels-of-oil-stuck-in-the-gulf-13513961",
+        "tag": "Energy"
       },
       {
-        "source": "Elperiodico.com",
-        "headline": "El déficit fiscal de Catalunya con el Estado alcanza 21.092 millones, equivalente al 8,2% del PIB catalán",
-        "body": "La cifra, referida al ejercicio 2022 e incorporada en la memoria económica de los nuevos presupuestos del Govern, equivale a casi la mitad del presupuesto total de la Generalitat. La reforma de financiación pactada con ERC transferiría unos 4.700 millones adicionales al año a partir de 2027 — menos de una cuarta parte del déficit calculado — lo que anticipa que el debate sobre la balanza fiscal lejos de cerrarse, tiene recorrido político para varios ciclos electorales más.",
-        "url": "https://www.elperiodico.com/es/economia/20260227/deficit-fiscal-catalunya-espana-presupuestos-generalitat-2026-127361466",
-        "tag": "España"
+        "source": "Fortune",
+        "headline": "Trump's Iran Strike Revives the Regime-Change Playbook He Once Publicly Condemned",
+        "body": "Within an hour of the first U.S.-Israeli missiles striking Iran, President Trump urged the Iranian people to \"seize control of your destiny\" — a barely veiled call for regime change from a president who in 2016 explicitly campaigned against that doctrine. Ayatollah Khamenei was confirmed dead by Iranian state media following Saturday's joint aerial bombardment, which targeted military and governmental sites. The post-strike political vacuum, Iran's surviving military capabilities, and Washington's absence of a declared postwar plan raise the same questions that haunted Iraq and Afghanistan.",
+        "url": "https://fortune.com/2026/03/01/trump-regime-change-flip-flop-what-changed-iran-iraq/",
+        "tag": "Politics"
+      },
+      {
+        "source": "BusinessLine",
+        "headline": "India's Modi Convenes Emergency Security Council as Nine Million Nationals Face West Asia Crisis",
+        "body": "Prime Minister Narendra Modi chaired an emergency Cabinet Committee on Security meeting Sunday night to address the fallout from the U.S.-Israel strikes on Iran, with the Strait of Hormuz closure threatening Indian shipping and approximately nine million Indian nationals living and working across the Gulf region. Hundreds of Indians are already stranded in Dubai and other hub airports as West Asian airspace effectively shut down, and the MEA has activated helplines across regional missions. India's exposure here is not abstract — the Gulf is its single largest remittance corridor.",
+        "url": "https://www.thehindubusinessline.com/news/pm-modi-to-chair-ccs-meeting-tonight-west-asia-situation-stranded-indians-likely-to-figure/article70692516.ece",
+        "tag": "Macro"
+      },
+      {
+        "source": "New York Post",
+        "headline": "El Mencho Is Dead, but Mexico's Cartel War Is Just Getting Started — and the Bill Is Coming Due",
+        "body": "Mexican special forces killed CJNG kingpin Nemesio \"El Mencho\" Oseguera last week in the most significant blow to organized crime in Mexico in years, but CJNG retaliated within hours by burning trucks and buildings across 20 states and killing 25 National Guard members. The New York Post editorial board argues Mexico cannot sustain the campaign without serious U.S. support — the cartels collectively earn over $40 billion annually and maintain military-grade arsenals including rocket launchers capable of downing aircraft, while Mexico spends just 0.6% of GDP on defense. With the FIFA World Cup set for June in Guadalajara — CJNG's home turf — and the USMCA renegotiation underpinning $334 billion in annual U.S.-Mexico trade on the horizon, the security calculus carries direct economic consequences.",
+        "url": "https://nypost.com/2026/03/01/opinion/trump-got-the-cartel-war-he-wanted-but-mexico-cant-win-alone/",
+        "tag": "Mexico"
+      },
+      {
+        "source": "CNBC",
+        "headline": "Options-Based 'Overlay Everything' ETFs Swell to $270 Billion as Retail Investors Hedge a Jittery Market",
+        "body": "An estimated $170 billion is now invested in synthetic income ETFs using options strategies, with another $100 billion in buffer ETFs designed for downside protection — nearly all of it from retail investors and individual advisors, according to ETF Action's Mike Akins. The trend has accelerated as the S&P 500 has returned less than half a percentage point year-to-date, mega-cap tech balance sheets are deteriorating under AI capex loads, and gold has already gained 20% in 2026. Tidal Financial's Aga Kuplinska describes the current phase as the \"overlay everything\" era, with issuers applying options income and hedging layers to virtually every asset class, including growth-oriented tech strategies that historically never needed them.",
+        "url": "https://www.cnbc.com/2026/03/01/income-stocks-market-volatility.html",
+        "tag": "Markets"
+      },
+      {
+        "source": "Fox News",
+        "headline": "DHS Shutdown Threatens FIFA World Cup Security Planning as Congress Remains Deadlocked",
+        "body": "With the Department of Homeland Security shuttered for two weeks amid a Senate funding standoff, congressional Republicans are warning that security preparations for the FIFA World Cup — set for June across twelve U.S. host cities — are falling behind. DHS is the lead federal agency for World Cup security coordination, and Senators Josh Hawley and John Cornyn have flagged the operational risk, while Democrats and the White House remain at an impasse over ICE reform conditions. The dispute also intersects directly with the USMCA renegotiation timeline, as the U.S., Canada, and Mexico are co-hosts and security conditions in all three countries will bear on trade and diplomatic leverage.",
+        "url": "https://www.foxnews.com/politics/gop-warns-democrats-dhs-shutdown-could-jeopardize-world-cup-security",
+        "tag": "Politics"
       }
     ],
     "quote": {
-      "text": "Europa fue construida sobre la idea de que los mercados integrados crean prosperidad. Sin mercados de capital integrados, esa promesa queda a medias.",
-      "attribution": "Mario Draghi, Informe sobre la Competitividad Europea, 2024"
+      "text": "Oil is the world's blood. When the arteries are blocked, everything else follows.",
+      "attribution": "Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991"
     }
   },
   "market": {
     "tickers": [
       {
+        "label": "USD/MXN",
+        "value": "17.37",
+        "change": "▲ 1.0%",
+        "direction": "up"
+      },
+      {
         "label": "S&P 500",
-        "value": "6,879",
-        "change": "▼ 1.0%",
+        "value": "6,862",
+        "change": "▼ 0.7%",
         "direction": "down"
       },
       {
-        "label": "IBEX 35",
-        "value": "17,839.00",
-        "change": "▼ 2.8%",
-        "direction": "down"
+        "label": "CETES 28D",
+        "value": "6.83%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
       },
       {
-        "label": "Euro Stoxx",
-        "value": "5,989.07",
-        "change": "▼ 2.4%",
-        "direction": "down"
-      },
-      {
-        "label": "DAX",
-        "value": "24,686.57",
-        "change": "▼ 2.4%",
+        "label": "IPC BMV",
+        "value": "70,407.72",
+        "change": "▼ 1.4%",
         "direction": "down"
       }
     ],
     "currency": [
       {
-        "pair": "EUR / USD",
-        "rate": "1.1703",
+        "pair": "USD / MXN",
+        "rate": "17.3773",
         "chg_1d": {
-          "text": "▼ 0.85%",
-          "cls": "chg-down"
+          "text": "▲ 1.01%",
+          "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▼ 0.77%",
-          "cls": "chg-down"
-        }
-      },
-      {
-        "pair": "EUR / GBP",
-        "rate": "0.8738",
-        "chg_1d": {
-          "text": "▼ 0.11%",
-          "cls": "chg-down"
-        },
-        "chg_1w": {
-          "text": "▲ 0.00%",
+          "text": "▲ 0.68%",
           "cls": "chg-up"
         }
       },
       {
-        "pair": "EUR / CHF",
-        "rate": "0.9117",
+        "pair": "EUR / MXN",
+        "rate": "20.2968",
         "chg_1d": {
-          "text": "▼ 0.10%",
+          "text": "▼ 0.03%",
           "cls": "chg-down"
         },
         "chg_1w": {
-          "text": "▼ 0.15%",
+          "text": "▼ 0.28%",
           "cls": "chg-down"
         }
       },
       {
-        "pair": "EUR / JPY",
-        "rate": "184.1820",
+        "pair": "CAD / MXN",
+        "rate": "12.6760",
         "chg_1d": {
-          "text": "▲ 0.13%",
+          "text": "▲ 0.78%",
           "cls": "chg-up"
         },
         "chg_1w": {
-          "text": "▲ 0.99%",
+          "text": "▲ 0.58%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "119.5836",
+        "chg_1d": {
+          "text": "▲ 1.61%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.30%",
           "cls": "chg-up"
         }
       }
     ]
   },
   "weather": {
-    "city": "Madrid",
-    "temp": "14°C",
-    "high_low": "16°C / 6°C",
-    "humidity": "Humedad 53%",
-    "desc": "Parcialmente nublado"
+    "city": "Mexico City",
+    "temp": "17°C",
+    "high_low": "25°C / 8°C",
+    "humidity": "Humidity 37%",
+    "desc": "Clear skies"
   }
 }

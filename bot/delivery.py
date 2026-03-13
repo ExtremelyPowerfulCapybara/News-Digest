@@ -38,8 +38,11 @@ def load_subscribers() -> list[str]:
 
 
 def send_email(html: str, plain: str) -> None:
-    today       = date.today().strftime("%B %d, %Y")
-    subject     = f"{NEWSLETTER_NAME} — {today}"
+    today = date.today()
+    months_es = ["","enero","febrero","marzo","abril","mayo","junio",
+                 "julio","agosto","septiembre","octubre","noviembre","diciembre"]
+    today_str   = f"{today.day} de {months_es[today.month]} de {today.year}"
+    subject     = f"{NEWSLETTER_NAME} — {today_str}"
     subscribers = load_subscribers()
 
     if not subscribers:

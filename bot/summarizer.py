@@ -5,61 +5,99 @@ import json
 import re
 import time
 import anthropic
-from config import ANTHROPIC_API_KEY, AUTHOR_NAME
+from config import ANTHROPIC_API_KEY
+
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 def summarize_news(articles: list[dict]) -> dict:
     """
-    Sends articles to Claude and returns a structured digest dict with:
-    - editor_note: str
-    - sentiment: {label, context}
-    - stories: [{source, headline, body, url, tag}]
-    - quote: {text, attribution}
+    Sends articles to Claude and returns a bilingual digest dict with:
+    - "es": { editor_note, sentiment, stories, quote }  <- Spanish (primary)
+    - "en": { editor_note, sentiment, stories, quote }  <- English translation
     """
     news_text = ""
     for i, a in enumerate(articles, 1):
-        content = a['content'][:1500] if a['content'] else ""
-        news_text += f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{content}\n\n"
+        news_text += f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{a['content']}\n\n"
 
-    prompt = f"""You are a sharp financial news editor producing a daily morning briefing in Spanish. Write ALL content in Spanish, including the editor note, story headlines, story bodies, sentiment context, and quote attribution. Address the reader as "Estimados Humanos" at most once in the editor note. Voice is sharp, dry, and editorial. No fluff.
-Analyze the articles below and return a JSON object with EXACTLY this structure:
+    prompt = f"""Eres un editor de noticias financieras produciendo un briefing matutino diario para una audiencia hispanohablante sofisticada. Voz: directa, seca, ocasionalmente sardónica — como un editor de mercados veterano que ha visto cada ciclo y encuentra el actual tanto alarmante como vagamente entretenido.
+
+Analiza los artículos a continuación y devuelve un objeto JSON con EXACTAMENTE esta estructura:
+
 {{
-  "editor_note": "2-3 sentences opening the day's briefing. Always open with 'Estimados Humanos,' as the first two words. Voice: sharp, dry, occasionally sardonic — like a seasoned markets editor who has seen every cycle and finds the current one both alarming and faintly amusing. Reference the dominant story. First person. Do NOT include any sign-off or signature — that is added separately. No fluff, no filler, no 'it is worth noting'.",
-  "sentiment": {{
-    "label": "Risk-Off" | "Cautious" | "Risk-On",
-    "position": <integer 5-95 where 5=extreme risk-off, 50=neutral, 95=extreme risk-on>,
-    "context": "Una frase explicando el sentimiento de hoy basado en las noticias."
-  }},
-  "stories": [
-    {{
-      "source": "Nombre de la fuente",
-      "headline": "Titular conciso y específico",
-      "body": "2-3 frases. Incluye cifras específicas, nombres, y por qué importa. Termina de forma natural.",
-      "url": "URL original del artículo",
-      "tag": "One of: Macro | FX | España | Trade | Rates | Markets | Energy | Politics"
+  "es": {{
+    "editor_note": "2-3 oraciones abriendo el briefing del día. Siempre abre con 'Estimados humanos,' como las primeras dos palabras. Voz: directa, seca, ocasionalmente sardónica. Referencia la historia dominante. Primera persona. NO incluyas firma — se agrega por separado. Sin relleno.",
+
+    "sentiment": {{
+      "label_es": "Aversión al Riesgo" | "Cauteloso" | "Apetito por Riesgo",
+      "label_en": "Risk-Off" | "Cautious" | "Risk-On",
+      "position": <entero 5-95 donde 5=aversión extrema, 50=neutral, 95=apetito extremo>,
+      "context_es": "Una oración explicando el sentimiento de hoy en español.",
+      "context_en": "One sentence explaining today's sentiment in English."
+    }},
+
+    "stories": [
+      {{
+        "source": "Nombre de la fuente",
+        "headline": "Titular conciso y específico en español",
+        "body": "2-3 oraciones en español. Incluye cifras específicas, nombres, y por qué importa. Termina naturalmente.",
+        "url": "URL original del artículo",
+        "tag": "Uno de: Macro | FX | México | Comercio | Tasas | Mercados | Energía | Política"
+      }}
+    ],
+
+    "quote": {{
+      "text": "Una cita financiera o económica relevante que conecte temáticamente con las noticias de hoy. Debe ser real y verificable. Puede estar en español o inglés.",
+      "attribution": "Nombre completo, fuente, año"
     }}
-  ],
-  "quote": {{
-    "text": "Una cita financiera o económica relevante que conecte temáticamente con las noticias de hoy. Debe ser una cita real y verificable.",
-    "attribution": "Nombre completo, fuente, año"
+  }},
+
+  "en": {{
+    "editor_note": "Faithful English translation of the editor_note above. Keep the same voice and tone.",
+
+    "sentiment": {{
+      "label_es": "<same as above>",
+      "label_en": "<same as above>",
+      "position": <same integer as above>,
+      "context_es": "<same as above>",
+      "context_en": "<same as above>"
+    }},
+
+    "stories": [
+      {{
+        "source": "Same source name",
+        "headline": "Faithful English translation of the headline",
+        "body": "Faithful English translation of the body",
+        "url": "Same original URL",
+        "tag": "Same tag"
+      }}
+    ],
+
+    "quote": {{
+      "text": "<same quote as above>",
+      "attribution": "<same attribution as above>"
+    }}
   }}
 }}
-Rules:
-- Select 5-7 stories, ordered by importance
-- Skip duplicates covering the same event
-- stories must include the original URL from the article list
-- Respond ONLY with the JSON object, no preamble, no markdown fences
-- sentiment.position must be consistent with sentiment.label: Risk-Off should be 5-35, Cautious 36-64, Risk-On 65-95
-Articles:
+
+Reglas:
+- Selecciona 5-7 historias, ordenadas por importancia
+- Diversidad temática obligatoria: cada historia debe cubrir un tema distinto. Si varios artículos tratan el mismo evento o tema central (e.g. múltiples artículos sobre el conflicto Irán/petróleo, o sobre aranceles Trump), selecciona SOLO el más completo e informativo — descarta los demás sin excepción
+- Nunca incluyas dos historias donde la pregunta central sea la misma, aunque provengan de fuentes distintas o tengan ángulos ligeramente diferentes
+- stories debe incluir la URL original de la lista de artículos
+- Responde ÚNICAMENTE con el objeto JSON, sin preámbulo, sin markdown fences
+- sentiment.position debe ser consistente con el label: Aversión al Riesgo = 5-35, Cauteloso = 36-64, Apetito por Riesgo = 65-95
+- El bloque "en" es una traducción fiel del bloque "es" — mismas historias, mismas URLs, mismo sentimiento
+
+Artículos:
 {news_text}
 """
 
-    print("  [summarizer] Sending to Claude...")
+    print("  [summarizer] Sending to Claude (bilingual)...")
     for attempt in range(4):
         try:
             message = client.messages.create(
                 model="claude-sonnet-4-6",
-                max_tokens=8192,
+                max_tokens=6000,
                 messages=[{"role": "user", "content": prompt}]
             )
             break
@@ -71,17 +109,45 @@ Articles:
             else:
                 raise
 
+    def clean_and_parse(text: str) -> dict:
+        """Strip markdown fences and parse JSON, raising JSONDecodeError on failure."""
+        text = text.strip()
+        # Strip markdown fences
+        if text.startswith("```"):
+            text = text.split("\n", 1)[1]
+            text = text.rsplit("```", 1)[0].strip()
+        # Trim anything before the first '{' or after the last '}'
+        start = text.find("{")
+        end   = text.rfind("}")
+        if start != -1 and end != -1:
+            text = text[start:end+1]
+        return json.loads(text)
+
+    # Try to parse; if malformed, re-ask Claude once with a repair prompt
     raw = message.content[0].text.strip()
-    # Strip markdown fences if present
-    if raw.startswith("```"):
-        raw = raw.split("\n", 1)[1]
-        raw = raw.rsplit("```", 1)[0]
-    # Safety net: extract JSON if Claude added extra text
-    raw = raw.strip()
-    if not raw.startswith("{"):
-        match = re.search(r'\{.*\}', raw, re.DOTALL)
-        if match:
-            raw = match.group()
-        else:
-            raise ValueError(f"No JSON found in Claude response. Raw: {raw[:200]}")
-    return json.loads(raw)
+    for parse_attempt in range(2):
+        try:
+            digest = clean_and_parse(raw)
+            break
+        except json.JSONDecodeError as e:
+            if parse_attempt == 0:
+                print(f"  [summarizer] JSON parse failed ({e}), asking Claude to repair...")
+                repair_message = client.messages.create(
+                    model="claude-sonnet-4-6",
+                    max_tokens=6000,
+                    messages=[
+                        {"role": "user",    "content": prompt},
+                        {"role": "assistant", "content": raw},
+                        {"role": "user",    "content": "Tu respuesta anterior contiene JSON malformado. Devuelve exactamente el mismo contenido pero como JSON válido y bien escapado. Sin preámbulo, sin markdown fences."},
+                    ]
+                )
+                raw = repair_message.content[0].text.strip()
+            else:
+                raise ValueError(f"[summarizer] JSON malformado tras intento de reparación: {e}")
+
+    # Validate bilingual structure
+    if "es" not in digest or "en" not in digest:
+        raise ValueError(f"[summarizer] Missing bilingual keys. Got: {list(digest.keys())}")
+
+    print(f"  [summarizer] Got {len(digest['es'].get('stories', []))} stories (ES+EN)")
+    return digest

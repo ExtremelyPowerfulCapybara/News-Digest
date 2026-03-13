@@ -1,0 +1,151 @@
+{
+  "date": "2026-03-09",
+  "digest": {
+    "editor_note": "Fellow Humans, the dominant story this morning is a hot war with Iran that has crude north of $91 a barrel, tanker traffic through the Strait of Hormuz reduced to a trickle, and Energy Secretary Wright on Sunday television promising relief is weeks away — a timeline that will age poorly if history is any guide. Markets are pricing in a world where 20% of global energy supply is being negotiated at gunpoint, and bond yields are already bending to the gravity of it.",
+    "sentiment": {
+      "label": "Risk-Off",
+      "position": 18,
+      "context": "An active U.S.-Iran conflict is disrupting Strait of Hormuz tanker flows, spiking Brent crude above $92, triggering downstream fuel price surges globally, and pulling bond yields lower as investors seek safety."
+    },
+    "stories": [
+      {
+        "source": "CNBC",
+        "headline": "Energy Secretary Wright says oil prices will fall once U.S. neutralizes Iran's Strait of Hormuz threat — crude already above $91",
+        "body": "Energy Secretary Chris Wright told Fox News Sunday that the U.S. is 'massively attriting' Iran's missile and drone capability and that energy will 'flow soon,' describing disruption in terms of 'weeks, certainly not months.' U.S. crude has surged past $91 a barrel and Brent above $92, with roughly 20% of global energy supply transiting the strait daily — currently at a fraction of its normal 100-tanker throughput. Gas prices have hit $3.46 per gallon nationally, directly undermining Trump's core economic promise heading into November midterms.",
+        "url": "https://www.cnbc.com/2026/03/08/iran-war-energy-prices-wright.html",
+        "tag": "Energy"
+      },
+      {
+        "source": "Premium Times",
+        "headline": "Dangote refinery raises petrol price a second time in four days as Brent crude spikes 7.9% on Iran war disruption",
+        "body": "Nigeria's Dangote refinery lifted its gantry price by N121 to N995 per litre, with Abuja pump prices jumping to N1,100 — up from N960 just days earlier. Brent crude surged 7.9% over 24 hours to $87.44, and analysts are projecting $100-plus per barrel if the conflict escalates further. Dangote says it absorbed 20% of cost increases to cushion domestic impact, but the math is visibly losing that battle.",
+        "url": "https://www.premiumtimesng.com/business/business-news/862361-again-dangote-refinery-raises-petrol-gantry-price-as-iran-conflict-rattles-oil-market.html",
+        "tag": "Energy"
+      },
+      {
+        "source": "BusinessLine",
+        "headline": "India awaits operational details on U.S. DFC maritime reinsurance facility as Gulf shipping risk escalates",
+        "body": "India is holding for clarity from the U.S. Treasury on the DFC's $20 billion rolling maritime reinsurance facility announced March 6 by DFC CEO Ben Black and Treasury Secretary Scott Bessent, including which vessels qualify and at what insured amounts. The facility covers hull, machinery, and cargo — including war risk — for vessels transiting the Strait of Hormuz, and is being coordinated directly with CENTCOM. Until vessel selection criteria are published, India's oil ministry and international shippers are operating in a guidance vacuum during the most acute Gulf disruption in years.",
+        "url": "https://www.thehindubusinessline.com/economy/logistics/india-awaits-clarity-on-us-maritime-reinsurance-push-for-gulf/article70719277.ece",
+        "tag": "Trade"
+      },
+      {
+        "source": "Military Times",
+        "headline": "Pentagon and FAA agree to anti-drone laser tests in New Mexico after two unauthorized airspace closures over Texas",
+        "body": "The Pentagon and FAA announced joint anti-drone laser testing at White Sands Missile Range following two February incidents in which military laser deployment — including one that accidentally shot down a CBP drone — forced sudden airspace closures over El Paso and Fort Hancock without FAA notification. The coordination breakdown drew congressional scrutiny, with Sen. Tammy Duckworth calling for an independent investigation. The incidents expose a structural gap in interagency protocol as counter-drone operations along the southern border intensify.",
+        "url": "https://www.militarytimes.com/native/2026/03/08/pentagon-and-faa-agree-to-conduct-anti-drone-laser-tests-in-new-mexico/",
+        "tag": "Politics"
+      },
+      {
+        "source": "247 Wall St.",
+        "headline": "Bond yields sliding — analysts flag dividend stocks as the better passive income play with rate cuts likely",
+        "body": "With 10-year Treasury yields under pressure and further cuts anticipated, analysts at 247 Wall St. are pointing investors toward dividend-paying equities including Lockheed Martin (2.06% yield, $75B in 2025 revenue), Cisco Systems (2.1% yield, $14.9B in quarterly revenue), and Bank of America (2.25% yield, $28.4B Q4 revenue). The thesis is straightforward: blended dividend-plus-appreciation returns from quality names can outpace a declining risk-free rate without taking on duration risk. In a war-driven, rate-softening environment, the rotation logic is gaining traction fast.",
+        "url": "https://247wallst.com/investing/2026/03/08/bond-yields-are-getting-slashed-these-dividend-stocks-are-the-smarter-play-right-now/",
+        "tag": "Markets"
+      },
+      {
+        "source": "CBS News",
+        "headline": "Blankfein warns another financial crisis is inevitable: 'Some spark will set the forest on fire'",
+        "body": "Former Goldman Sachs CEO Lloyd Blankfein, promoting his memoir 'Streetwise,' offered a blunt assessment that another financial crisis is a matter of when, not if — invoking the image of accumulated kindling waiting for a spark. He noted it has been 17 years since the last major crisis, a gap he treats not as evidence of stability but of complacency. Given that his comments land on a day when Brent crude is above $92 and a Middle East war is live, the metaphor lands with some force.",
+        "url": "https://www.cbsnews.com/news/former-goldman-sachs-ceo-lloyd-blankfein-talks-wall-street-crises-past-and-future/",
+        "tag": "Macro"
+      },
+      {
+        "source": "BusinessLine",
+        "headline": "Enterprise AI 'deployment gap' widens as 88% of companies report AI use but most remain stuck in pilot stage",
+        "body": "Infosys co-founder Nandan Nilekani described a widening gap between AI model capability and real-world enterprise deployment at the company's Investors AI Day, a view echoed by Forrester analyst Biswajeet Mahapatra, who noted that very few firms can connect AI initiatives to P&L outcomes. Beyond Key CEO Piyush Goel put a number on it: 88% of companies claim AI usage, but implementation failures stem from fragmented data governance, legacy infrastructure, and misaligned ownership rather than model limitations. The practical implication is that the AI capex wave is running well ahead of demonstrable enterprise returns.",
+        "url": "https://www.thehindubusinessline.com/info-tech/deployment-gap-widens-as-companies-struggle-to-operationalise-ai/article70719137.ece",
+        "tag": "Macro"
+      }
+    ],
+    "quote": {
+      "text": "The time to buy is when there's blood in the streets.",
+      "attribution": "Baron Nathan Mayer Rothschild, attributed, circa 1815"
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.79",
+        "change": "▲ 0.5%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,661",
+        "change": "▼ 2.5%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "65,477.33",
+        "change": "▼ 2.7%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.7800",
+        "chg_1d": {
+          "text": "▲ 0.44%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 2.76%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.5652",
+        "chg_1d": {
+          "text": "▲ 0.08%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 1.62%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "13.1064",
+        "chg_1d": {
+          "text": "▲ 1.21%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.56%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "122.9309",
+        "chg_1d": {
+          "text": "▲ 0.68%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.23%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "14°C",
+    "high_low": "25°C / 13°C",
+    "humidity": "Humidity 76%",
+    "desc": "Partly cloudy"
+  }
+}

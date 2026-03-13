@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Opening Bell &mdash; March 02, 2026</title>
+  <title>The Opening Bell -- March 06, 2026</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
   .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
 
-  /* Header */
   .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
   .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
   .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
   .pub-meta { display: flex; justify-content: space-between; font-size: 10px; color: #888; letter-spacing: 1px; }
 
-  /* Ticker */
   .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
   .ticker-inner { display: flex; justify-content: space-between; }
   .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
@@ -26,23 +24,19 @@
   .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
   .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
 
-  /* Weather */
   .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
   .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
   .weather-temp { font-size: 11px; color: #ccc; }
   .weather-humidity { font-size: 11px; color: #ccc; }
   .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
 
-  /* Editor note */
   .editor-note { padding: 28px 48px; }
   .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
   .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
 
-  /* Divider */
   .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
   .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
 
-  /* Sentiment gauge */
   .sentiment { padding: 24px 48px; }
   .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
   .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
@@ -58,7 +52,6 @@
   .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
   .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
 
-  /* Stories */
   .story { padding: 24px 48px; }
   .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
   .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
@@ -68,7 +61,6 @@
   .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
   .read-more:hover { color: #555; border-color: #555; }
 
-  /* Currency table */
   .currency { padding: 24px 48px; }
   .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
   .currency-table { width: 100%; border-collapse: collapse; }
@@ -78,17 +70,12 @@
   .currency-table td:not(:first-child) { text-align: right; }
   .currency-table tr:last-child td { border-bottom: none; }
   .currency-table .pair { font-weight: 600; color: #1a1a1a; }
-  .up   { color: #4a9e6a; font-size: 11px; }
-  .down { color: #b84a3a; font-size: 11px; }
-  .flat { color: #aab4bc; font-size: 11px; }
 
-  /* Quote */
   .quote { padding: 28px 48px; background: #e8edf0; }
   .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
   .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
   .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
 
-  /* Week in review */
   .week { padding: 24px 48px; }
   .timeline { display: flex; flex-direction: column; }
   .tl-row { display: flex; gap: 16px; }
@@ -104,12 +91,10 @@
   .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
   .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
 
-  /* Footer */
   .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
   .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
   .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
 
-  /* ── Mobile ── */
   @media (max-width: 600px) {
     body { padding: 0; }
     .wrap { border: none; }
@@ -118,17 +103,13 @@
     .ticker { padding: 6px 8px; }
     .ticker-inner { flex-wrap: wrap; }
     .tick-item { flex: 1 1 45%; padding: 8px 4px; }
-    .tick-label { font-size: 7px; }
     .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
     .weather-desc { margin-left: 0; width: 100%; }
     .editor-note { padding: 20px 20px; }
-    .editor-note p { font-size: 14px; }
     .divider { padding: 0 20px; }
     .sentiment { padding: 20px 20px; }
     .story { padding: 20px 20px; }
-    .story-headline { font-size: 17px; }
     .currency { padding: 20px 20px; }
-    .currency-table { font-size: 11px; }
     .quote { padding: 20px 20px; }
     .week { padding: 20px 20px; }
     .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
@@ -142,8 +123,8 @@
     <div class="pub-label">Context before the noise</div>
     <div class="pub-name">The Opening Bell</div>
     <div class="pub-meta">
-      <span>MONDAY, MARCH 02, 2026</span>
-      <span>ISSUE NO. 4</span>
+      <span>FRIDAY, MARCH 06, 2026</span>
+      <span>EDICI&#211;N NO. 6</span>
     </div>
   </div>
 
@@ -151,37 +132,37 @@
     <div class="ticker-inner">
       <div class="tick-item">
         <span class="tick-label">USD/MXN</span>
-        <span class="tick-val">17.37</span>
-        <span class="tick-up">▲ 1.0%</span>
+        <span class="tick-val">17.79</span>
+        <span class="tick-up">▲ 1.1%</span>
       </div>
       <div class="tick-item">
         <span class="tick-label">S&P 500</span>
-        <span class="tick-val">6,862</span>
-        <span class="tick-down">▼ 0.7%</span>
+        <span class="tick-val">6,740</span>
+        <span class="tick-down">▼ 1.9%</span>
       </div>
       <div class="tick-item">
         <span class="tick-label">CETES 28D</span>
-        <span class="tick-val">6.83%</span>
+        <span class="tick-val">6.81%</span>
         <span class="tick-up">▲ 0.00pp</span>
       </div>
       <div class="tick-item">
         <span class="tick-label">IPC BMV</span>
-        <span class="tick-val">70,407.72</span>
-        <span class="tick-down">▼ 1.4%</span>
+        <span class="tick-val">67,326.09</span>
+        <span class="tick-down">▼ 1.5%</span>
       </div>
     </div>
   </div>
 
   <div class="weather">
     <span class="weather-city">Mexico City</span>
-    <span class="weather-temp">25°C / 8°C</span>
-    <span class="weather-humidity">Humidity 37%</span>
-    <span class="weather-desc">Clear skies</span>
+    <span class="weather-temp">21°C / 9°C</span>
+    <span class="weather-humidity">Humidity 32%</span>
+    <span class="weather-desc">Partly cloudy</span>
   </div>
 
   <div class="editor-note">
-    <p>Fellow Humans, the world woke up this morning to oil tankers sitting idle in the Persian Gulf, Brent crude up 10%, and the Strait of Hormuz effectively closed for business — the kind of geopolitical rupture that markets had been pricing as a tail risk right up until it wasn't one. The U.S.-Israel strike on Iran, and the death of Supreme Leader Khamenei, has reshuffled every macro assumption in play: inflation trajectories, rate paths, regional stability, and the fate of nine million Indian nationals in the Gulf. We are not in a drill.</p>
-    <div class="editor-sig">&mdash; Bea Rish, Commissioner of Yield Curve Interpretive Dance</div>
+    <p>Estimados humanos, mientras el mundo debate si Irán puede ser bombardeado o si sus reservas de petróleo simplemente abaratan la gasolina, México y Estados Unidos deciden sentarse a hablar del T-MEC el 16 de marzo — un gesto diplomático que en otro ciclo histórico llamaríamos normalidad y que hoy cotiza como noticia positiva. El telón de fondo es un orden global en recomposición acelerada: aranceles, guerras, amenazas de embargo y la NYSE invirtiendo en exchanges de criptomonedas. Que nadie diga que los mercados se aburren.</p>
+    <div class="editor-sig">&mdash; Hugh Liquidity, Executive Director of Fragile Equilibrium</div>
   </div>
 
   
@@ -198,16 +179,16 @@
 
   <div class="sentiment">
     <div class="sentiment-header">
-      <span class="sentiment-label">Market Sentiment</span>
-      <span class="sentiment-reading risk-off">Risk-Off</span>
+      <span class="sentiment-label">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading cautious">Cauteloso</span>
     </div>
     <div class="gauge-track">
-      <div class="gauge-marker risk-off" style="left:12%;"></div>
+      <div class="gauge-marker cautious" style="left:42%;"></div>
     </div>
     <div class="gauge-ticks">
-      <span>Risk-Off</span><span>Neutral</span><span>Risk-On</span>
+      <span>Avers. al Riesgo</span><span>Neutral</span><span>Apetito por Riesgo</span>
     </div>
-    <div class="sentiment-context">The U.S.-Israel military campaign against Iran, Strait of Hormuz disruption, a 10% oil price surge, and cascading geopolitical uncertainty across global shipping lanes have pushed sentiment to extreme risk-off territory.</div>
+    <div class="sentiment-context">Señales mixtas dominan el panorama: avances comerciales entre México y EE.UU. contrarrestan la tensión geopolítica en Medio Oriente y las fricciones entre Washington y Madrid.</div>
   </div>
 
   
@@ -224,12 +205,12 @@
 </div>
 <div class="story">
   <div class="story-meta">
-    <span class="story-source">Fortune</span>
-    <span class="story-tag">Energy</span>
+    <span class="story-source">Boston Herald / AP</span>
+    <span class="story-tag">Comercio</span>
   </div>
-  <div class="story-headline">Oil Surges 10% as Tankers Halt Near Strait of Hormuz Following Iran Strikes</div>
-  <div class="story-body">Brent crude jumped 10% to roughly $80 a barrel on Sunday after the U.S.-Israel bombing campaign against Iran brought maritime traffic through the Strait of Hormuz — a chokepoint for one-fifth of global oil supply — to a near standstill. Maersk suspended all vessel crossings, the IRGC warned ships against passage and struck three tankers with missiles, and analysts warn prices could hit $100 a barrel if the strait is formally closed. Capital Economics estimates a spike to $100 Brent would add 0.6-0.7 percentage points to global inflation, complicating rate-cutting paths at major central banks.</div>
-  <a href="https://fortune.com/2026/03/01/oil-prices-tanker-traffic-strait-of-hormuz-iran-attacks-us-israel-irgc-warning/" class="read-more">Read more &rarr;</a>
+  <div class="story-headline">México y EE.UU. arrancan el 16 de marzo negociaciones bilaterales del T-MEC antes de la revisión formal de julio</div>
+  <div class="story-body">El secretario mexicano de Economía, Marcelo Ebrard, y el representante comercial estadounidense, Jamieson Greer, confirmaron que el 16 de marzo inicia una primera ronda bilateral de conversaciones 'exploratorias' sobre reglas de origen, cadenas de suministro y competitividad regional. El arranque anticipado — la revisión formal del tratado está prevista para julio — fue interpretado por la economista de Banco Base, Gabriela Siller, como señal de que 'ya hay algunas cosas acordadas'. Las exportaciones mexicanas a EE.UU. alcanzaron 534.874 millones de dólares en 2025, un 5,8% más, pese a que sectores como el automotriz y el acero siguen gravados con aranceles de entre 25% y 50%.</div>
+  <a href="https://www.bostonherald.com/2026/03/05/mxico-y-eeuu-inician-el-16-de-marzo-primera-ronda-de-conversaciones-para-la-revisin-del-t-mec/" class="read-more">Leer m&aacute;s &rarr;</a>
 </div>
 
 <div class="divider">
@@ -244,52 +225,12 @@
 </div>
 <div class="story">
   <div class="story-meta">
-    <span class="story-source">Sky News</span>
-    <span class="story-tag">Energy</span>
-  </div>
-  <div class="story-headline">Ship Tracking Shows Gulf Effectively Paralysed as Tankers Carrying Millions of Barrels Sit Idle</div>
-  <div class="story-body">Sky's data forensics team confirmed that maritime activity through the Strait of Hormuz has been nearly brought to a standstill, with vessels clustering at ports on either side of the strait rather than transiting. Analytics firm Kpler tracked five tankers with collective capacity of around 10 million barrels, all of which reversed course or exited the region by Sunday. AIS signal distortion — ships broadcasting false positions or appearing on land — is adding a dangerous layer of opacity to an already volatile corridor.</div>
-  <a href="https://news.sky.com/story/ship-tracking-reveals-tankers-and-millions-of-barrels-of-oil-stuck-in-the-gulf-13513961" class="read-more">Read more &rarr;</a>
-</div>
-
-<div class="divider">
-  <div class="line"></div>
-  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
-    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
-  </svg>
-  <div class="line"></div>
-</div>
-<div class="story">
-  <div class="story-meta">
-    <span class="story-source">Fortune</span>
-    <span class="story-tag">Politics</span>
-  </div>
-  <div class="story-headline">Trump's Iran Strike Revives the Regime-Change Playbook He Once Publicly Condemned</div>
-  <div class="story-body">Within an hour of the first U.S.-Israeli missiles striking Iran, President Trump urged the Iranian people to "seize control of your destiny" — a barely veiled call for regime change from a president who in 2016 explicitly campaigned against that doctrine. Ayatollah Khamenei was confirmed dead by Iranian state media following Saturday's joint aerial bombardment, which targeted military and governmental sites. The post-strike political vacuum, Iran's surviving military capabilities, and Washington's absence of a declared postwar plan raise the same questions that haunted Iraq and Afghanistan.</div>
-  <a href="https://fortune.com/2026/03/01/trump-regime-change-flip-flop-what-changed-iran-iraq/" class="read-more">Read more &rarr;</a>
-</div>
-
-<div class="divider">
-  <div class="line"></div>
-  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
-    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
-  </svg>
-  <div class="line"></div>
-</div>
-<div class="story">
-  <div class="story-meta">
-    <span class="story-source">BusinessLine</span>
+    <span class="story-source">Eldiario.es</span>
     <span class="story-tag">Macro</span>
   </div>
-  <div class="story-headline">India's Modi Convenes Emergency Security Council as Nine Million Nationals Face West Asia Crisis</div>
-  <div class="story-body">Prime Minister Narendra Modi chaired an emergency Cabinet Committee on Security meeting Sunday night to address the fallout from the U.S.-Israel strikes on Iran, with the Strait of Hormuz closure threatening Indian shipping and approximately nine million Indian nationals living and working across the Gulf region. Hundreds of Indians are already stranded in Dubai and other hub airports as West Asian airspace effectively shut down, and the MEA has activated helplines across regional missions. India's exposure here is not abstract — the Gulf is its single largest remittance corridor.</div>
-  <a href="https://www.thehindubusinessline.com/news/pm-modi-to-chair-ccs-meeting-tonight-west-asia-situation-stranded-indians-likely-to-figure/article70692516.ece" class="read-more">Read more &rarr;</a>
+  <div class="story-headline">Trump amenaza con cortar todo el comercio con España tras el rechazo a usar bases militares para atacar Irán</div>
+  <div class="story-body">El presidente Donald Trump declaró al New York Post que España es 'una perdedora' y reiteró instrucciones a su secretario del Tesoro, Scott Bessent, para cortar los lazos comerciales con Madrid, después de que el gobierno de Pedro Sánchez prohibiera el uso de las bases de Rota y Morón en operaciones contra Irán. La ministra de Defensa, Margarita Robles, fue categórica: 'No se va a autorizar el uso de las bases. La violencia no es el camino'. El enredo legal es considerable: cualquier restricción comercial de EE.UU. a España afectaría a los 27 países de la Unión Europea, cuya política comercial se decide en Bruselas.</div>
+  <a href="https://www.eldiario.es/politica/espana-mantiene-tension-eeuu-europa-crece-rechazo-guerra_1_13044348.html" class="read-more">Leer m&aacute;s &rarr;</a>
 </div>
 
 <div class="divider">
@@ -304,12 +245,12 @@
 </div>
 <div class="story">
   <div class="story-meta">
-    <span class="story-source">New York Post</span>
-    <span class="story-tag">Mexico</span>
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">Macro</span>
   </div>
-  <div class="story-headline">El Mencho Is Dead, but Mexico's Cartel War Is Just Getting Started — and the Bill Is Coming Due</div>
-  <div class="story-body">Mexican special forces killed CJNG kingpin Nemesio "El Mencho" Oseguera last week in the most significant blow to organized crime in Mexico in years, but CJNG retaliated within hours by burning trucks and buildings across 20 states and killing 25 National Guard members. The New York Post editorial board argues Mexico cannot sustain the campaign without serious U.S. support — the cartels collectively earn over $40 billion annually and maintain military-grade arsenals including rocket launchers capable of downing aircraft, while Mexico spends just 0.6% of GDP on defense. With the FIFA World Cup set for June in Guadalajara — CJNG's home turf — and the USMCA renegotiation underpinning $334 billion in annual U.S.-Mexico trade on the horizon, the security calculus carries direct economic consequences.</div>
-  <a href="https://nypost.com/2026/03/01/opinion/trump-got-the-cartel-war-he-wanted-but-mexico-cant-win-alone/" class="read-more">Read more &rarr;</a>
+  <div class="story-headline">Argentina busca créditos bilaterales con EE.UU., Israel e Italia para evitar volver a Wall Street antes del vencimiento de julio</div>
+  <div class="story-body">El gobierno de Javier Milei explora préstamos directos entre países — con Washington, Roma y Tel Aviv como principales interlocutores — para cubrir el vencimiento de 4.200 millones de dólares con bonistas privados previsto para el 9 de julio, según fuentes con conocimiento directo citadas por La Nacion. El ministro Luis Caputo descarta una colocación en mercados internacionales mientras los rendimientos de un bono argentino a diez años superen el 9,5% anual. El gobierno advierte que no tiene apuro, aunque analistas señalan que el conflicto en Medio Oriente — con la guerra contra Irán — eleva la cautela inversora y complica el contexto para emergentes.</div>
+  <a href="https://www.lanacion.com.ar/economia/la-argentina-suma-conversaciones-con-varios-paises-para-financiarse-sin-volver-a-wall-street-nid05032026/" class="read-more">Leer m&aacute;s &rarr;</a>
 </div>
 
 <div class="divider">
@@ -324,12 +265,12 @@
 </div>
 <div class="story">
   <div class="story-meta">
-    <span class="story-source">CNBC</span>
-    <span class="story-tag">Markets</span>
+    <span class="story-source">Cointelegraph</span>
+    <span class="story-tag">Mercados</span>
   </div>
-  <div class="story-headline">Options-Based 'Overlay Everything' ETFs Swell to $270 Billion as Retail Investors Hedge a Jittery Market</div>
-  <div class="story-body">An estimated $170 billion is now invested in synthetic income ETFs using options strategies, with another $100 billion in buffer ETFs designed for downside protection — nearly all of it from retail investors and individual advisors, according to ETF Action's Mike Akins. The trend has accelerated as the S&P 500 has returned less than half a percentage point year-to-date, mega-cap tech balance sheets are deteriorating under AI capex loads, and gold has already gained 20% in 2026. Tidal Financial's Aga Kuplinska describes the current phase as the "overlay everything" era, with issuers applying options income and hedging layers to virtually every asset class, including growth-oriented tech strategies that historically never needed them.</div>
-  <a href="https://www.cnbc.com/2026/03/01/income-stocks-market-volatility.html" class="read-more">Read more &rarr;</a>
+  <div class="story-headline">La NYSE invierte en OKX a una valuación de 25.000 millones de dólares y planea llevar acciones tokenizadas a 120 millones de usuarios cripto</div>
+  <div class="story-body">Intercontinental Exchange, propietaria de la Bolsa de Nueva York, realizó una inversión de monto no revelado en el exchange de criptomonedas OKX, que fue valorado en 25.000 millones de dólares, y ocupará un asiento en su consejo de administración. El acuerdo contempla que OKX ofrezca acceso a futuros de ICE y a valores tokenizados de la NYSE a su base de aproximadamente 120 millones de cuentas, con implementación prevista para el segundo semestre de 2026. La operación es la más reciente de una serie: en noviembre de 2025 ICE anunció una inversión de 2.000 millones de dólares en Polymarket, y en enero declaró que desarrollaba infraestructura propia de trading en blockchain.</div>
+  <a href="https://es.cointelegraph.com/news/nyse-intercontinental-exchange-invests-okx-25b-valuation" class="read-more">Leer m&aacute;s &rarr;</a>
 </div>
 
 <div class="divider">
@@ -344,12 +285,52 @@
 </div>
 <div class="story">
   <div class="story-meta">
-    <span class="story-source">Fox News</span>
-    <span class="story-tag">Politics</span>
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">México</span>
   </div>
-  <div class="story-headline">DHS Shutdown Threatens FIFA World Cup Security Planning as Congress Remains Deadlocked</div>
-  <div class="story-body">With the Department of Homeland Security shuttered for two weeks amid a Senate funding standoff, congressional Republicans are warning that security preparations for the FIFA World Cup — set for June across twelve U.S. host cities — are falling behind. DHS is the lead federal agency for World Cup security coordination, and Senators Josh Hawley and John Cornyn have flagged the operational risk, while Democrats and the White House remain at an impasse over ICE reform conditions. The dispute also intersects directly with the USMCA renegotiation timeline, as the U.S., Canada, and Mexico are co-hosts and security conditions in all three countries will bear on trade and diplomatic leverage.</div>
-  <a href="https://www.foxnews.com/politics/gop-warns-democrats-dhs-shutdown-could-jeopardize-world-cup-security" class="read-more">Read more &rarr;</a>
+  <div class="story-headline">Dos empresas estadounidenses invertirán 500 mdd en infraestructura de carga eléctrica en el Bajío mexicano</div>
+  <div class="story-body">Invisible Urban Charging Inc. (Atlanta) y ATX Smart Mobility (Miami) supervisarán una inversión de 500 millones de dólares para desplegar 38 cargadores y 140 autobuses eléctricos en la región del Bajío — Ciudad de México, Estado de México, Puebla y Querétaro — en alianza con CBRE Group para la selección de ubicaciones. La apuesta responde a una brecha estructural: México tiene actualmente una proporción de 280 autos por cargador, cuando el estándar recomendado es de 40. La llegada de marcas chinas como BYD y Geely al mercado mexicano acelera la presión sobre la infraestructura de carga.</div>
+  <a href="https://www.elfinanciero.com.mx/economia/2026/03/05/que-empresas-de-eu-invertiran-500-mdd-en-mexico-y-en-que-sectores-apostaran/" class="read-more">Leer m&aacute;s &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">RT</span>
+    <span class="story-tag">Política</span>
+  </div>
+  <div class="story-headline">¿Qué puede perder España si EE.UU. ejecuta su amenaza de bloqueo comercial?</div>
+  <div class="story-body">Las amenazas de Trump contra España — que incluyeron la palabra 'embargo' — enfrentan un obstáculo jurídico de fondo: la política comercial europea es competencia de Bruselas, no de Madrid, por lo que cualquier represalia arancelaria afectaría a los 27 miembros de la UE. El secretario del Tesoro, Scott Bessent, solo aludió a dos artículos de la ley comercial estadounidense aplicables por razones de seguridad nacional o prácticas desleales, sin concretar medidas. La tensión escala en un momento en que Europa debate su posición frente a la guerra en Irán y su relación con una administración estadounidense cada vez más impredecible.</div>
+  <a href="https://actualidad.rt.com/actualidad/590921-perder-espana-eventual-bloqueo-eeuu" class="read-more">Leer m&aacute;s &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="story-headline">Gobernadores argentinos activan agendas propias: Santa Fe y Neuquén acuerdan integrar proveedores industriales a Vaca Muerta</div>
+  <div class="story-body">Los gobernadores Maximiliano Pullaro (Santa Fe) y Rolando Figueroa (Neuquén) firmaron un acuerdo para incorporar empresas santafesinas a la cadena de valor energética de Vaca Muerta, donde ya participan unas 350 firmas de esa provincia. El pacto incluye capacitación técnica, intercambio de tecnologías y acceso al programa Invierta Neuquén, que ofrece incentivos tributarios y crediticios. En paralelo, el gobernador chubutense Ignacio Torres participó del Consejo Interamericano de Comercio y Producción junto al presidente uruguayo Yamandú Orsi, buscando oportunidades de inversión bilateral.</div>
+  <a href="https://www.lanacion.com.ar/politica/los-gobernadores-activan-agendas-paralelas-para-tratar-de-dinamizar-la-produccion-en-sus-provincias-nid05032026/" class="read-more">Leer m&aacute;s &rarr;</a>
 </div>
 
   
@@ -365,37 +346,37 @@
 </div>
 
   <div class="currency">
-    <div class="section-title">Currency Table</div>
+    <div class="section-title">Tipo de Cambio</div>
     <table class="currency-table">
       <thead>
         <tr>
-          <th>Pair</th><th>Rate</th><th style="text-align:right;">Day</th><th style="text-align:right;">Week</th>
+          <th>Par</th><th>Tipo</th><th style="text-align:right;">1D</th><th style="text-align:right;">1S</th>
         </tr>
       </thead>
       <tbody>
       <tr>
         <td class="pair">USD / MXN</td>
-        <td>17.3773</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.01%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.68%</td>
+        <td>17.7915</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.13%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 2.74%</td>
       </tr>
       <tr>
         <td class="pair">EUR / MXN</td>
-        <td>20.2968</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.03%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.28%</td>
+        <td>20.6593</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.93%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.46%</td>
       </tr>
       <tr>
         <td class="pair">CAD / MXN</td>
-        <td>12.6760</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.78%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.58%</td>
+        <td>13.1182</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.74%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 3.55%</td>
       </tr>
       <tr>
         <td class="pair">CNY / MXN</td>
-        <td>119.5836</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.61%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.30%</td>
+        <td>122.6991</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.12%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 3.32%</td>
       </tr>
       </tbody>
     </table>
@@ -415,15 +396,84 @@
 
   <div class="quote">
     <span class="quote-mark">&ldquo;</span>
-    <div class="quote-text">Oil is the world's blood. When the arteries are blocked, everything else follows.</div>
-    <div class="quote-attr">Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991</div>
+    <div class="quote-text">In the business world, the rearview mirror is always clearer than the windshield.</div>
+    <div class="quote-attr">Warren Buffett, carta anual a accionistas de Berkshire Hathaway, 1989</div>
   </div>
 
   
 
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="week">
+  <div class="section-title">Resumen Semanal &middot; Mar 02-06, 2026</div>
+  <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Lun</div>
+          <div class="tl-dot active"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Energy</span>
+          <div class="tl-headline">Oil Surges 10% as Tankers Halt Near Strait of Hormuz Following Iran Strikes</div>
+          <div class="tl-body">Brent crude jumped 10% to roughly $80 a barrel on Sunday after the U.S.-Israel bombing campaign against Iran brought maritime traffic through the Strait of Horm...</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Mié</div>
+          <div class="tl-dot active"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Macro</span>
+          <div class="tl-headline">Guerra EEUU-Israel contra Irán entra en su cuarto día: embajada estadounidense en Riad atacada y mercados en alerta máxima</div>
+          <div class="tl-body">La ofensiva conjunta —denominada 'Operación Furia Épica' por Washington y 'Operación Rugido del León' por Tel Aviv— entró en su cuarto día con Irán respondiendo...</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Vie</div>
+          <div class="tl-dot "></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Comercio</span>
+          <div class="tl-headline">México y EE.UU. arrancan el 16 de marzo negociaciones bilaterales del T-MEC antes de la revisión formal de julio</div>
+          <div class="tl-body">El secretario mexicano de Economía, Marcelo Ebrard, y el representante comercial estadounidense, Jamieson Greer, confirmaron que el 16 de marzo inicia una prime...</div>
+        </div>
+      </div>
+  </div>
+</div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div style="padding:24px 48px 8px;">
+  <div class="section-title">La Semana en Palabras</div>
+  <img src="https://raw.githubusercontent.com/ExtremelyPowerfulCapybara/News-Digest/Dev-Nigg/docs/wordcloud-2026-W10.png" style="width:100%; border:1px solid #cdd4d9;" alt="Nube de palabras"/>
+</div>
+
   <div class="footer">
     <span class="footer-name">The Opening Bell</span>
-    <span class="footer-by">by Adrian</span>
+    <span class="footer-by">por Hugh Liquidity, Executive Director of Fragile Equilibrium</span>
   </div>
 
 </div>

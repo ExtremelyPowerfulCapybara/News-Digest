@@ -1,14 +1,14 @@
 # ─────────────────────────────────────────────
-#  .github/workflows/newsletter-dev.yml
+#  .github/workflows/newsletter-adrian.yml
 #
-#  Development/testing workflow.
-#  - Manual trigger only (no schedule)
-#  - Sends only to DEV_SUBSCRIBERS (just you)
-#  - Commits to dev branch, not main
-#  - Safe to run as many times as needed
+#  Adrian's personal test workflow.
+#  - Runs on Dev-Nigg branch (Adrian's branch)
+#  - Manual trigger only
+#  - Sends only to DEV_SUBSCRIBERS
+#  - Commits archive back to Dev-Nigg
 # ─────────────────────────────────────────────
 
-name: Newsletter Dev
+name: Newsletter Adrian
 
 on:
   workflow_dispatch:
@@ -21,6 +21,22 @@ on:
         options:
           - "false"
           - "true"
+      mock_mode:
+        description: "Mock mode? Skips NewsAPI + Anthropic, uses latest saved digest"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      skip_email:
+        description: "Skip email delivery? Renders archive HTML only"
+        required: false
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
 
 jobs:
   send-newsletter:
@@ -34,7 +50,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: dev  # always runs on dev branch
+          ref: Dev-Nigg
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -69,6 +85,9 @@ jobs:
           SUBSCRIBERS:       ${{ secrets.DEV_SUBSCRIBERS_CSV }}
           BANXICO_API_KEY:   ${{ secrets.BANXICO_API_KEY }}
           FORCE_FRIDAY:      ${{ github.event.inputs.friday_mode }}
+          MOCK:              ${{ github.event.inputs.mock_mode }}
+          SKIP_EMAIL:        ${{ github.event.inputs.skip_email }}
+          GITHUB_RAW_URL:    "https://raw.githubusercontent.com/ExtremelyPowerfulCapybara/News-Digest/Dev-Nigg/docs/"
         run: python main.py
 
       - name: Commit and push archive
@@ -81,6 +100,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "Nothing new to commit."
           else
-            git commit -m "[DEV] Issue: $(date +'%Y-%m-%d')"
-            git push origin dev
+            git commit -m "[ADRIAN] Issue: $(date +'%Y-%m-%d')"
+            git push origin Dev-Nigg
           fi

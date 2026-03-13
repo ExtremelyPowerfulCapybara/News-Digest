@@ -83,10 +83,37 @@ AUTHOR_TITLES = [
 ]
 
 # ── News preferences ──────────────────────────
-TOPICS = ["Spain economy", "Spain finance", "euro markets", "Spain trade", "economia España"]
+TOPICS                 = ["finanzas", "economía", "México", "comercio", "mercados", "política", "criptomonedas"]
 LANGUAGE               = "es"
-MAX_ARTICLES_PER_TOPIC = 10
-MAX_ARTICLE_CHARS      = 8092
+MAX_ARTICLES_PER_TOPIC  = 5
+MAX_ARTICLES_PER_SOURCE = 1   # cap per outlet across all topics
+MAX_ARTICLE_CHARS       = 3000
+
+# ── Domain allowlist ─────────────────────────
+# NewsAPI accepts up to 20 domains as a comma-separated string.
+# Only articles from these outlets will be fetched.
+NEWS_DOMAINS = [
+    # Primary: LatAm & Mexico financial
+    "bloomberglinea.com",
+    "elfinanciero.com.mx",
+    "eleconomista.com.mx",
+    "expansion.mx",
+    # Primary: Global Spanish financial
+    "elpais.com",
+    "cincodias.elpais.com",
+    "ambito.com",
+    # Primary: Wire services
+    "reuters.com",
+    "apnews.com",
+    # Secondary: Regional depth
+    "infobae.com",
+    "lanacion.com.ar",
+    "eluniversal.com.mx",
+    # Secondary: English signal layer
+    "ft.com",
+    "wsj.com",
+]
+NEWS_DOMAINS_STR = ",".join(NEWS_DOMAINS)
 
 # ── Market tickers (Yahoo Finance symbols) ────
 TICKER_SYMBOLS = [
@@ -96,7 +123,21 @@ TICKER_SYMBOLS = [
     ("DAX",        "^GDAXI"),
 ]
 # ── Currency table ────────────────────────────
-CURRENCY_PAIRS = ["USD", "GBP", "CHF", "JPY"]
+# Base currencies available as toggle options in the browser version.
+CURRENCY_BASES = ["MXN", "USD", "BRL", "EUR", "CNY"]
+
+# All currencies included in the cross-rate matrix.
+CURRENCY_PAIRS = ["MXN", "USD", "BRL", "EUR", "CNY", "CAD", "GBP", "JPY"]
+
+# Email version: always USD as base, these four quote currencies only.
+EMAIL_CURRENCY_BASE   = "USD"
+EMAIL_CURRENCY_QUOTES = ["MXN", "EUR", "GBP", "CNY"]
+
+# Mock mode: set MOCK=true to skip NewsAPI + Anthropic calls.
+MOCK_MODE = os.environ.get("MOCK", "false").lower() == "true"
+
+# Skip email delivery (preview/archive only).
+SKIP_EMAIL = os.environ.get("SKIP_EMAIL", "false").lower() == "true"
 
 # ── Weather (Open-Meteo, no API key needed) ───
 WEATHER_LAT  = 40.4168
@@ -110,3 +151,16 @@ import pathlib
 REPO_ROOT   = pathlib.Path(__file__).parent.parent
 DIGEST_DIR  = str(REPO_ROOT / "digests")
 ARCHIVE_DIR = str(REPO_ROOT / "docs")
+
+# ── Archive / asset URLs ───────────────────────
+# GITHUB_PAGES_URL: always the rendered GitHub Pages site.
+# Used for navigation links (preheader, footer, archive index).
+GITHUB_PAGES_URL = "https://extremelypowerfulcapybara.github.io/News-Digest"
+
+# ASSET_BASE_URL: used only for asset src attributes (e.g. wordcloud PNG).
+# In dev runs, GITHUB_RAW_URL is injected by the workflow so assets
+# are served from the dev branch without needing a Pages deploy.
+ASSET_BASE_URL = os.environ.get(
+    "GITHUB_RAW_URL",
+    "https://extremelypowerfulcapybara.github.io/News-Digest/"
+)

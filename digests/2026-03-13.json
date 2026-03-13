@@ -1,0 +1,611 @@
+{
+  "date": "2026-03-13",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el estrecho de Ormuz sigue prácticamente cerrado, el petróleo oscila entre $80 y $100 por barril según el último tuit presidencial, y The Economist ya habla de 'una nueva era de inseguridad energética' — bienvenidos al jueves. Mientras tanto, México lanza misiones comerciales a Canadá, negocia el T-MEC y corteja al BID, todo con la elegancia de quien réorganiza los muebles durante un terremoto.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 38,
+        "context_es": "El conflicto en Medio Oriente mantiene los mercados en vilo con el petróleo volátil, mientras la agenda comercial de México aporta señales constructivas que no alcanzan a compensar la incertidumbre geopolítica.",
+        "context_en": "The Middle East conflict keeps markets on edge with volatile oil prices, while Mexico's trade agenda provides constructive signals that fall short of offsetting geopolitical uncertainty."
+      },
+      "stories": [
+        {
+          "source": "La Nacion",
+          "headline": "Conflicto en Medio Oriente dispara el petróleo y amenaza con nueva era de inseguridad energética global",
+          "body": "El cierre de facto del estrecho de Ormuz por parte de Irán ha bloqueado aproximadamente el 15% del suministro mundial de petróleo, llevando el crudo a casi $120 por barril antes de retroceder a torno a los $100 tras señales de desescalada de Trump. The Economist advierte que la pérdida de suministro es mayor que en cualquiera de las crisis de los años 70, y que un cierre indefinido del estrecho podría llevar el barril a superar los $150. La Agencia Internacional de la Energía liberó 400 millones de barriles de reservas de emergencia, pero las restricciones logísticas limitan su impacto efectivo.",
+          "url": "https://www.lanacion.com.ar/economia/un-ataque-a-la-economia-mundial-las-consecuencias-del-conflicto-en-medio-oriente-segun-the-economist-nid12032026/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México y EU abren primera ronda del T-MEC con foco en reducir dependencia de Asia y seguridad de cadenas de suministro",
+          "body": "El secretario de Economía Marcelo Ebrard confirmó que la agenda inicial de negociación con Estados Unidos incluirá tres ejes: reducción de la dependencia de insumos asiáticos, revisión de reglas de origen y seguridad de suministros para América del Norte. Ebrard subrayó que el 85% del comercio exterior mexicano no está afectado por la investigación bajo la Sección 301, lo que acota el riesgo arancelario inmediato para México. La reunión también definirá la metodología para las rondas subsecuentes y qué capítulos específicos del tratado serán objeto de revisión.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/12/revision-del-t-mec-seguridad-de-cadenas-de-suministro-sera-relevante-en-negociacion-con-eu/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México lanza misión comercial a Canadá 'la más grande del siglo' con arancel cero en 99% de bienes bajo T-MEC",
+          "body": "El gobierno mexicano organizará una misión comercial a Toronto, Montreal y Vancouver del 7 al 9 de mayo, respondiendo a una instrucción directa derivada de los acuerdos entre la presidenta Claudia Sheinbaum y el primer ministro Mark Carney. México es ya el cuarto socio comercial de Canadá y el segundo destino de exportaciones canadienses en 2025, con un crecimiento del 17% interanual. La relación bilateral suma más de $100,000 millones de dólares, incluyendo $40,000 millones en comercio de bienes y $60,000 millones en inversión.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/12/mexico-lanza-mision-comercial-a-canada-mas-grande-del-siglo-economia-presenta-iniciativa/",
+          "tag": "México"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "BID duplicará financiamiento para América Latina a $500,000 millones en una década; México en la mira para energía",
+          "body": "El presidente del Grupo BID, Ilan Goldfajn, anunció que el organismo desplegará hasta $500,000 millones de dólares en financiamiento para América Latina y el Caribe en los próximos diez años, el doble de lo canalizado en la última década. México tiene acceso a un cupo máximo de $25,000 millones hasta el cierre del sexenio de Sheinbaum, con prioridad en proyectos energéticos, cadenas de suministro y exportaciones hacia Estados Unidos. BID Invest ya vinculó a más de 3,000 pymes mexicanas dentro de cadenas de valor exportadoras.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/12/mexico-podria-recibir-parte-de-los-500-mil-mdd-que-el-bid-destinara-para-proyectos-energeticos/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Inflación de 2.9% en Argentina eleva el techo de la banda cambiaria a más de $1,700 para abril",
+          "body": "El Indec confirmó una inflación mensual de 2.9% en febrero — segundo mes consecutivo en ese nivel —, lo que empujará el techo de la banda cambiaria a aproximadamente $1,703 para fines de abril, según el nuevo esquema de indexación del BCRA vigente desde enero. El tipo de cambio oficial mayorista cerró este jueves en $1,395.89, con una distancia de $230.58 respecto al techo, equivalente al 16.5% — la mayor brecha desde julio pasado. El analista Christian Buteler señala que el techo funciona como ancla de expectativas, aunque recuerda que en cuatro ocasiones electorales el año pasado el BCRA tuvo que intervenir vendiendo divisas al llegar al límite superior.",
+          "url": "https://www.lanacion.com.ar/economia/dolar/ajusta-por-inflacion-el-techo-de-la-banda-cambiaria-superara-los-1700-en-abril-nid12032026/",
+          "tag": "FX"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Recortes del DOGE amenazan con colapsar el Seguro Social de EE.UU., que cubre a 75 millones de beneficiarios",
+          "body": "Bob Caldwell, exfuncionario con 14 años en la Administración del Seguro Social (SSA), advirtió que la reducción de personal impulsada por el DOGE podría llevar al programa a un punto de quiebre, afectando a los aproximadamente 75 millones de beneficiarios que dependen de él para cubrir vivienda, medicamentos y gastos básicos. Caldwell sostuvo que los problemas son estructurales y anteriores a las actuales purgas: 'simplemente con falta de personal, incluso antes del DOGE, sería fácil hacer colapsar todo el programa'. Las manifestaciones ciudadanas frente a oficinas de la SSA se multiplican en ciudades como Chico, California.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/no-podran-renovar-la-advertencia-sobre-el-colapso-del-seguro-social-que-pone-en-jaque-a-los-nid12032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Estafas cuestan $119,000 millones anuales en EE.UU. y la IA acelera el fraude con mínima mano de obra humana",
+          "body": "La Consumer Federation of America estima que los fraudes generan pérdidas de $119,000 millones al año en Estados Unidos, cifra calculada extrapolando el subregistro oficial — el gobierno solo se entera del 14% de los delitos. Las estafas de inversión, especialmente en criptomonedas mediante la técnica 'pig butchering', representaron $46,600 millones en 2024 según proyecciones de la CFA, frente a los $6,600 millones reportados al FBI. Los estafadores utilizan inteligencia artificial para reducir la mano de obra necesaria y compran bases de datos de intermediarios como Epsilon Data Management para focalizar sus ataques en perfiles vulnerables.",
+          "url": "https://www.lanacion.com.ar/economia/IA/fraudes-y-enganos-estiman-perdidas-por-us119000-millones-al-ano-en-eeuu-nid12032026/",
+          "tag": "Mercados"
+        }
+      ],
+      "quote": {
+        "text": "The first panacea for a mismanaged nation is inflation of the currency; the second is war. Both bring a temporary prosperity; both bring a permanent ruin.",
+        "attribution": "Ernest Hemingway, Notes on the Next War, Esquire, 1935"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the Strait of Hormuz remains effectively closed, oil swings between $80 and $100 per barrel depending on the last presidential tweet, and The Economist is already calling it 'a new era of energy insecurity' — welcome to Thursday. Meanwhile, Mexico launches trade missions to Canada, renegotiates USMCA, and courts the IDB, all with the elegance of someone rearranging furniture during an earthquake.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 38,
+        "context_es": "El conflicto en Medio Oriente mantiene los mercados en vilo con el petróleo volátil, mientras la agenda comercial de México aporta señales constructivas que no alcanzan a compensar la incertidumbre geopolítica.",
+        "context_en": "The Middle East conflict keeps markets on edge with volatile oil prices, while Mexico's trade agenda provides constructive signals that fall short of offsetting geopolitical uncertainty."
+      },
+      "stories": [
+        {
+          "source": "La Nacion",
+          "headline": "Middle East conflict sends oil surging and threatens a new era of global energy insecurity",
+          "body": "Iran's de facto closure of the Strait of Hormuz has blocked approximately 15% of global oil supply, pushing crude to nearly $120 per barrel before retreating to around $100 on Trump's de-escalation signals. The Economist warns that the supply disruption is larger than any seen during the 1970s crises, and that an indefinite closure could drive oil above $150 per barrel. The International Energy Agency released 400 million barrels from emergency reserves, but logistical constraints limit their effective impact.",
+          "url": "https://www.lanacion.com.ar/economia/un-ataque-a-la-economia-mundial-las-consecuencias-del-conflicto-en-medio-oriente-segun-the-economist-nid12032026/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico and U.S. open first USMCA round focused on reducing Asia dependence and supply chain security",
+          "body": "Economy Secretary Marcelo Ebrard confirmed that the initial negotiating agenda with the United States will cover three priorities: reducing dependence on Asian inputs, reviewing rules of origin, and securing North American supply chains. Ebrard stressed that 85% of Mexico's foreign trade is unaffected by the Section 301 investigation, limiting Mexico's immediate tariff exposure. The meeting will also establish the methodology for subsequent rounds and identify which specific treaty chapters will be subject to review.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/12/revision-del-t-mec-seguridad-de-cadenas-de-suministro-sera-relevante-en-negociacion-con-eu/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico launches 'largest commercial mission of the century' to Canada with zero tariffs on 99% of USMCA goods",
+          "body": "The Mexican government will organize a commercial mission to Toronto, Montreal, and Vancouver from May 7–9, following direct instructions stemming from agreements between President Claudia Sheinbaum and Prime Minister Mark Carney. Mexico is already Canada's fourth-largest trading partner and the second-largest destination for Canadian exports in 2025, with 17% year-over-year growth. The bilateral relationship totals more than $100 billion, including $40 billion in goods trade and $60 billion in investment.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/12/mexico-lanza-mision-comercial-a-canada-mas-grande-del-siglo-economia-presenta-iniciativa/",
+          "tag": "México"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "IDB to double Latin America financing to $500 billion over a decade; Mexico targeted for energy investments",
+          "body": "IDB Group President Ilan Goldfajn announced the institution will deploy up to $500 billion in financing for Latin America and the Caribbean over the next ten years, double what was channeled in the previous decade. Mexico has access to a maximum of $25 billion through the end of President Sheinbaum's term, with priority in energy projects, supply chains, and U.S.-bound exports. IDB Invest has already connected more than 3,000 Mexican SMEs within export-oriented value chains.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/12/mexico-podria-recibir-parte-de-los-500-mil-mdd-que-el-bid-destinara-para-proyectos-energeticos/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina's 2.9% inflation pushes the exchange rate band ceiling above $1,700 for April",
+          "body": "INDEC confirmed monthly inflation of 2.9% for February — the second consecutive month at that level — which will push the BCRA's exchange rate band ceiling to approximately $1,703 by end of April under the new indexation scheme in place since January. The official wholesale exchange rate closed Thursday at $1,395.89, sitting $230.58 below the ceiling — a 16.5% gap, the widest since last July. Analyst Christian Buteler notes the ceiling functions as an expectations anchor, though he recalls that on four electoral occasions last year the BCRA was forced to sell foreign currency upon reaching the upper limit.",
+          "url": "https://www.lanacion.com.ar/economia/dolar/ajusta-por-inflacion-el-techo-de-la-banda-cambiaria-superara-los-1700-en-abril-nid12032026/",
+          "tag": "FX"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "DOGE staff cuts threaten to collapse U.S. Social Security, which serves 75 million beneficiaries",
+          "body": "Bob Caldwell, a former Social Security Administration (SSA) official with 14 years at the agency, warned that DOGE-driven staffing cuts could push the program to a breaking point, threatening the roughly 75 million beneficiaries who rely on it for housing, medication, and basic expenses. Caldwell argued that the problems are structural and predate the current purges: 'simply through understaffing, even before DOGE, it would be easy to collapse the entire program.' Citizen protests in front of SSA offices are multiplying across cities such as Chico, California.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/no-podran-renovar-la-advertencia-sobre-el-colapso-del-seguro-social-que-pone-en-jaque-a-los-nid12032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Fraud costs the U.S. $119 billion annually as AI accelerates scams with minimal human labor",
+          "body": "The Consumer Federation of America estimates that fraud generates $119 billion in annual losses in the United States, a figure derived by extrapolating the official underreporting rate — the government learns of only 14% of such crimes. Investment scams, especially cryptocurrency fraud via 'pig butchering,' accounted for an estimated $46.6 billion in 2024 according to CFA projections, versus the $6.6 billion reported to the FBI. Scammers are using artificial intelligence to reduce the workforce needed to deceive victims and purchase targeted databases from data brokers like Epsilon Data Management to focus attacks on vulnerable profiles.",
+          "url": "https://www.lanacion.com.ar/economia/IA/fraudes-y-enganos-estiman-perdidas-por-us119000-millones-al-ano-en-eeuu-nid12032026/",
+          "tag": "Mercados"
+        }
+      ],
+      "quote": {
+        "text": "The first panacea for a mismanaged nation is inflation of the currency; the second is war. Both bring a temporary prosperity; both bring a permanent ruin.",
+        "attribution": "Ernest Hemingway, Notes on the Next War, Esquire, 1935"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.95",
+        "change": "▲ 1.2%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,632",
+        "change": "▼ 2.1%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "65,648.91",
+        "change": "▼ 0.7%",
+        "direction": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05571",
+            "chg_1d": {
+              "text": "▼ 0.64%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.24%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2969",
+            "chg_1d": {
+              "text": "▲ 0.97%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.87%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04877",
+            "chg_1d": {
+              "text": "▲ 0.21%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.12%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3842",
+            "chg_1d": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.22%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0764",
+            "chg_1d": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.09%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04213",
+            "chg_1d": {
+              "text": "▲ 0.33%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.83%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.90",
+            "chg_1d": {
+              "text": "▼ 0.32%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.05%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.9500",
+            "chg_1d": {
+              "text": "▲ 0.65%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.24%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.3292",
+            "chg_1d": {
+              "text": "▲ 1.63%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.63%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.87543",
+            "chg_1d": {
+              "text": "▲ 0.86%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.88%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.8956",
+            "chg_1d": {
+              "text": "▲ 0.39%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.01%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3718",
+            "chg_1d": {
+              "text": "▲ 0.63%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.85%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75626",
+            "chg_1d": {
+              "text": "▲ 0.98%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.59%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "159.72",
+            "chg_1d": {
+              "text": "▲ 0.32%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.82%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.3682",
+            "chg_1d": {
+              "text": "▼ 0.96%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.84%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.18765",
+            "chg_1d": {
+              "text": "▼ 1.60%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.61%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16427",
+            "chg_1d": {
+              "text": "▼ 0.75%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.74%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.2939",
+            "chg_1d": {
+              "text": "▼ 1.22%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.62%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2574",
+            "chg_1d": {
+              "text": "▼ 0.98%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.77%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14191",
+            "chg_1d": {
+              "text": "▼ 0.64%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.03%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "29.97",
+            "chg_1d": {
+              "text": "▼ 1.28%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.81%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.5043",
+            "chg_1d": {
+              "text": "▼ 0.21%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.10%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.14230",
+            "chg_1d": {
+              "text": "▼ 0.86%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.87%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "6.0875",
+            "chg_1d": {
+              "text": "▲ 0.76%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.75%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.8768",
+            "chg_1d": {
+              "text": "▼ 0.47%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.88%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.5670",
+            "chg_1d": {
+              "text": "▼ 0.24%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.86387",
+            "chg_1d": {
+              "text": "▲ 0.11%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.28%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "182.45",
+            "chg_1d": {
+              "text": "▼ 0.54%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.6031",
+            "chg_1d": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.22%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14502",
+            "chg_1d": {
+              "text": "▼ 0.39%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.01%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7728",
+            "chg_1d": {
+              "text": "▲ 1.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.65%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12695",
+            "chg_1d": {
+              "text": "▲ 0.47%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.89%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.1989",
+            "chg_1d": {
+              "text": "▲ 0.24%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.87%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.10967",
+            "chg_1d": {
+              "text": "▲ 0.59%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.60%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.16",
+            "chg_1d": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.83%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "22°C",
+    "high_low": "23°C / 10°C",
+    "humidity": "Humidity 34%",
+    "desc": "Partly cloudy"
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "date": "2026-03-03",
+  "digest": {
+    "editor_note": "Fellow Humans, a war is now pricing into everything. U.S. and Israeli airstrikes on Iran have effectively shut down the Strait of Hormuz, Brent is up nearly 7%, and the Fed's already precarious inflation calculus just got significantly more complicated. We are three days into a conflict with no exit ramp, a dead Supreme Leader, and a president who says four to five weeks — minimum.",
+    "sentiment": {
+      "label": "Risk-Off",
+      "position": 12,
+      "context": "Active U.S.-Israeli military campaign against Iran, Hormuz disruption, and a 6.7% oil spike are driving acute risk aversion across energy, rates, and broader markets."
+    },
+    "stories": [
+      {
+        "source": "Associated Press",
+        "headline": "U.S.-Israeli Strikes on Iran Escalate; Khamenei Dead, Hormuz Effectively Closed",
+        "body": "Joint U.S.-Israeli airstrikes continued for a third day across Tehran and Iranian-allied targets in Lebanon, Qatar, and Saudi Arabia, killing Supreme Leader Ayatollah Ali Khamenei. Three American fighter jets were downed by friendly Kuwaiti fire during an Iranian air assault. Trump says the campaign will likely run four to five weeks, with no diplomatic off-ramp in sight — a scenario that markets are only beginning to price.",
+        "url": "https://apnews.com/article/iran-israel-us-03-02-2026-cb42936de1d8c261be8f30f11c6665fa",
+        "tag": "Politics"
+      },
+      {
+        "source": "Yahoo Finance / Bloomberg",
+        "headline": "Brent Surges 6.7% as Hormuz Traffic Halts; RBC Sees $100+ Oil in Prolonged Conflict",
+        "body": "Brent crude settled near $78 a barrel — its biggest single-day gain since June 2025 — after Iran's IRGC declared it would block oil from leaving the region and Saudi Aramco halted operations at its Ras Tanura refinery following a drone strike. Diesel futures hit a near three-year high. RBC's Helima Croft warned of oil in the triple digits in a prolonged conflict scenario; JPMorgan estimates a 25-day Hormuz closure would force producer nations to cut output as storage fills.",
+        "url": "https://finance.yahoo.com/news/oil-spikes-hormuz-disruptions-middle-073109204.html",
+        "tag": "Energy"
+      },
+      {
+        "source": "Yahoo Finance / Bloomberg",
+        "headline": "Oil Shock Complicates Fed's Path as Inflation Risk Reignites",
+        "body": "A sustained energy price shock of this magnitude would feed directly into headline inflation at a moment when the Federal Reserve is already navigating a narrow corridor between price stability and growth support. U.S. Secretary of State Marco Rubio said a program to mitigate energy cost impacts would begin Tuesday, though the mechanism remains vague. Central banks globally are now watching the Strait of Hormuz as closely as any data release.",
+        "url": "https://finance.yahoo.com/news/oil-spikes-hormuz-disruptions-middle-073109204.html",
+        "tag": "Macro"
+      },
+      {
+        "source": "EWTN News",
+        "headline": "Mexico Border Shelters Pivot to 'Reverse Migration' as U.S. Deportation Flows Intensify",
+        "body": "Catholic migrant shelters along Mexico's northern and southern borders are adapting to a structural shift: mass northward migration has slowed to a trickle, with U.S. Border Patrol recording just 237,538 encounters in fiscal 2025 — the lowest since 1970 — while repatriated migrants and those awaiting Mexican asylum processing now dominate shelter populations. The shelter in Tapachula, once housing 500 people continuously, now serves 80–120 daily. The human geography of the U.S.-Mexico corridor is being redrawn in real time.",
+        "url": "https://www.ewtnnews.com/world/americas/reverse-migration-catholic-shelters-in-mexico-serve-repatriated-migrants-and-foreigners-who",
+        "tag": "Mexico"
+      },
+      {
+        "source": "The Local Germany",
+        "headline": "IG Metall Takes On Tesla in High-Stakes Works Council Election at Berlin Gigafactory",
+        "body": "Germany's IG Metall union launched a three-day ballot this week to reclaim control of the works council at Tesla's Gruenheide plant, which employs roughly 10,000 workers. The union, which won 39% in 2024 before being outmaneuvered by four pro-management lists, is accusing Tesla of union busting, covert redundancies, and discriminatory promotion practices. The outcome matters beyond Tesla: a non-union works council majority at a major German automotive plant remains almost without precedent in the country's industrial history.",
+        "url": "https://www.thelocal.de/20260302/labour-union-gears-up-to-take-on-tesla-in-germany",
+        "tag": "Markets"
+      },
+      {
+        "source": "The Real Deal",
+        "headline": "Miami-Dade Developer Gold Rush Targets 10,000 Public Housing Units Under Federal RAD Program",
+        "body": "More than half a dozen redevelopment projects have cleared Miami-Dade commissioners in the past year under HUD's Rental Assistance Demonstration program, with Swerdlow Group alone planning 5,730 units across 35 acres in the Little River neighborhood — 314 reserved for existing tenants. Developers gain long-term land leases at deep discounts on prime urban sites; the county gets lease revenue and a partial answer to its status as the U.S. affordability crisis epicenter. New York leads nationally with 40,000 RAD units complete and 22,000 in the pipeline.",
+        "url": "https://therealdeal.com/magazine/march-2026/inside-the-developer-gold-rush-to-update-miami-dades-aging-public-housing/",
+        "tag": "Macro"
+      },
+      {
+        "source": "Financial Post / Globe Newswire",
+        "headline": "Endeavour Silver Overhauls Leadership as Terronera Ramp-Up Enters Execution Phase",
+        "body": "Endeavour Silver (NYSE: EXK) appointed George Paspalas — former CEO of MAG Silver, which was sold to Pan American Silver — to its board, while COO Don Gray retires April 30 after steering the Terronera project from exploration to production. Luis Castro steps in as COO. The reshuffle signals the company is shifting from development mode to operational delivery at a moment when silver's geopolitical safe-haven bid is arguably firming.",
+        "url": "https://financialpost.com/globe-newswire/endeavour-silver-announces-board-and-management-updates",
+        "tag": "Mexico"
+      }
+    ],
+    "quote": {
+      "text": "Oil is the lifeblood of the industrial civilization and its flow is not guaranteed.",
+      "attribution": "Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991"
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.50",
+        "change": "▲ 1.1%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,882",
+        "change": "▼ 0.4%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.83%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "70,584.75",
+        "change": "▼ 1.1%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.4987",
+        "chg_1d": {
+          "text": "▲ 1.05%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 1.86%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.2876",
+        "chg_1d": {
+          "text": "▼ 0.37%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▲ 0.30%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "12.7623",
+        "chg_1d": {
+          "text": "▲ 0.74%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 1.79%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "120.7253",
+        "chg_1d": {
+          "text": "▲ 1.66%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 2.10%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "9°C",
+    "high_low": "24°C / 8°C",
+    "humidity": "Humidity 54%",
+    "desc": "Clear skies"
+  }
+}

@@ -4,16 +4,10 @@
 #  No flexbox, no grid, no external CSS classes. pasidaas
 # ─────────────────────────────────────────────
 
-import hashlib
 from datetime import date, timedelta
-from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE, AUTHOR_NAME, AUTHOR_NAMES, AUTHOR_TITLES
-from archive import GITHUB_PAGES_URL
-
-# Pick a name and title that rotates daily but stays fixed within one day's run
-_seed       = int(hashlib.md5(str(date.today()).encode()).hexdigest(), 16)
-AUTHOR_BYLINE_NAME  = AUTHOR_NAMES[_seed % len(AUTHOR_NAMES)]
-AUTHOR_BYLINE_TITLE = AUTHOR_TITLES[(_seed // len(AUTHOR_NAMES)) % len(AUTHOR_TITLES)]
-AUTHOR_BYLINE       = f"{AUTHOR_BYLINE_NAME}, {AUTHOR_BYLINE_TITLE}"
+from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE
+from config import GITHUB_PAGES_URL, ASSET_BASE_URL
+from config import EMAIL_CURRENCY_BASE, EMAIL_CURRENCY_QUOTES
 
 # ── Shared style constants ────────────────────
 BG_OUTER   = "#dde3e8"
@@ -55,7 +49,11 @@ def _divider() -> str:
 
 
 def _header(issue_number: int) -> str:
-    today = date.today().strftime("%A, %d de %B de %Y").upper()
+    d = date.today()
+    days_es   = ["LUNES","MARTES","MIÉRCOLES","JUEVES","VIERNES","SÁBADO","DOMINGO"]
+    months_es = ["","ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO",
+                 "JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE"]
+    today = f"{days_es[d.weekday()]}, {d.day:02d} DE {months_es[d.month]} DE {d.year}"
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
@@ -65,7 +63,7 @@ def _header(issue_number: int) -> str:
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td style="font-family:{FONT_SANS}; font-size:10px; color:#888888; letter-spacing:1px;">{today}</td>
-          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#888888; letter-spacing:1px;">NÚMERO {issue_number}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#888888; letter-spacing:1px;">EDICIÓN NO. {issue_number}</td>
         </tr>
       </table>
     </td>
@@ -124,36 +122,36 @@ def _weather(w: dict) -> str:
 </table>"""
 
 
-def _editor_note(note: str) -> str:
+def _editor_note(note: str, author: str = "") -> str:
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
     <td style="padding:28px 48px;">
       <p style="margin:0 0 12px 0; font-family:{FONT_SERIF}; font-style:italic; font-size:15px; color:#444444; line-height:1.8;">{note}</p>
-      <p style="margin:0; font-family:{FONT_SANS}; font-size:10px; color:#999999; letter-spacing:1px; text-transform:uppercase;">&#8212; {AUTHOR_BYLINE}</p>
+      <p style="margin:0; font-family:{FONT_SANS}; font-size:10px; color:#999999; letter-spacing:1px; text-transform:uppercase;">&#8212; {author}</p>
     </td>
   </tr>
 </table>"""
 
 
 def _sentiment(s: dict) -> str:
-    label   = s.get("label", "Cautious")
-    context = s.get("context", "")
+    label_en = s.get("label_en", s.get("label", "Cautious"))
+    label_es = s.get("label_es", s.get("label", "Cauteloso"))
+    context  = s.get("context_es", s.get("context", ""))
 
     label_es = {"Risk-Off": "Riesgo Bajo", "Cautious": "Cauteloso", "Risk-On": "Riesgo Alto"}.get(label, label)
 
     style_map = {
-        "Risk-Off": ("background:#fde8e6; color:#b84a3a; border:1px solid #f0c0ba;", "#b84a3a"),
-        "Cautious": ("background:#fef3e2; color:#9a6a1a; border:1px solid #f0d8a0;", "#e8a030"),
-        "Risk-On":  ("background:#e6f4ec; color:#2e7a4a; border:1px solid #b0d8c0;", "#4a9e6a"),
+        "Aversión al Riesgo": ("background:#fde8e6; color:#b84a3a; border:1px solid #f0c0ba;", "#b84a3a"),
+        "Cauteloso":          ("background:#fef3e2; color:#9a6a1a; border:1px solid #f0d8a0;", "#e8a030"),
+        "Apetito por Riesgo": ("background:#e6f4ec; color:#2e7a4a; border:1px solid #b0d8c0;", "#4a9e6a"),
     }
     inactive_style = f"background:transparent; color:#bbc8d0; border:1px solid {BORDER_DIM};"
     inactive_dot   = "#cdd4d9"
 
     pills_html = ""
-    for p in ["Risk-Off", "Cautious", "Risk-On"]:
-        p_es = {"Risk-Off": "Riesgo Bajo", "Cautious": "Cauteloso", "Risk-On": "Riesgo Alto"}.get(p, p)
-        pill_style, dot_color = style_map[p] if p == label else (inactive_style, inactive_dot)
+    for p in ["Aversión al Riesgo", "Cauteloso", "Apetito por Riesgo"]:
+        pill_style, dot_color = style_map[p] if p == label_es else (inactive_style, inactive_dot)
         pills_html += f"""
           <td style="padding-right:8px; white-space:nowrap;">
             <span style="display:inline-block; {pill_style} padding:5px 14px; border-radius:20px; font-family:{FONT_SANS}; font-size:10px; font-weight:bold; letter-spacing:1px; text-transform:uppercase;">
@@ -167,7 +165,7 @@ def _sentiment(s: dict) -> str:
     <td style="padding:24px 48px;">
       <table cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td style="font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:{TEXT_LIGHT}; vertical-align:middle; padding-right:12px; white-space:nowrap;">Sentimiento</td>
+          <td style="font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:{TEXT_LIGHT}; vertical-align:middle; padding-right:12px; white-space:nowrap;">Sentimiento del Día</td>
           {pills_html}
         </tr>
       </table>
@@ -212,7 +210,7 @@ def _currency_table(rows: list[dict]) -> str:
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
     <td style="padding:24px 48px;">
-      <p style="margin:0 0 14px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Tabla de Divisas</p>
+      <p style="margin:0 0 14px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Tipo de Cambio</p>
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <th align="left"  style="{th}">Par</th>
@@ -269,7 +267,7 @@ def _week_review(stories: list[dict]) -> str:
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
     <td style="padding:24px 48px;">
-      <p style="margin:0 0 18px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Resumen de la Semana &middot; {label}</p>
+      <p style="margin:0 0 18px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Resumen Semanal &middot; {label}</p>
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         {rows}
       </table>
@@ -278,7 +276,7 @@ def _week_review(stories: list[dict]) -> str:
 </table>"""
 
 
-def _footer(issue_date: str = "") -> str:
+def _footer(issue_date: str = "", author: str = "") -> str:
     archive_link = ""
     if GITHUB_PAGES_URL and issue_date:
         archive_link = f'&nbsp;&middot;&nbsp;<a href="{GITHUB_PAGES_URL}/index.html" style="color:#666666; text-decoration:none; letter-spacing:1px;">Archivo</a>'
@@ -289,7 +287,7 @@ def _footer(issue_date: str = "") -> str:
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td style="font-family:{FONT_SERIF}; font-size:14px; color:#f5f2ed;">{NEWSLETTER_NAME}</td>
-          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#666666; letter-spacing:1px;">por {AUTHOR_NAME} &middot; Darse de baja{archive_link}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#666666; letter-spacing:1px;">por {author} &middot; Cancelar suscripción{archive_link}</td>
         </tr>
       </table>
     </td>
@@ -300,13 +298,15 @@ def _footer(issue_date: str = "") -> str:
 # ── Main builder ──────────────────────────────
 
 def build_html(
-    digest:       dict,
-    tickers:      list[dict],
-    currency:     list[dict],
-    weather:      dict,
-    week_stories: list[dict],
-    issue_number: int = 1,
-    is_friday:    bool = False,
+    digest:             dict,
+    tickers:            list[dict],
+    currency:           dict,
+    weather:            dict,
+    week_stories:       list[dict],
+    issue_number:       int = 1,
+    is_friday:          bool = False,
+    wordcloud_filename: str | None = None,
+    author:             str = "",
 ) -> str:
 
     stories_html = ""
@@ -325,8 +325,9 @@ def build_html(
 
     preheader = ""
     if GITHUB_PAGES_URL:
-        issue_url   = f"{GITHUB_PAGES_URL}/{today_iso}.html"
-        archive_url = f"{GITHUB_PAGES_URL}/index.html"
+        base        = GITHUB_PAGES_URL.rstrip("/")
+        issue_url   = f"{base}/{today_iso}.html"
+        archive_url = f"{base}/index.html"
         preheader = f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_OUTER};">
   <tr>
@@ -334,7 +335,7 @@ def build_html(
       <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%;">
         <tr>
           <td style="font-family:{FONT_SANS}; font-size:10px; color:#888888;">
-            <a href="{issue_url}" style="color:#555555; text-decoration:none;">Ver en el navegador</a>
+            <a href="{issue_url}" style="color:#555555; text-decoration:none;">Ver en navegador</a>
             &nbsp;&middot;&nbsp;
             <a href="{archive_url}" style="color:#555555; text-decoration:none;">Ver todos los números</a>
           </td>
@@ -360,17 +361,18 @@ def build_html(
         <tr><td>{_header(issue_number)}</td></tr>
         <tr><td>{_ticker(tickers)}</td></tr>
         <tr><td>{_weather(weather)}</td></tr>
-        <tr><td>{_editor_note(digest.get('editor_note', ''))}</td></tr>
+        <tr><td>{_editor_note(digest.get('editor_note', ''), author)}</td></tr>
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_sentiment(sentiment)}</td></tr>
         <tr><td>{_divider()}</td></tr>
         <tr><td>{stories_html}</td></tr>
         <tr><td>{_divider()}</td></tr>
-        <tr><td>{_currency_table(currency)}</td></tr>
+        <tr><td>{_currency_table([r for r in currency.get('matrix', {}).get(EMAIL_CURRENCY_BASE, []) if any(r['pair'].endswith(f'/ {q}') for q in EMAIL_CURRENCY_QUOTES)])}</td></tr>
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_quote(quote)}</td></tr>
         {'<tr><td>' + week_html + '</td></tr>' if week_html else ''}
-        <tr><td>{_footer(today_iso)}</td></tr>
+        {'<tr><td><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 48px 8px;"><p style="margin:0 0 14px 0; font-family:Arial,sans-serif; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc;">La Semana en Palabras</p><img src="' + ASSET_BASE_URL.rstrip("/") + "/" + wordcloud_filename + '" width="504" style="width:100%; max-width:504px; display:block;" alt=""/></td></tr></table></td></tr>' if wordcloud_filename else ''}
+        <tr><td>{_footer(today_iso, author)}</td></tr>
       </table>
     </td>
   </tr>
@@ -378,9 +380,11 @@ def build_html(
 </body>
 </html>"""
 
-
-def build_plain(digest: dict) -> str:
-    today = date.today().strftime("%d de %B de %Y")
+def build_plain(digest: dict, author: str = "") -> str:
+    d = date.today()
+    months_es = ["","enero","febrero","marzo","abril","mayo","junio",
+                 "julio","agosto","septiembre","octubre","noviembre","diciembre"]
+    today = f"{d.day} de {months_es[d.month]} de {d.year}"
     lines = [f"{NEWSLETTER_NAME} — {today}", "=" * 40, ""]
 
     note = digest.get("editor_note", "")
@@ -389,8 +393,7 @@ def build_plain(digest: dict) -> str:
 
     sentiment = digest.get("sentiment", {})
     if sentiment:
-        label_es = {"Risk-Off": "Riesgo Bajo", "Cautious": "Cauteloso", "Risk-On": "Riesgo Alto"}.get(sentiment.get("label",""), sentiment.get("label",""))
-        lines += [f"Sentimiento del mercado: {label_es} — {sentiment.get('context','')}", ""]
+        lines += [f"Sentimiento: {sentiment.get('label_es', sentiment.get('label',''))} — {sentiment.get('context_es', sentiment.get('context',''))}", ""]
 
     for s in digest.get("stories", []):
         lines += [
@@ -404,5 +407,5 @@ def build_plain(digest: dict) -> str:
     if q:
         lines += [f'"{q["text"]}"', f"— {q['attribution']}", ""]
 
-    lines += [f"— {AUTHOR_NAME}"]
+    lines += [f"— {author}"]
     return "\n".join(lines)

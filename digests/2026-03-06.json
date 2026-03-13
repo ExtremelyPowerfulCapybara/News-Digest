@@ -1,0 +1,220 @@
+{
+  "date": "2026-03-06",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, mientras el mundo debate si Irán puede ser bombardeado o si sus reservas de petróleo simplemente abaratan la gasolina, México y Estados Unidos deciden sentarse a hablar del T-MEC el 16 de marzo — un gesto diplomático que en otro ciclo histórico llamaríamos normalidad y que hoy cotiza como noticia positiva. El telón de fondo es un orden global en recomposición acelerada: aranceles, guerras, amenazas de embargo y la NYSE invirtiendo en exchanges de criptomonedas. Que nadie diga que los mercados se aburren.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Señales mixtas dominan el panorama: avances comerciales entre México y EE.UU. contrarrestan la tensión geopolítica en Medio Oriente y las fricciones entre Washington y Madrid.",
+        "context_en": "Mixed signals dominate the landscape: trade progress between Mexico and the U.S. offsets geopolitical tension in the Middle East and friction between Washington and Madrid."
+      },
+      "stories": [
+        {
+          "source": "Boston Herald / AP",
+          "headline": "México y EE.UU. arrancan el 16 de marzo negociaciones bilaterales del T-MEC antes de la revisión formal de julio",
+          "body": "El secretario mexicano de Economía, Marcelo Ebrard, y el representante comercial estadounidense, Jamieson Greer, confirmaron que el 16 de marzo inicia una primera ronda bilateral de conversaciones 'exploratorias' sobre reglas de origen, cadenas de suministro y competitividad regional. El arranque anticipado — la revisión formal del tratado está prevista para julio — fue interpretado por la economista de Banco Base, Gabriela Siller, como señal de que 'ya hay algunas cosas acordadas'. Las exportaciones mexicanas a EE.UU. alcanzaron 534.874 millones de dólares en 2025, un 5,8% más, pese a que sectores como el automotriz y el acero siguen gravados con aranceles de entre 25% y 50%.",
+          "url": "https://www.bostonherald.com/2026/03/05/mxico-y-eeuu-inician-el-16-de-marzo-primera-ronda-de-conversaciones-para-la-revisin-del-t-mec/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Eldiario.es",
+          "headline": "Trump amenaza con cortar todo el comercio con España tras el rechazo a usar bases militares para atacar Irán",
+          "body": "El presidente Donald Trump declaró al New York Post que España es 'una perdedora' y reiteró instrucciones a su secretario del Tesoro, Scott Bessent, para cortar los lazos comerciales con Madrid, después de que el gobierno de Pedro Sánchez prohibiera el uso de las bases de Rota y Morón en operaciones contra Irán. La ministra de Defensa, Margarita Robles, fue categórica: 'No se va a autorizar el uso de las bases. La violencia no es el camino'. El enredo legal es considerable: cualquier restricción comercial de EE.UU. a España afectaría a los 27 países de la Unión Europea, cuya política comercial se decide en Bruselas.",
+          "url": "https://www.eldiario.es/politica/espana-mantiene-tension-eeuu-europa-crece-rechazo-guerra_1_13044348.html",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina busca créditos bilaterales con EE.UU., Israel e Italia para evitar volver a Wall Street antes del vencimiento de julio",
+          "body": "El gobierno de Javier Milei explora préstamos directos entre países — con Washington, Roma y Tel Aviv como principales interlocutores — para cubrir el vencimiento de 4.200 millones de dólares con bonistas privados previsto para el 9 de julio, según fuentes con conocimiento directo citadas por La Nacion. El ministro Luis Caputo descarta una colocación en mercados internacionales mientras los rendimientos de un bono argentino a diez años superen el 9,5% anual. El gobierno advierte que no tiene apuro, aunque analistas señalan que el conflicto en Medio Oriente — con la guerra contra Irán — eleva la cautela inversora y complica el contexto para emergentes.",
+          "url": "https://www.lanacion.com.ar/economia/la-argentina-suma-conversaciones-con-varios-paises-para-financiarse-sin-volver-a-wall-street-nid05032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "La NYSE invierte en OKX a una valuación de 25.000 millones de dólares y planea llevar acciones tokenizadas a 120 millones de usuarios cripto",
+          "body": "Intercontinental Exchange, propietaria de la Bolsa de Nueva York, realizó una inversión de monto no revelado en el exchange de criptomonedas OKX, que fue valorado en 25.000 millones de dólares, y ocupará un asiento en su consejo de administración. El acuerdo contempla que OKX ofrezca acceso a futuros de ICE y a valores tokenizados de la NYSE a su base de aproximadamente 120 millones de cuentas, con implementación prevista para el segundo semestre de 2026. La operación es la más reciente de una serie: en noviembre de 2025 ICE anunció una inversión de 2.000 millones de dólares en Polymarket, y en enero declaró que desarrollaba infraestructura propia de trading en blockchain.",
+          "url": "https://es.cointelegraph.com/news/nyse-intercontinental-exchange-invests-okx-25b-valuation",
+          "tag": "Mercados"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Dos empresas estadounidenses invertirán 500 mdd en infraestructura de carga eléctrica en el Bajío mexicano",
+          "body": "Invisible Urban Charging Inc. (Atlanta) y ATX Smart Mobility (Miami) supervisarán una inversión de 500 millones de dólares para desplegar 38 cargadores y 140 autobuses eléctricos en la región del Bajío — Ciudad de México, Estado de México, Puebla y Querétaro — en alianza con CBRE Group para la selección de ubicaciones. La apuesta responde a una brecha estructural: México tiene actualmente una proporción de 280 autos por cargador, cuando el estándar recomendado es de 40. La llegada de marcas chinas como BYD y Geely al mercado mexicano acelera la presión sobre la infraestructura de carga.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/05/que-empresas-de-eu-invertiran-500-mdd-en-mexico-y-en-que-sectores-apostaran/",
+          "tag": "México"
+        },
+        {
+          "source": "RT",
+          "headline": "¿Qué puede perder España si EE.UU. ejecuta su amenaza de bloqueo comercial?",
+          "body": "Las amenazas de Trump contra España — que incluyeron la palabra 'embargo' — enfrentan un obstáculo jurídico de fondo: la política comercial europea es competencia de Bruselas, no de Madrid, por lo que cualquier represalia arancelaria afectaría a los 27 miembros de la UE. El secretario del Tesoro, Scott Bessent, solo aludió a dos artículos de la ley comercial estadounidense aplicables por razones de seguridad nacional o prácticas desleales, sin concretar medidas. La tensión escala en un momento en que Europa debate su posición frente a la guerra en Irán y su relación con una administración estadounidense cada vez más impredecible.",
+          "url": "https://actualidad.rt.com/actualidad/590921-perder-espana-eventual-bloqueo-eeuu",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Gobernadores argentinos activan agendas propias: Santa Fe y Neuquén acuerdan integrar proveedores industriales a Vaca Muerta",
+          "body": "Los gobernadores Maximiliano Pullaro (Santa Fe) y Rolando Figueroa (Neuquén) firmaron un acuerdo para incorporar empresas santafesinas a la cadena de valor energética de Vaca Muerta, donde ya participan unas 350 firmas de esa provincia. El pacto incluye capacitación técnica, intercambio de tecnologías y acceso al programa Invierta Neuquén, que ofrece incentivos tributarios y crediticios. En paralelo, el gobernador chubutense Ignacio Torres participó del Consejo Interamericano de Comercio y Producción junto al presidente uruguayo Yamandú Orsi, buscando oportunidades de inversión bilateral.",
+          "url": "https://www.lanacion.com.ar/politica/los-gobernadores-activan-agendas-paralelas-para-tratar-de-dinamizar-la-produccion-en-sus-provincias-nid05032026/",
+          "tag": "Energía"
+        }
+      ],
+      "quote": {
+        "text": "In the business world, the rearview mirror is always clearer than the windshield.",
+        "attribution": "Warren Buffett, carta anual a accionistas de Berkshire Hathaway, 1989"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, while the world debates whether Iran should be bombed or whether its oil reserves simply make for cheap gasoline, Mexico and the United States decide to sit down and talk about USMCA on March 16th — a diplomatic gesture that in any other historical cycle we'd call normalcy, and that today trades as positive news. The backdrop is a global order in accelerated recomposition: tariffs, wars, embargo threats, and the NYSE investing in crypto exchanges. Let no one say markets are boring.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Señales mixtas dominan el panorama: avances comerciales entre México y EE.UU. contrarrestan la tensión geopolítica en Medio Oriente y las fricciones entre Washington y Madrid.",
+        "context_en": "Mixed signals dominate the landscape: trade progress between Mexico and the U.S. offsets geopolitical tension in the Middle East and friction between Washington and Madrid."
+      },
+      "stories": [
+        {
+          "source": "Boston Herald / AP",
+          "headline": "Mexico and U.S. launch bilateral USMCA talks on March 16, ahead of the formal July review",
+          "body": "Mexican Economy Secretary Marcelo Ebrard and U.S. Trade Representative Jamieson Greer confirmed that an 'exploratory' first round of bilateral talks will begin on March 16, covering rules of origin, supply chain security, and regional competitiveness. The early start — the formal treaty review is scheduled for July — was interpreted by Banco Base economist Gabriela Siller as a sign that 'some things may already be agreed upon.' Mexican exports to the U.S. reached $534.87 billion in 2025, up 5.8%, even as sectors like automotive and steel remain subject to tariffs ranging from 25% to 50%.",
+          "url": "https://www.bostonherald.com/2026/03/05/mxico-y-eeuu-inician-el-16-de-marzo-primera-ronda-de-conversaciones-para-la-revisin-del-t-mec/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Eldiario.es",
+          "headline": "Trump threatens to cut all trade with Spain after Madrid refuses to allow military bases to be used against Iran",
+          "body": "President Donald Trump told the New York Post that Spain is 'a loser' and reiterated instructions to Treasury Secretary Scott Bessent to cut commercial ties with Madrid, following Prime Minister Pedro Sánchez's government blocking the use of Rota and Morón bases for operations against Iran. Defense Minister Margarita Robles was unequivocal: 'The use of the bases will not be authorized. Violence is not the way.' The legal tangle is considerable: any U.S. trade restriction targeting Spain would affect all 27 EU member states, whose trade policy is decided in Brussels.",
+          "url": "https://www.eldiario.es/politica/espana-mantiene-tension-eeuu-europa-crece-rechazo-guerra_1_13044348.html",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina seeks bilateral loans from U.S., Israel, and Italy to avoid returning to Wall Street ahead of July debt payment",
+          "body": "The Milei administration is exploring direct government-to-government loans — with Washington, Rome, and Tel Aviv as principal interlocutors — to cover a $4.2 billion payment to private bondholders due July 9, according to sources with direct knowledge cited by La Nacion. Economy Minister Luis Caputo is ruling out an international market placement while Argentine ten-year bond yields exceed 9.5% annually. The government says it is in no rush, though analysts note that the ongoing conflict in the Middle East — with the war against Iran — is raising investor caution and complicating the external environment for emerging markets.",
+          "url": "https://www.lanacion.com.ar/economia/la-argentina-suma-conversaciones-con-varios-paises-para-financiarse-sin-volver-a-wall-street-nid05032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "Cointelegraph",
+          "headline": "NYSE parent invests in OKX at a $25 billion valuation, plans to bring tokenized stocks to 120 million crypto users",
+          "body": "Intercontinental Exchange, owner of the New York Stock Exchange, made an undisclosed investment in crypto exchange OKX — valued at $25 billion — and will take a seat on its board of directors. The deal envisions OKX offering its approximately 120 million account holders access to ICE futures and NYSE tokenized securities, with rollout planned for the second half of 2026. The move is the latest in a series: in November 2025 ICE announced a $2 billion investment in prediction market Polymarket, and in January it revealed it was building its own blockchain-based trading infrastructure.",
+          "url": "https://es.cointelegraph.com/news/nyse-intercontinental-exchange-invests-okx-25b-valuation",
+          "tag": "Mercados"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Two U.S. firms to invest $500 million in electric vehicle charging infrastructure across Mexico's Bajío region",
+          "body": "Invisible Urban Charging Inc. (Atlanta) and ATX Smart Mobility (Miami) will oversee a $500 million investment to deploy 38 chargers and 140 electric buses across the Bajío region — Mexico City, State of Mexico, Puebla, and Querétaro — in partnership with CBRE Group for site selection. The bet responds to a structural gap: Mexico currently has a ratio of 280 cars per charger, against a recommended standard of 40. The arrival of Chinese EV brands like BYD and Geely in the Mexican market is accelerating pressure on charging infrastructure.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/05/que-empresas-de-eu-invertiran-500-mdd-en-mexico-y-en-que-sectores-apostaran/",
+          "tag": "México"
+        },
+        {
+          "source": "RT",
+          "headline": "What could Spain actually lose if the U.S. follows through on its trade blockade threat?",
+          "body": "Trump's threats against Spain — including the word 'embargo' — face a fundamental legal obstacle: European trade policy is Brussels' domain, not Madrid's, meaning any tariff retaliation would hit all 27 EU members. Treasury Secretary Scott Bessent only cited two provisions of U.S. trade law applicable on national security or unfair practice grounds, without specifying concrete measures. Tensions are escalating at a moment when Europe is debating its position on the war in Iran and its relationship with an increasingly unpredictable U.S. administration.",
+          "url": "https://actualidad.rt.com/actualidad/590921-perder-espana-eventual-bloqueo-eeuu",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentine governors pursue parallel agendas: Santa Fe and Neuquén strike deal to integrate industrial suppliers into Vaca Muerta",
+          "body": "Governors Maximiliano Pullaro (Santa Fe) and Rolando Figueroa (Neuquén) signed an agreement to incorporate Santa Fe industrial firms into Vaca Muerta's energy supply chain, where roughly 350 companies from that province already participate. The pact includes technical training, technology exchange, and access to Neuquén's Invierta Neuquén program, which offers tax and credit incentives. Separately, Chubut Governor Ignacio Torres attended the Inter-American Council for Trade and Production alongside Uruguayan President Yamandú Orsi, seeking bilateral investment opportunities.",
+          "url": "https://www.lanacion.com.ar/politica/los-gobernadores-activan-agendas-paralelas-para-tratar-de-dinamizar-la-produccion-en-sus-provincias-nid05032026/",
+          "tag": "Energía"
+        }
+      ],
+      "quote": {
+        "text": "In the business world, the rearview mirror is always clearer than the windshield.",
+        "attribution": "Warren Buffett, Berkshire Hathaway annual shareholder letter, 1989"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.79",
+        "change": "▲ 1.1%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,740",
+        "change": "▼ 1.9%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "67,326.09",
+        "change": "▼ 1.5%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.7915",
+        "chg_1d": {
+          "text": "▲ 1.13%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 2.74%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.6593",
+        "chg_1d": {
+          "text": "▲ 0.93%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 1.46%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "13.1182",
+        "chg_1d": {
+          "text": "▲ 1.74%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.55%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "122.6991",
+        "chg_1d": {
+          "text": "▲ 1.12%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 3.32%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "21°C",
+    "high_low": "21°C / 9°C",
+    "humidity": "Humidity 32%",
+    "desc": "Partly cloudy"
+  }
+}
