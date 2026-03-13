@@ -124,12 +124,21 @@ TICKER_SYMBOLS = [
 ]
 
 # ── Currency table ────────────────────────────
-# Base currencies available as toggle options in the frontend.
-# The table shows all other currencies relative to the selected base.
+# Base currencies available as toggle options in the browser version.
 CURRENCY_BASES = ["MXN", "USD", "BRL", "EUR", "CNY"]
 
-# All individual currencies to include in the matrix.
+# All currencies included in the cross-rate matrix.
 CURRENCY_PAIRS = ["MXN", "USD", "BRL", "EUR", "CNY", "CAD", "GBP", "JPY"]
+
+# Email version: always USD as base, these four quote currencies only.
+EMAIL_CURRENCY_BASE   = "USD"
+EMAIL_CURRENCY_QUOTES = ["MXN", "EUR", "GBP", "CNY"]
+
+# Mock mode: set MOCK=true to skip NewsAPI + Anthropic calls.
+MOCK_MODE = os.environ.get("MOCK", "false").lower() == "true"
+
+# Skip email delivery (preview/archive only).
+SKIP_EMAIL = os.environ.get("SKIP_EMAIL", "false").lower() == "true"
 
 # ── Weather (Open-Meteo, no API key needed) ───
 WEATHER_LAT  = 19.4326

@@ -21,6 +21,22 @@ on:
         options:
           - "false"
           - "true"
+      mock_mode:
+        description: "Mock mode? Skips NewsAPI + Anthropic, uses latest saved digest"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      skip_email:
+        description: "Skip email delivery? Renders archive HTML only"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 jobs:
   send-newsletter:
@@ -71,6 +87,8 @@ jobs:
           SUBSCRIBERS:       ${{ secrets.DEV_SUBSCRIBERS_CSV }}
           BANXICO_API_KEY:   ${{ secrets.BANXICO_API_KEY }}
           FORCE_FRIDAY:      ${{ github.event.inputs.friday_mode }}
+          MOCK:              ${{ github.event.inputs.mock_mode }}
+          SKIP_EMAIL:        ${{ github.event.inputs.skip_email }}
           GITHUB_RAW_URL:    "https://raw.githubusercontent.com/ExtremelyPowerfulCapybara/News-Digest/Dev-Nigg/docs/"
         run: python main.py
 

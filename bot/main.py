@@ -1,6 +1,6 @@
-# ─────────────────────────────────────────────
-#  main.py  —  Entry point
-# ─────────────────────────────────────────────
+# ---------------------------------------------
+#  main.py  --  Entry point
+# ---------------------------------------------
 
 import os
 import random
@@ -11,7 +11,8 @@ from storage     import save_digest, get_week_stories, is_friday
 from renderer    import build_html, build_plain
 from delivery    import send_email
 from archive     import save_pretty_issue
-from config      import DIGEST_DIR, AUTHOR_NAMES, AUTHOR_TITLES
+from config      import DIGEST_DIR, AUTHOR_NAMES, AUTHOR_TITLES, MOCK_MODE, SKIP_EMAIL
+from mock_data   import load_mock
 from wordcloud_gen import generate_wordcloud, wordcloud_as_base64
 
 
@@ -24,7 +25,11 @@ def get_issue_number() -> int:
 
 def run():
     print("=" * 50)
-    print("  Mexico Finance Brief — starting run")
+    print("  Mexico Finance Brief -- starting run")
+    if MOCK_MODE:
+        print("  *** MOCK MODE -- no NewsAPI or Anthropic calls ***")
+    if SKIP_EMAIL:
+        print("  *** SKIP EMAIL -- archive/preview only ***")
     print("=" * 50)
 
     # ── 1. Fetch market data (fast, no LLM needed) ──
@@ -33,20 +38,25 @@ def run():
     currency = fetch_currency_table()
     weather  = fetch_weather()
 
-    # ── 2. Fetch news articles ──────────────────────
-    print("\n[2/5] Fetching news articles...")
-    articles = fetch_news()
-    if not articles:
-        print("  No articles found. Check your NewsAPI key or topics.")
-        return
+    # -- 2+3. Fetch news + summarize (or load mock) --
+    if MOCK_MODE:
+        print("\n[2-3/5] MOCK MODE -- loading saved digest...")
+        mock     = load_mock()
+        articles = mock["articles"]
+        digest   = mock["digest"]
+    else:
+        print("\n[2/5] Fetching news articles...")
+        articles = fetch_news()
+        if not articles:
+            print("  No articles found. Check your NewsAPI key or topics.")
+            return
+        print(f"\n[3/5] Summarizing {len(articles)} articles with Claude...")
+        digest = summarize_news(articles)
 
-    # ── 3. Summarize with Claude ────────────────────
-    print(f"\n[3/5] Summarizing {len(articles)} articles with Claude...")
-    digest    = summarize_news(articles)
-    digest_es = digest.get("es", digest)  # Spanish — used in email
-    digest_en = digest.get("en", digest)  # English — used in archive toggle
+    digest_es = digest.get("es", digest)  # Spanish -- used in email
+    digest_en = digest.get("en", digest)  # English -- used in archive toggle
 
-    # ── 4. Save digest to disk ──────────────────────
+    # -- 4. Save digest to disk --
     print("\n[4/5] Saving digest...")
     save_digest(digest, {"tickers": tickers, "currency": currency}, weather)
 
@@ -79,7 +89,10 @@ def run():
     )
     plain = build_plain(digest_es, author=author)
 
-    send_email(html, plain)
+    if SKIP_EMAIL:
+        print("  [delivery] SKIP_EMAIL set — skipping send.")
+    else:
+        send_email(html, plain)
 
     # ── 6. Save pretty HTML to archive ─────────────────
     print("\n[6/6] Saving to archive...")

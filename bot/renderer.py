@@ -7,6 +7,7 @@
 from datetime import date, timedelta
 from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE
 from config import GITHUB_PAGES_URL, ASSET_BASE_URL
+from config import EMAIL_CURRENCY_BASE, EMAIL_CURRENCY_QUOTES
 
 # ── Shared style constants ────────────────────
 BG_OUTER   = "#dde3e8"
@@ -356,7 +357,7 @@ def build_html(
         <tr><td>{_divider()}</td></tr>
         <tr><td>{stories_html}</td></tr>
         <tr><td>{_divider()}</td></tr>
-        <tr><td>{_currency_table(currency.get('matrix', {}).get('MXN', []))}</td></tr>
+        <tr><td>{_currency_table([r for r in currency.get('matrix', {}).get(EMAIL_CURRENCY_BASE, []) if any(r['pair'].endswith(f'/ {q}') for q in EMAIL_CURRENCY_QUOTES)])}</td></tr>
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_quote(quote)}</td></tr>
         {'<tr><td>' + week_html + '</td></tr>' if week_html else ''}
