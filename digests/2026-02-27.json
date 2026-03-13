@@ -1,0 +1,151 @@
+{
+  "date": "2026-02-27",
+  "digest": {
+    "editor_note": "Estimados Humanos, el euro cotiza por encima de 1,20 dólares por primera vez desde 2021 mientras Trump presume de poder mover la divisa «como un yoyo» —declaración que, en cualquier otro contexto histórico, habría desencadenado una crisis de credibilidad institucional sin precedentes. Mientras tanto, España exhibe simultáneamente el mayor crecimiento del PIB entre las grandes economías europeas y la mayor pérdida de competitividad desde 2008, una contradicción que el Gobierno prefiere no resolver hoy.",
+    "sentiment": {
+      "label": "Cautious",
+      "position": 38,
+      "context": "El desplome del dólar y la pérdida de competitividad española generan incertidumbre estructural pese a datos de crecimiento nominalmente positivos."
+    },
+    "stories": [
+      {
+        "source": "La Nación / AFP",
+        "headline": "El euro supera los 1,20 dólares por primera vez desde 2021 ante el desplome del billete verde",
+        "body": "El euro alcanzó el martes 1,2043 dólares, mínimo del dólar desde junio de 2021, tras unas declaraciones de Trump en las que afirmó poder mover su propia divisa «como un yoyo». Desde que Trump regresó a la Casa Blanca en enero de 2025, el dólar se ha depreciado más de un 15% frente al euro, y analistas de Monex USA califican la imprevisibilidad política como «indudablemente negativa» para la divisa. El oro ha subido cerca de un 90% en un año y la plata se ha triplicado, síntoma de que el mercado ha decidido que el dólar ya no es el refugio que era.",
+        "url": "https://www.nacion.com/economia/euro-rompe-la-barrera-de-los-120-por-primera-vez/DM7I3DBFSNGWVOCZUYWQ4NN3CA/story/",
+        "tag": "FX"
+      },
+      {
+        "source": "El Mundo",
+        "headline": "España registra la mayor pérdida de competitividad desde 2008 pese a liderar el crecimiento europeo",
+        "body": "El índice de competitividad del Banco de España marcó en diciembre una caída del 2,8% interanual frente a otros países desarrollados, el mayor descenso desde la crisis financiera de 2008. La paradoja es evidente: España creció un 2,8% en 2025, el mejor registro entre las grandes economías de la eurozona, mientras sus exportaciones se comportan peor que las del resto y el coste laboral unitario escala. El encarecimiento relativo de la economía española amenaza tanto la cuota exportadora como el atractivo inversor a medio plazo.",
+        "url": "https://www.elmundo.es/economia/macroeconomia/2026/02/22/6989d472e9cf4ae2148b4580.html",
+        "tag": "Macro"
+      },
+      {
+        "source": "El Diario",
+        "headline": "Sánchez defiende en la cumbre europea el 'buy European' y una integración a dos velocidades",
+        "body": "Los líderes de los 27 se reúnen en el castillo de Alden Biesen para debatir competitividad ante los aranceles de Trump y la competencia desleal china. España, con un PIB que creció el 2,8% en 2025 frente al 0,2% de Alemania, llega a la cumbre con mayor peso relativo y Pedro Sánchez lo utiliza para impulsar la preferencia europea en licitaciones públicas y la integración diferenciada por bloques. La posición española choca con los socios del norte, reacios a fragmentar formalmente el proyecto comunitario.",
+        "url": "https://www.eldiario.es/economia/espana-defiende-buy-european-ue-velocidades-impulsar-competitividad_1_12982881.html",
+        "tag": "Trade"
+      },
+      {
+        "source": "El Español / Invertia",
+        "headline": "Pedro J. Ramírez alerta: Europa exporta 300.000 millones de ahorro al año por falta de unión de capitales",
+        "body": "En el VI Foro del Observatorio de las Finanzas de EL ESPAÑOL e Invertia, su director advirtió que «sin un mercado único de capitales Europa seguirá siendo rica en ahorro, pero pobre en inversión estratégica». La Savings and Investment Union —antigua Capital Markets Union— busca retener ese flujo para financiar defensa y soberanía tecnológica, pero avanza con la lentitud característica de cualquier proyecto que requiere unanimidad en Bruselas. El gobernador del Banco de España, José Luis Escrivá, también participó en el foro.",
+        "url": "https://www.elespanol.com/eventos/2026/observatorio-finanzas/20260217/pedro-ramirez-evitar-ano-salgan-millones-ahorro-europeo-extranjero/1003744133278_0.html",
+        "tag": "Markets"
+      },
+      {
+        "source": "ABC",
+        "headline": "Once bancos europeos crean Qivalis para lanzar una 'stablecoin' vinculada al euro ante el retroceso del bitcoin",
+        "body": "Con el bitcoin cayendo cerca de un 23% en lo que va de año y rondando los 67.000 dólares, once entidades financieras europeas —entre ellas BBVA— han constituido Qivalis, alianza orientada a emitir una criptomoneda estable regulada bajo la normativa comunitaria. El objetivo declarado es ofrecer una alternativa bancaria a las stablecoins en dólares dominadas por emisores privados y mejorar pagos interbancarios, operaciones internacionales y liquidación de activos tokenizados. El movimiento institucionaliza definitivamente el debate sobre el euro digital.",
+        "url": "https://www.abc.es/economia/banca-europea-mueve-ficha-criptomonedas-red-20260216045544-nt.html",
+        "tag": "Markets"
+      },
+      {
+        "source": "El Economista",
+        "headline": "Repsol gana 1.899 millones en 2025, un 8% más, y promete superar el euro de dividendo en 2026",
+        "body": "La compañía cerró el ejercicio con un beneficio neto de 1.899 millones de euros pese a un entorno de precios de energía más adverso, apoyada en su modelo integrado que combina upstream, refino y clientes. El dividendo superará el euro por acción en 2026, señal de que la directiva confía en la generación de caja incluso con el barril bajo presión. Los resultados llegan en un momento en que la descarbonización presiona las valoraciones del sector en Europa.",
+        "url": "https://www.eleconomista.es/energia/noticias/13784544/02/26/repsol-logra-un-beneficio-neto-de-1899-millones-un-8-mas-y-superara-el-euro-de-dividendo-en-2026.html",
+        "tag": "Energy"
+      },
+      {
+        "source": "El Economista",
+        "headline": "Denarius lanza bonos al 12% para financiar el reinicio de la mina de níquel y cobre Aguablanca en Extremadura",
+        "body": "Rio Narcea Recursos, filial de Denarius Metals Corp., ofrece hasta 20 millones de dólares en bonos garantizados al 12% de interés para reactivar el yacimiento de Aguablanca en Monesterio, uno de los depósitos de níquel más relevantes de Europa occidental. El cupón elevado refleja el perfil de riesgo de un proyecto en fase de reinicio, pero también el creciente apetito inversor por materiales críticos en el contexto de la electrificación industrial europea. La operación apunta a captación en mercados de deuda privada de alto rendimiento.",
+        "url": "https://www.eleconomista.es/industria/noticias/13749694/01/26/denarius-lanza-bonos-al-12-por-185-millones-de-euros-para-financiar-el-reinicio-de-su-mina-de-aguablanca-en-monesterio.html",
+        "tag": "España"
+      }
+    ],
+    "quote": {
+      "text": "El dólar es nuestra moneda, pero es vuestro problema.",
+      "attribution": "John Connally, Secretario del Tesoro de Estados Unidos, 1971"
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "S&P 500",
+        "value": "6,879",
+        "change": "▼ 1.0%",
+        "direction": "down"
+      },
+      {
+        "label": "IBEX 35",
+        "value": "18,360.80",
+        "change": "▼ 0.7%",
+        "direction": "down"
+      },
+      {
+        "label": "Euro Stoxx",
+        "value": "6,138.41",
+        "change": "▼ 0.4%",
+        "direction": "down"
+      },
+      {
+        "label": "DAX",
+        "value": "25,284.26",
+        "change": "▲ 0.4%",
+        "direction": "up"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "EUR / USD",
+        "rate": "1.1816",
+        "chg_1d": {
+          "text": "▲ 0.01%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 0.16%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "EUR / GBP",
+        "rate": "0.8765",
+        "chg_1d": {
+          "text": "▲ 0.59%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.23%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / CHF",
+        "rate": "0.9089",
+        "chg_1d": {
+          "text": "▼ 0.37%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▼ 0.47%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "EUR / JPY",
+        "rate": "184.3670",
+        "chg_1d": {
+          "text": "▼ 0.09%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▲ 0.94%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Madrid",
+    "temp": "11°C",
+    "high_low": "20°C / 5°C",
+    "humidity": "Humedad 57%",
+    "desc": "Parcialmente nublado"
+  }
+}

@@ -1,14 +1,13 @@
 # ─────────────────────────────────────────────
 #  summarizer.py  —  Claude generates digest
 # ─────────────────────────────────────────────
-
 import json
+import re
 import time
 import anthropic
 from config import ANTHROPIC_API_KEY
 
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-
 
 def summarize_news(articles: list[dict]) -> dict:
     """

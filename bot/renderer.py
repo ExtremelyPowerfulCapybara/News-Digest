@@ -1,7 +1,7 @@
 # ─────────────────────────────────────────────
 #  renderer.py  —  Gmail-safe table-based layout
 #  All layout uses <table> + inline styles.
-#  No flexbox, no grid, no external CSS classes.
+#  No flexbox, no grid, no external CSS classes. pasidaas
 # ─────────────────────────────────────────────
 
 from datetime import date, timedelta
@@ -73,15 +73,23 @@ def _header(issue_number: int) -> str:
 
 def _ticker(tickers: list[dict]) -> str:
     cells = ""
-    for i, t in enumerate(tickers):
-        chg_color  = "#6abf7b" if t["direction"] == "up" else ("#d4695a" if t["direction"] == "down" else "#888888")
-        left_border = "border-left:1px solid #2e2e2e;" if i > 0 else ""
-        cells += f"""
-        <td style="{left_border} padding:10px 16px; text-align:center; vertical-align:middle;">
-          <span style="display:block; font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#555555; margin-bottom:4px;">{t['label']}</span>
-          <span style="font-family:{FONT_SANS}; font-size:12px; color:{TEXT_CREAM};">{t['value']}</span>
-          <span style="font-family:{FONT_SANS}; font-size:10px; color:{chg_color}; margin-left:4px;">{t['change']}</span>
+    if not tickers:
+        for label in ["SPX", "IBEX 35", "Euro Stoxx", "DAX"]:
+            cells += f"""
+        <td style="padding:10px 16px; text-align:center; vertical-align:middle;">
+          <span style="display:block; font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#555555; margin-bottom:4px;">{label}</span>
+          <span style="font-family:{FONT_SANS}; font-size:12px; color:{TEXT_CREAM};">—</span>
         </td>"""
+    else:
+        for i, t in enumerate(tickers):
+            chg_color  = "#6abf7b" if t["direction"] == "up" else ("#d4695a" if t["direction"] == "down" else "#888888")
+            left_border = "border-left:1px solid #2e2e2e;" if i > 0 else ""
+            cells += f"""
+            <td style="{left_border} padding:10px 16px; text-align:center; vertical-align:middle;">
+              <span style="display:block; font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#555555; margin-bottom:4px;">{t['label']}</span>
+              <span style="font-family:{FONT_SANS}; font-size:12px; color:{TEXT_CREAM};">{t['value']}</span>
+              <span style="font-family:{FONT_SANS}; font-size:10px; color:{chg_color}; margin-left:4px;">{t['change']}</span>
+            </td>"""
 
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK}; border-bottom:3px solid {BG_MAIN};">
@@ -131,6 +139,8 @@ def _sentiment(s: dict) -> str:
     label_es = s.get("label_es", s.get("label", "Cauteloso"))
     context  = s.get("context_es", s.get("context", ""))
 
+    label_es = {"Risk-Off": "Riesgo Bajo", "Cautious": "Cauteloso", "Risk-On": "Riesgo Alto"}.get(label, label)
+
     style_map = {
         "Aversión al Riesgo": ("background:#fde8e6; color:#b84a3a; border:1px solid #f0c0ba;", "#b84a3a"),
         "Cauteloso":          ("background:#fef3e2; color:#9a6a1a; border:1px solid #f0d8a0;", "#e8a030"),
@@ -145,7 +155,7 @@ def _sentiment(s: dict) -> str:
         pills_html += f"""
           <td style="padding-right:8px; white-space:nowrap;">
             <span style="display:inline-block; {pill_style} padding:5px 14px; border-radius:20px; font-family:{FONT_SANS}; font-size:10px; font-weight:bold; letter-spacing:1px; text-transform:uppercase;">
-              <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:{dot_color}; margin-right:5px; vertical-align:middle;"></span>{p}
+              <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:{dot_color}; margin-right:5px; vertical-align:middle;"></span>{p_es}
             </span>
           </td>"""
 
@@ -234,7 +244,7 @@ def _week_review(stories: list[dict]) -> str:
     today  = date.today()
     monday = today - timedelta(days=today.weekday())
     friday = monday + timedelta(days=4)
-    label  = f"{monday.strftime('%b %d')}&#8211;{friday.strftime('%d, %Y')}"
+    label  = f"{monday.strftime('%d %b')}&#8211;{friday.strftime('%d %b, %Y')}"
 
     rows = ""
     for s in stories:
@@ -336,7 +346,7 @@ def build_html(
 </table>"""
 
     return f"""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>

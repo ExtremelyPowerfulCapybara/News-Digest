@@ -24,7 +24,7 @@ SUBSCRIBERS = [s.strip() for s in _subs_env.split(",") if s.strip()]
 # ── Newsletter identity (safe to commit) ─────
 NEWSLETTER_NAME    = "The Opening Bell"
 NEWSLETTER_TAGLINE = "Context before the noise"
-AUTHOR_NAME        = "Adrian"
+AUTHOR_NAME        = "Los 3"
 
 # ── Rotating pen names ────────────────────────
 AUTHOR_NAMES = [
@@ -117,12 +117,11 @@ NEWS_DOMAINS_STR = ",".join(NEWS_DOMAINS)
 
 # ── Market tickers (Yahoo Finance symbols) ────
 TICKER_SYMBOLS = [
-    ("USD/MXN",   "MXN=X"),
-    ("S&P 500",   "^GSPC"),
-    ("CETES 28D", None),    # placeholder — no free API available
-    ("IPC BMV",   "^MXX"),
+    ("S&P 500",    "^GSPC"),
+    ("IBEX 35",    "^IBEX"),
+    ("Euro Stoxx", "^STOXX50E"),
+    ("DAX",        "^GDAXI"),
 ]
-
 # ── Currency table ────────────────────────────
 # Base currencies available as toggle options in the browser version.
 CURRENCY_BASES = ["MXN", "USD", "BRL", "EUR", "CNY"]
@@ -141,9 +140,9 @@ MOCK_MODE = os.environ.get("MOCK", "false").lower() == "true"
 SKIP_EMAIL = os.environ.get("SKIP_EMAIL", "false").lower() == "true"
 
 # ── Weather (Open-Meteo, no API key needed) ───
-WEATHER_LAT  = 19.4326
-WEATHER_LON  = -99.1332
-WEATHER_CITY = "Mexico City"
+WEATHER_LAT  = 40.4168
+WEATHER_LON  = -3.7038
+WEATHER_CITY = "Madrid"
 
 # ── Storage paths ─────────────────────────────
 # Paths are relative to the repo root, not bot/

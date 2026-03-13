@@ -1,5 +1,5 @@
 # ─────────────────────────────────────────────
-#  market_data.py  —  Tickers, FX, Weather
+#  market_data.py  —  Tickers, FX, Weatherssss
 # ─────────────────────────────────────────────
 
 import os
@@ -9,59 +9,18 @@ from config import (
     WEATHER_LAT, WEATHER_LON, WEATHER_CITY
 )
 
-BANXICO_TOKEN  = os.environ.get("BANXICO_API_KEY", "")
-CETES_SERIES   = "SF43936"   # CETES 28 días tasa de rendimiento
-
-
-# ── Banxico CETES ─────────────────────────────
-
-def fetch_cetes() -> dict:
-    """
-    Fetches the latest CETES 28D rate from Banxico SIE API.
-    Returns a ticker dict. Falls back to "—" if token missing or call fails.
-    """
-    if not BANXICO_TOKEN:
-        return {"label": "CETES 28D", "value": "—", "change": "", "direction": "flat"}
-    try:
-        url     = f"https://www.banxico.org.mx/SieAPIRest/service/v1/series/{CETES_SERIES}/datos/oportuno"
-        headers = {"Bmx-Token": BANXICO_TOKEN}
-        data    = requests.get(url, headers=headers, timeout=8).json()
-        datos   = data["bmx"]["series"][0]["datos"]
-
-        # Latest and previous observation
-        latest   = float(datos[-1]["dato"])
-        previous = float(datos[-2]["dato"]) if len(datos) >= 2 else latest
-        chg      = latest - previous
-        direction = "up" if chg >= 0 else "down"
-        chg_str   = f"{'▲' if chg >= 0 else '▼'} {abs(chg):.2f}pp"
-
-        return {
-            "label":     "CETES 28D",
-            "value":     f"{latest:.2f}%",
-            "change":    chg_str,
-            "direction": direction,
-        }
-    except Exception as e:
-        print(f"  [market] CETES fetch failed: {e}")
-        return {"label": "CETES 28D", "value": "—", "change": "", "direction": "flat"}
-
 
 # ── Tickers ───────────────────────────────────
 
 def fetch_tickers() -> list[dict]:
     """
     Fetches market data for each ticker in config using Yahoo Finance.
-    CETES 28D is fetched from Banxico SIE API.
     Returns list of dicts with label, value, change, direction.
     """
     results = []
     for label, symbol in TICKER_SYMBOLS:
         if symbol is None:
-            # Wire Banxico for CETES, skip anything else with no symbol
-            if "CETES" in label:
-                results.append(fetch_cetes())
-            else:
-                results.append({"label": label, "value": "—", "change": "", "direction": "flat"})
+            results.append({"label": label, "value": "—", "change": "", "direction": "flat"})
             continue
         try:
             url  = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=2d"
@@ -74,7 +33,7 @@ def fetch_tickers() -> list[dict]:
             pct_chg   = ((price - prev) / prev * 100) if prev else 0
             direction = "up" if pct_chg >= 0 else "down"
 
-            if "MXN" in label or "IPC" in label:
+            if "IBEX" in label or "DAX" in label or "Stoxx" in label:
                 val_str = f"{price:,.2f}"
             elif label == "S&P 500":
                 val_str = f"{price:,.0f}"
@@ -250,7 +209,7 @@ def fetch_weather() -> dict:
             f"?latitude={WEATHER_LAT}&longitude={WEATHER_LON}"
             f"&current=temperature_2m,relative_humidity_2m,weather_code"
             f"&daily=temperature_2m_max,temperature_2m_min"
-            f"&timezone=America/Mexico_City&forecast_days=1"
+            f"&timezone=Europe/Madrid&forecast_days=1"
         )
         data    = requests.get(url, timeout=8).json()
         current = data["current"]
@@ -267,7 +226,7 @@ def fetch_weather() -> dict:
             "city":     WEATHER_CITY,
             "temp":     f"{temp}°C",
             "high_low": f"{temp_max}°C / {temp_min}°C",
-            "humidity": f"Humidity {humidity}%",
+            "humidity": f"Humedad {humidity}%",
             "desc":     desc,
         }
     except Exception as e:
@@ -282,12 +241,12 @@ def fetch_weather() -> dict:
 
 
 def _weather_description(code: int) -> str:
-    if code == 0:               return "Clear skies"
-    if code in (1, 2, 3):       return "Partly cloudy"
-    if code in (45, 48):        return "Foggy"
-    if code in (51, 53, 55):    return "Light drizzle"
-    if code in (61, 63, 65):    return "Rain"
-    if code in (71, 73, 75):    return "Snow"
-    if code in (80, 81, 82):    return "Rain showers"
-    if code in (95, 96, 99):    return "Thunderstorms"
-    return "Mixed conditions"
+    if code == 0:               return "Cielo despejado"
+    if code in (1, 2, 3):       return "Parcialmente nublado"
+    if code in (45, 48):        return "Niebla"
+    if code in (51, 53, 55):    return "Llovizna"
+    if code in (61, 63, 65):    return "Lluvia"
+    if code in (71, 73, 75):    return "Nieve"
+    if code in (80, 81, 82):    return "Chubascos"
+    if code in (95, 96, 99):    return "Tormenta"
+    return "Condiciones variables"

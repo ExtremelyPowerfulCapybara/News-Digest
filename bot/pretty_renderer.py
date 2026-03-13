@@ -14,6 +14,11 @@ from datetime import date, timedelta
 from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE
 from config import GITHUB_PAGES_URL, ASSET_BASE_URL
 
+try:
+    locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
+except:
+    pass
+
 CSS = """
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
@@ -217,9 +222,18 @@ def build_pretty_html(
 
     # ── Ticker (language-neutral) ─────────────────────────────────────────
     tick_items = ""
-    for t in tickers:
-        chg_cls = "tick-up" if t["direction"] == "up" else ("tick-down" if t["direction"] == "down" else "")
-        tick_items += f"""
+    if not tickers:
+        for label in ["EUR/USD", "IBEX 35", "Euro Stoxx", "DAX"]:
+            tick_items += f"""
+      <div class="tick-item">
+        <span class="tick-label">{label}</span>
+        <span class="tick-val">—</span>
+        <span class=""></span>
+      </div>"""
+    else:
+        for t in tickers:
+            chg_cls = "tick-up" if t["direction"] == "up" else ("tick-down" if t["direction"] == "down" else "")
+            tick_items += f"""
       <div class="tick-item">
         <span class="tick-label">{t['label']}</span>
         <span class="tick-val">{t['value']}</span>
