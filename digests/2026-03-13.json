@@ -1,0 +1,220 @@
+{
+  "date": "2026-03-13",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, la guerra contra Irán ya no es un riesgo de cola: es la historia dominante que reorganiza todo lo demás, desde el precio del crudo hasta la arquitectura defensiva de Occidente en el Golfo. El secretario de Energía de Estados Unidos confirmó sin rodeos que la Marina no está lista para escoltar petroleros por el Estrecho de Ormuz porque todos los recursos están ocupados destruyendo capacidades iraníes, mientras la AIE califica esto como la mayor interrupción de suministro en la historia del mercado petrolero. Bienvenidos al briefing del jueves.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 18,
+        "context_es": "La guerra activa en el Golfo, el Estrecho de Ormuz sin escoltas y la mayor disrupción petrolera registrada empujan el sentimiento global hacia una aversión al riesgo pronunciada.",
+        "context_en": "Active war in the Gulf, no naval escorts through the Strait of Hormuz, and the largest recorded oil supply disruption push global sentiment into pronounced risk-off territory."
+      },
+      "stories": [
+        {
+          "source": "Tribuna.com.mx",
+          "headline": "EE.UU. no está listo para escoltar petroleros por el Estrecho de Ormuz; AIE reporta la mayor interrupción petrolera de la historia",
+          "body": "El secretario de Energía Chris Wright admitió en CNBC que la Marina estadounidense no puede escoltar buques petroleros por el Estrecho de Ormuz porque todos los recursos militares están enfocados en destruir las capacidades ofensivas de Irán. La Agencia Internacional de la Energía confirmó que el conflicto está causando la mayor interrupción de suministro en la historia del mercado petrolero mundial, mientras los países miembros de la AIE acordaron liberar 400 millones de barriles de reservas estratégicas —172 millones solo de EE.UU. La paradoja es perfecta: el país que inició la operación militar tampoco puede proteger el flujo de crudo que esa misma operación está amenazando.",
+          "url": "https://www.tribuna.com.mx/mundo/2026/3/12/secretario-de-energia-de-estados-unidos-dice-que-no-estan-listos-para-escoltar-buques-en-estrecho-de-ormuz-431925.html",
+          "tag": "Energía"
+        },
+        {
+          "source": "Xataka.com.mx",
+          "headline": "Irán destruyó cuatro de ocho radares estratégicos de EE.UU. en el Golfo con drones de bajo costo",
+          "body": "Imágenes satelitales confirman que Irán ha dañado cuatro de los ocho radares de alerta temprana que sostienen el escudo antimisiles estadounidense en la región, incluyendo el sistema AN/TPY-2 THAAD y el radar AN/FPS-132 en Qatar, valorado en cerca de mil millones de dólares. La estrategia iraní consiste en usar drones Shahed de bajo costo para degradar sistemáticamente sensores que cuestan cientos de millones, siguiendo el mismo patrón industrial ya documentado en Ucrania. Los analistas advierten que esto no son ataques aislados sino una táctica calculada para «dejar a ciegas» el sistema defensivo antes de desplegar armamento más sofisticado.",
+          "url": "https://www.xataka.com.mx/seguridad/imagenes-satelitales-revelaron-que-iran-destrozo-cuatro-ocho-sistemas-unicos-defensa-ee-uu-llegan-a-cero-tendremos-nueva-guerra",
+          "tag": "Macro"
+        },
+        {
+          "source": "Elperiodico.com",
+          "headline": "España descarta bonificaciones directas en combustibles y opta por rebajas fiscales focalizadas en agricultores y transportistas",
+          "body": "El ministro de Economía Carlos Cuerpo confirmó que el paquete anticrisis del Gobierno español no repetirá los descuentos universales de 20 céntimos por litro aplicados durante la guerra de Ucrania, señalando que todos los agentes sociales consultados prefieren medidas fiscales por su facilidad de implementación. El enfoque privilegiará a los sectores más golpeados por la escalada de precios energética —agricultura y transporte— con reducciones específicas en la carga impositiva sobre carburantes. El lendakari vasco Imanol Pradales fue más lejos: exigió a Sánchez eliminar el impuesto a la generación eléctrica del 7%, reducir el IVA eléctrico del 21% al 5% y activar 600 millones en compensaciones por emisiones de CO2 para industrias electrointensivas.",
+          "url": "https://www.elperiodico.com/es/economia/20260312/gobierno-enfria-descuentos-forzosos-gasolina-diesel-rebajas-fiscales-127880334",
+          "tag": "Energía"
+        },
+        {
+          "source": "BBC News",
+          "headline": "Kast asume Chile atrapado entre China —su mayor socio comercial con 32,7% del intercambio— y las presiones de Trump para reducir influencia asiática",
+          "body": "José Antonio Kast tomó posesión como presidente de Chile enfrentando de inmediato la tensión geopolítica más complicada del continente: China representa el 32,7% del comercio exterior chileno —65.332 millones de dólares en 2025, principalmente cobre y litio— mientras Washington presiona para reducir la presencia asiática en la región bajo una versión renovada de la Doctrina Monroe. Un caso reciente lo ilustra con crudeza: funcionarios chilenos fueron sancionados por EE.UU. por un contrato de cable de fibra óptica con vínculos chinos. Chile, junto con Perú y Costa Rica, es uno de los tres únicos países de América Latina con TLC simultáneos con ambas potencias, lo que convierte el equilibrio en obligación estructural, no en opción diplomática.",
+          "url": "https://www.bbc.com/mundo/articles/cj4zkez0k9jo",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Xataka.com",
+          "headline": "BMW y Rheinmetall impulsan agencia conjunta para comprar minerales críticos en bloque y reducir dependencia de China, al estilo japonés",
+          "body": "La industria alemana —automotriz, defensa y maquinaria— trabaja en crear una gran compañía privada que adquiera litio, galio, germanio y tierras raras en nombre del sector, replicando el modelo de JOGMEC, la agencia japonesa creada tras el embargo chino de tierras raras a Tokio en 2010. El banco de desarrollo KfW ya tiene preparado un fondo de 1.000 millones de euros para financiar proyectos mineros y de reciclaje como complemento. El detonante inmediato: los controles de exportación que China impuso el año pasado sobre materiales esenciales para baterías e imanes permanentes dejaron a Europa sin alternativas reales ni poder de negociación.",
+          "url": "https://www.xataka.com/empresas-y-economia/alemania-quiere-hacer-que-japon-hizo-tierras-raras-2010-unir-fuerzas-china",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Expansion.com",
+          "headline": "Bitcoin supera los 20 millones de unidades minadas: ya circula más del 95% del suministro total que existirá",
+          "body": "Esta semana se minó el bitcoin número 20 millones, dejando menos de un millón de unidades por emitir de los 21 millones programados en su código, un hito que Franklin Templeton y WisdomTree califican como refuerzo estructural de la narrativa de escasez. El último millón tardará más de un siglo en minarse —el último bitcoin está programado para alrededor del año 2140— debido a la sucesión de halvings que reducen a la mitad la emisión cada cuatro años. En un contexto de guerra, inflación energética y liquidación de reservas estratégicas, la política monetaria «que ninguna autoridad central puede modificar», en palabras de Franklin Templeton, adquiere un atractivo narrativo que los gestores de activos digitales no desaprovechan.",
+          "url": "https://www.expansion.com/mercados/criptomonedas/2026/03/12/69b28730468aeb79788b456d.html",
+          "tag": "Mercados"
+        },
+        {
+          "source": "Criptonoticias.com",
+          "headline": "España activa el reporte obligatorio de criptomonedas vía modelos 172, 175 y 721 en transposición de la directiva europea DAC8",
+          "body": "El Ministerio de Hacienda español inició el proceso de audiencia pública para los nuevos modelos de declaración de activos digitales, exigiendo a exchanges y plataformas de custodia reportar saldos y transacciones detalladas de sus usuarios residentes, incluidas operaciones de staking, préstamos y airdrops. El marco, que entró en vigor el 1 de enero de 2026, transpone la Directiva DAC8 de la UE y se alinea con estándares de la OCDE, aunque deja fuera del intercambio automático a las tenencias en monederos de autocustodia sin intermediario regulado. El sector cripto español está dividido: algunos ven erosión de privacidad, otros reconocen que la certeza regulatoria es el precio del acceso institucional.",
+          "url": "https://www.criptonoticias.com/regulacion/espana-reporte-criptomonedas-hacienda-impuestos/",
+          "tag": "Macro"
+        }
+      ],
+      "quote": {
+        "text": "Oil is a curse. Every time there's a crisis, people get confused between the price of oil and the health of the economy. They're not the same thing.",
+        "attribution": "Daniel Yergin, The Prize: The Epic Quest for Oil, Money and Power, 1991"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the war against Iran is no longer a tail risk — it is the dominant story reorganizing everything else, from crude prices to the defensive architecture of the West in the Gulf. The U.S. Secretary of Energy confirmed bluntly that the Navy is not ready to escort oil tankers through the Strait of Hormuz because all resources are busy destroying Iranian capabilities, while the IEA describes this as the largest supply disruption in the history of the oil market. Welcome to Thursday's briefing.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 18,
+        "context_es": "La guerra activa en el Golfo, el Estrecho de Ormuz sin escoltas y la mayor disrupción petrolera registrada empujan el sentimiento global hacia una aversión al riesgo pronunciada.",
+        "context_en": "Active war in the Gulf, no naval escorts through the Strait of Hormuz, and the largest recorded oil supply disruption push global sentiment into pronounced risk-off territory."
+      },
+      "stories": [
+        {
+          "source": "Tribuna.com.mx",
+          "headline": "U.S. not ready to escort oil tankers through the Strait of Hormuz; IEA reports largest oil supply disruption in history",
+          "body": "Energy Secretary Chris Wright admitted on CNBC that the U.S. Navy cannot escort oil tankers through the Strait of Hormuz because all military resources are focused on destroying Iran's offensive capabilities. The International Energy Agency confirmed that the conflict is causing the largest supply disruption in the history of the global oil market, while IEA member countries agreed to release 400 million barrels from strategic reserves — 172 million from the U.S. alone. The irony is perfect: the country that launched the military operation also cannot protect the oil flows that the very same operation is threatening.",
+          "url": "https://www.tribuna.com.mx/mundo/2026/3/12/secretario-de-energia-de-estados-unidos-dice-que-no-estan-listos-para-escoltar-buques-en-estrecho-de-ormuz-431925.html",
+          "tag": "Energía"
+        },
+        {
+          "source": "Xataka.com.mx",
+          "headline": "Iran destroys four of eight U.S. strategic radars in the Gulf using low-cost drones",
+          "body": "Satellite imagery confirms that Iran has damaged four of the eight early-warning radars underpinning the U.S. missile defense shield in the region, including the THAAD-linked AN/TPY-2 system and the AN/FPS-132 radar in Qatar, valued at nearly one billion dollars. Iran's strategy uses low-cost Shahed drones to systematically degrade sensors worth hundreds of millions, following the same industrial playbook already documented in Ukraine. Analysts warn this is not a series of isolated attacks but a calculated campaign to \"blind\" the defensive system before deploying more sophisticated weaponry.",
+          "url": "https://www.xataka.com.mx/seguridad/imagenes-satelitales-revelaron-que-iran-destrozo-cuatro-ocho-sistemas-unicos-defensa-ee-uu-llegan-a-cero-tendremos-nueva-guerra",
+          "tag": "Macro"
+        },
+        {
+          "source": "Elperiodico.com",
+          "headline": "Spain rules out blanket fuel subsidies, pivots to targeted tax cuts for farmers and truckers",
+          "body": "Economy Minister Carlos Cuerpo confirmed that Spain's anti-crisis package will not repeat the universal 20-cent-per-liter discounts applied during the Ukraine war, noting that all stakeholders consulted prefer fiscal measures for ease of implementation. The approach will prioritize sectors hardest hit by the energy price surge — agriculture and transport — with specific reductions in fuel tax burden. The Basque president Imanol Pradales went further, demanding that Sánchez eliminate the 7% electricity generation tax, cut the electricity VAT from 21% to 5%, and activate €600 million in CO2 emissions compensation for energy-intensive industries.",
+          "url": "https://www.elperiodico.com/es/economia/20260312/gobierno-enfria-descuentos-forzosos-gasolina-diesel-rebajas-fiscales-127880334",
+          "tag": "Energía"
+        },
+        {
+          "source": "BBC News",
+          "headline": "Kast takes office in Chile caught between China — its largest trading partner at 32.7% of trade — and Trump's pressure to reduce Asian influence",
+          "body": "José Antonio Kast was inaugurated as Chile's president immediately facing the continent's most complex geopolitical tension: China accounts for 32.7% of Chile's foreign trade — $65.3 billion in 2025, primarily copper and lithium — while Washington pressures for reduced Asian presence in the region under a revived Monroe Doctrine. A recent case illustrates the stakes bluntly: Chilean officials were sanctioned by the U.S. over a fiber optic cable contract with Chinese links. Chile, along with Peru and Costa Rica, is one of only three Latin American countries with simultaneous free trade agreements with both superpowers, making balance a structural obligation rather than a diplomatic option.",
+          "url": "https://www.bbc.com/mundo/articles/cj4zkez0k9jo",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Xataka.com",
+          "headline": "BMW and Rheinmetall push joint agency to buy critical minerals in bulk, reducing China dependence along Japan's 2010 playbook",
+          "body": "German industry — automotive, defense, and machinery — is working to create a large private company that would purchase lithium, gallium, germanium, and rare earths on behalf of the sector, replicating the model of JOGMEC, the Japanese agency created after China's rare earth embargo against Tokyo in 2010. Development bank KfW already has a €1 billion fund ready to finance mining and recycling projects as a complement. The immediate trigger: China's export controls imposed last year on materials essential for batteries and permanent magnets left Europe without real alternatives or negotiating leverage.",
+          "url": "https://www.xataka.com/empresas-y-economia/alemania-quiere-hacer-que-japon-hizo-tierras-raras-2010-unir-fuerzas-china",
+          "tag": "Comercio"
+        },
+        {
+          "source": "Expansion.com",
+          "headline": "Bitcoin surpasses 20 million units mined: over 95% of total supply that will ever exist is now in circulation",
+          "body": "This week the 20 millionth bitcoin was mined, leaving fewer than one million units yet to be issued out of the 21 million programmed into its code — a milestone that Franklin Templeton and WisdomTree describe as a structural reinforcement of the scarcity narrative. The last million will take more than a century to mine — the final bitcoin is scheduled for around the year 2140 — due to the succession of halvings that halve emissions roughly every four years. In a context of war, energy inflation, and strategic reserve liquidations, a monetary policy \"that no central authority can modify,\" in Franklin Templeton's words, carries a narrative appeal that digital asset managers are not wasting.",
+          "url": "https://www.expansion.com/mercados/criptomonedas/2026/03/12/69b28730468aeb79788b456d.html",
+          "tag": "Mercados"
+        },
+        {
+          "source": "Criptonoticias.com",
+          "headline": "Spain activates mandatory crypto reporting via forms 172, 175, and 721 in transposition of EU's DAC8 directive",
+          "body": "Spain's Ministry of Finance launched the public consultation process for new digital asset declaration models, requiring exchanges and custody platforms to report detailed balances and transactions of resident users, including staking, lending, and airdrop operations. The framework, which entered into force on January 1, 2026, transposes the EU's DAC8 Directive and aligns with OECD standards, though it excludes from automatic exchange holdings in self-custody wallets without a regulated intermediary. Spain's crypto sector is divided: some see a privacy erosion, others recognize that regulatory certainty is the price of institutional access.",
+          "url": "https://www.criptonoticias.com/regulacion/espana-reporte-criptomonedas-hacienda-impuestos/",
+          "tag": "Macro"
+        }
+      ],
+      "quote": {
+        "text": "Oil is a curse. Every time there's a crisis, people get confused between the price of oil and the health of the economy. They're not the same thing.",
+        "attribution": "Daniel Yergin, The Prize: The Epic Quest for Oil, Money and Power, 1991"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.83",
+        "change": "▲ 0.5%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,673",
+        "change": "▼ 1.6%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "66,085.81",
+        "change": "▼ 2.2%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.8300",
+        "chg_1d": {
+          "text": "▲ 0.48%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 0.90%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.4551",
+        "chg_1d": {
+          "text": "▼ 0.13%",
+          "cls": "chg-down"
+        },
+        "chg_1w": {
+          "text": "▼ 1.33%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "13.0508",
+        "chg_1d": {
+          "text": "▲ 0.04%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 1.33%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "122.9450",
+        "chg_1d": {
+          "text": "▲ 0.92%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 0.92%",
+          "cls": "chg-down"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "10°C",
+    "high_low": "22°C / 10°C",
+    "humidity": "Humidity 81%",
+    "desc": "Partly cloudy"
+  }
+}

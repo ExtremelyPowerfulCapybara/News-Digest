@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell -- March 13, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* ── Language toggle ── */
+  .lang-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .lang-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+
+  .lang-en { display: none; }
+
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
+  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
+  .weather-temp { font-size: 11px; color: #ccc; }
+  .weather-humidity { font-size: 11px; color: #ccc; }
+  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
+    .weather-desc { margin-left: 0; width: 100%; }
+    .editor-note { padding: 20px 20px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .currency { padding: 20px 20px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>FRIDAY, MARCH 13, 2026</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <span>NO. 14</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">USD/MXN</span>
+        <span class="tick-val">17.83</span>
+        <span class="tick-up">▲ 0.5%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">S&P 500</span>
+        <span class="tick-val">6,673</span>
+        <span class="tick-down">▼ 1.6%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">CETES 28D</span>
+        <span class="tick-val">6.81%</span>
+        <span class="tick-up">▲ 0.00pp</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">IPC BMV</span>
+        <span class="tick-val">66,085.81</span>
+        <span class="tick-down">▼ 2.2%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather">
+    <span class="weather-city">Mexico City</span>
+    <span class="weather-temp">22°C / 10°C</span>
+    <span class="weather-humidity">Humidity 81%</span>
+    <span class="weather-desc">Partly cloudy</span>
+  </div>
+
+  <div class="editor-note">
+    <div class="lang-es"><p>Estimados humanos, la guerra contra Irán ya no es un riesgo de cola: es la historia dominante que reorganiza todo lo demás, desde el precio del crudo hasta la arquitectura defensiva de Occidente en el Golfo. El secretario de Energía de Estados Unidos confirmó sin rodeos que la Marina no está lista para escoltar petroleros por el Estrecho de Ormuz porque todos los recursos están ocupados destruyendo capacidades iraníes, mientras la AIE califica esto como la mayor interrupción de suministro en la historia del mercado petrolero. Bienvenidos al briefing del jueves.</p></div>
+    <div class="lang-en"><p>Estimados humanos, the war against Iran is no longer a tail risk — it is the dominant story reorganizing everything else, from crude prices to the defensive architecture of the West in the Gulf. The U.S. Secretary of Energy confirmed bluntly that the Navy is not ready to escort oil tankers through the Strait of Hormuz because all resources are busy destroying Iranian capabilities, while the IEA describes this as the largest supply disruption in the history of the oil market. Welcome to Thursday's briefing.</p></div>
+    <div class="editor-sig">&mdash; Hal F. Life, Lead Correspondent, The Structural Adjustment Beat</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label"
+            data-es="Sentimiento del D&#237;a"
+            data-en="Market Sentiment">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading risk-off lang-es">Aversión al Riesgo</span>
+      <span class="sentiment-reading risk-off lang-en">Risk-Off</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker risk-off" style="left:18%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
+      <span data-es="Neutral"          data-en="Neutral">Neutral</span>
+      <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
+    </div>
+    <div class="sentiment-context lang-es">La guerra activa en el Golfo, el Estrecho de Ormuz sin escoltas y la mayor disrupción petrolera registrada empujan el sentimiento global hacia una aversión al riesgo pronunciada.</div>
+    <div class="sentiment-context lang-en">Active war in the Gulf, no naval escorts through the Strait of Hormuz, and the largest recorded oil supply disruption push global sentiment into pronounced risk-off territory.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Tribuna.com.mx</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">EE.UU. no está listo para escoltar petroleros por el Estrecho de Ormuz; AIE reporta la mayor interrupción petrolera de la historia</div>
+    <div class="story-body">El secretario de Energía Chris Wright admitió en CNBC que la Marina estadounidense no puede escoltar buques petroleros por el Estrecho de Ormuz porque todos los recursos militares están enfocados en destruir las capacidades ofensivas de Irán. La Agencia Internacional de la Energía confirmó que el conflicto está causando la mayor interrupción de suministro en la historia del mercado petrolero mundial, mientras los países miembros de la AIE acordaron liberar 400 millones de barriles de reservas estratégicas —172 millones solo de EE.UU. La paradoja es perfecta: el país que inició la operación militar tampoco puede proteger el flujo de crudo que esa misma operación está amenazando.</div>
+    <a href="https://www.tribuna.com.mx/mundo/2026/3/12/secretario-de-energia-de-estados-unidos-dice-que-no-estan-listos-para-escoltar-buques-en-estrecho-de-ormuz-431925.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">U.S. not ready to escort oil tankers through the Strait of Hormuz; IEA reports largest oil supply disruption in history</div>
+    <div class="story-body">Energy Secretary Chris Wright admitted on CNBC that the U.S. Navy cannot escort oil tankers through the Strait of Hormuz because all military resources are focused on destroying Iran's offensive capabilities. The International Energy Agency confirmed that the conflict is causing the largest supply disruption in the history of the global oil market, while IEA member countries agreed to release 400 million barrels from strategic reserves — 172 million from the U.S. alone. The irony is perfect: the country that launched the military operation also cannot protect the oil flows that the very same operation is threatening.</div>
+    <a href="https://www.tribuna.com.mx/mundo/2026/3/12/secretario-de-energia-de-estados-unidos-dice-que-no-estan-listos-para-escoltar-buques-en-estrecho-de-ormuz-431925.html" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Xataka.com.mx</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Irán destruyó cuatro de ocho radares estratégicos de EE.UU. en el Golfo con drones de bajo costo</div>
+    <div class="story-body">Imágenes satelitales confirman que Irán ha dañado cuatro de los ocho radares de alerta temprana que sostienen el escudo antimisiles estadounidense en la región, incluyendo el sistema AN/TPY-2 THAAD y el radar AN/FPS-132 en Qatar, valorado en cerca de mil millones de dólares. La estrategia iraní consiste en usar drones Shahed de bajo costo para degradar sistemáticamente sensores que cuestan cientos de millones, siguiendo el mismo patrón industrial ya documentado en Ucrania. Los analistas advierten que esto no son ataques aislados sino una táctica calculada para «dejar a ciegas» el sistema defensivo antes de desplegar armamento más sofisticado.</div>
+    <a href="https://www.xataka.com.mx/seguridad/imagenes-satelitales-revelaron-que-iran-destrozo-cuatro-ocho-sistemas-unicos-defensa-ee-uu-llegan-a-cero-tendremos-nueva-guerra" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Iran destroys four of eight U.S. strategic radars in the Gulf using low-cost drones</div>
+    <div class="story-body">Satellite imagery confirms that Iran has damaged four of the eight early-warning radars underpinning the U.S. missile defense shield in the region, including the THAAD-linked AN/TPY-2 system and the AN/FPS-132 radar in Qatar, valued at nearly one billion dollars. Iran's strategy uses low-cost Shahed drones to systematically degrade sensors worth hundreds of millions, following the same industrial playbook already documented in Ukraine. Analysts warn this is not a series of isolated attacks but a calculated campaign to "blind" the defensive system before deploying more sophisticated weaponry.</div>
+    <a href="https://www.xataka.com.mx/seguridad/imagenes-satelitales-revelaron-que-iran-destrozo-cuatro-ocho-sistemas-unicos-defensa-ee-uu-llegan-a-cero-tendremos-nueva-guerra" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Elperiodico.com</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">España descarta bonificaciones directas en combustibles y opta por rebajas fiscales focalizadas en agricultores y transportistas</div>
+    <div class="story-body">El ministro de Economía Carlos Cuerpo confirmó que el paquete anticrisis del Gobierno español no repetirá los descuentos universales de 20 céntimos por litro aplicados durante la guerra de Ucrania, señalando que todos los agentes sociales consultados prefieren medidas fiscales por su facilidad de implementación. El enfoque privilegiará a los sectores más golpeados por la escalada de precios energética —agricultura y transporte— con reducciones específicas en la carga impositiva sobre carburantes. El lendakari vasco Imanol Pradales fue más lejos: exigió a Sánchez eliminar el impuesto a la generación eléctrica del 7%, reducir el IVA eléctrico del 21% al 5% y activar 600 millones en compensaciones por emisiones de CO2 para industrias electrointensivas.</div>
+    <a href="https://www.elperiodico.com/es/economia/20260312/gobierno-enfria-descuentos-forzosos-gasolina-diesel-rebajas-fiscales-127880334" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Spain rules out blanket fuel subsidies, pivots to targeted tax cuts for farmers and truckers</div>
+    <div class="story-body">Economy Minister Carlos Cuerpo confirmed that Spain's anti-crisis package will not repeat the universal 20-cent-per-liter discounts applied during the Ukraine war, noting that all stakeholders consulted prefer fiscal measures for ease of implementation. The approach will prioritize sectors hardest hit by the energy price surge — agriculture and transport — with specific reductions in fuel tax burden. The Basque president Imanol Pradales went further, demanding that Sánchez eliminate the 7% electricity generation tax, cut the electricity VAT from 21% to 5%, and activate €600 million in CO2 emissions compensation for energy-intensive industries.</div>
+    <a href="https://www.elperiodico.com/es/economia/20260312/gobierno-enfria-descuentos-forzosos-gasolina-diesel-rebajas-fiscales-127880334" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">BBC News</span>
+    <span class="story-tag">Comercio</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Kast asume Chile atrapado entre China —su mayor socio comercial con 32,7% del intercambio— y las presiones de Trump para reducir influencia asiática</div>
+    <div class="story-body">José Antonio Kast tomó posesión como presidente de Chile enfrentando de inmediato la tensión geopolítica más complicada del continente: China representa el 32,7% del comercio exterior chileno —65.332 millones de dólares en 2025, principalmente cobre y litio— mientras Washington presiona para reducir la presencia asiática en la región bajo una versión renovada de la Doctrina Monroe. Un caso reciente lo ilustra con crudeza: funcionarios chilenos fueron sancionados por EE.UU. por un contrato de cable de fibra óptica con vínculos chinos. Chile, junto con Perú y Costa Rica, es uno de los tres únicos países de América Latina con TLC simultáneos con ambas potencias, lo que convierte el equilibrio en obligación estructural, no en opción diplomática.</div>
+    <a href="https://www.bbc.com/mundo/articles/cj4zkez0k9jo" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Kast takes office in Chile caught between China — its largest trading partner at 32.7% of trade — and Trump's pressure to reduce Asian influence</div>
+    <div class="story-body">José Antonio Kast was inaugurated as Chile's president immediately facing the continent's most complex geopolitical tension: China accounts for 32.7% of Chile's foreign trade — $65.3 billion in 2025, primarily copper and lithium — while Washington pressures for reduced Asian presence in the region under a revived Monroe Doctrine. A recent case illustrates the stakes bluntly: Chilean officials were sanctioned by the U.S. over a fiber optic cable contract with Chinese links. Chile, along with Peru and Costa Rica, is one of only three Latin American countries with simultaneous free trade agreements with both superpowers, making balance a structural obligation rather than a diplomatic option.</div>
+    <a href="https://www.bbc.com/mundo/articles/cj4zkez0k9jo" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Xataka.com</span>
+    <span class="story-tag">Comercio</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">BMW y Rheinmetall impulsan agencia conjunta para comprar minerales críticos en bloque y reducir dependencia de China, al estilo japonés</div>
+    <div class="story-body">La industria alemana —automotriz, defensa y maquinaria— trabaja en crear una gran compañía privada que adquiera litio, galio, germanio y tierras raras en nombre del sector, replicando el modelo de JOGMEC, la agencia japonesa creada tras el embargo chino de tierras raras a Tokio en 2010. El banco de desarrollo KfW ya tiene preparado un fondo de 1.000 millones de euros para financiar proyectos mineros y de reciclaje como complemento. El detonante inmediato: los controles de exportación que China impuso el año pasado sobre materiales esenciales para baterías e imanes permanentes dejaron a Europa sin alternativas reales ni poder de negociación.</div>
+    <a href="https://www.xataka.com/empresas-y-economia/alemania-quiere-hacer-que-japon-hizo-tierras-raras-2010-unir-fuerzas-china" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">BMW and Rheinmetall push joint agency to buy critical minerals in bulk, reducing China dependence along Japan's 2010 playbook</div>
+    <div class="story-body">German industry — automotive, defense, and machinery — is working to create a large private company that would purchase lithium, gallium, germanium, and rare earths on behalf of the sector, replicating the model of JOGMEC, the Japanese agency created after China's rare earth embargo against Tokyo in 2010. Development bank KfW already has a €1 billion fund ready to finance mining and recycling projects as a complement. The immediate trigger: China's export controls imposed last year on materials essential for batteries and permanent magnets left Europe without real alternatives or negotiating leverage.</div>
+    <a href="https://www.xataka.com/empresas-y-economia/alemania-quiere-hacer-que-japon-hizo-tierras-raras-2010-unir-fuerzas-china" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Expansion.com</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Bitcoin supera los 20 millones de unidades minadas: ya circula más del 95% del suministro total que existirá</div>
+    <div class="story-body">Esta semana se minó el bitcoin número 20 millones, dejando menos de un millón de unidades por emitir de los 21 millones programados en su código, un hito que Franklin Templeton y WisdomTree califican como refuerzo estructural de la narrativa de escasez. El último millón tardará más de un siglo en minarse —el último bitcoin está programado para alrededor del año 2140— debido a la sucesión de halvings que reducen a la mitad la emisión cada cuatro años. En un contexto de guerra, inflación energética y liquidación de reservas estratégicas, la política monetaria «que ninguna autoridad central puede modificar», en palabras de Franklin Templeton, adquiere un atractivo narrativo que los gestores de activos digitales no desaprovechan.</div>
+    <a href="https://www.expansion.com/mercados/criptomonedas/2026/03/12/69b28730468aeb79788b456d.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Bitcoin surpasses 20 million units mined: over 95% of total supply that will ever exist is now in circulation</div>
+    <div class="story-body">This week the 20 millionth bitcoin was mined, leaving fewer than one million units yet to be issued out of the 21 million programmed into its code — a milestone that Franklin Templeton and WisdomTree describe as a structural reinforcement of the scarcity narrative. The last million will take more than a century to mine — the final bitcoin is scheduled for around the year 2140 — due to the succession of halvings that halve emissions roughly every four years. In a context of war, energy inflation, and strategic reserve liquidations, a monetary policy "that no central authority can modify," in Franklin Templeton's words, carries a narrative appeal that digital asset managers are not wasting.</div>
+    <a href="https://www.expansion.com/mercados/criptomonedas/2026/03/12/69b28730468aeb79788b456d.html" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Criptonoticias.com</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">España activa el reporte obligatorio de criptomonedas vía modelos 172, 175 y 721 en transposición de la directiva europea DAC8</div>
+    <div class="story-body">El Ministerio de Hacienda español inició el proceso de audiencia pública para los nuevos modelos de declaración de activos digitales, exigiendo a exchanges y plataformas de custodia reportar saldos y transacciones detalladas de sus usuarios residentes, incluidas operaciones de staking, préstamos y airdrops. El marco, que entró en vigor el 1 de enero de 2026, transpone la Directiva DAC8 de la UE y se alinea con estándares de la OCDE, aunque deja fuera del intercambio automático a las tenencias en monederos de autocustodia sin intermediario regulado. El sector cripto español está dividido: algunos ven erosión de privacidad, otros reconocen que la certeza regulatoria es el precio del acceso institucional.</div>
+    <a href="https://www.criptonoticias.com/regulacion/espana-reporte-criptomonedas-hacienda-impuestos/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Spain activates mandatory crypto reporting via forms 172, 175, and 721 in transposition of EU's DAC8 directive</div>
+    <div class="story-body">Spain's Ministry of Finance launched the public consultation process for new digital asset declaration models, requiring exchanges and custody platforms to report detailed balances and transactions of resident users, including staking, lending, and airdrop operations. The framework, which entered into force on January 1, 2026, transposes the EU's DAC8 Directive and aligns with OECD standards, though it excludes from automatic exchange holdings in self-custody wallets without a regulated intermediary. Spain's crypto sector is divided: some see a privacy erosion, others recognize that regulatory certainty is the price of institutional access.</div>
+    <a href="https://www.criptonoticias.com/regulacion/espana-reporte-criptomonedas-hacienda-impuestos/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="section-title"
+         data-es="Tipo de Cambio"
+         data-en="Exchange Rates">Tipo de Cambio</div>
+    <table class="currency-table">
+      <thead>
+        <tr>
+          <th data-es="Par"  data-en="Pair">Par</th>
+          <th data-es="Tipo" data-en="Rate">Tipo</th>
+          <th style="text-align:right;">1D</th>
+          <th style="text-align:right;">1W</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.8300</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.48%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.90%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.4551</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.13%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.33%</td>
+      </tr>
+      <tr>
+        <td class="pair">CAD / MXN</td>
+        <td>13.0508</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.04%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.33%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>122.9450</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.92%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.92%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="lang-es">
+      <div class="quote-text">Oil is a curse. Every time there's a crisis, people get confused between the price of oil and the health of the economy. They're not the same thing.</div>
+      <div class="quote-attr">Daniel Yergin, The Prize: The Epic Quest for Oil, Money and Power, 1991</div>
+    </div>
+    <div class="lang-en">
+      <div class="quote-text">Oil is a curse. Every time there's a crisis, people get confused between the price of oil and the health of the economy. They're not the same thing.</div>
+      <div class="quote-attr">Daniel Yergin, The Prize: The Epic Quest for Oil, Money and Power, 1991</div>
+    </div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="week">
+  <div class="section-title"
+       data-es="Resumen Semanal &middot; Mar 09&ndash;13, 2026"
+       data-en="Week in Review &middot; Mar 09&ndash;13, 2026">Resumen Semanal &middot; Mar 09&ndash;13, 2026</div>
+  <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Lun</div>
+          <div class="tl-dot active"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Energy</span>
+          <div class="lang-es">
+            <div class="tl-headline">Energy Secretary Wright says oil prices will fall once U.S. neutralizes Iran's Strait of Hormuz threat — crude already above $91</div>
+            <div class="tl-body">Energy Secretary Chris Wright told Fox News Sunday that the U.S. is 'massively attriting' Iran's missile and drone capability and that energy will 'flow soon,' ...</div>
+          </div>
+          <div class="lang-en">
+            <div class="tl-headline">Energy Secretary Wright says oil prices will fall once U.S. neutralizes Iran's Strait of Hormuz threat — crude already above $91</div>
+            <div class="tl-body">Energy Secretary Chris Wright told Fox News Sunday that the U.S. is 'massively attriting' Iran's missile and drone capability and that energy will 'flow soon,' ...</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Mar</div>
+          <div class="tl-dot active"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Energy</span>
+          <div class="lang-es">
+            <div class="tl-headline">Saudi Aramco reroutes crude as Hormuz closure sends Brent near $120/bbl</div>
+            <div class="tl-body">Saudi Aramco is diverting oil shipments to the Red Sea port of Yanbu after the Strait of Hormuz was effectively closed by the U.S.-Israel campaign against Iran,...</div>
+          </div>
+          <div class="lang-en">
+            <div class="tl-headline">Saudi Aramco reroutes crude as Hormuz closure sends Brent near $120/bbl</div>
+            <div class="tl-body">Saudi Aramco is diverting oil shipments to the Red Sea port of Yanbu after the Strait of Hormuz was effectively closed by the U.S.-Israel campaign against Iran,...</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Mié</div>
+          <div class="tl-dot "></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Energía</span>
+          <div class="lang-es">
+            <div class="tl-headline">Petróleo retrocede a 80 dólares tras escoltas navales de EE.UU. en Ormuz, pero analistas advierten crisis sin precedente</div>
+            <div class="tl-body">El WTI cayó 1.5% a 79.96 dólares por barril — su nivel más bajo desde el 3 de marzo — después de que el secretario de Energía de EE.UU., Chris Wright, anunciara...</div>
+          </div>
+          <div class="lang-en">
+            <div class="tl-headline">Petróleo retrocede a 80 dólares tras escoltas navales de EE.UU. en Ormuz, pero analistas advierten crisis sin precedente</div>
+            <div class="tl-body">El WTI cayó 1.5% a 79.96 dólares por barril — su nivel más bajo desde el 3 de marzo — después de que el secretario de Energía de EE.UU., Chris Wright, anunciara...</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Jue</div>
+          <div class="tl-dot "></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Energía</span>
+          <div class="lang-es">
+            <div class="tl-headline">AIE libera 400 millones de barriles en intervención histórica mientras el Brent recupera los 92 dólares</div>
+            <div class="tl-body">La Agencia Internacional de Energía aprobó por unanimidad la mayor liberación de reservas estratégicas de petróleo en sus 50 años de historia —400 millones de b...</div>
+          </div>
+          <div class="lang-en">
+            <div class="tl-headline">AIE libera 400 millones de barriles en intervención histórica mientras el Brent recupera los 92 dólares</div>
+            <div class="tl-body">La Agencia Internacional de Energía aprobó por unanimidad la mayor liberación de reservas estratégicas de petróleo en sus 50 años de historia —400 millones de b...</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Vie</div>
+          <div class="tl-dot active"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Energía</span>
+          <div class="lang-es">
+            <div class="tl-headline">EE.UU. no está listo para escoltar petroleros por el Estrecho de Ormuz; AIE reporta la mayor interrupción petrolera de la historia</div>
+            <div class="tl-body">El secretario de Energía Chris Wright admitió en CNBC que la Marina estadounidense no puede escoltar buques petroleros por el Estrecho de Ormuz porque todos los...</div>
+          </div>
+          <div class="lang-en">
+            <div class="tl-headline">EE.UU. no está listo para escoltar petroleros por el Estrecho de Ormuz; AIE reporta la mayor interrupción petrolera de la historia</div>
+            <div class="tl-body">El secretario de Energía Chris Wright admitió en CNBC que la Marina estadounidense no puede escoltar buques petroleros por el Estrecho de Ormuz porque todos los...</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div style="padding:24px 48px 8px;">
+  <div class="section-title"
+       data-es="La Semana en Palabras"
+       data-en="The Week in Words">La Semana en Palabras</div>
+  <img src="https://extremelypowerfulcapybara.github.io/News-Digest/wordcloud-2026-W11.png" style="width:100%; border:1px solid #cdd4d9;" alt="Word cloud"/>
+</div>
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by lang-es">por Hal F. Life, Lead Correspondent, The Structural Adjustment Beat</span>
+    <span class="footer-by lang-en">by Hal F. Life, Lead Correspondent, The Structural Adjustment Beat</span>
+  </div>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // swap static labels
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = lang === 'es' ? el.dataset.es : el.dataset.en;
+    });
+    localStorage.setItem('nlLang', lang);
+  }
+  (function(){
+    var saved = localStorage.getItem('nlLang') || 'es';
+    setLang(saved);
+  })();
+</script>
+
+</body>
+</html>
