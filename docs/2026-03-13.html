@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell -- March 13, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* ── Language toggle ── */
+  .lang-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .lang-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+
+  .lang-en { display: none; }
+
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
+  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
+  .weather-temp { font-size: 11px; color: #ccc; }
+  .weather-humidity { font-size: 11px; color: #ccc; }
+  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .currency-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .currency-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 8px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .currency-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .currency-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
+    .weather-desc { margin-left: 0; width: 100%; }
+    .editor-note { padding: 20px 20px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .currency { padding: 20px 20px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>FRIDAY, MARCH 13, 2026</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <span>NO. 12</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">USD/MXN</span>
+        <span class="tick-val">17.94</span>
+        <span class="tick-up">▲ 1.1%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">S&P 500</span>
+        <span class="tick-val">6,632</span>
+        <span class="tick-down">▼ 2.1%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">CETES 28D</span>
+        <span class="tick-val">6.81%</span>
+        <span class="tick-up">▲ 0.00pp</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">IPC BMV</span>
+        <span class="tick-val">65,648.91</span>
+        <span class="tick-down">▼ 0.7%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather">
+    <span class="weather-city">Mexico City</span>
+    <span class="weather-temp">22°C / 10°C</span>
+    <span class="weather-humidity">Humidity 32%</span>
+    <span class="weather-desc">Partly cloudy</span>
+  </div>
+
+  <div class="editor-note">
+    <div class="lang-es"><p>Estimados humanos, el mundo despertó hoy con petróleo cerca de los $100 por barril, el estrecho de Ormuz funcionalmente cerrado y una administración estadounidense que, según sus propios legisladores, no tiene plan para reabrirlo — lo cual es, si se piensa bien, una forma bastante cara de improvisar. Mientras tanto, México paga las consecuencias en los surtidores, Argentina ajusta sus bandas cambiarias al ritmo de una inflación que no da tregua, y Santiago Levy nos recuerda que el problema de fondo del país azteca lleva 25 años sin resolverse y no tiene nada que ver con Trump.</p></div>
+    <div class="lang-en"><p>Estimados humanos, the world woke up today with oil hovering near $100 a barrel, the Strait of Hormuz functionally closed, and a US administration that — according to its own legislators — has no plan to reopen it, which is, if you think about it, a remarkably expensive way to improvise. Meanwhile, Mexico pays the consequences at the pump, Argentina adjusts its currency bands to the rhythm of an inflation that won't quit, and Santiago Levy reminds us that the country's underlying problem has gone unsolved for 25 years and has nothing to do with Trump.</p></div>
+    <div class="editor-sig">&mdash; Cora Lation, Chief of Staff, Monetary Policy Theater</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label"
+            data-es="Sentimiento del D&#237;a"
+            data-en="Market Sentiment">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading risk-off lang-es">Aversión al Riesgo</span>
+      <span class="sentiment-reading risk-off lang-en">Risk-Off</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker risk-off" style="left:22%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
+      <span data-es="Neutral"          data-en="Neutral">Neutral</span>
+      <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
+    </div>
+    <div class="sentiment-context lang-es">El cierre del estrecho de Ormuz, el petróleo volátil entre $80 y $100 y la ausencia de una estrategia de salida clara en el conflicto Irán-EE.UU. dominan el ánimo del mercado global.</div>
+    <div class="sentiment-context lang-en">The effective closure of the Strait of Hormuz, oil swinging between $80 and $100, and the absence of a clear US exit strategy in the Iran conflict are dominating global market sentiment.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">El error de cálculo de Trump: Irán cierra Ormuz y el petróleo se dispara sin plan de salida a la vista</div>
+    <div class="story-body">El secretario de Energía Chris Wright aseguró en febrero que una guerra con Irán no alteraría los mercados energéticos; semanas después, el estrecho de Ormuz está bloqueado, el petróleo tocó $120 por barril y la navegación comercial en el Golfo se ha paralizado. Funcionarios del gobierno reconocen en privado que no existe una estrategia para reabrir la vía marítima que transporta el 20% del suministro mundial de crudo. El senador demócrata Christopher Murphy confirmó tras un briefing clasificado que la Casa Blanca 'no sabía cómo volver a abrirlo de forma segura', mientras la retórica de Hegseth sigue siendo beligerante y los precios de la gasolina presionan a los votantes.</div>
+    <a href="https://www.lanacion.com.ar/el-mundo/como-trump-y-sus-asesores-calcularon-mal-la-respuesta-de-iran-a-la-guerra-nid12032026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Trump's miscalculation: Iran closes Hormuz, oil spikes, and there is no exit plan in sight</div>
+    <div class="story-body">Energy Secretary Chris Wright declared in February that a war with Iran would not disrupt energy markets; weeks later, the Strait of Hormuz is blocked, oil touched $120 a barrel, and commercial shipping in the Gulf has ground to a halt. Officials privately acknowledge that no strategy exists to reopen the waterway that carries 20% of the world's oil supply. Democratic Senator Christopher Murphy confirmed after a classified briefing that the White House 'did not know how to safely reopen it,' while Hegseth's rhetoric remains bellicose and gasoline prices are squeezing voters.</div>
+    <a href="https://www.lanacion.com.ar/el-mundo/como-trump-y-sus-asesores-calcularon-mal-la-respuesta-de-iran-a-la-guerra-nid12032026/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">The Economist: el conflicto en Medio Oriente es 'un ataque a la economía mundial' y el petróleo podría superar los $150</div>
+    <div class="story-body">Con el 15% del suministro mundial de petróleo bloqueado por el cierre de facto del estrecho de Ormuz, The Economist advierte que el precio necesario para equilibrar oferta y demanda en un escenario de cierre indefinido podría superar los $150 por barril — más que cualquier crisis energética de los años 70. La Agencia Internacional de la Energía liberó 400 millones de barriles de sus reservas de emergencia de 1.800 millones, pero el acceso está limitado por restricciones logísticas. Trump, que ya cedió en su guerra comercial cuando los mercados se desplomaron, enfrenta ahora una crisis energética que no puede resolver con un solo tuit.</div>
+    <a href="https://www.lanacion.com.ar/economia/un-ataque-a-la-economia-mundial-las-consecuencias-del-conflicto-en-medio-oriente-segun-the-economist-nid12032026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">The Economist: the Middle East conflict is 'an attack on the global economy' and oil could exceed $150</div>
+    <div class="story-body">With 15% of global oil supply blocked by the de facto closure of the Strait of Hormuz, The Economist warns that the price needed to balance supply and demand in an indefinite closure scenario could exceed $150 per barrel — more than any energy crisis of the 1970s. The International Energy Agency released 400 million barrels from its 1.8-billion-barrel emergency reserves, but access is constrained by logistical bottlenecks. Trump, who already retreated on his trade war when markets tanked, now faces an energy crisis he cannot resolve with a single tweet.</div>
+    <a href="https://www.lanacion.com.ar/economia/un-ataque-a-la-economia-mundial-las-consecuencias-del-conflicto-en-medio-oriente-segun-the-economist-nid12032026/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Gasolina premium y diésel rebasan los 30 pesos por litro en México; el pacto gubernamental no los cubre</div>
+    <div class="story-body">El conflicto en Medio Oriente ya se siente en los surtidores mexicanos: el diésel subió 6.1% en 12 días desde el inicio de la guerra, pasando de 26.24 a 27.83 pesos por litro en promedio nacional, con casos aislados que ya superan los 30 pesos. La gasolina regular está protegida por el acuerdo voluntario entre el gobierno y el sector gasolinero, pero el diésel y la premium quedaron fuera, y Pemex trasladó prácticamente el 100% del incremento de la molécula al consumidor final en el primer caso. Con México importando el 60% de la gasolina que consume, el director de GasGas Analytics advierte que el mercado inevitablemente refleja el precio internacional del crudo, el tipo de cambio y los costos logísticos.</div>
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/12/gasolina-premium-y-diesel-rebasan-los-30-pesos-por-litro-en-algunas-estaciones-del-pais/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Premium gasoline and diesel top 30 pesos per liter in Mexico; government price pact does not cover them</div>
+    <div class="story-body">The Middle East conflict is already felt at Mexican gas stations: diesel rose 6.1% in 12 days since the start of the war, moving from 26.24 to 27.83 pesos per liter on the national average, with isolated cases already above 30 pesos. Regular gasoline is protected by the voluntary agreement between the government and the fuel retail sector, but diesel and premium were left out, and Pemex passed virtually 100% of the molecule cost increase to end consumers in the former case. With Mexico importing 60% of the gasoline it consumes, the director of GasGas Analytics warns that the market will inevitably reflect the international crude price, the exchange rate, and domestic logistics costs.</div>
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/12/gasolina-premium-y-diesel-rebasan-los-30-pesos-por-litro-en-algunas-estaciones-del-pais/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">México</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Levy (Brookings): México no crece por falta de productividad, no por el T-MEC ni por Medio Oriente</div>
+    <div class="story-body">Santiago Levy, ex vicepresidente del BID e investigador senior de Brookings, fue tajante en las Reuniones Anuales del BID en Asunción: el crecimiento 'probablemente más mediocre de América Latina' en 25 años no se explica por la incertidumbre arancelaria ni por las guerras, sino por una caída estructural de la productividad que ningún boom exportador ha logrado revertir. El BID proyecta que México crecerá apenas 1.3% en 2026. El diagnóstico de Levy es demoledor: las empresas productivas no crecen, las improductivas sobreviven, y cuando mueren son reemplazadas por otras igualmente improductivas.</div>
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/12/mexico-no-crece-por-falta-de-productividad-no-por-incertidumbre-del-t-mec-levy/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Levy (Brookings): Mexico's stagnation is a productivity problem, not a T-MEC or Middle East problem</div>
+    <div class="story-body">Santiago Levy, former IDB Vice President and Brookings senior fellow, was blunt at the IDB Annual Meetings in Asunción: Mexico's 'probably most mediocre growth in Latin America' over 25 years cannot be explained by tariff uncertainty or wars, but by a structural decline in productivity that no export boom has managed to reverse. The IDB projects Mexico will grow just 1.3% in 2026. Levy's diagnosis is damning: productive firms don't grow, unproductive ones survive, and when they die they are replaced by equally unproductive ones.</div>
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/12/mexico-no-crece-por-falta-de-productividad-no-por-incertidumbre-del-t-mec-levy/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">FX</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Argentina: el techo de la banda cambiaria superará $1,700 en abril tras inflación del 2.9% en febrero</div>
+    <div class="story-body">El INDEC confirmó una inflación mensual del 2.9% en febrero — segundo mes consecutivo en ese nivel — lo que elevará el techo de la banda cambiaria a aproximadamente $1,703 a finales de abril, según la mecánica de indexación vigente desde enero. El tipo de cambio oficial mayorista cerró el jueves en $1,395.89, lo que deja una distancia del 16.5% respecto al techo de $1,626.47, la mayor brecha desde julio pasado. La ampliación del margen reduce la presión de intervención del BCRA en el corto plazo, pero el analista Christian Buteler advierte que el techo sigue funcionando como ancla de expectativas en un mes históricamente marcado por la liquidación de la cosecha gruesa.</div>
+    <a href="https://www.lanacion.com.ar/economia/dolar/ajusta-por-inflacion-el-techo-de-la-banda-cambiaria-superara-los-1700-en-abril-nid12032026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Argentina: currency band ceiling to exceed $1,700 in April after February inflation prints at 2.9%</div>
+    <div class="story-body">INDEC confirmed monthly inflation of 2.9% for February — the second consecutive month at that level — which will push the upper limit of the currency band to approximately $1,703 by end of April, under the CPI-indexation mechanism in place since January. The official wholesale exchange rate closed Thursday at $1,395.89, leaving a 16.5% gap to the current ceiling of $1,626.47 — the widest margin since last July. The widening buffer reduces near-term pressure on the BCRA to intervene, though analyst Christian Buteler notes the ceiling continues to function as an anchor for expectations heading into a month historically marked by the agricultural harvest settlement.</div>
+    <a href="https://www.lanacion.com.ar/economia/dolar/ajusta-por-inflacion-el-techo-de-la-banda-cambiaria-superara-los-1700-en-abril-nid12032026/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">Política</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Inteligencia de EE.UU.: el régimen iraní 'no está en peligro' de colapsar pese a dos semanas de bombardeos</div>
+    <div class="story-body">Múltiples reportes de inteligencia estadounidense concluyen que el liderazgo clerical de Irán 'mantiene el control de la población' y no enfrenta riesgo de colapso a corto plazo, según tres fuentes anónimas familiarizadas con los documentos. El IRGC y los líderes interinos que tomaron el poder tras la muerte del ayatollah Khamenei el 28 de febrero permanecen operativos, y la Asamblea de Expertos ya designó al hijo de Khamenei, Mojtaba, como nuevo líder supremo. Funcionarios israelíes también reconocen en privado que la guerra no garantiza el fin del gobierno clerical, complicando cualquier estrategia de salida.</div>
+    <a href="https://www.lanacion.com.ar/estados-unidos/la-inteligencia-de-eeuu-dice-que-el-gobierno-de-iran-no-corre-riesgo-de-colapso-segun-fuentes-nid12032026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">US intelligence: Iran's regime 'is not in danger' of collapse despite two weeks of bombardment</div>
+    <div class="story-body">Multiple US intelligence reports conclude that Iran's clerical leadership 'maintains control of the Iranian population' and faces no near-term risk of collapse, according to three anonymous sources familiar with the documents. The IRGC and interim leaders who took power after Supreme Leader Khamenei's death on February 28 remain operational, and the Assembly of Experts has already named Khamenei's son, Mojtaba, as the new Supreme Leader. Israeli officials also privately acknowledge that the war does not guarantee the end of clerical rule, complicating any exit strategy.</div>
+    <a href="https://www.lanacion.com.ar/estados-unidos/la-inteligencia-de-eeuu-dice-que-el-gobierno-de-iran-no-corre-riesgo-de-colapso-segun-fuentes-nid12032026/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Estafas en EE.UU.: pérdidas reales estimadas en $119,000 millones al año, potenciadas por inteligencia artificial</div>
+    <div class="story-body">La Consumer Federation of America estima que las pérdidas anuales por fraude en Estados Unidos ascienden a $119,000 millones, cifra muy superior a los $16,600 millones reportados al FBI en 2024 — una diferencia explicada por el hecho de que el gobierno solo se entera del 14% de estos delitos. Las estafas de inversión, incluyendo criptomonedas y el esquema 'pig butchering', representaron $6,600 millones reportados en 2024, pero la CFA estima el monto real en $46,600 millones. El factor acelerador es la inteligencia artificial, que permite a los estafadores operar con menos mano de obra y mayor precisión, comprando bases de datos con perfiles de víctimas potenciales por precios irrisorios.</div>
+    <a href="https://www.lanacion.com.ar/economia/IA/fraudes-y-enganos-estiman-perdidas-por-us119000-millones-al-ano-en-eeuu-nid12032026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Fraud in the US: real losses estimated at $119 billion per year, accelerated by artificial intelligence</div>
+    <div class="story-body">The Consumer Federation of America estimates annual fraud losses in the United States at $119 billion, far above the $16.6 billion reported to the FBI in 2024 — a gap explained by the fact that the government learns of only 14% of such crimes. Investment scams, including cryptocurrency fraud and 'pig butchering' schemes, accounted for $6.6 billion in reported losses in 2024, but the CFA estimates the true figure at $46.6 billion. The accelerant is artificial intelligence, which allows fraudsters to operate with less manpower and greater precision, purchasing databases of potential victims at negligible cost.</div>
+    <a href="https://www.lanacion.com.ar/economia/IA/fraudes-y-enganos-estiman-perdidas-por-us119000-millones-al-ano-en-eeuu-nid12032026/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="currency-header">
+      <div class="section-title"
+           data-es="Tipo de Cambio"
+           data-en="Exchange Rates">Tipo de Cambio</div>
+      <div class="currency-toggle"><button class="currency-btn active" data-base="MXN" onclick="setCurrencyBase('MXN')">MXN</button><button class="currency-btn " data-base="USD" onclick="setCurrencyBase('USD')">USD</button><button class="currency-btn " data-base="BRL" onclick="setCurrencyBase('BRL')">BRL</button><button class="currency-btn " data-base="EUR" onclick="setCurrencyBase('EUR')">EUR</button><button class="currency-btn " data-base="CNY" onclick="setCurrencyBase('CNY')">CNY</button></div>
+    </div>
+    
+    <div class="currency-view" data-base="MXN" style="">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">MXN / USD</td>
+        <td>0.05573</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.61%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.27%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / BRL</td>
+        <td>0.2967</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.91%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.81%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / EUR</td>
+        <td>0.04881</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.30%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.20%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / CNY</td>
+        <td>0.3843</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.23%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.25%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / CAD</td>
+        <td>0.0765</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.12%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.23%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / GBP</td>
+        <td>0.04215</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.38%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.87%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / JPY</td>
+        <td>8.90</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.29%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.09%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="USD" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.9443</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.62%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.27%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / BRL</td>
+        <td>5.3240</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.53%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.54%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / EUR</td>
+        <td>0.87589</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.92%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.93%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / CNY</td>
+        <td>6.8956</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.39%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.01%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / CAD</td>
+        <td>1.3733</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.74%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.96%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / GBP</td>
+        <td>0.75637</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.99%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.61%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / JPY</td>
+        <td>159.73</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.33%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.82%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="BRL" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">BRL / MXN</td>
+        <td>3.3705</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.90%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.77%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / USD</td>
+        <td>0.18783</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.50%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.51%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / EUR</td>
+        <td>0.16452</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.60%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.60%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / CNY</td>
+        <td>1.2952</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.12%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.52%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / CAD</td>
+        <td>0.2579</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.78%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.56%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / GBP</td>
+        <td>0.14207</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.52%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.92%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / JPY</td>
+        <td>30.00</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.18%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.70%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="EUR" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.4870</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.30%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.19%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / USD</td>
+        <td>1.14170</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.91%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.92%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / BRL</td>
+        <td>6.0784</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.61%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.60%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / CNY</td>
+        <td>7.8727</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.52%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.94%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / CAD</td>
+        <td>1.5679</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.18%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.03%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / GBP</td>
+        <td>0.86355</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.08%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.32%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / JPY</td>
+        <td>182.36</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.58%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.11%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="CNY" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>2.6023</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.23%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.25%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / USD</td>
+        <td>0.14502</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.39%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.01%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / BRL</td>
+        <td>0.7721</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.13%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.55%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / EUR</td>
+        <td>0.12702</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.53%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.94%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / CAD</td>
+        <td>0.1992</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.35%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.98%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / GBP</td>
+        <td>0.10969</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.60%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.62%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / JPY</td>
+        <td>23.16</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.06%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.83%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="lang-es">
+      <div class="quote-text">The one thing that oil exporters cannot stand is a prolonged period of low oil prices. The one thing that oil importers cannot stand is a prolonged period of high oil prices.</div>
+      <div class="quote-attr">Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991</div>
+    </div>
+    <div class="lang-en">
+      <div class="quote-text">The one thing that oil exporters cannot stand is a prolonged period of low oil prices. The one thing that oil importers cannot stand is a prolonged period of high oil prices.</div>
+      <div class="quote-attr">Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991</div>
+    </div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="week">
+  <div class="section-title"
+       data-es="Resumen Semanal &middot; Mar 09&ndash;13, 2026"
+       data-en="Week in Review &middot; Mar 09&ndash;13, 2026">Resumen Semanal &middot; Mar 09&ndash;13, 2026</div>
+  <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Lun</div>
+          <div class="tl-dot active"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Energy</span>
+          <div class="lang-es">
+            <div class="tl-headline">Energy Secretary Wright says oil prices will fall once U.S. neutralizes Iran's Strait of Hormuz threat — crude already above $91</div>
+            <div class="tl-body">Energy Secretary Chris Wright told Fox News Sunday that the U.S. is 'massively attriting' Iran's missile and drone capability and that energy will 'flow soon,' ...</div>
+          </div>
+          <div class="lang-en">
+            <div class="tl-headline">Energy Secretary Wright says oil prices will fall once U.S. neutralizes Iran's Strait of Hormuz threat — crude already above $91</div>
+            <div class="tl-body">Energy Secretary Chris Wright told Fox News Sunday that the U.S. is 'massively attriting' Iran's missile and drone capability and that energy will 'flow soon,' ...</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Mar</div>
+          <div class="tl-dot active"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Energy</span>
+          <div class="lang-es">
+            <div class="tl-headline">Saudi Aramco reroutes crude as Hormuz closure sends Brent near $120/bbl</div>
+            <div class="tl-body">Saudi Aramco is diverting oil shipments to the Red Sea port of Yanbu after the Strait of Hormuz was effectively closed by the U.S.-Israel campaign against Iran,...</div>
+          </div>
+          <div class="lang-en">
+            <div class="tl-headline">Saudi Aramco reroutes crude as Hormuz closure sends Brent near $120/bbl</div>
+            <div class="tl-body">Saudi Aramco is diverting oil shipments to the Red Sea port of Yanbu after the Strait of Hormuz was effectively closed by the U.S.-Israel campaign against Iran,...</div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-day">Vie</div>
+          <div class="tl-dot active"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-tag">Macro</span>
+          <div class="lang-es">
+            <div class="tl-headline">El error de cálculo de Trump: Irán cierra Ormuz y el petróleo se dispara sin plan de salida a la vista</div>
+            <div class="tl-body">El secretario de Energía Chris Wright aseguró en febrero que una guerra con Irán no alteraría los mercados energéticos; semanas después, el estrecho de Ormuz es...</div>
+          </div>
+          <div class="lang-en">
+            <div class="tl-headline">El error de cálculo de Trump: Irán cierra Ormuz y el petróleo se dispara sin plan de salida a la vista</div>
+            <div class="tl-body">El secretario de Energía Chris Wright aseguró en febrero que una guerra con Irán no alteraría los mercados energéticos; semanas después, el estrecho de Ormuz es...</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div style="padding:24px 48px 8px;">
+  <div class="section-title"
+       data-es="La Semana en Palabras"
+       data-en="The Week in Words">La Semana en Palabras</div>
+  <img src="https://raw.githubusercontent.com/ExtremelyPowerfulCapybara/News-Digest/Dev-Nigg/docs/wordcloud-2026-W11.png" style="width:100%; border:1px solid #cdd4d9;" alt="Word cloud"/>
+</div>
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by lang-es">por Cora Lation, Chief of Staff, Monetary Policy Theater</span>
+    <span class="footer-by lang-en">by Cora Lation, Chief of Staff, Monetary Policy Theater</span>
+  </div>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? ''  : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // swap static labels
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = lang === 'es' ? el.dataset.es : el.dataset.en;
+    });
+    localStorage.setItem('nlLang', lang);
+  }
+  (function(){
+    var saved = localStorage.getItem('nlLang') || 'es';
+    setLang(saved);
+  })();
+
+  function setCurrencyBase(base) {
+    document.querySelectorAll('.currency-view').forEach(el => {
+      el.style.display = el.dataset.base === base ? '' : 'none';
+    });
+    document.querySelectorAll('.currency-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.base === base);
+    });
+    localStorage.setItem('nlCurrencyBase', base);
+  }
+  (function(){
+    var savedBase = localStorage.getItem('nlCurrencyBase') || 'MXN';
+    setCurrencyBase(savedBase);
+  })();
+</script>
+
+</body>
+</html>

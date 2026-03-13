@@ -1,0 +1,611 @@
+{
+  "date": "2026-03-13",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el mundo despertó hoy con petróleo cerca de los $100 por barril, el estrecho de Ormuz funcionalmente cerrado y una administración estadounidense que, según sus propios legisladores, no tiene plan para reabrirlo — lo cual es, si se piensa bien, una forma bastante cara de improvisar. Mientras tanto, México paga las consecuencias en los surtidores, Argentina ajusta sus bandas cambiarias al ritmo de una inflación que no da tregua, y Santiago Levy nos recuerda que el problema de fondo del país azteca lleva 25 años sin resolverse y no tiene nada que ver con Trump.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "El cierre del estrecho de Ormuz, el petróleo volátil entre $80 y $100 y la ausencia de una estrategia de salida clara en el conflicto Irán-EE.UU. dominan el ánimo del mercado global.",
+        "context_en": "The effective closure of the Strait of Hormuz, oil swinging between $80 and $100, and the absence of a clear US exit strategy in the Iran conflict are dominating global market sentiment."
+      },
+      "stories": [
+        {
+          "source": "La Nacion",
+          "headline": "El error de cálculo de Trump: Irán cierra Ormuz y el petróleo se dispara sin plan de salida a la vista",
+          "body": "El secretario de Energía Chris Wright aseguró en febrero que una guerra con Irán no alteraría los mercados energéticos; semanas después, el estrecho de Ormuz está bloqueado, el petróleo tocó $120 por barril y la navegación comercial en el Golfo se ha paralizado. Funcionarios del gobierno reconocen en privado que no existe una estrategia para reabrir la vía marítima que transporta el 20% del suministro mundial de crudo. El senador demócrata Christopher Murphy confirmó tras un briefing clasificado que la Casa Blanca 'no sabía cómo volver a abrirlo de forma segura', mientras la retórica de Hegseth sigue siendo beligerante y los precios de la gasolina presionan a los votantes.",
+          "url": "https://www.lanacion.com.ar/el-mundo/como-trump-y-sus-asesores-calcularon-mal-la-respuesta-de-iran-a-la-guerra-nid12032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "The Economist: el conflicto en Medio Oriente es 'un ataque a la economía mundial' y el petróleo podría superar los $150",
+          "body": "Con el 15% del suministro mundial de petróleo bloqueado por el cierre de facto del estrecho de Ormuz, The Economist advierte que el precio necesario para equilibrar oferta y demanda en un escenario de cierre indefinido podría superar los $150 por barril — más que cualquier crisis energética de los años 70. La Agencia Internacional de la Energía liberó 400 millones de barriles de sus reservas de emergencia de 1.800 millones, pero el acceso está limitado por restricciones logísticas. Trump, que ya cedió en su guerra comercial cuando los mercados se desplomaron, enfrenta ahora una crisis energética que no puede resolver con un solo tuit.",
+          "url": "https://www.lanacion.com.ar/economia/un-ataque-a-la-economia-mundial-las-consecuencias-del-conflicto-en-medio-oriente-segun-the-economist-nid12032026/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Gasolina premium y diésel rebasan los 30 pesos por litro en México; el pacto gubernamental no los cubre",
+          "body": "El conflicto en Medio Oriente ya se siente en los surtidores mexicanos: el diésel subió 6.1% en 12 días desde el inicio de la guerra, pasando de 26.24 a 27.83 pesos por litro en promedio nacional, con casos aislados que ya superan los 30 pesos. La gasolina regular está protegida por el acuerdo voluntario entre el gobierno y el sector gasolinero, pero el diésel y la premium quedaron fuera, y Pemex trasladó prácticamente el 100% del incremento de la molécula al consumidor final en el primer caso. Con México importando el 60% de la gasolina que consume, el director de GasGas Analytics advierte que el mercado inevitablemente refleja el precio internacional del crudo, el tipo de cambio y los costos logísticos.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/12/gasolina-premium-y-diesel-rebasan-los-30-pesos-por-litro-en-algunas-estaciones-del-pais/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Levy (Brookings): México no crece por falta de productividad, no por el T-MEC ni por Medio Oriente",
+          "body": "Santiago Levy, ex vicepresidente del BID e investigador senior de Brookings, fue tajante en las Reuniones Anuales del BID en Asunción: el crecimiento 'probablemente más mediocre de América Latina' en 25 años no se explica por la incertidumbre arancelaria ni por las guerras, sino por una caída estructural de la productividad que ningún boom exportador ha logrado revertir. El BID proyecta que México crecerá apenas 1.3% en 2026. El diagnóstico de Levy es demoledor: las empresas productivas no crecen, las improductivas sobreviven, y cuando mueren son reemplazadas por otras igualmente improductivas.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/12/mexico-no-crece-por-falta-de-productividad-no-por-incertidumbre-del-t-mec-levy/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina: el techo de la banda cambiaria superará $1,700 en abril tras inflación del 2.9% en febrero",
+          "body": "El INDEC confirmó una inflación mensual del 2.9% en febrero — segundo mes consecutivo en ese nivel — lo que elevará el techo de la banda cambiaria a aproximadamente $1,703 a finales de abril, según la mecánica de indexación vigente desde enero. El tipo de cambio oficial mayorista cerró el jueves en $1,395.89, lo que deja una distancia del 16.5% respecto al techo de $1,626.47, la mayor brecha desde julio pasado. La ampliación del margen reduce la presión de intervención del BCRA en el corto plazo, pero el analista Christian Buteler advierte que el techo sigue funcionando como ancla de expectativas en un mes históricamente marcado por la liquidación de la cosecha gruesa.",
+          "url": "https://www.lanacion.com.ar/economia/dolar/ajusta-por-inflacion-el-techo-de-la-banda-cambiaria-superara-los-1700-en-abril-nid12032026/",
+          "tag": "FX"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Inteligencia de EE.UU.: el régimen iraní 'no está en peligro' de colapsar pese a dos semanas de bombardeos",
+          "body": "Múltiples reportes de inteligencia estadounidense concluyen que el liderazgo clerical de Irán 'mantiene el control de la población' y no enfrenta riesgo de colapso a corto plazo, según tres fuentes anónimas familiarizadas con los documentos. El IRGC y los líderes interinos que tomaron el poder tras la muerte del ayatollah Khamenei el 28 de febrero permanecen operativos, y la Asamblea de Expertos ya designó al hijo de Khamenei, Mojtaba, como nuevo líder supremo. Funcionarios israelíes también reconocen en privado que la guerra no garantiza el fin del gobierno clerical, complicando cualquier estrategia de salida.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/la-inteligencia-de-eeuu-dice-que-el-gobierno-de-iran-no-corre-riesgo-de-colapso-segun-fuentes-nid12032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Estafas en EE.UU.: pérdidas reales estimadas en $119,000 millones al año, potenciadas por inteligencia artificial",
+          "body": "La Consumer Federation of America estima que las pérdidas anuales por fraude en Estados Unidos ascienden a $119,000 millones, cifra muy superior a los $16,600 millones reportados al FBI en 2024 — una diferencia explicada por el hecho de que el gobierno solo se entera del 14% de estos delitos. Las estafas de inversión, incluyendo criptomonedas y el esquema 'pig butchering', representaron $6,600 millones reportados en 2024, pero la CFA estima el monto real en $46,600 millones. El factor acelerador es la inteligencia artificial, que permite a los estafadores operar con menos mano de obra y mayor precisión, comprando bases de datos con perfiles de víctimas potenciales por precios irrisorios.",
+          "url": "https://www.lanacion.com.ar/economia/IA/fraudes-y-enganos-estiman-perdidas-por-us119000-millones-al-ano-en-eeuu-nid12032026/",
+          "tag": "Macro"
+        }
+      ],
+      "quote": {
+        "text": "The one thing that oil exporters cannot stand is a prolonged period of low oil prices. The one thing that oil importers cannot stand is a prolonged period of high oil prices.",
+        "attribution": "Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the world woke up today with oil hovering near $100 a barrel, the Strait of Hormuz functionally closed, and a US administration that — according to its own legislators — has no plan to reopen it, which is, if you think about it, a remarkably expensive way to improvise. Meanwhile, Mexico pays the consequences at the pump, Argentina adjusts its currency bands to the rhythm of an inflation that won't quit, and Santiago Levy reminds us that the country's underlying problem has gone unsolved for 25 years and has nothing to do with Trump.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "El cierre del estrecho de Ormuz, el petróleo volátil entre $80 y $100 y la ausencia de una estrategia de salida clara en el conflicto Irán-EE.UU. dominan el ánimo del mercado global.",
+        "context_en": "The effective closure of the Strait of Hormuz, oil swinging between $80 and $100, and the absence of a clear US exit strategy in the Iran conflict are dominating global market sentiment."
+      },
+      "stories": [
+        {
+          "source": "La Nacion",
+          "headline": "Trump's miscalculation: Iran closes Hormuz, oil spikes, and there is no exit plan in sight",
+          "body": "Energy Secretary Chris Wright declared in February that a war with Iran would not disrupt energy markets; weeks later, the Strait of Hormuz is blocked, oil touched $120 a barrel, and commercial shipping in the Gulf has ground to a halt. Officials privately acknowledge that no strategy exists to reopen the waterway that carries 20% of the world's oil supply. Democratic Senator Christopher Murphy confirmed after a classified briefing that the White House 'did not know how to safely reopen it,' while Hegseth's rhetoric remains bellicose and gasoline prices are squeezing voters.",
+          "url": "https://www.lanacion.com.ar/el-mundo/como-trump-y-sus-asesores-calcularon-mal-la-respuesta-de-iran-a-la-guerra-nid12032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "The Economist: the Middle East conflict is 'an attack on the global economy' and oil could exceed $150",
+          "body": "With 15% of global oil supply blocked by the de facto closure of the Strait of Hormuz, The Economist warns that the price needed to balance supply and demand in an indefinite closure scenario could exceed $150 per barrel — more than any energy crisis of the 1970s. The International Energy Agency released 400 million barrels from its 1.8-billion-barrel emergency reserves, but access is constrained by logistical bottlenecks. Trump, who already retreated on his trade war when markets tanked, now faces an energy crisis he cannot resolve with a single tweet.",
+          "url": "https://www.lanacion.com.ar/economia/un-ataque-a-la-economia-mundial-las-consecuencias-del-conflicto-en-medio-oriente-segun-the-economist-nid12032026/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Premium gasoline and diesel top 30 pesos per liter in Mexico; government price pact does not cover them",
+          "body": "The Middle East conflict is already felt at Mexican gas stations: diesel rose 6.1% in 12 days since the start of the war, moving from 26.24 to 27.83 pesos per liter on the national average, with isolated cases already above 30 pesos. Regular gasoline is protected by the voluntary agreement between the government and the fuel retail sector, but diesel and premium were left out, and Pemex passed virtually 100% of the molecule cost increase to end consumers in the former case. With Mexico importing 60% of the gasoline it consumes, the director of GasGas Analytics warns that the market will inevitably reflect the international crude price, the exchange rate, and domestic logistics costs.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/12/gasolina-premium-y-diesel-rebasan-los-30-pesos-por-litro-en-algunas-estaciones-del-pais/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Levy (Brookings): Mexico's stagnation is a productivity problem, not a T-MEC or Middle East problem",
+          "body": "Santiago Levy, former IDB Vice President and Brookings senior fellow, was blunt at the IDB Annual Meetings in Asunción: Mexico's 'probably most mediocre growth in Latin America' over 25 years cannot be explained by tariff uncertainty or wars, but by a structural decline in productivity that no export boom has managed to reverse. The IDB projects Mexico will grow just 1.3% in 2026. Levy's diagnosis is damning: productive firms don't grow, unproductive ones survive, and when they die they are replaced by equally unproductive ones.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/12/mexico-no-crece-por-falta-de-productividad-no-por-incertidumbre-del-t-mec-levy/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina: currency band ceiling to exceed $1,700 in April after February inflation prints at 2.9%",
+          "body": "INDEC confirmed monthly inflation of 2.9% for February — the second consecutive month at that level — which will push the upper limit of the currency band to approximately $1,703 by end of April, under the CPI-indexation mechanism in place since January. The official wholesale exchange rate closed Thursday at $1,395.89, leaving a 16.5% gap to the current ceiling of $1,626.47 — the widest margin since last July. The widening buffer reduces near-term pressure on the BCRA to intervene, though analyst Christian Buteler notes the ceiling continues to function as an anchor for expectations heading into a month historically marked by the agricultural harvest settlement.",
+          "url": "https://www.lanacion.com.ar/economia/dolar/ajusta-por-inflacion-el-techo-de-la-banda-cambiaria-superara-los-1700-en-abril-nid12032026/",
+          "tag": "FX"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "US intelligence: Iran's regime 'is not in danger' of collapse despite two weeks of bombardment",
+          "body": "Multiple US intelligence reports conclude that Iran's clerical leadership 'maintains control of the Iranian population' and faces no near-term risk of collapse, according to three anonymous sources familiar with the documents. The IRGC and interim leaders who took power after Supreme Leader Khamenei's death on February 28 remain operational, and the Assembly of Experts has already named Khamenei's son, Mojtaba, as the new Supreme Leader. Israeli officials also privately acknowledge that the war does not guarantee the end of clerical rule, complicating any exit strategy.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/la-inteligencia-de-eeuu-dice-que-el-gobierno-de-iran-no-corre-riesgo-de-colapso-segun-fuentes-nid12032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Fraud in the US: real losses estimated at $119 billion per year, accelerated by artificial intelligence",
+          "body": "The Consumer Federation of America estimates annual fraud losses in the United States at $119 billion, far above the $16.6 billion reported to the FBI in 2024 — a gap explained by the fact that the government learns of only 14% of such crimes. Investment scams, including cryptocurrency fraud and 'pig butchering' schemes, accounted for $6.6 billion in reported losses in 2024, but the CFA estimates the true figure at $46.6 billion. The accelerant is artificial intelligence, which allows fraudsters to operate with less manpower and greater precision, purchasing databases of potential victims at negligible cost.",
+          "url": "https://www.lanacion.com.ar/economia/IA/fraudes-y-enganos-estiman-perdidas-por-us119000-millones-al-ano-en-eeuu-nid12032026/",
+          "tag": "Macro"
+        }
+      ],
+      "quote": {
+        "text": "The one thing that oil exporters cannot stand is a prolonged period of low oil prices. The one thing that oil importers cannot stand is a prolonged period of high oil prices.",
+        "attribution": "Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.94",
+        "change": "▲ 1.1%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,632",
+        "change": "▼ 2.1%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "65,648.91",
+        "change": "▼ 0.7%",
+        "direction": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05573",
+            "chg_1d": {
+              "text": "▼ 0.61%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2967",
+            "chg_1d": {
+              "text": "▲ 0.91%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.81%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04881",
+            "chg_1d": {
+              "text": "▲ 0.30%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.20%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3843",
+            "chg_1d": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.25%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0765",
+            "chg_1d": {
+              "text": "▲ 0.12%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.23%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04215",
+            "chg_1d": {
+              "text": "▲ 0.38%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.87%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.90",
+            "chg_1d": {
+              "text": "▼ 0.29%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.09%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.9443",
+            "chg_1d": {
+              "text": "▲ 0.62%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.27%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.3240",
+            "chg_1d": {
+              "text": "▲ 1.53%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.54%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.87589",
+            "chg_1d": {
+              "text": "▲ 0.92%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.93%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.8956",
+            "chg_1d": {
+              "text": "▲ 0.39%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.01%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3733",
+            "chg_1d": {
+              "text": "▲ 0.74%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.96%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75637",
+            "chg_1d": {
+              "text": "▲ 0.99%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.61%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "159.73",
+            "chg_1d": {
+              "text": "▲ 0.33%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.82%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.3705",
+            "chg_1d": {
+              "text": "▼ 0.90%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.77%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.18783",
+            "chg_1d": {
+              "text": "▼ 1.50%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.51%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16452",
+            "chg_1d": {
+              "text": "▼ 0.60%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.60%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.2952",
+            "chg_1d": {
+              "text": "▼ 1.12%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.52%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2579",
+            "chg_1d": {
+              "text": "▼ 0.78%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.56%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14207",
+            "chg_1d": {
+              "text": "▼ 0.52%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.92%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.00",
+            "chg_1d": {
+              "text": "▼ 1.18%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.70%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.4870",
+            "chg_1d": {
+              "text": "▼ 0.30%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.19%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.14170",
+            "chg_1d": {
+              "text": "▼ 0.91%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.92%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "6.0784",
+            "chg_1d": {
+              "text": "▲ 0.61%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.60%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.8727",
+            "chg_1d": {
+              "text": "▼ 0.52%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.94%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.5679",
+            "chg_1d": {
+              "text": "▼ 0.18%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.86355",
+            "chg_1d": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.32%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "182.36",
+            "chg_1d": {
+              "text": "▼ 0.58%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.6023",
+            "chg_1d": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.25%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14502",
+            "chg_1d": {
+              "text": "▼ 0.39%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.01%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7721",
+            "chg_1d": {
+              "text": "▲ 1.13%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.55%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12702",
+            "chg_1d": {
+              "text": "▲ 0.53%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.94%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.1992",
+            "chg_1d": {
+              "text": "▲ 0.35%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.98%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.10969",
+            "chg_1d": {
+              "text": "▲ 0.60%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.62%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.16",
+            "chg_1d": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.83%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "22°C",
+    "high_low": "22°C / 10°C",
+    "humidity": "Humidity 32%",
+    "desc": "Partly cloudy"
+  }
+}
