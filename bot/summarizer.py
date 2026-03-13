@@ -82,7 +82,8 @@ Analiza los artículos a continuación y devuelve un objeto JSON con EXACTAMENTE
 
 Reglas:
 - Selecciona 5-7 historias, ordenadas por importancia
-- Omite duplicados que cubran el mismo evento
+- Diversidad temática obligatoria: cada historia debe cubrir un tema distinto. Si varios artículos tratan el mismo evento o tema central (e.g. múltiples artículos sobre el conflicto Irán/petróleo, o sobre aranceles Trump), selecciona SOLO el más completo e informativo — descarta los demás sin excepción
+- Nunca incluyas dos historias donde la pregunta central sea la misma, aunque provengan de fuentes distintas o tengan ángulos ligeramente diferentes
 - stories debe incluir la URL original de la lista de artículos
 - Responde ÚNICAMENTE con el objeto JSON, sin preámbulo, sin markdown fences
 - sentiment.position debe ser consistente con el label: Aversión al Riesgo = 5-35, Cauteloso = 36-64, Apetito por Riesgo = 65-95

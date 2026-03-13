@@ -7,7 +7,7 @@ from scraper import scrape_article
 from config import (
     NEWS_API_KEY, TOPICS, LANGUAGE,
     MAX_ARTICLES_PER_TOPIC, MAX_ARTICLE_CHARS,
-    MAX_ARTICLES_PER_SOURCE
+    MAX_ARTICLES_PER_SOURCE, NEWS_DOMAINS_STR
 )
 
 
@@ -21,6 +21,7 @@ def fetch_news() -> list[dict]:
             f"https://newsapi.org/v2/everything"
             f"?q={topic}&language={LANGUAGE}"
             f"&sortBy=publishedAt&pageSize={MAX_ARTICLES_PER_TOPIC}"
+            f"&domains={NEWS_DOMAINS_STR}"
             f"&apiKey={NEWS_API_KEY}"
         )
         try:
