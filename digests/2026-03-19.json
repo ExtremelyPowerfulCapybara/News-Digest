@@ -1,0 +1,220 @@
+{
+  "date": "2026-03-19",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, Israel atacó South Pars —el mayor yacimiento de gas del mundo— e Irán respondió con un misil contra una plataforma petrolífera catarí, empujando el Brent por encima de los 110 dólares y poniendo nerviosas a las bolsas europeas. Mientras Oriente Medio arde literalmente, Trump aprovechó la ocasión para insultar a Powell en Truth Social y exigir recortes de emergencia, como si la Fed fuera un cajero automático con botón de pánico. El FOMC mantuvo tipos sin cambios, como se esperaba, pero el verdadero espectáculo fue el petróleo: bienvenidos al mundo en que la geopolítica vuelve a mandar.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "El ataque israelí a South Pars, el repunte del Brent a 110 dólares y la presión política sobre la Fed generan una huida hacia activos seguros y ventas en renta variable.",
+        "context_en": "The Israeli strike on South Pars, Brent surging to $110, and political pressure on the Fed are driving a flight to safety and equity selloffs."
+      },
+      "stories": [
+        {
+          "source": "El Español / Invertia",
+          "headline": "Israel ataca South Pars: el Brent supera los 110 dólares e Irán lanza un misil contra Qatar",
+          "body": "El ataque israelí y estadounidense al mayor yacimiento de gas del mundo —South Pars, compartido entre Irán y Qatar— disparó el crudo Brent hasta los 110 dólares por barril, mientras el WTI se situó en 99,05 dólares. El gas natural europeo TTF subió un 6,67% hasta 54,66 euros/MWh, y las principales bolsas europeas cerraron en negativo, con el FTSE 100 cayendo un 0,9% y el DAX un 0,88%. Irán respondió lanzando un misil balístico contra una plataforma petrolífera catarí, y Qatar calificó los ataques de 'amenaza a la seguridad energética mundial'.",
+          "url": "https://www.elespanol.com/invertia/mercados/20260318/petroleo-repunta-ataque-yacimiento-gas-grande-mundo/1003744174966_0.html",
+          "tag": "Energía"
+        },
+        {
+          "source": "RT / Actualidad",
+          "headline": "Mercados globales se contraen tras los bombardeos en Irán: oro, plata y Bitcoin caen más de 2%",
+          "body": "En las horas posteriores al ataque a South Pars, el oro cayó más de un 2% hasta los 4.875 dólares por onza y la plata cotizó a 77,2 dólares. Bitcoin retrocedió a 71.918 dólares con una caída diaria máxima superior al 2%, mientras los futuros del Brent escalaron cerca del 6% hasta los 109,49 dólares. La paradoja del día: activos refugio clásicos como el oro vendidos, probablemente para cubrir márgenes en otras posiciones.",
+          "url": "https://actualidad.rt.com/actualidad/593701-mercados-contraen-ataque-yacimiento-gas-grande-mundo",
+          "tag": "Mercados"
+        },
+        {
+          "source": "El Confidencial",
+          "headline": "Trump vuelve a atacar a Powell y exige recortes mientras la Fed mantiene tipos entre 3,5% y 3,75%",
+          "body": "Donald Trump publicó en Truth Social '¿Cuándo va a bajar las tasas el Tardón Powell?' horas antes de que el FOMC confirmara lo que el mercado ya descontaba al 100%: tipos sin cambios en la horquilla del 3,5%-3,75%. El Departamento de Justicia mantiene abierta una investigación sobre Powell por el sobrecoste en la renovación de la sede de la Fed, proceso que un juez federal ya calificó de motivación política. Los analistas siguen esperando apenas dos recortes de 25 puntos básicos para todo 2026, lejos del estímulo masivo que Trump reclama.",
+          "url": "https://www.elconfidencial.com/economia/2026-03-18/trump-ignora-la-crisis-en-oriente-medio-powell-tipos_4322924/",
+          "tag": "Tasas"
+        },
+        {
+          "source": "CoinTelegraph ES",
+          "headline": "Bitcoin se estanca en 74.000 dólares ante la volatilidad del FOMC y la escalada en Oriente Medio",
+          "body": "BTC cotizaba en 74.000 dólares el miércoles, un 2,6% por debajo de su máximo de seis semanas de 76.000 dólares, con traders monitoreando de cerca el tono de Powell tras el FOMC y la presión geopolítica proveniente del conflicto EE.UU.-Irán. El nivel crítico a vigilar está entre los 72.000 y los 65.000 dólares: una ruptura podría llevar al BTC a los 60.000 dólares, según analistas citados por CoinTelegraph. El veterano trader Matthew Dixon resumió la situación con precisión quirúrgica: 'El verdadero catalizador es el tono de Powell, no la decisión sobre tipos.'",
+          "url": "https://cointelegraph.es/markets/bitcoin-stalls-76k-key-btc-price-levels-to-watch-ahead-fomc",
+          "tag": "Mercados"
+        },
+        {
+          "source": "CriptoNoticias",
+          "headline": "Entrada récord de 2.200 millones de USDT a Binance en un día sugiere posicionamiento alcista",
+          "body": "Binance registró el 17 de marzo la mayor entrada diaria de stablecoins desde noviembre de 2025, con más de 2.200 millones de USDT ingresando al exchange en una sola jornada, según datos de CryptoQuant. El movimiento coincidió con la recuperación de BTC por encima de los 74.000 dólares y se interpreta como capital disponible para compras, aunque no garantiza por sí solo una continuación del rally. Ballenas e institucionales parecen estar posicionándose, aunque con la cautela que impone un contexto geopolítico explosivo.",
+          "url": "https://www.criptonoticias.com/mercados/2000-millones-usdt-binance-1-dia/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Financiamiento a Pymes en México: el problema es la demanda informal, no la oferta bancaria",
+          "body": "Tomás Ehrenberg, director general de Grupo Financiero Ve por Más (BX+), sostuvo en la 89 Convención Bancaria que el principal obstáculo para el crédito a pymes es la informalidad, no la falta de oferta bancaria: muchas empresas prefieren mantenerse fuera del radar fiscal aunque eso les cierre el acceso al financiamiento. BX+ cerró 2025 con utilidades de 1.280 millones de pesos, un crecimiento real anual del 18,5%, y una cartera de crédito de 63.819 millones de pesos. La propuesta del banco incluye simplificar la carga laboral y fiscal de la formalización para desbloquear lo que Ehrenberg describe como 'un potencial de crecimiento en crédito muy relevante'.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/18/mayor-financiamiento-a-pymes-es-un-problema-de-demanda-no-de-oferta/",
+          "tag": "México"
+        },
+        {
+          "source": "DiarioBitcoin",
+          "headline": "Canadá revoca el registro de 23 firmas cripto en señal de endurecimiento regulatorio",
+          "body": "El regulador canadiense retiró las inscripciones de 23 empresas del sector cripto, en la acción más contundente del país en materia de supervisión de activos digitales en lo que va del año. La revocación no solo reduce el número de operadores formalmente habilitados, sino que eleva el costo reputacional y operativo de no cumplir con estándares de AML, custodia y protección al usuario. La medida llega en paralelo a la moratoria que el Reino Unido exige sobre donaciones políticas en criptomonedas, configurando una semana de presión regulatoria global sobre el sector.",
+          "url": "https://www.diariobitcoin.com/noticias/canada-revoca-el-registro-de-23-firmas-cripto-y-endurece-su-vigilancia-regulatoria/",
+          "tag": "Macro"
+        }
+      ],
+      "quote": {
+        "text": "Oil is only a transitional fuel. But transitions can last a very long time, and during that time, the price of oil will continue to matter enormously.",
+        "attribution": "Daniel Yergin, The Prize, 1991"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, Israel struck South Pars — the world's largest natural gas field — and Iran retaliated with a ballistic missile against a Qatari oil platform, sending Brent crude above $110 a barrel and rattling European equities. While the Middle East literally burns, Trump used the occasion to insult Powell on Truth Social and demand emergency rate cuts, as if the Fed were an ATM with a panic button. The FOMC held rates unchanged, as expected, but the real show was oil: welcome to the world where geopolitics is back in charge.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "El ataque israelí a South Pars, el repunte del Brent a 110 dólares y la presión política sobre la Fed generan una huida hacia activos seguros y ventas en renta variable.",
+        "context_en": "The Israeli strike on South Pars, Brent surging to $110, and political pressure on the Fed are driving a flight to safety and equity selloffs."
+      },
+      "stories": [
+        {
+          "source": "El Español / Invertia",
+          "headline": "Israel strikes South Pars: Brent surpasses $110 and Iran fires missile at Qatar",
+          "body": "The Israeli and U.S. strike on the world's largest gas field — South Pars, shared between Iran and Qatar — sent Brent crude surging to $110 per barrel, while WTI settled at $99.05. European natural gas TTF rose 6.67% to €54.66/MWh, and major European indices closed in the red, with the FTSE 100 down 0.9% and the DAX falling 0.88%. Iran retaliated by launching a ballistic missile at a Qatari oil platform, with Qatar calling the attacks a 'threat to global energy security.'",
+          "url": "https://www.elespanol.com/invertia/mercados/20260318/petroleo-repunta-ataque-yacimiento-gas-grande-mundo/1003744174966_0.html",
+          "tag": "Energía"
+        },
+        {
+          "source": "RT / Actualidad",
+          "headline": "Global markets contract after Iran bombardment: gold, silver and Bitcoin fall more than 2%",
+          "body": "In the hours following the South Pars strike, gold fell more than 2% to $4,875 per ounce and silver traded at $77.20. Bitcoin dropped to $71,918 with an intraday decline exceeding 2%, while Brent futures surged nearly 6% to $109.49 per barrel. The paradox of the day: classic safe-haven assets like gold were sold, likely to cover margins in other positions.",
+          "url": "https://actualidad.rt.com/actualidad/593701-mercados-contraen-ataque-yacimiento-gas-grande-mundo",
+          "tag": "Mercados"
+        },
+        {
+          "source": "El Confidencial",
+          "headline": "Trump attacks Powell again and demands cuts as the Fed holds rates at 3.5%–3.75%",
+          "body": "Donald Trump posted on Truth Social 'When is 'Slowpoke' Powell going to lower interest rates?' just hours before the FOMC confirmed what the market had already priced in at 100%: rates unchanged at the 3.5%–3.75% corridor. The Department of Justice maintains an open investigation into Powell over cost overruns at the Fed's headquarters renovation, a process a federal judge already labeled politically motivated. Analysts still expect just two 25-basis-point cuts for all of 2026, far short of the massive stimulus Trump demands.",
+          "url": "https://www.elconfidencial.com/economia/2026-03-18/trump-ignora-la-crisis-en-oriente-medio-powell-tipos_4322924/",
+          "tag": "Tasas"
+        },
+        {
+          "source": "CoinTelegraph ES",
+          "headline": "Bitcoin stalls at $74,000 amid FOMC volatility and Middle East escalation",
+          "body": "BTC was trading at $74,000 on Wednesday, 2.6% below its six-week high of $76,000, as traders closely monitored Powell's post-FOMC tone and the geopolitical pressure from the U.S.-Iran conflict. The critical support zone to watch sits between $72,000 and $65,000: a break below could send BTC toward $60,000, according to analysts cited by CoinTelegraph. Veteran trader Matthew Dixon summed up the situation with surgical precision: 'The real catalyst is Powell's tone, not the rate decision.'",
+          "url": "https://cointelegraph.es/markets/bitcoin-stalls-76k-key-btc-price-levels-to-watch-ahead-fomc",
+          "tag": "Mercados"
+        },
+        {
+          "source": "CriptoNoticias",
+          "headline": "Record $2.2 billion USDT inflow into Binance in a single day signals bullish positioning",
+          "body": "Binance recorded the largest daily stablecoin inflow since November 2025 on March 17, with more than $2.2 billion in USDT entering the exchange in a single session, according to CryptoQuant data. The move coincided with BTC recovering above $74,000 and is interpreted as capital ready to be deployed, though it does not guarantee a continuation of the rally on its own. Whales and institutional players appear to be positioning, albeit with the caution demanded by an explosive geopolitical backdrop.",
+          "url": "https://www.criptonoticias.com/mercados/2000-millones-usdt-binance-1-dia/",
+          "tag": "Mercados"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "SME financing in Mexico: the problem is informal demand, not banking supply",
+          "body": "Tomás Ehrenberg, CEO of Grupo Financiero Ve por Más (BX+), argued at the 89th Banking Convention that the main obstacle to SME credit is informality, not a lack of banking supply: many businesses prefer to stay off the tax radar even if it closes off access to financing. BX+ closed 2025 with profits of 1.28 billion pesos, a real annual growth of 18.5%, and a loan portfolio of 63.82 billion pesos. The bank's proposal includes simplifying the labor and tax burden of formalization to unlock what Ehrenberg describes as 'a highly relevant credit growth potential.'",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/18/mayor-financiamiento-a-pymes-es-un-problema-de-demanda-no-de-oferta/",
+          "tag": "México"
+        },
+        {
+          "source": "DiarioBitcoin",
+          "headline": "Canada revokes registration of 23 crypto firms in signal of tightening regulatory stance",
+          "body": "Canada's financial regulator withdrew the registrations of 23 companies in the crypto sector, marking the country's most forceful supervisory action on digital assets so far this year. The revocation not only reduces the number of formally authorized operators but also raises the reputational and operational cost of failing to meet AML, custody, and user-protection standards. The move comes in parallel to the UK's demand for a moratorium on political crypto donations, shaping a week of intense global regulatory pressure on the sector.",
+          "url": "https://www.diariobitcoin.com/noticias/canada-revoca-el-registro-de-23-firmas-cripto-y-endurece-su-vigilancia-regulatoria/",
+          "tag": "Macro"
+        }
+      ],
+      "quote": {
+        "text": "Oil is only a transitional fuel. But transitions can last a very long time, and during that time, the price of oil will continue to matter enormously.",
+        "attribution": "Daniel Yergin, The Prize, 1991"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "USD/MXN",
+        "value": "17.90",
+        "change": "▲ 1.4%",
+        "direction": "up"
+      },
+      {
+        "label": "S&P 500",
+        "value": "6,583",
+        "change": "▼ 2.0%",
+        "direction": "down"
+      },
+      {
+        "label": "CETES 28D",
+        "value": "6.81%",
+        "change": "▲ 0.00pp",
+        "direction": "up"
+      },
+      {
+        "label": "IPC BMV",
+        "value": "64,871.31",
+        "change": "▼ 1.4%",
+        "direction": "down"
+      }
+    ],
+    "currency": [
+      {
+        "pair": "USD / MXN",
+        "rate": "17.9008",
+        "chg_1d": {
+          "text": "▲ 1.40%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.37%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "EUR / MXN",
+        "rate": "20.6056",
+        "chg_1d": {
+          "text": "▲ 1.16%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.29%",
+          "cls": "chg-up"
+        }
+      },
+      {
+        "pair": "CAD / MXN",
+        "rate": "13.0514",
+        "chg_1d": {
+          "text": "▲ 1.22%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▼ 0.24%",
+          "cls": "chg-down"
+        }
+      },
+      {
+        "pair": "CNY / MXN",
+        "rate": "123.5230",
+        "chg_1d": {
+          "text": "▲ 1.61%",
+          "cls": "chg-up"
+        },
+        "chg_1w": {
+          "text": "▲ 0.83%",
+          "cls": "chg-up"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "city": "Mexico City",
+    "temp": "11°C",
+    "high_low": "23°C / 7°C",
+    "humidity": "Humidity 62%",
+    "desc": "Clear skies"
+  }
+}

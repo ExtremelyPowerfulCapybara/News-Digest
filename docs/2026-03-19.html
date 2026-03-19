@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell -- March 19, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* ── Language toggle ── */
+  .lang-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .lang-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+
+  .lang-en { display: none; }
+
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
+  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
+  .weather-temp { font-size: 11px; color: #ccc; }
+  .weather-humidity { font-size: 11px; color: #ccc; }
+  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
+    .weather-desc { margin-left: 0; width: 100%; }
+    .editor-note { padding: 20px 20px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .currency { padding: 20px 20px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>THURSDAY, MARCH 19, 2026</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <span>NO. 18</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">USD/MXN</span>
+        <span class="tick-val">17.90</span>
+        <span class="tick-up">▲ 1.4%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">S&P 500</span>
+        <span class="tick-val">6,583</span>
+        <span class="tick-down">▼ 2.0%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">CETES 28D</span>
+        <span class="tick-val">6.81%</span>
+        <span class="tick-up">▲ 0.00pp</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">IPC BMV</span>
+        <span class="tick-val">64,871.31</span>
+        <span class="tick-down">▼ 1.4%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather">
+    <span class="weather-city">Mexico City</span>
+    <span class="weather-temp">23°C / 7°C</span>
+    <span class="weather-humidity">Humidity 62%</span>
+    <span class="weather-desc">Clear skies</span>
+  </div>
+
+  <div class="editor-note">
+    <div class="lang-es"><p>Estimados humanos, Israel atacó South Pars —el mayor yacimiento de gas del mundo— e Irán respondió con un misil contra una plataforma petrolífera catarí, empujando el Brent por encima de los 110 dólares y poniendo nerviosas a las bolsas europeas. Mientras Oriente Medio arde literalmente, Trump aprovechó la ocasión para insultar a Powell en Truth Social y exigir recortes de emergencia, como si la Fed fuera un cajero automático con botón de pánico. El FOMC mantuvo tipos sin cambios, como se esperaba, pero el verdadero espectáculo fue el petróleo: bienvenidos al mundo en que la geopolítica vuelve a mandar.</p></div>
+    <div class="lang-en"><p>Estimados humanos, Israel struck South Pars — the world's largest natural gas field — and Iran retaliated with a ballistic missile against a Qatari oil platform, sending Brent crude above $110 a barrel and rattling European equities. While the Middle East literally burns, Trump used the occasion to insult Powell on Truth Social and demand emergency rate cuts, as if the Fed were an ATM with a panic button. The FOMC held rates unchanged, as expected, but the real show was oil: welcome to the world where geopolitics is back in charge.</p></div>
+    <div class="editor-sig">&mdash; Bea Rish, Commissioner of Yield Curve Interpretive Dance</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label"
+            data-es="Sentimiento del D&#237;a"
+            data-en="Market Sentiment">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading risk-off lang-es">Aversión al Riesgo</span>
+      <span class="sentiment-reading risk-off lang-en">Risk-Off</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker risk-off" style="left:22%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
+      <span data-es="Neutral"          data-en="Neutral">Neutral</span>
+      <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
+    </div>
+    <div class="sentiment-context lang-es">El ataque israelí a South Pars, el repunte del Brent a 110 dólares y la presión política sobre la Fed generan una huida hacia activos seguros y ventas en renta variable.</div>
+    <div class="sentiment-context lang-en">The Israeli strike on South Pars, Brent surging to $110, and political pressure on the Fed are driving a flight to safety and equity selloffs.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Español / Invertia</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Israel ataca South Pars: el Brent supera los 110 dólares e Irán lanza un misil contra Qatar</div>
+    <div class="story-body">El ataque israelí y estadounidense al mayor yacimiento de gas del mundo —South Pars, compartido entre Irán y Qatar— disparó el crudo Brent hasta los 110 dólares por barril, mientras el WTI se situó en 99,05 dólares. El gas natural europeo TTF subió un 6,67% hasta 54,66 euros/MWh, y las principales bolsas europeas cerraron en negativo, con el FTSE 100 cayendo un 0,9% y el DAX un 0,88%. Irán respondió lanzando un misil balístico contra una plataforma petrolífera catarí, y Qatar calificó los ataques de 'amenaza a la seguridad energética mundial'.</div>
+    <a href="https://www.elespanol.com/invertia/mercados/20260318/petroleo-repunta-ataque-yacimiento-gas-grande-mundo/1003744174966_0.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Israel strikes South Pars: Brent surpasses $110 and Iran fires missile at Qatar</div>
+    <div class="story-body">The Israeli and U.S. strike on the world's largest gas field — South Pars, shared between Iran and Qatar — sent Brent crude surging to $110 per barrel, while WTI settled at $99.05. European natural gas TTF rose 6.67% to €54.66/MWh, and major European indices closed in the red, with the FTSE 100 down 0.9% and the DAX falling 0.88%. Iran retaliated by launching a ballistic missile at a Qatari oil platform, with Qatar calling the attacks a 'threat to global energy security.'</div>
+    <a href="https://www.elespanol.com/invertia/mercados/20260318/petroleo-repunta-ataque-yacimiento-gas-grande-mundo/1003744174966_0.html" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">RT / Actualidad</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Mercados globales se contraen tras los bombardeos en Irán: oro, plata y Bitcoin caen más de 2%</div>
+    <div class="story-body">En las horas posteriores al ataque a South Pars, el oro cayó más de un 2% hasta los 4.875 dólares por onza y la plata cotizó a 77,2 dólares. Bitcoin retrocedió a 71.918 dólares con una caída diaria máxima superior al 2%, mientras los futuros del Brent escalaron cerca del 6% hasta los 109,49 dólares. La paradoja del día: activos refugio clásicos como el oro vendidos, probablemente para cubrir márgenes en otras posiciones.</div>
+    <a href="https://actualidad.rt.com/actualidad/593701-mercados-contraen-ataque-yacimiento-gas-grande-mundo" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Global markets contract after Iran bombardment: gold, silver and Bitcoin fall more than 2%</div>
+    <div class="story-body">In the hours following the South Pars strike, gold fell more than 2% to $4,875 per ounce and silver traded at $77.20. Bitcoin dropped to $71,918 with an intraday decline exceeding 2%, while Brent futures surged nearly 6% to $109.49 per barrel. The paradox of the day: classic safe-haven assets like gold were sold, likely to cover margins in other positions.</div>
+    <a href="https://actualidad.rt.com/actualidad/593701-mercados-contraen-ataque-yacimiento-gas-grande-mundo" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Confidencial</span>
+    <span class="story-tag">Tasas</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Trump vuelve a atacar a Powell y exige recortes mientras la Fed mantiene tipos entre 3,5% y 3,75%</div>
+    <div class="story-body">Donald Trump publicó en Truth Social '¿Cuándo va a bajar las tasas el Tardón Powell?' horas antes de que el FOMC confirmara lo que el mercado ya descontaba al 100%: tipos sin cambios en la horquilla del 3,5%-3,75%. El Departamento de Justicia mantiene abierta una investigación sobre Powell por el sobrecoste en la renovación de la sede de la Fed, proceso que un juez federal ya calificó de motivación política. Los analistas siguen esperando apenas dos recortes de 25 puntos básicos para todo 2026, lejos del estímulo masivo que Trump reclama.</div>
+    <a href="https://www.elconfidencial.com/economia/2026-03-18/trump-ignora-la-crisis-en-oriente-medio-powell-tipos_4322924/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Trump attacks Powell again and demands cuts as the Fed holds rates at 3.5%–3.75%</div>
+    <div class="story-body">Donald Trump posted on Truth Social 'When is 'Slowpoke' Powell going to lower interest rates?' just hours before the FOMC confirmed what the market had already priced in at 100%: rates unchanged at the 3.5%–3.75% corridor. The Department of Justice maintains an open investigation into Powell over cost overruns at the Fed's headquarters renovation, a process a federal judge already labeled politically motivated. Analysts still expect just two 25-basis-point cuts for all of 2026, far short of the massive stimulus Trump demands.</div>
+    <a href="https://www.elconfidencial.com/economia/2026-03-18/trump-ignora-la-crisis-en-oriente-medio-powell-tipos_4322924/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">CoinTelegraph ES</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Bitcoin se estanca en 74.000 dólares ante la volatilidad del FOMC y la escalada en Oriente Medio</div>
+    <div class="story-body">BTC cotizaba en 74.000 dólares el miércoles, un 2,6% por debajo de su máximo de seis semanas de 76.000 dólares, con traders monitoreando de cerca el tono de Powell tras el FOMC y la presión geopolítica proveniente del conflicto EE.UU.-Irán. El nivel crítico a vigilar está entre los 72.000 y los 65.000 dólares: una ruptura podría llevar al BTC a los 60.000 dólares, según analistas citados por CoinTelegraph. El veterano trader Matthew Dixon resumió la situación con precisión quirúrgica: 'El verdadero catalizador es el tono de Powell, no la decisión sobre tipos.'</div>
+    <a href="https://cointelegraph.es/markets/bitcoin-stalls-76k-key-btc-price-levels-to-watch-ahead-fomc" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Bitcoin stalls at $74,000 amid FOMC volatility and Middle East escalation</div>
+    <div class="story-body">BTC was trading at $74,000 on Wednesday, 2.6% below its six-week high of $76,000, as traders closely monitored Powell's post-FOMC tone and the geopolitical pressure from the U.S.-Iran conflict. The critical support zone to watch sits between $72,000 and $65,000: a break below could send BTC toward $60,000, according to analysts cited by CoinTelegraph. Veteran trader Matthew Dixon summed up the situation with surgical precision: 'The real catalyst is Powell's tone, not the rate decision.'</div>
+    <a href="https://cointelegraph.es/markets/bitcoin-stalls-76k-key-btc-price-levels-to-watch-ahead-fomc" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">CriptoNoticias</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Entrada récord de 2.200 millones de USDT a Binance en un día sugiere posicionamiento alcista</div>
+    <div class="story-body">Binance registró el 17 de marzo la mayor entrada diaria de stablecoins desde noviembre de 2025, con más de 2.200 millones de USDT ingresando al exchange en una sola jornada, según datos de CryptoQuant. El movimiento coincidió con la recuperación de BTC por encima de los 74.000 dólares y se interpreta como capital disponible para compras, aunque no garantiza por sí solo una continuación del rally. Ballenas e institucionales parecen estar posicionándose, aunque con la cautela que impone un contexto geopolítico explosivo.</div>
+    <a href="https://www.criptonoticias.com/mercados/2000-millones-usdt-binance-1-dia/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Record $2.2 billion USDT inflow into Binance in a single day signals bullish positioning</div>
+    <div class="story-body">Binance recorded the largest daily stablecoin inflow since November 2025 on March 17, with more than $2.2 billion in USDT entering the exchange in a single session, according to CryptoQuant data. The move coincided with BTC recovering above $74,000 and is interpreted as capital ready to be deployed, though it does not guarantee a continuation of the rally on its own. Whales and institutional players appear to be positioning, albeit with the caution demanded by an explosive geopolitical backdrop.</div>
+    <a href="https://www.criptonoticias.com/mercados/2000-millones-usdt-binance-1-dia/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">México</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Financiamiento a Pymes en México: el problema es la demanda informal, no la oferta bancaria</div>
+    <div class="story-body">Tomás Ehrenberg, director general de Grupo Financiero Ve por Más (BX+), sostuvo en la 89 Convención Bancaria que el principal obstáculo para el crédito a pymes es la informalidad, no la falta de oferta bancaria: muchas empresas prefieren mantenerse fuera del radar fiscal aunque eso les cierre el acceso al financiamiento. BX+ cerró 2025 con utilidades de 1.280 millones de pesos, un crecimiento real anual del 18,5%, y una cartera de crédito de 63.819 millones de pesos. La propuesta del banco incluye simplificar la carga laboral y fiscal de la formalización para desbloquear lo que Ehrenberg describe como 'un potencial de crecimiento en crédito muy relevante'.</div>
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/18/mayor-financiamiento-a-pymes-es-un-problema-de-demanda-no-de-oferta/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">SME financing in Mexico: the problem is informal demand, not banking supply</div>
+    <div class="story-body">Tomás Ehrenberg, CEO of Grupo Financiero Ve por Más (BX+), argued at the 89th Banking Convention that the main obstacle to SME credit is informality, not a lack of banking supply: many businesses prefer to stay off the tax radar even if it closes off access to financing. BX+ closed 2025 with profits of 1.28 billion pesos, a real annual growth of 18.5%, and a loan portfolio of 63.82 billion pesos. The bank's proposal includes simplifying the labor and tax burden of formalization to unlock what Ehrenberg describes as 'a highly relevant credit growth potential.'</div>
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/18/mayor-financiamiento-a-pymes-es-un-problema-de-demanda-no-de-oferta/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">DiarioBitcoin</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Canadá revoca el registro de 23 firmas cripto en señal de endurecimiento regulatorio</div>
+    <div class="story-body">El regulador canadiense retiró las inscripciones de 23 empresas del sector cripto, en la acción más contundente del país en materia de supervisión de activos digitales en lo que va del año. La revocación no solo reduce el número de operadores formalmente habilitados, sino que eleva el costo reputacional y operativo de no cumplir con estándares de AML, custodia y protección al usuario. La medida llega en paralelo a la moratoria que el Reino Unido exige sobre donaciones políticas en criptomonedas, configurando una semana de presión regulatoria global sobre el sector.</div>
+    <a href="https://www.diariobitcoin.com/noticias/canada-revoca-el-registro-de-23-firmas-cripto-y-endurece-su-vigilancia-regulatoria/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Canada revokes registration of 23 crypto firms in signal of tightening regulatory stance</div>
+    <div class="story-body">Canada's financial regulator withdrew the registrations of 23 companies in the crypto sector, marking the country's most forceful supervisory action on digital assets so far this year. The revocation not only reduces the number of formally authorized operators but also raises the reputational and operational cost of failing to meet AML, custody, and user-protection standards. The move comes in parallel to the UK's demand for a moratorium on political crypto donations, shaping a week of intense global regulatory pressure on the sector.</div>
+    <a href="https://www.diariobitcoin.com/noticias/canada-revoca-el-registro-de-23-firmas-cripto-y-endurece-su-vigilancia-regulatoria/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="section-title"
+         data-es="Tipo de Cambio"
+         data-en="Exchange Rates">Tipo de Cambio</div>
+    <table class="currency-table">
+      <thead>
+        <tr>
+          <th data-es="Par"  data-en="Pair">Par</th>
+          <th data-es="Tipo" data-en="Rate">Tipo</th>
+          <th style="text-align:right;">1D</th>
+          <th style="text-align:right;">1W</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.9008</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.40%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.37%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.6056</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.16%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.29%</td>
+      </tr>
+      <tr>
+        <td class="pair">CAD / MXN</td>
+        <td>13.0514</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.22%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.24%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>123.5230</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.61%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.83%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="lang-es">
+      <div class="quote-text">Oil is only a transitional fuel. But transitions can last a very long time, and during that time, the price of oil will continue to matter enormously.</div>
+      <div class="quote-attr">Daniel Yergin, The Prize, 1991</div>
+    </div>
+    <div class="lang-en">
+      <div class="quote-text">Oil is only a transitional fuel. But transitions can last a very long time, and during that time, the price of oil will continue to matter enormously.</div>
+      <div class="quote-attr">Daniel Yergin, The Prize, 1991</div>
+    </div>
+  </div>
+
+  
+
+  
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by lang-es">por Bea Rish, Commissioner of Yield Curve Interpretive Dance</span>
+    <span class="footer-by lang-en">by Bea Rish, Commissioner of Yield Curve Interpretive Dance</span>
+  </div>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // swap static labels
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = lang === 'es' ? el.dataset.es : el.dataset.en;
+    });
+    localStorage.setItem('nlLang', lang);
+  }
+  (function(){
+    var saved = localStorage.getItem('nlLang') || 'es';
+    setLang(saved);
+  })();
+</script>
+
+</body>
+</html>
