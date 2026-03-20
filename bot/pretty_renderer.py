@@ -141,6 +141,26 @@ CSS = """
   .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
   .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
 
+  .calendar { padding: 24px 48px; }
+  .cal-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #e4e9ec; }
+  .cal-row:last-child { border-bottom: none; }
+  .cal-date { font-size: 10px; color: #555; min-width: 46px; flex-shrink: 0; }
+  .cal-badge { font-size: 7.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 2px 5px; border: 1px solid; min-width: 50px; text-align: center; flex-shrink: 0; }
+  .cal-label { font-size: 12px; color: #1a1a1a; flex: 1; }
+  .cal-days { font-size: 9px; color: #aab4bc; white-space: nowrap; flex-shrink: 0; }
+
+  .weekly-mkt { background: #1a1a1a; padding: 16px 48px 14px; }
+  .wm-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #555; margin-bottom: 2px; }
+  .wm-subtitle { font-size: 8px; color: #444; margin-bottom: 12px; }
+  .wm-table { width: 100%; border-collapse: collapse; }
+  .wm-table th { font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #444; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #2a2a2a; }
+  .wm-table th:not(:first-child) { text-align: right; }
+  .wm-table td { font-size: 11px; padding: 8px 0; border-bottom: 1px solid #2a2a2a; }
+  .wm-table tr:last-child td { border-bottom: none; }
+  .wm-label { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #555; }
+  .wm-val { color: #d4cfc8; text-align: right; padding-left: 12px; }
+  .wm-chg { text-align: right; font-size: 10px; padding-left: 12px; }
+
   .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
   .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
   .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
@@ -347,6 +367,71 @@ def build_pretty_html(
         active = "active" if i == 0 else ""
         currency_btns_html += f'<button class="currency-btn {active}" data-base="{base}" onclick="setCurrencyBase(\'{base}\')">{base}</button>'
 
+    # ── Weekly markets (Fridays only) ────────────────────────────────────
+    weekly_mkt_html = ""
+    if is_friday and tickers:
+        monday_wm = date.today() - timedelta(days=date.today().weekday())
+        friday_wm = monday_wm + timedelta(days=4)
+        wm_label  = f"{monday_wm.strftime('%b %d')}&ndash;{friday_wm.strftime('%d, %Y')}"
+        wm_rows = ""
+        for t in tickers:
+            c_d = "tick-up" if t["direction"]                == "up" else ("tick-down" if t["direction"]                == "down" else "")
+            c_w = "tick-up" if t.get("direction_1w","flat") == "up" else ("tick-down" if t.get("direction_1w","flat") == "down" else "")
+            wm_rows += f"""
+        <tr>
+          <td class="wm-label">{t['label']}</td>
+          <td class="wm-val">{t['value']}</td>
+          <td class="wm-chg {c_d}">{t['change']}</td>
+          <td class="wm-chg {c_w}">{t.get('chg_1w','&mdash;')}</td>
+        </tr>"""
+        weekly_mkt_html = f"""
+{DIVIDER}
+<div class="weekly-mkt">
+  <div class="wm-title" data-es="La Semana en Mercados &middot; {wm_label}" data-en="Week in Markets &middot; {wm_label}">La Semana en Mercados &middot; {wm_label}</div>
+  <div class="wm-subtitle" data-es="1D = var. diaria &nbsp;&middot;&nbsp; 1S = var. semanal" data-en="1D = daily change &nbsp;&middot;&nbsp; 1W = weekly change">1D = var. diaria &nbsp;&middot;&nbsp; 1S = var. semanal</div>
+  <table class="wm-table">
+    <thead>
+      <tr>
+        <th data-es="Indicador" data-en="Indicator">Indicador</th>
+        <th style="text-align:right;" data-es="Valor" data-en="Value">Valor</th>
+        <th style="text-align:right;">1D</th>
+        <th style="text-align:right;" data-es="1S" data-en="1W">1S</th>
+      </tr>
+    </thead>
+    <tbody>{wm_rows}
+    </tbody>
+  </table>
+</div>"""
+
+    # ── Economic calendar ─────────────────────────────────────────────────
+    from storage import get_upcoming_calendar
+    _months_cal = ["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]
+    _cal_colors = {"banxico": "#4a9e6a", "fed": "#5a8abf", "mx-data": "#c8943a", "us-data": "#7a9aaa"}
+    _cal_badges = {"banxico": "BANXICO", "fed": "FED",     "mx-data": "INEGI",   "us-data": "BLS"}
+
+    cal_rows = ""
+    for event_date, label_ev, etype, delta in get_upcoming_calendar(n=5):
+        color    = _cal_colors.get(etype, "#aab4bc")
+        badge    = _cal_badges.get(etype, etype.upper())
+        date_fmt = f"{event_date.day:02d} {_months_cal[event_date.month].upper()}"
+        days_str = "Hoy" if delta == 0 else ("Ma\u00f1ana" if delta == 1 else f"{delta}d")
+        cal_rows += f"""
+      <div class="cal-row">
+        <span class="cal-date">{date_fmt}</span>
+        <span class="cal-badge" style="color:{color}; border-color:{color};">{badge}</span>
+        <span class="cal-label">{label_ev}</span>
+        <span class="cal-days">{days_str}</span>
+      </div>"""
+
+    calendar_html = f"""
+{DIVIDER}
+<div class="calendar">
+  <div class="section-title"
+       data-es="Pr&oacute;ximas Fechas Clave"
+       data-en="Key Upcoming Dates">Pr&oacute;ximas Fechas Clave</div>
+  {cal_rows}
+</div>"""
+
     # ── Quote (both languages) ────────────────────────────────────────────
     q_es = digest_es.get("quote", {})
     q_en = digest_en.get("quote", q_es)
@@ -501,6 +586,10 @@ def build_pretty_html(
     </div>
     {currency_tables_html}
   </div>
+
+  {weekly_mkt_html}
+
+  {calendar_html}
 
   {DIVIDER}
 

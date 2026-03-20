@@ -93,5 +93,19 @@ def get_recent_urls(days: int = 5) -> set[str]:
     return urls
 
 
+def get_upcoming_calendar(n: int = 5) -> list[tuple]:
+    """Returns the next N upcoming economic calendar events from today."""
+    from config import ECONOMIC_CALENDAR
+    today    = date.today()
+    upcoming = []
+    for date_str, label, etype in ECONOMIC_CALENDAR:
+        event_date = date.fromisoformat(date_str)
+        delta = (event_date - today).days
+        if delta >= 0:
+            upcoming.append((event_date, label, etype, delta))
+    upcoming.sort(key=lambda x: x[0])
+    return upcoming[:n]
+
+
 def is_friday() -> bool:
     return date.today().weekday() == 4

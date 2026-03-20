@@ -299,6 +299,86 @@ def _week_review(stories: list[dict]) -> str:
 </table>"""
 
 
+def _economic_calendar() -> str:
+    from storage import get_upcoming_calendar
+    upcoming = get_upcoming_calendar(n=5)
+    if not upcoming:
+        return ""
+
+    _months = ["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]
+    _colors = {"banxico": "#4a9e6a", "fed": "#5a8abf", "mx-data": "#c8943a", "us-data": "#7a9aaa"}
+    _badges = {"banxico": "BANXICO",  "fed": "FED",    "mx-data": "INEGI",   "us-data": "BLS"}
+
+    rows = ""
+    for event_date, label, etype, delta in upcoming:
+        color    = _colors.get(etype, TEXT_LIGHT)
+        badge    = _badges.get(etype, etype.upper())
+        date_fmt = f"{event_date.day:02d} {_months[event_date.month].upper()}"
+        days_str = "Hoy" if delta == 0 else ("Ma\u00f1ana" if delta == 1 else f"{delta}d")
+        rows += f"""
+        <tr>
+          <td style="font-family:{FONT_SANS}; font-size:10px; color:{TEXT_MID}; padding:7px 10px 7px 0; border-bottom:1px solid #e4e9ec; white-space:nowrap;">{date_fmt}</td>
+          <td style="padding:7px 8px 7px 0; border-bottom:1px solid #e4e9ec; white-space:nowrap;">
+            <span style="font-family:{FONT_SANS}; font-size:7.5px; font-weight:bold; letter-spacing:1px; text-transform:uppercase; color:{color}; border:1px solid {color}; padding:2px 5px;">{badge}</span>
+          </td>
+          <td style="font-family:{FONT_SANS}; font-size:11px; color:{TEXT_DARK}; padding:7px 0; border-bottom:1px solid #e4e9ec; width:100%;">{label}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:9px; color:{TEXT_LIGHT}; padding:7px 0 7px 12px; border-bottom:1px solid #e4e9ec; white-space:nowrap;">{days_str}</td>
+        </tr>"""
+
+    return f"""
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td style="padding:24px 48px;">
+      <p style="margin:0 0 14px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Pr&oacute;ximas Fechas Clave</p>
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        {rows}
+      </table>
+    </td>
+  </tr>
+</table>"""
+
+
+def _weekly_markets(tickers: list[dict]) -> str:
+    if not tickers:
+        return ""
+    today  = date.today()
+    monday = today - timedelta(days=today.weekday())
+    friday = monday + timedelta(days=4)
+    label  = f"{monday.strftime('%d %b')}&#8211;{friday.strftime('%d %b, %Y')}"
+
+    th = f"font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#444444; padding:0 0 8px 0; border-bottom:1px solid #2a2a2a;"
+    rows = ""
+    for t in tickers:
+        c_d = "#6abf7b" if t["direction"]                 == "up" else ("#d4695a" if t["direction"]                 == "down" else "#888888")
+        c_w = "#6abf7b" if t.get("direction_1w","flat")  == "up" else ("#d4695a" if t.get("direction_1w","flat")  == "down" else "#888888")
+        rows += f"""
+        <tr>
+          <td style="font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#555555; padding:8px 0; border-bottom:1px solid #2a2a2a;">{t['label']}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:11px; color:{TEXT_CREAM}; padding:8px 12px; border-bottom:1px solid #2a2a2a;">{t['value']}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:{c_d}; padding:8px 12px 8px 0; border-bottom:1px solid #2a2a2a;">{t['change']}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:{c_w}; padding:8px 0; border-bottom:1px solid #2a2a2a;">{t.get('chg_1w','&#8212;')}</td>
+        </tr>"""
+
+    return f"""
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK};">
+  <tr>
+    <td style="padding:16px 48px 14px;">
+      <p style="margin:0 0 2px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:#555555;">La Semana en Mercados &middot; {label}</p>
+      <p style="margin:0 0 12px 0; font-family:{FONT_SANS}; font-size:8px; color:#444444;">1D = var. diaria &nbsp;&middot;&nbsp; 1S = var. semanal</p>
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <th align="left"  style="{th}">Indicador</th>
+          <th align="right" style="{th} padding-left:12px;">Valor</th>
+          <th align="right" style="{th} padding-left:12px;">1D</th>
+          <th align="right" style="{th}">1S</th>
+        </tr>
+        {rows}
+      </table>
+    </td>
+  </tr>
+</table>"""
+
+
 def _footer(issue_date: str = "", author: str = "") -> str:
     archive_link = ""
     if GITHUB_PAGES_URL and issue_date:
@@ -389,8 +469,10 @@ def build_html(
         <tr><td>{_sentiment(sentiment)}</td></tr>
         <tr><td>{_divider()}</td></tr>
         <tr><td>{stories_html}</td></tr>
-        <tr><td>{_divider()}</td></tr>
+        {'<tr><td>' + _weekly_markets(tickers) + '</td></tr>' if is_friday else '<tr><td>' + _divider() + '</td></tr>'}
         <tr><td>{_currency_table([r for r in currency.get('matrix', {}).get(EMAIL_CURRENCY_BASE, []) if any(r['pair'].endswith(f'/ {q}') for q in EMAIL_CURRENCY_QUOTES)])}</td></tr>
+        <tr><td>{_divider()}</td></tr>
+        <tr><td>{_economic_calendar()}</td></tr>
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_quote(quote)}</td></tr>
         {'<tr><td>' + week_html + '</td></tr>' if week_html else ''}

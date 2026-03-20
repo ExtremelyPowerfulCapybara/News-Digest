@@ -184,6 +184,38 @@ MOCK_MODE = os.environ.get("MOCK", "false").lower() == "true"
 # Skip email delivery (preview/archive only).
 SKIP_EMAIL = os.environ.get("SKIP_EMAIL", "false").lower() == "true"
 
+# ── Economic calendar ─────────────────────────
+# Upcoming key dates for Banxico, Fed, and macro data releases.
+# Verify and update at: banxico.org.mx, federalreserve.gov, inegi.org.mx, bls.gov
+# Each entry: (date_str, label, event_type)
+# event_type: "banxico" | "fed" | "mx-data" | "us-data"
+ECONOMIC_CALENDAR = [
+    ("2026-03-26", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+    ("2026-04-09", "INEGI \u2014 CPI M\u00e9xico (feb)",    "mx-data"),
+    ("2026-04-10", "BLS \u2014 CPI EE.UU. (mar)",           "us-data"),
+    ("2026-04-29", "FOMC \u2014 Decisi\u00f3n Fed",         "fed"),
+    ("2026-05-12", "BLS \u2014 CPI EE.UU. (abr)",           "us-data"),
+    ("2026-05-14", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+    ("2026-06-09", "INEGI \u2014 CPI M\u00e9xico (may)",    "mx-data"),
+    ("2026-06-10", "FOMC \u2014 Decisi\u00f3n Fed",         "fed"),
+    ("2026-06-11", "BLS \u2014 CPI EE.UU. (may)",           "us-data"),
+    ("2026-06-25", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+    ("2026-07-14", "BLS \u2014 CPI EE.UU. (jun)",           "us-data"),
+    ("2026-07-29", "FOMC \u2014 Decisi\u00f3n Fed",         "fed"),
+    ("2026-08-06", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+    ("2026-08-12", "BLS \u2014 CPI EE.UU. (jul)",           "us-data"),
+    ("2026-09-10", "BLS \u2014 CPI EE.UU. (ago)",           "us-data"),
+    ("2026-09-16", "FOMC \u2014 Decisi\u00f3n Fed",         "fed"),
+    ("2026-09-24", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+    ("2026-10-13", "BLS \u2014 CPI EE.UU. (sep)",           "us-data"),
+    ("2026-10-28", "FOMC \u2014 Decisi\u00f3n Fed",         "fed"),
+    ("2026-11-05", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+    ("2026-11-12", "BLS \u2014 CPI EE.UU. (oct)",           "us-data"),
+    ("2026-12-09", "FOMC \u2014 Decisi\u00f3n Fed",         "fed"),
+    ("2026-12-10", "BLS \u2014 CPI EE.UU. (nov)",           "us-data"),
+    ("2026-12-17", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+]
+
 # ── Storage paths ─────────────────────────────
 # Paths are relative to the repo root, not bot/
 # so digests and archive are committed together.

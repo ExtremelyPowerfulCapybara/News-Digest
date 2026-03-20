@@ -15,23 +15,32 @@ from config import (
 def fetch_tickers() -> list[dict]:
     """
     Fetches market data for each ticker in config using Yahoo Finance.
-    Returns list of dicts with label, value, change, direction.
+    Returns list of dicts with label, value, change, direction, chg_1w, direction_1w.
+    Uses 5-day range to compute both daily and weekly % change.
     """
     results = []
     for label, symbol in TICKER_SYMBOLS:
         if symbol is None:
-            results.append({"label": label, "value": "—", "change": "", "direction": "flat"})
+            results.append({"label": label, "value": "—", "change": "", "direction": "flat",
+                            "chg_1w": "", "direction_1w": "flat"})
             continue
         try:
-            url  = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=2d"
+            url     = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=5d"
             headers = {"User-Agent": "Mozilla/5.0"}
-            data = requests.get(url, headers=headers, timeout=8).json()
-            meta = data["chart"]["result"][0]["meta"]
+            data    = requests.get(url, headers=headers, timeout=8).json()
+            result  = data["chart"]["result"][0]
+            meta    = result["meta"]
+            closes  = result["indicators"]["quote"][0]["close"]
+            closes  = [c for c in closes if c is not None]
 
             price     = meta.get("regularMarketPrice", 0)
-            prev      = meta.get("chartPreviousClose", price)
-            pct_chg   = ((price - prev) / prev * 100) if prev else 0
-            direction = "up" if pct_chg >= 0 else "down"
+            prev_day  = closes[-2] if len(closes) >= 2 else price
+            prev_week = closes[0]  if len(closes) >= 5 else price
+
+            pct_chg   = ((price - prev_day)  / prev_day  * 100) if prev_day  else 0
+            pct_chg_w = ((price - prev_week) / prev_week * 100) if prev_week else 0
+            direction   = "up" if pct_chg   >= 0 else "down"
+            direction_w = "up" if pct_chg_w >= 0 else "down"
 
             if label == "10Y UST":
                 val_str = f"{price:.2f}%"
@@ -42,21 +51,26 @@ def fetch_tickers() -> list[dict]:
             else:
                 val_str = f"{price:.2f}"
 
-            chg_str = f"{'▲' if direction == 'up' else '▼'} {abs(pct_chg):.1f}%"
+            chg_str   = f"{'▲' if direction   == 'up' else '▼'} {abs(pct_chg):.1f}%"
+            chg_w_str = f"{'▲' if direction_w == 'up' else '▼'} {abs(pct_chg_w):.1f}%"
 
             results.append({
-                "label":     label,
-                "value":     val_str,
-                "change":    chg_str,
-                "direction": direction,
+                "label":        label,
+                "value":        val_str,
+                "change":       chg_str,
+                "direction":    direction,
+                "chg_1w":       chg_w_str,
+                "direction_1w": direction_w,
             })
         except Exception as e:
             print(f"  [market] Failed {label}: {e}")
             results.append({
-                "label":     label,
-                "value":     "—",
-                "change":    "",
-                "direction": "flat",
+                "label":        label,
+                "value":        "—",
+                "change":       "",
+                "direction":    "flat",
+                "chg_1w":       "",
+                "direction_1w": "flat",
             })
 
     return results
