@@ -299,6 +299,93 @@ def _week_review(stories: list[dict]) -> str:
 </table>"""
 
 
+def _sentiment_chart(week_sentiment: list[dict]) -> str:
+    """
+    Renders the weekly sentiment trajectory as a PNG via QuickChart.io.
+    Returns an inline <img> block for Gmail-safe embedding.
+    """
+    import json
+    import urllib.parse
+
+    if not week_sentiment:
+        return ""
+
+    labels = [d["day"] for d in week_sentiment]
+    data   = [d["position"] for d in week_sentiment]
+    colors = [
+        "#b84a3a" if d["position"] < 36 else
+        ("#4a9e6a" if d["position"] > 64 else "#e8a030")
+        for d in week_sentiment
+    ]
+
+    config = {
+        "type": "line",
+        "data": {
+            "labels": labels,
+            "datasets": [{
+                "data": data,
+                "borderColor": "#3a4a54",
+                "borderWidth": 2,
+                "pointBackgroundColor": colors,
+                "pointBorderColor":     colors,
+                "pointRadius": 6,
+                "fill": False,
+                "tension": 0.3,
+            }],
+        },
+        "options": {
+            "responsive": False,
+            "plugins": {"legend": {"display": False}},
+            "scales": {
+                "y": {
+                    "min": 0, "max": 100,
+                    "ticks": {"display": False},
+                    "grid": {"color": "#dde3e8"},
+                },
+                "x": {
+                    "ticks": {"color": "#888888", "font": {"size": 11}},
+                    "grid":  {"display": False},
+                },
+            },
+        },
+    }
+
+    chart_url = (
+        "https://quickchart.io/chart"
+        f"?w=504&h=160&bkg=%23f0f3f5&f=png"
+        f"&c={urllib.parse.quote(json.dumps(config, separators=(',', ':')))}"
+    )
+
+    today  = date.today()
+    monday = today - timedelta(days=today.weekday())
+    friday = monday + timedelta(days=4)
+    label  = f"{monday.strftime('%d %b')}&#8211;{friday.strftime('%d %b, %Y')}"
+
+    # Annotate min/max points in a plain-text legend below the chart
+    if data:
+        low_day  = week_sentiment[data.index(min(data))]["day"]
+        high_day = week_sentiment[data.index(max(data))]["day"]
+        legend = (
+            f'<span style="color:#b84a3a;">&#9679;</span> Risk-Off &nbsp;'
+            f'<span style="color:#e8a030;">&#9679;</span> Cauteloso &nbsp;'
+            f'<span style="color:#4a9e6a;">&#9679;</span> Risk-On &nbsp;&nbsp;'
+            f'<span style="color:#888888;">m&iacute;n: {low_day} &middot; m&aacute;x: {high_day}</span>'
+        )
+    else:
+        legend = ""
+
+    return f"""
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td style="padding:24px 48px 8px;">
+      <p style="margin:0 0 14px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Sentimiento Semanal &middot; {label}</p>
+      <img src="{chart_url}" width="504" style="width:100%; max-width:504px; display:block;" alt="Weekly sentiment chart"/>
+      <p style="margin:10px 0 0 0; font-family:{FONT_SANS}; font-size:9px; color:{TEXT_LIGHT};">{legend}</p>
+    </td>
+  </tr>
+</table>"""
+
+
 def _economic_calendar() -> str:
     from storage import get_upcoming_calendar
     upcoming = get_upcoming_calendar(n=5)
@@ -422,6 +509,11 @@ def build_html(
     if is_friday and week_stories:
         week_html = _divider() + _week_review(week_stories)
 
+    sentiment_chart_html = ""
+    if is_friday:
+        from storage import get_week_sentiment
+        sentiment_chart_html = _sentiment_chart(get_week_sentiment())
+
     sentiment  = digest.get("sentiment", {})
     quote      = digest.get("quote", {})
     today_iso  = date.today().isoformat()
@@ -476,6 +568,7 @@ def build_html(
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_quote(quote)}</td></tr>
         {'<tr><td>' + week_html + '</td></tr>' if week_html else ''}
+        {'<tr><td>' + sentiment_chart_html + '</td></tr>' if sentiment_chart_html else ''}
         {'<tr><td><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 48px 8px;"><p style="margin:0 0 14px 0; font-family:Arial,sans-serif; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc;">La Semana en Palabras</p><img src="' + ASSET_BASE_URL.rstrip("/") + "/" + wordcloud_filename + '" width="504" style="width:100%; max-width:504px; display:block;" alt=""/></td></tr></table></td></tr>' if wordcloud_filename else ''}
         <tr><td>{_footer(today_iso, author)}</td></tr>
       </table>

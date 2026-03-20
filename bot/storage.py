@@ -93,6 +93,34 @@ def get_recent_urls(days: int = 5) -> set[str]:
     return urls
 
 
+def get_week_sentiment() -> list[dict]:
+    """
+    Returns sentiment data for each available day Mon-Fri of the current week.
+    Used on Fridays to render the weekly sentiment chart.
+    Each entry: { day, position, label_en }
+    """
+    today     = date.today()
+    monday    = today - timedelta(days=today.weekday())
+    day_names = ["Lun", "Mar", "Mi\u00e9", "Jue", "Vie"]
+    result    = []
+
+    for i in range(5):
+        day  = monday + timedelta(days=i)
+        data = load_digest(day.isoformat())
+        if not data:
+            continue
+        digest_es = data.get("digest", {})
+        digest_es = digest_es.get("es", digest_es)
+        sentiment = digest_es.get("sentiment", {})
+        result.append({
+            "day":      day_names[i],
+            "position": int(sentiment.get("position", 50)),
+            "label_en": sentiment.get("label_en", sentiment.get("label", "Cautious")),
+        })
+
+    return result
+
+
 def get_upcoming_calendar(n: int = 5) -> list[tuple]:
     """Returns the next N upcoming economic calendar events from today."""
     from config import ECONOMIC_CALENDAR

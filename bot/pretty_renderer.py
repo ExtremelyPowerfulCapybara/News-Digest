@@ -500,6 +500,61 @@ def build_pretty_html(
     <div class="mkt-tab-nav">{tab_btns}</div>{panels}
   </div>"""
 
+    # ── Sentiment chart (Fridays only) ───────────────────────────────────
+    sentiment_chart_html = ""
+    if is_friday:
+        import json, urllib.parse
+        from storage import get_week_sentiment
+        week_sent = get_week_sentiment()
+        if week_sent:
+            sc_labels = [d["day"] for d in week_sent]
+            sc_data   = [d["position"] for d in week_sent]
+            sc_colors = [
+                "#b84a3a" if d["position"] < 36 else
+                ("#4a9e6a" if d["position"] > 64 else "#e8a030")
+                for d in week_sent
+            ]
+            sc_config = {
+                "type": "line",
+                "data": {
+                    "labels": sc_labels,
+                    "datasets": [{
+                        "data": sc_data,
+                        "borderColor": "#3a4a54",
+                        "borderWidth": 2,
+                        "pointBackgroundColor": sc_colors,
+                        "pointBorderColor":     sc_colors,
+                        "pointRadius": 6,
+                        "fill": False,
+                        "tension": 0.3,
+                    }],
+                },
+                "options": {
+                    "responsive": False,
+                    "plugins": {"legend": {"display": False}},
+                    "scales": {
+                        "y": {"min": 0, "max": 100, "ticks": {"display": False}, "grid": {"color": "#dde3e8"}},
+                        "x": {"ticks": {"color": "#888888", "font": {"size": 11}}, "grid": {"display": False}},
+                    },
+                },
+            }
+            sc_url = (
+                "https://quickchart.io/chart"
+                f"?w=544&h=160&bkg=%23f0f3f5&f=png"
+                f"&c={urllib.parse.quote(json.dumps(sc_config, separators=(',', ':')))}"
+            )
+            monday_sc = date.today() - timedelta(days=date.today().weekday())
+            friday_sc = monday_sc + timedelta(days=4)
+            sc_label  = f"{monday_sc.strftime('%b %d')}&ndash;{friday_sc.strftime('%d, %Y')}"
+            sentiment_chart_html = f"""
+{DIVIDER}
+<div style="padding:24px 48px 8px;">
+  <div class="section-title"
+       data-es="Sentimiento Semanal &middot; {sc_label}"
+       data-en="Weekly Sentiment &middot; {sc_label}">Sentimiento Semanal &middot; {sc_label}</div>
+  <img src="{sc_url}" style="width:100%; border:1px solid #cdd4d9; margin-top:14px;" alt="Weekly sentiment chart"/>
+</div>"""
+
     # ── Wordcloud ─────────────────────────────────────────────────────────
     wordcloud_html = ""
     if wordcloud_filename:
@@ -606,6 +661,8 @@ def build_pretty_html(
   </div>
 
   {week_html}
+
+  {sentiment_chart_html}
 
   {wordcloud_html}
 
