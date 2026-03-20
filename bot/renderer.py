@@ -162,7 +162,7 @@ def _sentiment(s: dict) -> str:
     label_es = s.get("label_es", s.get("label", "Cauteloso"))
     context  = s.get("context_es", s.get("context", ""))
 
-    label_es = {"Risk-Off": "Riesgo Bajo", "Cautious": "Cauteloso", "Risk-On": "Riesgo Alto"}.get(label, label)
+    label_es = {"Risk-Off": "Riesgo Bajo", "Cautious": "Cauteloso", "Risk-On": "Riesgo Alto"}.get(label_en, label_en)
 
     style_map = {
         "Aversión al Riesgo": ("background:#fde8e6; color:#b84a3a; border:1px solid #f0c0ba;", "#b84a3a"),
@@ -178,7 +178,7 @@ def _sentiment(s: dict) -> str:
         pills_html += f"""
           <td style="padding-right:8px; white-space:nowrap;">
             <span style="display:inline-block; {pill_style} padding:5px 14px; border-radius:20px; font-family:{FONT_SANS}; font-size:10px; font-weight:bold; letter-spacing:1px; text-transform:uppercase;">
-              <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:{dot_color}; margin-right:5px; vertical-align:middle;"></span>{p_es}
+              <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:{dot_color}; margin-right:5px; vertical-align:middle;"></span>{p}
             </span>
           </td>"""
 
