@@ -126,6 +126,26 @@
   .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
   .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
 
+  .calendar { padding: 24px 48px; }
+  .cal-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #e4e9ec; }
+  .cal-row:last-child { border-bottom: none; }
+  .cal-date { font-size: 10px; color: #555; min-width: 46px; flex-shrink: 0; }
+  .cal-badge { font-size: 7.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 2px 5px; border: 1px solid; min-width: 50px; text-align: center; flex-shrink: 0; }
+  .cal-label { font-size: 12px; color: #1a1a1a; flex: 1; }
+  .cal-days { font-size: 9px; color: #aab4bc; white-space: nowrap; flex-shrink: 0; }
+
+  .weekly-mkt { background: #1a1a1a; padding: 16px 48px 14px; }
+  .wm-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #555; margin-bottom: 2px; }
+  .wm-subtitle { font-size: 8px; color: #444; margin-bottom: 12px; }
+  .wm-table { width: 100%; border-collapse: collapse; }
+  .wm-table th { font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #444; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #2a2a2a; }
+  .wm-table th:not(:first-child) { text-align: right; }
+  .wm-table td { font-size: 11px; padding: 8px 0; border-bottom: 1px solid #2a2a2a; }
+  .wm-table tr:last-child td { border-bottom: none; }
+  .wm-label { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #555; }
+  .wm-val { color: #d4cfc8; text-align: right; padding-left: 12px; }
+  .wm-chg { text-align: right; font-size: 10px; padding-left: 12px; }
+
   .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
   .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
   .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
@@ -172,8 +192,8 @@
     <div class="ticker-inner">
       <div class="tick-item">
         <span class="tick-label">DXY</span>
-        <span class="tick-val">99.29</span>
-        <span class="tick-down">▼ 0.8%</span>
+        <span class="tick-val">99.36</span>
+        <span class="tick-down">▼ 0.7%</span>
       </div>
       <div class="tick-item">
         <span class="tick-label">10Y UST</span>
@@ -188,7 +208,7 @@
       <div class="tick-item">
         <span class="tick-label">MSCI EM</span>
         <span class="tick-val">$57.62</span>
-        <span class="tick-down">▼ 1.9%</span>
+        <span class="tick-up">▲ 0.1%</span>
       </div>
     </div>
   </div>
@@ -221,39 +241,39 @@
     <div class="mkt-panel" id="mkt-co">
         <div class="tick-item">
           <span class="tick-label">Brent</span>
-          <span class="tick-val">$102</span>
-          <span class="tick-down">▼ 5.1%</span>
+          <span class="tick-val">$101</span>
+          <span class="tick-down">▼ 5.8%</span>
         </div>
         <div class="tick-item">
           <span class="tick-label">Gold</span>
-          <span class="tick-val">$4,664</span>
-          <span class="tick-down">▼ 4.6%</span>
+          <span class="tick-val">$4,686</span>
+          <span class="tick-down">▼ 4.2%</span>
         </div>
         <div class="tick-item">
           <span class="tick-label">Copper</span>
           <span class="tick-val">$5.53</span>
-          <span class="tick-down">▼ 0.5%</span>
+          <span class="tick-down">▼ 0.4%</span>
         </div>
         <div class="tick-item">
           <span class="tick-label">Wheat</span>
-          <span class="tick-val">$6.07</span>
-          <span class="tick-up">▲ 0.5%</span>
+          <span class="tick-val">$6.05</span>
+          <span class="tick-up">▲ 0.2%</span>
         </div>
     </div>
     <div class="mkt-panel" id="mkt-cr">
         <div class="tick-item">
           <span class="tick-label">Bitcoin</span>
-          <span class="tick-val">$70,100</span>
-          <span class="tick-up">▲ 0.3%</span>
+          <span class="tick-val">$70,238</span>
+          <span class="tick-up">▲ 0.5%</span>
         </div>
         <div class="tick-item">
           <span class="tick-label">Ethereum</span>
-          <span class="tick-val">$2,145</span>
-          <span class="tick-up">▲ 0.3%</span>
+          <span class="tick-val">$2,140</span>
+          <span class="tick-up">▲ 0.1%</span>
         </div>
         <div class="tick-item">
           <span class="tick-label">Solana</span>
-          <span class="tick-val">$89.20</span>
+          <span class="tick-val">$89.22</span>
           <span class="tick-up">▲ 0.3%</span>
         </div>
     </div>
@@ -262,7 +282,7 @@
   <div class="editor-note">
     <div class="lang-es"><p>Estimados humanos, el estrecho de Ormuz sigue prácticamente cerrado, el petróleo oscila entre $80 y $100 por barril según el último tuit presidencial, y The Economist ya habla de 'una nueva era de inseguridad energética' — bienvenidos al jueves. Mientras tanto, México lanza misiones comerciales a Canadá, negocia el T-MEC y corteja al BID, todo con la elegancia de quien réorganiza los muebles durante un terremoto.</p></div>
     <div class="lang-en"><p>Estimados humanos, the Strait of Hormuz remains effectively closed, oil swings between $80 and $100 per barrel depending on the last presidential tweet, and The Economist is already calling it 'a new era of energy insecurity' — welcome to Thursday. Meanwhile, Mexico launches trade missions to Canada, renegotiates USMCA, and courts the IDB, all with the elegance of someone rearranging furniture during an earthquake.</p></div>
-    <div class="editor-sig">&mdash; Bill Ateral, Senior Fellow, Bureau of Controlled Panic</div>
+    <div class="editor-sig">&mdash; Chip Deflation, Director of Soft Landings (Emeritus)</div>
   </div>
 
   
@@ -521,45 +541,45 @@
         <tbody>
       <tr>
         <td class="pair">MXN / USD</td>
-        <td>0.05634</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.53%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.77%</td>
+        <td>0.05633</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.51%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.75%</td>
       </tr>
       <tr>
         <td class="pair">MXN / BRL</td>
         <td>0.2941</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.27%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.28%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.29%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.30%</td>
       </tr>
       <tr>
         <td class="pair">MXN / EUR</td>
-        <td>0.04866</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.46%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.47%</td>
+        <td>0.04870</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.39%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.40%</td>
       </tr>
       <tr>
         <td class="pair">MXN / CNY</td>
-        <td>0.3887</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.92%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.82%</td>
+        <td>0.3881</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.77%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.67%</td>
       </tr>
       <tr>
         <td class="pair">MXN / CAD</td>
-        <td>0.0774</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.60%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.98%</td>
+        <td>0.0773</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.50%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.87%</td>
       </tr>
       <tr>
         <td class="pair">MXN / GBP</td>
-        <td>0.04197</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.66%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.54%</td>
+        <td>0.04200</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.60%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.49%</td>
       </tr>
       <tr>
         <td class="pair">MXN / JPY</td>
-        <td>8.89</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.73%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.34%</td>
+        <td>8.91</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.49%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.11%</td>
       </tr>
         </tbody>
       </table>
@@ -577,9 +597,9 @@
         <tbody>
       <tr>
         <td class="pair">USD / MXN</td>
-        <td>17.7493</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.52%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.77%</td>
+        <td>17.7531</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.50%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.75%</td>
       </tr>
       <tr>
         <td class="pair">USD / BRL</td>
@@ -589,33 +609,33 @@
       </tr>
       <tr>
         <td class="pair">USD / EUR</td>
-        <td>0.86371</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.98%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.23%</td>
+        <td>0.86453</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.89%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.14%</td>
       </tr>
       <tr>
         <td class="pair">USD / CNY</td>
-        <td>6.8993</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.39%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.05%</td>
+        <td>6.8908</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.26%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.08%</td>
       </tr>
       <tr>
         <td class="pair">USD / CAD</td>
-        <td>1.3740</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.08%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.21%</td>
+        <td>1.3728</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.01%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.12%</td>
       </tr>
       <tr>
         <td class="pair">USD / GBP</td>
-        <td>0.74499</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.18%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.31%</td>
+        <td>0.74555</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.10%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.23%</td>
       </tr>
       <tr>
         <td class="pair">USD / JPY</td>
-        <td>157.80</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.25%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.11%</td>
+        <td>158.20</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.00%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.85%</td>
       </tr>
         </tbody>
       </table>
@@ -633,9 +653,9 @@
         <tbody>
       <tr>
         <td class="pair">BRL / MXN</td>
-        <td>3.3999</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.27%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.30%</td>
+        <td>3.4007</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.29%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.32%</td>
       </tr>
       <tr>
         <td class="pair">BRL / USD</td>
@@ -645,33 +665,33 @@
       </tr>
       <tr>
         <td class="pair">BRL / EUR</td>
-        <td>0.16545</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.19%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.82%</td>
+        <td>0.16560</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.10%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.92%</td>
       </tr>
       <tr>
         <td class="pair">BRL / CNY</td>
-        <td>1.3216</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.19%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 2.13%</td>
+        <td>1.3200</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.06%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 2.00%</td>
       </tr>
       <tr>
         <td class="pair">BRL / CAD</td>
-        <td>0.2632</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.87%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 2.29%</td>
+        <td>0.2630</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.79%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 2.20%</td>
       </tr>
       <tr>
         <td class="pair">BRL / GBP</td>
-        <td>0.14270</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.39%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.75%</td>
+        <td>0.14281</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.31%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.82%</td>
       </tr>
       <tr>
         <td class="pair">BRL / JPY</td>
-        <td>30.23</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.46%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.95%</td>
+        <td>30.30</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.21%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.21%</td>
       </tr>
         </tbody>
       </table>
@@ -689,45 +709,45 @@
         <tbody>
       <tr>
         <td class="pair">EUR / MXN</td>
-        <td>20.5501</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.46%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.47%</td>
+        <td>20.5350</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.39%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.40%</td>
       </tr>
       <tr>
         <td class="pair">EUR / USD</td>
-        <td>1.15780</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.99%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.25%</td>
+        <td>1.15670</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.89%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.15%</td>
       </tr>
       <tr>
         <td class="pair">EUR / BRL</td>
-        <td>6.0443</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.19%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.81%</td>
+        <td>6.0386</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.10%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.91%</td>
       </tr>
       <tr>
         <td class="pair">EUR / CNY</td>
-        <td>7.9880</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.38%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.30%</td>
+        <td>7.9706</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.16%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.08%</td>
       </tr>
       <tr>
         <td class="pair">EUR / CAD</td>
-        <td>1.5908</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.07%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.46%</td>
+        <td>1.5879</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.88%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.27%</td>
       </tr>
       <tr>
         <td class="pair">EUR / GBP</td>
-        <td>0.86255</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.20%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.07%</td>
+        <td>0.86237</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.22%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.09%</td>
       </tr>
       <tr>
         <td class="pair">EUR / JPY</td>
-        <td>182.70</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.27%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.13%</td>
+        <td>182.99</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.11%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.29%</td>
       </tr>
         </tbody>
       </table>
@@ -745,50 +765,152 @@
         <tbody>
       <tr>
         <td class="pair">CNY / MXN</td>
-        <td>2.5726</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.91%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.81%</td>
+        <td>2.5763</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.77%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.67%</td>
       </tr>
       <tr>
         <td class="pair">CNY / USD</td>
-        <td>0.14494</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.39%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.05%</td>
+        <td>0.14512</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.26%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.08%</td>
       </tr>
       <tr>
         <td class="pair">CNY / BRL</td>
-        <td>0.7567</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.17%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 2.08%</td>
+        <td>0.7576</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.05%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.96%</td>
       </tr>
       <tr>
         <td class="pair">CNY / EUR</td>
-        <td>0.12519</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.36%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.28%</td>
+        <td>0.12546</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.15%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.06%</td>
       </tr>
       <tr>
         <td class="pair">CNY / CAD</td>
         <td>0.1992</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.31%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.16%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.27%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.20%</td>
       </tr>
       <tr>
         <td class="pair">CNY / GBP</td>
-        <td>0.10798</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.56%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.35%</td>
+        <td>0.10819</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.36%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.16%</td>
       </tr>
       <tr>
         <td class="pair">CNY / JPY</td>
-        <td>22.87</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.63%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.15%</td>
+        <td>22.96</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.26%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.78%</td>
       </tr>
         </tbody>
       </table>
     </div>
   </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="weekly-mkt">
+  <div class="wm-title" data-es="La Semana en Mercados &middot; Mar 16&ndash;20, 2026" data-en="Week in Markets &middot; Mar 16&ndash;20, 2026">La Semana en Mercados &middot; Mar 16&ndash;20, 2026</div>
+  <div class="wm-subtitle" data-es="1D = var. diaria &nbsp;&middot;&nbsp; 1S = var. semanal" data-en="1D = daily change &nbsp;&middot;&nbsp; 1W = weekly change">1D = var. diaria &nbsp;&middot;&nbsp; 1S = var. semanal</div>
+  <table class="wm-table">
+    <thead>
+      <tr>
+        <th data-es="Indicador" data-en="Indicator">Indicador</th>
+        <th style="text-align:right;" data-es="Valor" data-en="Value">Valor</th>
+        <th style="text-align:right;">1D</th>
+        <th style="text-align:right;" data-es="1S" data-en="1W">1S</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="wm-label">DXY</td>
+          <td class="wm-val">99.36</td>
+          <td class="wm-chg tick-down">▼ 0.7%</td>
+          <td class="wm-chg tick-up">▲ 0.0%</td>
+        </tr>
+        <tr>
+          <td class="wm-label">10Y UST</td>
+          <td class="wm-val">4.28%</td>
+          <td class="wm-chg tick-up">▲ 0.5%</td>
+          <td class="wm-chg tick-down">▼ 0.1%</td>
+        </tr>
+        <tr>
+          <td class="wm-label">VIX</td>
+          <td class="wm-val">24.06</td>
+          <td class="wm-chg tick-down">▼ 4.1%</td>
+          <td class="wm-chg tick-down">▼ 11.5%</td>
+        </tr>
+        <tr>
+          <td class="wm-label">MSCI EM</td>
+          <td class="wm-val">$57.62</td>
+          <td class="wm-chg tick-up">▲ 0.1%</td>
+          <td class="wm-chg tick-up">▲ 1.4%</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="calendar">
+  <div class="section-title"
+       data-es="Pr&oacute;ximas Fechas Clave"
+       data-en="Key Upcoming Dates">Pr&oacute;ximas Fechas Clave</div>
+  
+      <div class="cal-row">
+        <span class="cal-date">26 MAR</span>
+        <span class="cal-badge" style="color:#4a9e6a; border-color:#4a9e6a;">BANXICO</span>
+        <span class="cal-label">Banxico — Decisión de tasa</span>
+        <span class="cal-days">6d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date">09 ABR</span>
+        <span class="cal-badge" style="color:#c8943a; border-color:#c8943a;">INEGI</span>
+        <span class="cal-label">INEGI — CPI México (feb)</span>
+        <span class="cal-days">20d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date">10 ABR</span>
+        <span class="cal-badge" style="color:#7a9aaa; border-color:#7a9aaa;">BLS</span>
+        <span class="cal-label">BLS — CPI EE.UU. (mar)</span>
+        <span class="cal-days">21d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date">29 ABR</span>
+        <span class="cal-badge" style="color:#5a8abf; border-color:#5a8abf;">FED</span>
+        <span class="cal-label">FOMC — Decisión Fed</span>
+        <span class="cal-days">40d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date">12 MAY</span>
+        <span class="cal-badge" style="color:#7a9aaa; border-color:#7a9aaa;">BLS</span>
+        <span class="cal-label">BLS — CPI EE.UU. (abr)</span>
+        <span class="cal-days">53d</span>
+      </div>
+</div>
 
   
 <div class="divider">
@@ -873,8 +995,8 @@
 
   <div class="footer">
     <span class="footer-name">The Opening Bell</span>
-    <span class="footer-by lang-es">por Bill Ateral, Senior Fellow, Bureau of Controlled Panic</span>
-    <span class="footer-by lang-en">by Bill Ateral, Senior Fellow, Bureau of Controlled Panic</span>
+    <span class="footer-by lang-es">por Chip Deflation, Director of Soft Landings (Emeritus)</span>
+    <span class="footer-by lang-en">by Chip Deflation, Director of Soft Landings (Emeritus)</span>
   </div>
 
 </div>

@@ -136,27 +136,35 @@
     "tickers": [
       {
         "label": "DXY",
-        "value": "99.29",
-        "change": "▼ 0.8%",
-        "direction": "down"
+        "value": "99.36",
+        "change": "▼ 0.7%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
       },
       {
         "label": "10Y UST",
         "value": "4.28%",
         "change": "▲ 0.5%",
-        "direction": "up"
+        "direction": "up",
+        "chg_1w": "▼ 0.1%",
+        "direction_1w": "down"
       },
       {
         "label": "VIX",
         "value": "24.06",
         "change": "▼ 4.1%",
-        "direction": "down"
+        "direction": "down",
+        "chg_1w": "▼ 11.5%",
+        "direction_1w": "down"
       },
       {
         "label": "MSCI EM",
         "value": "$57.62",
-        "change": "▼ 1.9%",
-        "direction": "down"
+        "change": "▲ 0.1%",
+        "direction": "up",
+        "chg_1w": "▲ 1.4%",
+        "direction_1w": "up"
       }
     ],
     "currency": {
@@ -171,13 +179,13 @@
         "MXN": [
           {
             "pair": "MXN / USD",
-            "rate": "0.05634",
+            "rate": "0.05633",
             "chg_1d": {
-              "text": "▲ 0.53%",
+              "text": "▲ 0.51%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 0.77%",
+              "text": "▲ 0.75%",
               "cls": "chg-up"
             }
           },
@@ -185,71 +193,71 @@
             "pair": "MXN / BRL",
             "rate": "0.2941",
             "chg_1d": {
-              "text": "▼ 0.27%",
+              "text": "▼ 0.29%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 1.28%",
+              "text": "▼ 1.30%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "MXN / EUR",
-            "rate": "0.04866",
+            "rate": "0.04870",
             "chg_1d": {
-              "text": "▼ 0.46%",
+              "text": "▼ 0.39%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.47%",
+              "text": "▼ 0.40%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "MXN / CNY",
-            "rate": "0.3887",
+            "rate": "0.3881",
             "chg_1d": {
-              "text": "▲ 0.92%",
+              "text": "▲ 0.77%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 0.82%",
+              "text": "▲ 0.67%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "MXN / CAD",
-            "rate": "0.0774",
+            "rate": "0.0773",
             "chg_1d": {
-              "text": "▲ 0.60%",
+              "text": "▲ 0.50%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 0.98%",
+              "text": "▲ 0.87%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "MXN / GBP",
-            "rate": "0.04197",
+            "rate": "0.04200",
             "chg_1d": {
-              "text": "▼ 0.66%",
+              "text": "▼ 0.60%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.54%",
+              "text": "▼ 0.49%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "MXN / JPY",
-            "rate": "8.89",
+            "rate": "8.91",
             "chg_1d": {
-              "text": "▼ 0.73%",
+              "text": "▼ 0.49%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.34%",
+              "text": "▼ 0.11%",
               "cls": "chg-down"
             }
           }
@@ -257,13 +265,13 @@
         "USD": [
           {
             "pair": "USD / MXN",
-            "rate": "17.7493",
+            "rate": "17.7531",
             "chg_1d": {
-              "text": "▼ 0.52%",
+              "text": "▼ 0.50%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.77%",
+              "text": "▼ 0.75%",
               "cls": "chg-down"
             }
           },
@@ -281,9 +289,45 @@
           },
           {
             "pair": "USD / EUR",
-            "rate": "0.86371",
+            "rate": "0.86453",
             "chg_1d": {
-              "text": "▼ 0.98%",
+              "text": "▼ 0.89%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.14%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.8908",
+            "chg_1d": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3728",
+            "chg_1d": {
+              "text": "▼ 0.01%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.12%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.74555",
+            "chg_1d": {
+              "text": "▼ 1.10%",
               "cls": "chg-down"
             },
             "chg_1w": {
@@ -292,50 +336,14 @@
             }
           },
           {
-            "pair": "USD / CNY",
-            "rate": "6.8993",
-            "chg_1d": {
-              "text": "▲ 0.39%",
-              "cls": "chg-up"
-            },
-            "chg_1w": {
-              "text": "▲ 0.05%",
-              "cls": "chg-up"
-            }
-          },
-          {
-            "pair": "USD / CAD",
-            "rate": "1.3740",
-            "chg_1d": {
-              "text": "▲ 0.08%",
-              "cls": "chg-up"
-            },
-            "chg_1w": {
-              "text": "▲ 0.21%",
-              "cls": "chg-up"
-            }
-          },
-          {
-            "pair": "USD / GBP",
-            "rate": "0.74499",
-            "chg_1d": {
-              "text": "▼ 1.18%",
-              "cls": "chg-down"
-            },
-            "chg_1w": {
-              "text": "▼ 1.31%",
-              "cls": "chg-down"
-            }
-          },
-          {
             "pair": "USD / JPY",
-            "rate": "157.80",
+            "rate": "158.20",
             "chg_1d": {
-              "text": "▼ 1.25%",
+              "text": "▼ 1.00%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 1.11%",
+              "text": "▼ 0.85%",
               "cls": "chg-down"
             }
           }
@@ -343,13 +351,13 @@
         "BRL": [
           {
             "pair": "BRL / MXN",
-            "rate": "3.3999",
+            "rate": "3.4007",
             "chg_1d": {
-              "text": "▲ 0.27%",
+              "text": "▲ 0.29%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 1.30%",
+              "text": "▲ 1.32%",
               "cls": "chg-up"
             }
           },
@@ -367,9 +375,45 @@
           },
           {
             "pair": "BRL / EUR",
-            "rate": "0.16545",
+            "rate": "0.16560",
             "chg_1d": {
-              "text": "▼ 0.19%",
+              "text": "▼ 0.10%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.92%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3200",
+            "chg_1d": {
+              "text": "▲ 1.06%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.00%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2630",
+            "chg_1d": {
+              "text": "▲ 0.79%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.20%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14281",
+            "chg_1d": {
+              "text": "▼ 0.31%",
               "cls": "chg-down"
             },
             "chg_1w": {
@@ -378,50 +422,14 @@
             }
           },
           {
-            "pair": "BRL / CNY",
-            "rate": "1.3216",
-            "chg_1d": {
-              "text": "▲ 1.19%",
-              "cls": "chg-up"
-            },
-            "chg_1w": {
-              "text": "▲ 2.13%",
-              "cls": "chg-up"
-            }
-          },
-          {
-            "pair": "BRL / CAD",
-            "rate": "0.2632",
-            "chg_1d": {
-              "text": "▲ 0.87%",
-              "cls": "chg-up"
-            },
-            "chg_1w": {
-              "text": "▲ 2.29%",
-              "cls": "chg-up"
-            }
-          },
-          {
-            "pair": "BRL / GBP",
-            "rate": "0.14270",
-            "chg_1d": {
-              "text": "▼ 0.39%",
-              "cls": "chg-down"
-            },
-            "chg_1w": {
-              "text": "▲ 0.75%",
-              "cls": "chg-up"
-            }
-          },
-          {
             "pair": "BRL / JPY",
-            "rate": "30.23",
+            "rate": "30.30",
             "chg_1d": {
-              "text": "▼ 0.46%",
+              "text": "▼ 0.21%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▲ 0.95%",
+              "text": "▲ 1.21%",
               "cls": "chg-up"
             }
           }
@@ -429,85 +437,85 @@
         "EUR": [
           {
             "pair": "EUR / MXN",
-            "rate": "20.5501",
+            "rate": "20.5350",
             "chg_1d": {
-              "text": "▲ 0.46%",
+              "text": "▲ 0.39%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 0.47%",
+              "text": "▲ 0.40%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "EUR / USD",
-            "rate": "1.15780",
+            "rate": "1.15670",
             "chg_1d": {
-              "text": "▲ 0.99%",
+              "text": "▲ 0.89%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 1.25%",
+              "text": "▲ 1.15%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "EUR / BRL",
-            "rate": "6.0443",
+            "rate": "6.0386",
             "chg_1d": {
-              "text": "▲ 0.19%",
+              "text": "▲ 0.10%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▼ 0.81%",
+              "text": "▼ 0.91%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "EUR / CNY",
-            "rate": "7.9880",
+            "rate": "7.9706",
             "chg_1d": {
-              "text": "▲ 1.38%",
+              "text": "▲ 1.16%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 1.30%",
+              "text": "▲ 1.08%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "EUR / CAD",
-            "rate": "1.5908",
+            "rate": "1.5879",
             "chg_1d": {
-              "text": "▲ 1.07%",
+              "text": "▲ 0.88%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 1.46%",
+              "text": "▲ 1.27%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "EUR / GBP",
-            "rate": "0.86255",
+            "rate": "0.86237",
             "chg_1d": {
-              "text": "▼ 0.20%",
+              "text": "▼ 0.22%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.07%",
+              "text": "▼ 0.09%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "EUR / JPY",
-            "rate": "182.70",
+            "rate": "182.99",
             "chg_1d": {
-              "text": "▼ 0.27%",
+              "text": "▼ 0.11%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▲ 0.13%",
+              "text": "▲ 0.29%",
               "cls": "chg-up"
             }
           }
@@ -515,49 +523,49 @@
         "CNY": [
           {
             "pair": "CNY / MXN",
-            "rate": "2.5726",
+            "rate": "2.5763",
             "chg_1d": {
-              "text": "▼ 0.91%",
+              "text": "▼ 0.77%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.81%",
+              "text": "▼ 0.67%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "CNY / USD",
-            "rate": "0.14494",
+            "rate": "0.14512",
             "chg_1d": {
-              "text": "▼ 0.39%",
+              "text": "▼ 0.26%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.05%",
-              "cls": "chg-down"
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
             }
           },
           {
             "pair": "CNY / BRL",
-            "rate": "0.7567",
+            "rate": "0.7576",
             "chg_1d": {
-              "text": "▼ 1.17%",
+              "text": "▼ 1.05%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 2.08%",
+              "text": "▼ 1.96%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "CNY / EUR",
-            "rate": "0.12519",
+            "rate": "0.12546",
             "chg_1d": {
-              "text": "▼ 1.36%",
+              "text": "▼ 1.15%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 1.28%",
+              "text": "▼ 1.06%",
               "cls": "chg-down"
             }
           },
@@ -565,47 +573,40 @@
             "pair": "CNY / CAD",
             "rate": "0.1992",
             "chg_1d": {
-              "text": "▼ 0.31%",
+              "text": "▼ 0.27%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▲ 0.16%",
+              "text": "▲ 0.20%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "CNY / GBP",
-            "rate": "0.10798",
+            "rate": "0.10819",
             "chg_1d": {
-              "text": "▼ 1.56%",
+              "text": "▼ 1.36%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 1.35%",
+              "text": "▼ 1.16%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "CNY / JPY",
-            "rate": "22.87",
+            "rate": "22.96",
             "chg_1d": {
-              "text": "▼ 1.63%",
+              "text": "▼ 1.26%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 1.15%",
+              "text": "▼ 0.78%",
               "cls": "chg-down"
             }
           }
         ]
       }
     }
-  },
-  "weather": {
-    "city": "Madrid",
-    "temp": "10°C",
-    "high_low": "14°C / 7°C",
-    "humidity": "Humedad 65%",
-    "desc": "Parcialmente nublado"
   }
 }
