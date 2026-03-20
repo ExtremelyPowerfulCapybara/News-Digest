@@ -1,14 +1,13 @@
 # ─────────────────────────────────────────────
 #  summarizer.py  —  Claude generates digest
 # ─────────────────────────────────────────────
-
 import json
+import re
 import time
 import anthropic
 from config import ANTHROPIC_API_KEY
 
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-
 
 def summarize_news(articles: list[dict]) -> dict:
     """
@@ -16,9 +15,10 @@ def summarize_news(articles: list[dict]) -> dict:
     - "es": { editor_note, sentiment, stories, quote }  <- Spanish (primary)
     - "en": { editor_note, sentiment, stories, quote }  <- English translation
     """
-    news_text = ""
+    parts = []
     for i, a in enumerate(articles, 1):
-        news_text += f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{a['content']}\n\n"
+        parts.append(f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{a['content']}\n\n")
+    news_text = "".join(parts)
 
     prompt = f"""Eres un editor de noticias financieras produciendo un briefing matutino diario para una audiencia hispanohablante sofisticada. Voz: directa, seca, ocasionalmente sardónica — como un editor de mercados veterano que ha visto cada ciclo y encuentra el actual tanto alarmante como vagamente entretenido.
 
@@ -82,7 +82,8 @@ Analiza los artículos a continuación y devuelve un objeto JSON con EXACTAMENTE
 
 Reglas:
 - Selecciona 5-7 historias, ordenadas por importancia
-- Omite duplicados que cubran el mismo evento
+- Diversidad temática obligatoria: cada historia debe cubrir un tema distinto. Si varios artículos tratan el mismo evento o tema central (e.g. múltiples artículos sobre el conflicto Irán/petróleo, o sobre aranceles Trump), selecciona SOLO el más completo e informativo — descarta los demás sin excepción
+- Nunca incluyas dos historias donde la pregunta central sea la misma, aunque provengan de fuentes distintas o tengan ángulos ligeramente diferentes
 - stories debe incluir la URL original de la lista de artículos
 - Responde ÚNICAMENTE con el objeto JSON, sin preámbulo, sin markdown fences
 - sentiment.position debe ser consistente con el label: Aversión al Riesgo = 5-35, Cauteloso = 36-64, Apetito por Riesgo = 65-95
@@ -109,14 +110,41 @@ Artículos:
             else:
                 raise
 
+    def clean_and_parse(text: str) -> dict:
+        """Strip markdown fences and parse JSON, raising JSONDecodeError on failure."""
+        text = text.strip()
+        # Strip markdown fences
+        if text.startswith("```"):
+            text = text.split("\n", 1)[1]
+            text = text.rsplit("```", 1)[0].strip()
+        # Trim anything before the first '{' or after the last '}'
+        start = text.find("{")
+        end   = text.rfind("}")
+        if start != -1 and end != -1:
+            text = text[start:end+1]
+        return json.loads(text)
+
+    # Try to parse; if malformed, re-ask Claude once with a repair prompt
     raw = message.content[0].text.strip()
-
-    # Strip markdown fences if present
-    if raw.startswith("```"):
-        raw = raw.split("\n", 1)[1]
-        raw = raw.rsplit("```", 1)[0]
-
-    digest = json.loads(raw)
+    for parse_attempt in range(2):
+        try:
+            digest = clean_and_parse(raw)
+            break
+        except json.JSONDecodeError as e:
+            if parse_attempt == 0:
+                print(f"  [summarizer] JSON parse failed ({e}), asking Claude to repair...")
+                repair_message = client.messages.create(
+                    model="claude-sonnet-4-6",
+                    max_tokens=6000,
+                    messages=[
+                        {"role": "user",    "content": prompt},
+                        {"role": "assistant", "content": raw},
+                        {"role": "user",    "content": "Tu respuesta anterior contiene JSON malformado. Devuelve exactamente el mismo contenido pero como JSON válido y bien escapado. Sin preámbulo, sin markdown fences."},
+                    ]
+                )
+                raw = repair_message.content[0].text.strip()
+            else:
+                raise ValueError(f"[summarizer] JSON malformado tras intento de reparación: {e}")
 
     # Validate bilingual structure
     if "es" not in digest or "en" not in digest:

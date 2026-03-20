@@ -5,7 +5,10 @@
 # ─────────────────────────────────────────────
 
 import os
+import json
 import base64
+import random
+import unicodedata
 from datetime import date, timedelta
 from config import DIGEST_DIR, ARCHIVE_DIR
 
@@ -65,10 +68,29 @@ STOPWORDS = {
     "2024", "2025", "2026",
 }
 
+# ── Colour palette matching newsletter design ──
+_WC_PALETTE = [
+    "#1a1a1a",  # dark
+    "#3a4a54",  # mid
+    "#4a9e6a",  # green
+    "#b84a3a",  # red
+    "#9a6a1a",  # amber
+    "#aab4bc",  # light
+]
+
+
+def _wc_color_func(word, font_size, position, orientation, random_state=None, **kwargs):
+    """Colour function for WordCloud: bias larger words toward darker shades."""
+    if font_size > 40:
+        return random.choice(_WC_PALETTE[:2])
+    elif font_size > 20:
+        return random.choice(_WC_PALETTE[1:4])
+    else:
+        return random.choice(_WC_PALETTE[3:])
+
 
 def _strip_accents(text: str) -> str:
     """Normalize accented characters to ASCII so stopword matching works."""
-    import unicodedata
     return "".join(
         c for c in unicodedata.normalize("NFD", text)
         if unicodedata.category(c) != "Mn"
@@ -77,21 +99,20 @@ def _strip_accents(text: str) -> str:
 
 def _collect_week_text() -> str:
     """Collects all headlines and story bodies from Mon-Fri digests."""
-    import json
     today  = date.today()
     monday = today - timedelta(days=today.weekday())
     text_parts = []
 
     for i in range(5):
-        day     = monday + timedelta(days=i)
-        path    = os.path.join(DIGEST_DIR, f"{day.isoformat()}.json")
+        day  = monday + timedelta(days=i)
+        path = os.path.join(DIGEST_DIR, f"{day.isoformat()}.json")
         if not os.path.exists(path):
             continue
         try:
             with open(path, encoding="utf-8") as f:
                 data = json.load(f)
             digest  = data.get("digest", {})
-            digest  = digest.get("es", digest)  # unwrap bilingual structure
+            digest  = digest.get("es", digest)
             stories = digest.get("stories", [])
             for s in stories:
                 text_parts.append(s.get("headline", ""))
@@ -103,123 +124,82 @@ def _collect_week_text() -> str:
     return _strip_accents(" ".join(text_parts))
 
 
+def _build_wordcloud(text):
+    """
+    Builds and returns a WordCloud object from the given text.
+    Returns None if the wordcloud package is unavailable or generation fails.
+    """
+    try:
+        from wordcloud import WordCloud
+    except ImportError:
+        return None
+
+    try:
+        return WordCloud(
+            width             = 1200,
+            height            = 480,
+            background_color  = "#f0f3f5",
+            stopwords         = STOPWORDS,
+            color_func        = _wc_color_func,
+            max_words         = 80,
+            min_font_size     = 10,
+            max_font_size     = 90,
+            min_word_length   = 3,
+            prefer_horizontal = 0.85,
+            collocations      = False,
+            margin            = 8,
+        ).generate(text)
+    except Exception as e:
+        print(f"  [wordcloud] Generation failed: {e}")
+        return None
+
+
 def generate_wordcloud() -> str | None:
     """
     Generates a word cloud PNG from the week's content.
     Saves to docs/wordcloud-YYYY-WNN.png
     Returns the filename (not full path) or None on failure.
     """
-    try:
-        from wordcloud import WordCloud
-        from PIL import Image
-        import numpy as np
-    except ImportError:
-        print("  [wordcloud] wordcloud or Pillow not installed — skipping")
-        return None
-
     text = _collect_week_text()
     if not text.strip():
         print("  [wordcloud] No text found for this week — skipping")
         return None
 
-    # ── Colour palette matching newsletter design ──
-    def color_func(word, font_size, position, orientation, random_state=None, **kwargs):
-        palette = [
-            "#1a1a1a",  # dark
-            "#3a4a54",  # mid
-            "#4a9e6a",  # green
-            "#b84a3a",  # red
-            "#9a6a1a",  # amber
-            "#aab4bc",  # light
-        ]
-        import random
-        # Bias larger words toward darker colours
-        if font_size > 40:
-            return random.choice(palette[:2])
-        elif font_size > 20:
-            return random.choice(palette[1:4])
-        else:
-            return random.choice(palette[3:])
-
-    # ── Week label for filename ──
-    today      = date.today()
-    week_num   = today.isocalendar()[1]
-    year       = today.year
-    filename   = f"wordcloud-{year}-W{week_num:02d}.png"
-    filepath   = os.path.join(ARCHIVE_DIR, filename)
-
-    try:
-        wc = WordCloud(
-            width            = 1200,
-            height           = 480,
-            background_color = "#f0f3f5",
-            stopwords        = STOPWORDS,
-            color_func       = color_func,
-            max_words        = 80,
-            min_font_size    = 10,
-            max_font_size    = 90,
-            min_word_length  = 3,
-            prefer_horizontal= 0.85,
-            collocations     = False,
-            margin           = 8,
-        ).generate(text)
-
-        os.makedirs(ARCHIVE_DIR, exist_ok=True)
-        wc.to_file(filepath)
-        print(f"  [wordcloud] Saved to {filepath}")
-        return filename
-
-    except Exception as e:
-        print(f"  [wordcloud] Generation failed: {e}")
+    wc = _build_wordcloud(text)
+    if wc is None:
+        print("  [wordcloud] wordcloud or Pillow not installed — skipping")
         return None
+
+    today    = date.today()
+    week_num = today.isocalendar()[1]
+    filename = f"wordcloud-{today.year}-W{week_num:02d}.png"
+    filepath = os.path.join(ARCHIVE_DIR, filename)
+
+    os.makedirs(ARCHIVE_DIR, exist_ok=True)
+    wc.to_file(filepath)
+    print(f"  [wordcloud] Saved to {filepath}")
+    return filename
 
 
 def wordcloud_as_base64() -> str | None:
     """
     Generates the word cloud and returns it as a base64 data URI
-    for embedding directly in HTML — no external file needed for email.
+    for embedding directly in HTML — no external file needed.
     """
-    try:
-        from wordcloud import WordCloud
-        import io
-    except ImportError:
-        return None
-
     text = _collect_week_text()
     if not text.strip():
         return None
 
-    def color_func(word, font_size, position, orientation, random_state=None, **kwargs):
-        palette = ["#1a1a1a", "#3a4a54", "#4a9e6a", "#b84a3a", "#9a6a1a", "#aab4bc"]
-        import random
-        if font_size > 40:
-            return random.choice(palette[:2])
-        elif font_size > 20:
-            return random.choice(palette[1:4])
-        else:
-            return random.choice(palette[3:])
+    wc = _build_wordcloud(text)
+    if wc is None:
+        return None
 
     try:
-        wc = WordCloud(
-            width            = 1200,
-            height           = 480,
-            background_color = "#f0f3f5",
-            stopwords        = STOPWORDS,
-            color_func       = color_func,
-            max_words        = 80,
-            min_font_size    = 10,
-            max_font_size    = 90,
-            min_word_length  = 3,
-            prefer_horizontal= 0.85,
-            collocations     = False,
-            margin           = 8,
-        ).generate(text)
-
+        import io
         buf = io.BytesIO()
         wc.to_image().save(buf, format="PNG")
         b64 = base64.b64encode(buf.getvalue()).decode("utf-8")
         return f"data:image/png;base64,{b64}"
-
     except Exception as e:
         print(f"  [wordcloud] Base64 generation failed: {e}")
         return None

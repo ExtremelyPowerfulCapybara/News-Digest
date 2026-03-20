@@ -24,7 +24,7 @@ SUBSCRIBERS = [s.strip() for s in _subs_env.split(",") if s.strip()]
 # ── Newsletter identity (safe to commit) ─────
 NEWSLETTER_NAME    = "The Opening Bell"
 NEWSLETTER_TAGLINE = "Context before the noise"
-AUTHOR_NAME        = "Adrian"
+AUTHOR_NAME        = "Los 3"
 
 # ── Rotating pen names ────────────────────────
 AUTHOR_NAMES = [
@@ -115,21 +115,106 @@ NEWS_DOMAINS = [
 ]
 NEWS_DOMAINS_STR = ",".join(NEWS_DOMAINS)
 
+# ── Domain blocklist ──────────────────────────
+# URLs whose domain matches any entry here are dropped before scraping.
+# Use this to quickly suppress low-signal or consistently broken sources
+# without touching the NewsAPI allowlist above.
+# All entries should be lowercase without "www." prefix.
+NEWS_DOMAIN_BLOCKLIST: set[str] = {
+    # Add domains here as needed, e.g.:
+    # "example-aggregator.com",
+}
+
 # ── Market tickers (Yahoo Finance symbols) ────
+# Main ticker bar: global macro conditions
 TICKER_SYMBOLS = [
-    ("USD/MXN",   "MXN=X"),
-    ("S&P 500",   "^GSPC"),
-    ("CETES 28D", None),    # placeholder — no free API available
-    ("IPC BMV",   "^MXX"),
+    ("DXY",     "DX-Y.NYB"),
+    ("10Y UST", "^TNX"),
+    ("VIX",     "^VIX"),
+    ("MSCI EM", "EEM"),
 ]
 
+# Secondary ticker groups: equities, commodities, crypto
+# Used in tabbed strip (archive) and 3-column dashboard (email)
+SECONDARY_TICKER_GROUPS = [
+    {
+        "group": "eq",
+        "label": "Global Equities",
+        "tickers": [
+            ("S&P 500",    "^GSPC"),
+            ("Nasdaq",     "^IXIC"),
+            ("Euro Stoxx", "^STOXX50E"),
+            ("Nikkei",     "^N225"),
+        ],
+    },
+    {
+        "group": "co",
+        "label": "Commodities",
+        "tickers": [
+            ("Brent",  "BZ=F"),
+            ("Gold",   "GC=F"),
+            ("Copper", "HG=F"),
+            ("Wheat",  "ZW=F"),
+        ],
+    },
+    {
+        "group": "cr",
+        "label": "Crypto",
+        "tickers": [
+            ("Bitcoin",  "BTC-USD"),
+            ("Ethereum", "ETH-USD"),
+            ("Solana",   "SOL-USD"),
+        ],
+    },
+]
 # ── Currency table ────────────────────────────
-CURRENCY_PAIRS = ["USD", "EUR", "CAD", "CNY"]
+# Base currencies available as toggle options in the browser version.
+CURRENCY_BASES = ["MXN", "USD", "BRL", "EUR", "CNY"]
 
-# ── Weather (Open-Meteo, no API key needed) ───
-WEATHER_LAT  = 19.4326
-WEATHER_LON  = -99.1332
-WEATHER_CITY = "Mexico City"
+# All currencies included in the cross-rate matrix.
+CURRENCY_PAIRS = ["MXN", "USD", "BRL", "EUR", "CNY", "CAD", "GBP", "JPY"]
+
+# Email version: always USD as base, these four quote currencies only.
+EMAIL_CURRENCY_BASE   = "USD"
+EMAIL_CURRENCY_QUOTES = ["MXN", "EUR", "GBP", "CNY"]
+
+# Mock mode: set MOCK=true to skip NewsAPI + Anthropic calls.
+MOCK_MODE = os.environ.get("MOCK", "false").lower() == "true"
+
+# Skip email delivery (preview/archive only).
+SKIP_EMAIL = os.environ.get("SKIP_EMAIL", "false").lower() == "true"
+
+# ── Economic calendar ─────────────────────────
+# Upcoming key dates for Banxico, Fed, and macro data releases.
+# Verify and update at: banxico.org.mx, federalreserve.gov, inegi.org.mx, bls.gov
+# Each entry: (date_str, label, event_type)
+# event_type: "banxico" | "fed" | "mx-data" | "us-data"
+ECONOMIC_CALENDAR = [
+    ("2026-03-26", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+    ("2026-04-09", "INEGI \u2014 CPI M\u00e9xico (feb)",    "mx-data"),
+    ("2026-04-10", "BLS \u2014 CPI EE.UU. (mar)",           "us-data"),
+    ("2026-04-29", "FOMC \u2014 Decisi\u00f3n Fed",         "fed"),
+    ("2026-05-12", "BLS \u2014 CPI EE.UU. (abr)",           "us-data"),
+    ("2026-05-14", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+    ("2026-06-09", "INEGI \u2014 CPI M\u00e9xico (may)",    "mx-data"),
+    ("2026-06-10", "FOMC \u2014 Decisi\u00f3n Fed",         "fed"),
+    ("2026-06-11", "BLS \u2014 CPI EE.UU. (may)",           "us-data"),
+    ("2026-06-25", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+    ("2026-07-14", "BLS \u2014 CPI EE.UU. (jun)",           "us-data"),
+    ("2026-07-29", "FOMC \u2014 Decisi\u00f3n Fed",         "fed"),
+    ("2026-08-06", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+    ("2026-08-12", "BLS \u2014 CPI EE.UU. (jul)",           "us-data"),
+    ("2026-09-10", "BLS \u2014 CPI EE.UU. (ago)",           "us-data"),
+    ("2026-09-16", "FOMC \u2014 Decisi\u00f3n Fed",         "fed"),
+    ("2026-09-24", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+    ("2026-10-13", "BLS \u2014 CPI EE.UU. (sep)",           "us-data"),
+    ("2026-10-28", "FOMC \u2014 Decisi\u00f3n Fed",         "fed"),
+    ("2026-11-05", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+    ("2026-11-12", "BLS \u2014 CPI EE.UU. (oct)",           "us-data"),
+    ("2026-12-09", "FOMC \u2014 Decisi\u00f3n Fed",         "fed"),
+    ("2026-12-10", "BLS \u2014 CPI EE.UU. (nov)",           "us-data"),
+    ("2026-12-17", "Banxico \u2014 Decisi\u00f3n de tasa",  "banxico"),
+]
 
 # ── Storage paths ─────────────────────────────
 # Paths are relative to the repo root, not bot/

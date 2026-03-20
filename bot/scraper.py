@@ -3,6 +3,7 @@
 # ─────────────────────────────────────────────
 
 import requests
+from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 
 HEADERS = {
@@ -13,6 +14,26 @@ HEADERS = {
     )
 }
 
+# Per-domain CSS selectors targeting the article body specifically.
+# Tried before the generic <p> scan to avoid nav/sidebar/related boilerplate.
+# Attribute-contains selectors (*=) are robust against minified class names.
+_DOMAIN_SELECTORS = {
+    "bloomberglinea.com":   "[class*='article-body'], [class*='ArticleBody']",
+    "reuters.com":          "[class*='article-body__content'], [class*='ArticleBody']",
+    "expansion.mx":         "[class*='article-body'], [class*='ArticleContent']",
+    "infobae.com":          ".article-body, [class*='article-body']",
+    "elfinanciero.com.mx":  ".nota-cuerpo, [class*='article-body'], [class*='nota-body']",
+    "eleconomista.com.mx":  "[class*='article-body'], [class*='nota-content']",
+    "ambito.com":           "[class*='article-body'], [class*='content-body']",
+    "elpais.com":           ".a_c, [class*='article-body']",
+    "cincodias.elpais.com": ".a_c, [class*='article-body']",
+    "ft.com":               "[class*='article-body'], .article__content",
+    "wsj.com":              "[class*='article-content'], [class*='WSJTheme--article']",
+    "apnews.com":           ".article-body, [class*='RichTextStoryBody']",
+    "lanacion.com.ar":      "[class*='article-body'], .article__body",
+    "eluniversal.com.mx":   "[class*='field-body'], [class*='article-body']",
+}
+
 
 def scrape_article(url: str, max_chars: int = 3000) -> str | None:
     try:
@@ -21,9 +42,23 @@ def scrape_article(url: str, max_chars: int = 3000) -> str | None:
         soup = BeautifulSoup(response.text, "lxml")
         for tag in soup(["script", "style", "nav", "footer", "aside", "header", "figure"]):
             tag.decompose()
-        paragraphs = soup.find_all("p")
-        text = " ".join(p.get_text(separator=" ") for p in paragraphs)
-        text = " ".join(text.split())
+
+        # Try domain-specific selector first
+        text   = ""
+        domain = urlparse(url).netloc.lower().removeprefix("www.")
+        sel    = _DOMAIN_SELECTORS.get(domain)
+        if sel:
+            container = soup.select_one(sel)
+            if container:
+                text = " ".join(p.get_text(separator=" ") for p in container.find_all("p"))
+                text = " ".join(text.split())
+
+        # Fall back to generic <p> scan
+        if len(text) < 100:
+            paragraphs = soup.find_all("p")
+            text = " ".join(p.get_text(separator=" ") for p in paragraphs)
+            text = " ".join(text.split())
+
         if len(text) < 100:
             return None
         return text[:max_chars]

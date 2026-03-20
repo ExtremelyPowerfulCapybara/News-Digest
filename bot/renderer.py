@@ -7,6 +7,7 @@
 from datetime import date, timedelta
 from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE
 from config import GITHUB_PAGES_URL, ASSET_BASE_URL
+from config import EMAIL_CURRENCY_BASE, EMAIL_CURRENCY_QUOTES
 
 # ── Shared style constants ────────────────────
 BG_OUTER   = "#dde3e8"
@@ -72,15 +73,23 @@ def _header(issue_number: int) -> str:
 
 def _ticker(tickers: list[dict]) -> str:
     cells = ""
-    for i, t in enumerate(tickers):
-        chg_color  = "#6abf7b" if t["direction"] == "up" else ("#d4695a" if t["direction"] == "down" else "#888888")
-        left_border = "border-left:1px solid #2e2e2e;" if i > 0 else ""
-        cells += f"""
-        <td style="{left_border} padding:10px 16px; text-align:center; vertical-align:middle;">
-          <span style="display:block; font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#555555; margin-bottom:4px;">{t['label']}</span>
-          <span style="font-family:{FONT_SANS}; font-size:12px; color:{TEXT_CREAM};">{t['value']}</span>
-          <span style="font-family:{FONT_SANS}; font-size:10px; color:{chg_color}; margin-left:4px;">{t['change']}</span>
+    if not tickers:
+        for label in ["DXY", "10Y UST", "VIX", "MSCI EM"]:
+            cells += f"""
+        <td style="padding:10px 16px; text-align:center; vertical-align:middle;">
+          <span style="display:block; font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#555555; margin-bottom:4px;">{label}</span>
+          <span style="font-family:{FONT_SANS}; font-size:12px; color:{TEXT_CREAM};">—</span>
         </td>"""
+    else:
+        for i, t in enumerate(tickers):
+            chg_color  = "#6abf7b" if t["direction"] == "up" else ("#d4695a" if t["direction"] == "down" else "#888888")
+            left_border = "border-left:1px solid #2e2e2e;" if i > 0 else ""
+            cells += f"""
+            <td style="{left_border} padding:10px 16px; text-align:center; vertical-align:middle;">
+              <span style="display:block; font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#555555; margin-bottom:4px;">{t['label']}</span>
+              <span style="font-family:{FONT_SANS}; font-size:12px; color:{TEXT_CREAM};">{t['value']}</span>
+              <span style="font-family:{FONT_SANS}; font-size:10px; color:{chg_color}; margin-left:4px;">{t['change']}</span>
+            </td>"""
 
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK}; border-bottom:3px solid {BG_MAIN};">
@@ -95,17 +104,40 @@ def _ticker(tickers: list[dict]) -> str:
 </table>"""
 
 
-def _weather(w: dict) -> str:
+def _secondary_dashboard(groups: list[dict] | None) -> str:
+    """3-column Gmail-safe table: Equities | Commodities | Crypto."""
+    if not groups:
+        return ""
+
+    accent_map = {"eq": "#a8c8a0", "co": "#d4b87a", "cr": "#b49ed4"}
+
+    cols = ""
+    for i, g in enumerate(groups):
+        accent      = accent_map.get(g["group"], "#888888")
+        left_border = "border-left:1px solid #2a2a2a; padding-left:14px;" if i > 0 else "padding-left:0;"
+
+        rows = ""
+        for t in g["tickers"]:
+            chg_color = "#6abf7b" if t["direction"] == "up" else ("#d4695a" if t["direction"] == "down" else "#777777")
+            rows += f"""
+              <tr>
+                <td style="font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:1px; text-transform:uppercase; color:#555555; padding-bottom:5px; white-space:nowrap;">{t['label']}</td>
+                <td align="right" style="font-family:{FONT_SANS}; font-size:10.5px; color:#d4cfc8; padding-bottom:5px; padding-left:8px; white-space:nowrap;">{t['value']} <span style="color:{chg_color}; font-size:8.5px;">{t['change']}</span></td>
+              </tr>"""
+
+        cols += f"""
+          <td style="width:33%; vertical-align:top; {left_border}">
+            <p style="margin:0 0 8px 0; font-family:{FONT_SANS}; font-size:7px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:{accent}; padding-bottom:5px; border-bottom:1px solid #2a2a2a;">{g['label']}</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">{rows}
+            </table>
+          </td>"""
+
     return f"""
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK}; margin-top:3px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK}; border-top:1px solid #2a2a2a;">
   <tr>
-    <td style="padding:10px 48px;">
+    <td style="padding:12px 32px;">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td style="font-family:{FONT_SANS}; font-size:11px; font-weight:bold; color:#f5f2ed; white-space:nowrap;">{w['city']}</td>
-          <td style="font-family:{FONT_SANS}; font-size:11px; color:#cccccc; padding-left:16px; white-space:nowrap;">{w['high_low']}</td>
-          <td style="font-family:{FONT_SANS}; font-size:11px; color:#cccccc; padding-left:16px; white-space:nowrap;">{w['humidity']}</td>
-          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:#666666; font-style:italic;">{w['desc']}</td>
+        <tr>{cols}
         </tr>
       </table>
     </td>
@@ -129,6 +161,8 @@ def _sentiment(s: dict) -> str:
     label_en = s.get("label_en", s.get("label", "Cautious"))
     label_es = s.get("label_es", s.get("label", "Cauteloso"))
     context  = s.get("context_es", s.get("context", ""))
+
+    label_es = {"Risk-Off": "Aversión al Riesgo", "Cautious": "Cauteloso", "Risk-On": "Apetito por Riesgo"}.get(label_en, label_en)
 
     style_map = {
         "Aversión al Riesgo": ("background:#fde8e6; color:#b84a3a; border:1px solid #f0c0ba;", "#b84a3a"),
@@ -233,7 +267,7 @@ def _week_review(stories: list[dict]) -> str:
     today  = date.today()
     monday = today - timedelta(days=today.weekday())
     friday = monday + timedelta(days=4)
-    label  = f"{monday.strftime('%b %d')}&#8211;{friday.strftime('%d, %Y')}"
+    label  = f"{monday.strftime('%d %b')}&#8211;{friday.strftime('%d %b, %Y')}"
 
     rows = ""
     for s in stories:
@@ -265,6 +299,173 @@ def _week_review(stories: list[dict]) -> str:
 </table>"""
 
 
+def _sentiment_chart(week_sentiment: list[dict]) -> str:
+    """
+    Renders the weekly sentiment trajectory as a PNG via QuickChart.io.
+    Returns an inline <img> block for Gmail-safe embedding.
+    """
+    import json
+    import urllib.parse
+
+    if not week_sentiment:
+        return ""
+
+    labels = [d["day"] for d in week_sentiment]
+    data   = [d["position"] for d in week_sentiment]
+    colors = [
+        "#b84a3a" if d["position"] < 36 else
+        ("#4a9e6a" if d["position"] > 64 else "#e8a030")
+        for d in week_sentiment
+    ]
+
+    config = {
+        "type": "line",
+        "data": {
+            "labels": labels,
+            "datasets": [{
+                "data": data,
+                "borderColor": "#3a4a54",
+                "borderWidth": 2,
+                "pointBackgroundColor": colors,
+                "pointBorderColor":     colors,
+                "pointRadius": 6,
+                "fill": False,
+                "tension": 0.3,
+            }],
+        },
+        "options": {
+            "responsive": False,
+            "plugins": {"legend": {"display": False}},
+            "scales": {
+                "y": {
+                    "min": 0, "max": 100,
+                    "ticks": {"display": False},
+                    "grid": {"color": "#dde3e8"},
+                },
+                "x": {
+                    "ticks": {"color": "#888888", "font": {"size": 11}},
+                    "grid":  {"display": False},
+                },
+            },
+        },
+    }
+
+    chart_url = (
+        "https://quickchart.io/chart"
+        f"?w=504&h=160&bkg=%23f0f3f5&f=png"
+        f"&c={urllib.parse.quote(json.dumps(config, separators=(',', ':')))}"
+    )
+
+    today  = date.today()
+    monday = today - timedelta(days=today.weekday())
+    friday = monday + timedelta(days=4)
+    label  = f"{monday.strftime('%d %b')}&#8211;{friday.strftime('%d %b, %Y')}"
+
+    # Annotate min/max points in a plain-text legend below the chart
+    if data:
+        low_day  = week_sentiment[data.index(min(data))]["day"]
+        high_day = week_sentiment[data.index(max(data))]["day"]
+        legend = (
+            f'<span style="color:#b84a3a;">&#9679;</span> Risk-Off &nbsp;'
+            f'<span style="color:#e8a030;">&#9679;</span> Cauteloso &nbsp;'
+            f'<span style="color:#4a9e6a;">&#9679;</span> Risk-On &nbsp;&nbsp;'
+            f'<span style="color:#888888;">m&iacute;n: {low_day} &middot; m&aacute;x: {high_day}</span>'
+        )
+    else:
+        legend = ""
+
+    return f"""
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td style="padding:24px 48px 8px;">
+      <p style="margin:0 0 14px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Sentimiento Semanal &middot; {label}</p>
+      <img src="{chart_url}" width="504" style="width:100%; max-width:504px; display:block;" alt="Weekly sentiment chart"/>
+      <p style="margin:10px 0 0 0; font-family:{FONT_SANS}; font-size:9px; color:{TEXT_LIGHT};">{legend}</p>
+    </td>
+  </tr>
+</table>"""
+
+
+def _economic_calendar() -> str:
+    from storage import get_upcoming_calendar
+    upcoming = get_upcoming_calendar(n=5)
+    if not upcoming:
+        return ""
+
+    _months = ["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]
+    _colors = {"banxico": "#4a9e6a", "fed": "#5a8abf", "mx-data": "#c8943a", "us-data": "#7a9aaa"}
+    _badges = {"banxico": "BANXICO",  "fed": "FED",    "mx-data": "INEGI",   "us-data": "BLS"}
+
+    rows = ""
+    for event_date, label, etype, delta in upcoming:
+        color    = _colors.get(etype, TEXT_LIGHT)
+        badge    = _badges.get(etype, etype.upper())
+        date_fmt = f"{event_date.day:02d} {_months[event_date.month].upper()}"
+        days_str = "Hoy" if delta == 0 else ("Ma\u00f1ana" if delta == 1 else f"{delta}d")
+        rows += f"""
+        <tr>
+          <td style="font-family:{FONT_SANS}; font-size:10px; color:{TEXT_MID}; padding:7px 10px 7px 0; border-bottom:1px solid #e4e9ec; white-space:nowrap;">{date_fmt}</td>
+          <td style="padding:7px 8px 7px 0; border-bottom:1px solid #e4e9ec; white-space:nowrap;">
+            <span style="font-family:{FONT_SANS}; font-size:7.5px; font-weight:bold; letter-spacing:1px; text-transform:uppercase; color:{color}; border:1px solid {color}; padding:2px 5px;">{badge}</span>
+          </td>
+          <td style="font-family:{FONT_SANS}; font-size:11px; color:{TEXT_DARK}; padding:7px 0; border-bottom:1px solid #e4e9ec; width:100%;">{label}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:9px; color:{TEXT_LIGHT}; padding:7px 0 7px 12px; border-bottom:1px solid #e4e9ec; white-space:nowrap;">{days_str}</td>
+        </tr>"""
+
+    return f"""
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td style="padding:24px 48px;">
+      <p style="margin:0 0 14px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:{TEXT_LIGHT};">Pr&oacute;ximas Fechas Clave</p>
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        {rows}
+      </table>
+    </td>
+  </tr>
+</table>"""
+
+
+def _weekly_markets(tickers: list[dict]) -> str:
+    if not tickers:
+        return ""
+    today  = date.today()
+    monday = today - timedelta(days=today.weekday())
+    friday = monday + timedelta(days=4)
+    label  = f"{monday.strftime('%d %b')}&#8211;{friday.strftime('%d %b, %Y')}"
+
+    th = f"font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#444444; padding:0 0 8px 0; border-bottom:1px solid #2a2a2a;"
+    rows = ""
+    for t in tickers:
+        c_d = "#6abf7b" if t["direction"]                 == "up" else ("#d4695a" if t["direction"]                 == "down" else "#888888")
+        c_w = "#6abf7b" if t.get("direction_1w","flat")  == "up" else ("#d4695a" if t.get("direction_1w","flat")  == "down" else "#888888")
+        rows += f"""
+        <tr>
+          <td style="font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:#555555; padding:8px 0; border-bottom:1px solid #2a2a2a;">{t['label']}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:11px; color:{TEXT_CREAM}; padding:8px 12px; border-bottom:1px solid #2a2a2a;">{t['value']}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:{c_d}; padding:8px 12px 8px 0; border-bottom:1px solid #2a2a2a;">{t['change']}</td>
+          <td align="right" style="font-family:{FONT_SANS}; font-size:10px; color:{c_w}; padding:8px 0; border-bottom:1px solid #2a2a2a;">{t.get('chg_1w','&#8212;')}</td>
+        </tr>"""
+
+    return f"""
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK};">
+  <tr>
+    <td style="padding:16px 48px 14px;">
+      <p style="margin:0 0 2px 0; font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:#555555;">La Semana en Mercados &middot; {label}</p>
+      <p style="margin:0 0 12px 0; font-family:{FONT_SANS}; font-size:8px; color:#444444;">1D = var. diaria &nbsp;&middot;&nbsp; 1S = var. semanal</p>
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <th align="left"  style="{th}">Indicador</th>
+          <th align="right" style="{th} padding-left:12px;">Valor</th>
+          <th align="right" style="{th} padding-left:12px;">1D</th>
+          <th align="right" style="{th}">1S</th>
+        </tr>
+        {rows}
+      </table>
+    </td>
+  </tr>
+</table>"""
+
+
 def _footer(issue_date: str = "", author: str = "") -> str:
     archive_link = ""
     if GITHUB_PAGES_URL and issue_date:
@@ -289,13 +490,13 @@ def _footer(issue_date: str = "", author: str = "") -> str:
 def build_html(
     digest:             dict,
     tickers:            list[dict],
-    currency:           list[dict],
-    weather:            dict,
+    currency:           dict,
     week_stories:       list[dict],
     issue_number:       int = 1,
     is_friday:          bool = False,
     wordcloud_filename: str | None = None,
     author:             str = "",
+    secondary_tickers:  list[dict] | None = None,
 ) -> str:
 
     stories_html = ""
@@ -307,6 +508,11 @@ def build_html(
     week_html = ""
     if is_friday and week_stories:
         week_html = _divider() + _week_review(week_stories)
+
+    sentiment_chart_html = ""
+    if is_friday:
+        from storage import get_week_sentiment
+        sentiment_chart_html = _sentiment_chart(get_week_sentiment())
 
     sentiment  = digest.get("sentiment", {})
     quote      = digest.get("quote", {})
@@ -335,7 +541,7 @@ def build_html(
 </table>"""
 
     return f"""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -349,17 +555,20 @@ def build_html(
       <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background:{BG_MAIN}; border:1px solid {BORDER};">
         <tr><td>{_header(issue_number)}</td></tr>
         <tr><td>{_ticker(tickers)}</td></tr>
-        <tr><td>{_weather(weather)}</td></tr>
+        <tr><td>{_secondary_dashboard(secondary_tickers)}</td></tr>
         <tr><td>{_editor_note(digest.get('editor_note', ''), author)}</td></tr>
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_sentiment(sentiment)}</td></tr>
         <tr><td>{_divider()}</td></tr>
         <tr><td>{stories_html}</td></tr>
+        {'<tr><td>' + _weekly_markets(tickers) + '</td></tr>' if is_friday else '<tr><td>' + _divider() + '</td></tr>'}
+        <tr><td>{_currency_table([r for r in currency.get('matrix', {}).get(EMAIL_CURRENCY_BASE, []) if any(r['pair'].endswith(f'/ {q}') for q in EMAIL_CURRENCY_QUOTES)])}</td></tr>
         <tr><td>{_divider()}</td></tr>
-        <tr><td>{_currency_table(currency)}</td></tr>
+        <tr><td>{_economic_calendar()}</td></tr>
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_quote(quote)}</td></tr>
         {'<tr><td>' + week_html + '</td></tr>' if week_html else ''}
+        {'<tr><td>' + sentiment_chart_html + '</td></tr>' if sentiment_chart_html else ''}
         {'<tr><td><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 48px 8px;"><p style="margin:0 0 14px 0; font-family:Arial,sans-serif; font-size:9px; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc;">La Semana en Palabras</p><img src="' + ASSET_BASE_URL.rstrip("/") + "/" + wordcloud_filename + '" width="504" style="width:100%; max-width:504px; display:block;" alt=""/></td></tr></table></td></tr>' if wordcloud_filename else ''}
         <tr><td>{_footer(today_iso, author)}</td></tr>
       </table>

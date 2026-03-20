@@ -1,49 +1,13 @@
 # ─────────────────────────────────────────────
-#  market_data.py  —  Tickers, FX, Weather
+#  market_data.py  —  Tickers, FX
 # ─────────────────────────────────────────────
 
 import os
 import requests
 from config import (
-    TICKER_SYMBOLS, CURRENCY_PAIRS,
-    WEATHER_LAT, WEATHER_LON, WEATHER_CITY
+    TICKER_SYMBOLS, SECONDARY_TICKER_GROUPS,
+    CURRENCY_PAIRS, CURRENCY_BASES,
 )
-
-BANXICO_TOKEN  = os.environ.get("BANXICO_API_KEY", "")
-CETES_SERIES   = "SF43936"   # CETES 28 días tasa de rendimiento
-
-
-# ── Banxico CETES ─────────────────────────────
-
-def fetch_cetes() -> dict:
-    """
-    Fetches the latest CETES 28D rate from Banxico SIE API.
-    Returns a ticker dict. Falls back to "—" if token missing or call fails.
-    """
-    if not BANXICO_TOKEN:
-        return {"label": "CETES 28D", "value": "—", "change": "", "direction": "flat"}
-    try:
-        url     = f"https://www.banxico.org.mx/SieAPIRest/service/v1/series/{CETES_SERIES}/datos/oportuno"
-        headers = {"Bmx-Token": BANXICO_TOKEN}
-        data    = requests.get(url, headers=headers, timeout=8).json()
-        datos   = data["bmx"]["series"][0]["datos"]
-
-        # Latest and previous observation
-        latest   = float(datos[-1]["dato"])
-        previous = float(datos[-2]["dato"]) if len(datos) >= 2 else latest
-        chg      = latest - previous
-        direction = "up" if chg >= 0 else "down"
-        chg_str   = f"{'▲' if chg >= 0 else '▼'} {abs(chg):.2f}pp"
-
-        return {
-            "label":     "CETES 28D",
-            "value":     f"{latest:.2f}%",
-            "change":    chg_str,
-            "direction": direction,
-        }
-    except Exception as e:
-        print(f"  [market] CETES fetch failed: {e}")
-        return {"label": "CETES 28D", "value": "—", "change": "", "direction": "flat"}
 
 
 # ── Tickers ───────────────────────────────────
@@ -51,52 +15,127 @@ def fetch_cetes() -> dict:
 def fetch_tickers() -> list[dict]:
     """
     Fetches market data for each ticker in config using Yahoo Finance.
-    CETES 28D is fetched from Banxico SIE API.
-    Returns list of dicts with label, value, change, direction.
+    Returns list of dicts with label, value, change, direction, chg_1w, direction_1w.
+    Uses 5-day range to compute both daily and weekly % change.
     """
     results = []
     for label, symbol in TICKER_SYMBOLS:
         if symbol is None:
-            # Wire Banxico for CETES, skip anything else with no symbol
-            if "CETES" in label:
-                results.append(fetch_cetes())
-            else:
-                results.append({"label": label, "value": "—", "change": "", "direction": "flat"})
+            results.append({"label": label, "value": "—", "change": "", "direction": "flat",
+                            "chg_1w": "", "direction_1w": "flat"})
             continue
         try:
-            url  = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=2d"
+            url     = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=5d"
             headers = {"User-Agent": "Mozilla/5.0"}
-            data = requests.get(url, headers=headers, timeout=8).json()
-            meta = data["chart"]["result"][0]["meta"]
+            data    = requests.get(url, headers=headers, timeout=8).json()
+            result  = data["chart"]["result"][0]
+            meta    = result["meta"]
+            closes  = result["indicators"]["quote"][0]["close"]
+            closes  = [c for c in closes if c is not None]
 
             price     = meta.get("regularMarketPrice", 0)
-            prev      = meta.get("chartPreviousClose", price)
-            pct_chg   = ((price - prev) / prev * 100) if prev else 0
-            direction = "up" if pct_chg >= 0 else "down"
+            prev_day  = closes[-2] if len(closes) >= 2 else price
+            prev_week = closes[0]  if len(closes) >= 5 else price
 
-            if "MXN" in label or "IPC" in label:
-                val_str = f"{price:,.2f}"
-            elif label == "S&P 500":
-                val_str = f"{price:,.0f}"
+            pct_chg   = ((price - prev_day)  / prev_day  * 100) if prev_day  else 0
+            pct_chg_w = ((price - prev_week) / prev_week * 100) if prev_week else 0
+            direction   = "up" if pct_chg   >= 0 else "down"
+            direction_w = "up" if pct_chg_w >= 0 else "down"
+
+            if label == "10Y UST":
+                val_str = f"{price:.2f}%"
+            elif label in ("DXY", "VIX"):
+                val_str = f"{price:.2f}"
+            elif label == "MSCI EM":
+                val_str = f"${price:.2f}"
             else:
-                val_str = f"{price:.4f}"
+                val_str = f"{price:.2f}"
 
-            chg_str = f"{'▲' if direction == 'up' else '▼'} {abs(pct_chg):.1f}%"
+            chg_str   = f"{'▲' if direction   == 'up' else '▼'} {abs(pct_chg):.1f}%"
+            chg_w_str = f"{'▲' if direction_w == 'up' else '▼'} {abs(pct_chg_w):.1f}%"
 
             results.append({
-                "label":     label,
-                "value":     val_str,
-                "change":    chg_str,
-                "direction": direction,
+                "label":        label,
+                "value":        val_str,
+                "change":       chg_str,
+                "direction":    direction,
+                "chg_1w":       chg_w_str,
+                "direction_1w": direction_w,
             })
         except Exception as e:
             print(f"  [market] Failed {label}: {e}")
             results.append({
-                "label":     label,
-                "value":     "—",
-                "change":    "",
-                "direction": "flat",
+                "label":        label,
+                "value":        "—",
+                "change":       "",
+                "direction":    "flat",
+                "chg_1w":       "",
+                "direction_1w": "flat",
             })
+
+    return results
+
+
+def _fmt_secondary(label: str, group: str, price: float) -> str:
+    """Format a secondary ticker price based on its group and label."""
+    if group == "eq":
+        return f"{price:,.0f}"
+    elif group == "co":
+        if label == "Wheat":
+            return f"${price / 100:.2f}"   # ZW=F quotes in cents/bu
+        if label == "Copper":
+            return f"${price:.2f}"
+        return f"${price:,.0f}"            # Gold, Brent
+    elif group == "cr":
+        if price >= 1000:
+            return f"${price:,.0f}"
+        return f"${price:.2f}"
+    return f"{price:.2f}"
+
+
+def fetch_secondary_tickers() -> list[dict]:
+    """
+    Fetches market data for secondary ticker groups (equities, commodities, crypto).
+    Returns a list of group dicts, each with 'group', 'label', and 'tickers' keys.
+    """
+    results = []
+    for group_cfg in SECONDARY_TICKER_GROUPS:
+        group_id = group_cfg["group"]
+        tickers  = []
+        for label, symbol in group_cfg["tickers"]:
+            try:
+                url     = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=2d"
+                headers = {"User-Agent": "Mozilla/5.0"}
+                data    = requests.get(url, headers=headers, timeout=8).json()
+                meta    = data["chart"]["result"][0]["meta"]
+
+                price     = meta.get("regularMarketPrice", 0)
+                prev      = meta.get("chartPreviousClose", price)
+                pct_chg   = ((price - prev) / prev * 100) if prev else 0
+                direction = "up" if pct_chg >= 0 else "down"
+                val_str   = _fmt_secondary(label, group_id, price)
+                chg_str   = f"{'▲' if direction == 'up' else '▼'} {abs(pct_chg):.1f}%"
+
+                tickers.append({
+                    "label":     label,
+                    "value":     val_str,
+                    "change":    chg_str,
+                    "direction": direction,
+                })
+            except Exception as e:
+                print(f"  [market] Failed secondary {label}: {e}")
+                tickers.append({
+                    "label":     label,
+                    "value":     "—",
+                    "change":    "",
+                    "direction": "flat",
+                })
+
+        results.append({
+            "group":   group_id,
+            "label":   group_cfg["label"],
+            "tickers": tickers,
+        })
 
     return results
 
@@ -126,122 +165,115 @@ def _fetch_yahoo_rate(symbol: str) -> tuple[float, float, float] | None:
         return None
 
 
-def fetch_currency_table() -> list[dict]:
+# Yahoo Finance symbols for each currency vs USD
+_USD_SYMBOLS = {
+    "USD": None,       # base, always 1.0
+    "MXN": "MXN=X",   # MXN per USD
+    "BRL": "BRL=X",
+    "EUR": "EURUSD=X", # EUR per USD (inverted)
+    "CNY": "USDCNY=X",
+    "CAD": "CAD=X",
+    "GBP": "GBPUSD=X", # GBP per USD (inverted)
+    "JPY": "JPY=X",
+}
+# Currencies where Yahoo returns units-per-USD (i.e. not inverted)
+_DIRECT = {"MXN", "BRL", "CNY", "CAD", "JPY"}
+# Currencies where Yahoo returns USD-per-unit (inverted, multiply to get units-per-USD)
+_INVERTED = {"EUR", "GBP"}
+
+
+def _fetch_usd_rates() -> dict[str, tuple[float, float, float]]:
     """
-    Fetches MXN vs each currency in CURRENCY_PAIRS.
-    CNY is calculated as a cross rate (MXN/USD × USD/CNY)
-    since Yahoo doesn't carry MXNCNY=X directly.
+    Returns a dict of currency -> (rate_vs_usd, prev_day_vs_usd, prev_week_vs_usd)
+    where rate_vs_usd = units of that currency per 1 USD.
+    USD itself is always (1.0, 1.0, 1.0).
     """
-    rows = []
-
-    # Pre-fetch MXN/USD once for CNY cross rate
-    mxn_usd_data = _fetch_yahoo_rate("MXN=X")
-
-    for currency in CURRENCY_PAIRS:
-        try:
-            if currency == "CNY":
-                # Cross rate: MXN/CNY = MXN/USD × USD/CNY
-                usd_cny_data = _fetch_yahoo_rate("USDCNY=X")
-                if not mxn_usd_data or not usd_cny_data:
-                    raise ValueError("Missing data for CNY cross rate")
-
-                mxn_usd, mxn_usd_prev, mxn_usd_week = mxn_usd_data
-                usd_cny, usd_cny_prev, usd_cny_week  = usd_cny_data
-
-                rate      = mxn_usd * usd_cny
-                prev_day  = mxn_usd_prev * usd_cny_prev
-                prev_week = mxn_usd_week * usd_cny_week
-            else:
-                if currency == "USD":
-                    symbol = "MXN=X"
-                    result = _fetch_yahoo_rate(symbol)
-                    if not result:
-                        raise ValueError(f"No data for {symbol}")
-                    rate, prev_day, prev_week = result
-                else:
-                    symbol = f"{currency}MXN=X"
-                    result = _fetch_yahoo_rate(symbol)
-                    if not result:
-                        raise ValueError(f"No data for {symbol}")
-                    rate, prev_day, prev_week = result
-
-            chg_1d = ((rate - prev_day)  / prev_day  * 100) if prev_day  else 0
-            chg_1w = ((rate - prev_week) / prev_week * 100) if prev_week else 0
-
-            def fmt_chg(val):
-                arrow = "▲" if val >= 0 else "▼"
-                cls   = "chg-up" if val >= 0 else ("chg-down" if val < 0 else "chg-flat")
-                return {"text": f"{arrow} {abs(val):.2f}%", "cls": cls}
-
-            rows.append({
-                "pair":   f"{currency} / MXN",
-                "rate":   f"{rate:.4f}",
-                "chg_1d": fmt_chg(chg_1d),
-                "chg_1w": fmt_chg(chg_1w),
-            })
-
-        except Exception as e:
-            print(f"  [currency] Failed MXN/{currency}: {e}")
-            rows.append({
-                "pair":   f"MXN / {currency}",
-                "rate":   "—",
-                "chg_1d": {"text": "—", "cls": "chg-flat"},
-                "chg_1w": {"text": "—", "cls": "chg-flat"},
-            })
-
-    return rows
+    rates = {"USD": (1.0, 1.0, 1.0)}
+    for currency, symbol in _USD_SYMBOLS.items():
+        if symbol is None:
+            continue
+        result = _fetch_yahoo_rate(symbol)
+        if result is None:
+            print(f"  [currency] Could not fetch {currency}")
+            continue
+        rate, prev_day, prev_week = result
+        if currency in _INVERTED:
+            # Yahoo gives USD-per-unit; invert to get units-per-USD
+            rate      = 1.0 / rate      if rate      else 0
+            prev_day  = 1.0 / prev_day  if prev_day  else 0
+            prev_week = 1.0 / prev_week if prev_week else 0
+        rates[currency] = (rate, prev_day, prev_week)
+    return rates
 
 
-# ── Weather ───────────────────────────────────
-
-def fetch_weather() -> dict:
+def fetch_currency_table() -> dict:
     """
-    Fetches current weather from Open-Meteo (no API key needed).
+    Returns a dict with:
+      - 'bases': list of base currency codes (for toggle buttons)
+      - 'matrix': dict of base -> list of row dicts for the table
+    Each row: { pair, rate, chg_1d, chg_1w }
+    The default base shown first is MXN.
     """
-    try:
-        url = (
-            f"https://api.open-meteo.com/v1/forecast"
-            f"?latitude={WEATHER_LAT}&longitude={WEATHER_LON}"
-            f"&current=temperature_2m,relative_humidity_2m,weather_code"
-            f"&daily=temperature_2m_max,temperature_2m_min"
-            f"&timezone=America/Mexico_City&forecast_days=1"
-        )
-        data    = requests.get(url, timeout=8).json()
-        current = data["current"]
-        daily   = data["daily"]
+    def fmt_chg(val):
+        arrow = "▲" if val >= 0 else "▼"
+        cls   = "chg-up" if val >= 0 else "chg-down"
+        return {"text": f"{arrow} {abs(val):.2f}%", "cls": cls}
 
-        temp     = round(current["temperature_2m"])
-        humidity = current["relative_humidity_2m"]
-        code     = current["weather_code"]
-        temp_max = round(daily["temperature_2m_max"][0])
-        temp_min = round(daily["temperature_2m_min"][0])
-        desc     = _weather_description(code)
+    def fmt_rate(rate, quote):
+        # Format based on typical magnitude
+        if quote in ("JPY",):
+            return f"{rate:.2f}"
+        if quote in ("BRL", "MXN", "CNY", "CAD"):
+            return f"{rate:.4f}"
+        return f"{rate:.5f}"
 
-        return {
-            "city":     WEATHER_CITY,
-            "temp":     f"{temp}°C",
-            "high_low": f"{temp_max}°C / {temp_min}°C",
-            "humidity": f"Humidity {humidity}%",
-            "desc":     desc,
-        }
-    except Exception as e:
-        print(f"  [weather] Failed: {e}")
-        return {
-            "city":     WEATHER_CITY,
-            "temp":     "—",
-            "high_low": "—",
-            "humidity": "—",
-            "desc":     "Weather unavailable",
-        }
+    usd_rates = _fetch_usd_rates()
+    matrix    = {}
+
+    for base in CURRENCY_BASES:
+        if base not in usd_rates:
+            continue
+        base_rate, base_prev, base_week = usd_rates[base]
+        rows = []
+        for quote in CURRENCY_PAIRS:
+            if quote == base:
+                continue
+            if quote not in usd_rates:
+                rows.append({
+                    "pair":   f"{base} / {quote}",
+                    "rate":   "—",
+                    "chg_1d": {"text": "—", "cls": "chg-flat"},
+                    "chg_1w": {"text": "—", "cls": "chg-flat"},
+                })
+                continue
+            try:
+                q_rate, q_prev, q_week = usd_rates[quote]
+                # cross rate: quote units per 1 base
+                # base -> USD -> quote
+                # 1 base = (1/base_rate) USD = (1/base_rate) * q_rate quote
+                rate      = q_rate / base_rate      if base_rate      else 0
+                prev_day  = q_prev / base_prev      if base_prev      else 0
+                prev_week = q_week / base_week      if base_week      else 0
+
+                chg_1d = ((rate - prev_day)  / prev_day  * 100) if prev_day  else 0
+                chg_1w = ((rate - prev_week) / prev_week * 100) if prev_week else 0
+
+                rows.append({
+                    "pair":   f"{base} / {quote}",
+                    "rate":   fmt_rate(rate, quote),
+                    "chg_1d": fmt_chg(chg_1d),
+                    "chg_1w": fmt_chg(chg_1w),
+                })
+            except Exception as e:
+                print(f"  [currency] Failed cross {base}/{quote}: {e}")
+                rows.append({
+                    "pair":   f"{base} / {quote}",
+                    "rate":   "—",
+                    "chg_1d": {"text": "—", "cls": "chg-flat"},
+                    "chg_1w": {"text": "—", "cls": "chg-flat"},
+                })
+        matrix[base] = rows
+
+    return {"bases": CURRENCY_BASES, "matrix": matrix}
 
 
-def _weather_description(code: int) -> str:
-    if code == 0:               return "Clear skies"
-    if code in (1, 2, 3):       return "Partly cloudy"
-    if code in (45, 48):        return "Foggy"
-    if code in (51, 53, 55):    return "Light drizzle"
-    if code in (61, 63, 65):    return "Rain"
-    if code in (71, 73, 75):    return "Snow"
-    if code in (80, 81, 82):    return "Rain showers"
-    if code in (95, 96, 99):    return "Thunderstorms"
-    return "Mixed conditions"

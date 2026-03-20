@@ -10,9 +10,15 @@
 #  lang-en blocks hidden until toggled.
 # ─────────────────────────────────────────────
 
+import locale
 from datetime import date, timedelta
 from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE
 from config import GITHUB_PAGES_URL, ASSET_BASE_URL
+
+try:
+    locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
+except Exception:
+    pass
 
 CSS = """
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -46,11 +52,23 @@ CSS = """
   .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
   .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
 
-  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
-  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
-  .weather-temp { font-size: 11px; color: #ccc; }
-  .weather-humidity { font-size: 11px; color: #ccc; }
-  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+  /* ── Secondary market strip (tabbed) ── */
+  .mkt-strip { background: #1a1a1a; }
+  .mkt-tab-nav { display: flex; padding: 0 48px; border-bottom: 1px solid #222; }
+  .mkt-tab-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 8px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 7px 14px 6px; cursor: pointer; border: none; background: transparent;
+    color: #444; border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .mkt-tab-btn[data-group="eq"].active { color: #a8c8a0; border-bottom-color: #a8c8a0; }
+  .mkt-tab-btn[data-group="co"].active { color: #d4b87a; border-bottom-color: #d4b87a; }
+  .mkt-tab-btn[data-group="cr"].active { color: #b49ed4; border-bottom-color: #b49ed4; }
+  .mkt-tab-btn:not(.active):hover { color: #777; }
+  .mkt-panel { display: none; padding: 0 48px; }
+  .mkt-panel.visible { display: flex; }
+  .mkt-panel .tick-item { padding: 9px 8px; }
 
   .editor-note { padding: 28px 48px; }
   .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
@@ -85,6 +103,16 @@ CSS = """
 
   .currency { padding: 24px 48px; }
   .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .currency-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .currency-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 8px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .currency-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .currency-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
   .currency-table { width: 100%; border-collapse: collapse; }
   .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
   .currency-table th:not(:first-child) { text-align: right; }
@@ -113,6 +141,26 @@ CSS = """
   .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
   .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
 
+  .calendar { padding: 24px 48px; }
+  .cal-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #e4e9ec; }
+  .cal-row:last-child { border-bottom: none; }
+  .cal-date { font-size: 10px; color: #555; min-width: 46px; flex-shrink: 0; }
+  .cal-badge { font-size: 7.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 2px 5px; border: 1px solid; min-width: 50px; text-align: center; flex-shrink: 0; }
+  .cal-label { font-size: 12px; color: #1a1a1a; flex: 1; }
+  .cal-days { font-size: 9px; color: #aab4bc; white-space: nowrap; flex-shrink: 0; }
+
+  .weekly-mkt { background: #1a1a1a; padding: 16px 48px 14px; }
+  .wm-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #555; margin-bottom: 2px; }
+  .wm-subtitle { font-size: 8px; color: #444; margin-bottom: 12px; }
+  .wm-table { width: 100%; border-collapse: collapse; }
+  .wm-table th { font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #444; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #2a2a2a; }
+  .wm-table th:not(:first-child) { text-align: right; }
+  .wm-table td { font-size: 11px; padding: 8px 0; border-bottom: 1px solid #2a2a2a; }
+  .wm-table tr:last-child td { border-bottom: none; }
+  .wm-label { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #555; }
+  .wm-val { color: #d4cfc8; text-align: right; padding-left: 12px; }
+  .wm-chg { text-align: right; font-size: 10px; padding-left: 12px; }
+
   .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
   .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
   .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
@@ -125,8 +173,9 @@ CSS = """
     .ticker { padding: 6px 8px; }
     .ticker-inner { flex-wrap: wrap; }
     .tick-item { flex: 1 1 45%; padding: 8px 4px; }
-    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
-    .weather-desc { margin-left: 0; width: 100%; }
+    .mkt-tab-nav { padding: 0 12px; }
+    .mkt-panel { padding: 0 8px; flex-wrap: wrap; }
+    .mkt-panel .tick-item { flex: 1 1 45%; }
     .editor-note { padding: 20px 20px; }
     .divider { padding: 0 20px; }
     .sentiment { padding: 20px 20px; }
@@ -156,6 +205,30 @@ LANG_TOGGLE_JS = """
     var saved = localStorage.getItem('nlLang') || 'es';
     setLang(saved);
   })();
+
+  function setCurrencyBase(base) {
+    document.querySelectorAll('.currency-view').forEach(el => {
+      el.style.display = el.dataset.base === base ? '' : 'none';
+    });
+    document.querySelectorAll('.currency-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.base === base);
+    });
+    localStorage.setItem('nlCurrencyBase', base);
+  }
+  (function(){
+    var savedBase = localStorage.getItem('nlCurrencyBase') || 'MXN';
+    setCurrencyBase(savedBase);
+  })();
+
+  function setMktTab(group) {
+    document.querySelectorAll('.mkt-panel').forEach(function(p) { p.classList.remove('visible'); });
+    var panel = document.getElementById('mkt-' + group);
+    if (panel) panel.classList.add('visible');
+    document.querySelectorAll('.mkt-tab-btn').forEach(function(b) {
+      b.classList.toggle('active', b.dataset.group === group);
+    });
+  }
+  (function(){ setMktTab('eq'); })();
 </script>
 """
 
@@ -173,15 +246,15 @@ DIVIDER = """
 
 
 def build_pretty_html(
-    digest:             dict,
-    tickers:            list[dict],
-    currency:           list[dict],
-    weather:            dict,
-    week_stories:       list[dict],
-    issue_number:       int = 1,
-    is_friday:          bool = False,
-    wordcloud_filename: str | None = None,
-    author:             str = "",
+    digest:              dict,
+    tickers:             list[dict],
+    currency:            list[dict],
+    week_stories:        list[dict],
+    issue_number:        int = 1,
+    is_friday:           bool = False,
+    wordcloud_filename:  str | None = None,
+    author:              str = "",
+    secondary_tickers:   list[dict] | None = None,
 ) -> str:
 
     # Bilingual support: unwrap es/en, fallback for old flat digests
@@ -193,9 +266,18 @@ def build_pretty_html(
 
     # ── Ticker (language-neutral) ─────────────────────────────────────────
     tick_items = ""
-    for t in tickers:
-        chg_cls = "tick-up" if t["direction"] == "up" else ("tick-down" if t["direction"] == "down" else "")
-        tick_items += f"""
+    if not tickers:
+        for label in ["DXY", "10Y UST", "VIX", "MSCI EM"]:
+            tick_items += f"""
+      <div class="tick-item">
+        <span class="tick-label">{label}</span>
+        <span class="tick-val">—</span>
+        <span class=""></span>
+      </div>"""
+    else:
+        for t in tickers:
+            chg_cls = "tick-up" if t["direction"] == "up" else ("tick-down" if t["direction"] == "down" else "")
+            tick_items += f"""
       <div class="tick-item">
         <span class="tick-label">{t['label']}</span>
         <span class="tick-val">{t['value']}</span>
@@ -238,20 +320,117 @@ def build_pretty_html(
   </div>
 </div>"""
 
-    # ── Currency table (language-neutral) ────────────────────────────────
-    tbody = ""
-    for r in currency:
-        c1 = "up" if r['chg_1d']['cls'] == 'chg-up' else ("down" if r['chg_1d']['cls'] == 'chg-down' else "flat")
-        c7 = "up" if r['chg_1w']['cls'] == 'chg-up' else ("down" if r['chg_1w']['cls'] == 'chg-down' else "flat")
-        chg1_color = "#4a9e6a" if c1 == "up" else ("#b84a3a" if c1 == "down" else "#aab4bc")
-        chg7_color = "#4a9e6a" if c7 == "up" else ("#b84a3a" if c7 == "down" else "#aab4bc")
-        tbody += f"""
+    # ── Currency table (base-toggle, language-neutral) ───────────────────
+    # currency is now a dict: {bases: [...], matrix: {base: [rows]}}
+    currency_bases  = currency.get("bases", ["MXN"])
+    currency_matrix = currency.get("matrix", {})
+
+    def build_tbody(rows):
+        tbody = ""
+        for r in rows:
+            c1 = "up" if r['chg_1d']['cls'] == 'chg-up' else ("down" if r['chg_1d']['cls'] == 'chg-down' else "flat")
+            c7 = "up" if r['chg_1w']['cls'] == 'chg-up' else ("down" if r['chg_1w']['cls'] == 'chg-down' else "flat")
+            chg1_color = "#4a9e6a" if c1 == "up" else ("#b84a3a" if c1 == "down" else "#aab4bc")
+            chg7_color = "#4a9e6a" if c7 == "up" else ("#b84a3a" if c7 == "down" else "#aab4bc")
+            tbody += f"""
       <tr>
         <td class="pair">{r['pair']}</td>
         <td>{r['rate']}</td>
         <td style="color:{chg1_color}; text-align:right;">{r['chg_1d']['text']}</td>
         <td style="color:{chg7_color}; text-align:right;">{r['chg_1w']['text']}</td>
       </tr>"""
+        return tbody
+
+    currency_tables_html = ""
+    for i, base in enumerate(currency_bases):
+        rows  = currency_matrix.get(base, [])
+        tbody = build_tbody(rows)
+        display = "" if i == 0 else "display:none;"
+        currency_tables_html += f"""
+    <div class="currency-view" data-base="{base}" style="{display}">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>{tbody}
+        </tbody>
+      </table>
+    </div>"""
+
+    currency_btns_html = ""
+    for i, base in enumerate(currency_bases):
+        active = "active" if i == 0 else ""
+        currency_btns_html += f'<button class="currency-btn {active}" data-base="{base}" onclick="setCurrencyBase(\'{base}\')">{base}</button>'
+
+    # ── Weekly markets (Fridays only) ────────────────────────────────────
+    weekly_mkt_html = ""
+    if is_friday and tickers:
+        monday_wm = date.today() - timedelta(days=date.today().weekday())
+        friday_wm = monday_wm + timedelta(days=4)
+        wm_label  = f"{monday_wm.strftime('%b %d')}&ndash;{friday_wm.strftime('%d, %Y')}"
+        wm_rows = ""
+        for t in tickers:
+            c_d = "tick-up" if t["direction"]                == "up" else ("tick-down" if t["direction"]                == "down" else "")
+            c_w = "tick-up" if t.get("direction_1w","flat") == "up" else ("tick-down" if t.get("direction_1w","flat") == "down" else "")
+            wm_rows += f"""
+        <tr>
+          <td class="wm-label">{t['label']}</td>
+          <td class="wm-val">{t['value']}</td>
+          <td class="wm-chg {c_d}">{t['change']}</td>
+          <td class="wm-chg {c_w}">{t.get('chg_1w','&mdash;')}</td>
+        </tr>"""
+        weekly_mkt_html = f"""
+{DIVIDER}
+<div class="weekly-mkt">
+  <div class="wm-title" data-es="La Semana en Mercados &middot; {wm_label}" data-en="Week in Markets &middot; {wm_label}">La Semana en Mercados &middot; {wm_label}</div>
+  <div class="wm-subtitle" data-es="1D = var. diaria &nbsp;&middot;&nbsp; 1S = var. semanal" data-en="1D = daily change &nbsp;&middot;&nbsp; 1W = weekly change">1D = var. diaria &nbsp;&middot;&nbsp; 1S = var. semanal</div>
+  <table class="wm-table">
+    <thead>
+      <tr>
+        <th data-es="Indicador" data-en="Indicator">Indicador</th>
+        <th style="text-align:right;" data-es="Valor" data-en="Value">Valor</th>
+        <th style="text-align:right;">1D</th>
+        <th style="text-align:right;" data-es="1S" data-en="1W">1S</th>
+      </tr>
+    </thead>
+    <tbody>{wm_rows}
+    </tbody>
+  </table>
+</div>"""
+
+    # ── Economic calendar ─────────────────────────────────────────────────
+    from storage import get_upcoming_calendar
+    _months_cal = ["","ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]
+    _cal_colors = {"banxico": "#4a9e6a", "fed": "#5a8abf", "mx-data": "#c8943a", "us-data": "#7a9aaa"}
+    _cal_badges = {"banxico": "BANXICO", "fed": "FED",     "mx-data": "INEGI",   "us-data": "BLS"}
+
+    cal_rows = ""
+    for event_date, label_ev, etype, delta in get_upcoming_calendar(n=5):
+        color    = _cal_colors.get(etype, "#aab4bc")
+        badge    = _cal_badges.get(etype, etype.upper())
+        date_fmt = f"{event_date.day:02d} {_months_cal[event_date.month].upper()}"
+        days_str = "Hoy" if delta == 0 else ("Ma\u00f1ana" if delta == 1 else f"{delta}d")
+        cal_rows += f"""
+      <div class="cal-row">
+        <span class="cal-date">{date_fmt}</span>
+        <span class="cal-badge" style="color:{color}; border-color:{color};">{badge}</span>
+        <span class="cal-label">{label_ev}</span>
+        <span class="cal-days">{days_str}</span>
+      </div>"""
+
+    calendar_html = f"""
+{DIVIDER}
+<div class="calendar">
+  <div class="section-title"
+       data-es="Pr&oacute;ximas Fechas Clave"
+       data-en="Key Upcoming Dates">Pr&oacute;ximas Fechas Clave</div>
+  {cal_rows}
+</div>"""
 
     # ── Quote (both languages) ────────────────────────────────────────────
     q_es = digest_es.get("quote", {})
@@ -293,6 +472,87 @@ def build_pretty_html(
        data-en="Week in Review &middot; {wlabel}">Resumen Semanal &middot; {wlabel}</div>
   <div class="timeline">{tl_items}
   </div>
+</div>"""
+
+    # ── Secondary tickers (tabbed strip) ─────────────────────────────────
+    tabbed_strip_html = ""
+    if secondary_tickers:
+        tab_btns = ""
+        panels   = ""
+        for g in secondary_tickers:
+            gid = g["group"]
+            tab_btns += (
+                f'<button class="mkt-tab-btn" data-group="{gid}"'
+                f' onclick="setMktTab(\'{gid}\')">{g["label"]}</button>'
+            )
+            items = ""
+            for t in g["tickers"]:
+                chg_cls = "tick-up" if t["direction"] == "up" else ("tick-down" if t["direction"] == "down" else "")
+                items += f"""
+        <div class="tick-item">
+          <span class="tick-label">{t['label']}</span>
+          <span class="tick-val">{t['value']}</span>
+          <span class="{chg_cls}">{t['change']}</span>
+        </div>"""
+            panels += f'\n    <div class="mkt-panel" id="mkt-{gid}">{items}\n    </div>'
+        tabbed_strip_html = f"""
+  <div class="mkt-strip">
+    <div class="mkt-tab-nav">{tab_btns}</div>{panels}
+  </div>"""
+
+    # ── Sentiment chart (Fridays only) ───────────────────────────────────
+    sentiment_chart_html = ""
+    if is_friday:
+        import json, urllib.parse
+        from storage import get_week_sentiment
+        week_sent = get_week_sentiment()
+        if week_sent:
+            sc_labels = [d["day"] for d in week_sent]
+            sc_data   = [d["position"] for d in week_sent]
+            sc_colors = [
+                "#b84a3a" if d["position"] < 36 else
+                ("#4a9e6a" if d["position"] > 64 else "#e8a030")
+                for d in week_sent
+            ]
+            sc_config = {
+                "type": "line",
+                "data": {
+                    "labels": sc_labels,
+                    "datasets": [{
+                        "data": sc_data,
+                        "borderColor": "#3a4a54",
+                        "borderWidth": 2,
+                        "pointBackgroundColor": sc_colors,
+                        "pointBorderColor":     sc_colors,
+                        "pointRadius": 6,
+                        "fill": False,
+                        "tension": 0.3,
+                    }],
+                },
+                "options": {
+                    "responsive": False,
+                    "plugins": {"legend": {"display": False}},
+                    "scales": {
+                        "y": {"min": 0, "max": 100, "ticks": {"display": False}, "grid": {"color": "#dde3e8"}},
+                        "x": {"ticks": {"color": "#888888", "font": {"size": 11}}, "grid": {"display": False}},
+                    },
+                },
+            }
+            sc_url = (
+                "https://quickchart.io/chart"
+                f"?w=544&h=160&bkg=%23f0f3f5&f=png"
+                f"&c={urllib.parse.quote(json.dumps(sc_config, separators=(',', ':')))}"
+            )
+            monday_sc = date.today() - timedelta(days=date.today().weekday())
+            friday_sc = monday_sc + timedelta(days=4)
+            sc_label  = f"{monday_sc.strftime('%b %d')}&ndash;{friday_sc.strftime('%d, %Y')}"
+            sentiment_chart_html = f"""
+{DIVIDER}
+<div style="padding:24px 48px 8px;">
+  <div class="section-title"
+       data-es="Sentimiento Semanal &middot; {sc_label}"
+       data-en="Weekly Sentiment &middot; {sc_label}">Sentimiento Semanal &middot; {sc_label}</div>
+  <img src="{sc_url}" style="width:100%; border:1px solid #cdd4d9; margin-top:14px;" alt="Weekly sentiment chart"/>
 </div>"""
 
     # ── Wordcloud ─────────────────────────────────────────────────────────
@@ -338,12 +598,7 @@ def build_pretty_html(
     </div>
   </div>
 
-  <div class="weather">
-    <span class="weather-city">{weather['city']}</span>
-    <span class="weather-temp">{weather['high_low']}</span>
-    <span class="weather-humidity">{weather['humidity']}</span>
-    <span class="weather-desc">{weather['desc']}</span>
-  </div>
+  {tabbed_strip_html}
 
   <div class="editor-note">
     <div class="lang-es"><p>{digest_es.get('editor_note','')}</p></div>
@@ -378,22 +633,18 @@ def build_pretty_html(
   {DIVIDER}
 
   <div class="currency">
-    <div class="section-title"
-         data-es="Tipo de Cambio"
-         data-en="Exchange Rates">Tipo de Cambio</div>
-    <table class="currency-table">
-      <thead>
-        <tr>
-          <th data-es="Par"  data-en="Pair">Par</th>
-          <th data-es="Tipo" data-en="Rate">Tipo</th>
-          <th style="text-align:right;">1D</th>
-          <th style="text-align:right;">1W</th>
-        </tr>
-      </thead>
-      <tbody>{tbody}
-      </tbody>
-    </table>
+    <div class="currency-header">
+      <div class="section-title"
+           data-es="Tipo de Cambio"
+           data-en="Exchange Rates">Tipo de Cambio</div>
+      <div class="currency-toggle">{currency_btns_html}</div>
+    </div>
+    {currency_tables_html}
   </div>
+
+  {weekly_mkt_html}
+
+  {calendar_html}
 
   {DIVIDER}
 
@@ -410,6 +661,8 @@ def build_pretty_html(
   </div>
 
   {week_html}
+
+  {sentiment_chart_html}
 
   {wordcloud_html}
 

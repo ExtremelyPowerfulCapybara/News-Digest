@@ -8,14 +8,13 @@ from datetime import date, timedelta
 from config import DIGEST_DIR, ARCHIVE_DIR
 
 
-def save_digest(digest: dict, market: dict, weather: dict) -> None:
+def save_digest(digest: dict, market: dict) -> None:
     os.makedirs(DIGEST_DIR, exist_ok=True)
     today = date.today().isoformat()
     payload = {
-        "date":    today,
-        "digest":  digest,
-        "market":  market,
-        "weather": weather,
+        "date":   today,
+        "digest": digest,
+        "market": market,
     }
     path = os.path.join(DIGEST_DIR, f"{today}.json")
     with open(path, "w", encoding="utf-8") as f:
@@ -72,6 +71,68 @@ def get_week_stories() -> list[dict]:
         })
 
     return stories
+
+
+def get_recent_urls(days: int = 5) -> set[str]:
+    """
+    Returns all article URLs that appeared in the last N digests.
+    Used by the fetcher to skip stories already covered this week.
+    """
+    urls  = set()
+    today = date.today()
+    for i in range(1, days + 1):
+        data = load_digest((today - timedelta(days=i)).isoformat())
+        if not data:
+            continue
+        digest_es = data.get("digest", {})
+        digest_es = digest_es.get("es", digest_es)
+        for story in digest_es.get("stories", []):
+            url = story.get("url", "")
+            if url:
+                urls.add(url)
+    return urls
+
+
+def get_week_sentiment() -> list[dict]:
+    """
+    Returns sentiment data for each available day Mon-Fri of the current week.
+    Used on Fridays to render the weekly sentiment chart.
+    Each entry: { day, position, label_en }
+    """
+    today     = date.today()
+    monday    = today - timedelta(days=today.weekday())
+    day_names = ["Lun", "Mar", "Mi\u00e9", "Jue", "Vie"]
+    result    = []
+
+    for i in range(5):
+        day  = monday + timedelta(days=i)
+        data = load_digest(day.isoformat())
+        if not data:
+            continue
+        digest_es = data.get("digest", {})
+        digest_es = digest_es.get("es", digest_es)
+        sentiment = digest_es.get("sentiment", {})
+        result.append({
+            "day":      day_names[i],
+            "position": int(sentiment.get("position", 50)),
+            "label_en": sentiment.get("label_en", sentiment.get("label", "Cautious")),
+        })
+
+    return result
+
+
+def get_upcoming_calendar(n: int = 5) -> list[tuple]:
+    """Returns the next N upcoming economic calendar events from today."""
+    from config import ECONOMIC_CALENDAR
+    today    = date.today()
+    upcoming = []
+    for date_str, label, etype in ECONOMIC_CALENDAR:
+        event_date = date.fromisoformat(date_str)
+        delta = (event_date - today).days
+        if delta >= 0:
+            upcoming.append((event_date, label, etype, delta))
+    upcoming.sort(key=lambda x: x[0])
+    return upcoming[:n]
 
 
 def is_friday() -> bool:

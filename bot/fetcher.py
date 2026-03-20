@@ -3,16 +3,17 @@
 # ─────────────────────────────────────────────
 
 import requests
+from urllib.parse import urlparse
 from scraper import scrape_article
 from config import (
     NEWS_API_KEY, TOPICS, LANGUAGE,
     MAX_ARTICLES_PER_TOPIC, MAX_ARTICLE_CHARS,
-    MAX_ARTICLES_PER_SOURCE
+    MAX_ARTICLES_PER_SOURCE, NEWS_DOMAINS_STR, NEWS_DOMAIN_BLOCKLIST,
 )
 
 
-def fetch_news() -> list[dict]:
-    seen_urls    = set()
+def fetch_news(prior_urls: set[str] | None = None) -> list[dict]:
+    seen_urls    = set(prior_urls) if prior_urls else set()
     all_articles = []
 
     for topic in TOPICS:
@@ -21,6 +22,7 @@ def fetch_news() -> list[dict]:
             f"https://newsapi.org/v2/everything"
             f"?q={topic}&language={LANGUAGE}"
             f"&sortBy=publishedAt&pageSize={MAX_ARTICLES_PER_TOPIC}"
+            f"&domains={NEWS_DOMAINS_STR}"
             f"&apiKey={NEWS_API_KEY}"
         )
         try:
@@ -37,6 +39,9 @@ def fetch_news() -> list[dict]:
             if not article_url or article_url in seen_urls:
                 continue
             if "[Removed]" in a.get("title", ""):
+                continue
+            article_domain = urlparse(article_url).netloc.lower().removeprefix("www.")
+            if article_domain in NEWS_DOMAIN_BLOCKLIST:
                 continue
 
             source_name = a.get("source", {}).get("name", "Unknown")
