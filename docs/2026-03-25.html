@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell -- March 25, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* ── Language toggle ── */
+  .lang-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .lang-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+
+  .lang-en { display: none; }
+
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  /* ── Secondary market strip (tabbed) ── */
+  .mkt-strip { background: #1a1a1a; }
+  .mkt-tab-nav { display: flex; padding: 0 48px; border-bottom: 1px solid #222; }
+  .mkt-tab-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 8px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 7px 14px 6px; cursor: pointer; border: none; background: transparent;
+    color: #444; border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .mkt-tab-btn[data-group="eq"].active { color: #a8c8a0; border-bottom-color: #a8c8a0; }
+  .mkt-tab-btn[data-group="co"].active { color: #d4b87a; border-bottom-color: #d4b87a; }
+  .mkt-tab-btn[data-group="cr"].active { color: #b49ed4; border-bottom-color: #b49ed4; }
+  .mkt-tab-btn:not(.active):hover { color: #777; }
+  .mkt-panel { display: none; padding: 0 48px; }
+  .mkt-panel.visible { display: flex; }
+  .mkt-panel .tick-item { padding: 9px 8px; }
+
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .currency-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .currency-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 8px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .currency-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .currency-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  .calendar { padding: 24px 48px; }
+  .cal-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #e4e9ec; }
+  .cal-row:last-child { border-bottom: none; }
+  .cal-date { font-size: 10px; color: #555; min-width: 46px; flex-shrink: 0; }
+  .cal-badge { font-size: 7.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 2px 5px; border: 1px solid; min-width: 50px; text-align: center; flex-shrink: 0; }
+  .cal-label { font-size: 12px; color: #1a1a1a; flex: 1; }
+  .cal-days { font-size: 9px; color: #aab4bc; white-space: nowrap; flex-shrink: 0; }
+
+  .weekly-mkt { background: #1a1a1a; padding: 16px 48px 14px; }
+  .wm-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #555; margin-bottom: 2px; }
+  .wm-subtitle { font-size: 8px; color: #444; margin-bottom: 12px; }
+  .wm-table { width: 100%; border-collapse: collapse; }
+  .wm-table th { font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #444; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #2a2a2a; }
+  .wm-table th:not(:first-child) { text-align: right; }
+  .wm-table td { font-size: 11px; padding: 8px 0; border-bottom: 1px solid #2a2a2a; }
+  .wm-table tr:last-child td { border-bottom: none; }
+  .wm-label { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #555; }
+  .wm-val { color: #d4cfc8; text-align: right; padding-left: 12px; }
+  .wm-chg { text-align: right; font-size: 10px; padding-left: 12px; }
+
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .mkt-tab-nav { padding: 0 12px; }
+    .mkt-panel { padding: 0 8px; flex-wrap: wrap; }
+    .mkt-panel .tick-item { flex: 1 1 45%; }
+    .editor-note { padding: 20px 20px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .currency { padding: 20px 20px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>WEDNESDAY, MARCH 25, 2026</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <span>NO. 21</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">DXY</span>
+        <span class="tick-val">99.48</span>
+        <span class="tick-up">▲ 0.1%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">10Y UST</span>
+        <span class="tick-val">4.33%</span>
+        <span class="tick-down">▼ 1.5%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">VIX</span>
+        <span class="tick-val">25.10</span>
+        <span class="tick-down">▼ 6.9%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">MSCI EM</span>
+        <span class="tick-val">$57.72</span>
+        <span class="tick-up">▲ 2.1%</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="mkt-strip">
+    <div class="mkt-tab-nav"><button class="mkt-tab-btn" data-group="eq" onclick="setMktTab('eq')">Global Equities</button><button class="mkt-tab-btn" data-group="co" onclick="setMktTab('co')">Commodities</button><button class="mkt-tab-btn" data-group="cr" onclick="setMktTab('cr')">Crypto</button></div>
+    <div class="mkt-panel" id="mkt-eq">
+        <div class="tick-item">
+          <span class="tick-label">S&P 500</span>
+          <span class="tick-val">6,615</span>
+          <span class="tick-up">▲ 0.5%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Nasdaq</span>
+          <span class="tick-val">22,056</span>
+          <span class="tick-up">▲ 0.5%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Euro Stoxx</span>
+          <span class="tick-val">5,660</span>
+          <span class="tick-up">▲ 1.4%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Nikkei</span>
+          <span class="tick-val">53,750</span>
+          <span class="tick-up">▲ 2.9%</span>
+        </div>
+    </div>
+    <div class="mkt-panel" id="mkt-co">
+        <div class="tick-item">
+          <span class="tick-label">Brent</span>
+          <span class="tick-val">$96</span>
+          <span class="tick-down">▼ 7.8%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Gold</span>
+          <span class="tick-val">$4,562</span>
+          <span class="tick-up">▲ 3.7%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Copper</span>
+          <span class="tick-val">$5.56</span>
+          <span class="tick-up">▲ 2.5%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Wheat</span>
+          <span class="tick-val">$5.90</span>
+          <span class="tick-up">▲ 0.0%</span>
+        </div>
+    </div>
+    <div class="mkt-panel" id="mkt-cr">
+        <div class="tick-item">
+          <span class="tick-label">Bitcoin</span>
+          <span class="tick-val">$71,306</span>
+          <span class="tick-up">▲ 1.1%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Ethereum</span>
+          <span class="tick-val">$2,178</span>
+          <span class="tick-up">▲ 1.0%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Solana</span>
+          <span class="tick-val">$92.13</span>
+          <span class="tick-up">▲ 1.4%</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="editor-note">
+    <div class="lang-es"><p>Estimados humanos, el mundo amaneció hoy con Filipinas declarando emergencia energética nacional mientras el petróleo Brent vuelve a superar los 100 dólares — consecuencias directas del bloqueo de Ormuz que nadie quiso tomarse en serio hasta que ya era tarde. Mientras tanto, México lidia con una inflación que se aceleró a 4.63% y un Banxico que enfrenta su reunión de tasas más incómoda en años, todo ello sazonado con la perspectiva de una 'sorpresa de octubre' trumpiana que los analistas de seguridad ya no descartan.</p></div>
+    <div class="lang-en"><p>Estimados humanos, the world woke up today with the Philippines declaring a national energy emergency as Brent crude climbs back above $100 — direct consequences of the Hormuz blockade that nobody wanted to take seriously until it was already too late. Meanwhile, Mexico is grappling with inflation that accelerated to 4.63% and a Banxico facing its most uncomfortable rate decision in years, all seasoned with the prospect of a Trumpian 'October surprise' that security analysts no longer dismiss.</p></div>
+    <div class="editor-sig">&mdash; Stan Dard Deviation, Global Head of Conditional Optimism</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label"
+            data-es="Sentimiento del D&#237;a"
+            data-en="Market Sentiment">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading risk-off lang-es">Aversión al Riesgo</span>
+      <span class="sentiment-reading risk-off lang-en">Risk-Off</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker risk-off" style="left:22%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
+      <span data-es="Neutral"          data-en="Neutral">Neutral</span>
+      <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
+    </div>
+    <div class="sentiment-context lang-es">La combinación de disrupciones energéticas por la guerra en Irán, inflación mexicana por encima de expectativas y tensiones geopolíticas regionales mantienen a los mercados firmemente en modo defensivo.</div>
+    <div class="sentiment-context lang-en">The combination of energy disruptions from the Iran war, above-expectations Mexican inflation, and regional geopolitical tensions keep markets firmly in defensive mode.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Filipinas declara emergencia energética nacional mientras el Brent supera los 100 dólares por bloqueo de Ormuz</div>
+    <div class="story-body">El presidente Ferdinand Marcos Jr. firmó una orden ejecutiva declarando emergencia energética nacional, citando el 'peligro inminente' sobre el suministro del país derivado del bloqueo del estrecho de Ormuz — por donde circula el 20% del petróleo y gas natural licuado mundiales en tiempos de paz. El barril de crudo Brent para mayo volvió a superar los 100 dólares este martes, mientras Irán advierte que se prepara para cerrar completamente el estrecho y atacar infraestructura, aunque dejó pasar a un buque tailandés en señal de selectividad diplomática. Trump, por su parte, pospuso cinco días los ataques a infraestructura energética iraní tras un ultimátum que inicialmente tenía 48 horas de vigencia — la clase de escalada/desescalada que mantiene a los traders pegados a sus pantallas.</div>
+    <a href="https://www.elfinanciero.com.mx/mundo/2026/03/24/filipinas-declara-estado-de-emergencia-por-guerra-en-iran-hay-bajo-suministro-energetico/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Philippines declares national energy emergency as Brent crude tops $100 on Hormuz blockade</div>
+    <div class="story-body">President Ferdinand Marcos Jr. signed an executive order declaring a national energy emergency, citing 'imminent danger' to the country's energy supply stemming from the blockade of the Strait of Hormuz — through which 20% of the world's oil and liquefied natural gas flows in peacetime. May delivery Brent crude topped $100 a barrel again on Tuesday, while Iran warned it is preparing to fully close the strait and strike infrastructure, though it allowed a Thai-flagged vessel to pass as a gesture of diplomatic selectivity. Trump, for his part, postponed strikes on Iranian energy infrastructure by five days after an ultimatum that initially had a 48-hour window — the kind of escalate/de-escalate cycle that keeps traders glued to their screens.</div>
+    <a href="https://www.elfinanciero.com.mx/mundo/2026/03/24/filipinas-declara-estado-de-emergencia-por-guerra-en-iran-hay-bajo-suministro-energetico/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Inflación mexicana se dispara a 4.63% en primera quincena de marzo, muy por encima de lo estimado</div>
+    <div class="story-body">La inflación anual de México aceleró a 4.63% en las primeras dos semanas de marzo, superando ampliamente la estimación mediana de 4.37% de los analistas de Bloomberg y el 4.13% registrado a fines de febrero. El dato llega días antes de la reunión de Banxico del 26 de marzo, donde el mercado está literalmente dividido: 15 de 29 analistas esperan que la tasa se mantenga en 7%, y 14 proyectan un recorte de 25 puntos básicos — una rareza que ilustra cuánta incertidumbre hay. La junta ya tuvo que posponer su proyección de convergencia al objetivo de 3% hasta el segundo trimestre de 2027, desde el tercer trimestre de 2026.</div>
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/24/inflacion-en-mexico-se-acelera-a-463-en-primera-quincena-de-marzo/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Mexico's inflation surges to 4.63% in early March, well above forecasts</div>
+    <div class="story-body">Mexico's annual inflation accelerated to 4.63% in the first two weeks of March, significantly exceeding Bloomberg's analyst median estimate of 4.37% and the 4.13% recorded at end-February. The data arrives days before Banxico's March 26 rate meeting, where the market is literally split: 15 of 29 analysts expect the rate to hold at 7%, and 14 project a 25 basis-point cut — a rare tie that illustrates just how much uncertainty exists. The board has already had to push back its forecast for inflation to converge on the 3% target to the second quarter of 2027, from the third quarter of 2026.</div>
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/24/inflacion-en-mexico-se-acelera-a-463-en-primera-quincena-de-marzo/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">Comercio</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Acuerdo UE-Mercosur entra en vigor parcialmente el 1 de mayo: el 76% de exportaciones del bloque sudamericano eliminará aranceles de inmediato</div>
+    <div class="story-body">Después de 25 años de negociaciones, la Comisión Europea decidió aplicar el acuerdo 'de forma provisional' desde el 1 de mayo, sorteando la evaluación de legalidad que el Parlamento Europeo había solicitado en enero y que podría haberse extendido más de un año. Para Argentina, el acuerdo proyecta un crecimiento de alrededor del 15% en exportaciones agroindustriales y cerca del 30% en exportaciones industriales, con foco en autopartes y petroquímicos, además de cuotas de carne bovina, maíz, arroz y etanol catalogadas como las más grandes otorgadas por la UE. El Mercosur, en cambio, solo desgravará de forma inmediata el 15% del comercio proveniente de Europa — una asimetría que refleja quién negoció con más apalancamiento.</div>
+    <a href="https://www.lanacion.com.ar/economia/a-partir-de-mayo-habra-menos-aranceles-por-la-puesta-en-marcha-parcial-del-acuerdo-ue-mercosur-nid24032026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">EU-Mercosur deal enters partial force May 1: 76% of South American bloc's exports to face immediate tariff elimination</div>
+    <div class="story-body">After 25 years of negotiations, the European Commission decided to apply the agreement 'provisionally' from May 1, bypassing the legality review the European Parliament had requested in January — a process that could have taken more than a year. For Argentina, the deal projects growth of around 15% in agro-industrial exports and roughly 30% in industrial exports, with a focus on auto parts and petrochemicals, plus beef, corn, rice, and ethanol quotas described as the largest ever granted by the EU. Mercosur, however, will only immediately liberalize 15% of trade from Europe — an asymmetry that reflects who negotiated with more leverage.</div>
+    <a href="https://www.lanacion.com.ar/economia/a-partir-de-mayo-habra-menos-aranceles-por-la-puesta-en-marcha-parcial-del-acuerdo-ue-mercosur-nid24032026/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">México</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">México: análisis prospectivo advierte riesgo de acción militar unilateral de EE.UU. en el otoño de 2026</div>
+    <div class="story-body">Un análisis de riesgo publicado en El Financiero plantea que el tramo agosto-octubre de 2026 podría representar una 'zona de presión extraordinaria' en la relación México-EE.UU., una vez concluida la revisión del T-MEC y con Trump necesitado de un golpe de efecto antes de las elecciones intermedias de noviembre. Los escenarios van desde una acción quirúrgica unilateral en territorio mexicano contra objetivos del crimen organizado — políticamente rentable, operativamente limitada — hasta una cooperación con subordinación encubierta que expanda silenciosamente la autonomía operativa estadounidense. El análisis utiliza metodologías de prospectiva como el Ábaco de Régnier y la matriz MACTOR para estimar probabilidades, lo que lo distingue del alarmismo habitual y lo acerca a un ejercicio de inteligencia aplicada.</div>
+    <a href="https://www.elfinanciero.com.mx/opinion/luis-castro-obregon/2026/03/24/trump-y-mexico-sorpresa-en-octubre/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Mexico risk analysis warns of potential unilateral U.S. military action in autumn 2026</div>
+    <div class="story-body">A risk analysis published in El Financiero argues that the August-October 2026 window could represent an 'extraordinary pressure zone' in the Mexico-U.S. relationship, once the USMCA review concludes and with Trump needing a high-impact move ahead of November's midterm elections. Scenarios range from a unilateral precision strike on Mexican soil against organized crime targets — politically lucrative, operationally limited — to covert cooperation that quietly expands U.S. operational autonomy in Mexican territory. The analysis employs foresight methodologies such as the Régnier Abacus and the MACTOR matrix to estimate probabilities, which distinguishes it from routine alarmism and places it closer to applied intelligence work.</div>
+    <a href="https://www.elfinanciero.com.mx/opinion/luis-castro-obregon/2026/03/24/trump-y-mexico-sorpresa-en-octubre/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">México</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Violencia post-'El Mencho' le costó a Jalisco 683 millones de pesos en turismo en solo siete días</div>
+    <div class="story-body">El abatimiento del líder del CJNG el 22 de febrero desencadenó una crisis turística en Puerto Vallarta y Guadalajara que, en los últimos días de febrero, generó una pérdida de 683 millones de pesos respecto al mismo período del año anterior — 595 millones solo en Puerto Vallarta. En plena temporada alta, cuando canadienses y estadounidenses copa los hoteles del Pacífico mexicano, la afluencia de turistas nacionales cayó 18.4% y se registraron 14,684 visitantes internacionales menos; en total, más de 61,000 viajeros dejaron de llegar al puerto en una semana. El dato es relevante porque el 90% de la economía de Puerto Vallarta depende del turismo, lo que convierte cada episodio de violencia en un shock macroeconómico local de magnitud inmediata.</div>
+    <a href="https://www.elfinanciero.com.mx/empresas/2026/03/25/violencia-en-jalisco-deja-perdida-de-683-mdp-al-turismo/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Post-'El Mencho' violence cost Jalisco 683 million pesos in tourism revenue in just seven days</div>
+    <div class="story-body">The elimination of the CJNG leader on February 22 triggered a tourism crisis in Puerto Vallarta and Guadalajara that, in the final days of February, generated losses of 683 million pesos compared to the same period a year earlier — 595 million in Puerto Vallarta alone. In the middle of peak season, when Canadians and Americans fill Pacific coast hotels, domestic tourist arrivals fell 18.4% and 14,684 fewer international visitors were recorded; in total, more than 61,000 travelers failed to arrive at the port in a single week. The figure matters because 90% of Puerto Vallarta's economy depends on tourism, making every episode of violence an immediate local macroeconomic shock.</div>
+    <a href="https://www.elfinanciero.com.mx/empresas/2026/03/25/violencia-en-jalisco-deja-perdida-de-683-mdp-al-turismo/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">Política</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">La Justicia argentina prepara nuevas citaciones en el caso $LIBRA tras peritar comunicaciones de Milei con el lobbista Novelli</div>
+    <div class="story-body">Un peritaje informático del Ministerio Público Fiscal reveló que el presidente Javier Milei habló al menos cinco veces con el lobbista Mauricio Novelli en los minutos previos al lanzamiento de la criptomoneda $LIBRA, y en el dispositivo de Novelli se encontró un borrador de supuesto acuerdo confidencial entre Milei y el creador del token Hayden Davis, más un presunto acuerdo de pagos por 5 millones de dólares. El fiscal Eduardo Taiano trabaja ahora en una lista de nuevos testigos — personas que aparecen en los intercambios telefónicos de Novelli o vinculadas al Tech Forum donde Milei se interesó en el proyecto. Milei y su hermana Karina están bajo investigación, aunque todavía no imputados formalmente; el umbral para llegar a una indagatoria depende de acreditar los titulares de las billeteras virtuales por donde circularon fondos previo al lanzamiento.</div>
+    <a href="https://www.lanacion.com.ar/politica/tras-conocerse-las-comunicaciones-con-milei-la-justicia-prepara-citaciones-para-nuevos-testigos-del-nid22032026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Argentine judiciary prepares new witness summons in $LIBRA case after forensic analysis of Milei's communications with lobbyist Novelli</div>
+    <div class="story-body">A forensic audit by the Ministerio Público Fiscal revealed that President Javier Milei spoke with lobbyist Mauricio Novelli at least five times by phone in the minutes before the $LIBRA cryptocurrency launch, and Novelli's device contained a draft of an alleged confidential agreement between Milei and token creator Hayden Davis, plus a purported $5 million payment agreement. Prosecutor Eduardo Taiano is now compiling a list of new witnesses — people appearing in Novelli's phone exchanges or connected to the Tech Forum event where Milei first showed interest in the project. Milei and his sister Karina are under investigation but not yet formally charged; the threshold for reaching a formal indictment depends on identifying the owners of the crypto wallets through which funds moved prior to the launch.</div>
+    <a href="https://www.lanacion.com.ar/politica/tras-conocerse-las-comunicaciones-con-milei-la-justicia-prepara-citaciones-para-nuevos-testigos-del-nid22032026/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="currency-header">
+      <div class="section-title"
+           data-es="Tipo de Cambio"
+           data-en="Exchange Rates">Tipo de Cambio</div>
+      <div class="currency-toggle"><button class="currency-btn active" data-base="MXN" onclick="setCurrencyBase('MXN')">MXN</button><button class="currency-btn " data-base="USD" onclick="setCurrencyBase('USD')">USD</button><button class="currency-btn " data-base="BRL" onclick="setCurrencyBase('BRL')">BRL</button><button class="currency-btn " data-base="EUR" onclick="setCurrencyBase('EUR')">EUR</button><button class="currency-btn " data-base="CNY" onclick="setCurrencyBase('CNY')">CNY</button></div>
+    </div>
+    
+    <div class="currency-view" data-base="MXN" style="">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">MXN / USD</td>
+        <td>0.05638</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.26%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.59%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / BRL</td>
+        <td>0.2939</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.11%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.33%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / EUR</td>
+        <td>0.04865</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.43%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.47%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / CNY</td>
+        <td>0.3890</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.56%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.01%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / CAD</td>
+        <td>0.0778</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.73%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.08%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / GBP</td>
+        <td>0.04212</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.56%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.30%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / JPY</td>
+        <td>8.97</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.62%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.12%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="USD" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.7380</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.26%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.59%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / BRL</td>
+        <td>5.2138</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.37%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.92%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / EUR</td>
+        <td>0.86304</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.17%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.06%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / CNY</td>
+        <td>6.9009</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.30%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.41%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / CAD</td>
+        <td>1.3796</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.48%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.49%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / GBP</td>
+        <td>0.74716</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.30%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.89%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / JPY</td>
+        <td>159.04</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.36%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.47%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="BRL" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">BRL / MXN</td>
+        <td>3.4021</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.11%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.33%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / USD</td>
+        <td>0.19180</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.37%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.93%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / EUR</td>
+        <td>0.16553</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.54%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.14%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / CNY</td>
+        <td>1.3236</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.67%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.34%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / CAD</td>
+        <td>0.2646</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.84%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.42%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / GBP</td>
+        <td>0.14330</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.67%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.03%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / JPY</td>
+        <td>30.50</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.72%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.45%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="EUR" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.5530</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.43%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.47%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / USD</td>
+        <td>1.15870</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.17%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.07%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / BRL</td>
+        <td>6.0412</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.54%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.14%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / CNY</td>
+        <td>7.9961</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.13%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.48%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / CAD</td>
+        <td>1.5985</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.30%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.56%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / GBP</td>
+        <td>0.86574</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.13%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.17%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / JPY</td>
+        <td>184.29</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.18%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.59%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="CNY" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>2.5704</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.56%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.00%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / USD</td>
+        <td>0.14491</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.30%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.41%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / BRL</td>
+        <td>0.7555</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.67%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.32%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / EUR</td>
+        <td>0.12506</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.13%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.46%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / CAD</td>
+        <td>0.1999</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.17%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.07%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / GBP</td>
+        <td>0.10827</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.00%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.30%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / JPY</td>
+        <td>23.05</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.05%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.88%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="calendar">
+  <div class="section-title"
+       data-es="Pr&oacute;ximas Fechas Clave"
+       data-en="Key Upcoming Dates">Pr&oacute;ximas Fechas Clave</div>
+  
+      <div class="cal-row">
+        <span class="cal-date">26 MAR</span>
+        <span class="cal-badge" style="color:#4a9e6a; border-color:#4a9e6a;">BANXICO</span>
+        <span class="cal-label">Banxico — Decisión de tasa</span>
+        <span class="cal-days">Mañana</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date">09 ABR</span>
+        <span class="cal-badge" style="color:#c8943a; border-color:#c8943a;">INEGI</span>
+        <span class="cal-label">INEGI — CPI México (feb)</span>
+        <span class="cal-days">15d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date">10 ABR</span>
+        <span class="cal-badge" style="color:#7a9aaa; border-color:#7a9aaa;">BLS</span>
+        <span class="cal-label">BLS — CPI EE.UU. (mar)</span>
+        <span class="cal-days">16d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date">29 ABR</span>
+        <span class="cal-badge" style="color:#5a8abf; border-color:#5a8abf;">FED</span>
+        <span class="cal-label">FOMC — Decisión Fed</span>
+        <span class="cal-days">35d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date">12 MAY</span>
+        <span class="cal-badge" style="color:#7a9aaa; border-color:#7a9aaa;">BLS</span>
+        <span class="cal-label">BLS — CPI EE.UU. (abr)</span>
+        <span class="cal-days">48d</span>
+      </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="lang-es">
+      <div class="quote-text">Los mercados pueden permanecer irracionales más tiempo del que tú puedes permanecer solvente.</div>
+      <div class="quote-attr">John Maynard Keynes, atribuido, circa 1930s</div>
+    </div>
+    <div class="lang-en">
+      <div class="quote-text">Los mercados pueden permanecer irracionales más tiempo del que tú puedes permanecer solvente.</div>
+      <div class="quote-attr">John Maynard Keynes, atribuido, circa 1930s</div>
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by lang-es">por Stan Dard Deviation, Global Head of Conditional Optimism</span>
+    <span class="footer-by lang-en">by Stan Dard Deviation, Global Head of Conditional Optimism</span>
+  </div>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // swap static labels
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = lang === 'es' ? el.dataset.es : el.dataset.en;
+    });
+    localStorage.setItem('nlLang', lang);
+  }
+  (function(){
+    var saved = localStorage.getItem('nlLang') || 'es';
+    setLang(saved);
+  })();
+
+  function setCurrencyBase(base) {
+    document.querySelectorAll('.currency-view').forEach(el => {
+      el.style.display = el.dataset.base === base ? '' : 'none';
+    });
+    document.querySelectorAll('.currency-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.base === base);
+    });
+    localStorage.setItem('nlCurrencyBase', base);
+  }
+  (function(){
+    var savedBase = localStorage.getItem('nlCurrencyBase') || 'MXN';
+    setCurrencyBase(savedBase);
+  })();
+
+  function setMktTab(group) {
+    document.querySelectorAll('.mkt-panel').forEach(function(p) { p.classList.remove('visible'); });
+    var panel = document.getElementById('mkt-' + group);
+    if (panel) panel.classList.add('visible');
+    document.querySelectorAll('.mkt-tab-btn').forEach(function(b) {
+      b.classList.toggle('active', b.dataset.group === group);
+    });
+  }
+  (function(){ setMktTab('eq'); })();
+</script>
+
+</body>
+</html>

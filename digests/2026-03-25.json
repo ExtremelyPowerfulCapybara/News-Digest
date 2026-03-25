@@ -1,0 +1,598 @@
+{
+  "date": "2026-03-25",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el mundo amaneció hoy con Filipinas declarando emergencia energética nacional mientras el petróleo Brent vuelve a superar los 100 dólares — consecuencias directas del bloqueo de Ormuz que nadie quiso tomarse en serio hasta que ya era tarde. Mientras tanto, México lidia con una inflación que se aceleró a 4.63% y un Banxico que enfrenta su reunión de tasas más incómoda en años, todo ello sazonado con la perspectiva de una 'sorpresa de octubre' trumpiana que los analistas de seguridad ya no descartan.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "La combinación de disrupciones energéticas por la guerra en Irán, inflación mexicana por encima de expectativas y tensiones geopolíticas regionales mantienen a los mercados firmemente en modo defensivo.",
+        "context_en": "The combination of energy disruptions from the Iran war, above-expectations Mexican inflation, and regional geopolitical tensions keep markets firmly in defensive mode."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Filipinas declara emergencia energética nacional mientras el Brent supera los 100 dólares por bloqueo de Ormuz",
+          "body": "El presidente Ferdinand Marcos Jr. firmó una orden ejecutiva declarando emergencia energética nacional, citando el 'peligro inminente' sobre el suministro del país derivado del bloqueo del estrecho de Ormuz — por donde circula el 20% del petróleo y gas natural licuado mundiales en tiempos de paz. El barril de crudo Brent para mayo volvió a superar los 100 dólares este martes, mientras Irán advierte que se prepara para cerrar completamente el estrecho y atacar infraestructura, aunque dejó pasar a un buque tailandés en señal de selectividad diplomática. Trump, por su parte, pospuso cinco días los ataques a infraestructura energética iraní tras un ultimátum que inicialmente tenía 48 horas de vigencia — la clase de escalada/desescalada que mantiene a los traders pegados a sus pantallas.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/24/filipinas-declara-estado-de-emergencia-por-guerra-en-iran-hay-bajo-suministro-energetico/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Inflación mexicana se dispara a 4.63% en primera quincena de marzo, muy por encima de lo estimado",
+          "body": "La inflación anual de México aceleró a 4.63% en las primeras dos semanas de marzo, superando ampliamente la estimación mediana de 4.37% de los analistas de Bloomberg y el 4.13% registrado a fines de febrero. El dato llega días antes de la reunión de Banxico del 26 de marzo, donde el mercado está literalmente dividido: 15 de 29 analistas esperan que la tasa se mantenga en 7%, y 14 proyectan un recorte de 25 puntos básicos — una rareza que ilustra cuánta incertidumbre hay. La junta ya tuvo que posponer su proyección de convergencia al objetivo de 3% hasta el segundo trimestre de 2027, desde el tercer trimestre de 2026.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/24/inflacion-en-mexico-se-acelera-a-463-en-primera-quincena-de-marzo/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Acuerdo UE-Mercosur entra en vigor parcialmente el 1 de mayo: el 76% de exportaciones del bloque sudamericano eliminará aranceles de inmediato",
+          "body": "Después de 25 años de negociaciones, la Comisión Europea decidió aplicar el acuerdo 'de forma provisional' desde el 1 de mayo, sorteando la evaluación de legalidad que el Parlamento Europeo había solicitado en enero y que podría haberse extendido más de un año. Para Argentina, el acuerdo proyecta un crecimiento de alrededor del 15% en exportaciones agroindustriales y cerca del 30% en exportaciones industriales, con foco en autopartes y petroquímicos, además de cuotas de carne bovina, maíz, arroz y etanol catalogadas como las más grandes otorgadas por la UE. El Mercosur, en cambio, solo desgravará de forma inmediata el 15% del comercio proveniente de Europa — una asimetría que refleja quién negoció con más apalancamiento.",
+          "url": "https://www.lanacion.com.ar/economia/a-partir-de-mayo-habra-menos-aranceles-por-la-puesta-en-marcha-parcial-del-acuerdo-ue-mercosur-nid24032026/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México: análisis prospectivo advierte riesgo de acción militar unilateral de EE.UU. en el otoño de 2026",
+          "body": "Un análisis de riesgo publicado en El Financiero plantea que el tramo agosto-octubre de 2026 podría representar una 'zona de presión extraordinaria' en la relación México-EE.UU., una vez concluida la revisión del T-MEC y con Trump necesitado de un golpe de efecto antes de las elecciones intermedias de noviembre. Los escenarios van desde una acción quirúrgica unilateral en territorio mexicano contra objetivos del crimen organizado — políticamente rentable, operativamente limitada — hasta una cooperación con subordinación encubierta que expanda silenciosamente la autonomía operativa estadounidense. El análisis utiliza metodologías de prospectiva como el Ábaco de Régnier y la matriz MACTOR para estimar probabilidades, lo que lo distingue del alarmismo habitual y lo acerca a un ejercicio de inteligencia aplicada.",
+          "url": "https://www.elfinanciero.com.mx/opinion/luis-castro-obregon/2026/03/24/trump-y-mexico-sorpresa-en-octubre/",
+          "tag": "México"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Violencia post-'El Mencho' le costó a Jalisco 683 millones de pesos en turismo en solo siete días",
+          "body": "El abatimiento del líder del CJNG el 22 de febrero desencadenó una crisis turística en Puerto Vallarta y Guadalajara que, en los últimos días de febrero, generó una pérdida de 683 millones de pesos respecto al mismo período del año anterior — 595 millones solo en Puerto Vallarta. En plena temporada alta, cuando canadienses y estadounidenses copa los hoteles del Pacífico mexicano, la afluencia de turistas nacionales cayó 18.4% y se registraron 14,684 visitantes internacionales menos; en total, más de 61,000 viajeros dejaron de llegar al puerto en una semana. El dato es relevante porque el 90% de la economía de Puerto Vallarta depende del turismo, lo que convierte cada episodio de violencia en un shock macroeconómico local de magnitud inmediata.",
+          "url": "https://www.elfinanciero.com.mx/empresas/2026/03/25/violencia-en-jalisco-deja-perdida-de-683-mdp-al-turismo/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "La Justicia argentina prepara nuevas citaciones en el caso $LIBRA tras peritar comunicaciones de Milei con el lobbista Novelli",
+          "body": "Un peritaje informático del Ministerio Público Fiscal reveló que el presidente Javier Milei habló al menos cinco veces con el lobbista Mauricio Novelli en los minutos previos al lanzamiento de la criptomoneda $LIBRA, y en el dispositivo de Novelli se encontró un borrador de supuesto acuerdo confidencial entre Milei y el creador del token Hayden Davis, más un presunto acuerdo de pagos por 5 millones de dólares. El fiscal Eduardo Taiano trabaja ahora en una lista de nuevos testigos — personas que aparecen en los intercambios telefónicos de Novelli o vinculadas al Tech Forum donde Milei se interesó en el proyecto. Milei y su hermana Karina están bajo investigación, aunque todavía no imputados formalmente; el umbral para llegar a una indagatoria depende de acreditar los titulares de las billeteras virtuales por donde circularon fondos previo al lanzamiento.",
+          "url": "https://www.lanacion.com.ar/politica/tras-conocerse-las-comunicaciones-con-milei-la-justicia-prepara-citaciones-para-nuevos-testigos-del-nid22032026/",
+          "tag": "Política"
+        }
+      ],
+      "quote": {
+        "text": "Los mercados pueden permanecer irracionales más tiempo del que tú puedes permanecer solvente.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the world woke up today with the Philippines declaring a national energy emergency as Brent crude climbs back above $100 — direct consequences of the Hormuz blockade that nobody wanted to take seriously until it was already too late. Meanwhile, Mexico is grappling with inflation that accelerated to 4.63% and a Banxico facing its most uncomfortable rate decision in years, all seasoned with the prospect of a Trumpian 'October surprise' that security analysts no longer dismiss.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "La combinación de disrupciones energéticas por la guerra en Irán, inflación mexicana por encima de expectativas y tensiones geopolíticas regionales mantienen a los mercados firmemente en modo defensivo.",
+        "context_en": "The combination of energy disruptions from the Iran war, above-expectations Mexican inflation, and regional geopolitical tensions keep markets firmly in defensive mode."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Philippines declares national energy emergency as Brent crude tops $100 on Hormuz blockade",
+          "body": "President Ferdinand Marcos Jr. signed an executive order declaring a national energy emergency, citing 'imminent danger' to the country's energy supply stemming from the blockade of the Strait of Hormuz — through which 20% of the world's oil and liquefied natural gas flows in peacetime. May delivery Brent crude topped $100 a barrel again on Tuesday, while Iran warned it is preparing to fully close the strait and strike infrastructure, though it allowed a Thai-flagged vessel to pass as a gesture of diplomatic selectivity. Trump, for his part, postponed strikes on Iranian energy infrastructure by five days after an ultimatum that initially had a 48-hour window — the kind of escalate/de-escalate cycle that keeps traders glued to their screens.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/24/filipinas-declara-estado-de-emergencia-por-guerra-en-iran-hay-bajo-suministro-energetico/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico's inflation surges to 4.63% in early March, well above forecasts",
+          "body": "Mexico's annual inflation accelerated to 4.63% in the first two weeks of March, significantly exceeding Bloomberg's analyst median estimate of 4.37% and the 4.13% recorded at end-February. The data arrives days before Banxico's March 26 rate meeting, where the market is literally split: 15 of 29 analysts expect the rate to hold at 7%, and 14 project a 25 basis-point cut — a rare tie that illustrates just how much uncertainty exists. The board has already had to push back its forecast for inflation to converge on the 3% target to the second quarter of 2027, from the third quarter of 2026.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/24/inflacion-en-mexico-se-acelera-a-463-en-primera-quincena-de-marzo/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "EU-Mercosur deal enters partial force May 1: 76% of South American bloc's exports to face immediate tariff elimination",
+          "body": "After 25 years of negotiations, the European Commission decided to apply the agreement 'provisionally' from May 1, bypassing the legality review the European Parliament had requested in January — a process that could have taken more than a year. For Argentina, the deal projects growth of around 15% in agro-industrial exports and roughly 30% in industrial exports, with a focus on auto parts and petrochemicals, plus beef, corn, rice, and ethanol quotas described as the largest ever granted by the EU. Mercosur, however, will only immediately liberalize 15% of trade from Europe — an asymmetry that reflects who negotiated with more leverage.",
+          "url": "https://www.lanacion.com.ar/economia/a-partir-de-mayo-habra-menos-aranceles-por-la-puesta-en-marcha-parcial-del-acuerdo-ue-mercosur-nid24032026/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico risk analysis warns of potential unilateral U.S. military action in autumn 2026",
+          "body": "A risk analysis published in El Financiero argues that the August-October 2026 window could represent an 'extraordinary pressure zone' in the Mexico-U.S. relationship, once the USMCA review concludes and with Trump needing a high-impact move ahead of November's midterm elections. Scenarios range from a unilateral precision strike on Mexican soil against organized crime targets — politically lucrative, operationally limited — to covert cooperation that quietly expands U.S. operational autonomy in Mexican territory. The analysis employs foresight methodologies such as the Régnier Abacus and the MACTOR matrix to estimate probabilities, which distinguishes it from routine alarmism and places it closer to applied intelligence work.",
+          "url": "https://www.elfinanciero.com.mx/opinion/luis-castro-obregon/2026/03/24/trump-y-mexico-sorpresa-en-octubre/",
+          "tag": "México"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Post-'El Mencho' violence cost Jalisco 683 million pesos in tourism revenue in just seven days",
+          "body": "The elimination of the CJNG leader on February 22 triggered a tourism crisis in Puerto Vallarta and Guadalajara that, in the final days of February, generated losses of 683 million pesos compared to the same period a year earlier — 595 million in Puerto Vallarta alone. In the middle of peak season, when Canadians and Americans fill Pacific coast hotels, domestic tourist arrivals fell 18.4% and 14,684 fewer international visitors were recorded; in total, more than 61,000 travelers failed to arrive at the port in a single week. The figure matters because 90% of Puerto Vallarta's economy depends on tourism, making every episode of violence an immediate local macroeconomic shock.",
+          "url": "https://www.elfinanciero.com.mx/empresas/2026/03/25/violencia-en-jalisco-deja-perdida-de-683-mdp-al-turismo/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentine judiciary prepares new witness summons in $LIBRA case after forensic analysis of Milei's communications with lobbyist Novelli",
+          "body": "A forensic audit by the Ministerio Público Fiscal revealed that President Javier Milei spoke with lobbyist Mauricio Novelli at least five times by phone in the minutes before the $LIBRA cryptocurrency launch, and Novelli's device contained a draft of an alleged confidential agreement between Milei and token creator Hayden Davis, plus a purported $5 million payment agreement. Prosecutor Eduardo Taiano is now compiling a list of new witnesses — people appearing in Novelli's phone exchanges or connected to the Tech Forum event where Milei first showed interest in the project. Milei and his sister Karina are under investigation but not yet formally charged; the threshold for reaching a formal indictment depends on identifying the owners of the crypto wallets through which funds moved prior to the launch.",
+          "url": "https://www.lanacion.com.ar/politica/tras-conocerse-las-comunicaciones-con-milei-la-justicia-prepara-citaciones-para-nuevos-testigos-del-nid22032026/",
+          "tag": "Política"
+        }
+      ],
+      "quote": {
+        "text": "Los mercados pueden permanecer irracionales más tiempo del que tú puedes permanecer solvente.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "99.48",
+        "change": "▲ 0.1%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.33%",
+        "change": "▼ 1.5%",
+        "direction": "down",
+        "chg_1w": "▲ 1.1%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "25.10",
+        "change": "▼ 6.9%",
+        "direction": "down",
+        "chg_1w": "▲ 4.3%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$57.72",
+        "change": "▲ 2.1%",
+        "direction": "up",
+        "chg_1w": "▲ 0.2%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05638",
+            "chg_1d": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.59%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2939",
+            "chg_1d": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.33%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04865",
+            "chg_1d": {
+              "text": "▲ 0.43%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.47%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3890",
+            "chg_1d": {
+              "text": "▲ 0.56%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.01%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0778",
+            "chg_1d": {
+              "text": "▲ 0.73%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.08%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04212",
+            "chg_1d": {
+              "text": "▲ 0.56%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.30%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.97",
+            "chg_1d": {
+              "text": "▲ 0.62%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.12%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.7380",
+            "chg_1d": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.59%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.2138",
+            "chg_1d": {
+              "text": "▼ 0.37%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.92%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.86304",
+            "chg_1d": {
+              "text": "▲ 0.17%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.06%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.9009",
+            "chg_1d": {
+              "text": "▲ 0.30%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3796",
+            "chg_1d": {
+              "text": "▲ 0.48%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.49%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.74716",
+            "chg_1d": {
+              "text": "▲ 0.30%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.89%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "159.04",
+            "chg_1d": {
+              "text": "▲ 0.36%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.47%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.4021",
+            "chg_1d": {
+              "text": "▲ 0.11%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.33%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19180",
+            "chg_1d": {
+              "text": "▲ 0.37%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.93%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16553",
+            "chg_1d": {
+              "text": "▲ 0.54%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.14%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3236",
+            "chg_1d": {
+              "text": "▲ 0.67%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.34%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2646",
+            "chg_1d": {
+              "text": "▲ 0.84%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.42%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14330",
+            "chg_1d": {
+              "text": "▲ 0.67%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.50",
+            "chg_1d": {
+              "text": "▲ 0.72%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.45%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.5530",
+            "chg_1d": {
+              "text": "▼ 0.43%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.47%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.15870",
+            "chg_1d": {
+              "text": "▼ 0.17%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.07%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "6.0412",
+            "chg_1d": {
+              "text": "▼ 0.54%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.14%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.9961",
+            "chg_1d": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.48%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.5985",
+            "chg_1d": {
+              "text": "▲ 0.30%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.56%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.86574",
+            "chg_1d": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.17%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "184.29",
+            "chg_1d": {
+              "text": "▲ 0.18%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.59%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5704",
+            "chg_1d": {
+              "text": "▼ 0.56%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.00%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14491",
+            "chg_1d": {
+              "text": "▼ 0.30%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.41%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7555",
+            "chg_1d": {
+              "text": "▼ 0.67%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.32%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12506",
+            "chg_1d": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.46%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.1999",
+            "chg_1d": {
+              "text": "▲ 0.17%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.10827",
+            "chg_1d": {
+              "text": "▼ 0.00%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.30%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.05",
+            "chg_1d": {
+              "text": "▲ 0.05%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.88%",
+              "cls": "chg-down"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
