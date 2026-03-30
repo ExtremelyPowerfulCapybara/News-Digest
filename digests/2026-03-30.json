@@ -1,0 +1,598 @@
+{
+  "date": "2026-03-30",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, llevamos un mes de guerra en Medio Oriente y el panorama es tan claro como el Estrecho de Ormuz: bloqueado. Trump lanzó lo que prometió sería un conflicto quirúrgico y rápido, y hoy negocia en secreto con un régimen que rechaza sus propuestas de 15 puntos y exige reparaciones de guerra — el Brent a 112 dólares resume la situación mejor que cualquier comunicado de prensa. Los mercados globales esperan, los bonos emergentes tiemblan, y el único que parece dormir bien es Netanyahu.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "El estancamiento estratégico en Medio Oriente, el Brent en máximos de cuatro años y la incertidumbre sobre la duración del conflicto mantienen a los mercados globales en modo defensivo.",
+        "context_en": "The strategic stalemate in the Middle East, Brent crude at four-year highs, and uncertainty over the conflict's duration are keeping global markets in defensive mode."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Trump atrapado en Irán: el Brent sube a 112 dólares y el Estrecho de Ormuz sigue bloqueado al mes de guerra",
+          "body": "A casi un mes de iniciada la ofensiva estadounidense contra Irán, no hubo rendición rápida ni reapertura del Estrecho de Ormuz — por donde fluye el 20% del petróleo mundial — y el Brent cerró el viernes en 112 dólares, su nivel más alto desde julio de 2022. Irán rechazó públicamente el plan de alto al fuego de 15 puntos enviado por Trump vía Pakistán, calificándolo de 'maximalista', mientras presentó su propia contrapropuesta que incluye reparaciones de guerra. Barclays estima que una disrupción prolongada podría retirar entre 13 y 17 millones de barriles diarios del mercado, y Rystad Energy advierte que cuando se agoten las reservas estratégicas — estimado para mediados de abril — habrá poco que los gobiernos puedan hacer para contener los precios.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/03/28/trump-esta-en-arenas-movedizas-en-iran/",
+          "tag": "Energía"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Guerra en Medio Oriente: bonos argentinos ceden 2,6% en el mes pero superan al índice emergente; BCRA libera encajes bancarios",
+          "body": "El precio promedio ponderado de la deuda argentina retrocede alrededor de 2,6% en el mes, aunque su desempeño relativo es mejor que el del EMB ajustado por el beta elevado de los bonos locales — el mercado convalida que los efectos positivos sobre la cuenta corriente pesan más que el deterioro financiero en el corto plazo. La estacionalidad de la cosecha gruesa promete compra de dólares en los próximos tres meses, lo que sostiene la posición. En paralelo, el BCRA no renovó una normativa clave sobre encajes bancarios, liberando 5 puntos porcentuales actualmente integrados en títulos públicos, una señal de que el equipo económico busca acelerar la compresión de tasas activas y estimular el crédito.",
+          "url": "https://www.lanacion.com.ar/economia/finanzas-la-duracion-de-la-guerra-mantiene-en-vilo-a-los-mercados-nid29032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Ganadores y perdedores del conflicto: Netanyahu capitaliza la guerra mientras Trump busca salida sin victorias claras",
+          "body": "Tras un mes de guerra, Netanyahu emerge como el principal beneficiario político: ha desplazado la atención pública de los fracasos del 7 de octubre y de sus juicios por corrupción, y los sondeos muestran amplio consenso israelí en torno al conflicto con Irán. Trump, en cambio, enfrenta un dilema existencial — lanzar una operación terrestre para reabrir Ormuz o negociar con un régimen endurecido — sin poder repartir responsabilidades, dado que sus propios funcionarios han insistido en que todas las decisiones pasan por su escritorio. The Economist resume la paradoja con crudeza: Irán ha sufrido golpes severos pero sobrevive, y en guerras asimétricas, sobrevivir ya es una forma de triunfo.",
+          "url": "https://www.lanacion.com.ar/el-mundo/quienes-son-los-ganadores-y-perdedores-despues-de-un-mes-de-guerra-en-medio-oriente-nid29032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina en K: sectores agropecuario, minero y energético crecen mientras la economía urbana sufre el ajuste",
+          "body": "La recuperación económica argentina no sigue una trayectoria uniforme sino en K: algunos sectores crecen a gran velocidad — agropecuario por la demanda mundial de alimentos, minería por minerales críticos, energía por el cierre de Ormuz — mientras otros registran cierres y despidos. La ausencia de moneda y crédito propios dificulta amortiguar la reconversión productiva, a diferencia de otras economías en transición similar. El editorial de La Nacion plantea que Argentina, a diferencia del pasado, ya no tiene tiempo para una adaptación gradual ante la irrupción de la inteligencia artificial y la competencia china.",
+          "url": "https://www.lanacion.com.ar/editoriales/los-avatares-politicos-y-el-rumbo-economico-nid29032026/",
+          "tag": "México"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mundial 2026 dispara rentas en Airbnb: hasta 6.000 dólares por noche en Nueva Jersey con alzas hoteleras de hasta 300%",
+          "body": "Una propiedad de seis habitaciones en Princeton, Nueva Jersey, se cotiza en torno a 6.000 dólares por noche durante el torneo — un incremento del 140% frente al año pasado — pese a estar a más de una hora del estadio MetLife. Bobby Roufaeal, administrador de más de una docena de alquileres en Nueva Jersey, estima que una propiedad de lujo podría generar hasta 240.000 dólares durante el período del torneo entre el 11 de junio y el 19 de julio. Las tarifas hoteleras en ciudades sede podrían subir hasta 300% en torno a los partidos inaugurales, según el New York Times, forzando a aficionados internacionales a compartir habitaciones y reservar con más de un año de antelación.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/28/mundial-2026-rentas-en-airbnb-se-disparan-alcanzan-hasta-6-mil-dolares-por-noche-en-eu/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Corte Suprema propone limitar la discrecionalidad política en la selección de magistrados en Argentina",
+          "body": "Los ministros Carlos Rosenkrantz y Ricardo Lorenzetti elevaron al Consejo de la Magistratura una propuesta para reducir la influencia política en la selección de jueces, limitando el peso de la entrevista personal al 10% del puntaje total y separando a quienes proponen los temas de examen de quienes los corrigen. Constitucionalistas como Ricardo Gil Lavedra y Alberto Garay celebraron la iniciativa como un 'gran aporte' para la independencia judicial, señalando que las entrevistas han dado históricamente lugar a 'sospechosas alteraciones del orden de mérito'. La propuesta deberá ser adoptada por el pleno del Consejo para tener efecto, y su recorrido político será la prueba real de su alcance.",
+          "url": "https://www.lanacion.com.ar/politica/constitucionalistas-celebran-la-propuesta-de-la-corte-para-modificar-el-reglamento-de-seleccion-nid29032026/",
+          "tag": "Política"
+        }
+      ],
+      "quote": {
+        "text": "In war, whichever side may call itself the victor, there are no winners, but all are losers.",
+        "attribution": "Neville Chamberlain, discurso en Kettering, 1938"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, we are one month into the Middle East war and the picture is about as clear as the Strait of Hormuz: blocked. Trump launched what he promised would be a surgical, quick conflict, and today he is negotiating in secret with a regime that rejects his 15-point proposals and demands war reparations — Brent crude at $112 summarizes the situation better than any press release. Global markets wait, emerging-market bonds tremble, and the only one apparently sleeping well is Netanyahu.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "El estancamiento estratégico en Medio Oriente, el Brent en máximos de cuatro años y la incertidumbre sobre la duración del conflicto mantienen a los mercados globales en modo defensivo.",
+        "context_en": "The strategic stalemate in the Middle East, Brent crude at four-year highs, and uncertainty over the conflict's duration are keeping global markets in defensive mode."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Trump trapped in Iran: Brent hits $112 and the Strait of Hormuz remains blocked one month into the war",
+          "body": "Nearly one month after the U.S. offensive against Iran began, there has been no quick surrender and no reopening of the Strait of Hormuz — through which 20% of global oil flows — and Brent crude closed Friday at $112, its highest level since July 2022. Iran publicly rejected Trump's 15-point ceasefire plan sent via Pakistan, calling it 'maximalist,' while presenting its own five-point counterproposal that includes war reparations. Barclays estimates a prolonged disruption could remove between 13 and 17 million barrels per day from the market, and Rystad Energy warns that once strategic reserves are depleted — estimated for mid-April — there will be little governments can do to contain prices.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/03/28/trump-esta-en-arenas-movedizas-en-iran/",
+          "tag": "Energía"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "War effect: Argentine bonds fall 2.6% in the month but outperform the emerging-market index; BCRA frees up bank reserve requirements",
+          "body": "The weighted average price of Argentine debt has fallen around 2.6% this month, though its relative performance is better than the EMB index adjusted for the high beta of local bonds — the market validates that positive effects on the current account outweigh financial deterioration in the short term. The seasonal dynamics of the grain harvest promise dollar purchases over the next three months, supporting the position. Meanwhile, the BCRA declined to renew a key regulation on bank reserve requirements, freeing up 5 percentage points currently held in public securities — a signal that the economic team is seeking to accelerate compression of lending rates and stimulate credit.",
+          "url": "https://www.lanacion.com.ar/economia/finanzas-la-duracion-de-la-guerra-mantiene-en-vilo-a-los-mercados-nid29032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Winners and losers: Netanyahu capitalizes on the war while Trump searches for an exit without clear victories",
+          "body": "After one month of war, Netanyahu emerges as the main political beneficiary: he has shifted public attention away from the failures of October 7 and his corruption trials, and polls show broad Israeli consensus around the conflict with Iran. Trump, by contrast, faces an existential dilemma — launch a ground operation to reopen Hormuz or negotiate with a hardened regime — and cannot distribute blame, as his own officials have insisted all decisions pass through his desk. The Economist sums up the paradox bluntly: Iran has suffered severe blows but survives, and in asymmetric wars, surviving is already a form of victory.",
+          "url": "https://www.lanacion.com.ar/el-mundo/quienes-son-los-ganadores-y-perdedores-despues-de-un-mes-de-guerra-en-medio-oriente-nid29032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina's K-shaped recovery: agribusiness, mining, and energy grow while the urban economy bears the adjustment",
+          "body": "Argentina's economic recovery is not following a uniform trajectory but a K-shape: some sectors are growing rapidly — agribusiness driven by global food demand, mining by critical minerals, energy by the closure of Hormuz — while others are registering closures and layoffs. The absence of domestic currency and credit makes it harder to cushion the productive transition, unlike other economies in similar situations. The La Nacion editorial argues that Argentina, unlike in the past, no longer has time for a gradual adaptation given the surge of artificial intelligence and Chinese competition.",
+          "url": "https://www.lanacion.com.ar/editoriales/los-avatares-politicos-y-el-rumbo-economico-nid29032026/",
+          "tag": "México"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "World Cup 2026 sends Airbnb rents soaring: up to $6,000 per night in New Jersey with hotel rates rising up to 300%",
+          "body": "A six-bedroom property in Princeton, New Jersey, is listed at around $6,000 per night during the tournament — a 140% increase from last year — despite being more than an hour from MetLife Stadium. Bobby Roufaeal, manager of more than a dozen short-term rentals in New Jersey, estimates that a luxury property could generate up to $240,000 during the tournament period between June 11 and July 19. Hotel rates in host cities could rise up to 300% around opening matches according to the New York Times, forcing international fans to share rooms and book more than a year in advance.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/28/mundial-2026-rentas-en-airbnb-se-disparan-alcanzan-hasta-6-mil-dolares-por-noche-en-eu/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina's Supreme Court proposes curbing political discretion in judicial selection",
+          "body": "Justices Carlos Rosenkrantz and Ricardo Lorenzetti submitted a proposal to the Magistrates' Council to reduce political influence in the selection of judges, capping the weight of personal interviews at 10% of the total score and separating those who set exam questions from those who grade them. Constitutional lawyers including Ricardo Gil Lavedra and Alberto Garay welcomed the initiative as a 'major contribution' to judicial independence, noting that interviews have historically led to 'suspicious alterations of merit rankings.' The proposal must be adopted by the full Council to take effect, and its political path forward will be the real test of its reach.",
+          "url": "https://www.lanacion.com.ar/politica/constitucionalistas-celebran-la-propuesta-de-la-corte-para-modificar-el-reglamento-de-seleccion-nid29032026/",
+          "tag": "Política"
+        }
+      ],
+      "quote": {
+        "text": "In war, whichever side may call itself the victor, there are no winners, but all are losers.",
+        "attribution": "Neville Chamberlain, speech in Kettering, 1938"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "100.30",
+        "change": "▲ 0.1%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.44%",
+        "change": "▲ 0.5%",
+        "direction": "up",
+        "chg_1w": "▲ 2.4%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "30.53",
+        "change": "▼ 1.7%",
+        "direction": "down",
+        "chg_1w": "▲ 13.3%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$55.20",
+        "change": "▼ 0.5%",
+        "direction": "down",
+        "chg_1w": "▼ 3.7%",
+        "direction_1w": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05529",
+            "chg_1d": {
+              "text": "▼ 0.96%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.68%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2897",
+            "chg_1d": {
+              "text": "▼ 0.87%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.55%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04813",
+            "chg_1d": {
+              "text": "▼ 0.55%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.66%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3821",
+            "chg_1d": {
+              "text": "▼ 0.96%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.24%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0770",
+            "chg_1d": {
+              "text": "▼ 0.46%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.31%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04179",
+            "chg_1d": {
+              "text": "▼ 0.17%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.82",
+            "chg_1d": {
+              "text": "▼ 1.11%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.07%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "18.0869",
+            "chg_1d": {
+              "text": "▲ 0.97%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.71%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.2396",
+            "chg_1d": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.87047",
+            "chg_1d": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.04%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.9105",
+            "chg_1d": {
+              "text": "▼ 0.00%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.44%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3921",
+            "chg_1d": {
+              "text": "▲ 0.50%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.39%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75586",
+            "chg_1d": {
+              "text": "▲ 0.80%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.47%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "159.45",
+            "chg_1d": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.61%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.4520",
+            "chg_1d": {
+              "text": "▲ 0.88%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.58%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19085",
+            "chg_1d": {
+              "text": "▼ 0.09%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16613",
+            "chg_1d": {
+              "text": "▲ 0.32%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.91%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3189",
+            "chg_1d": {
+              "text": "▼ 0.09%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.31%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2657",
+            "chg_1d": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.26%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14426",
+            "chg_1d": {
+              "text": "▲ 0.71%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.34%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.43",
+            "chg_1d": {
+              "text": "▼ 0.25%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.48%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.7782",
+            "chg_1d": {
+              "text": "▲ 0.55%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.66%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.14880",
+            "chg_1d": {
+              "text": "▼ 0.41%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.03%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "6.0193",
+            "chg_1d": {
+              "text": "▼ 0.32%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.90%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.9388",
+            "chg_1d": {
+              "text": "▼ 0.41%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.59%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.5992",
+            "chg_1d": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.35%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.86833",
+            "chg_1d": {
+              "text": "▲ 0.39%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.43%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "183.18",
+            "chg_1d": {
+              "text": "▼ 0.57%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.42%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.6173",
+            "chg_1d": {
+              "text": "▲ 0.97%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.26%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14471",
+            "chg_1d": {
+              "text": "▲ 0.00%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.44%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7582",
+            "chg_1d": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.31%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12596",
+            "chg_1d": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.59%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2014",
+            "chg_1d": {
+              "text": "▲ 0.50%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.94%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.10938",
+            "chg_1d": {
+              "text": "▲ 0.80%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.02%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.07",
+            "chg_1d": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.17%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
