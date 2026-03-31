@@ -1,0 +1,598 @@
+{
+  "date": "2026-03-31",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, Trump oscila entre amenazar con borrar del mapa la infraestructura energética iraní y anunciar 'grandes avances' diplomáticos — todo en el mismo párrafo de Truth Social, lo cual dice bastante sobre el estado del arte en geopolítica. Mientras tanto, los aliados latinoamericanos de Washington pagan la gasolina a precios récord y los mercados energéticos digieren cada tuit como si fuera política exterior oficial, porque en 2026 lo es.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Las señales diplomáticas en el conflicto EE.UU.-Irán alivian marginalmente la tensión, pero la volatilidad en precios del petróleo y el riesgo comercial sobre México mantienen a los mercados en modo de espera.",
+        "context_en": "Diplomatic signals in the U.S.-Iran conflict offer marginal relief, but oil price volatility and trade risks surrounding Mexico keep markets firmly in wait-and-see mode."
+      },
+      "stories": [
+        {
+          "source": "La Nacion",
+          "headline": "Trump habla de 'conversaciones serias' con Irán mientras amenaza destruir su infraestructura energética",
+          "body": "El presidente Donald Trump afirmó en Truth Social que EE.UU. mantiene negociaciones con un 'nuevo y más razonable' régimen iraní para poner fin a las operaciones militares, señalando 'grandes avances'. Sin embargo, en el mismo mensaje amenazó con destruir centrales eléctricas, pozos petroleros, la isla de Kharg y plantas desalinizadoras si no se alcanza un acuerdo rápido y no se reabre el estrecho de Ormuz, por donde transita cerca del 20% del suministro mundial de crudo. Las oscilaciones entre diplomacia y amenaza han generado nuevas turbulencias en los mercados energéticos, con el Brent acumulando una suba superior al 50% desde el inicio del conflicto hace un mes.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/trump-afirma-que-eeuu-mantiene-conversaciones-serias-con-iran-para-poner-fin-a-las-operaciones-nid30032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "El auge exportador de México llega con una paradoja peligrosa: cuanto más vende, más suspicacias despierta en Washington",
+          "body": "En el primer bimestre de 2026, las exportaciones mexicanas alcanzaron un récord histórico de 104,859 millones de dólares, con un crecimiento anual de 12.2%, mientras las dirigidas a EE.UU. crecieron 15.9% solo en febrero. El columnista Enrique Quintana advierte que este éxito exportador puede convertirse en un argumento político en Washington para imponer aranceles punitivos, justo cuando la revisión del T-MEC está en curso. La ironía es mayúscula: estudios del Fed de Dallas estiman que el 40% del contenido de las exportaciones mexicanas proviene de insumos fabricados en EE.UU., y México fue en 2025 el principal destino de las exportaciones estadounidenses de bienes, por encima de Canadá.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/03/31/el-peligroso-exito-de-las-exportaciones-mexicanas/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Guerra con Irán castiga a los aliados latinoamericanos de Trump: gasolina hasta 54% más cara en Chile y Argentina bajo presión",
+          "body": "Los gobiernos latinoamericanos alineados con Trump —desde Chile hasta Argentina— enfrentan el impacto directo del alza del petróleo provocada por el conflicto con Irán, con el Brent disparado más del 50% en un mes. En Chile, el ministro de Hacienda Jorge Quiroz defendió con 'empatía basada en la verdad' aumentos de hasta 54% en el precio de la gasolina impuestos esta semana, mientras que en Argentina, donde los precios del combustible ya se sextuplicaron bajo Milei, el gobierno suspendió un alza impositiva pendiente y flexibilizó normas de mezcla de etanol para frenar la escalada. La inflación argentina sigue rondando el 33% anual, poniendo en tela de juicio la promesa central del programa de Milei.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/28/guerra-en-medio-oriente-pega-a-aliados-de-eu-en-america-latina-paises-que-soportan-precios-del-petroleo/",
+          "tag": "Energía"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "JP Morgan advierte: la apertura comercial de Milei puede destruir empleo formal más rápido de lo que los sectores competitivos lo crean",
+          "body": "En un informe reciente, JP Morgan diagnosticó que la economía argentina está 'dividida en dos': sectores como el agro, la energía y la minería operan cerca de la frontera global de productividad, mientras que la industria automotriz, textil y de bienes de capital presenta brechas incompatibles con la competencia global. El banco advirtió que 'el tipo de cambio competitivo es necesario pero no suficiente' para salvar a los sectores más distorsionados, y que una apertura rápida destruiría empleo formal más rápido de lo que los sectores dinámicos pueden absorberlo. El informe destacó además el 'desajuste de habilidades' como agravante: un trabajador de ensamblaje automotriz en Córdoba no es empleable de inmediato en una planta de hidróxido de litio en Jujuy.",
+          "url": "https://www.lanacion.com.ar/economia/la-apertura-pone-en-riesgo-el-empleo-y-un-dolar-mas-alto-no-alcanza-para-salvar-a-parte-de-la-nid30032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México prohíbe los vapeadores y termina favoreciendo al cigarrillo tradicional, advierte experto sueco",
+          "body": "Karl Fagerström, psicólogo clínico y creador del test estándar para medir adicción a la nicotina, advirtió que la prohibición de vapeadores y cigarrillos electrónicos en México vigente desde enero de 2026 otorga de facto un monopolio a las tabacaleras tradicionales, cuyo producto es el más letal. Suecia, en contraste, redujo su tasa de fumadores a casi 5% al facilitar el acceso a alternativas sin combustión y aplicar una política fiscal que penaliza al cigarrillo convencional. Fagerström alertó que sin alternativas legales, los consumidores mexicanos pueden terminar abastecidos por el crimen organizado vía mercado negro.",
+          "url": "https://www.elfinanciero.com.mx/empresas/2026/03/30/tabacaleras-van-por-alternativas-de-nicotina-sin-combustion/",
+          "tag": "México"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Chedraui relanza Laika en México con 10 tiendas físicas apuntando a un mercado de mascotas de 5,400 millones de dólares",
+          "body": "Eduardo Chedraui anunció el reinicio de operaciones de la plataforma digital y la app de Laika en México, complementado con la apertura de más de 10 tiendas físicas bajo un modelo híbrido. El mercado mexicano de cuidado de mascotas supera los 5,400 millones de dólares, con más de 60 millones de animales de compañía presentes en siete de cada 10 hogares, posicionando al país como el cuarto mercado mundial en tenencia. El 29% de los clientes ya adquiere productos para mascotas vía e-commerce, tendencia que favorece el modelo omnicanal de Laika en un ecosistema valuado en 74,000 millones de pesos.",
+          "url": "https://www.elfinanciero.com.mx/opinion/de-jefes/2026/03/30/chedraui-reinicia-laika-en-mexico/",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "The market can stay irrational longer than you can stay solvent.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, Trump is simultaneously threatening to obliterate Iran's entire energy infrastructure and announcing 'great progress' in diplomatic talks — all in the same Truth Social post, which tells you everything you need to know about the current state of geopolitical discourse. In the meantime, Washington's Latin American allies are paying record prices at the pump, and energy markets are parsing every tweet as official foreign policy, because in 2026, it is.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Las señales diplomáticas en el conflicto EE.UU.-Irán alivian marginalmente la tensión, pero la volatilidad en precios del petróleo y el riesgo comercial sobre México mantienen a los mercados en modo de espera.",
+        "context_en": "Diplomatic signals in the U.S.-Iran conflict offer marginal relief, but oil price volatility and trade risks surrounding Mexico keep markets firmly in wait-and-see mode."
+      },
+      "stories": [
+        {
+          "source": "La Nacion",
+          "headline": "Trump claims 'serious talks' with Iran while threatening to destroy its energy infrastructure",
+          "body": "President Donald Trump stated on Truth Social that the U.S. is negotiating with a 'new and more reasonable' Iranian regime to end military operations, citing 'great progress.' In the same message, however, he threatened to destroy power plants, oil wells, Kharg Island, and desalination facilities if a deal is not reached quickly and the Strait of Hormuz — through which roughly 20% of global crude supply flows — is not reopened. The whiplash between diplomacy and threats has generated fresh turbulence in energy markets, with Brent crude up more than 50% since the conflict began one month ago.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/trump-afirma-que-eeuu-mantiene-conversaciones-serias-con-iran-para-poner-fin-a-las-operaciones-nid30032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico's export boom carries a dangerous paradox: the more it sells, the more suspicion it draws in Washington",
+          "body": "In the first two months of 2026, Mexican exports hit a historic record of $104.859 billion, up 12.2% year-on-year, with exports to the U.S. alone growing 15.9% in February. Columnist Enrique Quintana warns that this export success could become a political argument in Washington for punitive tariffs, precisely as the USMCA review is underway. The irony is stark: Dallas Fed studies estimate that 40% of the content of Mexican exports originates from U.S.-made inputs, and in 2025 Mexico surpassed Canada as the top destination for American goods exports.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/03/31/el-peligroso-exito-de-las-exportaciones-mexicanas/",
+          "tag": "Comercio"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Iran war punishes Trump's Latin American allies: gasoline up to 54% more expensive in Chile, Argentina under pressure",
+          "body": "Latin American governments aligned with Trump — from Chile to Argentina — are absorbing the direct impact of the oil price surge triggered by the Iran conflict, with Brent up more than 50% in a month. Chilean Finance Minister Jorge Quiroz defended fuel price increases of up to 54% this week with 'empathy based on truth,' while Argentina's government — where fuel prices have already sextupled under Milei — suspended a pending fuel tax hike and relaxed ethanol blending rules to slow the escalation. Argentine inflation continues hovering around 33% annually, putting Milei's core anti-inflation promise under mounting strain.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/03/28/guerra-en-medio-oriente-pega-a-aliados-de-eu-en-america-latina-paises-que-soportan-precios-del-petroleo/",
+          "tag": "Energía"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "JP Morgan warns: Milei's trade opening could destroy formal jobs faster than competitive sectors can create them",
+          "body": "In a recent report, JP Morgan diagnosed Argentina's economy as 'split in two': sectors like agriculture, energy, and mining operate near global productivity frontiers, while automotive, textile, and capital goods industries show gaps incompatible with global competition. The bank warned that 'a competitive exchange rate is necessary but not sufficient' to save the most distorted sectors, and that rapid liberalization would destroy formal employment faster than dynamic sectors can absorb it. The report also flagged a 'skills mismatch' as an aggravating factor: a laid-off auto assembly worker in Córdoba is not immediately employable at a lithium hydroxide plant in Jujuy.",
+          "url": "https://www.lanacion.com.ar/economia/la-apertura-pone-en-riesgo-el-empleo-y-un-dolar-mas-alto-no-alcanza-para-salvar-a-parte-de-la-nid30032026/",
+          "tag": "Macro"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico bans vapes and ends up protecting traditional cigarettes, Swedish expert warns",
+          "body": "Karl Fagerström, clinical psychologist and creator of the standard nicotine dependence test, warned that Mexico's ban on vapes and e-cigarettes — in effect since January 2026 — effectively grants a monopoly to traditional tobacco companies, whose product is the most lethal. Sweden, by contrast, reduced its smoking rate to nearly 5% by facilitating access to combustion-free alternatives and applying fiscal policy that penalizes conventional cigarettes. Fagerström cautioned that without legal alternatives, Mexican consumers may turn to organized crime through the black market.",
+          "url": "https://www.elfinanciero.com.mx/empresas/2026/03/30/tabacaleras-van-por-alternativas-de-nicotina-sin-combustion/",
+          "tag": "México"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Chedraui relaunches Laika in Mexico with 10 physical stores targeting a $5.4 billion pet care market",
+          "body": "Eduardo Chedraui announced the restart of Laika's digital platform and app in Mexico, complemented by the opening of more than 10 physical stores under a hybrid model. Mexico's pet care market exceeds $5.4 billion, with more than 60 million companion animals present in seven out of ten households, ranking the country as the world's fourth-largest pet ownership market. Some 29% of customers already purchase pet products via e-commerce, a trend that favors Laika's omnichannel model in an ecosystem valued at 74 billion pesos.",
+          "url": "https://www.elfinanciero.com.mx/opinion/de-jefes/2026/03/30/chedraui-reinicia-laika-en-mexico/",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "The market can stay irrational longer than you can stay solvent.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "100.31",
+        "change": "▼ 0.2%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.34%",
+        "change": "▼ 2.2%",
+        "direction": "down",
+        "chg_1w": "▼ 1.1%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "VIX",
+        "value": "28.66",
+        "change": "▼ 6.4%",
+        "direction": "down",
+        "chg_1w": "▲ 13.1%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$54.75",
+        "change": "▼ 0.8%",
+        "direction": "down",
+        "chg_1w": "▼ 3.1%",
+        "direction_1w": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05550",
+            "chg_1d": {
+              "text": "▲ 0.70%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.60%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2900",
+            "chg_1d": {
+              "text": "▲ 0.46%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.73%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04826",
+            "chg_1d": {
+              "text": "▲ 0.62%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.63%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3830",
+            "chg_1d": {
+              "text": "▲ 0.55%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.47%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0774",
+            "chg_1d": {
+              "text": "▲ 0.98%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.30%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04192",
+            "chg_1d": {
+              "text": "▲ 0.70%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.28%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.85",
+            "chg_1d": {
+              "text": "▲ 0.24%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.11%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "18.0170",
+            "chg_1d": {
+              "text": "▼ 0.70%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.62%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.2257",
+            "chg_1d": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.86949",
+            "chg_1d": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.99%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.9010",
+            "chg_1d": {
+              "text": "▼ 0.15%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3938",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.31%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75534",
+            "chg_1d": {
+              "text": "▼ 0.00%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.34%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "159.50",
+            "chg_1d": {
+              "text": "▼ 0.46%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.49%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.4478",
+            "chg_1d": {
+              "text": "▼ 0.46%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.76%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19136",
+            "chg_1d": {
+              "text": "▲ 0.24%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16639",
+            "chg_1d": {
+              "text": "▲ 0.16%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.12%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3206",
+            "chg_1d": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2667",
+            "chg_1d": {
+              "text": "▲ 0.51%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.45%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14454",
+            "chg_1d": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.47%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.52",
+            "chg_1d": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.62%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.7214",
+            "chg_1d": {
+              "text": "▼ 0.62%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.63%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.15010",
+            "chg_1d": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.98%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "6.0101",
+            "chg_1d": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.11%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.9368",
+            "chg_1d": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.85%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6030",
+            "chg_1d": {
+              "text": "▲ 0.36%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.32%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.86872",
+            "chg_1d": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.35%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "183.44",
+            "chg_1d": {
+              "text": "▼ 0.38%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.49%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.6108",
+            "chg_1d": {
+              "text": "▼ 0.54%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.49%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14491",
+            "chg_1d": {
+              "text": "▲ 0.15%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7572",
+            "chg_1d": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.27%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12599",
+            "chg_1d": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.85%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2020",
+            "chg_1d": {
+              "text": "▲ 0.43%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.18%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.10945",
+            "chg_1d": {
+              "text": "▲ 0.15%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.20%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.11",
+            "chg_1d": {
+              "text": "▼ 0.31%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.36%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

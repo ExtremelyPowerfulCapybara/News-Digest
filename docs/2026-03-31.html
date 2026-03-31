@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell -- March 31, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* ── Language toggle ── */
+  .lang-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .lang-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+
+  .lang-en { display: none; }
+
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  /* ── Secondary market strip (tabbed) ── */
+  .mkt-strip { background: #1a1a1a; }
+  .mkt-tab-nav { display: flex; padding: 0 48px; border-bottom: 1px solid #222; }
+  .mkt-tab-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 8px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 7px 14px 6px; cursor: pointer; border: none; background: transparent;
+    color: #444; border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .mkt-tab-btn[data-group="eq"].active { color: #a8c8a0; border-bottom-color: #a8c8a0; }
+  .mkt-tab-btn[data-group="co"].active { color: #d4b87a; border-bottom-color: #d4b87a; }
+  .mkt-tab-btn[data-group="cr"].active { color: #b49ed4; border-bottom-color: #b49ed4; }
+  .mkt-tab-btn:not(.active):hover { color: #777; }
+  .mkt-panel { display: none; padding: 0 48px; }
+  .mkt-panel.visible { display: flex; }
+  .mkt-panel .tick-item { padding: 9px 8px; }
+
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .currency-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .currency-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 8px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .currency-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .currency-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  .calendar { padding: 24px 48px; }
+  .cal-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #e4e9ec; }
+  .cal-row:last-child { border-bottom: none; }
+  .cal-date { font-size: 10px; color: #555; min-width: 46px; flex-shrink: 0; }
+  .cal-badge { font-size: 7.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 2px 5px; border: 1px solid; min-width: 50px; text-align: center; flex-shrink: 0; }
+  .cal-label { font-size: 12px; color: #1a1a1a; flex: 1; }
+  .cal-days { font-size: 9px; color: #aab4bc; white-space: nowrap; flex-shrink: 0; }
+
+  .weekly-mkt { background: #1a1a1a; padding: 16px 48px 14px; }
+  .wm-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #555; margin-bottom: 2px; }
+  .wm-subtitle { font-size: 8px; color: #444; margin-bottom: 12px; }
+  .wm-table { width: 100%; border-collapse: collapse; }
+  .wm-table th { font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #444; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #2a2a2a; }
+  .wm-table th:not(:first-child) { text-align: right; }
+  .wm-table td { font-size: 11px; padding: 8px 0; border-bottom: 1px solid #2a2a2a; }
+  .wm-table tr:last-child td { border-bottom: none; }
+  .wm-label { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #555; }
+  .wm-val { color: #d4cfc8; text-align: right; padding-left: 12px; }
+  .wm-chg { text-align: right; font-size: 10px; padding-left: 12px; }
+
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .mkt-tab-nav { padding: 0 12px; }
+    .mkt-panel { padding: 0 8px; flex-wrap: wrap; }
+    .mkt-panel .tick-item { flex: 1 1 45%; }
+    .editor-note { padding: 20px 20px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .currency { padding: 20px 20px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>TUESDAY, MARCH 31, 2026</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <span>NO. 25</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">DXY</span>
+        <span class="tick-val">100.31</span>
+        <span class="tick-down">▼ 0.2%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">10Y UST</span>
+        <span class="tick-val">4.34%</span>
+        <span class="tick-down">▼ 2.2%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">VIX</span>
+        <span class="tick-val">28.66</span>
+        <span class="tick-down">▼ 6.4%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">MSCI EM</span>
+        <span class="tick-val">$54.75</span>
+        <span class="tick-down">▼ 0.8%</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="mkt-strip">
+    <div class="mkt-tab-nav"><button class="mkt-tab-btn" data-group="eq" onclick="setMktTab('eq')">Global Equities</button><button class="mkt-tab-btn" data-group="co" onclick="setMktTab('co')">Commodities</button><button class="mkt-tab-btn" data-group="cr" onclick="setMktTab('cr')">Crypto</button></div>
+    <div class="mkt-panel" id="mkt-eq">
+        <div class="tick-item">
+          <span class="tick-label">S&P 500</span>
+          <span class="tick-val">6,344</span>
+          <span class="tick-down">▼ 2.1%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Nasdaq</span>
+          <span class="tick-val">20,795</span>
+          <span class="tick-down">▼ 2.9%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Euro Stoxx</span>
+          <span class="tick-val">5,576</span>
+          <span class="tick-up">▲ 0.6%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Nikkei</span>
+          <span class="tick-val">51,064</span>
+          <span class="tick-down">▼ 1.6%</span>
+        </div>
+    </div>
+    <div class="mkt-panel" id="mkt-co">
+        <div class="tick-item">
+          <span class="tick-label">Brent</span>
+          <span class="tick-val">$107</span>
+          <span class="tick-down">▼ 4.8%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Gold</span>
+          <span class="tick-val">$4,612</span>
+          <span class="tick-up">▲ 1.9%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Copper</span>
+          <span class="tick-val">$5.53</span>
+          <span class="tick-up">▲ 1.0%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Wheat</span>
+          <span class="tick-val">$6.09</span>
+          <span class="tick-up">▲ 0.4%</span>
+        </div>
+    </div>
+    <div class="mkt-panel" id="mkt-cr">
+        <div class="tick-item">
+          <span class="tick-label">Bitcoin</span>
+          <span class="tick-val">$66,704</span>
+          <span class="tick-up">▲ 0.0%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Ethereum</span>
+          <span class="tick-val">$2,043</span>
+          <span class="tick-up">▲ 1.0%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Solana</span>
+          <span class="tick-val">$80.84</span>
+          <span class="tick-down">▼ 1.9%</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="editor-note">
+    <div class="lang-es"><p>Estimados humanos, Trump oscila entre amenazar con borrar del mapa la infraestructura energética iraní y anunciar 'grandes avances' diplomáticos — todo en el mismo párrafo de Truth Social, lo cual dice bastante sobre el estado del arte en geopolítica. Mientras tanto, los aliados latinoamericanos de Washington pagan la gasolina a precios récord y los mercados energéticos digieren cada tuit como si fuera política exterior oficial, porque en 2026 lo es.</p></div>
+    <div class="lang-en"><p>Estimados humanos, Trump is simultaneously threatening to obliterate Iran's entire energy infrastructure and announcing 'great progress' in diplomatic talks — all in the same Truth Social post, which tells you everything you need to know about the current state of geopolitical discourse. In the meantime, Washington's Latin American allies are paying record prices at the pump, and energy markets are parsing every tweet as official foreign policy, because in 2026, it is.</p></div>
+    <div class="editor-sig">&mdash; Vera Tility, Chief Architect of Confident Uncertainty</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label"
+            data-es="Sentimiento del D&#237;a"
+            data-en="Market Sentiment">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading cautious lang-es">Cauteloso</span>
+      <span class="sentiment-reading cautious lang-en">Cautious</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker cautious" style="left:42%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
+      <span data-es="Neutral"          data-en="Neutral">Neutral</span>
+      <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
+    </div>
+    <div class="sentiment-context lang-es">Las señales diplomáticas en el conflicto EE.UU.-Irán alivian marginalmente la tensión, pero la volatilidad en precios del petróleo y el riesgo comercial sobre México mantienen a los mercados en modo de espera.</div>
+    <div class="sentiment-context lang-en">Diplomatic signals in the U.S.-Iran conflict offer marginal relief, but oil price volatility and trade risks surrounding Mexico keep markets firmly in wait-and-see mode.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Trump habla de 'conversaciones serias' con Irán mientras amenaza destruir su infraestructura energética</div>
+    <div class="story-body">El presidente Donald Trump afirmó en Truth Social que EE.UU. mantiene negociaciones con un 'nuevo y más razonable' régimen iraní para poner fin a las operaciones militares, señalando 'grandes avances'. Sin embargo, en el mismo mensaje amenazó con destruir centrales eléctricas, pozos petroleros, la isla de Kharg y plantas desalinizadoras si no se alcanza un acuerdo rápido y no se reabre el estrecho de Ormuz, por donde transita cerca del 20% del suministro mundial de crudo. Las oscilaciones entre diplomacia y amenaza han generado nuevas turbulencias en los mercados energéticos, con el Brent acumulando una suba superior al 50% desde el inicio del conflicto hace un mes.</div>
+    <a href="https://www.lanacion.com.ar/estados-unidos/trump-afirma-que-eeuu-mantiene-conversaciones-serias-con-iran-para-poner-fin-a-las-operaciones-nid30032026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Trump claims 'serious talks' with Iran while threatening to destroy its energy infrastructure</div>
+    <div class="story-body">President Donald Trump stated on Truth Social that the U.S. is negotiating with a 'new and more reasonable' Iranian regime to end military operations, citing 'great progress.' In the same message, however, he threatened to destroy power plants, oil wells, Kharg Island, and desalination facilities if a deal is not reached quickly and the Strait of Hormuz — through which roughly 20% of global crude supply flows — is not reopened. The whiplash between diplomacy and threats has generated fresh turbulence in energy markets, with Brent crude up more than 50% since the conflict began one month ago.</div>
+    <a href="https://www.lanacion.com.ar/estados-unidos/trump-afirma-que-eeuu-mantiene-conversaciones-serias-con-iran-para-poner-fin-a-las-operaciones-nid30032026/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">Comercio</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">El auge exportador de México llega con una paradoja peligrosa: cuanto más vende, más suspicacias despierta en Washington</div>
+    <div class="story-body">En el primer bimestre de 2026, las exportaciones mexicanas alcanzaron un récord histórico de 104,859 millones de dólares, con un crecimiento anual de 12.2%, mientras las dirigidas a EE.UU. crecieron 15.9% solo en febrero. El columnista Enrique Quintana advierte que este éxito exportador puede convertirse en un argumento político en Washington para imponer aranceles punitivos, justo cuando la revisión del T-MEC está en curso. La ironía es mayúscula: estudios del Fed de Dallas estiman que el 40% del contenido de las exportaciones mexicanas proviene de insumos fabricados en EE.UU., y México fue en 2025 el principal destino de las exportaciones estadounidenses de bienes, por encima de Canadá.</div>
+    <a href="https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/03/31/el-peligroso-exito-de-las-exportaciones-mexicanas/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Mexico's export boom carries a dangerous paradox: the more it sells, the more suspicion it draws in Washington</div>
+    <div class="story-body">In the first two months of 2026, Mexican exports hit a historic record of $104.859 billion, up 12.2% year-on-year, with exports to the U.S. alone growing 15.9% in February. Columnist Enrique Quintana warns that this export success could become a political argument in Washington for punitive tariffs, precisely as the USMCA review is underway. The irony is stark: Dallas Fed studies estimate that 40% of the content of Mexican exports originates from U.S.-made inputs, and in 2025 Mexico surpassed Canada as the top destination for American goods exports.</div>
+    <a href="https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/03/31/el-peligroso-exito-de-las-exportaciones-mexicanas/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Guerra con Irán castiga a los aliados latinoamericanos de Trump: gasolina hasta 54% más cara en Chile y Argentina bajo presión</div>
+    <div class="story-body">Los gobiernos latinoamericanos alineados con Trump —desde Chile hasta Argentina— enfrentan el impacto directo del alza del petróleo provocada por el conflicto con Irán, con el Brent disparado más del 50% en un mes. En Chile, el ministro de Hacienda Jorge Quiroz defendió con 'empatía basada en la verdad' aumentos de hasta 54% en el precio de la gasolina impuestos esta semana, mientras que en Argentina, donde los precios del combustible ya se sextuplicaron bajo Milei, el gobierno suspendió un alza impositiva pendiente y flexibilizó normas de mezcla de etanol para frenar la escalada. La inflación argentina sigue rondando el 33% anual, poniendo en tela de juicio la promesa central del programa de Milei.</div>
+    <a href="https://www.elfinanciero.com.mx/mundo/2026/03/28/guerra-en-medio-oriente-pega-a-aliados-de-eu-en-america-latina-paises-que-soportan-precios-del-petroleo/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Iran war punishes Trump's Latin American allies: gasoline up to 54% more expensive in Chile, Argentina under pressure</div>
+    <div class="story-body">Latin American governments aligned with Trump — from Chile to Argentina — are absorbing the direct impact of the oil price surge triggered by the Iran conflict, with Brent up more than 50% in a month. Chilean Finance Minister Jorge Quiroz defended fuel price increases of up to 54% this week with 'empathy based on truth,' while Argentina's government — where fuel prices have already sextupled under Milei — suspended a pending fuel tax hike and relaxed ethanol blending rules to slow the escalation. Argentine inflation continues hovering around 33% annually, putting Milei's core anti-inflation promise under mounting strain.</div>
+    <a href="https://www.elfinanciero.com.mx/mundo/2026/03/28/guerra-en-medio-oriente-pega-a-aliados-de-eu-en-america-latina-paises-que-soportan-precios-del-petroleo/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">JP Morgan advierte: la apertura comercial de Milei puede destruir empleo formal más rápido de lo que los sectores competitivos lo crean</div>
+    <div class="story-body">En un informe reciente, JP Morgan diagnosticó que la economía argentina está 'dividida en dos': sectores como el agro, la energía y la minería operan cerca de la frontera global de productividad, mientras que la industria automotriz, textil y de bienes de capital presenta brechas incompatibles con la competencia global. El banco advirtió que 'el tipo de cambio competitivo es necesario pero no suficiente' para salvar a los sectores más distorsionados, y que una apertura rápida destruiría empleo formal más rápido de lo que los sectores dinámicos pueden absorberlo. El informe destacó además el 'desajuste de habilidades' como agravante: un trabajador de ensamblaje automotriz en Córdoba no es empleable de inmediato en una planta de hidróxido de litio en Jujuy.</div>
+    <a href="https://www.lanacion.com.ar/economia/la-apertura-pone-en-riesgo-el-empleo-y-un-dolar-mas-alto-no-alcanza-para-salvar-a-parte-de-la-nid30032026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">JP Morgan warns: Milei's trade opening could destroy formal jobs faster than competitive sectors can create them</div>
+    <div class="story-body">In a recent report, JP Morgan diagnosed Argentina's economy as 'split in two': sectors like agriculture, energy, and mining operate near global productivity frontiers, while automotive, textile, and capital goods industries show gaps incompatible with global competition. The bank warned that 'a competitive exchange rate is necessary but not sufficient' to save the most distorted sectors, and that rapid liberalization would destroy formal employment faster than dynamic sectors can absorb it. The report also flagged a 'skills mismatch' as an aggravating factor: a laid-off auto assembly worker in Córdoba is not immediately employable at a lithium hydroxide plant in Jujuy.</div>
+    <a href="https://www.lanacion.com.ar/economia/la-apertura-pone-en-riesgo-el-empleo-y-un-dolar-mas-alto-no-alcanza-para-salvar-a-parte-de-la-nid30032026/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">México</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">México prohíbe los vapeadores y termina favoreciendo al cigarrillo tradicional, advierte experto sueco</div>
+    <div class="story-body">Karl Fagerström, psicólogo clínico y creador del test estándar para medir adicción a la nicotina, advirtió que la prohibición de vapeadores y cigarrillos electrónicos en México vigente desde enero de 2026 otorga de facto un monopolio a las tabacaleras tradicionales, cuyo producto es el más letal. Suecia, en contraste, redujo su tasa de fumadores a casi 5% al facilitar el acceso a alternativas sin combustión y aplicar una política fiscal que penaliza al cigarrillo convencional. Fagerström alertó que sin alternativas legales, los consumidores mexicanos pueden terminar abastecidos por el crimen organizado vía mercado negro.</div>
+    <a href="https://www.elfinanciero.com.mx/empresas/2026/03/30/tabacaleras-van-por-alternativas-de-nicotina-sin-combustion/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Mexico bans vapes and ends up protecting traditional cigarettes, Swedish expert warns</div>
+    <div class="story-body">Karl Fagerström, clinical psychologist and creator of the standard nicotine dependence test, warned that Mexico's ban on vapes and e-cigarettes — in effect since January 2026 — effectively grants a monopoly to traditional tobacco companies, whose product is the most lethal. Sweden, by contrast, reduced its smoking rate to nearly 5% by facilitating access to combustion-free alternatives and applying fiscal policy that penalizes conventional cigarettes. Fagerström cautioned that without legal alternatives, Mexican consumers may turn to organized crime through the black market.</div>
+    <a href="https://www.elfinanciero.com.mx/empresas/2026/03/30/tabacaleras-van-por-alternativas-de-nicotina-sin-combustion/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">México</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Chedraui relanza Laika en México con 10 tiendas físicas apuntando a un mercado de mascotas de 5,400 millones de dólares</div>
+    <div class="story-body">Eduardo Chedraui anunció el reinicio de operaciones de la plataforma digital y la app de Laika en México, complementado con la apertura de más de 10 tiendas físicas bajo un modelo híbrido. El mercado mexicano de cuidado de mascotas supera los 5,400 millones de dólares, con más de 60 millones de animales de compañía presentes en siete de cada 10 hogares, posicionando al país como el cuarto mercado mundial en tenencia. El 29% de los clientes ya adquiere productos para mascotas vía e-commerce, tendencia que favorece el modelo omnicanal de Laika en un ecosistema valuado en 74,000 millones de pesos.</div>
+    <a href="https://www.elfinanciero.com.mx/opinion/de-jefes/2026/03/30/chedraui-reinicia-laika-en-mexico/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Chedraui relaunches Laika in Mexico with 10 physical stores targeting a $5.4 billion pet care market</div>
+    <div class="story-body">Eduardo Chedraui announced the restart of Laika's digital platform and app in Mexico, complemented by the opening of more than 10 physical stores under a hybrid model. Mexico's pet care market exceeds $5.4 billion, with more than 60 million companion animals present in seven out of ten households, ranking the country as the world's fourth-largest pet ownership market. Some 29% of customers already purchase pet products via e-commerce, a trend that favors Laika's omnichannel model in an ecosystem valued at 74 billion pesos.</div>
+    <a href="https://www.elfinanciero.com.mx/opinion/de-jefes/2026/03/30/chedraui-reinicia-laika-en-mexico/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="currency-header">
+      <div class="section-title"
+           data-es="Tipo de Cambio"
+           data-en="Exchange Rates">Tipo de Cambio</div>
+      <div class="currency-toggle"><button class="currency-btn active" data-base="MXN" onclick="setCurrencyBase('MXN')">MXN</button><button class="currency-btn " data-base="USD" onclick="setCurrencyBase('USD')">USD</button><button class="currency-btn " data-base="BRL" onclick="setCurrencyBase('BRL')">BRL</button><button class="currency-btn " data-base="EUR" onclick="setCurrencyBase('EUR')">EUR</button><button class="currency-btn " data-base="CNY" onclick="setCurrencyBase('CNY')">CNY</button></div>
+    </div>
+    
+    <div class="currency-view" data-base="MXN" style="">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">MXN / USD</td>
+        <td>0.05550</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.70%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.60%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / BRL</td>
+        <td>0.2900</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.46%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.73%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / EUR</td>
+        <td>0.04826</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.62%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.63%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / CNY</td>
+        <td>0.3830</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.55%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.47%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / CAD</td>
+        <td>0.0774</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.98%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.30%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / GBP</td>
+        <td>0.04192</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.70%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.28%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / JPY</td>
+        <td>8.85</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.24%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.11%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="USD" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>18.0170</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.70%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.62%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / BRL</td>
+        <td>5.2257</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.23%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.13%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / EUR</td>
+        <td>0.86949</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.08%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.99%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / CNY</td>
+        <td>6.9010</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.15%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.13%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / CAD</td>
+        <td>1.3938</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.28%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.31%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / GBP</td>
+        <td>0.75534</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.00%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.34%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / JPY</td>
+        <td>159.50</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.46%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.49%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="BRL" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">BRL / MXN</td>
+        <td>3.4478</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.46%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.76%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / USD</td>
+        <td>0.19136</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.24%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.13%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / EUR</td>
+        <td>0.16639</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.16%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.12%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / CNY</td>
+        <td>1.3206</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.08%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.27%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / CAD</td>
+        <td>0.2667</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.51%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.45%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / GBP</td>
+        <td>0.14454</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.23%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.47%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / JPY</td>
+        <td>30.52</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.23%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.62%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="EUR" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.7214</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.62%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.63%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / USD</td>
+        <td>1.15010</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.08%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.98%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / BRL</td>
+        <td>6.0101</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.16%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.11%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / CNY</td>
+        <td>7.9368</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.08%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.85%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / CAD</td>
+        <td>1.6030</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.36%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.32%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / GBP</td>
+        <td>0.86872</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.07%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.35%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / JPY</td>
+        <td>183.44</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.38%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.49%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="CNY" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>2.6108</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.54%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.49%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / USD</td>
+        <td>0.14491</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.15%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.13%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / BRL</td>
+        <td>0.7572</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.08%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.27%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / EUR</td>
+        <td>0.12599</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.08%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.85%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / CAD</td>
+        <td>0.2020</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.43%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.18%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / GBP</td>
+        <td>0.10945</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.15%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.20%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / JPY</td>
+        <td>23.11</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.31%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.36%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="calendar">
+  <div class="section-title"
+       data-es="Pr&oacute;ximas Fechas Clave"
+       data-en="Key Upcoming Dates">Pr&oacute;ximas Fechas Clave</div>
+  
+      <div class="cal-row">
+        <span class="cal-date">09 ABR</span>
+        <span class="cal-badge" style="color:#c8943a; border-color:#c8943a;">INEGI</span>
+        <span class="cal-label">INEGI — CPI México (feb)</span>
+        <span class="cal-days">9d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date">10 ABR</span>
+        <span class="cal-badge" style="color:#7a9aaa; border-color:#7a9aaa;">BLS</span>
+        <span class="cal-label">BLS — CPI EE.UU. (mar)</span>
+        <span class="cal-days">10d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date">29 ABR</span>
+        <span class="cal-badge" style="color:#5a8abf; border-color:#5a8abf;">FED</span>
+        <span class="cal-label">FOMC — Decisión Fed</span>
+        <span class="cal-days">29d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date">12 MAY</span>
+        <span class="cal-badge" style="color:#7a9aaa; border-color:#7a9aaa;">BLS</span>
+        <span class="cal-label">BLS — CPI EE.UU. (abr)</span>
+        <span class="cal-days">42d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date">14 MAY</span>
+        <span class="cal-badge" style="color:#4a9e6a; border-color:#4a9e6a;">BANXICO</span>
+        <span class="cal-label">Banxico — Decisión de tasa</span>
+        <span class="cal-days">44d</span>
+      </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="lang-es">
+      <div class="quote-text">The market can stay irrational longer than you can stay solvent.</div>
+      <div class="quote-attr">John Maynard Keynes, atribuido, circa 1930s</div>
+    </div>
+    <div class="lang-en">
+      <div class="quote-text">The market can stay irrational longer than you can stay solvent.</div>
+      <div class="quote-attr">John Maynard Keynes, atribuido, circa 1930s</div>
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by lang-es">por Vera Tility, Chief Architect of Confident Uncertainty</span>
+    <span class="footer-by lang-en">by Vera Tility, Chief Architect of Confident Uncertainty</span>
+  </div>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // swap static labels
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = lang === 'es' ? el.dataset.es : el.dataset.en;
+    });
+    localStorage.setItem('nlLang', lang);
+  }
+  (function(){
+    var saved = localStorage.getItem('nlLang') || 'es';
+    setLang(saved);
+  })();
+
+  function setCurrencyBase(base) {
+    document.querySelectorAll('.currency-view').forEach(el => {
+      el.style.display = el.dataset.base === base ? '' : 'none';
+    });
+    document.querySelectorAll('.currency-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.base === base);
+    });
+    localStorage.setItem('nlCurrencyBase', base);
+  }
+  (function(){
+    var savedBase = localStorage.getItem('nlCurrencyBase') || 'MXN';
+    setCurrencyBase(savedBase);
+  })();
+
+  function setMktTab(group) {
+    document.querySelectorAll('.mkt-panel').forEach(function(p) { p.classList.remove('visible'); });
+    var panel = document.getElementById('mkt-' + group);
+    if (panel) panel.classList.add('visible');
+    document.querySelectorAll('.mkt-tab-btn').forEach(function(b) {
+      b.classList.toggle('active', b.dataset.group === group);
+    });
+  }
+  (function(){ setMktTab('eq'); })();
+</script>
+
+</body>
+</html>
