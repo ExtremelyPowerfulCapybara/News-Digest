@@ -1,0 +1,612 @@
+{
+  "date": "2026-04-01",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el FMI ya nos confirmó lo que los mercados llevan semanas descontando: el conflicto en Medio Oriente es un choque de oferta clásico con consecuencias no tan clásicas — el estrecho de Ormuz bloqueado representa el 20% del suministro global de petróleo, una perturbación tres veces mayor que la de 1973. Mientras Larry Fink advierte sobre una posible recesión global si el barril se sostiene en 150 dólares y Kenneth Rogoff dice que ya estamos en ella, los bancos centrales del mundo navegan entre presiones inflacionarias renovadas y economías que se enfriaban de todas formas. Bienvenidos al lunes.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "La combinación de un conflicto bélico que interrumpe el 20% del suministro global de petróleo, advertencias del FMI sobre inflación y menor crecimiento, y declaraciones de figuras como Fink y Rogoff apuntando a recesión global mantienen el sentimiento firmemente en territorio de aversión al riesgo.",
+        "context_en": "The combination of a conflict disrupting 20% of global oil supply, IMF warnings of higher inflation and slower growth, and statements from figures like Fink and Rogoff pointing to global recession keep sentiment firmly in risk-off territory."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "FMI advierte: la guerra en Medio Oriente llevará a más inflación y menor crecimiento global",
+          "body": "El Fondo Monetario Internacional identificó la energía como el principal canal de transmisión del conflicto bélico, señalando que el cierre de facto del estrecho de Ormuz ya representa la mayor perturbación al mercado petrolero en la historia. Aproximadamente un tercio de los envíos de fertilizantes pasa por dicho estrecho, lo que añade presión sobre los precios de alimentos globales. El FMI publicará sus informes Perspectivas Económicas Mundiales y de Estabilidad Financiera el 14 y 15 de abril, respectivamente, en el marco de sus Reuniones de Primavera con el Banco Mundial.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/31/guerra-dejara-mas-inflacion-y-un-crecimiento-mas-lento-fmi/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "BlackRock, Harvard y el espectro de la recesión: el trasfondo económico de la guerra y YPF",
+          "body": "Larry Fink, chairman de BlackRock, advirtió en entrevistas con Il Corriere della Sera, El País y la BBC que si el petróleo se sostiene en 150 dólares por barril, el mundo enfrenta un gran enfriamiento económico; solo si la guerra termina antes de mayo los precios podrían revertirse. El economista de Harvard Kenneth Rogoff fue más directo en el foro CERAWeek: afirmó que ya estamos en recesión, comparando la restricción actual del 20% en suministro de hidrocarburos con el 7% de la crisis de 1973. En Argentina, el alza de combustibles en el último mes ronda entre 12% y 16%, muy por debajo del 54% de Chile o el 30% promedio en Estados Unidos, lo que genera especulaciones sobre un posible control de precios.",
+          "url": "https://www.lanacion.com.ar/politica/ypf-el-segundo-salvataje-de-trump-nid31032026/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Banxico recorta a 6.75% pero telegrafía pausa: la tasa terminal podría quedarse en 6.50%",
+          "body": "El Banco de México redujo su tasa de referencia 25 puntos base a 6.75% en una decisión que el analista Gabriel Casillas califica como ampliamente señalizada desde febrero, cuando la Junta de Gobierno eliminó la frase 'el momento' de su guía prospectiva. Sin embargo, el cambio más significativo fue en la comunicación futura: el uso del artículo indefinido 'un' recorte adicional sugiere que la tasa terminal en este ciclo podría detenerse en 6.50%, muy por encima del 6.00% o menos que el propio Programa Monetario 2026 de Banxico planteaba como posible. El conflicto en Irán y sus efectos sobre precios de energía y cadenas de suministro son el factor central detrás de la mayor cautela.",
+          "url": "https://www.elfinanciero.com.mx/opinion/gabriel-casillas/2026/03/31/defendiendo-la-decision-de-banxico/",
+          "tag": "Tasas"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Bonos soberanos globales y el dólar bajo presión: claves para el ahorrista en tiempos de guerra",
+          "body": "Con déficits fiscales de Estados Unidos proyectados en 8% del PIB para 2026 y tasas del bono a 10 años en 4.36%, mientras Japón abandona su era de dinero barato llevando sus tasas a 2.27% y el Reino Unido paga 4.95%, el análisis concluye que ninguna moneda respaldada por déficits crónicos se aprecia indefinidamente. Para el ahorrista latinoamericano, la lectura implica que dolarizarse ya no es suficiente: el riesgo se ha filtrado también hacia las monedas fuertes, haciendo de la diversificación —hacia euros y activos reales— una necesidad práctica y no solo teórica. El oro y los activos que no dependan de la promesa de pago de un gobierno ganan protagonismo en este contexto.",
+          "url": "https://www.lanacion.com.ar/economia/el-mapa-del-dinero-en-tiempos-de-guerra-y-deuda-tres-senales-que-todo-ahorrista-argentino-deberia-nid31032026/",
+          "tag": "FX"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México: del precio a la infraestructura, el mercado cripto madura con las remesas como motor",
+          "body": "México ocupa el lugar 14 entre 151 países en adopción de activos digitales según Chainalysis, y segundo en América Latina, pero la señal más relevante ya no es el ranking sino el uso: en un país con más de 60,000 millones de dólares anuales en remesas, las redes de segunda capa ya procesan transacciones a fracciones de centavo frente a los hasta 50 dólares que pueden costar en cadenas base. Las stablecoins se consolidan como infraestructura de pagos y la frontera entre fintech, banca y Web3 se erosiona hacia un sistema híbrido, mientras marcos regulatorios como MiCA en Europa y el GENIUS Act en Estados Unidos terminan de institucionalizar la clase de activo a escala global.",
+          "url": "https://www.elfinanciero.com.mx/mundo-empresa/2026/03/30/de-la-especulacion-a-la-infraestructura-mexico-y-la-madurez-de-la-industria-cripto/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Xinjiang: el trasfondo económico y geopolítico detrás de la represión china a los uigures",
+          "body": "La provincia china de Xinjiang, con 1.65 millones de km² y estratégicamente rica en recursos energéticos, fue ocupada por la República Popular China en 1949, cuando la etnia uigur representaba el 80% de su población; hoy, tras décadas de migración forzada de la etnia Han, esa proporción se ha invertido hasta un 65% Han. Más de 1.5 millones de uigures permanecen confinados en denominados 'Centros de Educación Ideológica' bajo un sistema de control que incluye reconocimiento facial, seguimiento de aplicaciones móviles e inteligencia artificial. El artículo argumenta que la represión responde tanto a motivaciones de control político como al valor geoeconómico de la región, que concentra reservas de hidrocarburos y minerales críticos en el contexto de la rivalidad sino-occidental.",
+          "url": "https://www.lanacion.com.ar/opinion/el-trasfondo-economico-y-geopolitico-de-la-brutal-represion-china-en-la-provincia-de-xinjiang-nid31032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mundial 2026: obras inconclusas, negocios vaciados y el Azteca que sí quedó bien",
+          "body": "A menos de 75 días del arranque oficial del Mundial el 11 de junio, las principales ciudades sede mexicanas reconocen obras mayores que no estarán listas: en Monterrey, el metro permanece en construcción, y en la Ciudad de México los planes de regeneración urbana alrededor del Estadio Azteca —hoy rebautizado Banorte— quedaron en papel. El operativo del partido de prueba del sábado pasado dejó negocios formales de la zona —restaurantes, estacionamientos, cines— completamente vacíos durante horas, con empleados saliendo a la calle a buscar clientes, mientras los accesos al estadio colapsaron y la revisión de seguridad desapareció por la saturación. Lo rescatable: la cancha, las instalaciones interiores y la conectividad a internet funcionaron bien.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2026/03/31/los-pendientes-del-mundial/",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "History doesn't repeat itself, but it does rhyme. And right now it's rhyming with 1973 — only louder.",
+        "attribution": "Kenneth Rogoff, economista, Harvard University / CERAWeek, 2026"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the IMF has now confirmed what markets have been pricing in for weeks: the Middle East conflict is a classic supply shock with not-so-classic consequences — the de facto closure of the Strait of Hormuz represents 20% of global oil supply, a disruption three times larger than 1973. While Larry Fink warns of a global recession if oil holds at $150 a barrel and Kenneth Rogoff says we're already in one, the world's central banks are navigating between renewed inflationary pressures and economies that were already cooling on their own. Welcome to Monday.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "La combinación de un conflicto bélico que interrumpe el 20% del suministro global de petróleo, advertencias del FMI sobre inflación y menor crecimiento, y declaraciones de figuras como Fink y Rogoff apuntando a recesión global mantienen el sentimiento firmemente en territorio de aversión al riesgo.",
+        "context_en": "The combination of a conflict disrupting 20% of global oil supply, IMF warnings of higher inflation and slower growth, and statements from figures like Fink and Rogoff pointing to global recession keep sentiment firmly in risk-off territory."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "IMF warns: Middle East war will bring higher inflation and slower global growth",
+          "body": "The International Monetary Fund identified energy as the primary transmission channel of the conflict, noting that the de facto closure of the Strait of Hormuz already represents the largest disruption to the oil market in history. Approximately one-third of global fertilizer shipments pass through that strait, adding pressure to global food prices. The IMF will publish its World Economic Outlook and Global Financial Stability reports on April 14 and 15, respectively, during its Spring Meetings with the World Bank.",
+          "url": "https://www.elfinanciero.com.mx/economia/2026/03/31/guerra-dejara-mas-inflacion-y-un-crecimiento-mas-lento-fmi/",
+          "tag": "Macro"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "BlackRock, Harvard and the specter of recession: the economic stakes of the war and energy markets",
+          "body": "BlackRock chairman Larry Fink warned in interviews with Il Corriere della Sera, El País, and the BBC that if oil sustains at $150 per barrel, the world faces a major economic freeze; only a war ending before May could reverse prices. Harvard economist Kenneth Rogoff was more direct at CERAWeek, stating that we are already in a recession, comparing the current 20% hydrocarbon supply restriction to the 7% cut during the 1973 crisis. In Argentina, fuel prices have risen 12–16% in the past month, far below Chile's 54% or the U.S. average of 30%, fueling speculation about a possible return to price controls.",
+          "url": "https://www.lanacion.com.ar/politica/ypf-el-segundo-salvataje-de-trump-nid31032026/",
+          "tag": "Energía"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Banxico cuts to 6.75% but signals pause: terminal rate may stop at 6.50%",
+          "body": "Mexico's central bank cut its benchmark rate by 25 basis points to 6.75% in a move analyst Gabriel Casillas describes as widely telegraphed since February, when the Governing Board removed the phrase 'the timing' from its forward guidance. However, the more significant shift was in future communication: the use of the indefinite article 'one' additional cut suggests the terminal rate in this easing cycle could stop at 6.50%, well above the 6.00% or lower that Banxico's own 2026 Monetary Program had suggested as possible. The Iran conflict and its effects on energy prices and supply chains are the central driver of the increased caution.",
+          "url": "https://www.elfinanciero.com.mx/opinion/gabriel-casillas/2026/03/31/defendiendo-la-decision-de-banxico/",
+          "tag": "Tasas"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Global sovereign bonds and a dollar under pressure: key signals for savers in wartime",
+          "body": "With U.S. fiscal deficits projected at 8% of GDP for 2026 and 10-year Treasury yields at 4.36%, while Japan abandons its cheap-money era by lifting rates to 2.27% and the UK pays 4.95%, the analysis concludes that no currency backed by chronic deficits appreciates indefinitely in real terms. For Latin American savers, the implication is that dollarizing is no longer enough: risk has also seeped into hard currencies, making diversification — into euros and real assets — a practical necessity rather than a theoretical recommendation. Gold and assets that don't depend on a government's promise to pay are gaining relevance in this context.",
+          "url": "https://www.lanacion.com.ar/economia/el-mapa-del-dinero-en-tiempos-de-guerra-y-deuda-tres-senales-que-todo-ahorrista-argentino-deberia-nid31032026/",
+          "tag": "FX"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico: from speculation to infrastructure, the crypto market matures with remittances as engine",
+          "body": "Mexico ranks 14th out of 151 countries in digital asset adoption according to Chainalysis, and second in Latin America, but the most relevant signal is no longer the ranking but the use case: in a country with over $60 billion in annual remittances, Layer 2 networks already process transactions at fractions of a cent versus the up to $50 that base-chain transactions can cost. Stablecoins are consolidating as payments infrastructure, and the boundary between fintech, banking, and Web3 is eroding toward a hybrid system, while regulatory frameworks like MiCA in Europe and the GENIUS Act in the United States complete the institutionalization of the asset class globally.",
+          "url": "https://www.elfinanciero.com.mx/mundo-empresa/2026/03/30/de-la-especulacion-a-la-infraestructura-mexico-y-la-madurez-de-la-industria-cripto/",
+          "tag": "México"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Xinjiang: the economic and geopolitical backdrop behind China's repression of the Uyghurs",
+          "body": "China's Xinjiang province, spanning 1.65 million km² and strategically rich in energy resources, was occupied by the People's Republic of China in 1949, when the Uyghur ethnic group represented 80% of the population; today, after decades of forced Han migration, that ratio has been reversed to 65% Han. More than 1.5 million Uyghurs remain confined in so-called 'Ideological Education Centers' under a control system that includes facial recognition, mobile app tracking, and artificial intelligence. The article argues that the repression responds both to political control motivations and to the region's geoeconomic value, which concentrates hydrocarbon reserves and critical minerals in the context of Sino-Western rivalry.",
+          "url": "https://www.lanacion.com.ar/opinion/el-trasfondo-economico-y-geopolitico-de-la-brutal-represion-china-en-la-provincia-de-xinjiang-nid31032026/",
+          "tag": "Política"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "World Cup 2026: unfinished works, emptied businesses, and the Azteca that actually came together",
+          "body": "Less than 75 days before the official World Cup kickoff on June 11, Mexico's main host cities acknowledge major construction projects that won't be ready in time: in Monterrey, the metro remains under construction, and in Mexico City, urban regeneration plans around the Azteca Stadium — now rebranded as Banorte — remained on paper. The security drill at last Saturday's test match left formal businesses in the area — restaurants, parking lots, cinemas — completely empty for hours, with employees stepping into the street to find the few passing customers, while stadium access points collapsed and security checks disappeared due to overcrowding. The bright spot: the pitch, interior facilities, and internet connectivity performed well.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2026/03/31/los-pendientes-del-mundial/",
+          "tag": "México"
+        }
+      ],
+      "quote": {
+        "text": "History doesn't repeat itself, but it does rhyme. And right now it's rhyming with 1973 — only louder.",
+        "attribution": "Kenneth Rogoff, economista, Harvard University / CERAWeek, 2026"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "99.42",
+        "change": "▼ 0.5%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.31%",
+        "change": "▼ 0.7%",
+        "direction": "down",
+        "chg_1w": "▼ 0.4%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "VIX",
+        "value": "24.22",
+        "change": "▼ 4.1%",
+        "direction": "down",
+        "chg_1w": "▼ 11.7%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$56.79",
+        "change": "▲ 3.7%",
+        "direction": "up",
+        "chg_1w": "▼ 1.1%",
+        "direction_1w": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05600",
+            "chg_1d": {
+              "text": "▲ 1.57%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.46%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2890",
+            "chg_1d": {
+              "text": "▼ 0.42%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.90%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04823",
+            "chg_1d": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.86%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3849",
+            "chg_1d": {
+              "text": "▲ 1.01%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.86%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0778",
+            "chg_1d": {
+              "text": "▲ 1.29%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04203",
+            "chg_1d": {
+              "text": "▲ 0.43%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.15%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.87",
+            "chg_1d": {
+              "text": "▲ 0.62%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.11%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.8585",
+            "chg_1d": {
+              "text": "▼ 1.55%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.46%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1609",
+            "chg_1d": {
+              "text": "▼ 1.96%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.45%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.86140",
+            "chg_1d": {
+              "text": "▼ 1.28%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.41%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.8731",
+            "chg_1d": {
+              "text": "▼ 0.56%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.40%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3890",
+            "chg_1d": {
+              "text": "▼ 0.27%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.55%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75058",
+            "chg_1d": {
+              "text": "▼ 1.13%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.30%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "158.33",
+            "chg_1d": {
+              "text": "▼ 0.94%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.66%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.4603",
+            "chg_1d": {
+              "text": "▲ 0.42%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.93%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19376",
+            "chg_1d": {
+              "text": "▲ 2.00%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.47%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16691",
+            "chg_1d": {
+              "text": "▲ 0.69%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.06%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3318",
+            "chg_1d": {
+              "text": "▲ 1.43%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.06%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2691",
+            "chg_1d": {
+              "text": "▲ 1.72%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.03%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14544",
+            "chg_1d": {
+              "text": "▲ 0.85%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.78%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.68",
+            "chg_1d": {
+              "text": "▲ 1.04%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.80%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.7319",
+            "chg_1d": {
+              "text": "▼ 0.27%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.87%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.16090",
+            "chg_1d": {
+              "text": "▲ 1.30%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.9913",
+            "chg_1d": {
+              "text": "▼ 0.68%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.04%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.9790",
+            "chg_1d": {
+              "text": "▲ 0.74%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.00%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6125",
+            "chg_1d": {
+              "text": "▲ 1.02%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.96%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.87135",
+            "chg_1d": {
+              "text": "▲ 0.16%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.72%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "183.81",
+            "chg_1d": {
+              "text": "▲ 0.34%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.25%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5983",
+            "chg_1d": {
+              "text": "▼ 1.00%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.86%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14549",
+            "chg_1d": {
+              "text": "▲ 0.56%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7509",
+            "chg_1d": {
+              "text": "▼ 1.41%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.05%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12533",
+            "chg_1d": {
+              "text": "▼ 0.73%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.00%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2021",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.96%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.10921",
+            "chg_1d": {
+              "text": "▼ 0.57%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.71%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.04",
+            "chg_1d": {
+              "text": "▼ 0.39%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
