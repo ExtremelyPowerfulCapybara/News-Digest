@@ -46,9 +46,10 @@ def run():
     # -- 2+3. Fetch news + summarize (or load mock) --
     if MOCK_MODE:
         print("\n[2-3/5] MOCK MODE -- loading saved digest...")
-        mock     = load_mock()
-        articles = mock["articles"]
-        digest   = mock["digest"]
+        mock           = load_mock()
+        articles       = mock["articles"]
+        digest         = mock["digest"]
+        active_threads = []
     else:
         print("\n[2/5] Fetching news articles...")
         prior_urls = get_recent_urls(days=5)
@@ -57,8 +58,16 @@ def run():
         if not articles:
             print("  No articles found. Check your NewsAPI key or topics.")
             return
+        print(f"\n[2.5/5] Scoring and ranking {len(articles)} articles...")
+        from scorer import rank_articles
+        articles = rank_articles(articles)
+        print(f"  [scorer] {len(articles)} articles selected for Claude.")
+        from storage import get_active_threads
+        active_threads = get_active_threads()
+        if active_threads:
+            print(f"  [threads] Active threads this week: {active_threads}")
         print(f"\n[3/5] Summarizing {len(articles)} articles with Claude...")
-        digest = summarize_news(articles)
+        digest = summarize_news(articles, active_threads=active_threads)
 
     digest_es = digest.get("es", digest)  # Spanish -- used in email
     digest_en = digest.get("en", digest)  # English -- used in archive toggle
