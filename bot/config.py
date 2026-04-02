@@ -125,6 +125,16 @@ NEWS_DOMAIN_BLOCKLIST: set[str] = {
     # "example-aggregator.com",
 }
 
+# ── Article scoring ───────────────────────────
+# Source name substrings for authority scoring (case-insensitive match).
+SOURCE_TIERS = {
+    "tier1": ["Financial Times", "Reuters", "Wall Street Journal", "Bloomberg"],
+    "tier2": ["Expansion", "El Economista", "Reforma", "Milenio"],
+}
+
+# Maximum number of articles passed to Claude after scoring.
+MAX_ARTICLES_FOR_CLAUDE = 12
+
 # ── Market tickers (Yahoo Finance symbols) ────
 # Main ticker bar: global macro conditions
 TICKER_SYMBOLS = [

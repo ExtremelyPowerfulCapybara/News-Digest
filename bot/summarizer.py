@@ -9,24 +9,32 @@ from config import ANTHROPIC_API_KEY
 
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
-def summarize_news(articles: list[dict]) -> dict:
+def summarize_news(articles: list[dict], active_threads: list[str] | None = None) -> dict:
     """
     Sends articles to Claude and returns a bilingual digest dict with:
     - "es": { editor_note, sentiment, stories, quote }  <- Spanish (primary)
     - "en": { editor_note, sentiment, stories, quote }  <- English translation
     """
+    active_threads = active_threads or []
+    thread_context = ""
+    if active_threads:
+        tags_str = ", ".join(f'"{t}"' for t in active_threads)
+        thread_context = f"\nLos siguientes temas han aparecido recurrentemente esta semana: {tags_str}. Si una historia continúa alguno de estos temas, usa el mismo tag exacto en el campo thread_tag.\n"
+
     parts = []
     for i, a in enumerate(articles, 1):
         parts.append(f"{i}. [{a['source']}] {a['title']}\nURL: {a['url']}\n{a['content']}\n\n")
     news_text = "".join(parts)
 
     prompt = f"""Eres un editor de noticias financieras produciendo un briefing matutino diario para una audiencia hispanohablante sofisticada. Voz: directa, seca, ocasionalmente sardónica — como un editor de mercados veterano que ha visto cada ciclo y encuentra el actual tanto alarmante como vagamente entretenido.
-
+{thread_context}
 Analiza los artículos a continuación y devuelve un objeto JSON con EXACTAMENTE esta estructura:
 
 {{
   "es": {{
     "editor_note": "2-3 oraciones abriendo el briefing del día. Siempre abre con 'Estimados humanos,' como las primeras dos palabras. Voz: directa, seca, ocasionalmente sardónica. Referencia la historia dominante. Primera persona. NO incluyas firma — se agrega por separado. Sin relleno.",
+
+    "narrative_thread": "Una oración en español describiendo el tema macro dominante del día — el hilo conductor que conecta las historias más importantes.",
 
     "sentiment": {{
       "label_es": "Aversión al Riesgo" | "Cauteloso" | "Apetito por Riesgo",
@@ -42,7 +50,12 @@ Analiza los artículos a continuación y devuelve un objeto JSON con EXACTAMENTE
         "headline": "Titular conciso y específico en español",
         "body": "2-3 oraciones en español. Incluye cifras específicas, nombres, y por qué importa. Termina naturalmente.",
         "url": "URL original del artículo",
-        "tag": "Uno de: Macro | FX | México | Comercio | Tasas | Mercados | Energía | Política"
+        "tag": "Uno de: Macro | FX | México | Comercio | Tasas | Mercados | Energía | Política",
+        "context_note": {{
+          "es": "Una oración explicando por qué esta historia importa HOY — conecta con condiciones de mercado actuales, datos recientes, o eventos de la semana.",
+          "en": "One sentence explaining why this story matters TODAY — connect to current market conditions, recent data, or this week's events."
+        }},
+        "thread_tag": "Si esta historia continúa un tema recurrente de la semana, escribe el tag exacto (e.g. 'Banxico: tasa'). Si es independiente, escribe null."
       }}
     ],
 
@@ -54,6 +67,8 @@ Analiza los artículos a continuación y devuelve un objeto JSON con EXACTAMENTE
 
   "en": {{
     "editor_note": "Faithful English translation of the editor_note above. Keep the same voice and tone.",
+
+    "narrative_thread": "Faithful English translation of the narrative_thread above.",
 
     "sentiment": {{
       "label_es": "<same as above>",
@@ -69,7 +84,12 @@ Analiza los artículos a continuación y devuelve un objeto JSON con EXACTAMENTE
         "headline": "Faithful English translation of the headline",
         "body": "Faithful English translation of the body",
         "url": "Same original URL",
-        "tag": "Same tag"
+        "tag": "Same tag",
+        "context_note": {{
+          "es": "<same as above>",
+          "en": "Faithful English translation of context_note"
+        }},
+        "thread_tag": "<same as above or null>"
       }}
     ],
 
@@ -88,6 +108,8 @@ Reglas:
 - Responde ÚNICAMENTE con el objeto JSON, sin preámbulo, sin markdown fences
 - sentiment.position debe ser consistente con el label: Aversión al Riesgo = 5-35, Cauteloso = 36-64, Apetito por Riesgo = 65-95
 - El bloque "en" es una traducción fiel del bloque "es" — mismas historias, mismas URLs, mismo sentimiento
+- context_note debe ser sustantivo: no repitas el cuerpo de la historia, aporta contexto nuevo
+- thread_tag debe ser null si la historia es independiente; solo usa tags de la lista de temas recurrentes si aplica
 
 Artículos:
 {news_text}
@@ -98,7 +120,7 @@ Artículos:
         try:
             message = client.messages.create(
                 model="claude-sonnet-4-6",
-                max_tokens=6000,
+                max_tokens=8000,
                 messages=[{"role": "user", "content": prompt}]
             )
             break
@@ -135,7 +157,7 @@ Artículos:
                 print(f"  [summarizer] JSON parse failed ({e}), asking Claude to repair...")
                 repair_message = client.messages.create(
                     model="claude-sonnet-4-6",
-                    max_tokens=6000,
+                    max_tokens=8000,
                     messages=[
                         {"role": "user",    "content": prompt},
                         {"role": "assistant", "content": raw},

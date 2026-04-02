@@ -57,10 +57,11 @@ def fetch_news(prior_urls: set[str] | None = None) -> list[dict]:
 
             topic_source_count[source_name] = topic_source_count.get(source_name, 0) + 1
             all_articles.append({
-                "title":   a.get("title", "").strip(),
-                "content": content,
-                "source":  source_name,
-                "url":     article_url,
+                "title":       a.get("title", "").strip(),
+                "content":     content,
+                "source":      source_name,
+                "url":         article_url,
+                "publishedAt": a.get("publishedAt", ""),
             })
 
         topic_sources = list(topic_source_count.keys())

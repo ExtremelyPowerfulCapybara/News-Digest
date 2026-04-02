@@ -43,6 +43,7 @@ def save_pretty_issue(
         f.write(html)
 
     print(f"  [archive] Saved pretty issue to {filepath}")
+    _update_thread_index(digest, today)
     rebuild_index()
     return filepath
 
@@ -90,6 +91,44 @@ def _load_all_digests() -> list[dict]:
     return entries
 
 
+def _update_thread_index(digest: dict, date_str: str) -> None:
+    """
+    Reads docs/thread_index.json, merges in new thread_tag entries from today's digest,
+    and writes it back. Called once per run so the index grows incrementally.
+    """
+    index_path = os.path.join(ARCHIVE_DIR, "thread_index.json")
+
+    # Load existing index or start fresh
+    if os.path.exists(index_path):
+        with open(index_path, encoding="utf-8") as f:
+            try:
+                thread_index = json.load(f)
+            except json.JSONDecodeError:
+                thread_index = {}
+    else:
+        thread_index = {}
+
+    digest_es = digest.get("es", digest)
+    for story in digest_es.get("stories", []):
+        tag = story.get("thread_tag")
+        if not tag or not isinstance(tag, str):
+            continue
+        entry = {
+            "date":     date_str,
+            "headline": story.get("headline", ""),
+        }
+        if tag not in thread_index:
+            thread_index[tag] = []
+        # Avoid duplicates (in case run is re-executed for same date)
+        existing_dates = {e["date"] for e in thread_index[tag]}
+        if date_str not in existing_dates:
+            thread_index[tag].append(entry)
+
+    with open(index_path, "w", encoding="utf-8") as f:
+        json.dump(thread_index, f, ensure_ascii=False, indent=2)
+    print(f"  [archive] Thread index updated ({len(thread_index)} tags).")
+
+
 def rebuild_index() -> None:
     os.makedirs(ARCHIVE_DIR, exist_ok=True)
 
@@ -105,6 +144,72 @@ def rebuild_index() -> None:
         "#b84a3a" if l == "Risk-Off" else ("#4a9e6a" if l == "Risk-On" else "#e8a030")
         for l in chart_labels
     ]
+
+    # -- Load thread index for Coverage Map and Thread Index sections -----------
+    tag_counts: dict[str, int] = {}
+    thread_index_data: dict = {}
+    thread_index_path = os.path.join(ARCHIVE_DIR, "thread_index.json")
+    if os.path.exists(thread_index_path):
+        with open(thread_index_path, encoding="utf-8") as f:
+            try:
+                thread_index_data = json.load(f)
+            except json.JSONDecodeError:
+                thread_index_data = {}
+        for tag, entries in thread_index_data.items():
+            tag_counts[tag] = len(entries)
+
+    # Sort by count desc, top 10
+    top_tags = sorted(tag_counts.items(), key=lambda x: -x[1])[:10]
+
+    coverage_map_html = ""
+    if top_tags:
+        max_count = top_tags[0][1] if top_tags else 1
+        bars = ""
+        for tag, count in top_tags:
+            pct = int((count / max_count) * 100)
+            bars += f"""
+      <div style="margin-bottom:10px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+          <span style="font-family:Arial,sans-serif; font-size:10px; color:#3a4a54; font-weight:500;">{tag}</span>
+          <span style="font-family:Arial,sans-serif; font-size:9px; color:#aab4bc;">{count}</span>
+        </div>
+        <div style="height:6px; background:#dde3e8; border-radius:3px;">
+          <div style="height:6px; background:#3a4a54; border-radius:3px; width:{pct}%;"></div>
+        </div>
+      </div>"""
+        coverage_map_html = f"""
+  <div style="background:#f0f3f5; border:1px solid #cdd4d9; padding:24px 28px; margin-bottom:24px;">
+    <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Coverage Map -- Top Threads</p>
+    {bars}
+  </div>"""
+
+    thread_index_html = ""
+    if thread_index_data:
+        thread_sections = ""
+        for tag, entries in sorted(thread_index_data.items(), key=lambda x: -len(x[1])):
+            if len(entries) < 2:
+                continue
+            links = ""
+            for entry in sorted(entries, key=lambda e: e["date"], reverse=True)[:5]:
+                links += f"""
+          <a href="{entry['date']}.html" style="display:block; text-decoration:none; padding:8px 0; border-bottom:1px solid #e4e9ec; font-family:Georgia,serif; font-size:13px; color:#1a1a1a; line-height:1.4;">
+            <span style="font-family:Arial,sans-serif; font-size:9px; color:#aab4bc; display:block; margin-bottom:2px;">{entry['date']}</span>
+            {entry['headline']}
+          </a>"""
+            thread_sections += f"""
+      <details style="margin-bottom:12px;">
+        <summary style="cursor:pointer; font-family:Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#3a4a54; padding:10px 0; border-bottom:1px solid #cdd4d9; list-style:none; display:flex; justify-content:space-between;">
+          {tag}
+          <span style="color:#aab4bc; font-weight:400;">{len(entries)} stories</span>
+        </summary>
+        <div style="padding-top:4px;">{links}</div>
+      </details>"""
+        if thread_sections:
+            thread_index_html = f"""
+  <div style="background:#f0f3f5; border:1px solid #cdd4d9; padding:24px 28px; margin-bottom:24px;">
+    <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Topic Threads</p>
+    {thread_sections}
+  </div>"""
 
     issues = sorted(
         [f for f in os.listdir(ARCHIVE_DIR) if f.endswith(".html") and f != "index.html"],
@@ -294,6 +399,9 @@ def rebuild_index() -> None:
   </div>
 
   {charts_html}
+
+  {coverage_map_html}
+  {thread_index_html}
 
   <div class="search-wrap">
     <input class="search-input" id="searchInput" type="text" placeholder="Search issues...">

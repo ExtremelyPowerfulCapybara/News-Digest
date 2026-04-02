@@ -93,6 +93,28 @@ def get_recent_urls(days: int = 5) -> set[str]:
     return urls
 
 
+def get_active_threads() -> list[str]:
+    """
+    Returns thread_tag values that appeared >=2 times across the last 5 daily digests.
+    Injected into the Claude prompt so it can tag continuing story threads.
+    Only tags from digests that have the new thread_tag field are counted.
+    """
+    today = date.today()
+    tag_counts: dict[str, int] = {}
+
+    for i in range(1, 6):
+        data = load_digest((today - timedelta(days=i)).isoformat())
+        if not data:
+            continue
+        digest_es = data.get("digest", {}).get("es", data.get("digest", {}))
+        for story in digest_es.get("stories", []):
+            tag = story.get("thread_tag")
+            if tag and isinstance(tag, str):
+                tag_counts[tag] = tag_counts.get(tag, 0) + 1
+
+    return [tag for tag, count in sorted(tag_counts.items(), key=lambda x: -x[1]) if count >= 2]
+
+
 def get_week_sentiment() -> list[dict]:
     """
     Returns sentiment data for each available day Mon-Fri of the current week.

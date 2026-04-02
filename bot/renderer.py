@@ -157,6 +157,20 @@ def _editor_note(note: str, author: str = "") -> str:
 </table>"""
 
 
+def _narrative_thread(text: str) -> str:
+    """Renders the day's dominant macro theme as a bold callout below the editor note."""
+    if not text:
+        return ""
+    return f"""
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td style="padding:0 48px 20px;">
+      <p style="margin:0; font-family:{FONT_SANS}; font-size:11px; font-weight:bold; color:{TEXT_MID}; border-left:3px solid {TEXT_DARK}; padding-left:12px; line-height:1.7;">{text}</p>
+    </td>
+  </tr>
+</table>"""
+
+
 def _sentiment(s: dict) -> str:
     label_en = s.get("label_en", s.get("label", "Cautious"))
     label_es = s.get("label_es", s.get("label", "Cauteloso"))
@@ -199,17 +213,40 @@ def _sentiment(s: dict) -> str:
 
 
 def _story_block(story: dict) -> str:
+    thread_tag = story.get("thread_tag")
+    thread_html = ""
+    if thread_tag and isinstance(thread_tag, str):
+        thread_html = (
+            f'<p style="margin:0 0 8px 0;">'
+            f'<span style="font-family:{FONT_SANS}; font-size:8px; font-weight:bold; '
+            f'letter-spacing:1.5px; text-transform:uppercase; background:{TEXT_DARK}; '
+            f'color:#f5f2ed; padding:3px 9px; border-radius:2px;">&#9679; {thread_tag}</span>'
+            f'</p>'
+        )
+
+    context_note = story.get("context_note", {})
+    context_es = context_note.get("es", "") if isinstance(context_note, dict) else ""
+    context_html = ""
+    if context_es:
+        context_html = (
+            f'<p style="margin:10px 0 10px 0; font-family:{FONT_SANS}; font-size:12px; '
+            f'color:{TEXT_MID}; border-left:3px solid {BORDER}; padding-left:10px; '
+            f'line-height:1.7; font-style:italic;">{context_es}</p>'
+        )
+
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
     <td style="padding:24px 48px;">
+      {thread_html}
       <p style="margin:0 0 6px 0;">
         <span style="font-family:{FONT_SANS}; font-size:9px; font-weight:bold; letter-spacing:2px; text-transform:uppercase; color:#999999;">{story['source']}</span>
         <span style="font-family:{FONT_SANS}; font-size:8px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:{TEXT_LIGHT}; border:1px solid {BORDER}; padding:2px 6px; margin-left:8px;">{story.get('tag','')}</span>
       </p>
       <p style="margin:0 0 10px 0; font-family:{FONT_SERIF}; font-size:20px; font-weight:bold; color:{TEXT_DARK}; line-height:1.3;">{story['headline']}</p>
       <p style="margin:0 0 10px 0; font-family:{FONT_SANS}; font-size:13px; color:{TEXT_MID}; line-height:1.75;">{story['body']}</p>
-      <a href="{story['url']}" style="font-family:{FONT_SANS}; font-size:10px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:{TEXT_DARK}; text-decoration:none; border-bottom:1px solid {TEXT_DARK}; padding-bottom:1px;">Leer más &#8594;</a>
+      {context_html}
+      <a href="{story['url']}" style="font-family:{FONT_SANS}; font-size:10px; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; color:{TEXT_DARK}; text-decoration:none; border-bottom:1px solid {TEXT_DARK}; padding-bottom:1px;">Leer m&aacute;s &#8594;</a>
     </td>
   </tr>
 </table>"""
@@ -557,6 +594,7 @@ def build_html(
         <tr><td>{_ticker(tickers)}</td></tr>
         <tr><td>{_secondary_dashboard(secondary_tickers)}</td></tr>
         <tr><td>{_editor_note(digest.get('editor_note', ''), author)}</td></tr>
+        {('<tr><td>' + _narrative_thread(digest.get('narrative_thread', '')) + '</td></tr>') if digest.get('narrative_thread') else ''}
         <tr><td>{_divider()}</td></tr>
         <tr><td>{_sentiment(sentiment)}</td></tr>
         <tr><td>{_divider()}</td></tr>

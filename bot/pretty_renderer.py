@@ -100,6 +100,25 @@ CSS = """
   .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
   .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
   .read-more:hover { color: #555; border-color: #555; }
+  .thread-badge {
+    display: inline-block;
+    font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    background: #1a1a1a; color: #f5f2ed; padding: 3px 9px; border-radius: 2px;
+    margin-bottom: 8px;
+  }
+  .context-note {
+    font-size: 12.5px; color: #777; line-height: 1.7; font-style: italic;
+    border-left: 3px solid #cdd4d9; padding-left: 10px;
+    margin: 10px 0;
+  }
+  .narrative-thread {
+    padding: 0 48px 20px;
+  }
+  .narrative-thread p {
+    font-size: 11px; font-weight: 600; color: #555;
+    border-left: 3px solid #1a1a1a; padding-left: 12px; line-height: 1.7;
+    margin: 0;
+  }
 
   .currency { padding: 24px 48px; }
   .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
@@ -261,6 +280,16 @@ def build_pretty_html(
     digest_es = digest.get("es", digest)
     digest_en = digest.get("en", digest_es)  # fall back to ES if no EN
 
+    narrative_es = digest_es.get("narrative_thread", "")
+    narrative_en = digest_en.get("narrative_thread", narrative_es)
+    narrative_html = ""
+    if narrative_es:
+        narrative_html = f"""
+<div class="narrative-thread">
+  <div class="lang-es"><p>{narrative_es}</p></div>
+  <div class="lang-en"><p>{narrative_en}</p></div>
+</div>"""
+
     today      = date.today().strftime("%A, %B %d, %Y").upper()
     issue_date = date.today().strftime("%B %d, %Y")
 
@@ -301,9 +330,30 @@ def build_pretty_html(
     stories_html = ""
     for i, story in enumerate(stories_es):
         story_en = stories_en[i] if i < len(stories_en) else story
+
+        thread_tag = story.get("thread_tag")
+        thread_badge = (
+            f'<span class="thread-badge">&#9679; {thread_tag}</span>'
+            if thread_tag and isinstance(thread_tag, str) else ""
+        )
+
+        ctx_es = ""
+        ctx_en = ""
+        cn = story.get("context_note", {})
+        if isinstance(cn, dict):
+            ctx_es = cn.get("es", "")
+            ctx_en = cn.get("en", "")
+        cn_en = story_en.get("context_note", {})
+        if isinstance(cn_en, dict) and cn_en.get("en"):
+            ctx_en = cn_en.get("en", ctx_en)
+
+        ctx_es_html = f'<div class="context-note">{ctx_es}</div>' if ctx_es else ""
+        ctx_en_html = f'<div class="context-note">{ctx_en}</div>' if ctx_en else ""
+
         stories_html += f"""
 {DIVIDER}
 <div class="story">
+  {thread_badge}
   <div class="story-meta">
     <span class="story-source">{story['source']}</span>
     <span class="story-tag">{story.get('tag','')}</span>
@@ -311,11 +361,13 @@ def build_pretty_html(
   <div class="lang-es">
     <div class="story-headline">{story['headline']}</div>
     <div class="story-body">{story['body']}</div>
+    {ctx_es_html}
     <a href="{story['url']}" class="read-more">Leer m&aacute;s &rarr;</a>
   </div>
   <div class="lang-en">
     <div class="story-headline">{story_en.get('headline', story['headline'])}</div>
     <div class="story-body">{story_en.get('body', story['body'])}</div>
+    {ctx_en_html}
     <a href="{story['url']}" class="read-more">Read more &rarr;</a>
   </div>
 </div>"""
@@ -605,6 +657,8 @@ def build_pretty_html(
     <div class="lang-en"><p>{digest_en.get('editor_note', digest_es.get('editor_note',''))}</p></div>
     <div class="editor-sig">&mdash; {author}</div>
   </div>
+
+  {narrative_html}
 
   {DIVIDER}
 
