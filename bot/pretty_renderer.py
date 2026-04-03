@@ -97,6 +97,8 @@ CSS = """
   .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
   .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
   .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-headline-lead { font-size: 26px; }
+  .lead-label { font-size: 8px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 6px; }
   .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
   .read-more { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border: 1px solid #1a1a1a; padding: 6px 14px; margin-top: 6px; transition: background 0.15s, color 0.15s; }
   .read-more:hover { background: #1a1a1a; color: #f5f2ed; }
@@ -111,14 +113,9 @@ CSS = """
     border-left: 3px solid #cdd4d9; padding-left: 10px;
     margin: 10px 0;
   }
-  .narrative-thread {
-    padding: 0 48px 20px;
-  }
-  .narrative-thread p {
-    font-size: 11px; font-weight: 600; color: #555;
-    border-left: 3px solid #1a1a1a; padding-left: 12px; line-height: 1.7;
-    margin: 0;
-  }
+  .narrative-thread { padding: 20px 48px; border-top: 1px solid #e4e9ec; border-bottom: 1px solid #e4e9ec; text-align: center; }
+  .nt-label { font-size: 8px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #aab4bc; margin-bottom: 10px; }
+  .nt-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; color: #3a4a54; line-height: 1.65; margin: 0; }
 
   .currency { padding: 24px 48px; }
   .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
@@ -286,8 +283,10 @@ def build_pretty_html(
     if narrative_es:
         narrative_html = f"""
 <div class="narrative-thread">
-  <div class="lang-es"><p>{narrative_es}</p></div>
-  <div class="lang-en"><p>{narrative_en}</p></div>
+  <div class="nt-label lang-es">Hilo del d&#237;a</div>
+  <div class="nt-label lang-en">Today&#39;s thread</div>
+  <p class="nt-text lang-es">{narrative_es}</p>
+  <p class="nt-text lang-en">{narrative_en}</p>
 </div>"""
 
     today      = date.today().strftime("%A, %B %d, %Y").upper()
@@ -350,22 +349,29 @@ def build_pretty_html(
         ctx_es_html = f'<div class="context-note">{ctx_es}</div>' if ctx_es else ""
         ctx_en_html = f'<div class="context-note">{ctx_en}</div>' if ctx_en else ""
 
+        lead_label_html = (
+            '<div class="lead-label">&#9679; LEAD STORY</div>'
+            if i == 0 else ""
+        )
+        headline_class = "story-headline story-headline-lead" if i == 0 else "story-headline"
+
         stories_html += f"""
 {DIVIDER}
 <div class="story">
   {thread_badge}
+  {lead_label_html}
   <div class="story-meta">
     <span class="story-source">{story['source']}</span>
     <span class="story-tag">{story.get('tag','')}</span>
   </div>
   <div class="lang-es">
-    <div class="story-headline">{story['headline']}</div>
+    <div class="{headline_class}">{story['headline']}</div>
     <div class="story-body">{story['body']}</div>
     {ctx_es_html}
     <a href="{story['url']}" class="read-more">Leer m&aacute;s &rarr;</a>
   </div>
   <div class="lang-en">
-    <div class="story-headline">{story_en.get('headline', story['headline'])}</div>
+    <div class="{headline_class}">{story_en.get('headline', story['headline'])}</div>
     <div class="story-body">{story_en.get('body', story['body'])}</div>
     {ctx_en_html}
     <a href="{story['url']}" class="read-more">Read more &rarr;</a>
