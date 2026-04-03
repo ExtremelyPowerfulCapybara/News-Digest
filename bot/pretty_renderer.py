@@ -98,8 +98,8 @@ CSS = """
   .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
   .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
   .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
-  .read-more { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border: 1px solid #1a1a1a; padding: 6px 14px; margin-top: 6px; }
-  .read-more:hover { background: #1a1a1a; color: #f5f2ed; transition: background 0.15s, color 0.15s; }
+  .read-more { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border: 1px solid #1a1a1a; padding: 6px 14px; margin-top: 6px; transition: background 0.15s, color 0.15s; }
+  .read-more:hover { background: #1a1a1a; color: #f5f2ed; }
   .thread-badge {
     display: inline-block;
     font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
