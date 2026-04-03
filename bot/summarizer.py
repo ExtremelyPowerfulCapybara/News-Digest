@@ -48,7 +48,7 @@ Analiza los artículos a continuación y devuelve un objeto JSON con EXACTAMENTE
       {{
         "source": "Nombre de la fuente",
         "headline": "Titular conciso y específico en español",
-        "body": "2-3 oraciones en español. Incluye cifras específicas, nombres, y por qué importa. Termina naturalmente.",
+        "body": "Exactamente dos oraciones en español. Primera oración: hecho concreto — qué ocurrió, con un número o nombre específico. Segunda oración: qué significa — quién gana, quién pierde, o qué hay que observar a continuación. Sin resúmenes de agencia.",
         "url": "URL original del artículo",
         "tag": "Uno de: Macro | FX | México | Comercio | Tasas | Mercados | Energía | Política",
         "context_note": {{
