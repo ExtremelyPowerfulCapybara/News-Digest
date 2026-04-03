@@ -37,12 +37,12 @@ def load_subscribers() -> list[str]:
         return SUBSCRIBERS
 
 
-def send_email(html: str, plain: str) -> None:
+def send_email(html: str, plain: str, sentiment_label: str = "Cautious") -> None:
     today = date.today()
     months_es = ["","enero","febrero","marzo","abril","mayo","junio",
                  "julio","agosto","septiembre","octubre","noviembre","diciembre"]
     today_str   = f"{today.day} de {months_es[today.month]} de {today.year}"
-    subject     = f"{NEWSLETTER_NAME} — {today_str}"
+    subject     = f"{sentiment_label} | {NEWSLETTER_NAME} — {today_str}"
     subscribers = load_subscribers()
 
     if not subscribers:

@@ -108,7 +108,8 @@ def run():
     if SKIP_EMAIL:
         print("  [delivery] SKIP_EMAIL set — skipping send.")
     else:
-        send_email(html, plain)
+        sentiment_label = digest_es.get("sentiment", {}).get("label_en", "Cautious")
+        send_email(html, plain, sentiment_label=sentiment_label)
 
     # ── 6. Save pretty HTML to archive ─────────────────
     print("\n[6/6] Saving to archive...")
