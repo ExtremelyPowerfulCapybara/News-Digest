@@ -1,0 +1,660 @@
+{
+  "date": "2026-04-04",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, Irán ha convertido el Estrecho de Ormuz en una caseta de peaje con misiles, y el mundo del petróleo está negociando banderas prestadas para poder circular. Mientras tanto, Argentina sigue convenciendo al FMI de que esta vez sí va a cumplir las metas de reservas — la misma promesa, el mismo organismo, distinto gobierno. Días entretenidos, en el peor sentido posible.",
+      "narrative_thread": "La geopolítica aprieta: el control iraní del Estrecho de Ormuz reorganiza los flujos globales de energía, mientras Argentina negocia con el FMI bajo reservas negativas y EE.UU. endurece el acceso al crédito para migrantes, trazando un mundo donde el capital y el petróleo fluyen cada vez más bajo condiciones políticas.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 28,
+        "context_es": "El control iraní de Ormuz, las reservas negativas de Argentina y la exclusión de migrantes del crédito en EE.UU. configuran un entorno de alta incertidumbre geopolítica y financiera.",
+        "context_en": "Iran's grip on Ormuz, Argentina's negative reserves, and the US migrant credit exclusion paint a picture of elevated geopolitical and financial uncertainty."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Irán cobra peajes y exige códigos secretos en Ormuz; buques de EE.UU. e Israel son rechazados",
+          "body": "La Guardia Revolucionaria de Irán está cobrando peajes a buques en el Estrecho de Ormuz, exigiendo información detallada de propiedad, carga y tripulación a través de un intermediario vinculado al régimen, mientras otorga paso preferencial a embarcaciones de países 'amistosos' como Pakistán. El quinto del suministro global de petróleo y GNL que transita por ese estrecho está ahora sujeto a una aduana geopolítica informal — una escalada que puede reconfigurar rutas de suministro, primas de seguro marítimo y precios del crudo antes de que se formalice ningún acuerdo.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/04/02/como-iran-decide-que-barcos-pasan-por-el-estrecho-de-ormuz/",
+          "tag": "Energía",
+          "context_note": {
+            "es": "El Comité de Seguridad Nacional de Irán ya aprobó un proyecto de ley para formalizar las tarifas en Ormuz, lo que convierte una práctica informal en política de Estado justo cuando el mercado de petróleo ya absorbe tensión bélica en Medio Oriente.",
+            "en": "Iran's National Security Committee has already approved a bill to formalize Ormuz tariffs, turning an informal practice into state policy precisely as oil markets are already absorbing war-related tension in the Middle East."
+          },
+          "thread_tag": "Energía: Ormuz"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "FMI inquieto por reservas negativas de Argentina: reunión del directorio se pospone hasta después del 18 de abril",
+          "body": "Las reservas internacionales de Argentina bajo metodología FMI ceraron marzo en -US$13.841 millones, apenas US$569 millones más que al inicio del año y US$4.656 millones por debajo del nivel cuando se firmó el acuerdo en abril de 2025, según la consultora 1816. El directorio del FMI postergó su reunión formal — originalmente el 27 de marzo, luego el 7 de abril — hasta después de la Asamblea de Primavera del 13-18 de abril, señal de que las disidencias internas sobre el incumplimiento de metas no están cerca de resolverse.",
+          "url": "https://www.lanacion.com.ar/economia/dolar-barato-reservas-flacas-y-un-fmi-inquieto-el-momento-incomodo-del-gobierno-nid02042026/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El ingreso de divisas del campo y la apreciación del peso dan al gobierno una ventana cambiaria transitoria, pero el reloj electoral corre: los economistas estiman que agosto es el último mes antes de que toda conversación económica quede subsumida en la campaña de 2027.",
+            "en": "Agribusiness FX inflows and peso appreciation give the government a transient window, but the electoral clock is ticking: economists estimate August is the last month before every economic conversation gets swallowed by the 2027 campaign."
+          },
+          "thread_tag": "Argentina: FMI"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina congela precio de combustibles 45 días: YPF y el gobierno actúan sobre cuatro variables para contener inflación",
+          "body": "YPF anunció un congelamiento de precios en surtidor por 45 días luego de un aumento de casi 20% en marzo — el mayor en más de una década sin movimiento cambiario — mientras el gobierno suspendió la actualización del impuesto a los combustibles líquidos (ICL) para abril, resignando unos US$150 millones mensuales de recaudación. El esquema es un acuerdo de subsidio cruzado: los productores venden crudo localmente entre US$90-US$100 cuando el barril supera los US$100, financiando a las refinadoras, pero cuando el petróleo baje, los precios en el surtidor no seguirán el mismo ritmo para recuperar la diferencia.",
+          "url": "https://www.lanacion.com.ar/economia/activo-rol-del-gobierno-para-frenar-la-suba-de-combustibles-en-medio-de-la-disparada-de-precios-nid02042026/",
+          "tag": "Energía",
+          "context_note": {
+            "es": "La medida ocurre exactamente cuando Irán restringe el tránsito por Ormuz, lo que podría mantener el petróleo internacional elevado por encima de US$100 por más tiempo del esperado, poniendo a prueba la durabilidad del acuerdo entre privados y gobierno.",
+            "en": "The measure comes precisely as Iran restricts Ormuz transit, which could keep international oil above $100 for longer than expected, stress-testing the durability of the private-government pricing agreement."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Nueva ley en EE.UU. excluye a migrantes con green card de préstamos SBA para pequeñas empresas",
+          "body": "Desde el 1° de marzo, el programa 7(a) de la Small Business Administration — el principal instrumento federal de financiamiento para pequeñas empresas, con préstamos de hasta US$5 millones — exige que el 100% de los propietarios sean ciudadanos o nacionales estadounidenses, excluyendo explícitamente a residentes permanentes con green card. La medida, alineada con la orden ejecutiva 'Protecting the American People Against Invasion' de enero de 2025, cierra una puerta de capital a miles de emprendedores migrantes que habían construido negocios dentro del sistema formal — exactamente el perfil contribuyente que Washington dice querer retener.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/migraciones/que-dice-la-ley-que-deja-sin-acceso-a-prestamos-bancarios-a-miles-de-migrantes-ya-entro-en-vigor-en-nid02042026/",
+          "tag": "Política",
+          "context_note": {
+            "es": "El FBI reporta desde 2025 un aumento en delitos de personas que suplantan a agentes del ICE para extorsionar a migrantes, lo que muestra que la política de inmigración está creando un entorno de vulnerabilidad que actores criminales ya explotan sistemáticamente.",
+            "en": "The FBI has reported since 2025 a rise in crimes by individuals impersonating ICE agents to extort migrants, showing that immigration policy is creating a vulnerability environment that criminal actors are already systematically exploiting."
+          },
+          "thread_tag": "EE.UU.: inmigración"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Un hombre se hizo pasar por agente del ICE en un 7-Eleven de Portland para extorsionar a un empleado migrante",
+          "body": "Mason Clark, de 19 años, ingresó a una tienda 7-Eleven en Portland, Oregon, mostró una tarjeta de transporte con una pegatina de placa falsa y exigió al empleado Tun Aung Win entre US$20 y US$50, amenazándolo con 'perder a su familia' si no pagaba, en un incidente que incluyó una pistola de aire comprimido. El FBI reporta un incremento sostenido de este tipo de fraudes desde 2025 — el nombre del ICE como herramienta de extorsión criminal es un efecto secundario directo del clima migratorio que ningún funcionario aparece ansioso por cuantificar.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/irrumpio-en-un-7-eleven-haciendose-pasar-por-agente-del-ice-lo-que-ocurrio-adentro-nid02042026/",
+          "tag": "Política",
+          "context_note": {
+            "es": "La historia conecta directamente con la nueva normativa SBA que excluye a migrantes del crédito formal: ambas noticias del mismo día ilustran cómo la política migratoria de Trump crea vulnerabilidades económicas y de seguridad para comunidades inmigrantes en EE.UU.",
+            "en": "The story connects directly to the new SBA rule excluding migrants from formal credit: both stories on the same day illustrate how Trump's immigration policy creates economic and security vulnerabilities for immigrant communities in the US."
+          },
+          "thread_tag": "EE.UU.: inmigración"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Crecen canales de Telegram en Latinoamérica que venden datos personales ilegalmente; Argentina opera con modelo propio",
+          "body": "Una investigación de la ONG Derechos Digitales identificó 27 canales activos en Telegram en Argentina, Brasil y Perú que comercializan datos personales obtenidos por hackeos, scraping y filtraciones, con precios por paquete, accesos temporales por horas y pagos en criptomonedas o Mercado Pago. Argentina se distingue por operar sin bots: vendedores humanos concretan transacciones en chats privados uno a uno a través de canales donde ni administradores ni miembros son visibles, reduciendo la trazabilidad.",
+          "url": "https://www.lanacion.com.ar/tecnologia/crece-en-el-pais-la-compra-y-venta-ilegal-de-datos-personales-en-telegram-nid01042026/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El uso de Mercado Pago como medio de pago en estas transacciones ilegales representa una paradoja regulatoria: la misma infraestructura fintech que el gobierno promueve como herramienta de inclusión financiera aparece integrada en mercados ilegales de datos.",
+            "en": "The use of Mercado Pago as a payment method in these illegal transactions represents a regulatory paradox: the same fintech infrastructure the government promotes as a financial inclusion tool appears integrated into illegal data markets."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "Los mercados pueden permanecer irracionales más tiempo del que usted puede permanecer solvente.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, Iran has turned the Strait of Hormuz into a toll booth with missiles, and the oil world is negotiating borrowed flags just to keep moving. Meanwhile, Argentina is once again convincing the IMF that this time, yes, it will meet its reserve targets — same promise, same institution, different government. Entertaining days, in the worst possible sense.",
+      "narrative_thread": "Geopolitics tightens its grip: Iran's control of the Strait of Hormuz reshuffles global energy flows, while Argentina negotiates with the IMF on negative reserves and the US restricts credit access for migrants — sketching a world where capital and oil move increasingly under political conditions.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 28,
+        "context_es": "El control iraní de Ormuz, las reservas negativas de Argentina y la exclusión de migrantes del crédito en EE.UU. configuran un entorno de alta incertidumbre geopolítica y financiera.",
+        "context_en": "Iran's grip on Ormuz, Argentina's negative reserves, and the US migrant credit exclusion paint a picture of elevated geopolitical and financial uncertainty."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Iran charges tolls and demands secret codes at Ormuz; US and Israeli vessels turned away",
+          "body": "Iran's Revolutionary Guard is collecting tolls from vessels in the Strait of Hormuz, requiring detailed information on ownership, cargo, and crew through a regime-linked intermediary, while granting preferential passage to ships from 'friendly' nations such as Pakistan. One-fifth of the world's oil and LNG supply that transits the strait is now subject to an informal geopolitical customs regime — an escalation that could reshape supply routes, maritime insurance premiums, and crude prices before any agreement is formalized.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/04/02/como-iran-decide-que-barcos-pasan-por-el-estrecho-de-ormuz/",
+          "tag": "Energía",
+          "context_note": {
+            "es": "El Comité de Seguridad Nacional de Irán ya aprobó un proyecto de ley para formalizar las tarifas en Ormuz, lo que convierte una práctica informal en política de Estado justo cuando el mercado de petróleo ya absorbe tensión bélica en Medio Oriente.",
+            "en": "Iran's National Security Committee has already approved a bill to formalize Ormuz tariffs, turning an informal practice into state policy precisely as oil markets are already absorbing war-related tension in the Middle East."
+          },
+          "thread_tag": "Energía: Ormuz"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "IMF uneasy over Argentina's negative reserves: board meeting postponed until after April 18",
+          "body": "Argentina's international reserves under IMF methodology closed March at -US$13.841 billion, just US$569 million above year-start levels and US$4.656 billion below the level when the agreement was signed in April 2025, according to consultancy 1816. The IMF board postponed its formal meeting — originally March 27, then April 7 — until after the Spring Meetings of April 13-18, signaling that internal dissent over target non-compliance is nowhere near resolution.",
+          "url": "https://www.lanacion.com.ar/economia/dolar-barato-reservas-flacas-y-un-fmi-inquieto-el-momento-incomodo-del-gobierno-nid02042026/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El ingreso de divisas del campo y la apreciación del peso dan al gobierno una ventana cambiaria transitoria, pero el reloj electoral corre: los economistas estiman que agosto es el último mes antes de que toda conversación económica quede subsumida en la campaña de 2027.",
+            "en": "Agribusiness FX inflows and peso appreciation give the government a transient window, but the electoral clock is ticking: economists estimate August is the last month before every economic conversation gets swallowed by the 2027 campaign."
+          },
+          "thread_tag": "Argentina: FMI"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina freezes fuel prices for 45 days: YPF and government act on four variables to contain inflation",
+          "body": "YPF announced a 45-day pump price freeze after a nearly 20% increase in March — the largest in over a decade without an exchange rate move — while the government suspended the April update of the liquid fuels tax (ICL), forgoing roughly US$150 million per month in revenue. The scheme is a cross-subsidy arrangement: producers sell crude locally at US$90-100 when the barrel exceeds US$100, financing refiners, but when oil falls, pump prices won't follow at the same pace so the gap can be recovered.",
+          "url": "https://www.lanacion.com.ar/economia/activo-rol-del-gobierno-para-frenar-la-suba-de-combustibles-en-medio-de-la-disparada-de-precios-nid02042026/",
+          "tag": "Energía",
+          "context_note": {
+            "es": "La medida ocurre exactamente cuando Irán restringe el tránsito por Ormuz, lo que podría mantener el petróleo internacional elevado por encima de US$100 por más tiempo del esperado, poniendo a prueba la durabilidad del acuerdo entre privados y gobierno.",
+            "en": "The measure comes precisely as Iran restricts Ormuz transit, which could keep international oil above $100 for longer than expected, stress-testing the durability of the private-government pricing agreement."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "New US law bars green card holders from SBA small business loans",
+          "body": "Since March 1st, the SBA's 7(a) program — the main federal financing tool for small businesses, offering loans of up to US$5 million — requires that 100% of owners be US citizens or nationals, explicitly excluding permanent residents with green cards. The measure, aligned with Trump's January 2025 executive order 'Protecting the American People Against Invasion,' shuts a capital door on thousands of migrant entrepreneurs who had built businesses inside the formal system — exactly the taxpaying profile Washington claims to want to keep.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/migraciones/que-dice-la-ley-que-deja-sin-acceso-a-prestamos-bancarios-a-miles-de-migrantes-ya-entro-en-vigor-en-nid02042026/",
+          "tag": "Política",
+          "context_note": {
+            "es": "El FBI reporta desde 2025 un aumento en delitos de personas que suplantan a agentes del ICE para extorsionar a migrantes, lo que muestra que la política de inmigración está creando un entorno de vulnerabilidad que actores criminales ya explotan sistemáticamente.",
+            "en": "The FBI has reported since 2025 a rise in crimes by individuals impersonating ICE agents to extort migrants, showing that immigration policy is creating a vulnerability environment that criminal actors are already systematically exploiting."
+          },
+          "thread_tag": "EE.UU.: inmigración"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Man posed as ICE agent at Portland 7-Eleven to extort migrant employee",
+          "body": "Mason Clark, 19, entered a 7-Eleven in Portland, Oregon, displayed a transit card with a fake police badge sticker, and demanded employee Tun Aung Win pay between US$20 and US$50, threatening to make him 'lose his family' if he refused, in an incident that also involved an air pistol. The FBI reports a sustained increase in this type of fraud since 2025 — the ICE name as a criminal extortion tool is a direct side effect of the current migration climate that no official appears eager to quantify.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/irrumpio-en-un-7-eleven-haciendose-pasar-por-agente-del-ice-lo-que-ocurrio-adentro-nid02042026/",
+          "tag": "Política",
+          "context_note": {
+            "es": "La historia conecta directamente con la nueva normativa SBA que excluye a migrantes del crédito formal: ambas noticias del mismo día ilustran cómo la política migratoria de Trump crea vulnerabilidades económicas y de seguridad para comunidades inmigrantes en EE.UU.",
+            "en": "The story connects directly to the new SBA rule excluding migrants from formal credit: both stories on the same day illustrate how Trump's immigration policy creates economic and security vulnerabilities for immigrant communities in the US."
+          },
+          "thread_tag": "EE.UU.: inmigración"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Telegram channels selling personal data illegally grow across Latin America; Argentina runs its own model",
+          "body": "An investigation by NGO Derechos Digitales identified 27 active Telegram channels in Argentina, Brazil, and Peru commercially trading personal data obtained through hacking, scraping, and leaks, with package pricing, timed access by the hour, and payments via cryptocurrency or Mercado Pago. Argentina stands out for operating without bots: human vendors complete transactions in private one-on-one chats through channels where neither administrators nor members are visible, minimizing traceability.",
+          "url": "https://www.lanacion.com.ar/tecnologia/crece-en-el-pais-la-compra-y-venta-ilegal-de-datos-personales-en-telegram-nid01042026/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El uso de Mercado Pago como medio de pago en estas transacciones ilegales representa una paradoja regulatoria: la misma infraestructura fintech que el gobierno promueve como herramienta de inclusión financiera aparece integrada en mercados ilegales de datos.",
+            "en": "The use of Mercado Pago as a payment method in these illegal transactions represents a regulatory paradox: the same fintech infrastructure the government promotes as a financial inclusion tool appears integrated into illegal data markets."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "Los mercados pueden permanecer irracionales más tiempo del que usted puede permanecer solvente.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "100.19",
+        "change": "▲ 0.2%",
+        "direction": "up",
+        "chg_1w": "▼ 0.3%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.31%",
+        "change": "▼ 0.1%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "23.87",
+        "change": "▼ 2.7%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$56.59",
+        "change": "▼ 1.1%",
+        "direction": "down",
+        "chg_1w": "▲ 2.5%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05601",
+            "chg_1d": {
+              "text": "▼ 0.04%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.61%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2889",
+            "chg_1d": {
+              "text": "▼ 0.01%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.06%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04861",
+            "chg_1d": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.35%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3854",
+            "chg_1d": {
+              "text": "▼ 0.09%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.18%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0781",
+            "chg_1d": {
+              "text": "▲ 0.16%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.95%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04245",
+            "chg_1d": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.96%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.94",
+            "chg_1d": {
+              "text": "▲ 0.04%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.23%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.8550",
+            "chg_1d": {
+              "text": "▲ 0.04%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.59%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1581",
+            "chg_1d": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.53%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.86790",
+            "chg_1d": {
+              "text": "▲ 0.17%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.8819",
+            "chg_1d": {
+              "text": "▼ 0.05%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.43%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3946",
+            "chg_1d": {
+              "text": "▲ 0.21%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.33%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75792",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.34%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "159.63",
+            "chg_1d": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.38%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.4615",
+            "chg_1d": {
+              "text": "▲ 0.01%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19387",
+            "chg_1d": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.55%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16826",
+            "chg_1d": {
+              "text": "▲ 0.14%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.28%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3342",
+            "chg_1d": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.11%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2704",
+            "chg_1d": {
+              "text": "▲ 0.18%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.89%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14694",
+            "chg_1d": {
+              "text": "▲ 0.24%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.89%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.95",
+            "chg_1d": {
+              "text": "▲ 0.06%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.17%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.5725",
+            "chg_1d": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.33%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.15220",
+            "chg_1d": {
+              "text": "▼ 0.17%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.9432",
+            "chg_1d": {
+              "text": "▼ 0.14%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.27%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.9293",
+            "chg_1d": {
+              "text": "▼ 0.22%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.17%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6069",
+            "chg_1d": {
+              "text": "▲ 0.04%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.60%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.87328",
+            "chg_1d": {
+              "text": "▲ 0.10%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.60%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "183.93",
+            "chg_1d": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.12%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5945",
+            "chg_1d": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.16%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14531",
+            "chg_1d": {
+              "text": "▲ 0.05%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.43%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7495",
+            "chg_1d": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.10%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12611",
+            "chg_1d": {
+              "text": "▲ 0.22%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.17%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2026",
+            "chg_1d": {
+              "text": "▲ 0.25%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.77%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11013",
+            "chg_1d": {
+              "text": "▲ 0.32%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.77%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.20",
+            "chg_1d": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.05%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
