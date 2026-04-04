@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:extremelypowerfulcapybara.github.io)",
+      "WebSearch",
+      "WebFetch(domain:bloomberglinea.com)",
+      "WebFetch(domain:www.axios.com)",
+      "WebFetch(domain:www.elfinanciero.com.mx)",
+      "WebFetch(domain:www.brewmarkets.com)",
+      "WebFetch(domain:puck.news)",
+      "WebFetch(domain:www.bloomberglinea.com)",
+      "WebFetch(domain:readless.app)",
+      "WebFetch(domain:latinfinance.com)",
+      "WebFetch(domain:morningbrew.substack.com)",
+      "WebFetch(domain:www.morningbrew.com)",
+      "WebFetch(domain:theaudiencers.com)",
+      "WebFetch(domain:www.storybench.org)",
+      "WebFetch(domain:finimize.com)",
+      "WebFetch(domain:www.thedailyupside.com)",
+      "WebFetch(domain:www.thecoolist.com)",
+      "WebFetch(domain:www.newsletterinsight.com)",
+      "WebFetch(domain:www.readless.app)",
+      "Bash(python tests/test_scorer.py)",
+      "Read(//d D:/GitHub/mexico-finance-brief/**)",
+      "Bash(python -c \":*)",
+      "Bash(python:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(MOCK=true SKIP_EMAIL=true python main.py)",
+      "Bash(git:*)",
+      "Bash(bash \"C:/Users/adriv/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh\" --project-dir \"D:/GitHub/mexico-finance-brief\")"
+    ]
+  }
+}

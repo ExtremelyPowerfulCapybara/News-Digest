@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell — Ticker Integration Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #cdd4d9; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+
+    /* ── Section labels ── */
+    .section-label {
+      max-width: 640px; margin: 48px auto 12px;
+      font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #7a8a94;
+    }
+    .section-label span { background: #cdd4d9; padding-right: 12px; }
+    .section-desc {
+      max-width: 640px; margin: 0 auto 16px;
+      font-size: 12px; color: #7a8a94; line-height: 1.6;
+    }
+
+    /* ── Shared wrap ── */
+    .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+    /* ── Header ── */
+    .header { padding: 36px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+    .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+    .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+    .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
+    .lang-toggle { display: flex; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; }
+    .lang-btn { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; cursor: pointer; border: none; background: transparent; color: #aab4bc; }
+    .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+
+    /* ── Main ticker (shared) ── */
+    .ticker { background: #1a1a1a; padding: 0 48px; display: flex; }
+    .tick-item { flex: 1; text-align: center; padding: 10px 8px; border-left: 1px solid #2e2e2e; }
+    .tick-item:first-child { border-left: none; }
+    .tick-label { display: block; font-size: 7.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+    .tick-val { font-size: 12px; color: #d4cfc8; }
+    .tick-chg { font-size: 9.5px; margin-left: 3px; }
+    .up   { color: #6abf7b; }
+    .down { color: #d4695a; }
+    .flat { color: #777; }
+
+    /* ── Placeholder blocks ── */
+    .placeholder { padding: 24px 48px; border-top: 1px solid #e4e8eb; }
+    .placeholder-label { font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: #cdd4d9; margin-bottom: 10px; font-weight: 600; }
+    .ph-line { height: 9px; background: #e8ecef; border-radius: 2px; margin-bottom: 7px; }
+    .ph-line.s { width: 55%; }
+    .ph-line.m { width: 78%; }
+    .ph-line.l { width: 100%; }
+    .ph-title { height: 22px; background: #e0e4e7; border-radius: 2px; margin-bottom: 10px; width: 85%; }
+
+
+    /* ════════════════════════════════════
+       OPTION A — TABBED STRIP
+    ════════════════════════════════════ */
+    .tabbed-strip { background: #1a1a1a; }
+    .tab-nav { display: flex; padding: 0 48px; border-bottom: 1px solid #2a2a2a; }
+    .tab-btn {
+      font-family: 'DM Sans', sans-serif; font-size: 8px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 8px 14px 7px; cursor: pointer; border: none; background: transparent;
+      color: #444; border-bottom: 2px solid transparent; margin-bottom: -1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .tab-btn.active-eq  { color: #a8c8a0; border-bottom-color: #a8c8a0; }
+    .tab-btn.active-co  { color: #d4b87a; border-bottom-color: #d4b87a; }
+    .tab-btn.active-cr  { color: #b49ed4; border-bottom-color: #b49ed4; }
+    .tab-btn:not([class*="active"]):hover { color: #888; }
+    .tab-panel { display: none; }
+    .tab-panel.visible { display: flex; }
+
+
+    /* ════════════════════════════════════
+       OPTION B — DISTRIBUTED
+    ════════════════════════════════════ */
+    .mini-strip {
+      background: #1a1a1a; padding: 0 48px;
+      display: flex; border-top: 1px solid #2a2a2a;
+    }
+    .mini-strip .tick-item { padding: 7px 8px; }
+    .mini-strip .tick-label { font-size: 7px; color: #444; }
+    .mini-strip .tick-val { font-size: 11px; }
+    .mini-strip .tick-chg { font-size: 9px; }
+    .mini-strip-label {
+      background: #111; padding: 3px 48px;
+      font-size: 7px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase;
+      border-top: 1px solid #222;
+    }
+    .mini-strip-label.eq { color: #a8c8a0; }
+    .mini-strip-label.co { color: #d4b87a; }
+    .mini-strip-label.cr { color: #b49ed4; }
+
+
+    /* ════════════════════════════════════
+       OPTION C — 3-COLUMN DASHBOARD
+    ════════════════════════════════════ */
+    .dashboard {
+      background: #1a1a1a; padding: 12px 48px;
+      display: grid; grid-template-columns: 1fr 1px 1fr 1px 1fr;
+      gap: 0; border-top: 1px solid #2a2a2a;
+    }
+    .dash-divider { background: #2e2e2e; }
+    .dash-col { padding: 0 12px; }
+    .dash-col:first-child { padding-left: 0; }
+    .dash-col:last-child  { padding-right: 0; }
+    .dash-col-label {
+      font-size: 7px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #2a2a2a;
+    }
+    .dash-col-label.eq { color: #a8c8a0; }
+    .dash-col-label.co { color: #d4b87a; }
+    .dash-col-label.cr { color: #b49ed4; }
+    .dash-item { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
+    .dash-item:last-child { margin-bottom: 0; }
+    .dash-name { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #555; }
+    .dash-val  { font-size: 10.5px; color: #d4cfc8; }
+    .dash-chg  { font-size: 8.5px; }
+
+  </style>
+</head>
+<body>
+
+
+<!-- ══════════════════════════════════════════
+     OPTION A — TABBED STRIP
+══════════════════════════════════════════ -->
+<div class="section-label"><span>OPTION A — TABBED STRIP</span></div>
+<div class="section-desc">Single row. Tabs switch between Equities, Commodities, Crypto. Same footprint as one strip. Clean, no stacking.</div>
+
+<div class="wrap">
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>JUEVES, 19 DE MARZO DE 2026 &nbsp;·&nbsp; EDICIÓN NO. 42</span>
+      <div class="lang-toggle"><button class="lang-btn active">ES</button><button class="lang-btn">EN</button></div>
+    </div>
+  </div>
+
+  <!-- Main macro ticker -->
+  <div class="ticker">
+    <div class="tick-item"><span class="tick-label">DXY</span><span class="tick-val">103.84 <span class="tick-chg down">▼ 0.3%</span></span></div>
+    <div class="tick-item"><span class="tick-label">10Y UST</span><span class="tick-val">4.31% <span class="tick-chg up">▲ 3bp</span></span></div>
+    <div class="tick-item"><span class="tick-label">VIX</span><span class="tick-val">18.42 <span class="tick-chg down">▼ 1.1</span></span></div>
+    <div class="tick-item"><span class="tick-label">MSCI EM</span><span class="tick-val">1,084 <span class="tick-chg up">▲ 0.6%</span></span></div>
+  </div>
+
+  <!-- Tabbed secondary strip -->
+  <div class="tabbed-strip">
+    <div class="tab-nav">
+      <button class="tab-btn active-eq" onclick="switchTab('eq',this)">Equities</button>
+      <button class="tab-btn" onclick="switchTab('co',this)">Commodities</button>
+      <button class="tab-btn" onclick="switchTab('cr',this)">Crypto</button>
+    </div>
+    <div class="tab-panel visible" id="tab-eq">
+      <div class="tick-item"><span class="tick-label">S&amp;P 500</span><span class="tick-val">5,614 <span class="tick-chg up">▲ 0.8%</span></span></div>
+      <div class="tick-item"><span class="tick-label">Nasdaq</span><span class="tick-val">17,840 <span class="tick-chg up">▲ 1.1%</span></span></div>
+      <div class="tick-item"><span class="tick-label">Euro Stoxx</span><span class="tick-val">5,018 <span class="tick-chg flat">→ 0.0%</span></span></div>
+      <div class="tick-item"><span class="tick-label">Nikkei</span><span class="tick-val">38,220 <span class="tick-chg down">▼ 0.4%</span></span></div>
+    </div>
+    <div class="tab-panel" id="tab-co">
+      <div class="tick-item"><span class="tick-label">Brent</span><span class="tick-val">$84.10 <span class="tick-chg up">▲ 1.2%</span></span></div>
+      <div class="tick-item"><span class="tick-label">Gold</span><span class="tick-val">$2,318 <span class="tick-chg up">▲ 0.5%</span></span></div>
+      <div class="tick-item"><span class="tick-label">Copper</span><span class="tick-val">$4.52 <span class="tick-chg down">▼ 0.3%</span></span></div>
+      <div class="tick-item"><span class="tick-label">Wheat</span><span class="tick-val">$538 <span class="tick-chg flat">→ 0.1%</span></span></div>
+    </div>
+    <div class="tab-panel" id="tab-cr">
+      <div class="tick-item"><span class="tick-label">Bitcoin</span><span class="tick-val">$67,240 <span class="tick-chg up">▲ 2.1%</span></span></div>
+      <div class="tick-item"><span class="tick-label">Ethereum</span><span class="tick-val">$3,480 <span class="tick-chg up">▲ 1.4%</span></span></div>
+      <div class="tick-item"><span class="tick-label">BTC Dom.</span><span class="tick-val">54.2% <span class="tick-chg up">▲ 0.3pp</span></span></div>
+      <div class="tick-item"><span class="tick-label">Mkt Cap</span><span class="tick-val">$2.41T <span class="tick-chg up">▲ 1.8%</span></span></div>
+    </div>
+  </div>
+
+  <div class="placeholder">
+    <div class="placeholder-label">Editor's Note · Sentiment · Stories · Currency Table · Quote</div>
+    <div class="ph-title"></div>
+    <div class="ph-line l"></div><div class="ph-line m"></div><div class="ph-line s"></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     OPTION B — DISTRIBUTED
+══════════════════════════════════════════ -->
+<div class="section-label" style="margin-top:64px;"><span>OPTION B — DISTRIBUTED</span></div>
+<div class="section-desc">Each strip appears at a natural breakpoint in the newsletter. Equities up top, Commodities before the currency table, Crypto near the footer. Data feels contextual, not front-loaded.</div>
+
+<div class="wrap">
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>JUEVES, 19 DE MARZO DE 2026 &nbsp;·&nbsp; EDICIÓN NO. 42</span>
+      <div class="lang-toggle"><button class="lang-btn active">ES</button><button class="lang-btn">EN</button></div>
+    </div>
+  </div>
+
+  <!-- Main macro ticker -->
+  <div class="ticker">
+    <div class="tick-item"><span class="tick-label">DXY</span><span class="tick-val">103.84 <span class="tick-chg down">▼ 0.3%</span></span></div>
+    <div class="tick-item"><span class="tick-label">10Y UST</span><span class="tick-val">4.31% <span class="tick-chg up">▲ 3bp</span></span></div>
+    <div class="tick-item"><span class="tick-label">VIX</span><span class="tick-val">18.42 <span class="tick-chg down">▼ 1.1</span></span></div>
+    <div class="tick-item"><span class="tick-label">MSCI EM</span><span class="tick-val">1,084 <span class="tick-chg up">▲ 0.6%</span></span></div>
+  </div>
+
+  <!-- Equities strip — right after main ticker -->
+  <div class="mini-strip-label eq">Global Equities</div>
+  <div class="mini-strip">
+    <div class="tick-item"><span class="tick-label">S&amp;P 500</span><span class="tick-val">5,614 <span class="tick-chg up">▲ 0.8%</span></span></div>
+    <div class="tick-item"><span class="tick-label">Nasdaq</span><span class="tick-val">17,840 <span class="tick-chg up">▲ 1.1%</span></span></div>
+    <div class="tick-item"><span class="tick-label">Euro Stoxx</span><span class="tick-val">5,018 <span class="tick-chg flat">→ 0.0%</span></span></div>
+    <div class="tick-item"><span class="tick-label">Nikkei</span><span class="tick-val">38,220 <span class="tick-chg down">▼ 0.4%</span></span></div>
+  </div>
+
+  <!-- Stories placeholder -->
+  <div class="placeholder">
+    <div class="placeholder-label">Editor's Note · Sentiment Gauge · Stories</div>
+    <div class="ph-title"></div>
+    <div class="ph-line l"></div><div class="ph-line m"></div><div class="ph-line s"></div>
+    <br>
+    <div class="ph-title"></div>
+    <div class="ph-line l"></div><div class="ph-line m"></div>
+  </div>
+
+  <!-- Commodities strip — before currency table -->
+  <div class="mini-strip-label co">Commodities</div>
+  <div class="mini-strip">
+    <div class="tick-item"><span class="tick-label">Brent</span><span class="tick-val">$84.10 <span class="tick-chg up">▲ 1.2%</span></span></div>
+    <div class="tick-item"><span class="tick-label">Gold</span><span class="tick-val">$2,318 <span class="tick-chg up">▲ 0.5%</span></span></div>
+    <div class="tick-item"><span class="tick-label">Copper</span><span class="tick-val">$4.52 <span class="tick-chg down">▼ 0.3%</span></span></div>
+    <div class="tick-item"><span class="tick-label">Wheat</span><span class="tick-val">$538 <span class="tick-chg flat">→ 0.1%</span></span></div>
+  </div>
+
+  <!-- Currency table placeholder -->
+  <div class="placeholder">
+    <div class="placeholder-label">Currency Table</div>
+    <div class="ph-line l"></div><div class="ph-line m"></div><div class="ph-line l"></div><div class="ph-line s"></div>
+  </div>
+
+  <!-- Crypto strip — near footer -->
+  <div class="mini-strip-label cr">Crypto</div>
+  <div class="mini-strip">
+    <div class="tick-item"><span class="tick-label">Bitcoin</span><span class="tick-val">$67,240 <span class="tick-chg up">▲ 2.1%</span></span></div>
+    <div class="tick-item"><span class="tick-label">Ethereum</span><span class="tick-val">$3,480 <span class="tick-chg up">▲ 1.4%</span></span></div>
+    <div class="tick-item"><span class="tick-label">BTC Dom.</span><span class="tick-val">54.2% <span class="tick-chg up">▲ 0.3pp</span></span></div>
+    <div class="tick-item"><span class="tick-label">Mkt Cap</span><span class="tick-val">$2.41T <span class="tick-chg up">▲ 1.8%</span></span></div>
+  </div>
+
+  <div class="placeholder">
+    <div class="placeholder-label">Pull Quote · Footer</div>
+    <div class="ph-line m"></div><div class="ph-line s"></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     OPTION C — 3-COLUMN DASHBOARD
+══════════════════════════════════════════ -->
+<div class="section-label" style="margin-top:64px;"><span>OPTION C — 3-COLUMN DASHBOARD</span></div>
+<div class="section-desc">One compact dark panel below the main ticker. Three columns side by side — Equities, Commodities, Crypto. Denser but contained in a single block.</div>
+
+<div class="wrap">
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>JUEVES, 19 DE MARZO DE 2026 &nbsp;·&nbsp; EDICIÓN NO. 42</span>
+      <div class="lang-toggle"><button class="lang-btn active">ES</button><button class="lang-btn">EN</button></div>
+    </div>
+  </div>
+
+  <!-- Main macro ticker -->
+  <div class="ticker">
+    <div class="tick-item"><span class="tick-label">DXY</span><span class="tick-val">103.84 <span class="tick-chg down">▼ 0.3%</span></span></div>
+    <div class="tick-item"><span class="tick-label">10Y UST</span><span class="tick-val">4.31% <span class="tick-chg up">▲ 3bp</span></span></div>
+    <div class="tick-item"><span class="tick-label">VIX</span><span class="tick-val">18.42 <span class="tick-chg down">▼ 1.1</span></span></div>
+    <div class="tick-item"><span class="tick-label">MSCI EM</span><span class="tick-val">1,084 <span class="tick-chg up">▲ 0.6%</span></span></div>
+  </div>
+
+  <!-- 3-column dashboard -->
+  <div class="dashboard">
+    <!-- Equities -->
+    <div class="dash-col">
+      <div class="dash-col-label eq">Equities</div>
+      <div class="dash-item"><span class="dash-name">S&amp;P 500</span><span class="dash-val">5,614 <span class="dash-chg up">▲0.8%</span></span></div>
+      <div class="dash-item"><span class="dash-name">Nasdaq</span><span class="dash-val">17,840 <span class="dash-chg up">▲1.1%</span></span></div>
+      <div class="dash-item"><span class="dash-name">Euro Stoxx</span><span class="dash-val">5,018 <span class="dash-chg flat">→0.0%</span></span></div>
+      <div class="dash-item"><span class="dash-name">Nikkei</span><span class="dash-val">38,220 <span class="dash-chg down">▼0.4%</span></span></div>
+    </div>
+    <div class="dash-divider"></div>
+    <!-- Commodities -->
+    <div class="dash-col">
+      <div class="dash-col-label co">Commodities</div>
+      <div class="dash-item"><span class="dash-name">Brent</span><span class="dash-val">$84.10 <span class="dash-chg up">▲1.2%</span></span></div>
+      <div class="dash-item"><span class="dash-name">Gold</span><span class="dash-val">$2,318 <span class="dash-chg up">▲0.5%</span></span></div>
+      <div class="dash-item"><span class="dash-name">Copper</span><span class="dash-val">$4.52 <span class="dash-chg down">▼0.3%</span></span></div>
+      <div class="dash-item"><span class="dash-name">Wheat</span><span class="dash-val">$538 <span class="dash-chg flat">→0.1%</span></span></div>
+    </div>
+    <div class="dash-divider"></div>
+    <!-- Crypto -->
+    <div class="dash-col">
+      <div class="dash-col-label cr">Crypto</div>
+      <div class="dash-item"><span class="dash-name">Bitcoin</span><span class="dash-val">$67,240 <span class="dash-chg up">▲2.1%</span></span></div>
+      <div class="dash-item"><span class="dash-name">Ethereum</span><span class="dash-val">$3,480 <span class="dash-chg up">▲1.4%</span></span></div>
+      <div class="dash-item"><span class="dash-name">BTC Dom.</span><span class="dash-val">54.2% <span class="dash-chg up">▲0.3pp</span></span></div>
+      <div class="dash-item"><span class="dash-name">Mkt Cap</span><span class="dash-val">$2.41T <span class="dash-chg up">▲1.8%</span></span></div>
+    </div>
+  </div>
+
+  <div class="placeholder">
+    <div class="placeholder-label">Editor's Note · Sentiment Gauge · Stories · Currency Table · Quote</div>
+    <div class="ph-title"></div>
+    <div class="ph-line l"></div><div class="ph-line m"></div><div class="ph-line s"></div>
+    <br>
+    <div class="ph-title"></div>
+    <div class="ph-line l"></div><div class="ph-line m"></div>
+  </div>
+</div>
+
+<div style="height:60px;"></div>
+
+<script>
+  function switchTab(id, btn) {
+    // Hide all panels
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('visible'));
+    // Show selected
+    document.getElementById('tab-' + id).classList.add('visible');
+    // Update tab buttons
+    btn.closest('.tab-nav').querySelectorAll('.tab-btn').forEach(b => {
+      b.className = 'tab-btn';
+    });
+    const classMap = { eq: 'active-eq', co: 'active-co', cr: 'active-cr' };
+    btn.classList.add(classMap[id]);
+  }
+</script>
+</body>
+</html>
