@@ -189,6 +189,10 @@ CSS = """
   .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
   .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
 
+  /* -- Hero image -- */
+  .hero-image { line-height: 0; border-bottom: 1px solid #cdd4d9; }
+  .hero-image img { width: 100%; display: block; }
+
   @media (max-width: 600px) {
     body { padding: 0; }
     .wrap { border: none; }
@@ -279,6 +283,7 @@ def build_pretty_html(
     wordcloud_filename:  str | None = None,
     author:              str = "",
     secondary_tickers:   list[dict] | None = None,
+    visual:              dict | None = None,
 ) -> str:
 
     # Bilingual support: unwrap es/en, fallback for old flat digests
@@ -296,6 +301,16 @@ def build_pretty_html(
   <p class="nt-text lang-es">{narrative_es}</p>
   <p class="nt-text lang-en">{narrative_en}</p>
 </div>"""
+
+    # ── Hero image (renders only when hero_selected is set manually) ──────
+    hero_html = ""
+    if visual and visual.get("hero_selected"):
+        cat = visual.get("hero_category", "")
+        src = visual["hero_selected"]
+        hero_html = f'''
+<div class="hero-image">
+  <img src="{src}" alt="{cat}">
+</div>'''
 
     today      = date.today().strftime("%A, %B %d, %Y").upper()
     issue_date = date.today().strftime("%B %d, %Y")
@@ -660,6 +675,8 @@ def build_pretty_html(
   </div>
 
   {narrative_html}
+
+  {hero_html}
 
   {DIVIDER}
 

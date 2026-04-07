@@ -1,11 +1,9 @@
 """
 Tests for scorer.py
 
-Run from bot/ directory:
-  python tests/test_scorer.py
+Run from repo root:
+  pytest tests/test_scorer.py
 """
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from datetime import datetime, timezone, timedelta
 from scorer import _freshness_score, _authority_score, _relevance_score, rank_articles

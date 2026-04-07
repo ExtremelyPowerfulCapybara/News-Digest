@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Opening Bell -- April 03, 2026</title>
+  <title>The Opening Bell -- abril 06, 2026</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -82,9 +82,11 @@
   .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
   .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
   .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-headline-lead { font-size: 26px; }
+  .lead-label { font-size: 8px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 6px; }
   .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
-  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
-  .read-more:hover { color: #555; border-color: #555; }
+  .read-more { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border: 1px solid #1a1a1a; padding: 6px 14px; margin-top: 6px; transition: background 0.15s, color 0.15s; }
+  .read-more:hover { background: #1a1a1a; color: #f5f2ed; }
   .thread-badge {
     display: inline-block;
     font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
@@ -96,14 +98,9 @@
     border-left: 3px solid #cdd4d9; padding-left: 10px;
     margin: 10px 0;
   }
-  .narrative-thread {
-    padding: 0 48px 20px;
-  }
-  .narrative-thread p {
-    font-size: 11px; font-weight: 600; color: #555;
-    border-left: 3px solid #1a1a1a; padding-left: 12px; line-height: 1.7;
-    margin: 0;
-  }
+  .narrative-thread { padding: 20px 48px; border-top: 1px solid #e4e9ec; border-bottom: 1px solid #e4e9ec; text-align: center; }
+  .nt-label { font-size: 8px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #aab4bc; margin-bottom: 10px; }
+  .nt-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; color: #3a4a54; line-height: 1.65; margin: 0; }
 
   .currency { padding: 24px 48px; }
   .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
@@ -145,6 +142,14 @@
   .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
   .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
 
+  .sc-table { width: 100%; border-collapse: collapse; }
+  .sc-day { font-size: 8px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; width: 32px; white-space: nowrap; padding: 0 8px 8px 0; vertical-align: middle; }
+  .sc-track-cell { padding: 0 8px 8px 0; vertical-align: middle; }
+  .sc-track { background: #e4e9ec; height: 20px; width: 100%; }
+  .sc-bar { height: 20px; display: flex; align-items: center; padding-left: 7px; min-width: 4%; }
+  .sc-val { font-size: 9px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+  .sc-label { font-size: 9px; font-weight: 700; white-space: nowrap; padding: 0 0 8px 0; vertical-align: middle; width: 80px; text-align: right; }
+
   .calendar { padding: 24px 48px; }
   .cal-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #e4e9ec; }
   .cal-row:last-child { border-bottom: none; }
@@ -168,6 +173,10 @@
   .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
   .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
   .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  /* -- Hero image -- */
+  .hero-image { line-height: 0; border-bottom: 1px solid #cdd4d9; }
+  .hero-image img { width: 100%; display: block; }
 
   @media (max-width: 600px) {
     body { padding: 0; }
@@ -198,12 +207,12 @@
     <div class="pub-label">Context before the noise</div>
     <div class="pub-name">The Opening Bell</div>
     <div class="pub-meta">
-      <span>FRIDAY, APRIL 03, 2026</span>
+      <span>LUNES, ABRIL 06, 2026</span>
       <div class="lang-toggle">
         <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
         <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
       </div>
-      <span>NO. 28</span>
+      <span>NO. 13</span>
     </div>
   </div>
 
@@ -211,8 +220,8 @@
     <div class="ticker-inner">
       <div class="tick-item">
         <span class="tick-label">DXY</span>
-        <span class="tick-val">99.98</span>
-        <span class="tick-down">▼ 0.1%</span>
+        <span class="tick-val">100.20</span>
+        <span class="tick-up">▲ 0.2%</span>
       </div>
       <div class="tick-item">
         <span class="tick-label">10Y UST</span>
@@ -233,82 +242,16 @@
   </div>
 
   
-  <div class="mkt-strip">
-    <div class="mkt-tab-nav"><button class="mkt-tab-btn" data-group="eq" onclick="setMktTab('eq')">Global Equities</button><button class="mkt-tab-btn" data-group="co" onclick="setMktTab('co')">Commodities</button><button class="mkt-tab-btn" data-group="cr" onclick="setMktTab('cr')">Crypto</button></div>
-    <div class="mkt-panel" id="mkt-eq">
-        <div class="tick-item">
-          <span class="tick-label">S&P 500</span>
-          <span class="tick-val">6,583</span>
-          <span class="tick-up">▲ 0.8%</span>
-        </div>
-        <div class="tick-item">
-          <span class="tick-label">Nasdaq</span>
-          <span class="tick-val">21,879</span>
-          <span class="tick-up">▲ 1.3%</span>
-        </div>
-        <div class="tick-item">
-          <span class="tick-label">Euro Stoxx</span>
-          <span class="tick-val">5,693</span>
-          <span class="tick-down">▼ 0.7%</span>
-        </div>
-        <div class="tick-item">
-          <span class="tick-label">Nikkei</span>
-          <span class="tick-val">53,123</span>
-          <span class="tick-up">▲ 1.3%</span>
-        </div>
-    </div>
-    <div class="mkt-panel" id="mkt-co">
-        <div class="tick-item">
-          <span class="tick-label">Brent</span>
-          <span class="tick-val">$77</span>
-          <span class="tick-down">▼ 24.0%</span>
-        </div>
-        <div class="tick-item">
-          <span class="tick-label">Gold</span>
-          <span class="tick-val">$4,910</span>
-          <span class="tick-up">▲ 2.7%</span>
-        </div>
-        <div class="tick-item">
-          <span class="tick-label">Copper</span>
-          <span class="tick-val">$5.85</span>
-          <span class="tick-up">▲ 4.0%</span>
-        </div>
-        <div class="tick-item">
-          <span class="tick-label">Wheat</span>
-          <span class="tick-val">$6.53</span>
-          <span class="tick-up">▲ 9.2%</span>
-        </div>
-    </div>
-    <div class="mkt-panel" id="mkt-cr">
-        <div class="tick-item">
-          <span class="tick-label">Bitcoin</span>
-          <span class="tick-val">$66,992</span>
-          <span class="tick-up">▲ 0.2%</span>
-        </div>
-        <div class="tick-item">
-          <span class="tick-label">Ethereum</span>
-          <span class="tick-val">$2,063</span>
-          <span class="tick-up">▲ 0.3%</span>
-        </div>
-        <div class="tick-item">
-          <span class="tick-label">Solana</span>
-          <span class="tick-val">$79.93</span>
-          <span class="tick-up">▲ 1.2%</span>
-        </div>
-    </div>
-  </div>
 
   <div class="editor-note">
-    <div class="lang-es"><p>Estimados humanos, el petróleo superó los 106 dólares por barril después de que Trump amenazara con enviar a Irán 'a la Edad de Piedra' en las próximas semanas — lo que, convenientemente, también hundió las bolsas y fortaleció al dólar como refugio. Mientras los mercados digieren otra voltereta retórica de la Casa Blanca, Argentina lidia con un riesgo-país que no cede y México celebra proyecciones de crecimiento que asumen, heroicamente, que todo se calma solo.</p></div>
-    <div class="lang-en"><p>Estimados humanos, oil topped $106 a barrel after Trump threatened to send Iran 'back to the Stone Age' within weeks — which, conveniently, also crashed equities and sent the dollar surging as a safe haven. As markets digest yet another rhetorical somersault from the White House, Argentina struggles with a country-risk spread that won't budge and Mexico celebrates growth forecasts that heroically assume everything calms down on its own.</p></div>
-    <div class="editor-sig">&mdash; Rex Cession, Chief of Staff, Monetary Policy Theater</div>
+    <div class="lang-es"><p>Estimados humanos, el estrecho de Ormuz sigue prácticamente cerrado, el petróleo oscila entre $80 y $100 por barril según el último tuit presidencial, y The Economist ya habla de 'una nueva era de inseguridad energética' — bienvenidos al jueves. Mientras tanto, México lanza misiones comerciales a Canadá, negocia el T-MEC y corteja al BID, todo con la elegancia de quien réorganiza los muebles durante un terremoto.</p></div>
+    <div class="lang-en"><p>Estimados humanos, the Strait of Hormuz remains effectively closed, oil swings between $80 and $100 per barrel depending on the last presidential tweet, and The Economist is already calling it 'a new era of energy insecurity' — welcome to Thursday. Meanwhile, Mexico launches trade missions to Canada, renegotiates USMCA, and courts the IDB, all with the elegance of someone rearranging furniture during an earthquake.</p></div>
+    <div class="editor-sig">&mdash; </div>
   </div>
 
   
-<div class="narrative-thread">
-  <div class="lang-es"><p>La escalada del conflicto EE.UU.-Irán reordena los mercados globales mientras México y Argentina intentan anclar expectativas domésticas en medio de una tormenta geopolítica que ninguno controla.</p></div>
-  <div class="lang-en"><p>The escalation of the U.S.-Iran conflict reshapes global markets while Mexico and Argentina attempt to anchor domestic expectations amid a geopolitical storm neither controls.</p></div>
-</div>
+
+  
 
   
 <div class="divider">
@@ -327,19 +270,19 @@
       <span class="sentiment-label"
             data-es="Sentimiento del D&#237;a"
             data-en="Market Sentiment">Sentimiento del D&#237;a</span>
-      <span class="sentiment-reading risk-off lang-es">Aversión al Riesgo</span>
-      <span class="sentiment-reading risk-off lang-en">Risk-Off</span>
+      <span class="sentiment-reading cautious lang-es">Cauteloso</span>
+      <span class="sentiment-reading cautious lang-en">Cautious</span>
     </div>
     <div class="gauge-track">
-      <div class="gauge-marker risk-off" style="left:22%;"></div>
+      <div class="gauge-marker cautious" style="left:38%;"></div>
     </div>
     <div class="gauge-ticks">
       <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
       <span data-es="Neutral"          data-en="Neutral">Neutral</span>
       <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
     </div>
-    <div class="sentiment-context lang-es">El discurso belicoso de Trump sobre Irán, el cierre del Estrecho de Ormuz y el petróleo a 106 dólares generan huida hacia refugios seguros y presión vendedora generalizada en renta variable global.</div>
-    <div class="sentiment-context lang-en">Trump's bellicose rhetoric on Iran, the effective closure of the Strait of Hormuz, and oil at $106 are driving a flight to safe havens and broad selling pressure in global equities.</div>
+    <div class="sentiment-context lang-es">El conflicto en Medio Oriente mantiene los mercados en vilo con el petróleo volátil, mientras la agenda comercial de México aporta señales constructivas que no alcanzan a compensar la incertidumbre geopolítica.</div>
+    <div class="sentiment-context lang-en">The Middle East conflict keeps markets on edge with volatile oil prices, while Mexico's trade agenda provides constructive signals that fall short of offsetting geopolitical uncertainty.</div>
   </div>
 
   
@@ -356,51 +299,22 @@
 </div>
 <div class="story">
   
+  <div class="lead-label">&#9679; LEAD STORY</div>
   <div class="story-meta">
-    <span class="story-source">El Financiero</span>
+    <span class="story-source">La Nacion</span>
     <span class="story-tag">Energía</span>
   </div>
   <div class="lang-es">
-    <div class="story-headline">Trump amenaza con golpear a Irán 'con extrema dureza' y el petróleo Brent supera los 106 dólares</div>
-    <div class="story-body">El presidente estadounidense advirtió que atacaría a Irán en las próximas dos o tres semanas, socavando las expectativas de una resolución inminente al conflicto de cinco semanas. El crudo Brent escaló un 5% ante el cierre efectivo del Estrecho de Ormuz, mientras los futuros bursátiles en EE.UU. y Europa caían más de 1.2% y las bolsas asiáticas perdían 2.1%. El dólar se fortaleció como refugio y los bonos del Tesoro cedieron ante el fantasma inflacionario.</div>
-    <div class="context-note">El petróleo acumula ya una subida de alrededor del 60% desde el inicio de la ofensiva, lo que amenaza con reactivar presiones inflacionarias globales justo cuando varios bancos centrales, incluido Banxico, estaban en modo de recorte.</div>
-    <a href="https://www.elfinanciero.com.mx/mercados/2026/04/01/precio-del-petroleo-sube-por-amenazas-de-donald-trump-a-iran-barril-de-crudo-supera-los-106-dolares/" class="read-more">Leer m&aacute;s &rarr;</a>
+    <div class="story-headline story-headline-lead">Conflicto en Medio Oriente dispara el petróleo y amenaza con nueva era de inseguridad energética global</div>
+    <div class="story-body">El cierre de facto del estrecho de Ormuz por parte de Irán ha bloqueado aproximadamente el 15% del suministro mundial de petróleo, llevando el crudo a casi $120 por barril antes de retroceder a torno a los $100 tras señales de desescalada de Trump. The Economist advierte que la pérdida de suministro es mayor que en cualquiera de las crisis de los años 70, y que un cierre indefinido del estrecho podría llevar el barril a superar los $150. La Agencia Internacional de la Energía liberó 400 millones de barriles de reservas de emergencia, pero las restricciones logísticas limitan su impacto efectivo.</div>
+    
+    <a href="https://www.lanacion.com.ar/economia/un-ataque-a-la-economia-mundial-las-consecuencias-del-conflicto-en-medio-oriente-segun-the-economist-nid12032026/" class="read-more">Leer m&aacute;s &rarr;</a>
   </div>
   <div class="lang-en">
-    <div class="story-headline">Trump threatens to hit Iran 'with extreme force' as Brent crude surpasses $106 per barrel</div>
-    <div class="story-body">The U.S. president warned he would strike Iran within the next two to three weeks, undermining expectations of an imminent resolution to the five-week-old conflict. Brent crude surged 5% amid the effective closure of the Strait of Hormuz, while U.S. and European equity futures fell more than 1.2% and Asian stocks dropped 2.1%. The dollar strengthened as a safe haven while Treasury bonds retreated on inflation fears.</div>
-    <div class="context-note">Oil has now surged roughly 60% since the start of the offensive, threatening to reignite global inflationary pressures just as several central banks, including Banxico, were in rate-cutting mode.</div>
-    <a href="https://www.elfinanciero.com.mx/mercados/2026/04/01/precio-del-petroleo-sube-por-amenazas-de-donald-trump-a-iran-barril-de-crudo-supera-los-106-dolares/" class="read-more">Read more &rarr;</a>
-  </div>
-</div>
-
-<div class="divider">
-  <div class="line"></div>
-  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
-    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
-  </svg>
-  <div class="line"></div>
-</div>
-<div class="story">
-  <span class="thread-badge">&#9679; Banxico: tasa</span>
-  <div class="story-meta">
-    <span class="story-source">El Financiero</span>
-    <span class="story-tag">México</span>
-  </div>
-  <div class="lang-es">
-    <div class="story-headline">Hacienda proyecta PIB de 2.4% en 2027 y peso en 18.60 por dólar, pese a revisión del T-MEC</div>
-    <div class="story-body">La Secretaría de Hacienda envió al Congreso sus Pre-Criterios 2027, con un crecimiento del PIB en rango de 1.9% a 2.9% y una inflación convergiendo al objetivo de Banxico de 3%. El documento anticipa que los Cetes bajarán de 6.3% al cierre de 2026 a 5.5% a finales de 2027, y proyecta un tipo de cambio de 18.60 pesos por dólar. El gobierno reconoce riesgos asociados a la revisión del T-MEC y la volatilidad del entorno internacional, pero confía en un repunte gradual de la inversión privada y pública bajo el Plan México.</div>
-    <div class="context-note">Las proyecciones de Hacienda llegan el mismo día en que el petróleo supera los 106 dólares, un nivel que complica directamente el escenario de inflación convergente a 3% y el supuesto de tasas Cetes en 5.5% para finales de 2027.</div>
-    <a href="https://www.elfinanciero.com.mx/empresas/2026/04/01/ojo-aqui-inversores-hacienda-preve-repunte-del-pib-a-24-en-2027-pese-a-volatilidad-y-revision-del-t-mec/" class="read-more">Leer m&aacute;s &rarr;</a>
-  </div>
-  <div class="lang-en">
-    <div class="story-headline">Mexico's Treasury projects 2.4% GDP growth in 2027 and peso at 18.60 per dollar, despite USMCA review</div>
-    <div class="story-body">Mexico's Finance Ministry sent its 2027 Pre-Criteria to Congress, projecting GDP growth in a range of 1.9% to 2.9% and inflation converging to Banxico's 3% target. The document anticipates Cetes rates falling from 6.3% at end-2026 to 5.5% by end-2027, with an exchange rate of 18.60 pesos per dollar. The government acknowledges risks from the USMCA review and international volatility, but banks on a gradual recovery in private and public investment under Plan México.</div>
-    <div class="context-note">Treasury's projections land on the same day oil tops $106, a level that directly complicates the scenario of inflation converging to 3% and the assumption of Cetes rates at 5.5% by end-2027.</div>
-    <a href="https://www.elfinanciero.com.mx/empresas/2026/04/01/ojo-aqui-inversores-hacienda-preve-repunte-del-pib-a-24-en-2027-pese-a-volatilidad-y-revision-del-t-mec/" class="read-more">Read more &rarr;</a>
+    <div class="story-headline story-headline-lead">Middle East conflict sends oil surging and threatens a new era of global energy insecurity</div>
+    <div class="story-body">Iran's de facto closure of the Strait of Hormuz has blocked approximately 15% of global oil supply, pushing crude to nearly $120 per barrel before retreating to around $100 on Trump's de-escalation signals. The Economist warns that the supply disruption is larger than any seen during the 1970s crises, and that an indefinite closure could drive oil above $150 per barrel. The International Energy Agency released 400 million barrels from emergency reserves, but logistical constraints limit their effective impact.</div>
+    
+    <a href="https://www.lanacion.com.ar/economia/un-ataque-a-la-economia-mundial-las-consecuencias-del-conflicto-en-medio-oriente-segun-the-economist-nid12032026/" class="read-more">Read more &rarr;</a>
   </div>
 </div>
 
@@ -416,21 +330,22 @@
 </div>
 <div class="story">
   
+  
   <div class="story-meta">
-    <span class="story-source">La Nacion</span>
-    <span class="story-tag">Macro</span>
+    <span class="story-source">El Financiero</span>
+    <span class="story-tag">Comercio</span>
   </div>
   <div class="lang-es">
-    <div class="story-headline">Caputo admite que el riesgo-país argentino ya no depende de la gestión económica sino de la crisis política</div>
-    <div class="story-body">El ministro Luis Caputo reconoció ante funcionarios que, pese a haber cerrado el acuerdo con el FMI y asegurado financiamiento multilateral, el índice de riesgo-país no cede porque la gobernabilidad está en entredicho. El problema es estructural: Argentina necesita que el mercado refinancie deuda a tasas razonables — por debajo de 400 puntos básicos — para poder acumular reservas, pero las turbulencias del gabinete y causas judiciales bloquean esa ventana. Mientras tanto, el gobierno debió pagar un bono de emergencia a las fuerzas de seguridad que amenazaban con protestas, y los subsidios por discapacidad acumulan tres meses de retraso.</div>
-    <div class="context-note">La confesión de Caputo es relevante hoy porque el encarecimiento del petróleo y el deterioro del apetito global por riesgo emergente presionan adicionalmente los spreads argentinos, reduciendo aún más el margen de maniobra de Federico Furiase para salir a los mercados internacionales.</div>
-    <a href="https://www.lanacion.com.ar/politica/los-crujidos-politicos-que-complican-la-economia-nid01042026/" class="read-more">Leer m&aacute;s &rarr;</a>
+    <div class="story-headline">México y EU abren primera ronda del T-MEC con foco en reducir dependencia de Asia y seguridad de cadenas de suministro</div>
+    <div class="story-body">El secretario de Economía Marcelo Ebrard confirmó que la agenda inicial de negociación con Estados Unidos incluirá tres ejes: reducción de la dependencia de insumos asiáticos, revisión de reglas de origen y seguridad de suministros para América del Norte. Ebrard subrayó que el 85% del comercio exterior mexicano no está afectado por la investigación bajo la Sección 301, lo que acota el riesgo arancelario inmediato para México. La reunión también definirá la metodología para las rondas subsecuentes y qué capítulos específicos del tratado serán objeto de revisión.</div>
+    
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/12/revision-del-t-mec-seguridad-de-cadenas-de-suministro-sera-relevante-en-negociacion-con-eu/" class="read-more">Leer m&aacute;s &rarr;</a>
   </div>
   <div class="lang-en">
-    <div class="story-headline">Caputo admits Argentina's country risk no longer depends on economic management but on political crisis</div>
-    <div class="story-body">Finance Minister Luis Caputo acknowledged to fellow officials that despite closing the IMF deal and securing multilateral financing, the country-risk spread refuses to fall because governability is in question. The structural problem: Argentina needs the market to refinance debt at reasonable rates — below 400 basis points — to accumulate reserves, but cabinet turbulence and judicial proceedings are blocking that window. Meanwhile, the government was forced to pay an emergency bonus to security forces threatening to protest, and disability subsidies are three months in arrears.</div>
-    <div class="context-note">Caputo's admission is relevant today because rising oil prices and deteriorating global appetite for emerging-market risk add further pressure to Argentine spreads, shrinking even further Furiase's room to tap international markets.</div>
-    <a href="https://www.lanacion.com.ar/politica/los-crujidos-politicos-que-complican-la-economia-nid01042026/" class="read-more">Read more &rarr;</a>
+    <div class="story-headline">Mexico and U.S. open first USMCA round focused on reducing Asia dependence and supply chain security</div>
+    <div class="story-body">Economy Secretary Marcelo Ebrard confirmed that the initial negotiating agenda with the United States will cover three priorities: reducing dependence on Asian inputs, reviewing rules of origin, and securing North American supply chains. Ebrard stressed that 85% of Mexico's foreign trade is unaffected by the Section 301 investigation, limiting Mexico's immediate tariff exposure. The meeting will also establish the methodology for subsequent rounds and identify which specific treaty chapters will be subject to review.</div>
+    
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/12/revision-del-t-mec-seguridad-de-cadenas-de-suministro-sera-relevante-en-negociacion-con-eu/" class="read-more">Read more &rarr;</a>
   </div>
 </div>
 
@@ -445,22 +360,23 @@
   <div class="line"></div>
 </div>
 <div class="story">
+  
   
   <div class="story-meta">
     <span class="story-source">El Financiero</span>
     <span class="story-tag">México</span>
   </div>
   <div class="lang-es">
-    <div class="story-headline">La SCJN podría validar el bloqueo de cuentas bancarias sin orden judicial a través de la UIF</div>
-    <div class="story-body">El pleno de la Suprema Corte de Justicia de la Nación (SCJN) votará probablemente después de Semana Santa un proyecto que avalaría la facultad de la Unidad de Inteligencia Financiera (UIF) para congelar cuentas bancarias sin audiencia previa, bajo la reforma de 2022 al artículo 116 Bis 2 de la Ley de Instituciones de Crédito. Una persona incluida en la Lista de Personas Bloqueadas pierde acceso inmediato a todo su patrimonio financiero y solo tras un proceso administrativo de hasta 40 días hábiles podría recuperarlo. La acción de inconstitucionalidad fue promovida en 2022 por 49 senadores de oposición, quienes argumentaron que la norma viola la presunción de inocencia y el debido proceso.</div>
-    <div class="context-note">Una resolución favorable a la UIF ampliaría significativamente el riesgo jurídico para empresas y personas físicas en México, con implicaciones directas para el clima de inversión en un momento en que el gobierno busca precisamente atraer capital privado bajo el Plan México.</div>
-    <a href="https://www.elfinanciero.com.mx/opinion/gustavo-de-hoyos-walther/2026/04/01/asedio-al-debido-proceso/" class="read-more">Leer m&aacute;s &rarr;</a>
+    <div class="story-headline">México lanza misión comercial a Canadá 'la más grande del siglo' con arancel cero en 99% de bienes bajo T-MEC</div>
+    <div class="story-body">El gobierno mexicano organizará una misión comercial a Toronto, Montreal y Vancouver del 7 al 9 de mayo, respondiendo a una instrucción directa derivada de los acuerdos entre la presidenta Claudia Sheinbaum y el primer ministro Mark Carney. México es ya el cuarto socio comercial de Canadá y el segundo destino de exportaciones canadienses en 2025, con un crecimiento del 17% interanual. La relación bilateral suma más de $100,000 millones de dólares, incluyendo $40,000 millones en comercio de bienes y $60,000 millones en inversión.</div>
+    
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/12/mexico-lanza-mision-comercial-a-canada-mas-grande-del-siglo-economia-presenta-iniciativa/" class="read-more">Leer m&aacute;s &rarr;</a>
   </div>
   <div class="lang-en">
-    <div class="story-headline">Mexico's Supreme Court may validate warrantless bank account freezes by the Financial Intelligence Unit</div>
-    <div class="story-body">The Supreme Court of Justice (SCJN) is expected to vote after Easter on a draft ruling that would uphold the Financial Intelligence Unit's (UIF) power to freeze bank accounts without a prior judicial hearing, under a 2022 amendment to banking law. A person placed on the Blocked Persons List loses immediate access to all their financial assets and would only recover them after an administrative process of up to 40 business days. The constitutional challenge was filed in 2022 by 49 opposition senators, who argued the rule violates the presumption of innocence and due process.</div>
-    <div class="context-note">A ruling favorable to the UIF would significantly expand legal risk for companies and individuals in Mexico, with direct implications for the investment climate at a moment when the government is actively seeking private capital under Plan México.</div>
-    <a href="https://www.elfinanciero.com.mx/opinion/gustavo-de-hoyos-walther/2026/04/01/asedio-al-debido-proceso/" class="read-more">Read more &rarr;</a>
+    <div class="story-headline">Mexico launches 'largest commercial mission of the century' to Canada with zero tariffs on 99% of USMCA goods</div>
+    <div class="story-body">The Mexican government will organize a commercial mission to Toronto, Montreal, and Vancouver from May 7–9, following direct instructions stemming from agreements between President Claudia Sheinbaum and Prime Minister Mark Carney. Mexico is already Canada's fourth-largest trading partner and the second-largest destination for Canadian exports in 2025, with 17% year-over-year growth. The bilateral relationship totals more than $100 billion, including $40 billion in goods trade and $60 billion in investment.</div>
+    
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/12/mexico-lanza-mision-comercial-a-canada-mas-grande-del-siglo-economia-presenta-iniciativa/" class="read-more">Read more &rarr;</a>
   </div>
 </div>
 
@@ -476,51 +392,115 @@
 </div>
 <div class="story">
   
-  <div class="story-meta">
-    <span class="story-source">La Nacion</span>
-    <span class="story-tag">Energía</span>
-  </div>
-  <div class="lang-es">
-    <div class="story-headline">El conflicto en Irán dispara los costos del turismo en España: el petróleo acumula un alza del 60%</div>
-    <div class="story-body">El encarecimiento del crudo — un 35% en los primeros siete días del conflicto y ya un 60% desde el inicio de la ofensiva — golpea directamente los costos operativos del sector turístico español, donde la energía representa entre el 20% y el 30% de los gastos hoteleros y un porcentaje aún mayor en la aviación. A pesar de ello, la agencia Destinia anticipa crecimiento en las ventas hacia España, argumentando que las tensiones geopolíticas desviarán viajeros desde destinos competidores. Las subidas de tasas aeroportuarias de Aena y los nuevos gravámenes turísticos en Cataluña y Baleares añaden presión adicional al bolsillo del viajero.</div>
-    <div class="context-note">La historia ilustra cómo el shock energético del conflicto Irán-EE.UU. se transmite a sectores aparentemente distantes — el turismo europeo — con efectos inflacionarios que refuerzan el ambiente de aversión al riesgo dominante esta semana.</div>
-    <a href="https://www.lanacion.com.ar/salud/viajes-a-espana-mucho-mas-caros-masivos-y-con-nuevas-tasas-a-los-turistas-nid02042026/" class="read-more">Leer m&aacute;s &rarr;</a>
-  </div>
-  <div class="lang-en">
-    <div class="story-headline">Iran conflict drives up tourism costs in Spain as oil accumulates a 60% surge</div>
-    <div class="story-body">The surge in crude — up 35% in the first seven days of the conflict and now 60% higher since the offensive began — is directly hitting Spain's tourism sector, where energy accounts for 20% to 30% of hotel operating costs and an even larger share of aviation expenses. Despite this, travel agency Destinia forecasts growth in bookings to Spain, arguing that geopolitical tensions will redirect travelers away from competing destinations. Higher airport fees from Aena and new tourist taxes in Catalonia and the Balearic Islands add further pressure on travelers' wallets.</div>
-    <div class="context-note">The story illustrates how the Iran-U.S. energy shock is transmitting to seemingly distant sectors — European tourism — with inflationary effects that reinforce the risk-off environment dominating markets this week.</div>
-    <a href="https://www.lanacion.com.ar/salud/viajes-a-espana-mucho-mas-caros-masivos-y-con-nuevas-tasas-a-los-turistas-nid02042026/" class="read-more">Read more &rarr;</a>
-  </div>
-</div>
-
-<div class="divider">
-  <div class="line"></div>
-  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
-    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
-  </svg>
-  <div class="line"></div>
-</div>
-<div class="story">
   
   <div class="story-meta">
-    <span class="story-source">La Nacion</span>
+    <span class="story-source">El Financiero</span>
     <span class="story-tag">Macro</span>
   </div>
   <div class="lang-es">
-    <div class="story-headline">Lluvias récord en la región pampeana: marzo cerró con un 41% más de precipitaciones, pero complican la cosecha de soja</div>
-    <div class="story-body">La región agrícola núcleo argentina registró en marzo un promedio de 161 mm de lluvia, un 41% por encima del promedio histórico, revirtiendo en menos de dos semanas una situación de sequía crítica en Buenos Aires. Los primeros resultados de cosecha muestran rindes superiores a lo esperado — hasta 60 quintales por hectárea de soja en algunas zonas — pero el exceso hídrico genera demoras operativas, problemas de piso y riesgo de calidad. La Bolsa de Comercio de Rosario advierte sobre el riesgo de pasar rápidamente de la recuperación hídrica a los anegamientos.</div>
-    <div class="context-note">El agro es la principal fuente de divisas de Argentina; cualquier variación significativa en los volúmenes y tiempos de cosecha de soja impacta directamente en el flujo de liquidaciones del sector exportador, variable crítica para la acumulación de reservas del BCRA.</div>
-    <a href="https://www.lanacion.com.ar/economia/campo/drastico-giro-en-marzo-llovio-un-41-mas-y-en-15-dias-se-dio-un-cambio-pocas-veces-visto-en-la-region-nid02042026/" class="read-more">Leer m&aacute;s &rarr;</a>
+    <div class="story-headline">BID duplicará financiamiento para América Latina a $500,000 millones en una década; México en la mira para energía</div>
+    <div class="story-body">El presidente del Grupo BID, Ilan Goldfajn, anunció que el organismo desplegará hasta $500,000 millones de dólares en financiamiento para América Latina y el Caribe en los próximos diez años, el doble de lo canalizado en la última década. México tiene acceso a un cupo máximo de $25,000 millones hasta el cierre del sexenio de Sheinbaum, con prioridad en proyectos energéticos, cadenas de suministro y exportaciones hacia Estados Unidos. BID Invest ya vinculó a más de 3,000 pymes mexicanas dentro de cadenas de valor exportadoras.</div>
+    
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/12/mexico-podria-recibir-parte-de-los-500-mil-mdd-que-el-bid-destinara-para-proyectos-energeticos/" class="read-more">Leer m&aacute;s &rarr;</a>
   </div>
   <div class="lang-en">
-    <div class="story-headline">Record rains in Argentina's Pampas: March ended 41% above average, but complicate soybean harvest</div>
-    <div class="story-body">Argentina's core agricultural region recorded an average of 161mm of rainfall in March, 41% above the historical average, reversing a critical drought situation in Buenos Aires province in under two weeks. Early harvest results show yields above expectations — up to 60 quintals per hectare of soybeans in some areas — but excess water is causing operational delays, poor field conditions, and quality risks. The Rosario Stock Exchange warns of a rapid shift from hydrological recovery to flooding.</div>
-    <div class="context-note">Agriculture is Argentina's primary source of foreign exchange; any significant variation in soybean harvest volumes and timing directly impacts export sector settlement flows, a critical variable for BCRA reserve accumulation.</div>
-    <a href="https://www.lanacion.com.ar/economia/campo/drastico-giro-en-marzo-llovio-un-41-mas-y-en-15-dias-se-dio-un-cambio-pocas-veces-visto-en-la-region-nid02042026/" class="read-more">Read more &rarr;</a>
+    <div class="story-headline">IDB to double Latin America financing to $500 billion over a decade; Mexico targeted for energy investments</div>
+    <div class="story-body">IDB Group President Ilan Goldfajn announced the institution will deploy up to $500 billion in financing for Latin America and the Caribbean over the next ten years, double what was channeled in the previous decade. Mexico has access to a maximum of $25 billion through the end of President Sheinbaum's term, with priority in energy projects, supply chains, and U.S.-bound exports. IDB Invest has already connected more than 3,000 Mexican SMEs within export-oriented value chains.</div>
+    
+    <a href="https://www.elfinanciero.com.mx/economia/2026/03/12/mexico-podria-recibir-parte-de-los-500-mil-mdd-que-el-bid-destinara-para-proyectos-energeticos/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  
+  
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">FX</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Inflación de 2.9% en Argentina eleva el techo de la banda cambiaria a más de $1,700 para abril</div>
+    <div class="story-body">El Indec confirmó una inflación mensual de 2.9% en febrero — segundo mes consecutivo en ese nivel —, lo que empujará el techo de la banda cambiaria a aproximadamente $1,703 para fines de abril, según el nuevo esquema de indexación del BCRA vigente desde enero. El tipo de cambio oficial mayorista cerró este jueves en $1,395.89, con una distancia de $230.58 respecto al techo, equivalente al 16.5% — la mayor brecha desde julio pasado. El analista Christian Buteler señala que el techo funciona como ancla de expectativas, aunque recuerda que en cuatro ocasiones electorales el año pasado el BCRA tuvo que intervenir vendiendo divisas al llegar al límite superior.</div>
+    
+    <a href="https://www.lanacion.com.ar/economia/dolar/ajusta-por-inflacion-el-techo-de-la-banda-cambiaria-superara-los-1700-en-abril-nid12032026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Argentina's 2.9% inflation pushes the exchange rate band ceiling above $1,700 for April</div>
+    <div class="story-body">INDEC confirmed monthly inflation of 2.9% for February — the second consecutive month at that level — which will push the BCRA's exchange rate band ceiling to approximately $1,703 by end of April under the new indexation scheme in place since January. The official wholesale exchange rate closed Thursday at $1,395.89, sitting $230.58 below the ceiling — a 16.5% gap, the widest since last July. Analyst Christian Buteler notes the ceiling functions as an expectations anchor, though he recalls that on four electoral occasions last year the BCRA was forced to sell foreign currency upon reaching the upper limit.</div>
+    
+    <a href="https://www.lanacion.com.ar/economia/dolar/ajusta-por-inflacion-el-techo-de-la-banda-cambiaria-superara-los-1700-en-abril-nid12032026/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  
+  
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">Política</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Recortes del DOGE amenazan con colapsar el Seguro Social de EE.UU., que cubre a 75 millones de beneficiarios</div>
+    <div class="story-body">Bob Caldwell, exfuncionario con 14 años en la Administración del Seguro Social (SSA), advirtió que la reducción de personal impulsada por el DOGE podría llevar al programa a un punto de quiebre, afectando a los aproximadamente 75 millones de beneficiarios que dependen de él para cubrir vivienda, medicamentos y gastos básicos. Caldwell sostuvo que los problemas son estructurales y anteriores a las actuales purgas: 'simplemente con falta de personal, incluso antes del DOGE, sería fácil hacer colapsar todo el programa'. Las manifestaciones ciudadanas frente a oficinas de la SSA se multiplican en ciudades como Chico, California.</div>
+    
+    <a href="https://www.lanacion.com.ar/estados-unidos/no-podran-renovar-la-advertencia-sobre-el-colapso-del-seguro-social-que-pone-en-jaque-a-los-nid12032026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">DOGE staff cuts threaten to collapse U.S. Social Security, which serves 75 million beneficiaries</div>
+    <div class="story-body">Bob Caldwell, a former Social Security Administration (SSA) official with 14 years at the agency, warned that DOGE-driven staffing cuts could push the program to a breaking point, threatening the roughly 75 million beneficiaries who rely on it for housing, medication, and basic expenses. Caldwell argued that the problems are structural and predate the current purges: 'simply through understaffing, even before DOGE, it would be easy to collapse the entire program.' Citizen protests in front of SSA offices are multiplying across cities such as Chico, California.</div>
+    
+    <a href="https://www.lanacion.com.ar/estados-unidos/no-podran-renovar-la-advertencia-sobre-el-colapso-del-seguro-social-que-pone-en-jaque-a-los-nid12032026/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  
+  
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Estafas cuestan $119,000 millones anuales en EE.UU. y la IA acelera el fraude con mínima mano de obra humana</div>
+    <div class="story-body">La Consumer Federation of America estima que los fraudes generan pérdidas de $119,000 millones al año en Estados Unidos, cifra calculada extrapolando el subregistro oficial — el gobierno solo se entera del 14% de los delitos. Las estafas de inversión, especialmente en criptomonedas mediante la técnica 'pig butchering', representaron $46,600 millones en 2024 según proyecciones de la CFA, frente a los $6,600 millones reportados al FBI. Los estafadores utilizan inteligencia artificial para reducir la mano de obra necesaria y compran bases de datos de intermediarios como Epsilon Data Management para focalizar sus ataques en perfiles vulnerables.</div>
+    
+    <a href="https://www.lanacion.com.ar/economia/IA/fraudes-y-enganos-estiman-perdidas-por-us119000-millones-al-ano-en-eeuu-nid12032026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Fraud costs the U.S. $119 billion annually as AI accelerates scams with minimal human labor</div>
+    <div class="story-body">The Consumer Federation of America estimates that fraud generates $119 billion in annual losses in the United States, a figure derived by extrapolating the official underreporting rate — the government learns of only 14% of such crimes. Investment scams, especially cryptocurrency fraud via 'pig butchering,' accounted for an estimated $46.6 billion in 2024 according to CFA projections, versus the $6.6 billion reported to the FBI. Scammers are using artificial intelligence to reduce the workforce needed to deceive victims and purchase targeted databases from data brokers like Epsilon Data Management to focus attacks on vulnerable profiles.</div>
+    
+    <a href="https://www.lanacion.com.ar/economia/IA/fraudes-y-enganos-estiman-perdidas-por-us119000-millones-al-ano-en-eeuu-nid12032026/" class="read-more">Read more &rarr;</a>
   </div>
 </div>
 
@@ -557,45 +537,45 @@
         <tbody>
       <tr>
         <td class="pair">MXN / USD</td>
-        <td>0.05602</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.16%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.63%</td>
+        <td>0.05589</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.25%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.40%</td>
       </tr>
       <tr>
         <td class="pair">MXN / BRL</td>
-        <td>0.2889</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.12%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.06%</td>
+        <td>0.2882</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.24%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.17%</td>
       </tr>
       <tr>
         <td class="pair">MXN / EUR</td>
         <td>0.04851</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.22%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.15%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.08%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.14%</td>
       </tr>
       <tr>
         <td class="pair">MXN / CNY</td>
-        <td>0.3854</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.02%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.17%</td>
+        <td>0.3846</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.30%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.97%</td>
       </tr>
       <tr>
         <td class="pair">MXN / CAD</td>
-        <td>0.0780</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.18%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.81%</td>
+        <td>0.0779</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.06%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.72%</td>
       </tr>
       <tr>
         <td class="pair">MXN / GBP</td>
-        <td>0.04232</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.33%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.64%</td>
+        <td>0.04236</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.02%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.74%</td>
       </tr>
       <tr>
         <td class="pair">MXN / JPY</td>
-        <td>8.94</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.39%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.20%</td>
+        <td>8.92</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.16%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.02%</td>
       </tr>
         </tbody>
       </table>
@@ -613,45 +593,45 @@
         <tbody>
       <tr>
         <td class="pair">USD / MXN</td>
-        <td>17.8520</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.16%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.61%</td>
+        <td>17.8920</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.25%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.38%</td>
       </tr>
       <tr>
         <td class="pair">USD / BRL</td>
         <td>5.1568</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.04%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.01%</td>
         <td style="color:#b84a3a; text-align:right;">▼ 1.55%</td>
       </tr>
       <tr>
         <td class="pair">USD / EUR</td>
-        <td>0.86603</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.38%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.48%</td>
+        <td>0.86790</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.17%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.26%</td>
       </tr>
       <tr>
         <td class="pair">USD / CNY</td>
-        <td>6.8799</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.14%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.46%</td>
+        <td>6.8819</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.05%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.43%</td>
       </tr>
       <tr>
         <td class="pair">USD / CAD</td>
-        <td>1.3924</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.34%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.18%</td>
+        <td>1.3943</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.19%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.31%</td>
       </tr>
       <tr>
         <td class="pair">USD / GBP</td>
-        <td>0.75546</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.50%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.01%</td>
+        <td>0.75786</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.27%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.33%</td>
       </tr>
       <tr>
         <td class="pair">USD / JPY</td>
-        <td>159.56</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.55%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.42%</td>
+        <td>159.63</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.09%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.38%</td>
       </tr>
         </tbody>
       </table>
@@ -669,45 +649,45 @@
         <tbody>
       <tr>
         <td class="pair">BRL / MXN</td>
-        <td>3.4618</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.12%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.06%</td>
+        <td>3.4696</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.24%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.17%</td>
       </tr>
       <tr>
         <td class="pair">BRL / USD</td>
         <td>0.19392</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.04%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.01%</td>
         <td style="color:#4a9e6a; text-align:right;">▲ 1.57%</td>
       </tr>
       <tr>
         <td class="pair">BRL / EUR</td>
-        <td>0.16794</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.33%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.09%</td>
+        <td>0.16830</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.16%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.31%</td>
       </tr>
       <tr>
         <td class="pair">BRL / CNY</td>
-        <td>1.3341</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.09%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.11%</td>
+        <td>1.3345</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.05%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.14%</td>
       </tr>
       <tr>
         <td class="pair">BRL / CAD</td>
-        <td>0.2700</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.30%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.75%</td>
+        <td>0.2704</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.18%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.89%</td>
       </tr>
       <tr>
         <td class="pair">BRL / GBP</td>
-        <td>0.14650</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.45%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.59%</td>
+        <td>0.14696</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.26%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.91%</td>
       </tr>
       <tr>
         <td class="pair">BRL / JPY</td>
-        <td>30.94</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.50%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 1.15%</td>
+        <td>30.96</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.08%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.19%</td>
       </tr>
         </tbody>
       </table>
@@ -725,45 +705,45 @@
         <tbody>
       <tr>
         <td class="pair">EUR / MXN</td>
-        <td>20.6137</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.21%</td>
+        <td>20.6152</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.08%</td>
         <td style="color:#b84a3a; text-align:right;">▼ 1.13%</td>
       </tr>
       <tr>
         <td class="pair">EUR / USD</td>
-        <td>1.15470</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.38%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.48%</td>
+        <td>1.15220</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.17%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.26%</td>
       </tr>
       <tr>
         <td class="pair">EUR / BRL</td>
-        <td>5.9546</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.33%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.08%</td>
+        <td>5.9417</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.16%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.29%</td>
       </tr>
       <tr>
         <td class="pair">EUR / CNY</td>
-        <td>7.9442</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.24%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.02%</td>
+        <td>7.9293</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.22%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.17%</td>
       </tr>
       <tr>
         <td class="pair">EUR / CAD</td>
-        <td>1.6078</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.03%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.66%</td>
+        <td>1.6065</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.02%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.57%</td>
       </tr>
       <tr>
         <td class="pair">EUR / GBP</td>
-        <td>0.87233</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.12%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.49%</td>
+        <td>0.87321</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.10%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.59%</td>
       </tr>
       <tr>
         <td class="pair">EUR / JPY</td>
-        <td>184.24</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.17%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.05%</td>
+        <td>183.93</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.08%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.12%</td>
       </tr>
         </tbody>
       </table>
@@ -781,45 +761,45 @@
         <tbody>
       <tr>
         <td class="pair">CNY / MXN</td>
-        <td>2.5948</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.02%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.15%</td>
+        <td>2.5999</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.30%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.96%</td>
       </tr>
       <tr>
         <td class="pair">CNY / USD</td>
-        <td>0.14535</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.14%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.46%</td>
+        <td>0.14531</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.05%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.43%</td>
       </tr>
       <tr>
         <td class="pair">CNY / BRL</td>
-        <td>0.7495</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.09%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 1.10%</td>
+        <td>0.7493</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.05%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.13%</td>
       </tr>
       <tr>
         <td class="pair">CNY / EUR</td>
-        <td>0.12588</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.24%</td>
-        <td style="color:#b84a3a; text-align:right;">▼ 0.02%</td>
+        <td>0.12611</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.22%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.17%</td>
       </tr>
       <tr>
         <td class="pair">CNY / CAD</td>
-        <td>0.2024</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.21%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.64%</td>
+        <td>0.2026</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.23%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.75%</td>
       </tr>
       <tr>
         <td class="pair">CNY / GBP</td>
-        <td>0.10981</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.36%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.47%</td>
+        <td>0.11012</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.31%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.76%</td>
       </tr>
       <tr>
         <td class="pair">CNY / JPY</td>
-        <td>23.19</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.41%</td>
-        <td style="color:#4a9e6a; text-align:right;">▲ 0.04%</td>
+        <td>23.20</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.14%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.05%</td>
       </tr>
         </tbody>
       </table>
@@ -839,7 +819,7 @@
   <div class="line"></div>
 </div>
 <div class="weekly-mkt">
-  <div class="wm-title" data-es="La Semana en Mercados &middot; Mar 30&ndash;03, 2026" data-en="Week in Markets &middot; Mar 30&ndash;03, 2026">La Semana en Mercados &middot; Mar 30&ndash;03, 2026</div>
+  <div class="wm-title" data-es="La Semana en Mercados &middot; abr. 06&ndash;10, 2026" data-en="Week in Markets &middot; abr. 06&ndash;10, 2026">La Semana en Mercados &middot; abr. 06&ndash;10, 2026</div>
   <div class="wm-subtitle" data-es="1D = var. diaria &nbsp;&middot;&nbsp; 1S = var. semanal" data-en="1D = daily change &nbsp;&middot;&nbsp; 1W = weekly change">1D = var. diaria &nbsp;&middot;&nbsp; 1S = var. semanal</div>
   <table class="wm-table">
     <thead>
@@ -853,15 +833,15 @@
     <tbody>
         <tr>
           <td class="wm-label">DXY</td>
-          <td class="wm-val">99.98</td>
-          <td class="wm-chg tick-down">▼ 0.1%</td>
-          <td class="wm-chg tick-down">▼ 0.5%</td>
+          <td class="wm-val">100.20</td>
+          <td class="wm-chg tick-up">▲ 0.2%</td>
+          <td class="wm-chg tick-down">▼ 0.3%</td>
         </tr>
         <tr>
           <td class="wm-label">10Y UST</td>
           <td class="wm-val">4.31%</td>
           <td class="wm-chg tick-down">▼ 0.1%</td>
-          <td class="wm-chg tick-down">▼ 2.9%</td>
+          <td class="wm-chg tick-up">▲ 0.0%</td>
         </tr>
         <tr>
           <td class="wm-label">VIX</td>
@@ -900,31 +880,31 @@
         <span class="cal-date">09 ABR</span>
         <span class="cal-badge" style="color:#c8943a; border-color:#c8943a;">INEGI</span>
         <span class="cal-label">INEGI — CPI México (feb)</span>
-        <span class="cal-days">6d</span>
+        <span class="cal-days">3d</span>
       </div>
       <div class="cal-row">
         <span class="cal-date">10 ABR</span>
         <span class="cal-badge" style="color:#7a9aaa; border-color:#7a9aaa;">BLS</span>
         <span class="cal-label">BLS — CPI EE.UU. (mar)</span>
-        <span class="cal-days">7d</span>
+        <span class="cal-days">4d</span>
       </div>
       <div class="cal-row">
         <span class="cal-date">29 ABR</span>
         <span class="cal-badge" style="color:#5a8abf; border-color:#5a8abf;">FED</span>
         <span class="cal-label">FOMC — Decisión Fed</span>
-        <span class="cal-days">26d</span>
+        <span class="cal-days">23d</span>
       </div>
       <div class="cal-row">
         <span class="cal-date">12 MAY</span>
         <span class="cal-badge" style="color:#7a9aaa; border-color:#7a9aaa;">BLS</span>
         <span class="cal-label">BLS — CPI EE.UU. (abr)</span>
-        <span class="cal-days">39d</span>
+        <span class="cal-days">36d</span>
       </div>
       <div class="cal-row">
         <span class="cal-date">14 MAY</span>
         <span class="cal-badge" style="color:#4a9e6a; border-color:#4a9e6a;">BANXICO</span>
         <span class="cal-label">Banxico — Decisión de tasa</span>
-        <span class="cal-days">41d</span>
+        <span class="cal-days">38d</span>
       </div>
 </div>
 
@@ -943,167 +923,25 @@
   <div class="quote">
     <span class="quote-mark">&ldquo;</span>
     <div class="lang-es">
-      <div class="quote-text">Los mercados pueden permanecer irracionales más tiempo del que usted puede permanecer solvente.</div>
-      <div class="quote-attr">John Maynard Keynes, atribuido, circa 1930s</div>
+      <div class="quote-text">The first panacea for a mismanaged nation is inflation of the currency; the second is war. Both bring a temporary prosperity; both bring a permanent ruin.</div>
+      <div class="quote-attr">Ernest Hemingway, Notes on the Next War, Esquire, 1935</div>
     </div>
     <div class="lang-en">
-      <div class="quote-text">Los mercados pueden permanecer irracionales más tiempo del que usted puede permanecer solvente.</div>
-      <div class="quote-attr">John Maynard Keynes, atribuido, circa 1930s</div>
+      <div class="quote-text">The first panacea for a mismanaged nation is inflation of the currency; the second is war. Both bring a temporary prosperity; both bring a permanent ruin.</div>
+      <div class="quote-attr">Ernest Hemingway, Notes on the Next War, Esquire, 1935</div>
     </div>
   </div>
 
   
 
-<div class="divider">
-  <div class="line"></div>
-  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
-    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
-  </svg>
-  <div class="line"></div>
-</div>
-<div class="week">
-  <div class="section-title"
-       data-es="Resumen Semanal &middot; Mar 30&ndash;03, 2026"
-       data-en="Week in Review &middot; Mar 30&ndash;03, 2026">Resumen Semanal &middot; Mar 30&ndash;03, 2026</div>
-  <div class="timeline">
-      <div class="tl-row">
-        <div class="tl-left">
-          <div class="tl-day">Lun</div>
-          <div class="tl-dot active"></div>
-          <div class="tl-line"></div>
-        </div>
-        <div class="tl-content">
-          <span class="tl-tag">Energía</span>
-          <div class="lang-es">
-            <div class="tl-headline">Trump atrapado en Irán: el Brent sube a 112 dólares y el Estrecho de Ormuz sigue bloqueado al mes de guerra</div>
-            <div class="tl-body">A casi un mes de iniciada la ofensiva estadounidense contra Irán, no hubo rendición rápida ni reapertura del Estrecho de Ormuz — por donde fluye el 20% del petr...</div>
-          </div>
-          <div class="lang-en">
-            <div class="tl-headline">Trump atrapado en Irán: el Brent sube a 112 dólares y el Estrecho de Ormuz sigue bloqueado al mes de guerra</div>
-            <div class="tl-body">A casi un mes de iniciada la ofensiva estadounidense contra Irán, no hubo rendición rápida ni reapertura del Estrecho de Ormuz — por donde fluye el 20% del petr...</div>
-          </div>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-left">
-          <div class="tl-day">Mar</div>
-          <div class="tl-dot "></div>
-          <div class="tl-line"></div>
-        </div>
-        <div class="tl-content">
-          <span class="tl-tag">Macro</span>
-          <div class="lang-es">
-            <div class="tl-headline">Trump habla de 'conversaciones serias' con Irán mientras amenaza destruir su infraestructura energética</div>
-            <div class="tl-body">El presidente Donald Trump afirmó en Truth Social que EE.UU. mantiene negociaciones con un 'nuevo y más razonable' régimen iraní para poner fin a las operacione...</div>
-          </div>
-          <div class="lang-en">
-            <div class="tl-headline">Trump habla de 'conversaciones serias' con Irán mientras amenaza destruir su infraestructura energética</div>
-            <div class="tl-body">El presidente Donald Trump afirmó en Truth Social que EE.UU. mantiene negociaciones con un 'nuevo y más razonable' régimen iraní para poner fin a las operacione...</div>
-          </div>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-left">
-          <div class="tl-day">Mié</div>
-          <div class="tl-dot active"></div>
-          <div class="tl-line"></div>
-        </div>
-        <div class="tl-content">
-          <span class="tl-tag">Macro</span>
-          <div class="lang-es">
-            <div class="tl-headline">FMI advierte: la guerra en Medio Oriente llevará a más inflación y menor crecimiento global</div>
-            <div class="tl-body">El Fondo Monetario Internacional identificó la energía como el principal canal de transmisión del conflicto bélico, señalando que el cierre de facto del estrech...</div>
-          </div>
-          <div class="lang-en">
-            <div class="tl-headline">FMI advierte: la guerra en Medio Oriente llevará a más inflación y menor crecimiento global</div>
-            <div class="tl-body">El Fondo Monetario Internacional identificó la energía como el principal canal de transmisión del conflicto bélico, señalando que el cierre de facto del estrech...</div>
-          </div>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-left">
-          <div class="tl-day">Jue</div>
-          <div class="tl-dot "></div>
-          <div class="tl-line"></div>
-        </div>
-        <div class="tl-content">
-          <span class="tl-tag">México</span>
-          <div class="lang-es">
-            <div class="tl-headline">Inversión física en México cae 44.9% real en el primer bimestre, el peor nivel desde 1990</div>
-            <div class="tl-body">El gasto en inversión física del sector público se desplomó de 152.2 mil millones de pesos en enero-febrero de 2025 a apenas 87.1 mil millones en el mismo perio...</div>
-          </div>
-          <div class="lang-en">
-            <div class="tl-headline">Inversión física en México cae 44.9% real en el primer bimestre, el peor nivel desde 1990</div>
-            <div class="tl-body">El gasto en inversión física del sector público se desplomó de 152.2 mil millones de pesos en enero-febrero de 2025 a apenas 87.1 mil millones en el mismo perio...</div>
-          </div>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-left">
-          <div class="tl-day">Vie</div>
-          <div class="tl-dot active"></div>
-          <div class="tl-line"></div>
-        </div>
-        <div class="tl-content">
-          <span class="tl-tag">Energía</span>
-          <div class="lang-es">
-            <div class="tl-headline">Trump amenaza con golpear a Irán 'con extrema dureza' y el petróleo Brent supera los 106 dólares</div>
-            <div class="tl-body">El presidente estadounidense advirtió que atacaría a Irán en las próximas dos o tres semanas, socavando las expectativas de una resolución inminente al conflict...</div>
-          </div>
-          <div class="lang-en">
-            <div class="tl-headline">Trump amenaza con golpear a Irán 'con extrema dureza' y el petróleo Brent supera los 106 dólares</div>
-            <div class="tl-body">El presidente estadounidense advirtió que atacaría a Irán en las próximas dos o tres semanas, socavando las expectativas de una resolución inminente al conflict...</div>
-          </div>
-        </div>
-      </div>
-  </div>
-</div>
-
   
 
-<div class="divider">
-  <div class="line"></div>
-  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
-    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
-  </svg>
-  <div class="line"></div>
-</div>
-<div style="padding:24px 48px 8px;">
-  <div class="section-title"
-       data-es="Sentimiento Semanal &middot; Mar 30&ndash;03, 2026"
-       data-en="Weekly Sentiment &middot; Mar 30&ndash;03, 2026">Sentimiento Semanal &middot; Mar 30&ndash;03, 2026</div>
-  <img src="https://quickchart.io/chart?w=544&h=160&bkg=%23f0f3f5&f=png&c=%7B%22type%22%3A%22line%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Lun%22%2C%22Mar%22%2C%22Mi%5Cu00e9%22%2C%22Jue%22%2C%22Vie%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B22%2C42%2C22%2C42%2C22%5D%2C%22borderColor%22%3A%22%233a4a54%22%2C%22borderWidth%22%3A2%2C%22pointBackgroundColor%22%3A%5B%22%23b84a3a%22%2C%22%23e8a030%22%2C%22%23b84a3a%22%2C%22%23e8a030%22%2C%22%23b84a3a%22%5D%2C%22pointBorderColor%22%3A%5B%22%23b84a3a%22%2C%22%23e8a030%22%2C%22%23b84a3a%22%2C%22%23e8a030%22%2C%22%23b84a3a%22%5D%2C%22pointRadius%22%3A6%2C%22fill%22%3Afalse%2C%22tension%22%3A0.3%7D%5D%7D%2C%22options%22%3A%7B%22responsive%22%3Afalse%2C%22plugins%22%3A%7B%22legend%22%3A%7B%22display%22%3Afalse%7D%7D%2C%22scales%22%3A%7B%22y%22%3A%7B%22min%22%3A0%2C%22max%22%3A100%2C%22ticks%22%3A%7B%22display%22%3Afalse%7D%2C%22grid%22%3A%7B%22color%22%3A%22%23dde3e8%22%7D%7D%2C%22x%22%3A%7B%22ticks%22%3A%7B%22color%22%3A%22%23888888%22%2C%22font%22%3A%7B%22size%22%3A11%7D%7D%2C%22grid%22%3A%7B%22display%22%3Afalse%7D%7D%7D%7D%7D" style="width:100%; border:1px solid #cdd4d9; margin-top:14px;" alt="Weekly sentiment chart"/>
-</div>
-
   
-
-<div class="divider">
-  <div class="line"></div>
-  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
-    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
-    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
-  </svg>
-  <div class="line"></div>
-</div>
-<div style="padding:24px 48px 8px;">
-  <div class="section-title"
-       data-es="La Semana en Palabras"
-       data-en="The Week in Words">La Semana en Palabras</div>
-  <img src="https://extremelypowerfulcapybara.github.io/News-Digest/wordcloud-2026-W14.png" style="width:100%; border:1px solid #cdd4d9;" alt="Word cloud"/>
-</div>
 
   <div class="footer">
     <span class="footer-name">The Opening Bell</span>
-    <span class="footer-by lang-es">por Rex Cession, Chief of Staff, Monetary Policy Theater</span>
-    <span class="footer-by lang-en">by Rex Cession, Chief of Staff, Monetary Policy Theater</span>
+    <span class="footer-by lang-es">por </span>
+    <span class="footer-by lang-en">by </span>
   </div>
 
 </div>

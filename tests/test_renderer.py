@@ -1,11 +1,9 @@
 """
 Tests for renderer.py story card rendering.
 
-Run from bot/ directory:
-  python tests/test_renderer.py
+Run from repo root:
+  pytest tests/test_renderer.py
 """
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from renderer import _story_block
 

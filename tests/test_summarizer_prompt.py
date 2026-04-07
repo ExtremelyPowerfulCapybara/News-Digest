@@ -1,11 +1,9 @@
 """
 Tests for summarizer.py prompt content.
 
-Run from bot/ directory:
-  python tests/test_summarizer_prompt.py
+Run from repo root:
+  pytest tests/test_summarizer_prompt.py
 """
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import inspect
 import summarizer

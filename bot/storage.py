@@ -8,15 +8,30 @@ from datetime import date, timedelta
 from config import DIGEST_DIR, ARCHIVE_DIR
 
 
-def save_digest(digest: dict, market: dict) -> None:
+def save_digest(digest: dict, market: dict, visual: dict | None = None) -> None:
     os.makedirs(DIGEST_DIR, exist_ok=True)
     today = date.today().isoformat()
+    path  = os.path.join(DIGEST_DIR, f"{today}.json")
+
+    # Preserve any existing visual data so hero_selected survives reruns.
+    # New values win except where the existing value is non-None and the
+    # incoming value is None (e.g. hero_selected set by a manual edit).
+    if visual is not None and os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            existing_visual = json.load(f).get("visual", {})
+        visual = {
+            k: (existing_visual[k] if (k in existing_visual and existing_visual[k] is not None and visual.get(k) is None) else v)
+            for k, v in visual.items()
+        }
+
     payload = {
         "date":   today,
         "digest": digest,
         "market": market,
     }
-    path = os.path.join(DIGEST_DIR, f"{today}.json")
+    if visual is not None:
+        payload["visual"] = visual
+
     with open(path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
     print(f"  [storage] Saved digest to {path}")
