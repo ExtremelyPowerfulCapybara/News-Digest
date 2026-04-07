@@ -1,0 +1,692 @@
+{
+  "date": "2026-04-07",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el lunes regresa con transportistas bloqueando carreteras en México, un país que simultáneamente intenta convencer al mundo de que es destino confiable para la inversión en infraestructura. La semana arranca con México negociando en tres frentes comerciales a la vez —Washington, Beijing y Ottawa— mientras en casa los agricultores cortan las autopistas que conectan esos mercados. La ironía es gratuita.",
+      "narrative_thread": "México enfrenta una convergencia de presiones internas y externas: protestas que paralizan su logística, una posición comercial vulnerable frente a sus tres principales socios, y la urgencia de atraer inversión privada con un nuevo marco jurídico que aún no ha sido probado.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 38,
+        "context_es": "Las señales son mixtas: iniciativas de inversión en infraestructura y nuevas leyes en México conviven con bloqueos carreteros, tensiones comerciales trilaterales y una Argentina donde el 65% de las familias no llega a fin de mes.",
+        "context_en": "Signals are mixed: infrastructure investment initiatives and new legislation in Mexico coexist with highway blockades, trilateral trade tensions, and an Argentina where 65% of families can't make ends meet."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Paro nacional de transportistas y agricultores bloquea carreteras en México al regreso de Semana Santa",
+          "body": "La Asociación Nacional de Transportistas (ANTAC) y el Frente Nacional para el Rescate del Campo iniciaron este lunes un paro nacional con bloqueos en múltiples autopistas federales, exigiendo al gobierno acciones concretas contra la extorsión y la inseguridad en carreteras. La presidenta Sheinbaum pidió diálogo y descartó ceder en la demanda de eliminar la importación de maíz del T-MEC, dejando abierto un conflicto que presiona directamente la cadena logística y de abasto del país.",
+          "url": "https://www.elfinanciero.com.mx/cdmx/2026/04/06/cdmx-trafico-en-tiempo-real-por-paro-nacional-de-transportistas-y-agricultores-bloqueos-de-carreteras-hoy/",
+          "tag": "México",
+          "context_note": {
+            "es": "El paro ocurre en el peor momento logístico posible: el regreso masivo del tráfico post-vacacional y en plena renegociación del T-MEC, donde la estabilidad operativa del sector transporte es un argumento que México necesita mantener frente a sus socios comerciales.",
+            "en": "The strike hits at the worst possible logistical moment: the mass return of post-holiday traffic and in the middle of USMCA renegotiation, where the operational stability of Mexico's transport sector is an argument the country needs to preserve before its trading partners."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México negocia en tres frentes simultáneos: EE.UU., China y Canadá presionan desde ángulos distintos",
+          "body": "Con el secretario Ebrard anunciando reuniones de alto nivel con China y el T-MEC entrando en renegociación, México enfrenta el dilema de que las decisiones que tome con un socio —EE.UU. representa el 60.3% de su comercio total, China el 10.8%— repercutirán inevitablemente en los demás. Los aranceles que México aplica desde enero a países sin TLC afectan principalmente insumos intermedios que representan el 76.8% de sus importaciones totales, generando cuellos de botella productivos que debilitan la posición negociadora del país.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jorge-molina-larrondo/2026/04/06/mexico-se-esta-arrinconando/",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "La aprobación de Trump en 31% y la pérdida neta de 98,000 empleos en EE.UU. el año pasado sugieren que el USTR llegará a la mesa del T-MEC en posición políticamente débil pero negociadora extremadamente agresiva — una combinación peligrosa para México.",
+            "en": "Trump's 31% approval rating and a net loss of 98,000 U.S. jobs last year suggest the USTR will arrive at the USMCA table politically weak but negotiating extremely aggressively — a dangerous combination for Mexico."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México aprueba nueva ley de infraestructura para atraer capital privado e institucional de largo plazo",
+          "body": "El 25 de marzo, la Cámara de Diputados aprobó la Ley para el Fomento de la Inversión en Infraestructura Estratégica, que rompe con la restricción de suficiencia presupuestal anual y crea un marco transversal para combinar capital público, privado y de AFORES en proyectos con contratos de décadas. El cambio es estructuralmente relevante: el capital global de infraestructura —fondos de pensiones, fondos institucionales— no fluye hacia proyectos donde las reglas cambian cada ejercicio fiscal, y México necesita ese flujo precisamente ahora que la inversión privada está en pausa por la incertidumbre comercial.",
+          "url": "https://www.elfinanciero.com.mx/opinion/victor-jose-lopez-martinez/2026/04/06/un-nuevo-andamiaje-juridico-para-la-infraestructura-de-mexico/",
+          "tag": "México",
+          "context_note": {
+            "es": "La ley llega en un momento crítico: Mexico necesita demostrar certeza jurídica para atraer inversión ante el nearshoring, pero su credibilidad como destino de capital depende de que el marco no sea revertido o reinterpretado en el próximo ciclo político.",
+            "en": "The law arrives at a critical moment: Mexico needs to demonstrate legal certainty to attract nearshoring investment, but its credibility as a capital destination depends on the framework not being reversed or reinterpreted in the next political cycle."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "65% de las familias argentinas no llega a fin de mes y el consumo de alimentos básicos sigue cayendo",
+          "body": "Una encuesta de Pulso Research sobre 1,300 casos revela que el 65% de las familias argentinas reporta dificultades importantes para cerrar el mes, el 75% no puede ahorrar nada y dos de cada tres debieron resignar consumos adicionales en el último mes, con la carne como el rubro más castigado. El dato más preocupante para el mercado es que el 66% de quienes tienen empleo está muy o bastante preocupado por perderlo, una señal de que la fragilidad del consumo no se resolverá con estabilización nominal sino que requiere recuperación real del ingreso.",
+          "url": "https://www.lanacion.com.ar/economia/tiempos-de-restriccion-control-y-sensatez-nid06042026/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La encuesta refuerza que el rebote de ventas de inmuebles, autos y viajes al exterior es un fenómeno de segmento alto que coexiste con una contracción sostenida del consumo masivo — una bifurcación que complica la narrativa de recuperación económica del gobierno de Milei.",
+            "en": "The survey reinforces that the rebound in real estate, auto, and foreign travel sales is an upper-segment phenomenon coexisting with sustained mass consumption contraction — a bifurcation that complicates the Milei government's economic recovery narrative."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Milei recibe a Kast en su primera visita oficial como presidente de Chile con agenda en energía, minería y seguridad",
+          "body": "El presidente chileno José Antonio Kast llegó a Buenos Aires en su primer viaje oficial desde su asunción en marzo, con una agenda bilateral que incluye explotación de recursos naturales, desarrollo energético y mejora de pasos fronterizos; el comercio bilateral alcanzó los US$7,983 millones en 2025. Más allá de la agenda concreta, la visita consolida una alianza ideológica entre Milei y Kast que ambos gobiernos proyectan como contrapeso regional al bloque de Lula en Brasil.",
+          "url": "https://www.lanacion.com.ar/politica/milei-recibe-a-kast-en-su-primer-viaje-oficial-como-presidente-de-chile-y-reune-al-gabinete-en-la-nid06042026/",
+          "tag": "Política",
+          "context_note": {
+            "es": "La visita ocurre días antes del tratamiento de la ley de glaciares en el Congreso argentino, un tema que afecta directamente la minería en la cordillera compartida y que podría tensar o condicionar los acuerdos bilaterales que se anuncien hoy.",
+            "en": "The visit occurs days before Argentina's Congress takes up the glaciers law, a topic that directly affects mining in the shared mountain range and could tension or condition the bilateral agreements announced today."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Sobreviviente de la ESMA con pasaporte español fue retirada de un vuelo sin explicación bajo la política migratoria de Trump",
+          "body": "Silvia Labayru, ciudadana española, fue bajada de un vuelo Ciudad de México–San Antonio el 26 de marzo por orden de la CBP sin recibir explicación oficial, a pesar de tener todos sus documentos en regla y un historial de entradas sin problemas a EE.UU. El episodio ilustra el nuevo régimen migratorio estadounidense: visas y autorizaciones ESTA vigentes pueden cancelarse sin aviso ni fundamento comunicado, generando incertidumbre real para ciudadanos de terceros países con pasaportes de naciones aliadas.",
+          "url": "https://www.lanacion.com.ar/cultura/silvia-labayru-regreso-al-pais-tras-ser-impedida-de-ingresar-a-estados-unidos-y-vinculo-el-episodio-nid06042026/",
+          "tag": "Política",
+          "context_note": {
+            "es": "El caso es relevante más allá de lo individual: si ciudadanos europeos con pasaportes de países aliados son sujetos a restricciones de entrada arbitrarias, el costo reputacional y económico para EE.UU. como destino de negocios, turismo y conferencias internacionales empieza a volverse medible.",
+            "en": "The case matters beyond the individual: if European citizens with allied-country passports face arbitrary entry restrictions, the reputational and economic cost for the U.S. as a destination for business, tourism, and international conferences starts to become measurable."
+          },
+          "thread_tag": "EE.UU.: inmigración"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "ONU concluye que desapariciones forzadas en México constituyen crímenes de lesa humanidad; gobierno rechaza el informe",
+          "body": "El Comité contra la Desaparición Forzada de la ONU (CED) determinó el 2 de abril que existen indicios fundados de que las desapariciones en México constituyen crímenes de lesa humanidad y solicitó escalar el caso a la Asamblea General — una resolución sin precedente de las 2,160 solicitudes que el CED ha recibido desde 2012, de las cuales 819 corresponden a México. El gobierno de Sheinbaum respondió tachando el informe de 'tendencioso' y 'sin rigor jurídico', una reacción que el articulista equipara punto por punto con la de los gobiernos de Calderón y Peña Nieto ante Crisis humanitarias similares.",
+          "url": "https://www.elfinanciero.com.mx/opinion/eduardo-guerrero-gutierrez/2026/04/06/falto-humildad/",
+          "tag": "México",
+          "context_note": {
+            "es": "Para inversores institucionales con criterios ESG, una escalada formal del caso México a la Asamblea General de la ONU no es un evento puramente político: eleva el perfil de riesgo de gobernanza del país en un momento en que México compite activamente por atraer capital de nearshoring.",
+            "en": "For institutional investors with ESG criteria, a formal escalation of the Mexico case to the UN General Assembly is not purely a political event: it raises the country's governance risk profile at a moment when Mexico is actively competing to attract nearshoring capital."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "A country that cannot control its borders is not a country at all — but a country that cannot move goods across its own roads is not an economy at all.",
+        "attribution": "Adaptado de Milton Friedman, Free to Choose, 1980"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, Monday returns with truckers blocking highways across Mexico — a country simultaneously trying to convince the world it's a reliable destination for infrastructure investment. The week opens with Mexico negotiating on three commercial fronts at once — Washington, Beijing, and Ottawa — while back home farmers are cutting the very highways that connect those markets. The irony is free of charge.",
+      "narrative_thread": "Mexico faces a convergence of internal and external pressures: protests paralyzing its logistics, a vulnerable commercial position vis-à-vis its three main trading partners, and the urgency of attracting private investment with a new legal framework that has yet to be tested.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 38,
+        "context_es": "Las señales son mixtas: iniciativas de inversión en infraestructura y nuevas leyes en México conviven con bloqueos carreteros, tensiones comerciales trilaterales y una Argentina donde el 65% de las familias no llega a fin de mes.",
+        "context_en": "Signals are mixed: infrastructure investment initiatives and new legislation in Mexico coexist with highway blockades, trilateral trade tensions, and an Argentina where 65% of families can't make ends meet."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "National truckers and farmers strike blocks Mexican highways on the return from Easter holiday",
+          "body": "The National Truckers Association (ANTAC) and the National Front for the Rescue of the Countryside launched a national strike this Monday with blockades on multiple federal highways, demanding concrete government action against extortion and road insecurity. President Sheinbaum called for dialogue and ruled out eliminating corn imports from USMCA, leaving open a conflict that directly pressures the country's logistics and supply chain.",
+          "url": "https://www.elfinanciero.com.mx/cdmx/2026/04/06/cdmx-trafico-en-tiempo-real-por-paro-nacional-de-transportistas-y-agricultores-bloqueos-de-carreteras-hoy/",
+          "tag": "México",
+          "context_note": {
+            "es": "El paro ocurre en el peor momento logístico posible: el regreso masivo del tráfico post-vacacional y en plena renegociación del T-MEC, donde la estabilidad operativa del sector transporte es un argumento que México necesita mantener frente a sus socios comerciales.",
+            "en": "The strike hits at the worst possible logistical moment: the mass return of post-holiday traffic and in the middle of USMCA renegotiation, where the operational stability of Mexico's transport sector is an argument the country needs to preserve before its trading partners."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico negotiates on three simultaneous fronts: U.S., China, and Canada pressing from different angles",
+          "body": "With Secretary Ebrard announcing high-level meetings with China and USMCA entering renegotiation, Mexico faces the dilemma that decisions made with one partner — the U.S. represents 60.3% of its total trade, China 10.8% — will inevitably affect the others. The tariffs Mexico has applied since January on countries without free trade agreements primarily affect intermediate inputs representing 76.8% of total imports, creating production bottlenecks that weaken the country's negotiating position.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jorge-molina-larrondo/2026/04/06/mexico-se-esta-arrinconando/",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "La aprobación de Trump en 31% y la pérdida neta de 98,000 empleos en EE.UU. el año pasado sugieren que el USTR llegará a la mesa del T-MEC en posición políticamente débil pero negociadora extremadamente agresiva — una combinación peligrosa para México.",
+            "en": "Trump's 31% approval rating and a net loss of 98,000 U.S. jobs last year suggest the USTR will arrive at the USMCA table politically weak but negotiating extremely aggressively — a dangerous combination for Mexico."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico passes new infrastructure law to attract long-term private and institutional capital",
+          "body": "On March 25, the Chamber of Deputies approved the Law for the Promotion of Investment in Strategic Infrastructure, breaking with the annual budget sufficiency constraint and creating a cross-sectoral framework to combine public, private, and AFORE capital in projects with decade-long contracts. The change is structurally relevant: global infrastructure capital — pension funds, institutional funds — does not flow toward projects where rules change every fiscal year, and Mexico needs that flow precisely now when private investment is on pause due to commercial uncertainty.",
+          "url": "https://www.elfinanciero.com.mx/opinion/victor-jose-lopez-martinez/2026/04/06/un-nuevo-andamiaje-juridico-para-la-infraestructura-de-mexico/",
+          "tag": "México",
+          "context_note": {
+            "es": "La ley llega en un momento crítico: Mexico necesita demostrar certeza jurídica para atraer inversión ante el nearshoring, pero su credibilidad como destino de capital depende de que el marco no sea revertido o reinterpretado en el próximo ciclo político.",
+            "en": "The law arrives at a critical moment: Mexico needs to demonstrate legal certainty to attract nearshoring investment, but its credibility as a capital destination depends on the framework not being reversed or reinterpreted in the next political cycle."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "65% of Argentine families can't make ends meet as consumption of basic foods continues to fall",
+          "body": "A Pulso Research survey of 1,300 cases reveals that 65% of Argentine families report significant difficulty closing the month, 75% cannot save anything, and two in three were forced to give up additional consumption last month, with beef as the most affected item. The most worrying data point for the market is that 66% of employed workers are very or somewhat concerned about losing their job, a signal that consumer fragility will not be resolved by nominal stabilization but requires real income recovery.",
+          "url": "https://www.lanacion.com.ar/economia/tiempos-de-restriccion-control-y-sensatez-nid06042026/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La encuesta refuerza que el rebote de ventas de inmuebles, autos y viajes al exterior es un fenómeno de segmento alto que coexiste con una contracción sostenida del consumo masivo — una bifurcación que complica la narrativa de recuperación económica del gobierno de Milei.",
+            "en": "The survey reinforces that the rebound in real estate, auto, and foreign travel sales is an upper-segment phenomenon coexisting with sustained mass consumption contraction — a bifurcation that complicates the Milei government's economic recovery narrative."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Milei receives Kast on his first official visit as Chile's president, with agenda covering energy, mining, and security",
+          "body": "Chilean President José Antonio Kast arrived in Buenos Aires on his first official trip since taking office in March, with a bilateral agenda covering natural resource exploitation, energy development, and improved border crossings; bilateral trade reached US$7.983 billion in 2025. Beyond the concrete agenda, the visit consolidates an ideological alliance between Milei and Kast that both governments project as a regional counterweight to Lula's bloc in Brazil.",
+          "url": "https://www.lanacion.com.ar/politica/milei-recibe-a-kast-en-su-primer-viaje-oficial-como-presidente-de-chile-y-reune-al-gabinete-en-la-nid06042026/",
+          "tag": "Política",
+          "context_note": {
+            "es": "La visita ocurre días antes del tratamiento de la ley de glaciares en el Congreso argentino, un tema que afecta directamente la minería en la cordillera compartida y que podría tensar o condicionar los acuerdos bilaterales que se anuncien hoy.",
+            "en": "The visit occurs days before Argentina's Congress takes up the glaciers law, a topic that directly affects mining in the shared mountain range and could tension or condition the bilateral agreements announced today."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "ESMA survivor with Spanish passport removed from flight without explanation under Trump's immigration policy",
+          "body": "Silvia Labayru, a Spanish citizen, was removed from a Mexico City–San Antonio flight on March 26 by CBP order with no official explanation, despite having all her documents in order and a history of problem-free U.S. entries. The episode illustrates the new U.S. immigration regime: valid visas and ESTA authorizations can be cancelled without notice or communicated grounds, generating real uncertainty for third-country nationals holding passports from allied nations.",
+          "url": "https://www.lanacion.com.ar/cultura/silvia-labayru-regreso-al-pais-tras-ser-impedida-de-ingresar-a-estados-unidos-y-vinculo-el-episodio-nid06042026/",
+          "tag": "Política",
+          "context_note": {
+            "es": "El caso es relevante más allá de lo individual: si ciudadanos europeos con pasaportes de países aliados son sujetos a restricciones de entrada arbitrarias, el costo reputacional y económico para EE.UU. como destino de negocios, turismo y conferencias internacionales empieza a volverse medible.",
+            "en": "The case matters beyond the individual: if European citizens with allied-country passports face arbitrary entry restrictions, the reputational and economic cost for the U.S. as a destination for business, tourism, and international conferences starts to become measurable."
+          },
+          "thread_tag": "EE.UU.: inmigración"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "UN concludes forced disappearances in Mexico constitute crimes against humanity; government rejects the report",
+          "body": "The UN Committee on Enforced Disappearances (CED) determined on April 2 that there are substantiated grounds to conclude that disappearances in Mexico constitute crimes against humanity, and requested escalating the case to the General Assembly — an unprecedented resolution among the 2,160 requests the CED has received since 2012, of which 819 correspond to Mexico. The Sheinbaum government responded by labeling the report 'biased' and 'lacking legal rigor,' a reaction the author equates point by point with those of the Calderón and Peña Nieto governments facing similar humanitarian crises.",
+          "url": "https://www.elfinanciero.com.mx/opinion/eduardo-guerrero-gutierrez/2026/04/06/falto-humildad/",
+          "tag": "México",
+          "context_note": {
+            "es": "Para inversores institucionales con criterios ESG, una escalada formal del caso México a la Asamblea General de la ONU no es un evento puramente político: eleva el perfil de riesgo de gobernanza del país en un momento en que México compite activamente por atraer capital de nearshoring.",
+            "en": "For institutional investors with ESG criteria, a formal escalation of the Mexico case to the UN General Assembly is not purely a political event: it raises the country's governance risk profile at a moment when Mexico is actively competing to attract nearshoring capital."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "A country that cannot control its borders is not a country at all — but a country that cannot move goods across its own roads is not an economy at all.",
+        "attribution": "Adaptado de Milton Friedman, Free to Choose, 1980"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "99.97",
+        "change": "▼ 0.0%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.33%",
+        "change": "▲ 0.5%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "25.54",
+        "change": "▲ 5.7%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$57.11",
+        "change": "▲ 0.9%",
+        "direction": "up",
+        "chg_1w": "▲ 4.3%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05638",
+            "chg_1d": {
+              "text": "▲ 0.82%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.84%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2898",
+            "chg_1d": {
+              "text": "▲ 0.45%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.20%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04875",
+            "chg_1d": {
+              "text": "▲ 0.34%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.92%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3869",
+            "chg_1d": {
+              "text": "▲ 0.51%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.36%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0784",
+            "chg_1d": {
+              "text": "▲ 0.55%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.89%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04256",
+            "chg_1d": {
+              "text": "▲ 0.35%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.81%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "9.01",
+            "chg_1d": {
+              "text": "▲ 0.83%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.62%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.7354",
+            "chg_1d": {
+              "text": "▼ 0.81%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.83%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1393",
+            "chg_1d": {
+              "text": "▼ 0.36%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.03%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.86468",
+            "chg_1d": {
+              "text": "▼ 0.48%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.8612",
+            "chg_1d": {
+              "text": "▼ 0.31%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.48%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3909",
+            "chg_1d": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.04%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75483",
+            "chg_1d": {
+              "text": "▼ 0.47%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.04%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "159.81",
+            "chg_1d": {
+              "text": "▲ 0.02%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.77%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.4509",
+            "chg_1d": {
+              "text": "▼ 0.45%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.20%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19458",
+            "chg_1d": {
+              "text": "▲ 0.36%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.04%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16825",
+            "chg_1d": {
+              "text": "▼ 0.12%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.12%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3350",
+            "chg_1d": {
+              "text": "▲ 0.05%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.56%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2706",
+            "chg_1d": {
+              "text": "▲ 0.10%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.09%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14687",
+            "chg_1d": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.00%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "31.09",
+            "chg_1d": {
+              "text": "▲ 0.38%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.82%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.5110",
+            "chg_1d": {
+              "text": "▼ 0.34%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.91%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.15650",
+            "chg_1d": {
+              "text": "▲ 0.48%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.9436",
+            "chg_1d": {
+              "text": "▲ 0.12%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.11%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.9350",
+            "chg_1d": {
+              "text": "▲ 0.17%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.56%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6086",
+            "chg_1d": {
+              "text": "▲ 0.21%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.04%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.87296",
+            "chg_1d": {
+              "text": "▲ 0.01%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.12%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "184.82",
+            "chg_1d": {
+              "text": "▲ 0.49%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.69%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5849",
+            "chg_1d": {
+              "text": "▼ 0.50%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.36%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14575",
+            "chg_1d": {
+              "text": "▲ 0.31%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.48%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7490",
+            "chg_1d": {
+              "text": "▼ 0.05%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.55%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12602",
+            "chg_1d": {
+              "text": "▼ 0.17%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.56%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2027",
+            "chg_1d": {
+              "text": "▲ 0.05%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.53%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11001",
+            "chg_1d": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.45%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.29",
+            "chg_1d": {
+              "text": "▲ 0.33%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.26%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "México",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Mexico City skyline at dusk, Torre Mayor silhouette, low clouds, empty boulevard below, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Mexico City skyline at dusk, Torre Mayor silhouette, low clouds, empty boulevard below, inspired by: Paro nacional de transportistas y agricultores bloquea carreteras en México al regreso de Semana Santa, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_selected": null
+  }
+}
