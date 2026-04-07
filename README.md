@@ -1,134 +1,401 @@
-# News Brief
+# The Periphery — Mexico Finance Brief
 
-Automated daily financial newsletter. Fetches news, summarizes with Claude, sends email, and publishes a pretty archive to GitHub Pages.
+A bilingual (Spanish/English) automated financial newsletter focused on emerging markets and macro intelligence. Every weekday at ~7 AM Mexico City time, GitHub Actions fetches news, pulls live market data, writes a bilingual digest with Claude, sends an email to subscribers, and publishes a full HTML archive to GitHub Pages.
 
----
-
-## How it works
-
-Every weekday at 7 AM Mexico City time, GitHub Actions:
-
-1. Fetches articles from NewsAPI across your configured topics
-2. Pulls live market data from Yahoo Finance and weather from Open-Meteo
-3. Sends everything to Claude, which writes the editor note, picks stories, scores sentiment, and selects a quote
-4. Sends the Gmail-safe email to all subscribers
-5. Saves a pretty HTML version to `archive/`
-6. Commits and pushes back to the repo — GitHub Pages updates automatically
-
-
-### 2. Enable GitHub Pages
-
-Go to your repo on GitHub:
-`Settings → Pages → Source → Deploy from branch → main → /archive`
-
-Your archive will be live at:
-`https://YOUR_USERNAME.github.io/mexico-finance-brief`
-
-### 3. Add your secrets
-
-Go to: `Settings → Secrets and variables → Actions → New repository secret`
-
-Add each of these:
-
-| Secret name | Where to get it |
-|---|---|
-| `NEWS_API_KEY` | [newsapi.org](https://newsapi.org) — free account |
-| `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com) |
-| `EMAIL_SENDER` | Your Gmail address |
-| `EMAIL_PASSWORD` | Google Account → Security → App Passwords |
-| `SUBSCRIBERS` | Comma-separated emails: `you@gmail.com,friend@gmail.com` |
-
-### 4. Trigger a test run
-
-Go to: `Actions → Daily Newsletter → Run workflow`
-
-This runs the full pipeline immediately without waiting for 7 AM. Check your inbox and `archive/index.html` after it completes.
+**Live archive:** https://extremelypowerfulcapybara.github.io/News-Digest/
 
 ---
 
-## Running locally
+## 1. Project Overview
 
-```bash
-cd bot
-pip install -r ../requirements.txt
+**The Periphery** (also branded as *The Opening Bell*) is a self-hosted newsletter pipeline that produces two outputs per run:
 
-# Set your secrets as environment variables
-export NEWS_API_KEY="..."
-export ANTHROPIC_API_KEY="..."
-export EMAIL_SENDER="..."
-export EMAIL_PASSWORD="..."
-export SUBSCRIBERS="you@gmail.com"
+1. A **Gmail-safe HTML email** sent to subscribers via SMTP
+2. A **full web archive page** committed to GitHub Pages
 
-# Full run
-python main.py
+Each issue contains: a bilingual editor note, 5–7 curated stories with context notes, a macro sentiment score, a market data panel (equities, commodities, crypto, FX), a quote of the day, and an economic calendar. On Fridays it also includes a week-in-review timeline, a sentiment bar chart, and a word cloud generated from the week's headlines.
 
-# Test email only (no API calls, mock data)
-python test_email.py
-```
-
-Or create a `.env` file in the `bot/` folder (never committed):
-```
-NEWS_API_KEY=...
-ANTHROPIC_API_KEY=...
-EMAIL_SENDER=...
-EMAIL_PASSWORD=...
-SUBSCRIBERS=you@gmail.com
-```
-
-Then load it before running:
-```bash
-export $(cat .env | xargs) && python main.py
-```
+The pipeline has no web server and no database. All persistent state is flat JSON files in `digests/`. GitHub Actions is the scheduler, secrets manager, and deployment pipeline.
 
 ---
 
-## Repo structure
+## 2. Tech Stack
+
+| Layer | Technology | Notes |
+|---|---|---|
+| Language | Python 3.11+ | Single process, no async |
+| Scheduling | GitHub Actions (cron) | Mon–Fri 11:30 UTC (~7 AM CST) |
+| News data | NewsAPI v2 | 7 Spanish-language topics, 14 curated outlets |
+| Market data | Yahoo Finance JSON API | Raw `requests` — no `yfinance` package |
+| AI summarization | Anthropic Claude API | Structured bilingual JSON output |
+| Article extraction | BeautifulSoup4 + lxml | Per-domain CSS selectors + `<p>` fallback |
+| Email delivery | Gmail SMTP (App Password) | `MIMEMultipart`, one connection per run |
+| Archive hosting | GitHub Pages | Served from `docs/` on `main` |
+| Word cloud | `wordcloud` + Pillow | Fridays only; soft dependency |
+
+**Python dependencies** (`requirements.txt`): `anthropic`, `requests`, `beautifulsoup4`, `lxml`, `wordcloud`, `Pillow`
+
+---
+
+## 3. Repository Structure
 
 ```
 mexico-finance-brief/
 │
-├── .github/
-│   └── workflows/
-│       └── newsletter.yml    ← GitHub Actions schedule + deploy
+├── .github/workflows/
+│   ├── newsletter.yml           # Production: cron Mon-Fri, runs on main, sends email
+│   ├── newsletter-dev.yml       # Shared dev: manual, runs on dev branch
+│   └── newsletter-adrian.yml   # Adrian's test: manual, runs on Dev-Nigg, skip_email=true
 │
-├── bot/                      ← All Python source
-│   ├── main.py               ← Entry point
-│   ├── config.py             ← Settings (reads secrets from env)
-│   ├── fetcher.py            ← NewsAPI + article scraping
-│   ├── scraper.py            ← Full article text extractor
-│   ├── summarizer.py         ← Claude API call, returns structured JSON
-│   ├── market_data.py        ← Yahoo Finance + Open-Meteo
-│   ├── storage.py            ← Saves/loads daily digest JSONs
-│   ├── renderer.py           ← Gmail-safe email HTML (tables, inline styles)
-│   ├── pretty_renderer.py    ← Full-featured HTML for the archive
-│   ├── archive.py            ← Saves pretty issues, rebuilds index.html
-│   ├── delivery.py           ← Gmail SMTP sender
-│   └── test_email.py         ← Sends a test email with mock data
+├── bot/                         # All Python source — the pipeline lives here
+│   ├── main.py                  # Entry point; orchestrates all modules in sequence
+│   ├── config.py                # Central config: branding, secrets, topics, tickers, calendar
+│   ├── fetcher.py               # NewsAPI client; per-topic fetch, domain allowlist, dedup
+│   ├── scraper.py               # BeautifulSoup article body extractor (per-domain selectors)
+│   ├── scorer.py                # Composite scorer: freshness + authority + relevance
+│   ├── summarizer.py            # Claude API call; returns bilingual structured digest JSON
+│   ├── market_data.py           # Yahoo Finance tickers + FX cross-rate matrix
+│   ├── storage.py               # Digest persistence; week recap; thread tracking
+│   ├── renderer.py              # Gmail-safe email HTML (tables + inline styles only)
+│   ├── pretty_renderer.py       # Full web HTML (Google Fonts, flexbox, JS, bilingual toggle)
+│   ├── archive.py               # Writes issue pages; rebuilds docs/index.html
+│   ├── delivery.py              # Gmail SMTP sender
+│   ├── mock_data.py             # Loads latest digest from disk for dry runs
+│   ├── wordcloud_gen.py         # Generates weekly PNG word cloud (Fridays only)
+│   └── test_email.py            # Sends a test email with hardcoded mock data; run manually
 │
-├── docs/                     ← Served by GitHub Pages (was: archive/)
-│   ├── index.html            ← Auto-rebuilt archive index
-│   └── YYYY-MM-DD.html       ← One file per issue
+├── docs/                        # GitHub Pages output — DO NOT edit manually
+│   ├── index.html               # Archive landing page; rebuilt on every run
+│   ├── YYYY-MM-DD.html          # One page per issue
+│   ├── thread_index.json        # Thread tag accumulator; read and written by archive.py
+│   └── wordcloud-YYYY-WNN.png   # Weekly word cloud images
 │
-├── digests/                  ← Raw JSON per day (for dashboard later)
+├── digests/                     # Raw JSON per run — source of truth for archive + index
 │   └── YYYY-MM-DD.json
 │
+├── engineering/                 # Developer documentation
+│   ├── architecture.md          # System diagram, module graph, data flow, extension points
+│   ├── pipeline.md              # Stage-by-stage walkthrough with JSON shapes
+│   └── project-structure.md    # File-by-file reference, generated vs. editable files
+│
+├── subscribers.csv              # Runtime-generated from GitHub secret — not authoritative
 ├── requirements.txt
-├── .gitignore
-└── README.md
+├── TODO.md
+└── CLAUDE.md                    # Instructions for AI assistants working in this repo
 ```
 
 ---
 
-## Adjusting the schedule
+## 4. How the Pipeline Works
 
-Edit `.github/workflows/newsletter.yml`:
+### Execution order (`main.py`)
 
-```yaml
-- cron: "0 13 * * 1-5"   # 7 AM CST (UTC-6), Mon-Fri
-- cron: "0 12 * * 1-5"   # 7 AM CDT (UTC-5), summer
+```
+1.  Fetch market data          → market_data.py   (parallel: tickers, secondary, FX)
+2.  Fetch news articles        → fetcher.py + scraper.py
+2.5 Score and rank articles    → scorer.py         (skipped in MOCK mode)
+3.  Summarize with Claude      → summarizer.py
+4.  Save digest to disk        → storage.py        → digests/YYYY-MM-DD.json
+5.  Build email HTML           → renderer.py
+    Send email                 → delivery.py       (skipped if SKIP_EMAIL=true)
+6.  Build archive HTML         → pretty_renderer.py
+    Save issue + rebuild index → archive.py        → docs/YYYY-MM-DD.html + docs/index.html
+    (Fridays) Generate word cloud → wordcloud_gen.py → docs/wordcloud-YYYY-WNN.png
 ```
 
-Mexico City observes daylight saving time from the first Sunday of April to the last Sunday of October.
+After step 6, the GitHub Actions workflow runs `git add docs/ digests/` and commits + pushes to the branch, triggering a GitHub Pages redeploy.
+
+### Data ingestion
+
+`fetcher.py` queries NewsAPI's `v2/everything` endpoint once per topic (7 topics × up to 14 domains). It enforces a domain allowlist, caps 1 article per source per topic, and deduplicates against URLs seen in the last 5 daily digests. For each article, `scraper.py` extracts the body text using per-domain CSS selectors, falls back to all `<p>` tags, requires a 100-character minimum, and truncates at 3,000 characters.
+
+### Scoring
+
+`scorer.py` assigns a composite score to each article:
+
+```
+score = (freshness × 0.30) + (authority × 0.25) + (relevance × 0.25)
+```
+
+A greedy uniqueness filter then removes articles whose headlines share >60% word overlap with any already-accepted article. The top 12 go to Claude.
+
+### AI summarization
+
+`summarizer.py` sends all 12 articles plus live market data and active thread history to Claude in a single Spanish-language prompt. Claude returns a structured bilingual JSON blob containing:
+
+- 5–7 selected stories with headlines, body, context notes, source, and thread tags
+- A bilingual editor note and narrative thread
+- A market sentiment score (5–95 scale: Risk-Off / Cautious / Risk-On)
+- A quote with attribution
+
+On JSON parse failure, the module retries once with a repair prompt. On API overload errors, it retries with exponential backoff.
+
+### HTML generation
+
+Two independent renderers produce the same logical content for different delivery targets:
+
+| Renderer | File | Constraints | Features |
+|---|---|---|---|
+| Email | `renderer.py` | Tables + inline styles only; no CSS classes, no JS, no external fonts | Gmail/Outlook/Apple Mail safe |
+| Archive | `pretty_renderer.py` | No email constraints | Bilingual toggle, FX base switcher, market tab strip, animated gauge, responsive layout |
+
+The renderers share no code. Behavioral divergence between them accumulates over time — this is a known tech debt item.
+
+### Output and publication
+
+- Email is sent via Gmail SMTP as a `MIMEMultipart` message (HTML + plain text parts)
+- Archive page is written to `docs/YYYY-MM-DD.html`
+- `docs/index.html` is fully regenerated from all digest JSONs on every run (no incremental update)
+- `docs/thread_index.json` is updated with new thread tags
+- All of `docs/` and `digests/` are committed back to the branch by the workflow
+
+---
+
+## 5. Running Locally
+
+### Installation
+
+```bash
+cd bot
+pip install -r ../requirements.txt
+```
+
+### Environment variables
+
+Create a `.env` file in `bot/` (never committed):
+
+```
+NEWS_API_KEY=...
+ANTHROPIC_API_KEY=...
+EMAIL_SENDER=your@gmail.com
+EMAIL_PASSWORD=your-gmail-app-password
+SUBSCRIBERS=you@example.com
+```
+
+All variables read by `config.py`:
+
+| Variable | Required | Description |
+|---|---|---|
+| `NEWS_API_KEY` | Yes | NewsAPI key (free tier: 100 req/day) |
+| `ANTHROPIC_API_KEY` | Yes | Anthropic Claude API key |
+| `EMAIL_SENDER` | Yes | Gmail address to send from |
+| `EMAIL_PASSWORD` | Yes | Gmail App Password (not your login password) |
+| `SUBSCRIBERS` | Yes (local) | Comma-separated recipient emails |
+| `SUBSCRIBERS_CSV` | Prod only | Newline-separated list; written to `subscribers.csv` by the workflow |
+| `DEV_SUBSCRIBERS_CSV` | Dev only | Same format; used by `newsletter-dev.yml` and `newsletter-adrian.yml` |
+| `MOCK` | No | `true` to skip NewsAPI + Claude; loads latest digest from `digests/` |
+| `SKIP_EMAIL` | No | `true` to skip SMTP; archive HTML is still generated |
+| `FORCE_FRIDAY` | No | `true` to simulate Friday mode (word cloud + week-in-review) |
+| `GITHUB_RAW_URL` | Dev only | Base URL override for word cloud images on non-Pages branches |
+| `HEALTH_CHECK_URL` | No | Healthchecks.io ping URL (not yet implemented) |
+| `BANXICO_API_KEY` | No | Reserved for future Banxico API integration |
+
+### Run commands
+
+Load env and run the full pipeline:
+
+```bash
+export $(cat .env | xargs) && python main.py
+```
+
+Dry run — no API calls, no email, archive HTML generated from saved digest:
+
+```bash
+MOCK=true SKIP_EMAIL=true python main.py
+```
+
+Simulate a Friday run:
+
+```bash
+MOCK=true SKIP_EMAIL=true FORCE_FRIDAY=true python main.py
+```
+
+Send a test email using hardcoded mock data (no pipeline):
+
+```bash
+python test_email.py
+```
+
+### Local preview
+
+After running `main.py`, open the generated HTML file directly in a browser:
+
+```
+docs/YYYY-MM-DD.html
+```
+
+GitHub Pages reflects `main` only. To preview `Dev-Nigg` output, open the file from disk.
+
+---
+
+## 6. Output Format
+
+### Email
+
+Subject line: `{sentiment_label} | {NEWSLETTER_NAME} — {date_es}`
+
+Structure (top to bottom): masthead → ticker bar → secondary market dashboard → editor note → narrative thread → sentiment gauge → story blocks → FX table → quote → (Fridays: week-in-review, sentiment chart, weekly markets) → economic calendar → footer.
+
+### Archive pages
+
+Each issue is saved as `docs/YYYY-MM-DD.html`. The archive page adds: bilingual ES/EN toggle (persisted in `localStorage`), currency base switcher (MXN/USD/BRL/EUR/CNY), animated sentiment gauge, secondary market tab strip, and word cloud embed on Fridays.
+
+### Digest JSON
+
+`digests/YYYY-MM-DD.json` is the canonical record of each run. Shape:
+
+```json
+{
+  "date": "2026-04-06",
+  "digest": {
+    "es": {
+      "editor_note": "...",
+      "narrative_thread": "...",
+      "sentiment": { "score": 42, "label": "Cauteloso", "context": "..." },
+      "stories": [
+        {
+          "headline": "...",
+          "body": "...",
+          "source": "El Financiero",
+          "url": "https://...",
+          "tag": "Tasas",
+          "thread_tag": "Politica Monetaria",
+          "context_note": "..."
+        }
+      ],
+      "quote": { "text": "...", "attribution": "..." }
+    },
+    "en": { "...": "identical structure in English" }
+  },
+  "market": {
+    "tickers": [...],
+    "currency": { "...": "FX cross-rate matrix" }
+  }
+}
+```
+
+**Note:** `secondary_tickers` (equities, commodities, crypto) are fetched at runtime and passed directly to the renderers but are **not** persisted to the digest JSON. They cannot be reconstructed from historical digests.
+
+The archive index (`docs/index.html`) is rebuilt from all digest files on every run. Do not delete old digest files — they are the only source of historical data for the sentiment timeline and thread tracking.
+
+---
+
+## 7. Editing Guide
+
+### Safe to edit
+
+| File | What to change |
+|---|---|
+| `bot/config.py` | Newsletter name, topics, domain allowlist, tickers, currency pairs, economic calendar, pen names |
+| `bot/renderer.py` | Email layout and copy. Test in Gmail, Outlook, Apple Mail before merging. |
+| `bot/pretty_renderer.py` | Archive web layout and styling. No email compatibility constraints here. |
+| `bot/scraper.py` | Add CSS selectors for new news outlets |
+| `bot/scorer.py` | Adjust authority tiers or scoring weights |
+| `bot/summarizer.py` | Edit the Claude prompt or expected JSON structure |
+| `.github/workflows/*.yml` | Workflow triggers, secrets, branch targeting |
+| `requirements.txt` | Add new Python dependencies |
+| `engineering/*.md` | Developer documentation |
+
+### Do not edit directly
+
+| File / Folder | Reason |
+|---|---|
+| `docs/index.html` | Rebuilt by `archive.py` on every run — manual edits will be overwritten |
+| `docs/YYYY-MM-DD.html` | Written once by `archive.py`; never edited after creation |
+| `docs/thread_index.json` | Appended by `archive.py`; manual edits corrupt thread history |
+| `docs/wordcloud-*.png` | Written by `wordcloud_gen.py` |
+| `digests/YYYY-MM-DD.json` | Treat as append-only; deleting breaks the archive index |
+| `subscribers.csv` | Runtime-generated by the workflow; the committed copy is not authoritative |
+
+### Adding a news source
+
+1. Add the domain to `NEWS_DOMAIN_ALLOWLIST` in `config.py`
+2. Add a CSS selector entry in `scraper.py`'s selector dict (key: domain string, value: CSS selector for the article body container)
+3. Optionally adjust the authority tier in `scorer.py`
+
+### Adding a ticker
+
+1. Add the Yahoo Finance symbol to the appropriate list in `config.py` (`TICKER_SYMBOLS` or `SECONDARY_TICKER_GROUPS`)
+2. No renderer changes needed unless the display format changes
+
+### Adding an economic calendar event
+
+Edit `config.py` — the `ECONOMIC_CALENDAR` list. Each entry needs `date`, `event`, `institution`, and `importance` fields. Events are sorted at read time by `storage.get_upcoming_calendar()`.
+
+---
+
+## 8. Planned Extension Points
+
+### Visual / image generation layer
+
+The cleanest integration point is between `summarizer.py` (step 3) and the renderers (step 5). Each story already carries a `tag` field (`Macro`, `FX`, `México`, `Comercio`, `Tasas`, `Mercados`, `Energía`, `Política`). The intended approach:
+
+1. **New file: `bot/image_gen.py`** — called from `main.py` after `summarizer.py`, before `renderer.py`
+2. Maps story tags to image generation prompts (mapping lives in `config.py` or a dedicated `bot/prompt_map.py`)
+3. Generates or selects an image per story; adds `story["image_url"]` or `story["image_b64"]` to the digest dict
+4. Both `renderer.py` and `pretty_renderer.py` conditionally include an `<img>` tag in `_story_block()` when that field is present
+
+This approach requires no changes to existing module interfaces — the image layer slots in as an optional enrichment step.
+
+### Issue metadata layer
+
+`digests/YYYY-MM-DD.json` is the correct place to store per-issue metadata (image URLs, generation parameters, override flags). `archive.py` already reads all digest files to rebuild the index — any new fields added to the digest JSON are automatically available for future index features without structural changes.
+
+### Other planned additions
+
+See `TODO.md` for the current task list. Key items:
+
+- **Health monitoring** — Healthchecks.io ping at end of each run (`HEALTH_CHECK_URL` env var is already wired in `config.py`)
+- **Unsubscribe tokens** — per-subscriber token system for GDPR-friendly unsubscribes
+- **Resend/Mailgun migration** — replace Gmail SMTP for deliverability at scale (needed beyond ~20 subscribers)
+- **VPS migration** — move off GitHub Actions to a dedicated server (Hetzner/DigitalOcean)
+- **Substack integration** — freemium commercial launch on a ~12-month horizon
+
+---
+
+## 9. Known Limitations & Tech Debt
+
+1. **Single process, no fault isolation.** If any external API call fails mid-run (NewsAPI, Yahoo Finance, Claude), the entire run fails. The only retry logic is in `summarizer.py` (Claude JSON repair + overload backoff). Everything else is fail-fast.
+
+2. **No schema contract between summarizer and renderers.** The renderers access digest JSON fields by key name with no validation. If Claude returns a malformed or incomplete structure, the error surfaces as a Python `KeyError` at render time, not at parse time. There is no schema version in the digest files.
+
+3. **Flat-file state with no migration path.** All state is in `digests/` JSON files. If the digest structure changes, old digests will silently produce incorrect index data. There is no schema version, no integrity check, and no migration tooling.
+
+4. **`renderer.py` and `pretty_renderer.py` share no code.** Both implement the same logical sections independently. Behavioral divergence between the email and archive outputs is likely to accumulate over time.
+
+5. **`secondary_tickers` are not persisted.** The secondary market panel (equities, commodities, crypto) is fetched fresh on every run and passed directly to the renderers. It is not saved to the digest JSON, so it cannot be reconstructed from historical data.
+
+6. **Full index rebuild on every run.** `archive.py` regenerates `docs/index.html` from all digest files on every run. As the digest count grows, this will become progressively slower.
+
+7. **GitHub Actions as the runtime.** The scheduler, secrets manager, compute environment, and deployment pipeline are all GitHub Actions. This creates a tight coupling to GitHub's platform and limits observability.
+
+8. **Branch divergence.** As of April 2026, `Dev-Nigg` is significantly ahead of `main` in features. Production is running old code. Merging is a listed quick-win in `TODO.md`.
+
+9. **`scorer.py` is loaded lazily in `main.py`.** The import happens inside the `else` block that skips mock mode. In mock runs, articles are loaded pre-scored from the saved digest and the scorer never executes. This is intentional but could confuse someone reading the imports at the top of `main.py`.
+
+10. **Domain-specific CSS selectors in `scraper.py` require manual maintenance.** New outlets need a custom selector or they fall back to all `<p>` tags, which often captures navigation, ads, and boilerplate.
+
+---
+
+## 10. Developer Documentation
+
+The `engineering/` folder contains detailed technical references:
+
+- **[engineering/architecture.md](./engineering/architecture.md)** — system diagram, module dependency map, full data flow, state and persistence table, extension points, architectural risks
+- **[engineering/pipeline.md](./engineering/pipeline.md)** — stage-by-stage walkthrough with intermediate artifact shapes and example JSON
+- **[engineering/project-structure.md](./engineering/project-structure.md)** — annotated file tree, file-by-file module reference, generated vs. editable files, how-to guides for adding sources and tickers
+
+---
+
+## Branches
+
+| Branch | Purpose |
+|---|---|
+| `main` | Production. GitHub Pages is served from here. Workflow YAMLs must live here. |
+| `Dev-Nigg` | Adrian's active development branch. All new features start here. |
+| `dev` | Alejandro/Juan's shared dev branch. |
+
+**Always confirm your active branch in GitHub Desktop before editing files.** Writing to `main` when `Dev-Nigg` is intended is a recurring risk.
 
 ---
 
@@ -136,12 +403,9 @@ Mexico City observes daylight saving time from the first Sunday of April to the 
 
 | Service | Cost |
 |---|---|
-| GitHub Actions | Free (2,000 min/month, bot uses ~5 min/day) |
+| GitHub Actions | Free (~5 min/run, well within the 2,000 min/month free tier) |
 | GitHub Pages | Free |
 | NewsAPI | Free (100 req/day) |
 | Claude API | ~$0.05–0.08/run (~$25/year) |
-| Open-Meteo weather | Free, no key |
-| Yahoo Finance | Free, no key |
+| Yahoo Finance | Free, no key required |
 | Gmail SMTP | Free |
-
-Total: ~$25/year for the Claude API calls.
