@@ -1,11 +1,9 @@
 """
 Tests for delivery.py subject line enrichment.
 
-Run from bot/ directory:
-  python tests/test_subject_line.py
+Run from repo root:
+  pytest tests/test_subject_line.py
 """
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import inspect
 import delivery

@@ -1,11 +1,9 @@
 """
 Tests for pretty_renderer.py display hierarchy changes.
 
-Run from bot/ directory:
-  python tests/test_pretty_renderer.py
+Run from repo root:
+  pytest tests/test_pretty_renderer.py
 """
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from pretty_renderer import build_pretty_html
 

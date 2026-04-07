@@ -1,11 +1,9 @@
 """
 Tests for display hierarchy changes in renderer.py.
 
-Run from bot/ directory:
-  python tests/test_display_hierarchy.py
+Run from repo root:
+  pytest tests/test_display_hierarchy.py
 """
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from renderer import _narrative_thread, FONT_SERIF, TEXT_LIGHT
 
