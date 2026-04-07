@@ -21,6 +21,7 @@ def save_pretty_issue(
     wordcloud_filename: str | None = None,
     author:             str = "",
     secondary_tickers:  list[dict] | None = None,
+    visual:             dict | None = None,
 ) -> str:
     os.makedirs(ARCHIVE_DIR, exist_ok=True)
     today    = date.today().isoformat()
@@ -37,6 +38,7 @@ def save_pretty_issue(
         is_friday          = is_friday,
         wordcloud_filename = wordcloud_filename,
         author             = author,
+        visual             = visual,
     )
 
     with open(filepath, "w", encoding="utf-8") as f:
