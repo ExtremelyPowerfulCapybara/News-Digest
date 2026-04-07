@@ -15,6 +15,7 @@ from archive     import save_pretty_issue
 from config      import DIGEST_DIR, AUTHOR_NAMES, AUTHOR_TITLES, MOCK_MODE, SKIP_EMAIL
 from mock_data   import load_mock
 from wordcloud_gen import generate_wordcloud
+from image_gen   import generate_hero_prompt
 
 
 def get_issue_number() -> int:
@@ -72,9 +73,14 @@ def run():
     digest_es = digest.get("es", digest)  # Spanish -- used in email
     digest_en = digest.get("en", digest)  # English -- used in archive toggle
 
+    # ── Visual metadata (hero prompt) ───────────────────────────────────────
+    print("\n[3.5/5] Generating hero image prompt...")
+    visual = generate_hero_prompt(digest)
+    print(f"  [visual] Category: {visual['hero_category']} | Sentiment: {visual['hero_prompt'].split('overall tone: ')[1].split(',')[0]}")
+
     # -- 4. Save digest to disk --
     print("\n[4/5] Saving digest...")
-    save_digest(digest, {"tickers": tickers, "currency": currency})
+    save_digest(digest, {"tickers": tickers, "currency": currency}, visual=visual)
 
     # ── 5. Build and send email ─────────────────────
     print("\n[5/5] Building and sending email...")
@@ -123,6 +129,7 @@ def run():
         is_friday          = friday,
         wordcloud_filename = wordcloud_filename,
         author             = author,
+        visual             = visual,
     )
 
     print("\n" + "=" * 50)
