@@ -1,0 +1,660 @@
+{
+  "date": "2026-04-06",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el estrecho de Ormuz sigue siendo la pregunta sin respuesta que el mercado no puede permitirse ignorar: ni guerra total ni navegación normal, solo un territorio gris que JP Morgan ya proyecta en 150 dólares por barril si la disrupción alcanza mediados de mayo. Mientras Trump ofrece plazos vagos y el Consejo de Seguridad aplaza votaciones indefinidamente, el fantasma de la estanflación regresa con credenciales renovadas. Hoy el briefing orbita alrededor de una sola certeza: la incertidumbre es el activo más caro del momento.",
+      "narrative_thread": "La guerra de Irán consolida un régimen global de incertidumbre energética y geopolítica que presiona precios, redefine alianzas y obliga a gobiernos desde Buenos Aires hasta Buenos Aires a tomar partido — mientras los mercados cobran prima por cada día sin hoja de ruta.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "La combinación de un conflicto en Ormuz sin resolución clara, proyecciones de petróleo a 150 dólares y un Consejo de Seguridad paralizado empuja el sentimiento hacia aversión pronunciada.",
+        "context_en": "The combination of an unresolved Hormuz conflict, oil projections at $150, and a paralyzed UN Security Council pushes sentiment toward pronounced risk aversion."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Ormuz en zona gris: JP Morgan ve petróleo a 150 dólares si la disrupción llega a mediados de mayo",
+          "body": "El estrecho de Ormuz opera bajo un régimen selectivo — Irán autoriza tránsito a buques de China, India y Pakistán, pero no a occidentales — mientras el Consejo de Seguridad pospuso por segunda vez una resolución sin fecha definida. JP Morgan mantiene como escenario base una salida negociada, pero advierte que si la disrupción persiste hasta mediados de mayo el crudo escalaría a 150 dólares por barril, reavivando el fantasma de la estanflación global.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/04/04/el-futuro-incierto-que-trump-ha-dibujado-y-mexico/",
+          "tag": "Energía",
+          "context_note": {
+            "es": "El discurso de Trump del 1 de abril no ofreció ninguna ruta de salida concreta, lo que agrava la prima de riesgo que los mercados ya venían cobrando desde el inicio del conflicto el 28 de febrero.",
+            "en": "Trump's April 1 speech offered no concrete exit roadmap, compounding the risk premium markets have been pricing in since the conflict began on February 28."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Brookings: inmigración neta cayó 62% o más en Nueva York, Los Ángeles y Chicago en el último año",
+          "body": "Un estudio de la Brookings Institution con datos del Censo de EE.UU. muestra que Nueva York creció apenas 32.000 personas entre julio de 2024 y junio de 2025, frente a 291.000 el año anterior — una caída impulsada principalmente por el colapso de la inmigración neta. Ocho de cada diez condados del país desaceleraron o redujeron su población en el mismo período, con las comunidades fronterizas de Texas, Arizona y California registrando las mayores caídas porcentuales.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/migraciones/adios-migrantes-en-ny-chicago-y-los-angeles-el-estudio-que-anticipa-un-freno-al-crecimiento-nid05042026/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La desaceleración demográfica en los principales centros urbanos amenaza directamente la oferta laboral y el consumo en los sectores de servicios y construcción, justo cuando la Fed monitorea el mercado de trabajo como ancla para sus decisiones de tasas.",
+            "en": "Demographic deceleration in major urban centers directly threatens labor supply and consumption in services and construction, precisely as the Fed monitors the labor market as an anchor for rate decisions."
+          },
+          "thread_tag": "EE.UU.: inmigración"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina expulsa al diplomático iraní: Milei consolida su alineación geopolítica con Trump e Israel",
+          "body": "El excargado de negocios de Irán en Argentina, Mohsen Soltani Tehrani, abandonó el país el sábado tras ser declarado persona non grata por Buenos Aires en respuesta a declaraciones iraníes que Argentina calificó de 'falsas e improcedentes'. La medida se enmarca en la decisión previa de Milei de designar a la Guardia Revolucionaria iraní como organización terrorista — un gesto de alineación explícita con Washington y Tel Aviv que tiene costos diplomáticos concretos en un contexto de conflicto activo.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/04/04/milei-se-alinea-con-trump-argentina-expulsa-a-diplomatico-de-iran-y-lo-declara-persona-non-grata/",
+          "tag": "Política",
+          "context_note": {
+            "es": "Argentina recuerda los atentados a la Embajada de Israel en 1992 y la AMIA en 1994 como fundamento histórico; la expulsión ocurre mientras Milei negocia con el FMI un nuevo acuerdo que requiere respaldo político de Washington.",
+            "en": "Argentina cites the 1992 Israeli Embassy bombing and the 1994 AMIA attack as historical grounds; the expulsion comes as Milei negotiates a new IMF agreement requiring Washington's political backing."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "La ley de 'inocencia fiscal' de Milei fracasa: depósitos privados en dólares suben apenas 770 millones en 50 días",
+          "body": "A más de 50 días de vigencia de la norma que permite depositar hasta 100.000 dólares sin declarar origen, los depósitos privados en dólares subieron solo 770 millones — cifra que contrasta con los más de 5.400 millones que los argentinos compraron en divisas en julio del año pasado tras el célebre 'Comprá, campeón' de Caputo. Los analistas del Ieral-Fundación Mediterránea señalan que la desconfianza sobre el blindaje legal prometido y la escasez de tomadores de crédito en dólares frenan el traslado de ahorros informales al sistema bancario.",
+          "url": "https://www.lanacion.com.ar/economia/por-que-el-plan-para-sacar-los-dolares-del-colchon-no-arranca-segun-los-analistas-nid05042026/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El fracaso relativo del esquema complica la estrategia de acumulación de reservas del Banco Central argentino en un momento en que el país necesita mostrar robustez externa para sostener el tipo de cambio en la banda acordada con el FMI.",
+            "en": "The scheme's relative failure complicates the Argentine Central Bank's reserve accumulation strategy at a moment when the country needs to demonstrate external strength to sustain the exchange rate within the IMF-agreed band."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Milei usa el Banco Nación como palanca de crédito barato — contradicción pragmática del modelo libertario",
+          "body": "El Banco Nación lanzó créditos para pymes y electrodomésticos a tasas inferiores al mercado por orden directa del ministro Caputo, duplicando su cuota de mercado de crédito del 10% al 19,3% desde que Milei asumió. El gobierno que predica el retiro del Estado lo usa como herramienta activa de política económica, en un patrón que La Nacion compara con el 'capitalismo a la chilena' donde el Estado nunca cedió el control del cobre.",
+          "url": "https://www.lanacion.com.ar/economia/capitalismo-a-la-chilena-el-gobierno-usa-lo-que-odia-para-llegar-a-donde-quiere-nid05042026/",
+          "tag": "Política",
+          "context_note": {
+            "es": "El intervencionismo selectivo del Banco Nación ocurre mientras YPF estatal también contuvo artificialmente el alza de combustibles por la guerra en Medio Oriente, revelando que las presiones inflacionarias del conflicto de Ormuz ya llegan a la política doméstica argentina.",
+            "en": "Banco Nación's selective interventionism occurs while state-owned YPF also artificially capped fuel price increases due to the Middle East war, revealing that Hormuz conflict inflationary pressures are already reaching Argentine domestic policy."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Florida elimina la sociología del núcleo obligatorio en sus 12 universidades públicas bajo la ley DeSantis",
+          "body": "La Junta de Gobernadores del sistema universitario de Florida votó para eliminar la sociología introductoria del currículo obligatorio de las 12 universidades públicas del estado, convirtiéndola en optativa a partir de este otoño. La medida, impulsada por la ley firmada por Ron DeSantis en 2023 que restringe la enseñanza de DEI y teorías de racismo sistémico, llega a todo el sistema tras haberse aplicado inicialmente solo a cuatro instituciones en 2024.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/florida/regla-firmada-por-ron-desantis-florida-elimina-una-materia-en-las-universidades-publicas-nid05042026/",
+          "tag": "Política",
+          "context_note": {
+            "es": "La medida se suma a una tendencia más amplia de restricciones a la academia en estados republicanos que afecta la atractividad de las universidades públicas para profesores e investigadores internacionales, con implicaciones para el capital humano a mediano plazo.",
+            "en": "The measure adds to a broader trend of academic restrictions in Republican-led states that affects the attractiveness of public universities to international faculty and researchers, with medium-term human capital implications."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "La incertidumbre no es solo el riesgo de lo malo; es también la imposibilidad de planificar lo bueno.",
+        "attribution": "Charles P. Kindleberger, Manías, pánicos y cracs, 1978"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the Strait of Hormuz remains the unanswered question markets cannot afford to ignore: no full closure, no normal navigation, just a grey zone that JP Morgan is already projecting at $150 a barrel should the disruption last through mid-May. While Trump offers vague timelines and the Security Council keeps postponing votes indefinitely, the stagflation specter is back — with freshly minted credentials. Today's briefing orbits a single certainty: uncertainty is the most expensive asset on the market right now.",
+      "narrative_thread": "The Iran war consolidates a global regime of energy and geopolitical uncertainty that pressures prices, redraws alliances, and forces governments from Buenos Aires to Washington to take sides — while markets charge a premium for every day without a roadmap.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "La combinación de un conflicto en Ormuz sin resolución clara, proyecciones de petróleo a 150 dólares y un Consejo de Seguridad paralizado empuja el sentimiento hacia aversión pronunciada.",
+        "context_en": "The combination of an unresolved Hormuz conflict, oil projections at $150, and a paralyzed UN Security Council pushes sentiment toward pronounced risk aversion."
+      },
+      "stories": [
+        {
+          "source": "El Financiero",
+          "headline": "Hormuz grey zone: JP Morgan sees oil at $150 if disruption persists through mid-May",
+          "body": "The Strait of Hormuz is operating under a selective regime — Iran is authorizing transit for Chinese, Indian, and Pakistani vessels but not Western ones — while the UN Security Council postponed a resolution vote for the second time with no new date set. JP Morgan's base case remains a negotiated exit, but it warns that if disruption holds through mid-May, crude could hit $150 per barrel, reviving the global stagflation specter.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/04/04/el-futuro-incierto-que-trump-ha-dibujado-y-mexico/",
+          "tag": "Energía",
+          "context_note": {
+            "es": "El discurso de Trump del 1 de abril no ofreció ninguna ruta de salida concreta, lo que agrava la prima de riesgo que los mercados ya venían cobrando desde el inicio del conflicto el 28 de febrero.",
+            "en": "Trump's April 1 speech offered no concrete exit roadmap, compounding the risk premium markets have been pricing in since the conflict began on February 28."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Brookings: net immigration fell 62% or more in New York, Los Angeles, and Chicago over the past year",
+          "body": "A Brookings Institution study using U.S. Census data shows New York grew by just 32,000 people between July 2024 and June 2025, down from 291,000 the prior year — a drop driven primarily by the collapse in net immigration. Eight in ten U.S. counties slowed or reversed population growth in the same period, with border communities in Texas, Arizona, and California recording the steepest percentage declines.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/migraciones/adios-migrantes-en-ny-chicago-y-los-angeles-el-estudio-que-anticipa-un-freno-al-crecimiento-nid05042026/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La desaceleración demográfica en los principales centros urbanos amenaza directamente la oferta laboral y el consumo en los sectores de servicios y construcción, justo cuando la Fed monitorea el mercado de trabajo como ancla para sus decisiones de tasas.",
+            "en": "Demographic deceleration in major urban centers directly threatens labor supply and consumption in services and construction, precisely as the Fed monitors the labor market as an anchor for rate decisions."
+          },
+          "thread_tag": "EE.UU.: inmigración"
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentina expels Iranian diplomat: Milei cements geopolitical alignment with Trump and Israel",
+          "body": "Former Iranian chargé d'affaires Mohsen Soltani Tehrani left Argentina on Saturday after Buenos Aires declared him persona non grata in response to Iranian statements it labeled 'false and unwarranted.' The move follows Milei's earlier designation of Iran's Revolutionary Guard as a terrorist organization — an explicit alignment with Washington and Tel Aviv that carries concrete diplomatic costs amid an active conflict.",
+          "url": "https://www.elfinanciero.com.mx/mundo/2026/04/04/milei-se-alinea-con-trump-argentina-expulsa-a-diplomatico-de-iran-y-lo-declara-persona-non-grata/",
+          "tag": "Política",
+          "context_note": {
+            "es": "Argentina recuerda los atentados a la Embajada de Israel en 1992 y la AMIA en 1994 como fundamento histórico; la expulsión ocurre mientras Milei negocia con el FMI un nuevo acuerdo que requiere respaldo político de Washington.",
+            "en": "Argentina cites the 1992 Israeli Embassy bombing and the 1994 AMIA attack as historical grounds; the expulsion comes as Milei negotiates a new IMF agreement requiring Washington's political backing."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Milei's 'fiscal innocence' law stalls: private dollar deposits rise just $770 million in 50 days",
+          "body": "More than 50 days after a law took effect allowing Argentines to deposit up to $100,000 without declaring its origin, private dollar deposits have risen only $770 million — a figure that pales against the $5.4 billion Argentines bought in foreign currency in July of last year following Caputo's famous 'Buy, champ' dare. Analysts at Ieral-Fundación Mediterránea point to persistent distrust over the promised legal shield and a thin pool of dollar credit borrowers as the main brakes.",
+          "url": "https://www.lanacion.com.ar/economia/por-que-el-plan-para-sacar-los-dolares-del-colchon-no-arranca-segun-los-analistas-nid05042026/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El fracaso relativo del esquema complica la estrategia de acumulación de reservas del Banco Central argentino en un momento en que el país necesita mostrar robustez externa para sostener el tipo de cambio en la banda acordada con el FMI.",
+            "en": "The scheme's relative failure complicates the Argentine Central Bank's reserve accumulation strategy at a moment when the country needs to demonstrate external strength to sustain the exchange rate within the IMF-agreed band."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Milei uses Banco Nación as a cheap credit lever — the libertarian model's pragmatic contradiction",
+          "body": "Banco Nación launched below-market loans for SMEs and appliances on direct orders from Minister Caputo, doubling its credit market share from 10% to 19.3% since Milei took office. The government that preaches state withdrawal is using it as an active economic policy tool, in a pattern La Nacion compares to 'Chilean capitalism,' where the state never ceded control of copper.",
+          "url": "https://www.lanacion.com.ar/economia/capitalismo-a-la-chilena-el-gobierno-usa-lo-que-odia-para-llegar-a-donde-quiere-nid05042026/",
+          "tag": "Política",
+          "context_note": {
+            "es": "El intervencionismo selectivo del Banco Nación ocurre mientras YPF estatal también contuvo artificialmente el alza de combustibles por la guerra en Medio Oriente, revelando que las presiones inflacionarias del conflicto de Ormuz ya llegan a la política doméstica argentina.",
+            "en": "Banco Nación's selective interventionism occurs while state-owned YPF also artificially capped fuel price increases due to the Middle East war, revealing that Hormuz conflict inflationary pressures are already reaching Argentine domestic policy."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Florida drops sociology from mandatory core curriculum at all 12 public universities under DeSantis law",
+          "body": "Florida's Board of Governors voted to remove introductory sociology from the required curriculum of the state's 12 public universities, making it an elective starting this fall. The measure, driven by a 2023 law signed by Ron DeSantis restricting DEI and systemic racism instruction, now applies system-wide after being piloted at just four institutions in 2024.",
+          "url": "https://www.lanacion.com.ar/estados-unidos/florida/regla-firmada-por-ron-desantis-florida-elimina-una-materia-en-las-universidades-publicas-nid05042026/",
+          "tag": "Política",
+          "context_note": {
+            "es": "La medida se suma a una tendencia más amplia de restricciones a la academia en estados republicanos que afecta la atractividad de las universidades públicas para profesores e investigadores internacionales, con implicaciones para el capital humano a mediano plazo.",
+            "en": "The measure adds to a broader trend of academic restrictions in Republican-led states that affects the attractiveness of public universities to international faculty and researchers, with medium-term human capital implications."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "La incertidumbre no es solo el riesgo de lo malo; es también la imposibilidad de planificar lo bueno.",
+        "attribution": "Charles P. Kindleberger, Manías, pánicos y cracs, 1978"
+      }
+    }
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "99.95",
+        "change": "▼ 0.1%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.31%",
+        "change": "▼ 0.1%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "25.08",
+        "change": "▲ 5.1%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$56.59",
+        "change": "▼ 1.1%",
+        "direction": "down",
+        "chg_1w": "▲ 2.5%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05618",
+            "chg_1d": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.90%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2893",
+            "chg_1d": {
+              "text": "▲ 0.12%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.32%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04863",
+            "chg_1d": {
+              "text": "▲ 0.18%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.10%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3866",
+            "chg_1d": {
+              "text": "▲ 0.21%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.46%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0782",
+            "chg_1d": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.83%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04243",
+            "chg_1d": {
+              "text": "▲ 0.18%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.38%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.96",
+            "chg_1d": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.68%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.8013",
+            "chg_1d": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.86%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1491",
+            "chg_1d": {
+              "text": "▼ 0.14%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.18%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.86573",
+            "chg_1d": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.79%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.8816",
+            "chg_1d": {
+              "text": "▼ 0.05%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.43%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3919",
+            "chg_1d": {
+              "text": "▲ 0.01%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75523",
+            "chg_1d": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.52%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "159.50",
+            "chg_1d": {
+              "text": "▲ 0.01%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.21%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.4572",
+            "chg_1d": {
+              "text": "▼ 0.12%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.32%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19421",
+            "chg_1d": {
+              "text": "▲ 0.14%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.23%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16813",
+            "chg_1d": {
+              "text": "▲ 0.06%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.43%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3365",
+            "chg_1d": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.79%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2703",
+            "chg_1d": {
+              "text": "▲ 0.16%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.16%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14667",
+            "chg_1d": {
+              "text": "▲ 0.06%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.70%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.98",
+            "chg_1d": {
+              "text": "▲ 0.15%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.01%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.5623",
+            "chg_1d": {
+              "text": "▼ 0.18%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.09%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.15510",
+            "chg_1d": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.79%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.9477",
+            "chg_1d": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.41%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.9489",
+            "chg_1d": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.36%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6078",
+            "chg_1d": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.73%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.87237",
+            "chg_1d": {
+              "text": "▼ 0.00%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "184.24",
+            "chg_1d": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.58%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5868",
+            "chg_1d": {
+              "text": "▼ 0.21%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.44%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14532",
+            "chg_1d": {
+              "text": "▲ 0.05%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.44%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7482",
+            "chg_1d": {
+              "text": "▼ 0.09%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.76%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12580",
+            "chg_1d": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.36%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2023",
+            "chg_1d": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.37%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.10975",
+            "chg_1d": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.18",
+            "chg_1d": {
+              "text": "▲ 0.06%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.22%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
