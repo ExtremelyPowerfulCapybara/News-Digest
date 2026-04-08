@@ -41,7 +41,6 @@ def generate_image(prompt: str, output_path: str) -> None:
             size=size,
             quality=quality,
             n=1,
-            response_format="b64_json",
         )
     except openai.AuthenticationError as exc:
         raise RuntimeError(f"[image_candidates] OpenAI auth failed: {exc}") from exc
