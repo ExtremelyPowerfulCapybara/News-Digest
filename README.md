@@ -178,8 +178,33 @@ SUBSCRIBERS=subscriber@example.com
 - Values containing spaces **must be quoted**: `EMAIL_PASSWORD="xxxx xxxx xxxx xxxx"`
 - `bot/.env` is listed in `.gitignore` — it will never be committed accidentally
 - `load_dotenv()` in `main.py` loads the file automatically; no `export` step needed
-- On the VPS, a cron entry in `crontab -e` runs `python main.py` from `/home/adrian/project/bot`
+- On the VPS, cron entries in `crontab -e` drive the full daily workflow (see below)
 - GitHub Actions workflows (`newsletter.yml`, etc.) inject secrets via the GitHub Actions secrets store and do not depend on `bot/.env`
+
+### VPS cron configuration
+
+Create the log directory once:
+
+```bash
+mkdir -p /home/adrian/project/logs
+```
+
+Then add to `crontab -e`:
+
+```cron
+CRON_TZ=America/Mexico_City
+
+# Morning issue run — weekdays at 7:00 AM
+0 7 * * 1-5 cd /home/adrian/project/bot && /home/adrian/project/venv/bin/python main.py >> /home/adrian/project/logs/main.log 2>&1
+
+# Candidate generation — weekdays at 7:06 AM (after main.py finishes)
+6 7 * * 1-5 cd /home/adrian/project/bot && /home/adrian/project/venv/bin/python generate_candidates.py >> /home/adrian/project/logs/candidates.log 2>&1
+
+# Telegram handler — every 2 minutes
+*/2 * * * * cd /home/adrian/project/bot && /home/adrian/project/venv/bin/python telegram_handler.py >> /home/adrian/project/logs/telegram_handler.log 2>&1
+```
+
+Environment variables are loaded via `load_dotenv()` inside each entrypoint — no `source .env` needed in cron.
 
 ---
 

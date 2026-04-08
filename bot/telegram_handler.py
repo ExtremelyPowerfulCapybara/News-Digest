@@ -239,6 +239,7 @@ def process_telegram_updates() -> None:
     and persist the new offset so updates are not reprocessed.
     Non-fatal on all network errors.
     """
+    print("[telegram_handler] Polling for updates...")
     token = os.environ.get("TELEGRAM_TOKEN", "")
     if not token:
         print("  [telegram_handler] TELEGRAM_TOKEN not set -- skipping.")
@@ -298,7 +299,10 @@ def process_telegram_updates() -> None:
             _answer_callback(token, cb_id)
 
     _save_offset(new_offset)
-    print(f"  [telegram_handler] Processed {len(updates)} update(s). Offset: {new_offset}")
+    if not updates:
+        print("  [telegram_handler] No updates.")
+    else:
+        print(f"  [telegram_handler] Processed {len(updates)} update(s). Offset: {new_offset}")
 
 
 if __name__ == "__main__":

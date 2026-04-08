@@ -18,7 +18,6 @@ import argparse
 import json
 import os
 import pathlib
-import sys
 from datetime import date
 
 import requests
@@ -109,8 +108,8 @@ def _load_and_run(
     """Load digest, generate candidates, update digest, send to Telegram."""
     digest_path = os.path.join(digest_dir, f"{issue_date}.json")
     if not os.path.exists(digest_path):
-        print(f"  [generate_candidates] No digest found for {issue_date} at {digest_path}")
-        sys.exit(1)
+        print(f"  [generate_candidates] No digest found for {issue_date} at {digest_path} -- skipping.")
+        return
 
     with open(digest_path, encoding="utf-8") as f:
         data = json.load(f)
@@ -167,6 +166,7 @@ def _load_and_run(
 # ── Entrypoint ────────────────────────────────
 
 def run(issue_date: str) -> None:
+    print(f"\n[generate_candidates] Starting for {issue_date}...")
     token   = os.environ.get("TELEGRAM_TOKEN",  "")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
     _load_and_run(issue_date, DIGEST_DIR, PROJECT_ROOT, token, chat_id)
