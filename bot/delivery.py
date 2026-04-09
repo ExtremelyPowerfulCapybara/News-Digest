@@ -50,15 +50,22 @@ def send_email(html: str, plain: str, sentiment_label: str = "Cautious") -> None
         return
 
     print(f"  [delivery] Sending to {len(subscribers)} subscriber(s)...")
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-        server.login(EMAIL_SENDER, EMAIL_PASSWORD)
-        for recipient in subscribers:
-            msg            = MIMEMultipart("alternative")
-            msg["Subject"] = subject
-            msg["From"]    = EMAIL_SENDER
-            msg["To"]      = recipient
-            msg.attach(MIMEText(plain, "plain"))
-            msg.attach(MIMEText(html,  "html"))
-            server.sendmail(EMAIL_SENDER, recipient, msg.as_string())
-            print(f"  [delivery] Sent to {recipient}")
+    try:
+        with smtplib.SMTP("smtp.gmail.com", 587, timeout=30) as server:
+            server.ehlo()
+            server.starttls()
+            server.ehlo()
+            server.login(EMAIL_SENDER, EMAIL_PASSWORD)
+            for recipient in subscribers:
+                msg            = MIMEMultipart("alternative")
+                msg["Subject"] = subject
+                msg["From"]    = EMAIL_SENDER
+                msg["To"]      = recipient
+                msg.attach(MIMEText(plain, "plain"))
+                msg.attach(MIMEText(html,  "html"))
+                server.sendmail(EMAIL_SENDER, recipient, msg.as_string())
+                print(f"  [delivery] Sent to {recipient}")
+    except Exception as e:
+        print(f"  [delivery] ERROR: SMTP connection/auth failed: {e}")
+        raise
     print("  [delivery] Done.")
