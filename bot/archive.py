@@ -137,10 +137,9 @@ def rebuild_index() -> None:
     digest_data    = _load_all_digests()
     digest_by_date = {d["date"]: d for d in digest_data}
 
-    chart_dates    = [d["date"]        for d in digest_data]
-    chart_position = [d["position"]    for d in digest_data]
-    chart_stories  = [d["story_count"] for d in digest_data]
-    chart_labels   = [d["label"]       for d in digest_data]
+    chart_dates    = [d["date"]     for d in digest_data]
+    chart_position = [d["position"] for d in digest_data]
+    chart_labels   = [d["label"]    for d in digest_data]
 
     point_colors = [
         "#b84a3a" if l == "Risk-Off" else ("#4a9e6a" if l == "Risk-On" else "#e8a030")
@@ -213,8 +212,9 @@ def rebuild_index() -> None:
     {thread_sections}
   </div>"""
 
+    _EXCLUDED_PAGES = {"index.html", "system_overview.html"}
     issues = sorted(
-        [f for f in os.listdir(ARCHIVE_DIR) if f.endswith(".html") and f != "index.html"],
+        [f for f in os.listdir(ARCHIVE_DIR) if f.endswith(".html") and f not in _EXCLUDED_PAGES],
         reverse=True,
     )
 
@@ -260,7 +260,6 @@ def rebuild_index() -> None:
     search_index_js = json.dumps(search_index)
     dates_js    = json.dumps(chart_dates)
     position_js = json.dumps(chart_position)
-    stories_js  = json.dumps(chart_stories)
     colors_js   = json.dumps(point_colors)
 
     charts_html = ""
@@ -268,20 +267,14 @@ def rebuild_index() -> None:
         charts_html = f"""
   <div style="background:#f0f3f5; border:1px solid #cdd4d9; padding:28px 32px; margin-bottom:24px;">
     <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Sentiment Timeline</p>
-    <div style="position:relative; height:120px; margin-bottom:28px;">
+    <div style="position:relative; height:120px;">
       <canvas id="sentimentChart"></canvas>
-    </div>
-    <div style="height:1px; background:#dde3e8; margin-bottom:24px;"></div>
-    <p style="font-family:Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#aab4bc; margin-bottom:16px;">Stories per Issue</p>
-    <div style="position:relative; height:80px;">
-      <canvas id="storyChart"></canvas>
     </div>
   </div>
 
   <script>
     const dates    = {dates_js};
     const position = {position_js};
-    const stories  = {stories_js};
     const colors   = {colors_js};
 
     new Chart(document.getElementById('sentimentChart'), {{
@@ -330,22 +323,6 @@ def rebuild_index() -> None:
       }}
     }});
 
-    new Chart(document.getElementById('storyChart'), {{
-      type: 'bar',
-      data: {{
-        labels: dates,
-        datasets: [{{ data: stories, backgroundColor: '#c8d4da', borderRadius: 2 }}]
-      }},
-      options: {{
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {{ legend: {{ display: false }}, tooltip: {{ callbacks: {{ label: (ctx) => ctx.raw + ' stories' }} }} }},
-        scales: {{
-          x: {{ ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', maxTicksLimit: 10 }}, grid: {{ display: false }} }},
-          y: {{ ticks: {{ font: {{ size: 9 }}, color: '#aab4bc', stepSize: 1 }}, grid: {{ color: '#e8edf0' }} }}
-        }}
-      }}
-    }});
   </script>"""
 
     index_html = f"""<!DOCTYPE html>
