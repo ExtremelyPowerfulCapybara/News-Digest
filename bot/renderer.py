@@ -6,7 +6,8 @@
 
 from datetime import date, timedelta
 from config import NEWSLETTER_NAME, NEWSLETTER_TAGLINE
-from config import GITHUB_PAGES_URL, ASSET_BASE_URL
+from config import ASSET_BASE_URL
+from utils.urls import build_issue_url, build_archive_index_url
 from config import EMAIL_CURRENCY_BASE, EMAIL_CURRENCY_QUOTES
 
 # ── Shared style constants ────────────────────
@@ -464,8 +465,10 @@ def _weekly_markets(tickers: list[dict]) -> str:
 
 def _footer(issue_date: str = "", author: str = "") -> str:
     archive_link = ""
-    if GITHUB_PAGES_URL and issue_date:
-        archive_link = f'&nbsp;&middot;&nbsp;<a href="{GITHUB_PAGES_URL}/index.html" style="color:#666666; text-decoration:none; letter-spacing:1px;">Archivo</a>'
+    if issue_date:
+        _index_url = build_archive_index_url()
+        if _index_url:
+            archive_link = f'&nbsp;&middot;&nbsp;<a href="{_index_url}" style="color:#666666; text-decoration:none; letter-spacing:1px;">Archivo</a>'
     return f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_DARK};">
   <tr>
@@ -515,10 +518,9 @@ def build_html(
     today_iso  = date.today().isoformat()
 
     preheader = ""
-    if GITHUB_PAGES_URL:
-        base        = GITHUB_PAGES_URL.rstrip("/")
-        issue_url   = f"{base}/{today_iso}.html"
-        archive_url = f"{base}/index.html"
+    _issue_url   = build_issue_url(today_iso)
+    _archive_url = build_archive_index_url()
+    if _issue_url:
         preheader = f"""
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:{BG_OUTER};">
   <tr>
@@ -526,9 +528,9 @@ def build_html(
       <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%;">
         <tr>
           <td style="font-family:{FONT_SANS}; font-size:10px; color:#888888;">
-            <a href="{issue_url}" style="color:#555555; text-decoration:none;">Ver en navegador</a>
+            <a href="{_issue_url}" style="color:#555555; text-decoration:none;">Ver en navegador</a>
             &nbsp;&middot;&nbsp;
-            <a href="{archive_url}" style="color:#555555; text-decoration:none;">Ver todos los números</a>
+            <a href="{_archive_url}" style="color:#555555; text-decoration:none;">Ver todos los números</a>
           </td>
         </tr>
       </table>

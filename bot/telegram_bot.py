@@ -31,22 +31,19 @@ def send_telegram_issue_notification(
     visual    = digest.get("visual", {})
     category  = visual.get("hero_category", "")
 
-    lines = [f"*The Opening Bell* — {issue_date}", ""]
-    lines.append(f"*Lead:* {headline}")
+    lines = ["✅ The Opening Bell ready"]
+    if headline != "(no headline)":
+        lines.append(f"Lead: {headline}")
     if category:
-        lines.append(f"*Category:* {category}")
+        lines.append(f"Category: {category}")
     if archive_url:
-        lines.append("")
-        lines.append(f"[Read today's issue]({archive_url})")
-    lines.append("")
-    lines.append("_Visual candidates: run generate\\_candidates.py_")
+        lines.append(f"Archive: {archive_url}")
 
     text = "\n".join(lines)
 
     payload = {
         "chat_id":                  chat_id,
         "text":                     text,
-        "parse_mode":               "Markdown",
         "disable_web_page_preview": True,
     }
 

@@ -19,6 +19,7 @@ from mock_data   import load_mock
 from wordcloud_gen import generate_wordcloud
 from image_gen   import generate_hero_prompt
 from telegram_bot import send_telegram_issue_notification
+from utils.urls  import build_issue_url
 
 
 def get_issue_number() -> int:
@@ -83,6 +84,9 @@ def run():
 
     # -- 4. Save digest to disk --
     print("\n[4/5] Saving digest...")
+    from datetime import date
+    today_str = date.today().isoformat()
+    digest["archive_url"] = build_issue_url(today_str)
     save_digest(digest, {"tickers": tickers, "currency": currency}, visual=visual)
 
     # ── 5. Build and send email ─────────────────────
@@ -136,11 +140,11 @@ def run():
     )
 
     # ── 7. Telegram notification ────────────────────
-    from datetime import date
-    today_str   = date.today().isoformat()
-    _base       = os.environ.get("PUBLIC_ARCHIVE_BASE_URL", "").rstrip("/")
-    archive_url = f"{_base}/{today_str}.html" if _base else None
-    send_telegram_issue_notification({**digest, "visual": visual}, today_str, archive_url=archive_url)
+    send_telegram_issue_notification(
+        {**digest, "visual": visual},
+        today_str,
+        archive_url=digest.get("archive_url") or None,
+    )
 
     print("\n" + "=" * 50)
     print(f"  Done. Issue #{issue_num} delivered.")
