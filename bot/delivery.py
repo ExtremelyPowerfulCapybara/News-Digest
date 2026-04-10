@@ -54,7 +54,7 @@ def send_email(html: str, plain: str, sentiment_label: str = "Cautious") -> None
     smtp_port = int(os.environ.get("SMTP_PORT", 587))
     use_ssl   = os.environ.get("SMTP_USE_SSL", "false").lower() == "true"
     try:
-        print(f"[delivery] Connecting to SMTP ({'SSL' if use_ssl else 'STARTTLS'}:{smtp_port})...")
+        print(f"  [delivery] Connecting to SMTP ({'SSL' if use_ssl else 'STARTTLS'}:{smtp_port})...")
         if use_ssl:
             import ssl as _ssl
             ctx = _ssl.create_default_context()
@@ -66,8 +66,9 @@ def send_email(html: str, plain: str, sentiment_label: str = "Cautious") -> None
                 server.ehlo()
                 server.starttls()
                 server.ehlo()
+            print("  [delivery] Connection established, authenticating...")
             server.login(EMAIL_SENDER, EMAIL_PASSWORD)
-            print("[delivery] SMTP login successful")
+            print("  [delivery] SMTP login successful")
             for recipient in subscribers:
                 msg            = MIMEMultipart("alternative")
                 msg["Subject"] = subject
@@ -77,8 +78,7 @@ def send_email(html: str, plain: str, sentiment_label: str = "Cautious") -> None
                 msg.attach(MIMEText(html,  "html"))
                 server.sendmail(EMAIL_SENDER, recipient, msg.as_string())
                 print(f"  [delivery] Sent to {recipient}")
-        print(f"[delivery] Email sent to {len(subscribers)} subscriber(s)")
+        print(f"  [delivery] Done — {len(subscribers)} email(s) sent.")
     except Exception as e:
-        print(f"[delivery] Email send failed: {e}")
+        print(f"  [delivery] Email send failed: {e}")
         raise
-    print("  [delivery] Done.")
