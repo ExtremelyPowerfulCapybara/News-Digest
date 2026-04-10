@@ -1,0 +1,119 @@
+# ─────────────────────────────────────────────
+#  .github/workflows/newsletter-preview.yml
+#
+#  Isolated preview environment.
+#  - Manual trigger only
+#  - Runs pipeline with PREVIEW_MODE=true
+#    (output goes to docs/preview/ and digests/preview/)
+#  - Never sends email, never syncs to VPS
+#  - Commits preview artifacts back to Dev-Nigg
+#  - Deploys docs/preview/ to GitHub Pages
+#    (visible at https://extremelypowerfulcapybara.github.io/News-Digest/)
+# ─────────────────────────────────────────────
+
+name: Newsletter Preview
+
+on:
+  workflow_dispatch:
+    inputs:
+      mock_mode:
+        description: "Mock mode? Skip NewsAPI + Anthropic, use latest saved digest"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      friday_mode:
+        description: "Simulate Friday? Includes word cloud + week review"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout Dev-Nigg
+        uses: actions/checkout@v4
+        with:
+          ref: Dev-Nigg
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install --no-cache-dir -r requirements.txt
+
+      - name: Write subscribers file
+        run: |
+          python3 -c "
+          import os
+          emails = os.environ['DEV_SUBSCRIBERS_CSV'].split(',')
+          with open('subscribers.csv', 'w') as f:
+              f.write('email,name,active\n')
+              for e in emails:
+                  e = e.strip()
+                  if e:
+                      f.write(f'{e},,true\n')
+          "
+        env:
+          DEV_SUBSCRIBERS_CSV: ${{ secrets.DEV_SUBSCRIBERS_CSV }}
+
+      - name: Run newsletter bot (preview mode)
+        working-directory: bot
+        env:
+          PREVIEW_MODE:            "true"
+          SKIP_EMAIL:              "true"
+          MOCK:                    ${{ github.event.inputs.mock_mode }}
+          FORCE_FRIDAY:            ${{ github.event.inputs.friday_mode }}
+          NEWS_API_KEY:            ${{ secrets.NEWS_API_KEY }}
+          ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
+          EMAIL_SENDER:            ${{ secrets.EMAIL_SENDER }}
+          EMAIL_PASSWORD:          ${{ secrets.EMAIL_PASSWORD }}
+          SUBSCRIBERS:             ${{ secrets.DEV_SUBSCRIBERS_CSV }}
+          PUBLIC_ARCHIVE_BASE_URL: "https://extremelypowerfulcapybara.github.io/News-Digest"
+        run: python main.py
+
+      - name: Commit preview artifacts to Dev-Nigg
+        run: |
+          git config user.name  "Newsletter Bot"
+          git config user.email "bot@newsletter"
+
+          git add docs/preview/ digests/preview/
+
+          if git diff --staged --quiet; then
+            echo "Nothing new to commit."
+          else
+            git commit -m "[PREVIEW] Issue: $(date +'%Y-%m-%d')"
+            git push origin Dev-Nigg
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/preview/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
