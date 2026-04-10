@@ -3,17 +3,26 @@ import importlib
 import os
 import sys
 
+sys.path.insert(0, os.path.join(os.path.dirname(__file__)))
+
 
 def _reload_config(preview: bool):
-    """Set PREVIEW_MODE and reload config, return the module."""
-    if preview:
-        os.environ["PREVIEW_MODE"] = "true"
-    else:
+    """Set PREVIEW_MODE, reload config, return the module. Always restores env state."""
+    original = os.environ.pop("PREVIEW_MODE", None)
+    try:
+        if preview:
+            os.environ["PREVIEW_MODE"] = "true"
+        if "config" in sys.modules:
+            del sys.modules["config"]
+        import config
+        return config
+    finally:
+        # Restore original state
         os.environ.pop("PREVIEW_MODE", None)
-    if "config" in sys.modules:
-        del sys.modules["config"]
-    import config
-    return config
+        if original is not None:
+            os.environ["PREVIEW_MODE"] = original
+        if "config" in sys.modules:
+            del sys.modules["config"]
 
 
 def test_default_paths_do_not_contain_preview():
