@@ -8,6 +8,7 @@
 # ─────────────────────────────────────────────
 
 import os
+import pathlib
 
 # ── Secrets (never commit these) ─────────────
 NEWS_API_KEY      = os.environ.get("NEWS_API_KEY",      "")
@@ -228,7 +229,6 @@ ECONOMIC_CALENDAR = [
 # ── Storage paths ─────────────────────────────
 # Paths are relative to the repo root, not bot/
 # so digests and archive are committed together.
-import pathlib
 REPO_ROOT    = pathlib.Path(__file__).parent.parent
 _preview     = os.environ.get("PREVIEW_MODE", "false").lower() == "true"
 DIGEST_DIR   = str(REPO_ROOT / ("digests/preview" if _preview else "digests"))
