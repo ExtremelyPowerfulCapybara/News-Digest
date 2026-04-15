@@ -126,9 +126,23 @@ def test_check_text_risky_does_not_cause_rejection(tmp_path):
 
 
 def test_check_dissimilar_image_not_flagged(tmp_path):
-    p1, p2 = str(tmp_path / "a.png"), str(tmp_path / "b.png")
-    _make_png(p1, 0, 0, 0)
-    _make_png(p2, 255, 255, 255)
+    import numpy as np
+    from PIL import Image
+
+    # Checkerboard pattern — alternating black/white pixels
+    arr1 = np.zeros((64, 64, 3), dtype=np.uint8)
+    for i in range(64):
+        for j in range(64):
+            if (i + j) % 2 == 0:
+                arr1[i, j] = [255, 255, 255]
+    p1 = str(tmp_path / "checker.png")
+    Image.fromarray(arr1).save(p1)
+
+    # Uniform gray — completely flat, structurally opposite of checkerboard
+    arr2 = np.full((64, 64, 3), 128, dtype=np.uint8)
+    p2 = str(tmp_path / "gray.png")
+    Image.fromarray(arr2).save(p2)
+
     h1 = compute_phash(p1)
     category_records = [{"accepted_prompt": "central bank stone building", "image_phash": h1}]
     result = check_against_history(
