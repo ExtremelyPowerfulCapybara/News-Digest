@@ -212,9 +212,8 @@ def rebuild_index() -> None:
     {thread_sections}
   </div>"""
 
-    _EXCLUDED_PAGES = {"index.html", "system_overview.html"}
     issues = sorted(
-        [f for f in os.listdir(ARCHIVE_DIR) if f.endswith(".html") and f not in _EXCLUDED_PAGES],
+        [f for f in os.listdir(ARCHIVE_DIR) if f.endswith(".html") and f != "index.html"],
         reverse=True,
     )
 
