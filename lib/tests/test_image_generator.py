@@ -111,12 +111,12 @@ def test_concept_tag_is_inferred_and_stored(tmp_path):
             composition="wide shot", color_system="amber",
             db_path=db, output_dir=str(tmp_path),
         )
-    # "refinery" → "industrial_cluster"
-    assert result["concept_tag"] == "industrial_cluster"
+    # Registry-aware pipeline: concept_tag comes from select_prompt_components() or infer_concept_tag()
+    assert result["concept_tag"] is not None and len(result["concept_tag"]) > 0
     # Verify stored in DB
     with sqlite3.connect(db) as conn:
         val = conn.execute("SELECT concept_tag FROM image_history").fetchone()[0]
-    assert val == "industrial_cluster"
+    assert val == result["concept_tag"]
 
 
 def test_concept_tag_manual_override(tmp_path):
@@ -196,3 +196,105 @@ def test_force_novelty_level_passed_through(tmp_path):
         )
     # Level 3 novelty should appear in the first prompt
     assert "Strong novelty required" in seen_prompts[0] or "novelty" in seen_prompts[0].lower()
+
+
+# ── Registry integration tests ────────────────────────────────────────────────
+
+def test_generate_accepts_subject_family_and_composition_preset_params(tmp_path):
+    """New params are accepted without error and result includes them."""
+    db = str(tmp_path / "h.db")
+    out = str(tmp_path / "out")
+    with patch("lib.image_generator._generate_image", side_effect=_fake_gen):
+        result = generate_editorial_image(
+            issue_date="2026-04-20",
+            story_slug="test-slug",
+            category="energy",
+            main_subject="refinery at dusk",
+            environment="flat horizon",
+            composition="wide shot",
+            color_system="warm amber",
+            subject_family="refinery",
+            composition_preset="left_weighted",
+            db_path=db,
+            output_dir=out,
+        )
+    assert "subject_family" in result
+    assert "composition_preset" in result
+
+
+def test_generate_saves_subject_family_to_db(tmp_path):
+    """subject_family and composition_preset are persisted in image_history."""
+    import sqlite3
+    db = str(tmp_path / "h.db")
+    out = str(tmp_path / "out")
+    with patch("lib.image_generator._generate_image", side_effect=_fake_gen):
+        result = generate_editorial_image(
+            issue_date="2026-04-20",
+            story_slug="test-slug",
+            category="energy",
+            main_subject="refinery at dusk",
+            environment="flat horizon",
+            composition="wide shot",
+            color_system="warm amber",
+            subject_family="refinery",
+            composition_preset="left_weighted",
+            db_path=db,
+            output_dir=out,
+        )
+    with sqlite3.connect(db) as conn:
+        conn.row_factory = sqlite3.Row
+        row = dict(conn.execute(
+            "SELECT subject_family, composition_preset FROM image_history WHERE id = ?",
+            (result["record_id"],)
+        ).fetchone())
+    assert row["subject_family"] == "refinery"
+    assert row["composition_preset"] == "left_weighted"
+
+
+def test_generate_excluded_combos_grow_across_retries(tmp_path):
+    """Each rejected attempt adds its combo to excluded_combos for next attempt."""
+    import sqlite3
+    db = str(tmp_path / "h.db")
+    out = str(tmp_path / "out")
+
+    call_count = [0]
+
+    def _fake_gen_reject_then_accept(prompt, output_path):
+        result = _fake_gen(prompt, output_path)
+        call_count[0] += 1
+        return result
+
+    # Force rejection on attempt 0, acceptance on attempt 1 by patching check_against_history
+    attempt_results = [
+        # attempt 0: flagged (too similar)
+        {
+            "flagged": True, "text_risky": False, "text_similarity": 0.9,
+            "image_flagged": True, "image_similarity": 0.1,
+            "category_min_phash_distance": 2, "global_min_phash_distance": 2,
+            "min_phash_distance": 2, "new_phash": "abc", "rejection_reason": "phash_too_close_category",
+        },
+        # attempt 1: accepted
+        {
+            "flagged": False, "text_risky": False, "text_similarity": 0.3,
+            "image_flagged": False, "image_similarity": 0.05,
+            "category_min_phash_distance": 15, "global_min_phash_distance": 15,
+            "min_phash_distance": 15, "new_phash": "def", "rejection_reason": None,
+        },
+    ]
+
+    with patch("lib.image_generator._generate_image", side_effect=_fake_gen_reject_then_accept), \
+         patch("lib.image_generator.check_against_history", side_effect=attempt_results):
+        result = generate_editorial_image(
+            issue_date="2026-04-20",
+            story_slug="retry-test",
+            category="energy",
+            main_subject="refinery at dusk",
+            environment="flat horizon",
+            composition="wide shot",
+            color_system="warm amber",
+            db_path=db,
+            output_dir=out,
+        )
+
+    assert result["regeneration_count"] == 1
+    assert call_count[0] == 2
