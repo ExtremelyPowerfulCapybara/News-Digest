@@ -186,3 +186,58 @@ python -m pytest lib/tests/ -v
 ```
 
 Expected: 64 tests pass (13 store + 24 builder + 16 similarity + 11 generator).
+
+---
+
+## How the registry prevents repeated category images
+
+The `config/image_prompt_registry.yaml` file stores per-category building blocks: a list of
+`allowed_concepts`, `allowed_subject_families`, and `allowed_compositions`. Each category has
+4-5 entries per list, giving 64-125 unique `(concept_tag, subject_family, composition_preset)`
+triples before any repeat is necessary.
+
+**Selection flow:**
+
+1. `select_prompt_components()` (in `lib/image_registry.py`) loads the registry and fetches the
+   last 8 same-category history records.
+2. Every candidate triple in the cross-product of the allowed pools is scored by how many times
+   it appears in the recent 8. Lower count = better.
+3. Tiebreak: prefer triples where 2+ dimensions differ from the most recent image's triple.
+4. The lowest-penalty triple is selected; ties are broken randomly.
+
+**Retry rotation:**
+
+Each rejected attempt adds its triple to `excluded_combos`. On the next attempt,
+`select_prompt_components()` is called again with the updated exclusion list, ensuring:
+
+- Retry 1: different `composition_preset` preferred
+- Retry 2: different `subject_family` preferred
+- Retry 3: different `concept_tag` if needed
+
+**Auto-novelty:**
+
+If any `subject_family` or `composition_preset` appears 3+ times in the last 8 same-category
+records, a novelty directive is automatically generated naming what to avoid. This is injected at
+attempt 0 when no manual `--novelty-request` is provided.
+
+---
+
+## How `accepted_prompt`, `concept_tag`, `subject_family`, and `composition_preset` work together
+
+Every accepted generation stores four semantic fields in `image_history`:
+
+| Field | What it stores | Used for |
+|-------|----------------|----------|
+| `accepted_prompt` | `revised_prompt` if the model rewrote the prompt, else `prompt_sent` | Text similarity comparison - always the prompt the model *actually used* |
+| `concept_tag` | Visual metaphor label inferred or overridden at generation time (e.g. `maritime_passage`) | Concept-frequency tracking for novelty directives |
+| `subject_family` | Registry subject family chosen at generation time (e.g. `tanker`) | Anti-repetition scoring across same-category runs |
+| `composition_preset` | Registry composition preset chosen at generation time (e.g. `elevated_wide`) | Anti-repetition scoring across same-category runs |
+
+Using `accepted_prompt` for text similarity (rather than `prompt_sent`) ensures that if the image
+model rewrites the prompt - which OpenAI models frequently do - similarity comparisons are made
+against the version that actually influenced the image.
+
+The three semantic fields together define the combination space. By tracking them across issues,
+`select_prompt_components()` can avoid repeating not just the same words in a prompt, but the same
+*visual concept*, *subject category*, and *framing approach* - the three dimensions most responsible
+for images looking identical.
