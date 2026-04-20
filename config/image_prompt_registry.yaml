@@ -1,0 +1,198 @@
+# config/image_prompt_registry.yaml
+# ─────────────────────────────────────────────────────────────────────────────
+# Image prompt building blocks for the editorial image generation system.
+# Stores reusable components only — never full assembled prompts.
+# ─────────────────────────────────────────────────────────────────────────────
+
+style_master: "stable-reference-v1"  # reference only — not injected at runtime
+
+categories:
+
+  energy:
+    default_color_system: "warm amber-rust tones on metal surfaces, cool gray background"
+    allowed_concepts:
+      - industrial_cluster
+      - pipeline_infrastructure
+      - offshore_platform
+      - storage_facility
+    allowed_subject_families:
+      - refinery
+      - pipeline
+      - offshore_rig
+      - storage_tanks
+    allowed_compositions:
+      - left_weighted
+      - right_weighted
+      - elevated_wide
+      - close_foreground
+
+  shipping_geopolitics:
+    default_color_system: "steel blue accents on container markings, muted rust on crane structures"
+    allowed_concepts:
+      - container_logistics
+      - maritime_passage
+      - port_infrastructure
+      - maritime_chokepoint
+    allowed_subject_families:
+      - container_port
+      - cargo_vessel
+      - tanker
+      - harbor_cranes
+    allowed_compositions:
+      - converging_perspective
+      - split_frame
+      - elevated_wide
+      - left_weighted
+
+  trade_supply_chain:
+    default_color_system: "muted ochre on road markings, cool gray on barrier and infrastructure"
+    allowed_concepts:
+      - restriction_barrier
+      - logistics_hub
+      - transit_corridor
+    allowed_subject_families:
+      - customs_gate
+      - warehouse_depot
+      - highway_corridor
+      - cargo_depot
+    allowed_compositions:
+      - central_vanishing
+      - right_weighted
+      - close_foreground
+      - elevated_wide
+
+  macro_inflation:
+    default_color_system: "warm stone tones on architecture, cool gray sky and deep shadows"
+    allowed_concepts:
+      - institutional_facade
+      - trading_floor_empty
+      - market_data_display
+    allowed_subject_families:
+      - central_bank_exterior
+      - empty_trading_floor
+      - stone_plaza
+      - institutional_columns
+    allowed_compositions:
+      - low_angle_monumental
+      - frontal_symmetric
+      - elevated_wide
+      - close_foreground
+
+  policy_institutional:
+    default_color_system: "muted flag accent colors, predominantly graphite and stone gray"
+    allowed_concepts:
+      - government_building
+      - legislative_chamber
+      - empty_plaza
+      - monumental_steps
+    allowed_subject_families:
+      - parliament_facade
+      - government_exterior
+      - government_plaza
+      - ceremonial_doors
+    allowed_compositions:
+      - frontal_symmetric
+      - left_weighted
+      - low_angle_monumental
+      - close_foreground
+
+  markets_finance:
+    default_color_system: "cool steel blue on glass surfaces, warm amber on structural elements"
+    allowed_concepts:
+      - financial_atrium
+      - exchange_floor
+      - data_terminal
+      - capital_flow_map
+    allowed_subject_families:
+      - glass_tower_atrium
+      - trading_floor_interior
+      - financial_district_exterior
+      - exchange_building_exterior
+    allowed_compositions:
+      - upward_diagonal
+      - split_frame
+      - elevated_wide
+      - right_weighted
+
+# ── Subject family descriptions (filled into MAIN_SUBJECT in STYLE_MASTER) ───
+
+subject_family_templates:
+
+  refinery: "oil refinery towers and storage tanks with slow industrial exhaust rising"
+  pipeline: "industrial pipeline network traversing open terrain, valve stations visible"
+  offshore_rig: "offshore drilling platform with functional superstructure against open sea"
+  storage_tanks: "cylindrical storage tanks in a flat industrial yard, orderly arrangement"
+
+  container_port: "stacked shipping containers at a deep-water port, crane silhouettes overhead"
+  cargo_vessel: "ocean-going cargo vessel navigating open water, visible cargo decks"
+  tanker: "large oil tanker navigating a maritime passage, smooth hull and deck infrastructure"
+  harbor_cranes: "port gantry cranes over a container terminal, crane arms extended"
+
+  customs_gate: "sealed customs checkpoint gate with barrier arm and inspection booth"
+  warehouse_depot: "large warehouse building with loading docks and freight vehicles waiting"
+  highway_corridor: "industrial highway extending to a flat horizon, roadway markings visible"
+  cargo_depot: "enclosed cargo depot with organized freight stacks and vehicle access lanes"
+
+  central_bank_exterior: "central bank building exterior, stone columns and carved inscriptions"
+  empty_trading_floor: "empty trading floor with silent workstations and curved data screens"
+  stone_plaza: "empty stone plaza in front of an institutional facade, long shadow geometry"
+  institutional_columns: "monumental columns of an institutional building seen in close perspective"
+
+  parliament_facade: "parliament or government building facade, flag poles and ceremonial details"
+  government_exterior: "government ministry exterior, formal facade and sealed entrance"
+  government_plaza: "empty government plaza with long shadow geometry and subdued ambient light"
+  ceremonial_doors: "heavy ceremonial doors of a government building, closed and imposing"
+
+  glass_tower_atrium: "financial district tower atrium viewed from below, glass and steel geometry"
+  trading_floor_interior: "trading floor with workstations and ceiling infrastructure, empty or sparse"
+  financial_district_exterior: "financial district exterior, towers and stone paving, low-angle view"
+  exchange_building_exterior: "stock exchange building exterior, classical or modern facade"
+
+# ── Composition descriptions (filled into COMPOSITION in STYLE_MASTER) ────────
+
+composition_templates:
+
+  left_weighted: "asymmetric left-weighted composition, subject offset to the left third, open space right"
+  right_weighted: "asymmetric right-weighted composition, subject offset to the right third, open space left"
+  elevated_wide: "wide establishing shot from elevated angle, subject dominant, expansive background"
+  close_foreground: "close foreground emphasis, subject large and immediate, background receding"
+  converging_perspective: "converging perspective lines leading to a focal point, subject at convergence"
+  split_frame: "split-frame composition, foreground element and background element in visual dialogue"
+  central_vanishing: "central vanishing point composition, subject slightly off-axis"
+  low_angle_monumental: "low camera angle, subject monumental in foreground, sky dominant in background"
+  frontal_symmetric: "frontal near-symmetrical framing, slight camera offset breaks symmetry"
+  upward_diagonal: "upward diagonal vanishing point, strong perspective, open upper frame"
+
+# ── Concept templates (reference descriptions for infer_concept_tag) ──────────
+
+concept_templates:
+
+  industrial_cluster: "oil refinery towers and industrial chimneys with slow exhaust rising"
+  pipeline_infrastructure: "industrial pipeline network traversing open terrain, valves and junctions"
+  offshore_platform: "offshore drilling platform rising from open sea, functional superstructure"
+  storage_facility: "cylindrical storage tanks in a flat industrial yard, orderly rows"
+  container_logistics: "stacked shipping containers at a terminal, crane silhouettes overhead"
+  maritime_passage: "cargo vessel or tanker navigating a maritime passage, open water"
+  port_infrastructure: "deep-water port infrastructure, dock cranes and quay walls"
+  maritime_chokepoint: "strategic waterway with vessel traffic, narrow channel geography"
+  restriction_barrier: "customs checkpoint or sealed cargo gate, barrier arm raised"
+  logistics_hub: "warehouse complex or depot with loading docks and freight vehicles"
+  transit_corridor: "industrial road or rail corridor extending to horizon"
+  institutional_facade: "central bank exterior, stone columns and carved inscriptions"
+  trading_floor_empty: "empty trading floor with silent terminals and curved workstations"
+  market_data_display: "data screens and ticker displays in an institutional financial setting"
+  government_building: "government building facade with national flags, ceremonial doors"
+  legislative_chamber: "legislative chamber interior, tiered seating and symbolic architecture"
+  empty_plaza: "empty stone plaza with long shadow geometry, no figures"
+  monumental_steps: "wide monumental steps ascending to an institutional entrance"
+  financial_atrium: "financial district tower atrium viewed from below, glass and steel geometry"
+  exchange_floor: "stock exchange floor with trading stations, high-ceilinged hall"
+  data_terminal: "financial data terminals in an institutional setting, screens and workstations"
+  capital_flow_map: "financial district skyline viewed from elevated perspective"
+
+# ── Novelty templates (reference strings for suggest_novelty_request) ─────────
+
+novelty_templates:
+  mild: "Apply minor compositional variation. Adjust framing, subject placement, or implied depth — keep the general metaphor."
+  medium: "Introduce a different foreground subject and spatial relationship. Avoid repeating visual metaphors from recent images."
+  strong: "Strong novelty required. Use a completely different foreground subject, opposite compositional balance, new spatial hierarchy, and a distinct environmental context."
