@@ -315,6 +315,7 @@ def generate_editorial_image(
                     "image_phash": sim.get("new_phash"),
                     "accepted_prompt": accepted_prompt,
                     "revised_prompt": revised_prompt,
+                    "concept_tag": resolved_concept_tag,
                     "subject_family": resolved_subject_family,
                     "composition_preset": resolved_composition_preset,
                     "similarity_score_text": sim["text_similarity"],

@@ -112,7 +112,14 @@ def test_concept_tag_is_inferred_and_stored(tmp_path):
             db_path=db, output_dir=str(tmp_path),
         )
     # Registry-aware pipeline: concept_tag comes from select_prompt_components() or infer_concept_tag()
-    assert result["concept_tag"] is not None and len(result["concept_tag"]) > 0
+    from lib.image_registry import load_registry
+    registry = load_registry()
+    energy_cat = registry.get("categories", {}).get("energy", {})
+    allowed_concepts = energy_cat.get("allowed_concepts", [])
+    fallback = f"energy_general"
+    valid_values = set(allowed_concepts) | {fallback}
+    assert result["concept_tag"] in valid_values, \
+        f"Unexpected concept_tag: {result['concept_tag']!r}, expected one of {valid_values}"
     # Verify stored in DB
     with sqlite3.connect(db) as conn:
         val = conn.execute("SELECT concept_tag FROM image_history").fetchone()[0]
