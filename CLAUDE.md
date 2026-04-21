@@ -151,6 +151,7 @@ All secrets are injected at runtime via GitHub Actions secrets or a local `.env`
 | `HEALTH_CHECK_URL` | Healthchecks.io ping URL |
 | `MOCK` | `true` to skip NewsAPI + Anthropic, use saved digest |
 | `SKIP_EMAIL` | `true` to render archive only, skip email delivery |
+| `SKIP_IMAGE` | `true` to skip OpenAI image generation (mock runs, CI without `OPENAI_API_KEY`) |
 | `FORCE_FRIDAY` | `true` to simulate Friday mode (word cloud + week review) |
 | `GITHUB_RAW_URL` | Asset base URL override (used in `newsletter-adrian.yml` to serve assets from `Dev-Nigg`) |
 

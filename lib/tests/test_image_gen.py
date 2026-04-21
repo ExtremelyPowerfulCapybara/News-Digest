@@ -32,6 +32,9 @@ def test_skip_image_env_returns_visual_without_hero_image(tmp_path):
 
 def test_successful_generation_sets_hero_image_url(tmp_path):
     """On success, hero_image is set to the public URL."""
+    # image_path uses the no-retry filename; basename is used for URL construction.
+    # If testing a retry scenario, change to e.g. "2026-04-21_hero_r1.png"
+    # and update the assertion accordingly.
     fake_result = {
         "image_path": str(tmp_path / "2026-04-21_hero.png"),
         "prompt_sent": "prompt",

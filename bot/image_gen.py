@@ -1,11 +1,16 @@
 # bot/image_gen.py
 # ─────────────────────────────────────────────
-#  Generates a hero image prompt for an issue.
-#  Pure function — no API calls, no side effects.
+#  Hero image metadata and generation for an issue.
+#
+#  generate_hero_prompt() -- pure, no side effects.
+#  generate_hero_image()  -- calls OpenAI, writes PNG
+#                            to docs/images/, updates DB.
 #
 #  Inputs:  digest dict (bilingual, from summarizer)
 #  Outputs: visual metadata dict for digest JSON
 # ─────────────────────────────────────────────
+
+import os
 
 from prompt_map import PROMPT_TEMPLATES, PROMPT_VARIANT_SUBJECTS, _BASE
 
@@ -96,7 +101,6 @@ def generate_hero_image(digest: dict, issue_date: str, output_dir: str) -> dict:
     Sets visual["hero_image"] to the public URL on success.
     On SKIP_IMAGE=true or any generation error, returns visual without hero_image.
     """
-    import os
     from lib.image_generator import generate_editorial_image
     from lib.image_prompt_builder import CATEGORY_PRESETS
     import config
