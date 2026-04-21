@@ -103,7 +103,7 @@ def generate_hero_image(digest: dict, issue_date: str, output_dir: str) -> dict:
 
     visual = generate_hero_prompt(digest)
 
-    if os.environ.get("SKIP_IMAGE", "false").lower() == "true":
+    if config.SKIP_IMAGE:
         return visual
 
     tag = visual.get("hero_category", "Macro")

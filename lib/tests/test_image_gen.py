@@ -1,6 +1,5 @@
 import os
 import sys
-import pytest
 from unittest.mock import patch
 
 # Repo root (for lib imports) and bot/ (for image_gen + prompt_map imports)
@@ -24,8 +23,8 @@ MINIMAL_DIGEST = {
 
 
 def test_skip_image_env_returns_visual_without_hero_image(tmp_path):
-    """When SKIP_IMAGE=true, generation is skipped and hero_image is absent."""
-    with patch.dict(os.environ, {"SKIP_IMAGE": "true"}):
+    """When config.SKIP_IMAGE is True, generation is skipped and hero_image is absent."""
+    with patch("config.SKIP_IMAGE", True):
         visual = generate_hero_image(MINIMAL_DIGEST, "2026-04-21", output_dir=str(tmp_path))
     assert "hero_image" not in visual
     assert visual["hero_category"] == "Macro"
@@ -47,7 +46,7 @@ def test_successful_generation_sets_hero_image_url(tmp_path):
         "regeneration_count": 0,
         "record_id": 1,
     }
-    with patch.dict(os.environ, {"SKIP_IMAGE": "false"}):
+    with patch("config.SKIP_IMAGE", False):
         with patch("lib.image_generator.generate_editorial_image", return_value=fake_result):
             with patch("config.ASSET_BASE_URL", "https://raw.example.com/"):
                 visual = generate_hero_image(MINIMAL_DIGEST, "2026-04-21", output_dir=str(tmp_path))
@@ -56,7 +55,7 @@ def test_successful_generation_sets_hero_image_url(tmp_path):
 
 def test_generation_exception_returns_visual_without_hero_image(tmp_path):
     """If generate_editorial_image raises, hero_image is absent but function does not crash."""
-    with patch.dict(os.environ, {"SKIP_IMAGE": "false"}):
+    with patch("config.SKIP_IMAGE", False):
         with patch("lib.image_generator.generate_editorial_image", side_effect=RuntimeError("API down")):
             visual = generate_hero_image(MINIMAL_DIGEST, "2026-04-21", output_dir=str(tmp_path))
     assert "hero_image" not in visual
