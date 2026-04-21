@@ -72,3 +72,62 @@ def generate_hero_prompt(digest: dict) -> dict:
         "hero_option_summaries": hero_option_summaries,
         "hero_selected":         None,
     }
+
+
+# Maps Claude story tags to CATEGORY_PRESETS keys in lib/image_prompt_builder.py.
+# Unknown tags fall back to "macro_inflation".
+TAG_TO_PRESET: dict = {
+    "Macro":    "macro_inflation",
+    "FX":       "macro_inflation",
+    "México":   "macro_inflation",
+    "Tasas":    "macro_inflation",
+    "Comercio": "trade_supply_chain",
+    "Mercados": "markets_finance",
+    "Energía":  "energy",
+    "Política": "policy_institutional",
+}
+
+
+def generate_hero_image(digest: dict, issue_date: str, output_dir: str) -> dict:
+    """
+    Extends generate_hero_prompt() to actually produce a PNG via OpenAI.
+
+    Saves image to output_dir/{issue_date}_hero.png.
+    Sets visual["hero_image"] to the public URL on success.
+    On SKIP_IMAGE=true or any generation error, returns visual without hero_image.
+    """
+    import os
+    from lib.image_generator import generate_editorial_image
+    from lib.image_prompt_builder import CATEGORY_PRESETS
+    import config
+
+    visual = generate_hero_prompt(digest)
+
+    if os.environ.get("SKIP_IMAGE", "false").lower() == "true":
+        return visual
+
+    tag = visual.get("hero_category", "Macro")
+    preset_key = TAG_TO_PRESET.get(tag, "macro_inflation")
+    preset = CATEGORY_PRESETS[preset_key]
+
+    digest_es = digest.get("es", digest)
+    stories = digest_es.get("stories", [])
+    context = stories[0].get("headline", "") if stories else ""
+
+    try:
+        generate_editorial_image(
+            issue_date=issue_date,
+            story_slug="hero",
+            category=preset_key,
+            main_subject=preset["main_subject"],
+            environment=preset["environment"],
+            composition=preset["composition"],
+            color_system=preset["color_system"],
+            context=context,
+            output_dir=output_dir,
+        )
+        visual["hero_image"] = f"{config.ASSET_BASE_URL.rstrip('/')}/images/{issue_date}_hero.png"
+    except Exception as exc:
+        print(f"  [image_gen] Hero image generation failed: {exc}")
+
+    return visual
