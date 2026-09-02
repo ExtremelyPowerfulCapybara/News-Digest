@@ -47,7 +47,7 @@ def _openai_responses_api(prompt: str, output_path: str) -> Dict[str, Any]:
     client = openai.OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
     response = client.responses.create(
         model=os.environ.get("OPENAI_RESPONSES_MODEL", "gpt-4o"),
-        input=[{"role": "user", "content": [{"type": "text", "text": prompt}]}],
+        input=[{"role": "user", "content": [{"type": "input_text", "text": prompt}]}],
         tools=[{
             "type": "image_generation",
             "size": os.environ.get("OPENAI_IMAGE_SIZE", "1024x1024"),
@@ -78,7 +78,6 @@ def _openai_images_api(prompt: str, output_path: str) -> Dict[str, Any]:
         size=os.environ.get("OPENAI_IMAGE_SIZE", "1024x1024"),
         quality=os.environ.get("OPENAI_IMAGE_QUALITY", "medium"),
         n=1,
-        response_format="b64_json",
     )
     b64 = response.data[0].b64_json
     if not b64:

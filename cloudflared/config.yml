@@ -1,0 +1,9 @@
+tunnel: a58b9fec-8b1f-4f36-911c-205282bd65c9
+credentials-file: /etc/cloudflared/a58b9fec-8b1f-4f36-911c-205282bd65c9.json
+
+ingress:
+  - hostname: newsletter.mustardhq.dev
+    service: http://nginx:80
+    originRequest:
+      httpHostHeader: newsletter.mustardhq.dev
+  - service: http_status:404

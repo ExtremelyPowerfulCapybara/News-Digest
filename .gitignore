@@ -3,6 +3,7 @@
 bot/.env
 bot/config_local.py
 subscribers.csv
+cloudflared/*.json
 # ── Python ────────────────────────────────────
 __pycache__/
 *.py[cod]
