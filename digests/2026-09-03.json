@@ -2,181 +2,205 @@
   "date": "2026-09-03",
   "digest": {
     "es": {
-      "editor_note": "Estimados humanos, el mercado de bonos del Tesoro estadounidense toca su nivel más alto desde 2023 mientras Washington dispara misiles sobre bodas en Irán y los traders apuestan en masa a Brasil — todo en el mismo día. El hilo conductor no es caos, es la misma pregunta de siempre: cuánto le cuesta al mundo el desorden fabricado en Washington.",
-      "narrative_thread": "La escalada militar en el Estrecho de Ormuz, la presión sobre el mercado de bonos y el debilitamiento deliberado del dólar vía recompras del Tesoro convergen en un solo momento: los mercados globales están repricing el riesgo geopolítico y fiscal estadounidense simultáneamente.",
+      "editor_note": "Estimados humanos, el día arranca con misiles en el Estrecho de Ormuz, el bono del Tesoro a 10 años bailando cerca de su 'punto de quiebre' y una cumbre Trump-Xi en el horizonte que nadie espera que resuelva nada — en otras palabras, un martes cualquiera del siglo XXI. El conflicto entre Estados Unidos e Irán sigue siendo el factor dominante que conecta los precios del petróleo, los rendimientos de los bonos y la geopolítica global en un solo nudo imposible de desatar. Abróchense los cinturones.",
+      "narrative_thread": "La escalada militar entre EE.UU. e Irán en el Estrecho de Ormuz presiona el petróleo al alza, retroalimenta la inflación y los rendimientos de los bonos, y complica la cumbre Trump-Xi, mientras los mercados buscan refugio en activos de alto rendimiento y emergentes para sortear el ruido.",
       "sentiment": {
         "label_es": "Cauteloso",
         "label_en": "Cautious",
-        "position": 45,
-        "context_es": "Las bolsas subieron impulsadas por señales de pausa de la Fed, pero el crudo elevado, los rendimientos históricamente altos y la guerra activa en el Golfo mantienen al mercado en equilibrio frágil.",
-        "context_en": "Equities rallied on Fed pause signals, but elevated crude, historically high yields, and an active war in the Gulf keep markets in fragile equilibrium."
+        "position": 42,
+        "context_es": "Los mercados rebotaron ante señales de pausa de la Fed, pero la combinación de petróleo elevado, rendimientos en máximos desde 2023 y tensiones geopolíticas activas mantiene el optimismo contenido.",
+        "context_en": "Markets bounced on Fed pause signals, but elevated oil prices, yields at 2023 highs, and active geopolitical tensions keep optimism firmly in check."
       },
       "stories": [
         {
           "source": "Foreign Policy",
-          "headline": "EE.UU. acusado de crimen de guerra tras ataque a boda en Irán; IRGC responde con misiles a bases en el Golfo",
-          "body": "Un misil estadounidense impactó una residencia costera en el sur de Irán el martes, matando al menos a cuatro personas —incluyendo menores de 4 y 16 años— e hiriendo a 68, mientras Irán lanzó represalias con misiles y drones contra bases de EE.UU. en Bahréin, Irak, Jordania, Kuwait y los Emiratos. El conflicto ya no es escaramuza: con ataques simultáneos a supertanqueros en el Estrecho de Ormuz y el crudo Brent rozando los 96 dólares, cualquier escalada adicional amenaza con trasladar la guerra a la factura de energía global.",
+          "headline": "EE.UU. e Irán escalan: strike en boda iraní abre frente de crímenes de guerra",
+          "body": "Un misil estadounidense impactó una residencia costera privada en el sur de Irán el martes, matando al menos a cuatro personas —incluyendo un niño de 4 años— e hiriendo a unas 68, en lo que Teherán calificó de crimen de guerra. Irán respondió con misiles y drones contra bases de EE.UU. en Bahréin, Irak, Jordania, Kuwait y los Emiratos Árabes Unidos, ampliando el teatro de operaciones y elevando el riesgo de una espiral regional incontrolable.",
           "url": "http://foreignpolicy.com/2026/09/02/iran-war-crime-us-strike-wedding-renewed-fighting/",
-          "tag": "Geopolítica",
+          "tag": "Macro",
           "context_note": {
-            "es": "Los ataques a tanqueros en Ormuz reportados esta misma semana convierten al estrecho —por donde transita el 20% del petróleo mundial— en el punto de presión más inmediato sobre los precios de energía e inflación global.",
-            "en": "This week's tanker strikes in Hormuz turn the strait — through which 20% of global oil passes — into the most immediate pressure point on energy prices and global inflation."
-          },
-          "thread_tag": "Irán: conflicto"
-        },
-        {
-          "source": "CNBC",
-          "headline": "Fed en pausa: S&P 500 sube 1% y rendimiento del bono a 10 años cede tras señal de Waller",
-          "body": "El S&P 500 cerró en 7,747 puntos (+1.06%) y el Dow Jones sumó 624 puntos tras declaraciones del gobernador de la Fed Christopher Waller, quien dijo estar 'inclinado a apoyar' mantener tasas sin cambio; las apuestas de alza en fed funds futures cayeron del 63% al 50% en un día. Sin embargo, el WTI cerró en 91.30 dólares y el Brent en 95.52, y analistas advierten que si el crudo se mantiene 'tercamente alto', los rendimientos podrían volver a presionar al mercado antes del dato de nóminas del viernes.",
-          "url": "https://www.cnbc.com/2026/09/02/stock-market-today-live-updates.html",
-          "tag": "Mercados",
-          "context_note": {
-            "es": "El rebote llega un día después de que el bono a 10 años tocara su nivel más alto desde noviembre de 2023, con el mercado todavía dividido entre recesión y recalentamiento a 48 horas del dato de empleo.",
-            "en": "The rally comes one day after the 10-year yield hit its highest since November 2023, with markets still split between recession and overheating fears 48 hours before the jobs report."
-          },
-          "thread_tag": "Fed: tasas"
-        },
-        {
-          "source": "CNBC",
-          "headline": "Carry trade global se vuelca en emergentes: real brasileño y won coreano lideran ganancias tras recompras del Tesoro",
-          "body": "El debilitamiento deliberado del dólar por el secretario Bessent —quien duplicó las recompras de deuda de largo plazo— desató entradas de 967 millones de dólares en fondos de bonos emergentes en una sola semana, con el won coreano apreciándose 2.83% y el real brasileño 0.64%. Brasil y Turquía son los favoritos del carry trade por sus tasas reales elevadas —14% y 37% respectivamente— aunque el riesgo sistémico es claro: si los costos de financiamiento suben abruptamente, el flujo se revierte con igual velocidad.",
-          "url": "https://www.cnbc.com/2026/09/01/emerging-markets-dollar-carry-trade.html",
-          "tag": "FX",
-          "context_note": {
-            "es": "La estrategia de Bessent de reprimir financieramente los rendimientos largos es el mismo mecanismo que en décadas pasadas precedió episodios de inflación importada en economías emergentes que reciben el flujo.",
-            "en": "Bessent's strategy of financially repressing long-end yields is the same mechanism that in past decades preceded imported inflation episodes in emerging economies receiving the flow."
+            "es": "Este episodio ocurre días antes de la cumbre Trump-Xi del 24 de septiembre, donde Irán —el mayor socio comercial de China— es uno de los temas centrales, y con el Estrecho de Ormuz ya bajo ataque a dos superpetroleros.",
+            "en": "This episode comes days before the Sept. 24 Trump-Xi summit, where Iran — China's largest trading partner — is a central agenda item, and with the Strait of Hormuz already under attack on two supertankers."
           },
           "thread_tag": null
         },
         {
           "source": "CNBC",
-          "headline": "Trump y Xi se reunirán el 24 de septiembre en Washington con expectativas deliberadamente bajas",
-          "body": "Xi Jinping visitará la Casa Blanca el 24 de septiembre en una cumbre de estado —con cena formal incluida— aunque analistas del Atlantic Council y la Foundation for Defense of Democracies la describen como 'una cumbre de bajas expectativas centrada en gestionar el estancamiento, no en resolverlo'. La principal fricción: EE.UU. exige a China cortar sus lazos comerciales con Irán bajo amenaza de sanciones, mientras Pekín fue el único miembro del G20 en disentir del comunicado conjunto esta semana.",
+          "headline": "Cumbre Trump-Xi en Washington: expectativas bajas mientras Irán y comercio dominan la agenda",
+          "body": "El presidente Xi Jinping tiene previsto visitar la Casa Blanca el 24 de septiembre, pero analistas advierten que la reunión producirá 'transacciones sin confianza y estabilidad sin acuerdo', al igual que ocurrió en la cumbre de Pekín de hace cuatro meses. China fue el único miembro del G20 en disentir del comunicado conjunto esta semana en Carolina del Norte, objetando el lenguaje sobre superávits comerciales excesivos y la guerra con Irán.",
           "url": "https://www.cnbc.com/2026/09/02/trump-xi-summit-iran-china-trade-elections.html",
-          "tag": "Macro",
+          "tag": "Comercio",
           "context_note": {
-            "es": "La cumbre llega con la tregua comercial sino-estadounidense vigente pero frágil, y con China convertida en el principal comprador de petróleo iraní justo cuando Washington escala militarmente contra Teherán — el nudo gordiano que Xi y Trump deberán desatar o ignorar.",
-            "en": "The summit arrives with the Sino-American trade truce intact but fragile, and with China as Iran's largest oil buyer precisely as Washington escalates militarily against Tehran — the Gordian knot Xi and Trump must untangle or ignore."
+            "es": "El Tesoro estadounidense presiona a China para que 'encuentre una solución' sobre Irán justo cuando Washington planea sanciones agresivas a los socios comerciales de Teherán —potencialmente incluyendo a Pekín—, lo que añade una capa de riesgo real a una cumbre que ya nace con poca ambición.",
+            "en": "The U.S. Treasury is pressing China to 'find a solution' on Iran just as Washington plans aggressive sanctions on Tehran's trading partners — potentially including Beijing — adding real risk to an already low-ambition summit."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "S&P 500 sube 1% y bonos del Tesoro ceden rendimiento tras señal de pausa de la Fed",
+          "body": "El S&P 500 cerró en 7,747.71 (+1.06%) y el Dow Jones ganó 624 puntos, su mejor jornada desde el 4 de agosto, luego de que el gobernador de la Fed Christopher Waller señaló que estaría 'inclinado a apoyar' mantener las tasas sin cambios, reduciendo las apuestas de alza en el mercado de futuros del 63.2% al 50.4% en un solo día. Sin embargo, el petróleo WTI cerró en 91.30 dólares por barril y analistas de CFRA advierten que si los precios de la energía se mantienen 'obstinadamente altos', las tasas seguirán siendo un obstáculo para los inversores.",
+          "url": "https://www.cnbc.com/2026/09/02/stock-market-today-live-updates.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El rebote ocurre con el rendimiento del bono a 10 años en 4.77%, apenas por debajo del máximo desde noviembre de 2023 alcanzado el miércoles, lo que ilustra cuán frágil es el alivio: un dato de inflación o nóminas sorpresivo mañana podría revertirlo.",
+            "en": "The rally occurs with the 10-year yield at 4.77%, just below Wednesday's highest level since November 2023, illustrating how fragile the relief is: a surprise inflation or payrolls print tomorrow could reverse it."
           },
           "thread_tag": null
         },
         {
           "source": "MarketWatch",
-          "headline": "El bono a 10 años toca niveles de 2008: ¿punto de quiebre para el crédito global?",
-          "body": "El rendimiento del bono del Tesoro a 10 años alcanzó esta semana sus niveles más altos desde 2008, arrastrando consigo los costos de financiamiento de hogares, empresas y gobiernos en todo el mundo, en medio de un déficit federal de aproximadamente 2 billones de dólares y una deuda pública que supera los 40 billones. El riesgo inmediato no es abstracto: hipotecas más caras, refinanciamiento corporativo más costoso y mayor presión sobre economías emergentes que emiten deuda en dólares.",
+          "headline": "El bono del Tesoro a 10 años se acerca a su 'zona de peligro' con rendimientos en máximos de 2008",
+          "body": "Los rendimientos globales de bonos tocan sus niveles más altos desde 2008, elevando los costos de financiamiento para hogares, empresas y gobiernos en todo el mundo, en un contexto de déficit federal de 2 billones de dólares y una deuda pública superior a 40 billones. La doble presión del petróleo caro —que alimenta expectativas de inflación— y los planes de recompra de bonos del Tesoro de Bessent están distorsionando la curva de una manera que pocos modelos de riesgo tenían contemplada.",
           "url": "https://www.marketwatch.com/story/this-could-be-the-10-year-treasurys-tipping-point-into-the-danger-zone-891cd45d",
           "tag": "Tasas",
           "context_note": {
-            "es": "La recompra de deuda larga por Bessent intenta comprimir estos rendimientos, pero la señal del mercado es que la oferta de papel fiscal estadounidense sigue superando la demanda — tensión que el dato de empleo del viernes podría amplificar.",
-            "en": "Bessent's long-end buybacks aim to compress these yields, but the market signal is that supply of U.S. fiscal paper continues to outpace demand — a tension Friday's jobs data could amplify."
+            "es": "El nivel de 4.77% en el bono a 10 años no es un dato aislado: es el umbral desde el cual, en 2023, los mercados de renta variable comenzaron a corregir de forma pronunciada, lo que hace que cada décima de punto adicional sea observada con nerviosismo institucional.",
+            "en": "The 4.77% level on the 10-year is not an isolated data point: it's the threshold from which equity markets began to correct sharply in 2023, making every additional basis point a source of institutional anxiety."
           },
-          "thread_tag": "Fed: tasas"
+          "thread_tag": null
         },
         {
           "source": "CNBC",
-          "headline": "Inundaciones en Nepal costarán entre 4,000 y 5,000 millones de dólares; temporada alta de turismo en riesgo",
-          "body": "El colapso glaciar del 26 de agosto en la frontera Nepal-Tíbet dejó 987 muertos y 4,250 desaparecidos, con daños estimados en entre 4,000 y 5,000 millones de dólares —casi una décima parte del PIB nepalés— justo antes de la temporada alta de turismo (15 de septiembre al 15 de noviembre). Los operadores reportan cancelaciones masivas de turistas europeos, con hostales en Katmandú proyectando ocupación del 60% frente al 100% del año anterior.",
+          "headline": "Carry trade global impulsa 'muro de dinero' hacia mercados emergentes; Brasil y Turquía lideran",
+          "body": "Los fondos de bonos de mercados emergentes registraron entradas de 967 millones de dólares en la semana al miércoles —un 15% más que la semana anterior— luego de que el secretario Bessent duplicara las recompras de bonos de largo plazo, debilitando el dólar y reavivando el carry trade global. Brasil, con tasa de referencia en 14% e inflación en 4.2%, y Turquía, con repo rate en 37%, son los destinos favoritos según estrategas de Union Bancaire Privée, mientras el won surcoreano ganó 2.83% desde el anuncio de Bessent.",
+          "url": "https://www.cnbc.com/2026/09/01/emerging-markets-dollar-carry-trade.html",
+          "tag": "FX",
+          "context_note": {
+            "es": "La paradoja es notable: la misma política de Bessent que alivia la presión sobre los rendimientos largos de EE.UU. está exportando capital hacia emergentes, creando un ciclo donde el dólar débil financia el carry trade que a su vez presiona aún más al dólar.",
+            "en": "The paradox is notable: Bessent's very policy that relieves pressure on long U.S. yields is exporting capital to emerging markets, creating a cycle where a weak dollar funds the carry trade that in turn pushes the dollar even lower."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Bolsa brasileña supera al Nasdaq en 2026; opciones sobre EWZ alcanzan seis veces el volumen promedio",
+          "body": "El ETF iShares MSCI Brazil (EWZ) acumula una ganancia del 19% en lo que va del año, superando el avance del 15% del Nasdaq-100, con el volumen de opciones disparándose a más de seis veces el promedio de 30 días el miércoles —más de 420,000 contratos— situándose entre los 20 valores más operados del mercado de opciones en EE.UU. El rally combina el alza de materias primas, el carry trade favorecido por la caída del dólar y el optimismo electoral previo a las elecciones generales de octubre en Brasil.",
+          "url": "https://www.cnbc.com/2026/09/02/traders-pile-into-this-international-stock-market-thats-beating-the-nasdaq.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El posicionamiento extremo en opciones de EWZ —con 400,000 calls frente a menos de 30,000 puts— es inusual incluso para ETFs de gran capitalización estadounidense, y sugiere que el dinero institucional está apostando a que la confluencia de dólar débil, commodities altos y elecciones tiene más recorrido.",
+            "en": "The extreme options positioning in EWZ — 400,000 calls versus fewer than 30,000 puts — is unusual even for large-cap U.S. ETFs, suggesting institutional money is betting the confluence of weak dollar, high commodities, and elections has further to run."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Inundaciones catastróficas en Nepal dejan más de 1,100 muertos y una factura de reconstrucción de hasta 5,000 millones de dólares",
+          "body": "Un colapso glacial en el norte de Nepal el 26 de agosto desencadenó una cadena de aludes e inundaciones que ha dejado más de 1,100 muertos y cerca de 4,000 desaparecidos, convirtiéndose en el desastre natural más mortífero del país desde el terremoto de 2015 que mató a casi 9,000 personas. Nepal estima que la reconstrucción costará entre 4,000 y 5,000 millones de dólares —equivalente a casi una décima parte de su economía— en un momento en que las cancelaciones de turistas amenazan la temporada alta de septiembre a noviembre.",
           "url": "https://www.cnbc.com/2026/09/02/nepal-tibet-floods-adventure-tourism-economy.html",
           "tag": "Macro",
           "context_note": {
-            "es": "Nepal depende del turismo como principal fuente de divisas, y el desastre llega cuando el país ya enfrenta presión fiscal por su dependencia de remesas y ayuda externa — un recordatorio de cuán rápido el cambio climático puede destruir el modelo económico de una nación pequeña.",
-            "en": "Nepal depends on tourism as its primary source of foreign exchange, and the disaster arrives as the country already faces fiscal pressure from its dependence on remittances and foreign aid — a reminder of how quickly climate change can destroy a small nation's economic model."
+            "es": "El desastre ocurre cuando Nepal enfrenta simultáneamente presiones climáticas estructurales, dependencia crítica del turismo de montaña y la necesidad de financiamiento externo en un entorno global donde el capital fluye hacia activos de alto rendimiento, no hacia reconstrucción de países pobres.",
+            "en": "The disaster strikes as Nepal simultaneously faces structural climate pressures, critical dependence on mountain tourism, and the need for external financing in a global environment where capital flows toward high-yield assets, not reconstruction in poor countries."
           },
           "thread_tag": null
         }
       ],
       "quote": {
         "text": "Markets can remain irrational longer than you can remain solvent.",
-        "attribution": "John Maynard Keynes, A Tract on Monetary Reform, 1923"
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
       }
     },
     "en": {
-      "editor_note": "Estimados humanos, the U.S. Treasury bond market hits its highest level since 2023 while Washington fires missiles at weddings in Iran and traders pile into Brazil — all on the same day. The throughline isn't chaos; it's the same old question: what does the world's disorder, manufactured in Washington, ultimately cost?",
-      "narrative_thread": "The military escalation in the Strait of Hormuz, pressure on the bond market, and the deliberate weakening of the dollar through Treasury buybacks converge in a single moment: global markets are simultaneously repricing U.S. geopolitical and fiscal risk.",
+      "editor_note": "Estimados humanos, the day opens with missiles in the Strait of Hormuz, the 10-year Treasury dancing near its 'tipping point,' and a Trump-Xi summit on the horizon that nobody expects to resolve anything — in other words, a typical Tuesday in the 21st century. The U.S.-Iran conflict remains the dominant factor tying together oil prices, bond yields, and global geopolitics into a single knot that nobody seems able to untangle. Buckle up.",
+      "narrative_thread": "The U.S.-Iran military escalation in the Strait of Hormuz pushes oil higher, feeds inflation and bond yields, and complicates the Trump-Xi summit, while markets seek refuge in high-yield and emerging-market assets to navigate the noise.",
       "sentiment": {
         "label_es": "Cauteloso",
         "label_en": "Cautious",
-        "position": 45,
-        "context_es": "Las bolsas subieron impulsadas por señales de pausa de la Fed, pero el crudo elevado, los rendimientos históricamente altos y la guerra activa en el Golfo mantienen al mercado en equilibrio frágil.",
-        "context_en": "Equities rallied on Fed pause signals, but elevated crude, historically high yields, and an active war in the Gulf keep markets in fragile equilibrium."
+        "position": 42,
+        "context_es": "Los mercados rebotaron ante señales de pausa de la Fed, pero la combinación de petróleo elevado, rendimientos en máximos desde 2023 y tensiones geopolíticas activas mantiene el optimismo contenido.",
+        "context_en": "Markets bounced on Fed pause signals, but elevated oil prices, yields at 2023 highs, and active geopolitical tensions keep optimism firmly in check."
       },
       "stories": [
         {
           "source": "Foreign Policy",
-          "headline": "U.S. accused of war crime after strike on Iranian wedding; IRGC retaliates with missiles at Gulf bases",
-          "body": "A U.S. missile struck a coastal residence in southern Iran on Tuesday, killing at least four people — including children aged 4 and 16 — and wounding 68, as Iran retaliated with missiles and drones against U.S. bases in Bahrain, Iraq, Jordan, Kuwait, and the UAE. The conflict has moved beyond skirmish: with simultaneous attacks on supertankers in the Strait of Hormuz and Brent crude hovering near $96, any further escalation risks translating the war into a global energy bill.",
+          "headline": "U.S.-Iran escalation: strike on Iranian wedding opens war crimes front",
+          "body": "A U.S. missile struck a private coastal residence in southern Iran on Tuesday, killing at least four people — including a 4-year-old child — and wounding around 68, in what Tehran called a war crime. Iran responded with missiles and drones against U.S. bases in Bahrain, Iraq, Jordan, Kuwait, and the UAE, widening the theater of operations and raising the risk of an uncontrollable regional spiral.",
           "url": "http://foreignpolicy.com/2026/09/02/iran-war-crime-us-strike-wedding-renewed-fighting/",
-          "tag": "Geopolítica",
+          "tag": "Macro",
           "context_note": {
-            "es": "Los ataques a tanqueros en Ormuz reportados esta misma semana convierten al estrecho —por donde transita el 20% del petróleo mundial— en el punto de presión más inmediato sobre los precios de energía e inflación global.",
-            "en": "This week's tanker strikes in Hormuz turn the strait — through which 20% of global oil passes — into the most immediate pressure point on energy prices and global inflation."
-          },
-          "thread_tag": "Irán: conflicto"
-        },
-        {
-          "source": "CNBC",
-          "headline": "Fed on pause: S&P 500 rises 1% and 10-year yield retreats after Waller's signal",
-          "body": "The S&P 500 closed at 7,747 (+1.06%) and the Dow added 624 points after Fed Governor Christopher Waller said he was 'inclined to support' holding rates steady; rate-hike bets in fed funds futures fell from 63% to 50% in a single day. However, WTI closed at $91.30 and Brent at $95.52, and analysts warn that if crude stays 'stubbornly high,' yields could pressure markets again before Friday's payrolls data.",
-          "url": "https://www.cnbc.com/2026/09/02/stock-market-today-live-updates.html",
-          "tag": "Mercados",
-          "context_note": {
-            "es": "El rebote llega un día después de que el bono a 10 años tocara su nivel más alto desde noviembre de 2023, con el mercado todavía dividido entre recesión y recalentamiento a 48 horas del dato de empleo.",
-            "en": "The rally comes one day after the 10-year yield hit its highest since November 2023, with markets still split between recession and overheating fears 48 hours before the jobs report."
-          },
-          "thread_tag": "Fed: tasas"
-        },
-        {
-          "source": "CNBC",
-          "headline": "Global carry trade floods into emerging markets: Brazilian real and Korean won lead gains after Treasury buybacks",
-          "body": "The deliberate weakening of the dollar by Secretary Bessent — who doubled long-dated debt buybacks — triggered $967 million in inflows into emerging market bond funds in a single week, with the Korean won appreciating 2.83% and the Brazilian real 0.64%. Brazil and Turkey are carry-trade favorites due to their high real rates — 14% and 37% respectively — though the systemic risk is clear: any abrupt spike in financing costs could reverse the flow with equal speed.",
-          "url": "https://www.cnbc.com/2026/09/01/emerging-markets-dollar-carry-trade.html",
-          "tag": "FX",
-          "context_note": {
-            "es": "La estrategia de Bessent de reprimir financieramente los rendimientos largos es el mismo mecanismo que en décadas pasadas precedió episodios de inflación importada en economías emergentes que reciben el flujo.",
-            "en": "Bessent's strategy of financially repressing long-end yields is the same mechanism that in past decades preceded imported inflation episodes in emerging economies receiving the flow."
+            "es": "Este episodio ocurre días antes de la cumbre Trump-Xi del 24 de septiembre, donde Irán —el mayor socio comercial de China— es uno de los temas centrales, y con el Estrecho de Ormuz ya bajo ataque a dos superpetroleros.",
+            "en": "This episode comes days before the Sept. 24 Trump-Xi summit, where Iran — China's largest trading partner — is a central agenda item, and with the Strait of Hormuz already under attack on two supertankers."
           },
           "thread_tag": null
         },
         {
           "source": "CNBC",
-          "headline": "Trump and Xi set to meet Sept. 24 in Washington with deliberately low expectations",
-          "body": "Xi Jinping will visit the White House on September 24 for a state summit — including a formal dinner — though analysts at the Atlantic Council and the Foundation for Defense of Democracies describe it as 'a low-expectations summit focused largely on managing the stalemate rather than resolving it.' The main friction: the U.S. demands China sever trade ties with Iran under threat of sanctions, while Beijing was the only G20 member to dissent from the joint communiqué this week.",
+          "headline": "Trump-Xi summit in Washington: low expectations as Iran and trade dominate the agenda",
+          "body": "President Xi Jinping is expected to visit the White House on September 24, but analysts warn the meeting will produce 'transactions without trust and stability without settlement,' echoing the Beijing summit four months ago. China was the only G20 member to dissent from the joint communiqué this week in North Carolina, objecting to language on excessive trade surpluses and the war with Iran.",
           "url": "https://www.cnbc.com/2026/09/02/trump-xi-summit-iran-china-trade-elections.html",
-          "tag": "Macro",
+          "tag": "Comercio",
           "context_note": {
-            "es": "La cumbre llega con la tregua comercial sino-estadounidense vigente pero frágil, y con China convertida en el principal comprador de petróleo iraní justo cuando Washington escala militarmente contra Teherán — el nudo gordiano que Xi y Trump deberán desatar o ignorar.",
-            "en": "The summit arrives with the Sino-American trade truce intact but fragile, and with China as Iran's largest oil buyer precisely as Washington escalates militarily against Tehran — the Gordian knot Xi and Trump must untangle or ignore."
+            "es": "El Tesoro estadounidense presiona a China para que 'encuentre una solución' sobre Irán justo cuando Washington planea sanciones agresivas a los socios comerciales de Teherán —potencialmente incluyendo a Pekín—, lo que añade una capa de riesgo real a una cumbre que ya nace con poca ambición.",
+            "en": "The U.S. Treasury is pressing China to 'find a solution' on Iran just as Washington plans aggressive sanctions on Tehran's trading partners — potentially including Beijing — adding real risk to an already low-ambition summit."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "S&P 500 rises 1% and Treasuries rally after Fed pause signal",
+          "body": "The S&P 500 closed at 7,747.71 (+1.06%) and the Dow Jones gained 624 points — its best day since August 4 — after Fed Governor Christopher Waller said he would be 'inclined to support' holding rates steady, cutting rate-hike bets in futures markets from 63.2% to 50.4% in a single day. However, WTI crude closed at $91.30 per barrel and CFRA analysts warn that if energy prices remain 'stubbornly high,' rates will continue to be a hurdle for investors.",
+          "url": "https://www.cnbc.com/2026/09/02/stock-market-today-live-updates.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El rebote ocurre con el rendimiento del bono a 10 años en 4.77%, apenas por debajo del máximo desde noviembre de 2023 alcanzado el miércoles, lo que ilustra cuán frágil es el alivio: un dato de inflación o nóminas sorpresivo mañana podría revertirlo.",
+            "en": "The rally occurs with the 10-year yield at 4.77%, just below Wednesday's highest level since November 2023, illustrating how fragile the relief is: a surprise inflation or payrolls print tomorrow could reverse it."
           },
           "thread_tag": null
         },
         {
           "source": "MarketWatch",
-          "headline": "10-year Treasury hits 2008 levels: a tipping point for global credit?",
-          "body": "The 10-year U.S. Treasury yield reached its highest levels since 2008 this week, dragging up borrowing costs for households, businesses and governments worldwide, amid a roughly $2 trillion federal deficit and over $40 trillion in government debt showing no signs of easing. The immediate risk is not abstract: more expensive mortgages, costlier corporate refinancing, and greater pressure on emerging economies that issue dollar-denominated debt.",
+          "headline": "The 10-year Treasury approaches its 'danger zone' with yields at 2008 highs",
+          "body": "Global bond yields are touching their highest levels since 2008, raising borrowing costs for households, businesses, and governments worldwide, in a context of a $2 trillion federal deficit and over $40 trillion in public debt. The dual pressure of expensive oil — fueling inflation expectations — and Bessent's Treasury buyback plans are distorting the yield curve in ways that few risk models had anticipated.",
           "url": "https://www.marketwatch.com/story/this-could-be-the-10-year-treasurys-tipping-point-into-the-danger-zone-891cd45d",
           "tag": "Tasas",
           "context_note": {
-            "es": "La recompra de deuda larga por Bessent intenta comprimir estos rendimientos, pero la señal del mercado es que la oferta de papel fiscal estadounidense sigue superando la demanda — tensión que el dato de empleo del viernes podría amplificar.",
-            "en": "Bessent's long-end buybacks aim to compress these yields, but the market signal is that supply of U.S. fiscal paper continues to outpace demand — a tension Friday's jobs data could amplify."
+            "es": "El nivel de 4.77% en el bono a 10 años no es un dato aislado: es el umbral desde el cual, en 2023, los mercados de renta variable comenzaron a corregir de forma pronunciada, lo que hace que cada décima de punto adicional sea observada con nerviosismo institucional.",
+            "en": "The 4.77% level on the 10-year is not an isolated data point: it's the threshold from which equity markets began to correct sharply in 2023, making every additional basis point a source of institutional anxiety."
           },
-          "thread_tag": "Fed: tasas"
+          "thread_tag": null
         },
         {
           "source": "CNBC",
-          "headline": "Nepal floods to cost $4–5 billion; peak tourism season at risk",
-          "body": "The August 26 glacial collapse on the Nepal-Tibet border left 987 dead and 4,250 missing, with damages estimated at $4–5 billion — nearly one-tenth of Nepal's GDP — arriving just before peak tourism season (September 15 to November 15). Operators report mass cancellations from European tourists, with Kathmandu hostels projecting 60% occupancy versus 100% last year.",
+          "headline": "Global carry trade drives 'wall of money' into emerging markets; Brazil and Turkey lead",
+          "body": "Emerging market bond funds recorded inflows of $967 million in the week through Wednesday — up 15% from the prior week — after Secretary Bessent doubled long-dated bond buybacks, weakening the dollar and reigniting the global carry trade. Brazil, with a benchmark rate at 14% and inflation at 4.2%, and Turkey, with a repo rate at 37%, are the favored destinations according to Union Bancaire Privée strategists, while the South Korean won gained 2.83% since Bessent's announcement.",
+          "url": "https://www.cnbc.com/2026/09/01/emerging-markets-dollar-carry-trade.html",
+          "tag": "FX",
+          "context_note": {
+            "es": "La paradoja es notable: la misma política de Bessent que alivia la presión sobre los rendimientos largos de EE.UU. está exportando capital hacia emergentes, creando un ciclo donde el dólar débil financia el carry trade que a su vez presiona aún más al dólar.",
+            "en": "The paradox is notable: Bessent's very policy that relieves pressure on long U.S. yields is exporting capital to emerging markets, creating a cycle where a weak dollar funds the carry trade that in turn pushes the dollar even lower."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Brazilian stock market beats Nasdaq in 2026; EWZ options volume hits six times the average",
+          "body": "The iShares MSCI Brazil ETF (EWZ) is up 19% year-to-date, outpacing the Nasdaq-100's 15% advance, with options volume surging to more than six times the 30-day average on Wednesday — over 420,000 contracts — placing it among the top 20 most-traded securities in the U.S. options market. The rally combines rising commodity prices, carry trade flows fueled by the weaker dollar, and optimism ahead of Brazil's general elections in October.",
+          "url": "https://www.cnbc.com/2026/09/02/traders-pile-into-this-international-stock-market-thats-beating-the-nasdaq.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El posicionamiento extremo en opciones de EWZ —con 400,000 calls frente a menos de 30,000 puts— es inusual incluso para ETFs de gran capitalización estadounidense, y sugiere que el dinero institucional está apostando a que la confluencia de dólar débil, commodities altos y elecciones tiene más recorrido.",
+            "en": "The extreme options positioning in EWZ — 400,000 calls versus fewer than 30,000 puts — is unusual even for large-cap U.S. ETFs, suggesting institutional money is betting the confluence of weak dollar, high commodities, and elections has further to run."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Catastrophic Nepal floods leave over 1,100 dead and a reconstruction bill of up to $5 billion",
+          "body": "A glacial collapse in northern Nepal on August 26 triggered a chain of landslides and floods that has left more than 1,100 dead and nearly 4,000 missing, making it the deadliest natural disaster in the country since the 2015 earthquake that killed nearly 9,000 people. Nepal estimates reconstruction will cost between $4 billion and $5 billion — equivalent to nearly one-tenth of its economy — at a moment when tourist cancellations are threatening the peak season from September to November.",
           "url": "https://www.cnbc.com/2026/09/02/nepal-tibet-floods-adventure-tourism-economy.html",
           "tag": "Macro",
           "context_note": {
-            "es": "Nepal depende del turismo como principal fuente de divisas, y el desastre llega cuando el país ya enfrenta presión fiscal por su dependencia de remesas y ayuda externa — un recordatorio de cuán rápido el cambio climático puede destruir el modelo económico de una nación pequeña.",
-            "en": "Nepal depends on tourism as its primary source of foreign exchange, and the disaster arrives as the country already faces fiscal pressure from its dependence on remittances and foreign aid — a reminder of how quickly climate change can destroy a small nation's economic model."
+            "es": "El desastre ocurre cuando Nepal enfrenta simultáneamente presiones climáticas estructurales, dependencia crítica del turismo de montaña y la necesidad de financiamiento externo en un entorno global donde el capital fluye hacia activos de alto rendimiento, no hacia reconstrucción de países pobres.",
+            "en": "The disaster strikes as Nepal simultaneously faces structural climate pressures, critical dependence on mountain tourism, and the need for external financing in a global environment where capital flows toward high-yield assets, not reconstruction in poor countries."
           },
           "thread_tag": null
         }
       ],
       "quote": {
         "text": "Markets can remain irrational longer than you can remain solvent.",
-        "attribution": "John Maynard Keynes, A Tract on Monetary Reform, 1923"
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
       }
     },
     "archive_url": "https://newsletter.mustardhq.dev/2026-09-03.html"
@@ -228,49 +252,49 @@
         "MXN": [
           {
             "pair": "MXN / USD",
-            "rate": "0.05911",
+            "rate": "0.05912",
             "chg_1d": {
-              "text": "▲ 0.41%",
+              "text": "▲ 0.43%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 0.27%",
+              "text": "▲ 0.29%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "MXN / BRL",
-            "rate": "0.3014",
+            "rate": "0.3015",
             "chg_1d": {
-              "text": "▲ 0.55%",
+              "text": "▲ 0.57%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▼ 0.92%",
+              "text": "▼ 0.90%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "MXN / EUR",
-            "rate": "0.05082",
+            "rate": "0.05084",
             "chg_1d": {
-              "text": "▲ 0.01%",
+              "text": "▲ 0.06%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 0.49%",
+              "text": "▲ 0.53%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "MXN / CNY",
-            "rate": "0.3971",
+            "rate": "0.3972",
             "chg_1d": {
-              "text": "▲ 0.39%",
+              "text": "▲ 0.41%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 0.19%",
+              "text": "▲ 0.22%",
               "cls": "chg-up"
             }
           },
@@ -278,35 +302,35 @@
             "pair": "MXN / CAD",
             "rate": "0.0815",
             "chg_1d": {
-              "text": "▲ 0.02%",
+              "text": "▲ 0.01%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▼ 0.16%",
+              "text": "▼ 0.17%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "MXN / GBP",
-            "rate": "0.04370",
+            "rate": "0.04372",
             "chg_1d": {
-              "text": "▲ 0.10%",
+              "text": "▲ 0.13%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 0.80%",
+              "text": "▲ 0.83%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "MXN / JPY",
-            "rate": "9.21",
+            "rate": "9.22",
             "chg_1d": {
-              "text": "▼ 1.55%",
+              "text": "▼ 1.47%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 1.93%",
+              "text": "▼ 1.85%",
               "cls": "chg-down"
             }
           }
@@ -314,13 +338,13 @@
         "USD": [
           {
             "pair": "USD / MXN",
-            "rate": "16.9182",
+            "rate": "16.9140",
             "chg_1d": {
-              "text": "▼ 0.41%",
+              "text": "▼ 0.43%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.27%",
+              "text": "▼ 0.29%",
               "cls": "chg-down"
             }
           },
@@ -338,13 +362,13 @@
           },
           {
             "pair": "USD / EUR",
-            "rate": "0.85977",
+            "rate": "0.85992",
             "chg_1d": {
-              "text": "▼ 0.39%",
+              "text": "▼ 0.38%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▲ 0.22%",
+              "text": "▲ 0.24%",
               "cls": "chg-up"
             }
           },
@@ -362,37 +386,37 @@
           },
           {
             "pair": "USD / CAD",
-            "rate": "1.3792",
+            "rate": "1.3787",
             "chg_1d": {
-              "text": "▼ 0.38%",
+              "text": "▼ 0.42%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.43%",
+              "text": "▼ 0.47%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "USD / GBP",
-            "rate": "0.73937",
+            "rate": "0.73943",
             "chg_1d": {
-              "text": "▼ 0.31%",
+              "text": "▼ 0.30%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▲ 0.53%",
+              "text": "▲ 0.54%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "USD / JPY",
-            "rate": "155.83",
+            "rate": "155.91",
             "chg_1d": {
-              "text": "▼ 1.95%",
+              "text": "▼ 1.89%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 2.19%",
+              "text": "▼ 2.14%",
               "cls": "chg-down"
             }
           }
@@ -400,13 +424,13 @@
         "BRL": [
           {
             "pair": "BRL / MXN",
-            "rate": "3.3174",
+            "rate": "3.3166",
             "chg_1d": {
-              "text": "▼ 0.54%",
+              "text": "▼ 0.57%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▲ 0.93%",
+              "text": "▲ 0.91%",
               "cls": "chg-up"
             }
           },
@@ -424,13 +448,13 @@
           },
           {
             "pair": "BRL / EUR",
-            "rate": "0.16859",
+            "rate": "0.16862",
             "chg_1d": {
-              "text": "▼ 0.53%",
+              "text": "▼ 0.51%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▲ 1.42%",
+              "text": "▲ 1.44%",
               "cls": "chg-up"
             }
           },
@@ -448,37 +472,37 @@
           },
           {
             "pair": "BRL / CAD",
-            "rate": "0.2704",
+            "rate": "0.2703",
             "chg_1d": {
-              "text": "▼ 0.52%",
+              "text": "▼ 0.56%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▲ 0.77%",
+              "text": "▲ 0.73%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "BRL / GBP",
-            "rate": "0.14498",
+            "rate": "0.14499",
             "chg_1d": {
               "text": "▼ 0.44%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▲ 1.74%",
+              "text": "▲ 1.75%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "BRL / JPY",
-            "rate": "30.56",
+            "rate": "30.57",
             "chg_1d": {
-              "text": "▼ 2.08%",
+              "text": "▼ 2.03%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 1.01%",
+              "text": "▼ 0.96%",
               "cls": "chg-down"
             }
           }
@@ -486,85 +510,85 @@
         "EUR": [
           {
             "pair": "EUR / MXN",
-            "rate": "19.6776",
+            "rate": "19.6693",
             "chg_1d": {
-              "text": "▼ 0.01%",
+              "text": "▼ 0.06%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.48%",
+              "text": "▼ 0.53%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "EUR / USD",
-            "rate": "1.16310",
+            "rate": "1.16290",
             "chg_1d": {
-              "text": "▲ 0.39%",
+              "text": "▲ 0.38%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▼ 0.22%",
+              "text": "▼ 0.23%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "EUR / BRL",
-            "rate": "5.9316",
+            "rate": "5.9306",
             "chg_1d": {
-              "text": "▲ 0.53%",
+              "text": "▲ 0.52%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▼ 1.40%",
+              "text": "▼ 1.42%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "EUR / CNY",
-            "rate": "7.8132",
+            "rate": "7.8119",
             "chg_1d": {
-              "text": "▲ 0.37%",
+              "text": "▲ 0.36%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▼ 0.29%",
+              "text": "▼ 0.31%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "EUR / CAD",
-            "rate": "1.6041",
+            "rate": "1.6033",
             "chg_1d": {
-              "text": "▲ 0.01%",
-              "cls": "chg-up"
+              "text": "▼ 0.04%",
+              "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.65%",
+              "text": "▼ 0.70%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "EUR / GBP",
-            "rate": "0.85996",
+            "rate": "0.85988",
             "chg_1d": {
-              "text": "▲ 0.09%",
+              "text": "▲ 0.08%",
               "cls": "chg-up"
             },
             "chg_1w": {
-              "text": "▲ 0.31%",
+              "text": "▲ 0.30%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "EUR / JPY",
-            "rate": "181.25",
+            "rate": "181.31",
             "chg_1d": {
-              "text": "▼ 1.56%",
+              "text": "▼ 1.52%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 2.40%",
+              "text": "▼ 2.37%",
               "cls": "chg-down"
             }
           }
@@ -572,13 +596,13 @@
         "CNY": [
           {
             "pair": "CNY / MXN",
-            "rate": "2.5185",
+            "rate": "2.5179",
             "chg_1d": {
-              "text": "▼ 0.39%",
+              "text": "▼ 0.41%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.19%",
+              "text": "▼ 0.22%",
               "cls": "chg-down"
             }
           },
@@ -608,33 +632,33 @@
           },
           {
             "pair": "CNY / EUR",
-            "rate": "0.12799",
+            "rate": "0.12801",
             "chg_1d": {
-              "text": "▼ 0.37%",
+              "text": "▼ 0.35%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▲ 0.29%",
+              "text": "▲ 0.31%",
               "cls": "chg-up"
             }
           },
           {
             "pair": "CNY / CAD",
-            "rate": "0.2053",
+            "rate": "0.2052",
             "chg_1d": {
-              "text": "▼ 0.36%",
+              "text": "▼ 0.40%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 0.36%",
+              "text": "▼ 0.39%",
               "cls": "chg-down"
             }
           },
           {
             "pair": "CNY / GBP",
-            "rate": "0.11006",
+            "rate": "0.11007",
             "chg_1d": {
-              "text": "▼ 0.29%",
+              "text": "▼ 0.28%",
               "cls": "chg-down"
             },
             "chg_1w": {
@@ -644,13 +668,13 @@
           },
           {
             "pair": "CNY / JPY",
-            "rate": "23.20",
+            "rate": "23.21",
             "chg_1d": {
-              "text": "▼ 1.93%",
+              "text": "▼ 1.87%",
               "cls": "chg-down"
             },
             "chg_1w": {
-              "text": "▼ 2.12%",
+              "text": "▼ 2.07%",
               "cls": "chg-down"
             }
           }
@@ -659,21 +683,22 @@
     }
   },
   "visual": {
-    "hero_category": "Geopolítica",
+    "hero_category": "Macro",
     "hero_category_source": "lead_story",
     "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, a sparse government chamber or empty boardroom, muted light through tall windows, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
     "hero_prompt_version": "v1",
-    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, a sparse government chamber or empty boardroom, muted light through tall windows, inspired by: EE.UU. acusado de crimen de guerra tras ataque a boda en Irán; IRGC responde con misiles a bases en el Golfo, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, a sparse government chamber or empty boardroom, muted light through tall windows, inspired by: EE.UU. e Irán escalan: strike en boda iraní abre frente de crímenes de guerra, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
     "hero_options": {
-      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, A crude oil tanker splitting or cracking in turbulent waters, fuel leaking into surrounding sea, wide establishing shot, environmental context visible, inspired by: EE.UU. acusado de crimen de guerra tras ataque a boda en Irán; IRGC responde con misiles a bases en el Golfo, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
-      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of A crude oil tanker splitting or cracking in turbulent waters, fuel leaking into surrounding sea, isolated detail, shallow depth of field, inspired by: EE.UU. acusado de crimen de guerra tras ataque a boda en Irán; IRGC responde con misiles a bases en el Golfo, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
-      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, A crude oil tanker splitting or cracking in turbulent waters, fuel leaking into surrounding sea, low angle with strong perspective and architectural framing, inspired by: EE.UU. acusado de crimen de guerra tras ataque a boda en Irán; IRGC responde con misiles a bases en el Golfo, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Shattered wedding venue structure with overturned tables and broken architectural elements in coastal setting, wide establishing shot, environmental context visible, inspired by: EE.UU. e Irán escalan: strike en boda iraní abre frente de crímenes de guerra, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of Shattered wedding venue structure with overturned tables and broken architectural elements in coastal setting, isolated detail, shallow depth of field, inspired by: EE.UU. e Irán escalan: strike en boda iraní abre frente de crímenes de guerra, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Shattered wedding venue structure with overturned tables and broken architectural elements in coastal setting, low angle with strong perspective and architectural framing, inspired by: EE.UU. e Irán escalan: strike en boda iraní abre frente de crímenes de guerra, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
     },
     "hero_option_summaries": {
-      "opt1": "Crude oil tanker splitting or cracking in turbulent waters, fuel leaking into surrounding sea — Wide shot",
-      "opt2": "Crude oil tanker splitting or cracking in turbulent waters, fuel leaking into surrounding sea — Close-up",
-      "opt3": "Crude oil tanker splitting or cracking in turbulent waters, fuel leaking into surrounding sea — Low angle"
+      "opt1": "Shattered wedding venue structure with overturned tables and broken architectural elements in coastal setting — Wide shot",
+      "opt2": "Shattered wedding venue structure with overturned tables and broken architectural elements in coastal setting — Close-up",
+      "opt3": "Shattered wedding venue structure with overturned tables and broken architectural elements in coastal setting — Low angle"
     },
-    "hero_selected": null
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-03_hero.png"
   }
 }
