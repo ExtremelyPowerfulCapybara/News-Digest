@@ -25,7 +25,7 @@ from config      import DIGEST_DIR, ARCHIVE_DIR, AUTHOR_NAMES, AUTHOR_TITLES, MO
 from mock_data   import load_mock
 from wordcloud_gen import generate_wordcloud
 from image_gen   import generate_hero_image
-from telegram_bot import send_telegram_issue_notification
+from telegram_bot import send_telegram_issue_notification, push_to_dashboard
 from utils.urls  import build_issue_url
 
 
@@ -160,6 +160,9 @@ def run():
         today_str,
         archive_url=digest.get("archive_url") or None,
     )
+
+    # ── 7b. Morning dashboard push ──────────────────
+    push_to_dashboard(_digest_path)
 
     print("\n" + "=" * 50)
     print(f"  Done. Issue #{issue_num} delivered.")

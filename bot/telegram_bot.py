@@ -62,3 +62,21 @@ def send_telegram_issue_notification(
             print(f"  [telegram] Send failed: {resp.status_code} {resp.text[:120]}")
     except Exception as exc:
         print(f"  [telegram] Request error (non-fatal): {exc}")
+
+
+def push_to_dashboard(digest_path: str) -> None:
+    """POST the saved digest JSON to the morning dashboard push endpoint."""
+    url = os.environ.get("DASHBOARD_PUSH_URL", "")
+    if not url:
+        return
+    try:
+        import json
+        with open(digest_path) as f:
+            data = json.load(f)
+        resp = requests.post(url, json=data, timeout=5)
+        if resp.ok:
+            print(f"  [dashboard] Push OK → {url}")
+        else:
+            print(f"  [dashboard] Push failed: {resp.status_code}")
+    except Exception as exc:
+        print(f"  [dashboard] Push error (non-fatal): {exc}")
