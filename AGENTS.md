@@ -1,5 +1,8 @@
 # AGENTS.md — The Periphery / Mexico Finance Brief
 
+> **This file is outdated. The authoritative agent reference is `PROJECT_STATE.md` in this repo root.**
+> Read that file first. The content below is preserved for historical context only.
+
 This file provides context for AI assistants working in this repository.
 **Always ask Adrian before making any changes to files, no matter the context.**
 
