@@ -1,0 +1,680 @@
+{
+  "date": "2026-09-04",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el mundo amaneció hoy con dos superpetroleros incendiándose en Ormuz y los rendimientos de bonos soberanos en máximos de décadas — una combinación que, si no los mantiene despiertos, debería. El mercado de renta fija global lleva meses enviando una señal que los bancos centrales prefieren llamar 'reflejo de una economía fuerte'; los participantes del mercado, con menos pudor, la llaman pánico diferido. Abróchense.",
+      "narrative_thread": "La confluencia de un choque geopolítico en el Estrecho de Ormuz, rendimientos soberanos en máximos históricos y una guerra tecnológica sino-estadounidense que se filtra hasta las cadenas de suministro revela un sistema financiero global bajo presión estructural, no cíclica.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "Ataques a petroleros en Ormuz, rendimientos del Tesoro en máximos desde 2023 y tensiones comerciales en el G20 configuran un entorno de aversión al riesgo genuina, no táctica.",
+        "context_en": "Tanker strikes in Hormuz, Treasury yields at 2023 highs, and G20 trade tensions combine to produce genuine — not tactical — risk-off conditions across asset classes."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "El rally de navieras del 68% revela cómo la crisis de Ormuz está redibujando el comercio global",
+          "body": "Una cesta de 35 acciones navieras listadas en EE.UU. y Europa ha subido 68% en 2026 — más de cinco veces la ganancia del S&P 500 — liderada por los buques cisterna de crudo con un alza de 120%, mientras el Breakwave Tanker Shipping ETF acumula un 2,300% desde el inicio del conflicto en Medio Oriente. El encarecimiento de rutas, la escasez efectiva de buques y los costos de seguro disparados sugieren que, incluso si el conflicto cesa, los patrones comerciales no regresarán al statu quo anterior — lo que representa tanto una oportunidad como un riesgo estructural para las cadenas de suministro de energía.",
+          "url": "https://www.cnbc.com/2026/09/03/shipping-hormuz-tankers-earnings-freight-rates-iran-trump-crude-china-stocks.html",
+          "tag": "Energía",
+          "context_note": {
+            "es": "Los ataques reportados esta mañana a dos superpetroleros en Ormuz por Bloomberg refuerzan la tesis de que la prima geopolítica en las navieras no es transitoria, sino que se consolida como el nuevo piso del sector.",
+            "en": "This morning's reported strikes on two supertankers in Hormuz reinforce the thesis that the geopolitical premium in shipping stocks is not transitory but is consolidating as the sector's new floor."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Era de tasas altas: rendimientos globales en máximos de décadas amenazan finanzas públicas y empresas con deuda flotante",
+          "body": "El rendimiento del bono alemán a 10 años tocó su nivel más alto desde 2011, el japonés se mantiene por encima del 3% y el Tesoro estadounidense a 10 años alcanzó su máximo desde noviembre de 2023, en un sell-off impulsado por emisión fiscal masiva, el choque petrolero y expectativas de política monetaria restrictiva prolongada. Los analistas advierten que los soberanos más vulnerables — Francia entre los desarrollados, economías con déficit gemelos entre los emergentes — enfrentan una espiral de refinanciamiento que los mercados 'se vuelven mucho menos indulgentes' al castigar.",
+          "url": "https://www.cnbc.com/2026/09/03/global-bond-yields-rising-treasuries-jgb-bunds.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "El presidente de la Fed de Nueva York, John Williams, declaró ayer que los saltos en rendimientos reflejan fortaleza económica, pero su simultánea reserva sobre si será necesaria una alza de tasas contradice ese optimismo y mantiene la presión sobre los mercados de deuda esta semana.",
+            "en": "New York Fed President John Williams said yesterday that yield jumps reflect economic strength, but his simultaneous 'wait and see' stance on a potential rate hike contradicts that optimism and keeps pressure on debt markets this week."
+          },
+          "thread_tag": "Tasas: bonos globales"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México exporta servidores para IA por $82,900 millones en el primer semestre, pero el valor agregado real es modesto",
+          "body": "Las exportaciones mexicanas de servidores y equipos de cómputo alcanzaron 82,900 millones de dólares en el primer semestre de 2026 — crecimiento del 172% interanual — superando por primera vez a la industria automotriz, que sumó 74,800 millones, y representando cerca del 75% del incremento total de exportaciones del país. La paradoja es estructural: México ensambla e integra, pero los procesadores, GPUs y memorias provienen de Taiwán, China y Corea del Sur, lo que explica por qué las importaciones mexicanas desde Taiwán casi se sextuplicaron hasta representar más del 13% del total — y por qué el PIB avanza a paso de tortuga mientras las cifras de comercio lucen espectaculares.",
+          "url": "https://www.elfinanciero.com.mx/bloomberg-businessweek/2026/09/03/boom-de-exportaciones-y-crecimiento-mediocre/",
+          "tag": "México",
+          "context_note": {
+            "es": "Este fenómeno es directamente relevante para el debate arancelario en curso: si el valor agregado mexicano en los servidores es bajo, la ventaja de nearshoring que justifica la relación comercial preferencial con EE.UU. es más frágil de lo que las cifras brutas sugieren.",
+            "en": "This dynamic is directly relevant to the ongoing tariff debate: if Mexican value-added in server exports is low, the nearshoring advantage that justifies preferential U.S. trade status is more fragile than headline numbers suggest."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "China rechaza declaración del G20 sobre desequilibrios comerciales y acusa a socios de 'promover proteccionismo'",
+          "body": "China fue el único miembro del G20 en disentir de una declaración conjunta sobre 'desequilibrios' generados por exportaciones baratas, y su Ministerio de Comercio respondió calificando la presión occidental como 'un pretexto para restringir a China', mientras exigía a Francia detener una ley contra plataformas como Temu bajo amenaza de represalias. El episodio ocurre a semanas de la visita del presidente Xi Jinping a Washington y en medio de negociaciones comerciales con la UE que tienen fecha límite en octubre — lo que convierte cada declaración del Ministerio de Comercio en una señal de posicionamiento para esas negociaciones.",
+          "url": "https://www.cnbc.com/2026/09/03/china-g20-exports-trade.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "El secretario del Tesoro Scott Bessent afirmó que 19 de los 20 miembros del G20 acordaron abordar el 'equilibrio insostenible' de las exportaciones chinas, lo que señala un aislamiento diplomático inusual para Pekín en un foro multilateral clave.",
+            "en": "Treasury Secretary Scott Bessent stated that 19 of 20 G20 members agreed to address the 'unsustainable equilibrium' of Chinese exports, signaling unusual diplomatic isolation for Beijing in a key multilateral forum."
+          },
+          "thread_tag": "Comercio: China-EE.UU."
+        },
+        {
+          "source": "CNBC",
+          "headline": "Cadena de suministro de centros de datos de IA tiene dependencia crítica de China en transformadores, baterías y óptica",
+          "body": "Firmas chinas suministran cerca del 30% de transformadores y equipos de conmutación, más del 40% de las importaciones estadounidenses de baterías, y aproximadamente dos tercios del suministro global de transceivers ópticos para centros de datos — exactamente los componentes que alimentan el boom de infraestructura de IA en EE.UU. Trump firmó la semana pasada una orden ejecutiva declarando emergencia nacional por la 'amenaza extranjera extraordinaria' en equipos de red eléctrica, autorizando al Departamento de Energía a prohibir ciertas transacciones con proveedores extranjeros. La dependencia estructural choca frontalmente con la retórica de soberanía tecnológica, y cualquier restricción acelerada elevaría costos y plazos de construcción para los hyperscalers.",
+          "url": "https://www.cnbc.com/2026/09/03/us-ai-data-centers-china-supply-chain.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La noticia de que Nvidia acordó adquirir Hugging Face por casi 13,000 millones de dólares — reportada esta mañana — amplifica la urgencia: la carrera por la infraestructura de IA avanza a toda velocidad justo cuando sus cadenas de suministro más críticas están bajo escrutinio de seguridad nacional.",
+            "en": "This morning's report that Nvidia agreed to acquire Hugging Face for nearly $13 billion amplifies the urgency: the race for AI infrastructure is accelerating at full speed precisely as its most critical supply chains face national security scrutiny."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Nueva Zelanda diversifica exportaciones ante el enfriamiento de la demanda china, mientras el RBNZ sube tasas por segunda vez consecutiva",
+          "body": "El Banco de la Reserva de Nueva Zelanda subió su tasa de referencia 25 puntos básicos hasta 2.75% por segunda reunión consecutiva para contener la inflación, mientras exportadores del país redirigen envíos de lácteos y productos agrícolas destinados a China hacia otros mercados, ante el enfriamiento de la segunda economía mundial. La asistente gobernadora Karen Silk señaló que la crisis en Ormuz y el alza de precios de materias primas globales están, paradójicamente, mejorando la competitividad de los agricultores neozelandeses en mercados alternativos — un recordatorio de que los shocks geopolíticos crean ganadores inesperados.",
+          "url": "https://www.cnbc.com/2026/09/03/china-new-zealand-dairy-agriculture-exports-slowdown-rbnz.html",
+          "tag": "FX",
+          "context_note": {
+            "es": "La decisión del RBNZ de subir tasas dos veces consecutivas contrasta con la postura de otros bancos centrales desarrollados que aún debaten si endurecer más; el caso neozelandés ilustra cómo el ciclo de tasas globales está lejos de ser uniforme, con implicaciones para el carry trade en divisas de la región.",
+            "en": "The RBNZ's decision to hike rates two consecutive times contrasts with other developed central banks still debating whether to tighten further; the New Zealand case illustrates how the global rate cycle is far from uniform, with implications for currency carry trades in the region."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The most vulnerable sovereigns are those combining large fiscal deficits, elevated debt burdens and reliance on external capital. When debt, deficits and external financing needs collide, markets tend to become far less forgiving.",
+        "attribution": "Masahiko Loo, Senior Fixed Income Strategist, State Street Investment Management, 2026"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the world woke up today with two supertankers on fire in Hormuz and sovereign bond yields at decade-long highs — a combination that, if it isn't keeping you up at night, should be. The global fixed income market has been sending a signal for months that central banks prefer to call 'a reflection of a strong economy'; market participants, with less decorum, call it deferred panic. Buckle up.",
+      "narrative_thread": "The confluence of a geopolitical shock in the Strait of Hormuz, sovereign yields at historic highs, and a Sino-American tech war filtering down into supply chains reveals a global financial system under structural — not cyclical — pressure.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "Ataques a petroleros en Ormuz, rendimientos del Tesoro en máximos desde 2023 y tensiones comerciales en el G20 configuran un entorno de aversión al riesgo genuina, no táctica.",
+        "context_en": "Tanker strikes in Hormuz, Treasury yields at 2023 highs, and G20 trade tensions combine to produce genuine — not tactical — risk-off conditions across asset classes."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "The 68% shipping rally reveals how the Hormuz crisis is redrawing global trade",
+          "body": "A basket of 35 U.S.- and European-listed shipping stocks has climbed 68% in 2026 — more than five times the S&P 500's gain — led by crude-tanker stocks up 120%, while the Breakwave Tanker Shipping ETF has surged 2,300% since the Middle East conflict began. Rising route costs, effective vessel scarcity, and soaring insurance costs suggest that even if the conflict ends, trade patterns will not revert to the pre-war status quo — representing both an opportunity and a structural risk for energy supply chains.",
+          "url": "https://www.cnbc.com/2026/09/03/shipping-hormuz-tankers-earnings-freight-rates-iran-trump-crude-china-stocks.html",
+          "tag": "Energía",
+          "context_note": {
+            "es": "Los ataques reportados esta mañana a dos superpetroleros en Ormuz por Bloomberg refuerzan la tesis de que la prima geopolítica en las navieras no es transitoria, sino que se consolida como el nuevo piso del sector.",
+            "en": "This morning's reported strikes on two supertankers in Hormuz reinforce the thesis that the geopolitical premium in shipping stocks is not transitory but is consolidating as the sector's new floor."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Higher-rate era: Global yields at decade highs threaten public finances and floating-rate borrowers",
+          "body": "Germany's 10-year yield hit its highest since 2011, Japan's held above 3%, and the U.S. 10-year Treasury reached its highest since November 2023, in a sell-off driven by massive fiscal issuance, the oil-price shock, and expectations of prolonged restrictive monetary policy. Analysts warn that the most vulnerable sovereigns — France among developed markets, twin-deficit economies among emerging ones — face a refinancing spiral that markets become 'far less forgiving' in punishing.",
+          "url": "https://www.cnbc.com/2026/09/03/global-bond-yields-rising-treasuries-jgb-bunds.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "El presidente de la Fed de Nueva York, John Williams, declaró ayer que los saltos en rendimientos reflejan fortaleza económica, pero su simultánea reserva sobre si será necesaria una alza de tasas contradice ese optimismo y mantiene la presión sobre los mercados de deuda esta semana.",
+            "en": "New York Fed President John Williams said yesterday that yield jumps reflect economic strength, but his simultaneous 'wait and see' stance on a potential rate hike contradicts that optimism and keeps pressure on debt markets this week."
+          },
+          "thread_tag": "Tasas: bonos globales"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico exports $82.9B in AI servers in H1 2026, but real value-added remains modest",
+          "body": "Mexican exports of servers and computing equipment reached $82.9 billion in the first half of 2026 — 172% year-on-year growth — surpassing the auto industry for the first time at $74.8 billion, and accounting for roughly 75% of Mexico's total export increase. The paradox is structural: Mexico assembles and integrates, but processors, GPUs, and memory come from Taiwan, China, and South Korea — which is why Mexican imports from Taiwan nearly sextupled to represent over 13% of the total, and why GDP crawls while trade figures look spectacular.",
+          "url": "https://www.elfinanciero.com.mx/bloomberg-businessweek/2026/09/03/boom-de-exportaciones-y-crecimiento-mediocre/",
+          "tag": "México",
+          "context_note": {
+            "es": "Este fenómeno es directamente relevante para el debate arancelario en curso: si el valor agregado mexicano en los servidores es bajo, la ventaja de nearshoring que justifica la relación comercial preferencial con EE.UU. es más frágil de lo que las cifras brutas sugieren.",
+            "en": "This dynamic is directly relevant to the ongoing tariff debate: if Mexican value-added in server exports is low, the nearshoring advantage that justifies preferential U.S. trade status is more fragile than headline numbers suggest."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "China rejects G20 statement on trade imbalances, accuses partners of 'promoting protectionism'",
+          "body": "China was the sole G20 member to dissent from a joint statement on 'imbalances' generated by cheap exports, with its Commerce Ministry branding Western pressure 'a pretext to restrict China' while threatening France with retaliation over a new law targeting platforms like Temu. The episode unfolds weeks before President Xi Jinping's trip to Washington and amid EU trade negotiations with an October deadline — making every Commerce Ministry statement a positioning signal for those talks.",
+          "url": "https://www.cnbc.com/2026/09/03/china-g20-exports-trade.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "El secretario del Tesoro Scott Bessent afirmó que 19 de los 20 miembros del G20 acordaron abordar el 'equilibrio insostenible' de las exportaciones chinas, lo que señala un aislamiento diplomático inusual para Pekín en un foro multilateral clave.",
+            "en": "Treasury Secretary Scott Bessent stated that 19 of 20 G20 members agreed to address the 'unsustainable equilibrium' of Chinese exports, signaling unusual diplomatic isolation for Beijing in a key multilateral forum."
+          },
+          "thread_tag": "Comercio: China-EE.UU."
+        },
+        {
+          "source": "CNBC",
+          "headline": "AI data center supply chain has critical dependence on China for transformers, batteries, and optical tech",
+          "body": "Chinese firms supply roughly 30% of transformers and switchgear, over 40% of U.S. battery imports, and approximately two-thirds of global optical transceiver supply for data centers — precisely the components powering the U.S. AI infrastructure boom. Trump signed an executive order last week declaring a national emergency over the 'extraordinary foreign threat' in bulk-power system equipment, authorizing the Energy Department to restrict certain transactions with foreign suppliers. The structural dependence collides head-on with technological sovereignty rhetoric, and any accelerated restrictions would raise costs and construction timelines for hyperscalers.",
+          "url": "https://www.cnbc.com/2026/09/03/us-ai-data-centers-china-supply-chain.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La noticia de que Nvidia acordó adquirir Hugging Face por casi 13,000 millones de dólares — reportada esta mañana — amplifica la urgencia: la carrera por la infraestructura de IA avanza a toda velocidad justo cuando sus cadenas de suministro más críticas están bajo escrutinio de seguridad nacional.",
+            "en": "This morning's report that Nvidia agreed to acquire Hugging Face for nearly $13 billion amplifies the urgency: the race for AI infrastructure is accelerating at full speed precisely as its most critical supply chains face national security scrutiny."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "New Zealand diversifies exports as Chinese demand cools, while RBNZ hikes rates for second consecutive meeting",
+          "body": "The Reserve Bank of New Zealand raised its benchmark rate 25 basis points to 2.75% for the second consecutive meeting to combat inflation, while exporters redirect dairy and agricultural shipments originally bound for China to alternative markets as the world's second-largest economy cools. Assistant Governor Karen Silk noted that the Hormuz crisis and rising global commodity prices are paradoxically improving New Zealand farmers' competitiveness in alternative markets — a reminder that geopolitical shocks create unexpected winners.",
+          "url": "https://www.cnbc.com/2026/09/03/china-new-zealand-dairy-agriculture-exports-slowdown-rbnz.html",
+          "tag": "FX",
+          "context_note": {
+            "es": "La decisión del RBNZ de subir tasas dos veces consecutivas contrasta con la postura de otros bancos centrales desarrollados que aún debaten si endurecer más; el caso neozelandés ilustra cómo el ciclo de tasas globales está lejos de ser uniforme, con implicaciones para el carry trade en divisas de la región.",
+            "en": "The RBNZ's decision to hike rates two consecutive times contrasts with other developed central banks still debating whether to tighten further; the New Zealand case illustrates how the global rate cycle is far from uniform, with implications for currency carry trades in the region."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The most vulnerable sovereigns are those combining large fiscal deficits, elevated debt burdens and reliance on external capital. When debt, deficits and external financing needs collide, markets tend to become far less forgiving.",
+        "attribution": "Masahiko Loo, Senior Fixed Income Strategist, State Street Investment Management, 2026"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-09-04.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "99.05",
+        "change": "▲ 0.0%",
+        "direction": "up",
+        "chg_1w": "▼ 0.4%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.76%",
+        "change": "▼ 0.7%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "14.24",
+        "change": "▼ 0.6%",
+        "direction": "down",
+        "chg_1w": "▼ 4.6%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$67.47",
+        "change": "▲ 0.5%",
+        "direction": "up",
+        "chg_1w": "▲ 0.5%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05923",
+            "chg_1d": {
+              "text": "▲ 0.62%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.87%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.3035",
+            "chg_1d": {
+              "text": "▲ 1.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.44%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.05093",
+            "chg_1d": {
+              "text": "▲ 0.22%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.51%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3968",
+            "chg_1d": {
+              "text": "▲ 0.33%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.48%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0818",
+            "chg_1d": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04376",
+            "chg_1d": {
+              "text": "▲ 0.24%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.92%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "9.28",
+            "chg_1d": {
+              "text": "▼ 0.83%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.33%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "16.8830",
+            "chg_1d": {
+              "text": "▼ 0.61%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.87%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1235",
+            "chg_1d": {
+              "text": "▲ 0.60%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.30%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.85977",
+            "chg_1d": {
+              "text": "▼ 0.39%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.36%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.6997",
+            "chg_1d": {
+              "text": "▼ 0.29%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.39%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3817",
+            "chg_1d": {
+              "text": "▼ 0.20%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.59%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.73888",
+            "chg_1d": {
+              "text": "▼ 0.37%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.05%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "156.63",
+            "chg_1d": {
+              "text": "▼ 1.44%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.18%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.2952",
+            "chg_1d": {
+              "text": "▼ 1.21%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.44%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19518",
+            "chg_1d": {
+              "text": "▼ 0.60%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.32%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16781",
+            "chg_1d": {
+              "text": "▼ 0.99%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.96%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3076",
+            "chg_1d": {
+              "text": "▼ 0.89%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.93%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2697",
+            "chg_1d": {
+              "text": "▼ 0.80%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.72%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14421",
+            "chg_1d": {
+              "text": "▼ 0.97%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.37%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.57",
+            "chg_1d": {
+              "text": "▼ 2.04%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.89%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "19.6366",
+            "chg_1d": {
+              "text": "▼ 0.22%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.51%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.16310",
+            "chg_1d": {
+              "text": "▲ 0.39%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.36%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.9591",
+            "chg_1d": {
+              "text": "▲ 1.00%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.95%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.7924",
+            "chg_1d": {
+              "text": "▲ 0.11%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6071",
+            "chg_1d": {
+              "text": "▲ 0.19%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.85939",
+            "chg_1d": {
+              "text": "▲ 0.02%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "182.18",
+            "chg_1d": {
+              "text": "▼ 1.05%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.83%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5200",
+            "chg_1d": {
+              "text": "▼ 0.33%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.48%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14926",
+            "chg_1d": {
+              "text": "▲ 0.29%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.39%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7647",
+            "chg_1d": {
+              "text": "▲ 0.89%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.92%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12833",
+            "chg_1d": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2062",
+            "chg_1d": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.20%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11029",
+            "chg_1d": {
+              "text": "▼ 0.09%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.44%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.38",
+            "chg_1d": {
+              "text": "▼ 1.16%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.80%",
+              "cls": "chg-down"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Energía",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, oil refinery towers and storage tanks at dusk, slow smoke rising, flat horizon, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, oil refinery towers and storage tanks at dusk, slow smoke rising, flat horizon, inspired by: El rally de navieras del 68% revela cómo la crisis de Ormuz está redibujando el comercio global, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, A massive crude oil tanker ship viewed from above, its hull slightly tilted, with upward-trending chart lines emanating from its deck, wide establishing shot, environmental context visible, inspired by: El rally de navieras del 68% revela cómo la crisis de Ormuz está redibujando el comercio global, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of A massive crude oil tanker ship viewed from above, its hull slightly tilted, with upward-trending chart lines emanating from its deck, isolated detail, shallow depth of field, inspired by: El rally de navieras del 68% revela cómo la crisis de Ormuz está redibujando el comercio global, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, A massive crude oil tanker ship viewed from above, its hull slightly tilted, with upward-trending chart lines emanating from its deck, low angle with strong perspective and architectural framing, inspired by: El rally de navieras del 68% revela cómo la crisis de Ormuz está redibujando el comercio global, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Massive crude oil tanker ship viewed from above, its hull slightly tilted, with upward-trending chart lines emanating from its deck — Wide shot",
+      "opt2": "Massive crude oil tanker ship viewed from above, its hull slightly tilted, with upward-trending chart lines emanating from its deck — Close-up",
+      "opt3": "Massive crude oil tanker ship viewed from above, its hull slightly tilted, with upward-trending chart lines emanating from its deck — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-04_hero.png"
+  }
+}
