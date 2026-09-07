@@ -1,0 +1,680 @@
+{
+  "date": "2026-09-07",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el mercado de bonos global está enviando una señal que los veteranos de los años setenta reconocerían con escalofríos: la inflación estructural ha vuelto, y esta vez trae compañía geopolítica. Mientras la Casa Blanca amenaza con aranceles si la Fed no recorta tasas —una novedad incluso para este ciclo—, los gestores de activos más grandes del mundo silenciosamente acumulan oro. Coincidencias, ninguna.",
+      "narrative_thread": "La convergencia de inflación estructural persistente, presión política sin precedentes sobre la Fed y una huida hacia activos refugio define el tono del mercado global esta semana.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 28,
+        "context_es": "La venta masiva de bonos soberanos globales, el alza del oro y la incertidumbre sobre la política monetaria de la Fed configuran un entorno de aversión clara al riesgo.",
+        "context_en": "A global sovereign bond selloff, rising gold prices, and deep uncertainty over Fed policy combine to create a distinctly risk-off environment."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Venta masiva de bonos globales aviva el fantasma de inflación estructural persistente",
+          "body": "Los rendimientos del bono del Tesoro estadounidense a 10 años alcanzaron su nivel más alto desde noviembre de 2023, mientras que los gilts británicos tocaron máximos desde 2008 y el bono japonés a 10 años superó el 3% por primera vez desde 1996. Gestores de fondos advierten que la combinación de proteccionismo comercial, gasto en defensa y la guerra en Medio Oriente ha desplazado el régimen macroeconómico hacia una inflación estructuralmente más alta, con implicaciones de largo alcance para las carteras de inversión.",
+          "url": "https://www.cnbc.com/2026/09/04/global-bond-selloff-inflation-risk.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Esta semana el discurso de Kevin Warsh en Jackson Hole reforzó las expectativas de una subida de tasas el 15-16 de septiembre, lo que hace que la señal de los mercados de bonos sea especialmente relevante para la reunión del FOMC.",
+            "en": "Kevin Warsh's Jackson Hole speech this week reinforced expectations of a September 15-16 rate hike, making the bond market's signal especially consequential for the upcoming FOMC meeting."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Trump amenaza con aranceles si la Fed no recorta tasas, intensificando la presión sobre Warsh",
+          "body": "El presidente Trump escaló su campaña de presión sobre la Reserva Federal amenazando con suspender el comercio con países que tengan superávit comercial con EE.UU. a menos que la Fed reduzca las tasas —la primera vez que vincula directamente los aranceles con la política monetaria. La embestida incluye declaraciones del vicepresidente Vance, el secretario Bessent y el asesor Navarro, quien llamó a los miembros del FOMC 'payasos', mientras los mercados asignan una probabilidad del 60% a una subida en la reunión del 15-16 de septiembre.",
+          "url": "https://www.cnbc.com/2026/09/05/trump-warsh-fed-september-rate-hike.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La independencia de la Fed es el activo institucional más vigilado por los mercados de renta fija en este momento; cualquier señal de que Warsh cede ante la presión política podría acelerar la venta de bonos y depreciar el dólar.",
+            "en": "Fed independence is the single most closely watched institutional asset in fixed income markets right now; any sign that Warsh yields to political pressure could accelerate the bond selloff and weaken the dollar."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "Bloomberg",
+          "headline": "Los mayores gestores de activos del mundo reconstruyen posiciones en oro",
+          "body": "Los principales fondos de gestión de activos a nivel global están incrementando sus tenencias de oro anticipando valor a largo plazo, pese a las medidas antiinflacionarias de la Fed y el entorno de tasas elevadas. El movimiento refleja una cobertura deliberada contra la inflación estructural y la incertidumbre sobre la política monetaria, en un contexto en que los bonos soberanos dejan de ofrecer el refugio tradicional.",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-04/world-s-biggest-money-managers-are-rebuilding-gold-positions",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El reposicionamiento en oro ocurre simultáneamente con la venta de bonos soberanos globales, sugiriendo que el mercado está recalibrado su concepción de activo refugio de referencia en un régimen de inflación estructuralmente más alta.",
+            "en": "The repositioning into gold is happening simultaneously with the global sovereign bond selloff, suggesting markets are recalibrating their preferred safe-haven asset under a structurally higher inflation regime."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Bonos argentinos perforan 500 puntos de riesgo país y el Merval recupera terreno en septiembre",
+          "body": "Los Globales abrieron septiembre con subas de entre 0,5% y 1,1% y los Bonares avanzaron entre 0,4% y 1,2%, llevando el riesgo país por debajo de los 500 puntos básicos tras un agosto en que el Merval se hundió 9,2% hasta US$1.896 sin drivers concretos. El rebote llega con valuaciones más deprimidas y un contexto en que la tasa del Tesoro estadounidense a 10 años alcanzó 4,8%, creando presión adicional sobre la deuda emergente.",
+          "url": "https://www.lanacion.com.ar/economia/finanzas-repuntan-los-bonos-y-recuperan-terreno-las-acciones-nid06092026/",
+          "tag": "México",
+          "context_note": {
+            "es": "La compresión del riesgo país por debajo de 500 puntos es un umbral psicológico clave para el acceso de Argentina al mercado voluntario de deuda, objetivo central del programa con el FMI vigente.",
+            "en": "Compressing the country risk below 500 basis points is a key psychological threshold for Argentina's access to voluntary debt markets, a central objective of its current IMF program."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Milei amenaza con sancionar empresas petroleras en Malvinas y anuncia base naval en el sur",
+          "body": "En un discurso televisado, el presidente argentino Javier Milei amenazó con sancionar a las compañías que perforen en torno a las islas Malvinas —apuntando al proyecto Sea Lion de Rockhopper Exploration y Navitas Petroleum, que prevé comenzar a bombear petróleo en 2028— y anunció financiamiento para una base naval en la provincia más austral del país. El Reino Unido respondió con una declaración de compromiso 'absoluto e inquebrantable' con las islas, mientras analistas señalan que el giro de Milei responde principalmente a la caída de su popularidad doméstica.",
+          "url": "http://foreignpolicy.com/2026/09/04/argentina-falkland-islands-milei-malvinas-oil-drilling-britain-trump/",
+          "tag": "Política",
+          "context_note": {
+            "es": "La escalada ocurre en un momento en que Argentina necesita mantener relaciones estables con socios occidentales para consolidar su programa económico, lo que hace que la jugada de Milei sea tanto políticamente calculada como financieramente costosa.",
+            "en": "The escalation comes precisely when Argentina needs stable relations with Western partners to consolidate its economic program, making Milei's gambit both politically calculated and financially costly."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "MarketWatch",
+          "headline": "Polonia, reclasificada como mercado desarrollado, se abre a un universo más amplio de inversores",
+          "body": "La reclasificación de Polonia de mercado emergente a desarrollado amplía significativamente la base potencial de inversores institucionales con acceso al país, en un momento en que su bolsa cotiza con descuento considerable frente al S&P 500. El timing es relevante: con los mercados de EE.UU. bajo presión por tasas altas e inflación, la diversificación geográfica hacia mercados más baratos vuelve a estar en el radar de los gestores.",
+          "url": "https://www.marketwatch.com/story/how-to-invest-in-a-booming-stock-market-thats-way-cheaper-than-the-s-p-500-b2f5ef5d",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "Las reclasificaciones de índices MSCI generan flujos de capital pasivo predecibles y masivos en los trimestres siguientes, lo que convierte a Polonia en una historia de momentum estructural independiente del ciclo macro global.",
+            "en": "MSCI index reclassifications generate predictable and massive passive capital flows in subsequent quarters, making Poland a structural momentum story independent of the global macro cycle."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "Once you let the inflation genie out of the bottle, it is very hard to put it back in.",
+        "attribution": "Paul Volcker, testimonio ante el Congreso de EE.UU., 1979"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the global bond market is sending a signal that veterans of the 1970s would recognize with a shudder: structural inflation is back, and this time it's brought geopolitical company. While the White House threatens tariffs if the Fed doesn't cut rates — a novelty even for this cycle — the world's largest asset managers are quietly piling into gold. Coincidences, none.",
+      "narrative_thread": "The convergence of persistent structural inflation, unprecedented political pressure on the Fed, and a flight to safe-haven assets defines the tone of global markets this week.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 28,
+        "context_es": "La venta masiva de bonos soberanos globales, el alza del oro y la incertidumbre sobre la política monetaria de la Fed configuran un entorno de aversión clara al riesgo.",
+        "context_en": "A global sovereign bond selloff, rising gold prices, and deep uncertainty over Fed policy combine to create a distinctly risk-off environment."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Global bond selloff revives the specter of persistent structural inflation",
+          "body": "U.S. 10-year Treasury yields hit their highest level since November 2023, U.K. gilts touched post-2008 highs, and Japan's 10-year bond surpassed 3% for the first time since 1996. Fund managers warn that the combination of trade protectionism, defense spending, and the Middle East war has shifted the macroeconomic regime toward structurally higher inflation, with far-reaching implications for investment portfolios.",
+          "url": "https://www.cnbc.com/2026/09/04/global-bond-selloff-inflation-risk.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Esta semana el discurso de Kevin Warsh en Jackson Hole reforzó las expectativas de una subida de tasas el 15-16 de septiembre, lo que hace que la señal de los mercados de bonos sea especialmente relevante para la reunión del FOMC.",
+            "en": "Kevin Warsh's Jackson Hole speech this week reinforced expectations of a September 15-16 rate hike, making the bond market's signal especially consequential for the upcoming FOMC meeting."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Trump threatens tariffs if the Fed doesn't cut rates, intensifying pressure on Warsh",
+          "body": "President Trump escalated his pressure campaign on the Federal Reserve by threatening to halt trade with countries running surpluses with the U.S. unless the Fed lowers rates — the first time he has directly linked tariffs to monetary policy. The broadside includes statements from Vice President Vance, Secretary Bessent, and advisor Navarro, who called FOMC members 'clowns,' as markets assign roughly 60% probability to a rate hike at the September 15-16 meeting.",
+          "url": "https://www.cnbc.com/2026/09/05/trump-warsh-fed-september-rate-hike.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La independencia de la Fed es el activo institucional más vigilado por los mercados de renta fija en este momento; cualquier señal de que Warsh cede ante la presión política podría acelerar la venta de bonos y depreciar el dólar.",
+            "en": "Fed independence is the single most closely watched institutional asset in fixed income markets right now; any sign that Warsh yields to political pressure could accelerate the bond selloff and weaken the dollar."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "Bloomberg",
+          "headline": "World's largest asset managers rebuild gold positions",
+          "body": "The world's leading asset management funds are increasing their gold holdings in anticipation of long-term value, despite the Fed's anti-inflation measures and the high-rate environment. The move reflects a deliberate hedge against structural inflation and monetary policy uncertainty, at a time when sovereign bonds are no longer offering their traditional safe-haven appeal.",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-04/world-s-biggest-money-managers-are-rebuilding-gold-positions",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El reposicionamiento en oro ocurre simultáneamente con la venta de bonos soberanos globales, sugiriendo que el mercado está recalibrado su concepción de activo refugio de referencia en un régimen de inflación estructuralmente más alta.",
+            "en": "The repositioning into gold is happening simultaneously with the global sovereign bond selloff, suggesting markets are recalibrating their preferred safe-haven asset under a structurally higher inflation regime."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentine bonds break below 500 bps country risk as Merval recovers ground in September",
+          "body": "Global bonds opened September with gains of 0.5% to 1.1% and local-law bonds (Bonares) advanced 0.4% to 1.2%, pushing country risk back below 500 basis points after an August in which the Merval plunged 9.2% to $1,896 with no concrete catalysts. The rebound arrives with more depressed valuations and against a backdrop of the U.S. 10-year Treasury hitting 4.8%, creating additional pressure on emerging market debt.",
+          "url": "https://www.lanacion.com.ar/economia/finanzas-repuntan-los-bonos-y-recuperan-terreno-las-acciones-nid06092026/",
+          "tag": "México",
+          "context_note": {
+            "es": "La compresión del riesgo país por debajo de 500 puntos es un umbral psicológico clave para el acceso de Argentina al mercado voluntario de deuda, objetivo central del programa con el FMI vigente.",
+            "en": "Compressing the country risk below 500 basis points is a key psychological threshold for Argentina's access to voluntary debt markets, a central objective of its current IMF program."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Milei threatens to sanction Falklands oil companies and announces southern naval base",
+          "body": "In a nationally televised address, Argentine President Javier Milei threatened to sanction companies drilling near the Falkland Islands — targeting the Sea Lion project operated by Rockhopper Exploration and Navitas Petroleum, which plans to begin pumping oil in 2028 — and announced funding for a naval base in the country's southernmost province. The U.K. responded with a declaration of 'absolute and unshakeable' commitment to the islands, while analysts note that Milei's pivot is driven primarily by declining domestic approval ratings.",
+          "url": "http://foreignpolicy.com/2026/09/04/argentina-falkland-islands-milei-malvinas-oil-drilling-britain-trump/",
+          "tag": "Política",
+          "context_note": {
+            "es": "La escalada ocurre en un momento en que Argentina necesita mantener relaciones estables con socios occidentales para consolidar su programa económico, lo que hace que la jugada de Milei sea tanto políticamente calculada como financieramente costosa.",
+            "en": "The escalation comes precisely when Argentina needs stable relations with Western partners to consolidate its economic program, making Milei's gambit both politically calculated and financially costly."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "MarketWatch",
+          "headline": "Poland, reclassified as a developed market, opens up to a far broader universe of investors",
+          "body": "Poland's reclassification from emerging to developed market status significantly expands the potential base of institutional investors with access to the country, at a time when its stock market trades at a considerable discount to the S&P 500. The timing is relevant: with U.S. markets under pressure from high rates and inflation, geographic diversification into cheaper markets is back on portfolio managers' radar.",
+          "url": "https://www.marketwatch.com/story/how-to-invest-in-a-booming-stock-market-thats-way-cheaper-than-the-s-p-500-b2f5ef5d",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "Las reclasificaciones de índices MSCI generan flujos de capital pasivo predecibles y masivos en los trimestres siguientes, lo que convierte a Polonia en una historia de momentum estructural independiente del ciclo macro global.",
+            "en": "MSCI index reclassifications generate predictable and massive passive capital flows in subsequent quarters, making Poland a structural momentum story independent of the global macro cycle."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "Once you let the inflation genie out of the bottle, it is very hard to put it back in.",
+        "attribution": "Paul Volcker, testimony before the U.S. Congress, 1979"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-09-07.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "98.96",
+        "change": "▼ 0.2%",
+        "direction": "down",
+        "chg_1w": "▼ 0.7%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.78%",
+        "change": "▲ 0.5%",
+        "direction": "up",
+        "chg_1w": "▲ 0.5%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "15.26",
+        "change": "▲ 5.0%",
+        "direction": "up",
+        "chg_1w": "▼ 6.6%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$68.70",
+        "change": "▲ 1.8%",
+        "direction": "up",
+        "chg_1w": "▲ 2.5%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05914",
+            "chg_1d": {
+              "text": "▲ 0.01%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.54%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.3032",
+            "chg_1d": {
+              "text": "▲ 0.53%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.52%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.05085",
+            "chg_1d": {
+              "text": "▼ 0.01%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.42%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3962",
+            "chg_1d": {
+              "text": "▼ 0.28%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.14%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0817",
+            "chg_1d": {
+              "text": "▲ 0.21%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.29%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04369",
+            "chg_1d": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.64%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "9.14",
+            "chg_1d": {
+              "text": "▼ 0.74%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.77%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "16.9078",
+            "chg_1d": {
+              "text": "▼ 0.01%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.54%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1271",
+            "chg_1d": {
+              "text": "▲ 0.51%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.05%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.85977",
+            "chg_1d": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.6992",
+            "chg_1d": {
+              "text": "▼ 0.29%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.40%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3817",
+            "chg_1d": {
+              "text": "▲ 0.20%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.25%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.73877",
+            "chg_1d": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.10%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "154.49",
+            "chg_1d": {
+              "text": "▼ 0.75%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 3.29%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.2977",
+            "chg_1d": {
+              "text": "▼ 0.52%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.52%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19504",
+            "chg_1d": {
+              "text": "▼ 0.51%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.06%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16769",
+            "chg_1d": {
+              "text": "▼ 0.53%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.95%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3066",
+            "chg_1d": {
+              "text": "▼ 0.80%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.66%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2695",
+            "chg_1d": {
+              "text": "▼ 0.31%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.82%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14409",
+            "chg_1d": {
+              "text": "▼ 0.54%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.17%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.13",
+            "chg_1d": {
+              "text": "▼ 1.25%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.26%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "19.6655",
+            "chg_1d": {
+              "text": "▲ 0.01%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.42%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.16310",
+            "chg_1d": {
+              "text": "▲ 0.02%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.11%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.9633",
+            "chg_1d": {
+              "text": "▲ 0.53%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.94%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.7918",
+            "chg_1d": {
+              "text": "▼ 0.27%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.28%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6071",
+            "chg_1d": {
+              "text": "▲ 0.22%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.85926",
+            "chg_1d": {
+              "text": "▼ 0.01%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.22%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "179.69",
+            "chg_1d": {
+              "text": "▼ 0.73%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 3.18%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5239",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.14%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14927",
+            "chg_1d": {
+              "text": "▲ 0.30%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.40%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7653",
+            "chg_1d": {
+              "text": "▲ 0.81%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.66%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12834",
+            "chg_1d": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2062",
+            "chg_1d": {
+              "text": "▲ 0.50%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.15%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11028",
+            "chg_1d": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.50%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.06",
+            "chg_1d": {
+              "text": "▼ 0.46%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.90%",
+              "cls": "chg-down"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Tasas",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: Venta masiva de bonos globales aviva el fantasma de inflación estructural persistente, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Upward-spiraling bond yield curves breaking through historical ceiling levels, rendered as sharp geometric lines, wide establishing shot, environmental context visible, inspired by: Venta masiva de bonos globales aviva el fantasma de inflación estructural persistente, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of Upward-spiraling bond yield curves breaking through historical ceiling levels, rendered as sharp geometric lines, isolated detail, shallow depth of field, inspired by: Venta masiva de bonos globales aviva el fantasma de inflación estructural persistente, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Upward-spiraling bond yield curves breaking through historical ceiling levels, rendered as sharp geometric lines, low angle with strong perspective and architectural framing, inspired by: Venta masiva de bonos globales aviva el fantasma de inflación estructural persistente, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Upward-spiraling bond yield curves breaking through historical ceiling levels, rendered as sharp geometric lines — Wide shot",
+      "opt2": "Upward-spiraling bond yield curves breaking through historical ceiling levels, rendered as sharp geometric lines — Close-up",
+      "opt3": "Upward-spiraling bond yield curves breaking through historical ceiling levels, rendered as sharp geometric lines — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-07_hero.png"
+  }
+}
