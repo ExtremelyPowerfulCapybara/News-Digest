@@ -1,0 +1,680 @@
+{
+  "date": "2026-09-08",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el dato de empleo de agosto fue lo suficientemente fuerte como para recordarle a los mercados que la gravedad existe: Bitcoin cayó por debajo de los $80,000 y los bonos temblaron ante la posibilidad de una nueva alza de tasas de la Fed. Mientras tanto, el gobierno de Trump convirtió al Pentágono en accionista de una petrolera venezolana de nombre oscuro — una jugada que los historiadores del petróleo califican de literalmente sin precedentes. El ciclo de hoy mezcla restricción monetaria, capitalismo de Estado y aranceles que ya están destruyendo empleos en Manchester: bienvenidos al lunes.",
+      "narrative_thread": "Un dato de empleo más fuerte de lo esperado revive el fantasma de un alza de tasas de la Fed, mientras los aranceles y la competencia china cobran su primera factura industrial seria, y Washington prueba los límites del capitalismo de Estado con un trato petrolero sin precedentes en Venezuela.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 28,
+        "context_es": "El sólido reporte de empleo de agosto relanzó las apuestas sobre un alza de la Fed, golpeando activos de riesgo desde criptomonedas hasta acciones industriales, con los mercados de EE.UU. cerrados por el Día del Trabajo pero la presión ya acumulada.",
+        "context_en": "August's blowout jobs report reignited Fed rate-hike bets, hitting risk assets from crypto to industrials, with U.S. markets closed for Labor Day but pressure already building."
+      },
+      "stories": [
+        {
+          "source": "Bloomberg",
+          "headline": "Bitcoin cae por debajo de $80,000 tras dato de empleo que reaviva apuestas de alza de la Fed",
+          "body": "Bitcoin perdió hasta 3.5% y cayó por debajo de los $80,000 después de que el reporte de empleo de agosto superara expectativas, reactivando las apuestas sobre una alza de tasas de la Fed en septiembre. Los activos de riesgo, que habían cotizado ignorando el escenario de endurecimiento, ahora enfrentan una corrección de valuación que podría extenderse a renta variable si la Fed confirma el sesgo alcista.",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-04/bitcoin-drops-below-80-000-as-hot-jobs-data-spurs-fed-hike-bets",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El reporte de empleo de agosto llega en un momento en que Trump ha amenazado públicamente con represalias comerciales si la Fed no recorta tasas, creando una colisión entre la política monetaria independiente y la presión política que los mercados aún no han terminado de descontar.",
+            "en": "The August jobs report arrives as Trump has publicly threatened trade retaliation if the Fed does not cut rates, creating a collision between independent monetary policy and political pressure that markets have yet to fully price in."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Jaguar Land Rover recorta 4,000 empleos y apunta a $2,300 millones en ahorros ante aranceles Trump y competencia china",
+          "body": "Jaguar Land Rover, propiedad de Tata Motors, anunció el despido de aproximadamente 4,000 empleados — el 10% de su fuerza laboral global — como parte de un plan de ahorro de 1,700 millones de libras en dos años, citando aranceles de Trump, un ciberataque y la presión de rivales chinos más baratos. El caso JLR no es aislado: Volkswagen planea suprimir otros 50,000 empleos, Aston Martin y Bentley ya anunciaron recortes similares, confirmando que la industria automotriz europea está absorbiendo el costo más visible de la guerra arancelaria.",
+          "url": "https://www.cnbc.com/2026/09/07/jaguar-land-rover-jlr-job-cuts-autos.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "El gobierno laborista del primer ministro Andy Burnham descartó un rescate estatal, pero se prepara para reunirse con ejecutivos de JLR esta semana — una prueba política delicada que llega mientras el sector automotriz británico absorbe simultáneamente aranceles de EE.UU. y la transición al vehículo eléctrico.",
+            "en": "PM Andy Burnham's Labour government ruled out a bailout but is set to meet JLR executives this week — a politically delicate test arriving as the British auto sector simultaneously absorbs U.S. tariffs and the electric vehicle transition."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "El Pentágono toma participación accionaria en una petrolera venezolana con reservas cuatro veces superiores a las de ExxonMobil",
+          "body": "La firma North American Blue Energy Partners, con sede en Barbados, recibió concesiones sobre 17 campos petroleros venezolanos por 100 años y otorgó al Pentágono una participación del 35% sin costo para el contribuyente, mientras el Departamento de Estado obtiene derecho de compra prioritaria sobre el 100% de la producción. Los historiadores del sector petrolero no encuentran precedente para que el gobierno de EE.UU. tome participación directa en una empresa petrolera operando en territorio extranjero, mientras el CEO de NABEP acumula investigaciones sobre negocios previos.",
+          "url": "https://www.cnbc.com/2026/09/05/trump-venezuela-oil-north-america-blue-energy-partners-nabep.html",
+          "tag": "Energía",
+          "context_note": {
+            "es": "El acuerdo llega ocho meses después de que Washington destituyera a Maduro y se produce en paralelo con la búsqueda de empresas qataríes de minería de oro en Venezuela, dibujando un patrón de capitalismo de Estado estadounidense en la región que contradice décadas de doctrina económica republicana.",
+            "en": "The deal comes eight months after Washington ousted Maduro and runs parallel to Qatari firms seeking gold mining positions in Venezuela, sketching a pattern of U.S. state capitalism in the region that contradicts decades of Republican economic doctrine."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "China inyecta $54,000 millones en bancos e inauguralmente en aseguradoras estatales, con tabacalera nacional como vehículo",
+          "body": "El Ministerio de Finanzas de China lideró una recapitalización de 360,000 millones de yuanes en tres bancos y cinco aseguradoras estatales — la primera vez que Beijing extiende el programa a aseguradoras — usando como vehículo inesperado a China National Tobacco Corp. El paquete resultó menor de lo anticipado por los mercados: las acciones de Agricultural Bank of China e ICBC cayeron 2.7% y 2.3% respectivamente en Hong Kong, señal de que la decepción con el tamaño del estímulo puede pesar más que el gesto en sí.",
+          "url": "https://www.cnbc.com/2026/09/07/china-state-banks-lenders-insurers-capital-solvency-bankrupt-nim-.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "Los márgenes de interés neto de la banca china cayeron a mínimos históricos este año, y Beijing prepara al sistema financiero para financiar la siguiente ola de inversión estratégica en inteligencia artificial e industria avanzada — un ciclo de expansión de crédito que ocurre mientras la Fed considera endurecer política al otro lado del Pacífico.",
+            "en": "Chinese bank net interest margins hit record lows this year, and Beijing is prepping its financial system to fund the next strategic investment wave in AI and advanced industry — a credit expansion cycle occurring as the Fed considers tightening on the other side of the Pacific."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "El azúcar sube 21.5% en agosto — su mayor ganancia mensual en 16 años — y supera al S&P 500 en el año",
+          "body": "Los futuros de azúcar acumulan una ganancia del 20% en lo que va de 2026, superando el avance del 13% del S&P 500, impulsados por una caída del 19% en la producción de remolacha azucarera en la UE, menores cosechas en Brasil y la India, y el potencial de un El Niño severo que amenaza a los tres países que concentran el 70% de las exportaciones globales. Citi califica al azúcar como su mercado agrícola de mayor convicción alcista y elevó su objetivo de precio a 19 centavos por libra a tres meses, citando inventarios que se contraen en todas las geografías simultáneamente.",
+          "url": "https://www.cnbc.com/2026/09/06/sugar-is-outperforming-the-stock-market-this-year-whats-driving-it.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El rally del azúcar amplifica las presiones sobre el índice de precios de alimentos de la FAO, que también subió en agosto, en un momento en que los bancos centrales de mercados emergentes — muchos de ellos grandes importadores de alimentos — intentan calibrar recortes de tasas sin reavivar la inflación.",
+            "en": "The sugar rally amplifies pressure on the FAO food price index, which also rose in August, at a moment when emerging-market central banks — many of them large food importers — are trying to calibrate rate cuts without reigniting inflation."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México presenta plan de 32,000 MW en renovables al 2030, con CFE como eje de la soberanía energética",
+          "body": "El gobierno de la presidenta Sheinbaum presentó su Plan de Generación de Energía Eléctrica con Fuentes Renovables, que contempla agregar 32,000 MW de capacidad al 2030, de los cuales 22,000 MW — el 70% — provendrán de fuentes limpias, elevando la participación renovable en la red al 38%. La CFE mantendrá la propiedad de las nuevas centrales y ya se asignaron 55 proyectos por 10,883 MW, mientras se acelera el proceso de permisos de 18 a 6 meses para atraer inversión complementaria.",
+          "url": "https://www.elfinanciero.com.mx/opinion/colaborador-invitado/2026/09/07/mexico-compromiso-historico-con-las-energias-renovables/",
+          "tag": "México",
+          "context_note": {
+            "es": "El plan llega en un contexto de nearshoring acelerado que exige certeza en el suministro eléctrico industrial, y su énfasis en propiedad estatal de la CFE plantea interrogantes sobre el espacio que quedará para la inversión privada en generación, un punto de tensión constante con el sector empresarial y con inversionistas extranjeros que observan el modelo desde el exterior.",
+            "en": "The plan arrives amid accelerating nearshoring that demands reliable industrial power supply, and its emphasis on CFE state ownership raises questions about the remaining space for private generation investment — a constant friction point with the business sector and foreign investors watching the model from outside."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The Fed's job is not to serve the President, the Congress, or any other political interests. The Fed's job is to serve the American people.",
+        "attribution": "Jerome Powell, Speech at the Economic Club of Washington, 2019"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, August's jobs number was strong enough to remind markets that gravity still exists: Bitcoin dropped below $80,000 and bonds shuddered at the prospect of another Fed rate hike. Meanwhile, the Trump administration turned the Pentagon into a shareholder of an obscure Venezuelan oil company — a move that oil historians are calling literally unprecedented. Today's cycle blends monetary tightening, state capitalism, and tariffs already destroying jobs in Manchester: welcome to Monday.",
+      "narrative_thread": "A stronger-than-expected jobs report revives the specter of a Fed rate hike, while tariffs and Chinese competition deliver their first serious industrial bill, and Washington tests the limits of state capitalism with an unprecedented oil deal in Venezuela.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 28,
+        "context_es": "El sólido reporte de empleo de agosto relanzó las apuestas sobre un alza de la Fed, golpeando activos de riesgo desde criptomonedas hasta acciones industriales, con los mercados de EE.UU. cerrados por el Día del Trabajo pero la presión ya acumulada.",
+        "context_en": "August's blowout jobs report reignited Fed rate-hike bets, hitting risk assets from crypto to industrials, with U.S. markets closed for Labor Day but pressure already building."
+      },
+      "stories": [
+        {
+          "source": "Bloomberg",
+          "headline": "Bitcoin falls below $80,000 as jobs data reignites Fed rate-hike bets",
+          "body": "Bitcoin lost as much as 3.5% and fell below $80,000 after August's jobs report topped expectations, reviving bets on a Federal Reserve rate hike in September. Risk assets that had been pricing out the tightening scenario now face a valuation correction that could spread to equities if the Fed confirms a hawkish tilt.",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-04/bitcoin-drops-below-80-000-as-hot-jobs-data-spurs-fed-hike-bets",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El reporte de empleo de agosto llega en un momento en que Trump ha amenazado públicamente con represalias comerciales si la Fed no recorta tasas, creando una colisión entre la política monetaria independiente y la presión política que los mercados aún no han terminado de descontar.",
+            "en": "The August jobs report arrives as Trump has publicly threatened trade retaliation if the Fed does not cut rates, creating a collision between independent monetary policy and political pressure that markets have yet to fully price in."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Jaguar Land Rover cuts 4,000 jobs and targets $2.3 billion in savings as Trump tariffs and Chinese competition bite",
+          "body": "Jaguar Land Rover, owned by Tata Motors, announced the layoff of approximately 4,000 employees — 10% of its global workforce — as part of a 1.7 billion pound two-year savings plan, citing Trump tariffs, a cyberattack, and pressure from cheaper Chinese rivals. The JLR case is not isolated: Volkswagen plans to cut another 50,000 jobs, and Aston Martin and Bentley have already announced similar reductions, confirming that the European auto industry is absorbing the most visible cost of the trade war.",
+          "url": "https://www.cnbc.com/2026/09/07/jaguar-land-rover-jlr-job-cuts-autos.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "El gobierno laborista del primer ministro Andy Burnham descartó un rescate estatal, pero se prepara para reunirse con ejecutivos de JLR esta semana — una prueba política delicada que llega mientras el sector automotriz británico absorbe simultáneamente aranceles de EE.UU. y la transición al vehículo eléctrico.",
+            "en": "PM Andy Burnham's Labour government ruled out a bailout but is set to meet JLR executives this week — a politically delicate test arriving as the British auto sector simultaneously absorbs U.S. tariffs and the electric vehicle transition."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Pentagon takes equity stake in Venezuelan oil company with reserves four times larger than ExxonMobil's",
+          "body": "Barbados-headquartered firm North American Blue Energy Partners received 100-year concessions over 17 Venezuelan oilfields and granted the Pentagon a 35% equity stake at no cost to the U.S. taxpayer, while the State Department secured priority purchase rights over 100% of production. Oil industry historians find no precedent for the U.S. government taking a direct ownership stake in an oil company operating on foreign soil, while NABEP's CEO carries a history of investigations into prior business ventures.",
+          "url": "https://www.cnbc.com/2026/09/05/trump-venezuela-oil-north-america-blue-energy-partners-nabep.html",
+          "tag": "Energía",
+          "context_note": {
+            "es": "El acuerdo llega ocho meses después de que Washington destituyera a Maduro y se produce en paralelo con la búsqueda de empresas qataríes de minería de oro en Venezuela, dibujando un patrón de capitalismo de Estado estadounidense en la región que contradice décadas de doctrina económica republicana.",
+            "en": "The deal comes eight months after Washington ousted Maduro and runs parallel to Qatari firms seeking gold mining positions in Venezuela, sketching a pattern of U.S. state capitalism in the region that contradicts decades of Republican economic doctrine."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "China injects $54 billion into state banks and, for the first time, insurers — using its national tobacco giant as a vehicle",
+          "body": "China's Ministry of Finance led a 360 billion yuan recapitalization of three banks and five state insurers — the first time Beijing has extended the program to insurers — using the unexpected vehicle of China National Tobacco Corp. The package came in smaller than markets had anticipated: Agricultural Bank of China and ICBC shares fell 2.7% and 2.3% respectively in Hong Kong, signaling that disappointment over the size of the stimulus may outweigh the gesture itself.",
+          "url": "https://www.cnbc.com/2026/09/07/china-state-banks-lenders-insurers-capital-solvency-bankrupt-nim-.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "Los márgenes de interés neto de la banca china cayeron a mínimos históricos este año, y Beijing prepara al sistema financiero para financiar la siguiente ola de inversión estratégica en inteligencia artificial e industria avanzada — un ciclo de expansión de crédito que ocurre mientras la Fed considera endurecer política al otro lado del Pacífico.",
+            "en": "Chinese bank net interest margins hit record lows this year, and Beijing is prepping its financial system to fund the next strategic investment wave in AI and advanced industry — a credit expansion cycle occurring as the Fed considers tightening on the other side of the Pacific."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Sugar surges 21.5% in August — its best monthly gain in 16 years — and outperforms the S&P 500 year-to-date",
+          "body": "Sugar futures are up 20% so far in 2026, outpacing the S&P 500's 13% advance, driven by a 19% drop in EU sugar beet production, lower harvests in Brazil and India, and the threat of a severe El Nino affecting the three countries that together account for 70% of global exports. Citi has named sugar its highest-conviction bullish market among agricultural commodities and raised its price target to 19 cents per pound over three months, citing inventories contracting simultaneously across all major geographies.",
+          "url": "https://www.cnbc.com/2026/09/06/sugar-is-outperforming-the-stock-market-this-year-whats-driving-it.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El rally del azúcar amplifica las presiones sobre el índice de precios de alimentos de la FAO, que también subió en agosto, en un momento en que los bancos centrales de mercados emergentes — muchos de ellos grandes importadores de alimentos — intentan calibrar recortes de tasas sin reavivar la inflación.",
+            "en": "The sugar rally amplifies pressure on the FAO food price index, which also rose in August, at a moment when emerging-market central banks — many of them large food importers — are trying to calibrate rate cuts without reigniting inflation."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico unveils 32,000 MW renewables plan through 2030 with CFE as the pillar of energy sovereignty",
+          "body": "President Sheinbaum's government presented its Renewable Electricity Generation Plan, targeting 32,000 MW of added capacity by 2030, with 22,000 MW — 70% of the total — coming from clean sources, raising renewables' share of the grid to 38%. CFE will retain ownership of new plants and 55 projects totaling 10,883 MW have already been awarded, while the permitting process has been accelerated from 18 to 6 months to attract complementary investment.",
+          "url": "https://www.elfinanciero.com.mx/opinion/colaborador-invitado/2026/09/07/mexico-compromiso-historico-con-las-energias-renovables/",
+          "tag": "México",
+          "context_note": {
+            "es": "El plan llega en un contexto de nearshoring acelerado que exige certeza en el suministro eléctrico industrial, y su énfasis en propiedad estatal de la CFE plantea interrogantes sobre el espacio que quedará para la inversión privada en generación, un punto de tensión constante con el sector empresarial y con inversionistas extranjeros que observan el modelo desde el exterior.",
+            "en": "The plan arrives amid accelerating nearshoring that demands reliable industrial power supply, and its emphasis on CFE state ownership raises questions about the remaining space for private generation investment — a constant friction point with the business sector and foreign investors watching the model from outside."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The Fed's job is not to serve the President, the Congress, or any other political interests. The Fed's job is to serve the American people.",
+        "attribution": "Jerome Powell, Speech at the Economic Club of Washington, 2019"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-09-08.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "98.95",
+        "change": "▼ 0.2%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.78%",
+        "change": "▲ 0.5%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "15.71",
+        "change": "▲ 2.7%",
+        "direction": "up",
+        "chg_1w": "▲ 3.4%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$68.70",
+        "change": "▲ 1.8%",
+        "direction": "up",
+        "chg_1w": "▲ 2.5%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05897",
+            "chg_1d": {
+              "text": "▼ 0.42%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.19%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.3017",
+            "chg_1d": {
+              "text": "▼ 0.61%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.50%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.05075",
+            "chg_1d": {
+              "text": "▼ 0.47%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3950",
+            "chg_1d": {
+              "text": "▼ 0.60%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0814",
+            "chg_1d": {
+              "text": "▼ 0.63%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.45%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04352",
+            "chg_1d": {
+              "text": "▼ 0.68%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "9.08",
+            "chg_1d": {
+              "text": "▼ 1.85%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 3.71%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "16.9571",
+            "chg_1d": {
+              "text": "▲ 0.42%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.19%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1167",
+            "chg_1d": {
+              "text": "▼ 0.19%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.69%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.86059",
+            "chg_1d": {
+              "text": "▼ 0.05%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.21%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.6986",
+            "chg_1d": {
+              "text": "▼ 0.18%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.32%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3805",
+            "chg_1d": {
+              "text": "▼ 0.21%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.64%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.73790",
+            "chg_1d": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.27%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "153.95",
+            "chg_1d": {
+              "text": "▼ 1.44%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 3.90%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.3141",
+            "chg_1d": {
+              "text": "▲ 0.61%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.50%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19544",
+            "chg_1d": {
+              "text": "▲ 0.19%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.69%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16819",
+            "chg_1d": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.48%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3092",
+            "chg_1d": {
+              "text": "▲ 0.00%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.37%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2698",
+            "chg_1d": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.05%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14421",
+            "chg_1d": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.42%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.09",
+            "chg_1d": {
+              "text": "▼ 1.25%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 3.23%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "19.7042",
+            "chg_1d": {
+              "text": "▲ 0.48%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.02%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.16200",
+            "chg_1d": {
+              "text": "▲ 0.05%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.21%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.9456",
+            "chg_1d": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.48%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.7838",
+            "chg_1d": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6041",
+            "chg_1d": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.43%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.85744",
+            "chg_1d": {
+              "text": "▼ 0.21%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "178.89",
+            "chg_1d": {
+              "text": "▼ 1.39%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 3.70%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5314",
+            "chg_1d": {
+              "text": "▲ 0.61%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14928",
+            "chg_1d": {
+              "text": "▲ 0.18%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.32%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7638",
+            "chg_1d": {
+              "text": "▼ 0.00%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.37%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12847",
+            "chg_1d": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.11%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2061",
+            "chg_1d": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.32%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11016",
+            "chg_1d": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.05%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "22.98",
+            "chg_1d": {
+              "text": "▼ 1.26%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 3.59%",
+              "cls": "chg-down"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Mercados",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, stock exchange trading floor, screens with data, long perspective shot, no people, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, stock exchange trading floor, screens with data, long perspective shot, no people, inspired by: Bitcoin cae por debajo de $80,000 tras dato de empleo que reaviva apuestas de alza de la Fed, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Bitcoin coin descending diagonally downward, cracking or fragmenting, with $80,000 price point marked below, wide establishing shot, environmental context visible, inspired by: Bitcoin cae por debajo de $80,000 tras dato de empleo que reaviva apuestas de alza de la Fed, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of Bitcoin coin descending diagonally downward, cracking or fragmenting, with $80,000 price point marked below, isolated detail, shallow depth of field, inspired by: Bitcoin cae por debajo de $80,000 tras dato de empleo que reaviva apuestas de alza de la Fed, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Bitcoin coin descending diagonally downward, cracking or fragmenting, with $80,000 price point marked below, low angle with strong perspective and architectural framing, inspired by: Bitcoin cae por debajo de $80,000 tras dato de empleo que reaviva apuestas de alza de la Fed, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Bitcoin coin descending diagonally downward, cracking or fragmenting, with $80,000 price point marked below — Wide shot",
+      "opt2": "Bitcoin coin descending diagonally downward, cracking or fragmenting, with $80,000 price point marked below — Close-up",
+      "opt3": "Bitcoin coin descending diagonally downward, cracking or fragmenting, with $80,000 price point marked below — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-08_hero.png"
+  }
+}
