@@ -1,0 +1,704 @@
+{
+  "date": "2026-09-15",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el fin de semana no trajo tregua: Arabia Saudita cerró el oleoducto Este-Oeste tras ataques con drones iraquíes, eliminando el último bypass relevante al Estrecho de Ormuz y enviando el Brent por encima de 108 dólares. Lo que era una guerra regional es ahora, inequívocamente, un problema de inflación global — y la Fed, que ya tenía un 70% de probabilidad de subir tasas la próxima semana, lo sabe perfectamente.",
+      "narrative_thread": "El conflicto entre EE.UU. e Irán clausura las rutas energéticas del Golfo una por una, disparando el petróleo sobre los 100 dólares, reactivando la inflación y forzando a la Fed hacia nuevas alzas de tasas en el peor momento posible.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 18,
+        "context_es": "El cierre del oleoducto saudí, el Brent en máximos, la inflación por encima de los salarios y una Fed con sesgo alcista configuran un entorno de aversión al riesgo pronunciada.",
+        "context_en": "The Saudi pipeline closure, Brent at multi-year highs, inflation outpacing wages, and a Fed tilting hawkish combine to create a sharply risk-off environment."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Arabia Saudita cierra oleoducto Este-Oeste tras ataques con drones; Brent sube a 108 dólares",
+          "body": "Imágenes satelitales confirman daños graves en el oleoducto Este-Oeste saudí, con capacidad de 7 millones de barriles diarios, cerrado como medida de precaución tras múltiples ataques con drones lanzados desde Irak, llevando el Brent a 108.02 dólares por barril. El cierre elimina el principal corredor alternativo al Estrecho de Ormuz, dejando a los mercados globales de crudo sin red de seguridad justo cuando los hutíes amenazan también el Estrecho de Bab el-Mandeb.",
+          "url": "https://www.cnbc.com/2026/09/14/iran-war-saudi-arabia-east-west-pipeline-oil.html",
+          "tag": "Energía",
+          "context_note": {
+            "es": "El oleoducto Este-Oeste era el colchón logístico que evitaba que el cierre del Estrecho de Ormuz se convirtiera en un shock total de oferta; su clausura transforma una crisis contenida en una emergencia energética sin rutas alternativas inmediatas.",
+            "en": "The East-West pipeline was the logistical buffer preventing the Hormuz closure from becoming a total supply shock; its shutdown transforms a contained crisis into an energy emergency with no immediate alternative routes."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Mercados anticipan alza de tasas de la Fed la próxima semana con probabilidad del 70%",
+          "body": "El índice de precios al productor subió 0.4% en agosto, empujando el PPI anual a 5.4%, mientras el crudo estadounidense cruzó los 100 dólares, llevando a los mercados a asignar una probabilidad del 70% a un alza de tasas de la Fed en su reunión de la próxima semana. El BCE ya subió un cuarto de punto y elevó su pronóstico de inflación, señalizando que la presión monetaria restrictiva es ahora un fenómeno coordinado entre bancos centrales occidentales.",
+          "url": "https://www.cnbc.com/2026/09/10/the-likelihood-of-a-fed-interest-rate-hike-next-week-just-got-a-lot-higher.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Con el IPC de agosto en 3.4% anual y los salarios creciendo solo 3.1%, el poder adquisitivo real ya está erosionado antes de que la Fed suba tasas — un alza la semana próxima comprimiría aún más el consumo en un momento de máxima vulnerabilidad.",
+            "en": "With August CPI at 3.4% annually and wages growing only 3.1%, real purchasing power is already eroded before the Fed hikes — a hike next week would further compress consumption at a moment of maximum vulnerability."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Los precios del diésel rompen récord histórico de 6 dólares por galón; la guerra en Medio Oriente, causa real de la crisis energética",
+          "body": "El precio del diésel en EE.UU. alcanzó 6 dólares por galón por primera vez en la historia, el crudo de referencia global ronda los 105 dólares por barril y la gasolina promedia 4.29 dólares, mientras el secretario de Energía Chris Wright atribuye los precios a ataques ucranianos sobre refinerías rusas. Los datos independientes de rastreo de buques muestran que el flujo por el Estrecho de Ormuz cayó de 20 millones a entre 8 y 9 millones de barriles diarios — la mitad de la crisis energética que el gobierno estadounidense prefiere no nombrar directamente.",
+          "url": "http://foreignpolicy.com/2026/09/11/gas-prices-trump-iran-war-wright-ukraine-russia/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La divergencia entre la narrativa oficial de Washington y los datos independientes de flujo de crudo es en sí misma un riesgo de mercado: si el gobierno admite la magnitud real del cierre, el impacto psicológico sobre expectativas de inflación podría ser inmediato.",
+            "en": "The divergence between Washington's official narrative and independent crude flow data is itself a market risk: if the government acknowledges the true scale of the closure, the psychological impact on inflation expectations could be immediate."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "ETF de fletes marítimos sube 3,600% en el año; los tanqueros se convierten en la mejor inversión de la crisis",
+          "body": "El Breakwave Tanker Shipping ETF (BWET), que sigue el costo de transportar petróleo por mar, acumula una ganancia de aproximadamente 3,600% en lo que va del año, convirtiéndose en el fondo no apalancado de mejor desempeño en EE.UU., según datos de Morningstar. Las tarifas en rutas de tanqueros de Medio Oriente subieron cerca de 500% interanual, impulsadas por la disrupción del Estrecho de Ormuz, el cierre del oleoducto Este-Oeste y la sequía que afecta el Canal de Panamá.",
+          "url": "https://www.cnbc.com/2026/09/13/iran-war-oil-prices-freight-tankers-shipping.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El desempeño del BWET ilustra cómo la disrupción geopolítica redistribuye el valor a lo largo de cadenas de suministro inesperadas — y advierte que el cierre del oleoducto Este-Oeste reportado hoy podría extender esta racha extraordinaria aún más.",
+            "en": "BWET's performance illustrates how geopolitical disruption redistributes value across unexpected supply chains — and warns that today's East-West pipeline closure could extend this extraordinary run even further."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Baker Hughes: la demanda de GNL impulsada por IA sostiene la inversión energética pese a tasas altas",
+          "body": "Lorenzo Simonelli, presidente y CEO de Baker Hughes, afirmó en la conferencia Gastech en Bangkok que la empresa no ha observado ninguna desaceleración en proyectos energéticos importantes, citando una cartera de pedidos de 37 mil millones de dólares respaldada por la demanda de centros de datos, generación de energía e infraestructura de GNL. Simonelli señaló que Baker Hughes espera que la capacidad instalada de GNL deba alcanzar 900 millones de toneladas por año para 2035 para satisfacer la demanda, y advirtió que las restricciones en el Estrecho de Ormuz amenazan los suministros de Qatar, uno de los mayores exportadores mundiales.",
+          "url": "https://www.cnbc.com/2026/09/14/baker-hughes-ceo-no-slowdown-in-energy-projects-despite-higher-rates-.html",
+          "tag": "Energía",
+          "context_note": {
+            "es": "La confluencia de guerra en Medio Oriente y boom de infraestructura de IA crea una demanda energética estructural que contradice cualquier escenario de enfriamiento rápido del mercado petrolero, lo que refuerza la postura hawkish de la Fed.",
+            "en": "The confluence of Middle East war and AI infrastructure boom creates structural energy demand that contradicts any scenario of rapid oil market cooling, reinforcing the Fed's hawkish stance."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Bloomberg",
+          "headline": "Fondos globales reducen exposición a acciones indias a cero ante valuaciones elevadas y auge de mercados de IA",
+          "body": "Fondos de inversión globales están liquidando posiciones en acciones indias, con algunos reduciendo su asignación a cero, citando valuaciones excesivas y crecimiento decepcionante frente a mercados enfocados en inteligencia artificial. El éxodo ocurre en un contexto donde los mercados emergentes en general enfrentan presiones adicionales por las tensiones en Medio Oriente, el alza del dólar y el riesgo de nuevas subidas de tasas por parte de la Fed.",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-12/global-funds-sour-on-india-stocks-as-some-cut-allocation-to-zero",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "La salida de fondos globales de India es un síntoma del reposicionamiento más amplio hacia activos de mercados desarrollados vinculados a IA, un trade que se intensifica precisamente cuando los mercados emergentes son más vulnerables al shock de tasas de la Fed.",
+            "en": "The exodus of global funds from India is a symptom of the broader repositioning toward developed-market AI-linked assets, a trade that intensifies precisely when emerging markets are most vulnerable to the Fed's rate shock."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "E-commerce impulsa batalla por bodegas urbanas en México; Fibra Storage reporta ingresos 16% mayores",
+          "body": "Fibra Storage cerró el segundo trimestre con 44 propiedades, 84.8% de ocupación y 221.5 millones de pesos en ingresos, un 16% más que el mismo período de 2025, mientras el e-commerce creció 12% anual frente al 2.4% del comercio minorista tradicional, según el INEGI. El avance agresivo de TikTok Shop en México detonó una demanda crítica de infraestructura de fulfillment urbano, con empresas como Rappi y 99minutos compitiendo por espacios de última milla en CDMX, Monterrey y Guadalajara.",
+          "url": "https://www.elfinanciero.com.mx/empresas/2026/09/14/el-e-commerce-desata-batalla-por-bodegas-urbanas-en-las-ciudades/",
+          "tag": "México",
+          "context_note": {
+            "es": "En un entorno de tasas altas y consumo presionado, la diferencia de crecimiento entre e-commerce y retail físico en México se amplía — los FIBRAs industriales y de almacenaje urbano emergen como uno de los pocos sectores inmobiliarios con flujo positivo en el ciclo actual.",
+            "en": "In a high-rate, pressured-consumption environment, the growth gap between e-commerce and physical retail in Mexico widens — industrial and urban storage FIBRAs emerge as one of the few real estate sectors with positive cash flow in the current cycle."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "An 'oil shock' is a sudden, large increase in oil prices that can have far-reaching consequences for the global economy, including higher inflation, slower growth, and increased uncertainty.",
+        "attribution": "Ben Bernanke, 'The Courage to Act', 2015"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the weekend brought no respite: Saudi Arabia shut its East-West pipeline following Iraqi drone attacks, eliminating the last meaningful bypass to the Strait of Hormuz and pushing Brent past $108 a barrel. What was a regional war is now, unambiguously, a global inflation problem — and the Fed, already pricing a 70% probability of hiking rates next week, knows it perfectly well.",
+      "narrative_thread": "The U.S.-Iran conflict is closing off Gulf energy routes one by one, driving oil above $100, reigniting inflation, and forcing the Fed toward rate hikes at the worst possible moment.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 18,
+        "context_es": "El cierre del oleoducto saudí, el Brent en máximos, la inflación por encima de los salarios y una Fed con sesgo alcista configuran un entorno de aversión al riesgo pronunciada.",
+        "context_en": "The Saudi pipeline closure, Brent at multi-year highs, inflation outpacing wages, and a Fed tilting hawkish combine to create a sharply risk-off environment."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Saudi Arabia shuts East-West pipeline after drone attacks; Brent rises to $108",
+          "body": "Satellite images confirm severe damage to Saudi Arabia's East-West pipeline, which has a capacity of 7 million barrels per day, closed as a precautionary measure following multiple drone attacks launched from Iraq, pushing Brent crude to $108.02 a barrel. The closure eliminates the primary alternative corridor to the Strait of Hormuz, leaving global crude markets without a safety net just as Houthi forces also threaten the Bab el-Mandeb Strait.",
+          "url": "https://www.cnbc.com/2026/09/14/iran-war-saudi-arabia-east-west-pipeline-oil.html",
+          "tag": "Energía",
+          "context_note": {
+            "es": "El oleoducto Este-Oeste era el colchón logístico que evitaba que el cierre del Estrecho de Ormuz se convirtiera en un shock total de oferta; su clausura transforma una crisis contenida en una emergencia energética sin rutas alternativas inmediatas.",
+            "en": "The East-West pipeline was the logistical buffer preventing the Hormuz closure from becoming a total supply shock; its shutdown transforms a contained crisis into an energy emergency with no immediate alternative routes."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Markets price 70% probability of Fed rate hike next week as inflation pressures mount",
+          "body": "The producer price index rose 0.4% in August, pushing the annual PPI to 5.4%, while U.S. crude crossed $100 a barrel, leading markets to assign a 70% probability to a Fed rate hike at next week's meeting. The ECB already raised rates by a quarter point and lifted its inflation forecast, signaling that restrictive monetary pressure is now a coordinated phenomenon among Western central banks.",
+          "url": "https://www.cnbc.com/2026/09/10/the-likelihood-of-a-fed-interest-rate-hike-next-week-just-got-a-lot-higher.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Con el IPC de agosto en 3.4% anual y los salarios creciendo solo 3.1%, el poder adquisitivo real ya está erosionado antes de que la Fed suba tasas — un alza la semana próxima comprimiría aún más el consumo en un momento de máxima vulnerabilidad.",
+            "en": "With August CPI at 3.4% annually and wages growing only 3.1%, real purchasing power is already eroded before the Fed hikes — a hike next week would further compress consumption at a moment of maximum vulnerability."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Diesel hits record $6 per gallon; Middle East war, not Ukraine, is the real cause of the energy crisis",
+          "body": "U.S. diesel prices reached $6 per gallon for the first time in history, global benchmark crude is hovering around $105 a barrel, and gasoline averages $4.29, while Energy Secretary Chris Wright blames Ukrainian strikes on Russian refineries for the price surge. Independent tanker-tracking data shows flow through the Strait of Hormuz has fallen from 20 million to between 8 and 9 million barrels per day — half the energy crisis the U.S. government prefers not to name directly.",
+          "url": "http://foreignpolicy.com/2026/09/11/gas-prices-trump-iran-war-wright-ukraine-russia/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La divergencia entre la narrativa oficial de Washington y los datos independientes de flujo de crudo es en sí misma un riesgo de mercado: si el gobierno admite la magnitud real del cierre, el impacto psicológico sobre expectativas de inflación podría ser inmediato.",
+            "en": "The divergence between Washington's official narrative and independent crude flow data is itself a market risk: if the government acknowledges the true scale of the closure, the psychological impact on inflation expectations could be immediate."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Tanker shipping ETF surges 3,600% year-to-date; freight becomes the crisis's best-performing trade",
+          "body": "The Breakwave Tanker Shipping ETF (BWET), which tracks the cost of transporting oil by sea, has gained approximately 3,600% year-to-date, making it the best-performing non-leveraged fund in the U.S. according to Morningstar data. Middle East oil tanker route rates are up nearly 500% year-over-year, driven by Strait of Hormuz disruptions, the East-West pipeline closure, and drought-related constraints at the Panama Canal.",
+          "url": "https://www.cnbc.com/2026/09/13/iran-war-oil-prices-freight-tankers-shipping.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El desempeño del BWET ilustra cómo la disrupción geopolítica redistribuye el valor a lo largo de cadenas de suministro inesperadas — y advierte que el cierre del oleoducto Este-Oeste reportado hoy podría extender esta racha extraordinaria aún más.",
+            "en": "BWET's performance illustrates how geopolitical disruption redistributes value across unexpected supply chains — and warns that today's East-West pipeline closure could extend this extraordinary run even further."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Baker Hughes: AI-driven LNG demand sustains energy investment despite higher rates",
+          "body": "Baker Hughes Chairman and CEO Lorenzo Simonelli said at the Gastech conference in Bangkok that the company has seen no slowdown in major energy projects, citing a $37 billion backlog backed by demand from data centers, power generation, and LNG infrastructure. Simonelli noted that Baker Hughes expects installed LNG capacity will need to reach 900 million tons per annum by 2035 to meet demand, and warned that Strait of Hormuz restrictions threaten supplies from Qatar, one of the world's largest exporters.",
+          "url": "https://www.cnbc.com/2026/09/14/baker-hughes-ceo-no-slowdown-in-energy-projects-despite-higher-rates-.html",
+          "tag": "Energía",
+          "context_note": {
+            "es": "La confluencia de guerra en Medio Oriente y boom de infraestructura de IA crea una demanda energética estructural que contradice cualquier escenario de enfriamiento rápido del mercado petrolero, lo que refuerza la postura hawkish de la Fed.",
+            "en": "The confluence of Middle East war and AI infrastructure boom creates structural energy demand that contradicts any scenario of rapid oil market cooling, reinforcing the Fed's hawkish stance."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Bloomberg",
+          "headline": "Global funds cut India equity allocations to zero as AI markets draw capital away",
+          "body": "Global investment funds are liquidating positions in Indian equities, with some reducing their allocation to zero, citing excessive valuations and disappointing growth relative to artificial intelligence-focused markets. The exodus comes as emerging markets broadly face additional pressure from Middle East tensions, a stronger dollar, and the risk of further Fed rate hikes.",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-12/global-funds-sour-on-india-stocks-as-some-cut-allocation-to-zero",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "La salida de fondos globales de India es un síntoma del reposicionamiento más amplio hacia activos de mercados desarrollados vinculados a IA, un trade que se intensifica precisamente cuando los mercados emergentes son más vulnerables al shock de tasas de la Fed.",
+            "en": "The exodus of global funds from India is a symptom of the broader repositioning toward developed-market AI-linked assets, a trade that intensifies precisely when emerging markets are most vulnerable to the Fed's rate shock."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "E-commerce fuels battle for urban warehouses in Mexico; Fibra Storage posts 16% revenue growth",
+          "body": "Fibra Storage closed the second quarter with 44 properties, 84.8% occupancy, and 221.5 million pesos in revenue, 16% more than the same period in 2025, while e-commerce grew 12% annually versus just 2.4% for traditional retail, according to INEGI. The aggressive advance of TikTok Shop in Mexico triggered a critical surge in demand for urban fulfillment infrastructure, with companies like Rappi and 99minutos competing for last-mile spaces in Mexico City, Monterrey, and Guadalajara.",
+          "url": "https://www.elfinanciero.com.mx/empresas/2026/09/14/el-e-commerce-desata-batalla-por-bodegas-urbanas-en-las-ciudades/",
+          "tag": "México",
+          "context_note": {
+            "es": "En un entorno de tasas altas y consumo presionado, la diferencia de crecimiento entre e-commerce y retail físico en México se amplía — los FIBRAs industriales y de almacenaje urbano emergen como uno de los pocos sectores inmobiliarios con flujo positivo en el ciclo actual.",
+            "en": "In a high-rate, pressured-consumption environment, the growth gap between e-commerce and physical retail in Mexico widens — industrial and urban storage FIBRAs emerge as one of the few real estate sectors with positive cash flow in the current cycle."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "An 'oil shock' is a sudden, large increase in oil prices that can have far-reaching consequences for the global economy, including higher inflation, slower growth, and increased uncertainty.",
+        "attribution": "Ben Bernanke, 'The Courage to Act', 2015"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-09-15.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "99.63",
+        "change": "▲ 0.2%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.96%",
+        "change": "▼ 0.3%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "16.99",
+        "change": "▼ 0.6%",
+        "direction": "down",
+        "chg_1w": "▲ 3.2%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$65.99",
+        "change": "▼ 2.7%",
+        "direction": "down",
+        "chg_1w": "▼ 4.1%",
+        "direction_1w": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05836",
+            "chg_1d": {
+              "text": "▼ 0.93%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.32%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2997",
+            "chg_1d": {
+              "text": "▼ 0.45%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.32%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.05055",
+            "chg_1d": {
+              "text": "▼ 0.51%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.61%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3916",
+            "chg_1d": {
+              "text": "▼ 0.89%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.31%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0812",
+            "chg_1d": {
+              "text": "▼ 0.56%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.30%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04328",
+            "chg_1d": {
+              "text": "▼ 0.62%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.87%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "9.05",
+            "chg_1d": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.34%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.1355",
+            "chg_1d": {
+              "text": "▲ 0.94%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.33%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1361",
+            "chg_1d": {
+              "text": "▲ 0.49%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.01%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.86618",
+            "chg_1d": {
+              "text": "▲ 0.42%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.71%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.7109",
+            "chg_1d": {
+              "text": "▲ 0.04%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.01%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3919",
+            "chg_1d": {
+              "text": "▲ 0.37%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.03%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.74167",
+            "chg_1d": {
+              "text": "▲ 0.32%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.46%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "155.00",
+            "chg_1d": {
+              "text": "▲ 1.02%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.99%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.3363",
+            "chg_1d": {
+              "text": "▲ 0.45%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.32%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19470",
+            "chg_1d": {
+              "text": "▼ 0.48%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.00%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16864",
+            "chg_1d": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.29%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3066",
+            "chg_1d": {
+              "text": "▼ 0.44%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.99%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2710",
+            "chg_1d": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.02%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14440",
+            "chg_1d": {
+              "text": "▼ 0.17%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.55%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.18",
+            "chg_1d": {
+              "text": "▲ 0.53%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "19.7829",
+            "chg_1d": {
+              "text": "▲ 0.52%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.62%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.15450",
+            "chg_1d": {
+              "text": "▼ 0.42%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.71%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.9296",
+            "chg_1d": {
+              "text": "▲ 0.06%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.29%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.7477",
+            "chg_1d": {
+              "text": "▼ 0.38%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.70%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6069",
+            "chg_1d": {
+              "text": "▼ 0.05%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.31%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.85626",
+            "chg_1d": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.25%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "178.94",
+            "chg_1d": {
+              "text": "▲ 0.60%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5534",
+            "chg_1d": {
+              "text": "▲ 0.90%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.33%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14901",
+            "chg_1d": {
+              "text": "▼ 0.04%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.01%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7653",
+            "chg_1d": {
+              "text": "▲ 0.44%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.00%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12907",
+            "chg_1d": {
+              "text": "▲ 0.38%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.71%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2074",
+            "chg_1d": {
+              "text": "▲ 0.33%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.02%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11052",
+            "chg_1d": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.45%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.10",
+            "chg_1d": {
+              "text": "▲ 0.98%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.98%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Energía",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, oil refinery towers and storage tanks at dusk, slow smoke rising, flat horizon, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, oil refinery towers and storage tanks at dusk, slow smoke rising, flat horizon, inspired by: Arabia Saudita cierra oleoducto Este-Oeste tras ataques con drones; Brent sube a 108 dólares, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Damaged oil pipeline infrastructure with visible ruptures and fire, satellite view perspective overlaid with drone silhouettes, wide establishing shot, environmental context visible, inspired by: Arabia Saudita cierra oleoducto Este-Oeste tras ataques con drones; Brent sube a 108 dólares, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of Damaged oil pipeline infrastructure with visible ruptures and fire, satellite view perspective overlaid with drone silhouettes, isolated detail, shallow depth of field, inspired by: Arabia Saudita cierra oleoducto Este-Oeste tras ataques con drones; Brent sube a 108 dólares, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Damaged oil pipeline infrastructure with visible ruptures and fire, satellite view perspective overlaid with drone silhouettes, low angle with strong perspective and architectural framing, inspired by: Arabia Saudita cierra oleoducto Este-Oeste tras ataques con drones; Brent sube a 108 dólares, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Damaged oil pipeline infrastructure with visible ruptures and fire, satellite view perspective overlaid with drone silhouettes — Wide shot",
+      "opt2": "Damaged oil pipeline infrastructure with visible ruptures and fire, satellite view perspective overlaid with drone silhouettes — Close-up",
+      "opt3": "Damaged oil pipeline infrastructure with visible ruptures and fire, satellite view perspective overlaid with drone silhouettes — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-15_hero.png"
+  }
+}
