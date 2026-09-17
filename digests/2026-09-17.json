@@ -1,0 +1,680 @@
+{
+  "date": "2026-09-17",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, hoy el mercado contiene la respiración ante una Fed que lleva meses prometiendo más dolor y mañana finalmente cumplirá: la probabilidad de una subida de 25 puntos base está al 90% y los bonos del Tesoro a 10 años ya cotizan en niveles no vistos desde 2007. Lo verdaderamente alarmante no es la subida en sí, sino lo que viene después — y Wall Street lo sabe perfectamente.",
+      "narrative_thread": "La perspectiva de tasas 'más altas por más tiempo' en Estados Unidos tensiona simultáneamente los mercados de bonos globales, presiona a activos de riesgo desde bitcoin hasta acciones, y replantea qué economías — como la mexicana — pueden realmente beneficiarse del ciclo de inversión que la Fed está encareciéndoles a todos.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 28,
+        "context_es": "Los rendimientos del Tesoro en máximos de casi dos décadas, una Fed a punto de subir tasas y gestores globales que ya temen más un desplome desordenado en bonos que una burbuja de IA señalan un mercado en modo defensivo.",
+        "context_en": "Treasury yields at near two-decade highs, a Fed poised to hike, and global fund managers now fearing a disorderly bond selloff more than an AI bubble all point to a market in defensive mode."
+      },
+      "stories": [
+        {
+          "source": "The Wall Street Journal",
+          "headline": "Rendimientos del bono a 10 años alcanzan máximos desde 2007 ante inminente decisión de la Fed",
+          "body": "El rendimiento del bono del Tesoro estadounidense a 10 años tocó su nivel más alto desde 2007, con el mercado asignando un 90% de probabilidad a una subida de tasas en la reunión de la Fed del miércoles. El dato convierte cualquier señal de la Fed sobre el ritmo futuro de alzas — el llamado 'dot plot' — en el verdadero evento de riesgo: una sola subida ya está descontada; lo que mueve mercados es cuántas más vienen.",
+          "url": "https://www.wsj.com/finance/investing/u-s-10-year-treasury-yield-rises-to-highest-since-2007-91d1e44f",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Con el IPC estadounidense en 3.4% anual a agosto — aún por encima del objetivo del 2% de la Fed — el mercado está empezando a cotizar no una pausa, sino un ciclo de alzas prolongado que podría redefinir las valoraciones de todos los activos.",
+            "en": "With U.S. CPI at 3.4% annually through August — still above the Fed's 2% target — the market is beginning to price not a pause but a prolonged hiking cycle that could reprice all asset classes."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "MarketWatch",
+          "headline": "El mayor temor de Wall Street ya no es la burbuja de IA — es un desplome desordenado en bonos",
+          "body": "La encuesta mensual de gestores globales de Bank of America muestra que una 'subida desordenada' en los rendimientos de bonos desplazó a la burbuja de inteligencia artificial como el riesgo número uno identificado por los profesionales de inversión. El dato es relevante porque cuando los gestores cambian su mapa de riesgos, cambian también sus posiciones — y eso puede volverse una profecía autocumplida si todos se mueven al mismo tiempo hacia la salida.",
+          "url": "https://www.marketwatch.com/story/an-ai-bubble-is-no-longer-wall-streets-biggest-fear-this-market-risk-just-took-its-place-ec939034",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "Esta encuesta se publica precisamente cuando el 10 años toca máximos de 2007, lo que le da una relevancia inmediata inusual: el riesgo que más temen los gestores ya está materializándose en tiempo real.",
+            "en": "This survey publishes precisely as the 10-year hits 2007 highs, giving it unusual immediate relevance: the risk managers fear most is already materializing in real time."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Hacienda proyecta 1.8% de crecimiento para México en 2026, pero el motor manufacturero podría estar cambiando de manos",
+          "body": "Los Criterios de Política Económica de la SHCP para el PPEF 2027 mantienen un pronóstico de crecimiento de 1.8% para México en 2026, sustentado en una recuperación del segundo trimestre, mientras que el auge manufacturero estadounidense se reorienta hacia semiconductores, centros de datos e inteligencia artificial — sectores donde México aporta poco valor agregado. Si la elasticidad histórica entre el PIB de EE.UU. y el de México se deteriora porque el ciclo de inversión beneficia más a China y a sus cadenas de componentes, el optimismo de Hacienda podría quedar tan solo en optimismo.",
+          "url": "https://www.elfinanciero.com.mx/opinion/manuel-molano/2026/09/16/cuenta-de-errores-y-omisiones/",
+          "tag": "México",
+          "context_note": {
+            "es": "El análisis llega en un momento en que las tasas estadounidenses en máximos históricos encarecen el costo de capital para la inversión en México justo cuando el país más necesita atraer proyectos de nearshoring tecnológico de alto valor agregado.",
+            "en": "The analysis arrives as U.S. rates at historic highs raise the cost of capital for investment in Mexico precisely when the country most needs to attract high-value-added tech nearshoring projects."
+          },
+          "thread_tag": "México: crecimiento"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Ucrania advierte a naciones asiáticas: sus chips están apareciendo en misiles rusos",
+          "body": "Vladyslav Vlasiuk, comisionado de sanciones del presidente Zelenski, dijo en Singapur que si los ingresos petroleros de Rusia se reducen a la mitad, Moscú podría verse forzado a retirarse de la guerra en seis meses, y alertó que componentes microelectrónicos recuperados de un misil derribado en Kiev el mes pasado provenían de EE.UU., Rusia, China, Taiwán y Japón. El tour asiático de Ucrania es un reconocimiento explícito de que la arquitectura de sanciones occidental tiene una brecha enorme en la región, y cerrarla requiere convencer a India, Malasia, Indonesia y Tailandia — economías que comercian activamente con Rusia y tienen poco incentivo para complicarse la vida.",
+          "url": "https://www.cnbc.com/2026/09/16/russia-ukraine-war-sanction-oil-missile-weapons-.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "Con el Brent cerca de $108 y Rusia dependiendo críticamente de sus exportaciones petroleras, la efectividad del techo de precio del G7 está directamente vinculada a cuánto cooperan las refinerías asiáticas — lo que convierte esta gira diplomática en un asunto de mercado energético, no solo geopolítico.",
+            "en": "With Brent near $108 and Russia critically dependent on oil export revenues, the effectiveness of the G7 price cap is directly linked to how much Asian refiners cooperate — making this diplomatic tour an energy market issue, not just a geopolitical one."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Firmas chinas de IA enviaron masivamente datos de usuarios reales a Claude de Anthropic sin su conocimiento",
+          "body": "Anthropic acusa a empresas chinas de IA como Moonshot AI y DeepSeek de haber enrutado más de 300,000 solicitudes de usuarios reales a través de Claude en diez días, incluyendo material de vigilancia presuntamente vinculado al Ejército Popular de Liberación, credenciales de ingenieros de empresas estatales y datos de sistemas policiales internos. El escándalo tiene dos caras: para Washington, confirma que el modelo más avanzado de EE.UU. estuvo procesando inteligencia china sensible; para Pekín, que datos masivos de ciudadanos chinos — el recurso más valioso en la competencia de IA — pueden estar fluyendo involuntariamente hacia sus rivales.",
+          "url": "http://foreignpolicy.com/2026/09/15/china-us-ai-artificial-intelligence-data-summit-anthropic/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El episodio coincide con la semana en que líderes de OpenAI, Anthropic y Google se reúnen para discutir seguridad de IA y chocan con Trump, añadiendo una dimensión regulatoria urgente a lo que hasta ahora era un debate tecnológico abstracto.",
+            "en": "The episode coincides with the week OpenAI, Anthropic and Google leaders convene to discuss AI safety while clashing with Trump, adding an urgent regulatory dimension to what had been an abstract technological debate."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "BRICS presiona por la desdolarización, pero los expertos señalan que es más retórica que realidad",
+          "body": "En la cumbre del BRICS del fin de semana, los líderes llamaron a expandir el comercio en monedas locales y reducir la dependencia del dólar, pero economistas y analistas citados por CNBC apuntan a la falta de integración financiera, los amplios desequilibrios comerciales y la desconfianza entre China e India como obstáculos estructurales que hacen inviable cualquier alternativa al dólar en el corto plazo. El dato que mejor resume la situación: el dólar representó el 89% del mercado Forex en abril según el BIS — un punto porcentual más que el año anterior, no menos.",
+          "url": "https://www.cnbc.com/2026/09/16/de-dollarization-brics-china-russia-trump.html",
+          "tag": "FX",
+          "context_note": {
+            "es": "La discusión sobre desdolarización resurge cada vez que el dólar se fortalece por ciclos de alzas de la Fed — como el actual — lo que convierte el debate de hoy en un reflejo predecible de las tensiones macroeconómicas globales, no en una amenaza real al orden monetario.",
+            "en": "De-dollarization talk resurges every time the dollar strengthens on Fed hiking cycles — as now — making today's debate a predictable reflection of global macro tensions rather than a real threat to the monetary order."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The most important thing to recognize when you're in a period of higher-for-longer rates is that everything that was priced for perfection is now being repriced for reality.",
+        "attribution": "Lawrence Summers, ex Secretario del Tesoro de EE.UU., entrevista Bloomberg, 2023"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, today the market holds its breath before a Fed that has spent months promising more pain and will finally deliver tomorrow: the probability of a 25-basis-point hike sits at 90% and 10-year Treasuries are already trading at levels not seen since 2007. What's truly alarming isn't the hike itself — it's what comes after, and Wall Street knows it perfectly well.",
+      "narrative_thread": "The prospect of 'higher for longer' U.S. rates simultaneously stresses global bond markets, pressures risk assets from bitcoin to equities, and forces a reckoning over which economies — like Mexico's — can actually benefit from the investment cycle the Fed is making more expensive for everyone.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 28,
+        "context_es": "Los rendimientos del Tesoro en máximos de casi dos décadas, una Fed a punto de subir tasas y gestores globales que ya temen más un desplome desordenado en bonos que una burbuja de IA señalan un mercado en modo defensivo.",
+        "context_en": "Treasury yields at near two-decade highs, a Fed poised to hike, and global fund managers now fearing a disorderly bond selloff more than an AI bubble all point to a market in defensive mode."
+      },
+      "stories": [
+        {
+          "source": "The Wall Street Journal",
+          "headline": "10-Year Treasury Yields Hit 2007 Highs Ahead of Imminent Fed Decision",
+          "body": "The U.S. 10-year Treasury yield touched its highest level since 2007, with the market assigning a 90% probability to a rate hike at Wednesday's Fed meeting. The data makes any Fed signal on the future pace of hikes — the so-called dot plot — the real risk event: a single hike is already priced in; what moves markets is how many more are coming.",
+          "url": "https://www.wsj.com/finance/investing/u-s-10-year-treasury-yield-rises-to-highest-since-2007-91d1e44f",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Con el IPC estadounidense en 3.4% anual a agosto — aún por encima del objetivo del 2% de la Fed — el mercado está empezando a cotizar no una pausa, sino un ciclo de alzas prolongado que podría redefinir las valoraciones de todos los activos.",
+            "en": "With U.S. CPI at 3.4% annually through August — still above the Fed's 2% target — the market is beginning to price not a pause but a prolonged hiking cycle that could reprice all asset classes."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "MarketWatch",
+          "headline": "Wall Street's Biggest Fear Is No Longer the AI Bubble — It's a Disorderly Bond Selloff",
+          "body": "Bank of America's latest global fund manager survey shows that a 'disorderly rise' in bond yields has displaced the artificial intelligence bubble as the number-one risk identified by investment professionals. The finding matters because when managers remap their risks, they also reposition their portfolios — and that can become a self-fulfilling prophecy if everyone heads for the exit at once.",
+          "url": "https://www.marketwatch.com/story/an-ai-bubble-is-no-longer-wall-streets-biggest-fear-this-market-risk-just-took-its-place-ec939034",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "Esta encuesta se publica precisamente cuando el 10 años toca máximos de 2007, lo que le da una relevancia inmediata inusual: el riesgo que más temen los gestores ya está materializándose en tiempo real.",
+            "en": "This survey publishes precisely as the 10-year hits 2007 highs, giving it unusual immediate relevance: the risk managers fear most is already materializing in real time."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico's Treasury Projects 1.8% Growth for 2026, But the Manufacturing Engine May Be Changing Hands",
+          "body": "Mexico's SHCP Economic Policy Criteria for the PPEF 2027 maintain a 1.8% growth forecast for Mexico in 2026, sustained by a second-quarter recovery, while the U.S. manufacturing boom reorients toward semiconductors, data centers and artificial intelligence — sectors where Mexico contributes little value added. If the historical elasticity between U.S. and Mexican GDP deteriorates because the investment cycle benefits China and its component supply chains more, the Treasury's optimism may remain just that — optimism.",
+          "url": "https://www.elfinanciero.com.mx/opinion/manuel-molano/2026/09/16/cuenta-de-errores-y-omisiones/",
+          "tag": "México",
+          "context_note": {
+            "es": "El análisis llega en un momento en que las tasas estadounidenses en máximos históricos encarecen el costo de capital para la inversión en México justo cuando el país más necesita atraer proyectos de nearshoring tecnológico de alto valor agregado.",
+            "en": "The analysis arrives as U.S. rates at historic highs raise the cost of capital for investment in Mexico precisely when the country most needs to attract high-value-added tech nearshoring projects."
+          },
+          "thread_tag": "México: crecimiento"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Ukraine Warns Asian Nations: Your Chips Are Turning Up in Russian Missiles",
+          "body": "Vladyslav Vlasiuk, President Zelensky's sanctions commissioner, said in Singapore that halving Russia's oil revenues could force Moscow to withdraw from the war within six months, and warned that microelectronic components recovered from a missile shot down over Kyiv last month originated from the U.S., Russia, China, Taiwan and Japan. Ukraine's Asian tour is an explicit acknowledgment that the Western sanctions architecture has a massive gap in the region, and closing it requires convincing India, Malaysia, Indonesia and Thailand — economies that actively trade with Russia and have little incentive to complicate their lives.",
+          "url": "https://www.cnbc.com/2026/09/16/russia-ukraine-war-sanction-oil-missile-weapons-.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "Con el Brent cerca de $108 y Rusia dependiendo críticamente de sus exportaciones petroleras, la efectividad del techo de precio del G7 está directamente vinculada a cuánto cooperan las refinerías asiáticas — lo que convierte esta gira diplomática en un asunto de mercado energético, no solo geopolítico.",
+            "en": "With Brent near $108 and Russia critically dependent on oil export revenues, the effectiveness of the G7 price cap is directly linked to how much Asian refiners cooperate — making this diplomatic tour an energy market issue, not just a geopolitical one."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Chinese AI Firms Secretly Routed Real User Data Through Anthropic's Claude at Massive Scale",
+          "body": "Anthropic accuses Chinese AI companies including Moonshot AI and DeepSeek of routing more than 300,000 real user requests through Claude over ten days, including surveillance material allegedly linked to the People's Liberation Army, credentials from state-owned enterprise engineers and data from internal police case management systems. The scandal cuts both ways: for Washington, it confirms that the U.S.'s most advanced model was processing sensitive Chinese intelligence; for Beijing, that massive volumes of Chinese citizen data — the most valuable resource in the AI race — may be involuntarily flowing to its rivals.",
+          "url": "http://foreignpolicy.com/2026/09/15/china-us-ai-artificial-intelligence-data-summit-anthropic/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El episodio coincide con la semana en que líderes de OpenAI, Anthropic y Google se reúnen para discutir seguridad de IA y chocan con Trump, añadiendo una dimensión regulatoria urgente a lo que hasta ahora era un debate tecnológico abstracto.",
+            "en": "The episode coincides with the week OpenAI, Anthropic and Google leaders convene to discuss AI safety while clashing with Trump, adding an urgent regulatory dimension to what had been an abstract technological debate."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "BRICS Pushes for De-Dollarization, But Experts Say It's More Talk Than Action",
+          "body": "At the weekend BRICS summit, leaders called for expanding trade in local currencies and reducing dependence on the dollar, but economists and analysts cited by CNBC point to a lack of financial integration, wide trade imbalances and deep distrust between China and India as structural obstacles that make any dollar alternative unviable in the near term. The data point that best summarizes the situation: the dollar accounted for 89% of the Forex market in April according to the BIS — one percentage point more than the prior year, not less.",
+          "url": "https://www.cnbc.com/2026/09/16/de-dollarization-brics-china-russia-trump.html",
+          "tag": "FX",
+          "context_note": {
+            "es": "La discusión sobre desdolarización resurge cada vez que el dólar se fortalece por ciclos de alzas de la Fed — como el actual — lo que convierte el debate de hoy en un reflejo predecible de las tensiones macroeconómicas globales, no en una amenaza real al orden monetario.",
+            "en": "De-dollarization talk resurges every time the dollar strengthens on Fed hiking cycles — as now — making today's debate a predictable reflection of global macro tensions rather than a real threat to the monetary order."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The most important thing to recognize when you're in a period of higher-for-longer rates is that everything that was priced for perfection is now being repriced for reality.",
+        "attribution": "Lawrence Summers, former U.S. Treasury Secretary, Bloomberg interview, 2023"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-09-17.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "100.10",
+        "change": "▼ 0.2%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "5.01%",
+        "change": "▲ 0.2%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "15.70",
+        "change": "▼ 11.3%",
+        "direction": "down",
+        "chg_1w": "▼ 0.9%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$65.72",
+        "change": "▼ 0.1%",
+        "direction": "down",
+        "chg_1w": "▼ 1.9%",
+        "direction_1w": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05830",
+            "chg_1d": {
+              "text": "▼ 0.04%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.98%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2990",
+            "chg_1d": {
+              "text": "▼ 0.32%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.48%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.05069",
+            "chg_1d": {
+              "text": "▲ 0.29%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3903",
+            "chg_1d": {
+              "text": "▼ 0.28%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.14%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0815",
+            "chg_1d": {
+              "text": "▲ 0.38%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04352",
+            "chg_1d": {
+              "text": "▲ 0.55%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.14%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "9.06",
+            "chg_1d": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.41%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.1531",
+            "chg_1d": {
+              "text": "▲ 0.04%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.99%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1285",
+            "chg_1d": {
+              "text": "▼ 0.28%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.50%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.86957",
+            "chg_1d": {
+              "text": "▲ 0.33%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.96%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.6953",
+            "chg_1d": {
+              "text": "▼ 0.24%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.3983",
+            "chg_1d": {
+              "text": "▲ 0.42%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.07%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.74655",
+            "chg_1d": {
+              "text": "▲ 0.59%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.85%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "155.37",
+            "chg_1d": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.58%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.3447",
+            "chg_1d": {
+              "text": "▲ 0.32%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.48%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19499",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.50%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16956",
+            "chg_1d": {
+              "text": "▲ 0.61%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.45%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3055",
+            "chg_1d": {
+              "text": "▲ 0.04%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.66%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2727",
+            "chg_1d": {
+              "text": "▲ 0.71%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.56%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14557",
+            "chg_1d": {
+              "text": "▲ 0.87%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.35%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.30",
+            "chg_1d": {
+              "text": "▲ 0.35%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "19.7261",
+            "chg_1d": {
+              "text": "▼ 0.29%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.15000",
+            "chg_1d": {
+              "text": "▼ 0.33%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.95%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.8978",
+            "chg_1d": {
+              "text": "▼ 0.61%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.45%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.6996",
+            "chg_1d": {
+              "text": "▼ 0.56%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.11%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6080",
+            "chg_1d": {
+              "text": "▲ 0.10%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.11%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.85853",
+            "chg_1d": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.10%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "178.68",
+            "chg_1d": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.38%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5620",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.15%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14936",
+            "chg_1d": {
+              "text": "▲ 0.24%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.16%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7660",
+            "chg_1d": {
+              "text": "▼ 0.04%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.67%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.12988",
+            "chg_1d": {
+              "text": "▲ 0.57%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.12%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2088",
+            "chg_1d": {
+              "text": "▲ 0.66%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.23%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11150",
+            "chg_1d": {
+              "text": "▲ 0.82%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.02%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.21",
+            "chg_1d": {
+              "text": "▲ 0.31%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.74%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Tasas",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: Rendimientos del bono a 10 años alcanzan máximos desde 2007 ante inminente decisión de la Fed, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, A steep upward-trending line or arrow piercing through layered bond certificates, 2007 to present, wide establishing shot, environmental context visible, inspired by: Rendimientos del bono a 10 años alcanzan máximos desde 2007 ante inminente decisión de la Fed, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of A steep upward-trending line or arrow piercing through layered bond certificates, 2007 to present, isolated detail, shallow depth of field, inspired by: Rendimientos del bono a 10 años alcanzan máximos desde 2007 ante inminente decisión de la Fed, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, A steep upward-trending line or arrow piercing through layered bond certificates, 2007 to present, low angle with strong perspective and architectural framing, inspired by: Rendimientos del bono a 10 años alcanzan máximos desde 2007 ante inminente decisión de la Fed, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Steep upward-trending line or arrow piercing through layered bond certificates, 2007 to present — Wide shot",
+      "opt2": "Steep upward-trending line or arrow piercing through layered bond certificates, 2007 to present — Close-up",
+      "opt3": "Steep upward-trending line or arrow piercing through layered bond certificates, 2007 to present — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-17_hero.png"
+  }
+}
