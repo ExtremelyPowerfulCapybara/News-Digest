@@ -1,0 +1,704 @@
+{
+  "date": "2026-09-18",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, la Fed subió tasas por primera vez en tres años y el hombre que Trump nombró para bajarlas presidió la decisión por unanimidad — la ironía se administra sola. Mientras el dólar toca máximos de siete semanas y los mercados globales absorben el golpe, el mundo reordena sus alianzas comerciales con una velocidad que hace quedar a la OMC como reliquia arqueológica.",
+      "narrative_thread": "La decisión de la Fed de volver a subir tasas ante una inflación que no cede reverbera en divisas, bonos y geometrías geopolíticas globales, obligando a gobiernos y mercados a recalibrarse simultáneamente.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Los mercados digieren la subida de la Fed con relativa calma, pero la señal de alzas adicionales y el petróleo elevado mantienen el ambiente tenso y vigilante.",
+        "context_en": "Markets are digesting the Fed hike with relative composure, but signals of further tightening and elevated oil prices keep the mood tense and watchful."
+      },
+      "stories": [
+        {
+          "source": "Foreign Policy",
+          "headline": "Fed sube tasas por primera vez en tres años; Warsh desafía el mandato político de Trump",
+          "body": "Kevin Warsh presidió una decisión unánime de elevar el costo del crédito en 25 puntos base, la primera alza desde julio de 2023, citando una inflación del 3.4% anual que sigue fuera del objetivo del 2%. La mayoría de los funcionarios de la Fed señaló que vendrán más aumentos en 2026 y 2027, poniendo a Warsh en colisión directa con un presidente que lo nombró precisamente para hacer lo contrario.",
+          "url": "http://foreignpolicy.com/2026/09/16/fed-interest-rate-hike-increase-trump-inflation/",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "El alza llega después de que el IPC de agosto sorprendiera al alza, borrando las esperanzas de verano de que la inflación convergía al objetivo; el mercado ahora cotiza más de dos subidas adicionales para finales de 2027.",
+            "en": "The hike follows an August CPI surprise that erased summer hopes of inflation converging toward target; markets are now pricing in more than two additional increases through end-2027."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Dólar alcanza máximo de siete semanas tras Fed hawkish; atención vira al Banco de Japón",
+          "body": "El índice dólar cerró la sesión del miércoles con su mayor salto diario en tres meses, superando 100.23, antes de ceder levemente el jueves al moderarse los rendimientos del Tesoro y los precios del petróleo. El Banco de Japón se prepara para elevar tasas a un máximo de 31 años el viernes, lo que podría introducir un segundo vector de volatilidad en divisas asiáticas ya presionadas por el fortalecimiento del dólar.",
+          "url": "https://www.cnbc.com/2026/09/17/hawkish-fed-lifts-dollar-to-seven-week-high-as-focus-turn-to-boj.html",
+          "tag": "FX",
+          "context_note": {
+            "es": "La divergencia entre las proyecciones de la Fed —una sola alza adicional en 2026— y lo que el mercado descuenta —más de tres— hace al dólar vulnerable a una corrección si los datos de inflación sorprenden a la baja en las próximas semanas.",
+            "en": "The gap between the Fed's own dot plot — one more hike in 2026 — and market pricing — more than three — leaves the dollar vulnerable to a sharp reversal if upcoming inflation data undershoots expectations."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Trump obtiene arma arancelaria de hasta 100% sobre países que compren petróleo ruso; China e India en la mira",
+          "body": "La Cámara de Representantes aprobó un proyecto de sanciones a Rusia que faculta al presidente para imponer aranceles de hasta 100% a los compradores de energía rusa, con China absorbiendo el 50% de las exportaciones de crudo ruso y la India el 37% al cierre de agosto. Expertos advierten que ambos países difícilmente podrían reemplazar 3.5 millones de barriles diarios de suministro marítimo ruso, pero Washington probablemente reservará la herramienta como palanca negociadora antes de las cumbres bilaterales con Xi y Modi.",
+          "url": "https://www.cnbc.com/2026/09/17/trump-russia-sanctions-india-china-oil-tariffs.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "La ley llega justo cuando Xi Jinping se prepara para reunirse con Trump a finales de mes y mientras India negocia un acuerdo comercial preferencial con Washington, lo que convierte la amenaza arancelaria en una ficha de póker de alto valor en múltiples mesas simultáneas.",
+            "en": "The legislation arrives just as Xi prepares for a Trump meeting later this month and India negotiates a preferential trade deal with Washington, making the tariff threat a high-value poker chip at multiple simultaneous tables."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Carney abraza la oferta de membresía asociada de la UE; Trump amenaza a Europa con aranceles",
+          "body": "El primer ministro canadiense Mark Carney compareció ante el Parlamento Europeo en Estrasburgo para respaldar la propuesta de la presidenta von der Leyen de convertir a Canadá en el primer miembro asociado de la UE, una categoría jurídica que aún no existe en los tratados del bloque. Trump calificó la iniciativa de 'risible' y amenazó con aranceles pesados a Europa si la considera un 'acto hostil', escalando una disputa que ya tiene al comercio transatlántico bajo presión.",
+          "url": "https://www.cnbc.com/2026/09/17/carney-canada-eu-associate-member.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El movimiento es en parte respuesta a la guerra arancelaria de Trump contra Canadá, pero también refleja el interés europeo en asegurar suministros de gas natural licuado, minerales críticos e hidrógeno canadiense en un contexto de dependencia energética post-Rusia.",
+            "en": "The move is partly a response to Trump's tariff war against Canada, but also reflects European interest in securing supplies of Canadian LNG, critical minerals, and hydrogen amid post-Russia energy dependency."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "La subida de la Fed presiona divisas emergentes y reduce margen de maniobra a bancos centrales globales",
+          "body": "La reanudación del ciclo alcista de la Fed fortalece el dólar y eleva los rendimientos del Tesoro, complicando la lucha antiinflacionaria de economías cuyas monedas ya se deprecian por el encarecimiento del petróleo derivado del conflicto en Medio Oriente. BlackRock y J.P. Morgan Asset Management advierten que la presión sobre divisas asiáticas podría intensificarse si el Banco de Japón no logra compensar el diferencial de tasas con su propia alza prevista para el viernes.",
+          "url": "https://www.cnbc.com/2026/09/17/fed-rate-hike-impact-globally-currency-yields.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "A diferencia de ciclos anteriores, la inflación en Asia es profundamente divergente: China y Tailandia sufren presiones deflacionarias mientras Australia y Japón superan sus metas, lo que impide una respuesta coordinada de política monetaria regional.",
+            "en": "Unlike previous cycles, Asian inflation is deeply divergent — China and Thailand face deflationary pressure while Australia and Japan exceed their targets — preventing any coordinated regional monetary policy response."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Modi y Xi sellan distensión en el BRICS; acuerdan ser socios, no rivales",
+          "body": "Xi Jinping visitó Nueva Delhi por primera vez en siete años para el cumbre del BRICS, donde él y el primer ministro Modi alcanzaron lo que el canciller Wang Yi describió como 'el consenso más importante' para avanzar como socios estratégicos tras la crisis fronteriza de Ladakh en 2020. La distensión, que comenzó con un acuerdo fronterizo en octubre de 2024, se acelera ahora bajo el acicate común de los aranceles de Trump y la necesidad de diversificar acceso a mercados fuera de Estados Unidos.",
+          "url": "http://foreignpolicy.com/2026/09/16/modi-xi-brics-meeting-india-china-detente/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El acercamiento India-China ocurre simultáneamente con la aprobación en el Congreso de EE.UU. de aranceles potenciales de hasta 100% sobre compradores de petróleo ruso, lo que pone a Nueva Delhi en una posición delicada: negociar con Washington mientras refuerza lazos con Pekín.",
+            "en": "The India-China rapprochement unfolds simultaneously with U.S. Congressional approval of potential 100% tariffs on Russian oil buyers, placing New Delhi in a delicate position: negotiating with Washington while tightening ties with Beijing."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Kueski nombra a Jordan Olivier como CFO para escalar Kueski Pay en fase clave de expansión",
+          "body": "La fintech mexicana Kueski incorporó a Jordan Olivier, veterano de Charles Schwab, LendingClub y Braviant Holdings, como director financiero para liderar la estrategia de capital y deuda mientras la plataforma, que ha emitido 40 millones de préstamos, busca escalar Kueski Pay —presente en casi el 40% del e-commerce nacional— y diversificar su portafolio de crédito digital. El fichaje señala que Kueski se prepara para una ronda de financiamiento o una operación de mercado de capitales relevante, en un entorno donde el crédito digital en México sigue ganando penetración frente a la banca tradicional.",
+          "url": "https://www.elfinanciero.com.mx/opinion/de-jefes/2026/09/17/kueski-nuevo-fichaje/",
+          "tag": "México",
+          "context_note": {
+            "es": "El movimiento contrasta con el endurecimiento de condiciones financieras globales post-Fed: captar un CFO con experiencia en mercados de capitales sugiere que Kueski anticipa acceder a deuda o equity en un entorno de tasas altas, donde el costo del fondeo para fintechs latinoamericanas se ha encarecido considerablemente.",
+            "en": "The hire contrasts with tightening global financial conditions post-Fed: bringing on a capital markets veteran suggests Kueski anticipates tapping debt or equity in a high-rate environment where funding costs for Latin American fintechs have risen considerably."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The Federal Reserve's job is to take away the punch bowl just as the party gets going.",
+        "attribution": "William McChesney Martin, Presidente de la Reserva Federal, discurso ante la Asociación de Banqueros de Inversión de Nueva York, 1955"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the Fed raised rates for the first time in three years, and the man Trump appointed to lower them presided over a unanimous decision — the irony administers itself. As the dollar hits seven-week highs and global markets absorb the blow, the world is redrawing its trade alliances at a speed that makes the WTO look like an archaeological relic.",
+      "narrative_thread": "The Fed's return to rate hikes amid stubborn inflation reverberates across currencies, bonds, and global geopolitical alignments, forcing governments and markets to recalibrate simultaneously.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Los mercados digieren la subida de la Fed con relativa calma, pero la señal de alzas adicionales y el petróleo elevado mantienen el ambiente tenso y vigilante.",
+        "context_en": "Markets are digesting the Fed hike with relative composure, but signals of further tightening and elevated oil prices keep the mood tense and watchful."
+      },
+      "stories": [
+        {
+          "source": "Foreign Policy",
+          "headline": "Fed raises rates for first time in three years; Warsh defies Trump's political mandate",
+          "body": "Kevin Warsh presided over a unanimous decision to raise borrowing costs by 25 basis points — the first hike since July 2023 — citing annual inflation of 3.4% still well above the 2% target. Most Fed officials signaled further increases in 2026 and 2027, putting Warsh on a direct collision course with the president who appointed him to do precisely the opposite.",
+          "url": "http://foreignpolicy.com/2026/09/16/fed-interest-rate-hike-increase-trump-inflation/",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "El alza llega después de que el IPC de agosto sorprendiera al alza, borrando las esperanzas de verano de que la inflación convergía al objetivo; el mercado ahora cotiza más de dos subidas adicionales para finales de 2027.",
+            "en": "The hike follows an August CPI surprise that erased summer hopes of inflation converging toward target; markets are now pricing in more than two additional increases through end-2027."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Dollar hits seven-week high after hawkish Fed; focus shifts to Bank of Japan",
+          "body": "The dollar index posted its largest single-day gain in three months on Wednesday, topping 100.23, before easing slightly Thursday as Treasury yields and oil prices moderated. The Bank of Japan is set to raise rates to a 31-year high on Friday, potentially introducing a second vector of volatility into Asian currencies already pressured by the stronger dollar.",
+          "url": "https://www.cnbc.com/2026/09/17/hawkish-fed-lifts-dollar-to-seven-week-high-as-focus-turn-to-boj.html",
+          "tag": "FX",
+          "context_note": {
+            "es": "La divergencia entre las proyecciones de la Fed —una sola alza adicional en 2026— y lo que el mercado descuenta —más de tres— hace al dólar vulnerable a una corrección si los datos de inflación sorprenden a la baja en las próximas semanas.",
+            "en": "The gap between the Fed's own dot plot — one more hike in 2026 — and market pricing — more than three — leaves the dollar vulnerable to a sharp reversal if upcoming inflation data undershoots expectations."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Trump gains tariff weapon of up to 100% on Russian oil buyers; China and India in crosshairs",
+          "body": "The House passed a sweeping Russia sanctions bill authorizing the president to impose tariffs of up to 100% on buyers of Russian energy, with China absorbing 50% of Russian crude exports and India 37% as of late August. Experts warn that neither country could realistically replace 3.5 million barrels per day of Russian seaborne supply, but Washington is likely to hold the tool in reserve as negotiating leverage ahead of upcoming bilateral summits with Xi and Modi.",
+          "url": "https://www.cnbc.com/2026/09/17/trump-russia-sanctions-india-china-oil-tariffs.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "La ley llega justo cuando Xi Jinping se prepara para reunirse con Trump a finales de mes y mientras India negocia un acuerdo comercial preferencial con Washington, lo que convierte la amenaza arancelaria en una ficha de póker de alto valor en múltiples mesas simultáneas.",
+            "en": "The legislation arrives just as Xi prepares for a Trump meeting later this month and India negotiates a preferential trade deal with Washington, making the tariff threat a high-value poker chip at multiple simultaneous tables."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Carney embraces EU associate membership offer; Trump threatens Europe with tariffs",
+          "body": "Canadian Prime Minister Mark Carney appeared before the European Parliament in Strasbourg to endorse President von der Leyen's proposal to make Canada the EU's first associate member — a legal category that does not yet exist under bloc treaties. Trump dismissed the initiative as 'laughable' and threatened heavy tariffs on Europe if he deems the move a 'hostile act,' escalating a dispute that already has transatlantic trade under pressure.",
+          "url": "https://www.cnbc.com/2026/09/17/carney-canada-eu-associate-member.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El movimiento es en parte respuesta a la guerra arancelaria de Trump contra Canadá, pero también refleja el interés europeo en asegurar suministros de gas natural licuado, minerales críticos e hidrógeno canadiense en un contexto de dependencia energética post-Rusia.",
+            "en": "The move is partly a response to Trump's tariff war against Canada, but also reflects European interest in securing supplies of Canadian LNG, critical minerals, and hydrogen amid post-Russia energy dependency."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Fed hike pressures emerging market currencies and shrinks room for global central banks to maneuver",
+          "body": "The resumption of the Fed's tightening cycle strengthens the dollar and lifts Treasury yields, complicating inflation fights in economies whose currencies are already depreciating from oil price spikes driven by the Middle East conflict. BlackRock and J.P. Morgan Asset Management warn that pressure on Asian currencies could intensify if the Bank of Japan fails to offset the rate differential with its own expected hike on Friday.",
+          "url": "https://www.cnbc.com/2026/09/17/fed-rate-hike-impact-globally-currency-yields.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "A diferencia de ciclos anteriores, la inflación en Asia es profundamente divergente: China y Tailandia sufren presiones deflacionarias mientras Australia y Japón superan sus metas, lo que impide una respuesta coordinada de política monetaria regional.",
+            "en": "Unlike previous cycles, Asian inflation is deeply divergent — China and Thailand face deflationary pressure while Australia and Japan exceed their targets — preventing any coordinated regional monetary policy response."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Modi and Xi seal détente at BRICS; agree to be partners, not rivals",
+          "body": "Xi Jinping visited New Delhi for the first time in seven years for the BRICS summit, where he and Prime Minister Modi reached what Foreign Minister Wang Yi described as 'the most important consensus' to advance as strategic partners following the 2020 Ladakh border crisis. The détente, which began with a border agreement in October 2024, is now accelerating under the shared pressure of Trump's tariffs and the need to diversify market access beyond the United States.",
+          "url": "http://foreignpolicy.com/2026/09/16/modi-xi-brics-meeting-india-china-detente/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El acercamiento India-China ocurre simultáneamente con la aprobación en el Congreso de EE.UU. de aranceles potenciales de hasta 100% sobre compradores de petróleo ruso, lo que pone a Nueva Delhi en una posición delicada: negociar con Washington mientras refuerza lazos con Pekín.",
+            "en": "The India-China rapprochement unfolds simultaneously with U.S. Congressional approval of potential 100% tariffs on Russian oil buyers, placing New Delhi in a delicate position: negotiating with Washington while tightening ties with Beijing."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Kueski appoints Jordan Olivier as CFO to scale Kueski Pay in key expansion phase",
+          "body": "Mexican fintech Kueski brought on Jordan Olivier, a veteran of Charles Schwab, LendingClub, and Braviant Holdings, as CFO to lead capital and debt strategy as the platform — which has issued 40 million loans — looks to scale Kueski Pay, present in nearly 40% of national e-commerce, and diversify its digital credit portfolio. The hire signals that Kueski is preparing for a significant capital markets transaction or financing round in an environment where digital credit in Mexico continues gaining ground over traditional banking.",
+          "url": "https://www.elfinanciero.com.mx/opinion/de-jefes/2026/09/17/kueski-nuevo-fichaje/",
+          "tag": "México",
+          "context_note": {
+            "es": "El movimiento contrasta con el endurecimiento de condiciones financieras globales post-Fed: captar un CFO con experiencia en mercados de capitales sugiere que Kueski anticipa acceder a deuda o equity en un entorno de tasas altas, donde el costo del fondeo para fintechs latinoamericanas se ha encarecido considerablemente.",
+            "en": "The hire contrasts with tightening global financial conditions post-Fed: bringing on a capital markets veteran suggests Kueski anticipates tapping debt or equity in a high-rate environment where funding costs for Latin American fintechs have risen considerably."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The Federal Reserve's job is to take away the punch bowl just as the party gets going.",
+        "attribution": "William McChesney Martin, Chairman of the Federal Reserve, speech to the Investment Bankers Association of New York, 1955"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-09-18.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "100.53",
+        "change": "▲ 0.3%",
+        "direction": "up",
+        "chg_1w": "▲ 1.1%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.95%",
+        "change": "▼ 1.2%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "15.53",
+        "change": "▲ 0.6%",
+        "direction": "up",
+        "chg_1w": "▼ 9.2%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$66.91",
+        "change": "▲ 1.8%",
+        "direction": "up",
+        "chg_1w": "▼ 1.4%",
+        "direction_1w": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05816",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.26%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2989",
+            "chg_1d": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.74%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.05075",
+            "chg_1d": {
+              "text": "▲ 0.35%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.12%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3890",
+            "chg_1d": {
+              "text": "▲ 0.01%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.55%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0815",
+            "chg_1d": {
+              "text": "▲ 0.43%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.25%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04361",
+            "chg_1d": {
+              "text": "▲ 0.62%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "9.18",
+            "chg_1d": {
+              "text": "▲ 1.50%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.62%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.1928",
+            "chg_1d": {
+              "text": "▼ 0.28%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.28%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1385",
+            "chg_1d": {
+              "text": "▼ 0.24%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.53%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.87252",
+            "chg_1d": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.16%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.6884",
+            "chg_1d": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.29%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.4010",
+            "chg_1d": {
+              "text": "▲ 0.16%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.03%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.74979",
+            "chg_1d": {
+              "text": "▲ 0.34%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.42%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "157.91",
+            "chg_1d": {
+              "text": "▲ 1.22%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.92%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.3459",
+            "chg_1d": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.74%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19461",
+            "chg_1d": {
+              "text": "▲ 0.24%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.53%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16980",
+            "chg_1d": {
+              "text": "▲ 0.32%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.62%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3016",
+            "chg_1d": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.82%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2726",
+            "chg_1d": {
+              "text": "▲ 0.40%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.49%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14592",
+            "chg_1d": {
+              "text": "▲ 0.59%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.88%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.73",
+            "chg_1d": {
+              "text": "▲ 1.46%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.38%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "19.7047",
+            "chg_1d": {
+              "text": "▼ 0.35%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.12%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.14610",
+            "chg_1d": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.15%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.8892",
+            "chg_1d": {
+              "text": "▼ 0.32%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.62%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.6656",
+            "chg_1d": {
+              "text": "▼ 0.34%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.44%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6057",
+            "chg_1d": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.85934",
+            "chg_1d": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.25%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "180.98",
+            "chg_1d": {
+              "text": "▲ 1.14%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.74%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5705",
+            "chg_1d": {
+              "text": "▼ 0.01%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.58%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14951",
+            "chg_1d": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.29%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7683",
+            "chg_1d": {
+              "text": "▲ 0.02%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.83%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.13045",
+            "chg_1d": {
+              "text": "▲ 0.34%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.46%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2095",
+            "chg_1d": {
+              "text": "▲ 0.42%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.33%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11210",
+            "chg_1d": {
+              "text": "▲ 0.61%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.71%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.61",
+            "chg_1d": {
+              "text": "▲ 1.48%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 3.23%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Tasas",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: Fed sube tasas por primera vez en tres años; Warsh desafía el mandato político de Trump, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Upward-pointing arrow or line graph rising sharply, with the number 25 embedded within it, wide establishing shot, environmental context visible, inspired by: Fed sube tasas por primera vez en tres años; Warsh desafía el mandato político de Trump, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of Upward-pointing arrow or line graph rising sharply, with the number 25 embedded within it, isolated detail, shallow depth of field, inspired by: Fed sube tasas por primera vez en tres años; Warsh desafía el mandato político de Trump, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Upward-pointing arrow or line graph rising sharply, with the number 25 embedded within it, low angle with strong perspective and architectural framing, inspired by: Fed sube tasas por primera vez en tres años; Warsh desafía el mandato político de Trump, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Upward-pointing arrow or line graph rising sharply, with the number 25 embedded within it — Wide shot",
+      "opt2": "Upward-pointing arrow or line graph rising sharply, with the number 25 embedded within it — Close-up",
+      "opt3": "Upward-pointing arrow or line graph rising sharply, with the number 25 embedded within it — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-18_hero.png"
+  }
+}
