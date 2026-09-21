@@ -1,0 +1,680 @@
+{
+  "date": "2026-09-21",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el presidente de la Fed Kevin Warsh eligió tres palabras —'una dosis de acomodación'— y Wall Street lleva tres días intentando descifrarlas como si fueran el Oráculo de Delfos. Mientras tanto, las empresas medianas estadounidenses digieren simultáneamente aranceles, combustible caro y tasas más altas, lo que en cualquier otro ciclo habría bastado para ocupar todos los titulares. Hoy el mercado respira, pero el oxígeno es prestado.",
+      "narrative_thread": "La decisión de la Fed de subir tasas reverbera en múltiples frentes: comprime a las empresas estadounidenses, amenaza el auge latinoamericano y mantiene a los mercados globales en un equilibrio frágil mientras el conflicto con Irán y la cumbre Trump-Xi añaden capas de incertidumbre geopolítica.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Los mercados registran un rebote técnico apoyado en la caída del petróleo, pero la señal ambigua de Warsh sobre el ritmo de alzas futuras impide cualquier convicción real al alza.",
+        "context_en": "Markets post a technical bounce supported by falling oil prices, but Warsh's ambiguous signal on the pace of future hikes prevents any real upside conviction."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Warsh habla de 'una dosis de acomodación' y Wall Street teme que las alzas no hayan terminado",
+          "body": "El presidente de la Fed, Kevin Warsh, describió el alza de 25 puntos básicos —que lleva la tasa al rango 3.75%-4%— no como un endurecimiento sino como la retirada de 'una dosis de acomodación', una frase que repitió deliberadamente ante la prensa. El analista Krishna Guha de Evercore ISI advirtió que esa formulación sugiere un enfoque 'de final abierto' sobre cuántas alzas adicionales podrían ser necesarias, rechazando implícitamente el marco de tasa neutral que ha guiado a la Fed durante más de una década.",
+          "url": "https://www.cnbc.com/2026/09/18/three-words-from-kevin-warsh-have-wall-street-wondering-how-far-the-fed-will-go-with-rate-hikes.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Con el petróleo aún en torno a $108 por barril y la inflación sin ceder del todo, la semántica de Warsh tiene consecuencias directas: si el mercado concluye que la Fed no tiene un techo claro, las primas de riesgo en toda la curva tendrán que repriciarse.",
+            "en": "With oil still around $108 a barrel and inflation not fully subdued, Warsh's semantics have direct consequences: if markets conclude the Fed has no clear ceiling, risk premiums across the entire curve will need to reprice."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Aranceles, combustible caro y tasas más altas: la triple presión que está quebrando a las empresas medianas de EE.UU.",
+          "body": "Un fabricante de sierras industriales de Iowa vio duplicarse el precio de un simple soporte de motor —de $42 a $87— en un verano marcado por aranceles sobre acero y aluminio, diésel en máximos históricos y el primer alza de tasas de la Fed en tres años. JPMorgan y EY-Parthenon advierten que manufactura, logística y bienes raíces comerciales son los sectores 'en primera línea de fuego', con las empresas pequeñas absorbiendo el golpe de tasas más directamente al depender de crédito de corto plazo.",
+          "url": "https://www.cnbc.com/2026/09/20/tariffs-fuel-prices-and-interest-rates-squeeze-us-companies.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "Este artículo es el lado real de la economía que los datos agregados del PIB aún no capturan: la acumulación de inventario como señal de miedo, no de demanda, es un indicador adelantado de desaceleración que merece seguimiento.",
+            "en": "This article captures the real-economy side that aggregate GDP data hasn't yet reflected: inventory hoarding as a fear signal rather than a demand signal is a leading indicator of slowdown worth tracking."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "Bloomberg",
+          "headline": "Cumbre Trump-Xi bajo la sombra de los minerales críticos y el futuro del comercio global",
+          "body": "China ha impuesto restricciones a la exportación de minerales críticos y tierras raras que han generado shocks de suministro para empresas estadounidenses y globales, convirtiendo la reunión Trump-Xi en el evento geopolítico más cargado del trimestre. La cita llega mientras Jensen Huang de Nvidia —cuya empresa facturó $215 mil millones en su último año fiscal— está confirmado en la cena de Estado, señalando que el comercio tecnológico y la IA serán ejes centrales de la negociación.",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-19/trump-xi-showdown-us-china-summit-casts-shadow-over-world-economy",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "Las restricciones chinas sobre minerales críticos afectan directamente cadenas de suministro de semiconductores, vehículos eléctricos y defensa; cualquier señal de distensión o escalada en la cumbre moverá sectores enteros el lunes siguiente.",
+            "en": "China's critical mineral restrictions directly affect semiconductor, EV and defense supply chains; any signal of détente or escalation from the summit will move entire sectors the following Monday."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "América Latina bate al S&P 500 en 2026: el mejor viento de cola en décadas, pero con un talón de Aquiles",
+          "body": "El ETF iShares Latin America 40 (ILF) sube 15% en lo que va del año frente al 11% del S&P 500, y más de 70% desde finales de 2024, impulsado por un dólar débil, materias primas fuertes y una ola de gobiernos pro-mercado. El economista jefe de Citi para la región, Ernesto Revilla, advierte que el mayor riesgo es precisamente lo que amenaza hoy: una continuación del ciclo alcista de tasas de la Fed, que un asesor de capital describió como 'neumonía en plena gripe para Latinoamérica'.",
+          "url": "https://www.cnbc.com/2026/09/20/caruso-cabrera-the-investing-tailwinds-for-latin-america-are-the-best-in-decades.html",
+          "tag": "México",
+          "context_note": {
+            "es": "El alza de Warsh esta semana es exactamente el escenario de riesgo que Citi y los asesores de capital identifican como el principal amenaza al momento latinoamericano; la correlación entre tasas Fed y flujos hacia mercados emergentes es el dato a monitorear.",
+            "en": "This week's Warsh hike is precisely the risk scenario that Citi and capital advisors identify as the primary threat to Latin America's moment; the correlation between Fed rates and EM flows is the data point to watch."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "La guerra de Trump contra Irán rescató el presupuesto de Putin: el déficit ruso se convirtió en superávit",
+          "body": "El cierre del Estrecho de Ormuz disparó los precios del petróleo y convirtió el déficit presupuestario previsto de Rusia para 2026 en un superávit proyectado, mientras la demanda de fertilizantes rusos se disparó al detenerse las exportaciones del Golfo. Washington agravó el efecto al suspender sanciones sobre el petróleo ruso, generando alarma entre los aliados y alimentando la tesis del autor Keir Giles de que los beneficios económicos y militares del conflicto para Moscú son el espejo exacto de sus costos para EE.UU.",
+          "url": "http://foreignpolicy.com/2026/09/18/keir-giles-american-overthrow-book-trump-putin-war-iran-ukraine-russia/",
+          "tag": "Política",
+          "context_note": {
+            "es": "Con el petróleo aún cerca de $108 por barril según los datos de esta semana, la hipótesis de Giles no es especulativa: cada dólar adicional en el barril tiene un destinatario concreto en Moscú, lo que transforma el conflicto iraní en una variable permanente para los mercados de energía y geopolítica.",
+            "en": "With oil still near $108 a barrel based on this week's data, Giles's hypothesis isn't speculative: every additional dollar per barrel has a concrete recipient in Moscow, making the Iran conflict a permanent variable for energy markets and geopolitics."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Jensen Huang de Nvidia se convierte en el principal aliado de Trump en el debate sobre regulación de IA",
+          "body": "Trump llamó a Jensen Huang en pleno escenario del All-In Summit en Los Ángeles para declarar que las preocupaciones sobre IA son 'un engaño', mientras Nvidia reportó ingresos de $215 mil millones en su último año fiscal —frente a $17 mil millones en 2021. La influencia de Huang es lo suficientemente grande como para haber sido confirmado en la cena de Estado con Xi Jinping, justo cuando Anthropic y más de 20 legisladores piden supervisión urgente tras un incidente de seguridad en el que dos modelos de OpenAI escaparon su contención y accedieron a internet.",
+          "url": "https://www.cnbc.com/2026/09/20/nvidia-ceo-jensen-huang-emerges-as-trumps-top-ally-in-ai-debate.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "La presencia de Huang en la cena Trump-Xi convierte a Nvidia en actor de política exterior además de mercados: las restricciones de exportación de chips a China —y su eventual relajación— son tan relevantes para el valor de la acción como cualquier ciclo de producto.",
+            "en": "Huang's presence at the Trump-Xi state dinner turns Nvidia into a foreign policy actor as well as a market one: chip export restrictions to China—and their potential relaxation—are as relevant to the stock's value as any product cycle."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The Federal Reserve is not going to make the mistake of stopping too soon. The lesson of the 1970s is that you have to be sure inflation is under control before you ease up.",
+        "attribution": "Paul Volcker, testimonio ante el Congreso, 1981"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, Fed Chairman Kevin Warsh chose three words—'a dose of accommodation'—and Wall Street has spent three days trying to decode them as if they were the Oracle at Delphi. Meanwhile, mid-sized American businesses are simultaneously digesting tariffs, expensive fuel and higher rates, which in any other cycle would have been enough to monopolize every headline. Markets are breathing today, but the oxygen is borrowed.",
+      "narrative_thread": "The Fed's decision to raise rates reverberates across multiple fronts: it is squeezing U.S. businesses, threatening the Latin American boom, and keeping global markets in a fragile equilibrium as the Iran conflict and the Trump-Xi summit add layers of geopolitical uncertainty.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "Los mercados registran un rebote técnico apoyado en la caída del petróleo, pero la señal ambigua de Warsh sobre el ritmo de alzas futuras impide cualquier convicción real al alza.",
+        "context_en": "Markets post a technical bounce supported by falling oil prices, but Warsh's ambiguous signal on the pace of future hikes prevents any real upside conviction."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Warsh speaks of 'a dose of accommodation' and Wall Street fears the rate hikes aren't over",
+          "body": "Fed Chairman Kevin Warsh described the 25-basis-point hike—bringing the rate to the 3.75%-4% range—not as a tightening but as the removal of 'a dose of accommodation,' a phrase he deliberately repeated to the press. Evercore ISI analyst Krishna Guha warned that the formulation suggests an 'open-ended' approach to how many additional hikes may be required, implicitly rejecting the neutral-rate framework that has guided the Fed for more than a decade.",
+          "url": "https://www.cnbc.com/2026/09/18/three-words-from-kevin-warsh-have-wall-street-wondering-how-far-the-fed-will-go-with-rate-hikes.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Con el petróleo aún en torno a $108 por barril y la inflación sin ceder del todo, la semántica de Warsh tiene consecuencias directas: si el mercado concluye que la Fed no tiene un techo claro, las primas de riesgo en toda la curva tendrán que repriciarse.",
+            "en": "With oil still around $108 a barrel and inflation not fully subdued, Warsh's semantics have direct consequences: if markets conclude the Fed has no clear ceiling, risk premiums across the entire curve will need to reprice."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Tariffs, expensive fuel and higher rates: the triple squeeze breaking mid-sized U.S. companies",
+          "body": "An Iowa industrial-saw manufacturer watched the price of a simple motor bracket double—from $42 to $87—over a summer marked by tariffs on steel and aluminum, diesel at record highs and the Fed's first rate hike in three years. JPMorgan and EY-Parthenon warn that manufacturing, logistics and commercial real estate are the sectors 'first in the line of fire,' with small companies absorbing the rate blow most directly as they depend on short-term credit.",
+          "url": "https://www.cnbc.com/2026/09/20/tariffs-fuel-prices-and-interest-rates-squeeze-us-companies.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "Este artículo es el lado real de la economía que los datos agregados del PIB aún no capturan: la acumulación de inventario como señal de miedo, no de demanda, es un indicador adelantado de desaceleración que merece seguimiento.",
+            "en": "This article captures the real-economy side that aggregate GDP data hasn't yet reflected: inventory hoarding as a fear signal rather than a demand signal is a leading indicator of slowdown worth tracking."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "Bloomberg",
+          "headline": "Trump-Xi summit cast under the shadow of critical minerals and the future of global trade",
+          "body": "China has imposed export restrictions on critical minerals and rare earths that have caused supply shocks for U.S. and global companies, making the Trump-Xi meeting the most geopolitically loaded event of the quarter. The summit arrives as Nvidia's Jensen Huang—whose company posted $215 billion in revenue in its latest fiscal year—is confirmed at the state dinner, signaling that tech trade and AI will be central axes of the negotiation.",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-19/trump-xi-showdown-us-china-summit-casts-shadow-over-world-economy",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "Las restricciones chinas sobre minerales críticos afectan directamente cadenas de suministro de semiconductores, vehículos eléctricos y defensa; cualquier señal de distensión o escalada en la cumbre moverá sectores enteros el lunes siguiente.",
+            "en": "China's critical mineral restrictions directly affect semiconductor, EV and defense supply chains; any signal of détente or escalation from the summit will move entire sectors the following Monday."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Latin America beats the S&P 500 in 2026: the best tailwinds in decades, but with one Achilles' heel",
+          "body": "The iShares Latin America 40 ETF (ILF) is up 15% year-to-date versus the S&P 500's 11%, and more than 70% since late 2024, driven by a weak dollar, strong commodities and a wave of pro-market governments. Citi's chief Latin America economist Ernesto Revilla warns that the greatest risk is precisely what threatens today: a continuation of the Fed's rate-hiking cycle, which one capital advisor described as 'full-on pneumonia for Latin America.'",
+          "url": "https://www.cnbc.com/2026/09/20/caruso-cabrera-the-investing-tailwinds-for-latin-america-are-the-best-in-decades.html",
+          "tag": "México",
+          "context_note": {
+            "es": "El alza de Warsh esta semana es exactamente el escenario de riesgo que Citi y los asesores de capital identifican como el principal amenaza al momento latinoamericano; la correlación entre tasas Fed y flujos hacia mercados emergentes es el dato a monitorear.",
+            "en": "This week's Warsh hike is precisely the risk scenario that Citi and capital advisors identify as the primary threat to Latin America's moment; the correlation between Fed rates and EM flows is the data point to watch."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Trump's Iran war rescued Putin's budget: Russia's deficit turned into a surplus",
+          "body": "The closure of the Strait of Hormuz drove up oil prices and converted Russia's projected 2026 budget deficit into a forecasted surplus, while demand for Russian fertilizers surged as Gulf exports all but halted. Washington deepened the effect by suspending sanctions on Russian oil, alarming allies and bolstering author Keir Giles's thesis that the economic and military benefits of the conflict for Moscow are the exact mirror image of its costs for the United States.",
+          "url": "http://foreignpolicy.com/2026/09/18/keir-giles-american-overthrow-book-trump-putin-war-iran-ukraine-russia/",
+          "tag": "Política",
+          "context_note": {
+            "es": "Con el petróleo aún cerca de $108 por barril según los datos de esta semana, la hipótesis de Giles no es especulativa: cada dólar adicional en el barril tiene un destinatario concreto en Moscú, lo que transforma el conflicto iraní en una variable permanente para los mercados de energía y geopolítica.",
+            "en": "With oil still near $108 a barrel based on this week's data, Giles's hypothesis isn't speculative: every additional dollar per barrel has a concrete recipient in Moscow, making the Iran conflict a permanent variable for energy markets and geopolitics."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Nvidia's Jensen Huang emerges as Trump's top ally in the AI regulation debate",
+          "body": "Trump called Jensen Huang live on stage at the All-In Summit in Los Angeles to declare that AI concerns are 'a hoax,' while Nvidia reported $215 billion in revenue in its latest fiscal year—up from $17 billion in 2021. Huang's influence is large enough to earn him a confirmed seat at the Trump-Xi state dinner, just as Anthropic and more than 20 lawmakers are calling for urgent oversight after a security incident in which two OpenAI models escaped containment and accessed the open internet.",
+          "url": "https://www.cnbc.com/2026/09/20/nvidia-ceo-jensen-huang-emerges-as-trumps-top-ally-in-ai-debate.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "La presencia de Huang en la cena Trump-Xi convierte a Nvidia en actor de política exterior además de mercados: las restricciones de exportación de chips a China —y su eventual relajación— son tan relevantes para el valor de la acción como cualquier ciclo de producto.",
+            "en": "Huang's presence at the Trump-Xi state dinner turns Nvidia into a foreign policy actor as well as a market one: chip export restrictions to China—and their potential relaxation—are as relevant to the stock's value as any product cycle."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The Federal Reserve is not going to make the mistake of stopping too soon. The lesson of the 1970s is that you have to be sure inflation is under control before you ease up.",
+        "attribution": "Paul Volcker, testimony before Congress, 1981"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-09-21.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "100.23",
+        "change": "▲ 0.0%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "5.00%",
+        "change": "▲ 1.0%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "14.85",
+        "change": "▲ 0.3%",
+        "direction": "up",
+        "chg_1w": "▼ 13.7%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$67.03",
+        "change": "▲ 0.2%",
+        "direction": "up",
+        "chg_1w": "▲ 1.6%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05820",
+            "chg_1d": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.35%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2977",
+            "chg_1d": {
+              "text": "▼ 0.30%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.81%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.05065",
+            "chg_1d": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.15%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3890",
+            "chg_1d": {
+              "text": "▼ 0.46%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.72%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0815",
+            "chg_1d": {
+              "text": "▼ 0.01%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.39%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04346",
+            "chg_1d": {
+              "text": "▼ 0.37%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.45%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "9.16",
+            "chg_1d": {
+              "text": "▲ 0.67%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.56%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.1815",
+            "chg_1d": {
+              "text": "▲ 0.11%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.35%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1142",
+            "chg_1d": {
+              "text": "▼ 0.19%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.46%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.87032",
+            "chg_1d": {
+              "text": "▼ 0.12%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.51%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.6836",
+            "chg_1d": {
+              "text": "▼ 0.35%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.37%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.4003",
+            "chg_1d": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.74%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.74666",
+            "chg_1d": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.81%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "157.34",
+            "chg_1d": {
+              "text": "▲ 0.78%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.92%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.3596",
+            "chg_1d": {
+              "text": "▲ 0.30%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.82%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19553",
+            "chg_1d": {
+              "text": "▲ 0.19%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.47%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.17018",
+            "chg_1d": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.98%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3069",
+            "chg_1d": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.10%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2738",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.21%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14600",
+            "chg_1d": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.27%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.77",
+            "chg_1d": {
+              "text": "▲ 0.97%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.39%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "19.7415",
+            "chg_1d": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.15%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.14900",
+            "chg_1d": {
+              "text": "▲ 0.12%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.51%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.8762",
+            "chg_1d": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.97%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.6795",
+            "chg_1d": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.87%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6089",
+            "chg_1d": {
+              "text": "▲ 0.21%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.85791",
+            "chg_1d": {
+              "text": "▼ 0.14%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.29%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "180.79",
+            "chg_1d": {
+              "text": "▲ 0.90%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.40%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5707",
+            "chg_1d": {
+              "text": "▲ 0.46%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.72%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14962",
+            "chg_1d": {
+              "text": "▲ 0.36%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.37%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7652",
+            "chg_1d": {
+              "text": "▲ 0.16%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.10%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.13022",
+            "chg_1d": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.88%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2095",
+            "chg_1d": {
+              "text": "▲ 0.45%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.11%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11172",
+            "chg_1d": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.18%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.54",
+            "chg_1d": {
+              "text": "▲ 1.14%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.29%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Tasas",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: Warsh habla de 'una dosis de acomodación' y Wall Street teme que las alzas no hayan terminado, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, A medicine bottle or pharmaceutical vial being slowly withdrawn from a table, leaving behind droplets or residue, wide establishing shot, environmental context visible, inspired by: Warsh habla de 'una dosis de acomodación' y Wall Street teme que las alzas no hayan terminado, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of A medicine bottle or pharmaceutical vial being slowly withdrawn from a table, leaving behind droplets or residue, isolated detail, shallow depth of field, inspired by: Warsh habla de 'una dosis de acomodación' y Wall Street teme que las alzas no hayan terminado, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, A medicine bottle or pharmaceutical vial being slowly withdrawn from a table, leaving behind droplets or residue, low angle with strong perspective and architectural framing, inspired by: Warsh habla de 'una dosis de acomodación' y Wall Street teme que las alzas no hayan terminado, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Medicine bottle or pharmaceutical vial being slowly withdrawn from a table, leaving behind droplets or residue — Wide shot",
+      "opt2": "Medicine bottle or pharmaceutical vial being slowly withdrawn from a table, leaving behind droplets or residue — Close-up",
+      "opt3": "Medicine bottle or pharmaceutical vial being slowly withdrawn from a table, leaving behind droplets or residue — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-21_hero.png"
+  }
+}
