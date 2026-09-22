@@ -1,0 +1,680 @@
+{
+  "date": "2026-09-22",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, los mercados encontraron alivio donde pudieron esta semana: el petróleo bajó, los rendimientos cedieron y el Nasdaq tocó récord — todo mientras la Fed sigue con el dedo en el gatillo y el Medio Oriente amenaza con deshacer cada uno de esos avances antes del cierre. México, por su parte, tiene sus propios problemas existenciales: Bank of America y Fitch ya están hablando abiertamente del grado de inversión, y Hacienda apuesta a una recaudación que, por los números actuales, parece más acto de fe que política fiscal.",
+      "narrative_thread": "La caída del petróleo ofrece un respiro temporal a los mercados globales, pero la Fed hawkish, la escalada geopolítica en Medio Oriente y el deterioro fiscal de México recuerdan que el alivio es frágil y puede revertirse con una sola noticia.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 48,
+        "context_es": "El rally de activos de riesgo descansa sobre una caída del petróleo que puede deshacerse rápidamente, mientras la Fed mantiene sesgo hawkish y los focos geopolíticos permanecen abiertos.",
+        "context_en": "The risk-asset rally rests on an oil drop that could reverse quickly, while the Fed maintains a hawkish bias and multiple geopolitical flashpoints remain unresolved."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "S&P 500 sube 1.49% y Nasdaq marca récord mientras el petróleo y los rendimientos retroceden",
+          "body": "El S&P 500 cerró en 7,764.70 (+1.49%) y el Nasdaq logró su primer récord desde junio al llegar a 27,122.09 (+2.26%), impulsados por Intel (+12%), AMD (+10%) y Qualcomm (+9%), mientras el crudo WTI cayó 4.5% a $95.78. El catalizador fue la expectativa de que precios de energía más bajos alivien la presión inflacionaria sobre la Fed, aunque analistas como Ed Yardeni advierten que los riesgos de oferta en el Medio Oriente 'no van a desaparecer'.",
+          "url": "https://www.cnbc.com/2026/09/20/stock-market-today-live-updates.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El avance llega después de que el Dow sufrió su peor semana desde marzo (-1.7%), lo que hace que este rebote sea bienvenido pero políticamente frágil: depende de que la tregua geopolítica en Medio Oriente dure más de 48 horas.",
+            "en": "The advance comes after the Dow posted its worst week since March (-1.7%), making this rebound welcome but politically fragile: it depends on the Middle East geopolitical truce lasting more than 48 hours."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Rendimiento del bono a 10 años cae a 4.95% tras tocar máximo de 19 años en 5.04%",
+          "body": "El rendimiento del Treasury a 10 años retrocedió más de 4 puntos básicos a 4.951% el lunes, después de haber marcado un máximo de 19 años en 5.041% la semana pasada, con bonos europeos también cayendo más de 5 puntos básicos. Los mercados digieren el alza de un cuarto de punto de la Fed y monitorizan discursos de funcionarios de la Reserva Federal esta semana para calibrar si habrá más subidas antes de fin de año.",
+          "url": "https://www.cnbc.com/2026/09/21/treasury-yields-government-bonds.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Con el rendimiento a 30 años todavía en 5.284% y el BCE también subiendo tasas este mes, el mercado de bonos globales está en un punto de inflexión: cualquier dato de inflación o comentario hawkish puede empujar los yields de regreso a territorio de máximos históricos.",
+            "en": "With the 30-year yield still at 5.284% and the ECB also having hiked this month, the global bond market is at an inflection point: any inflation data or hawkish comment could push yields back toward historical highs."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Bank of America y Fitch advierten que el grado de inversión de México está en riesgo por déficit fiscal creciente",
+          "body": "Bank of America estima que el déficit fiscal de México en 2026 se acercará a 4.5% del PIB —no al 4.1% anunciado por Hacienda— y que en 2027 podría alcanzar 5%, muy por encima del 3.9% prometido; Fitch reconoce las estimaciones razonables de los Criterios Generales de Política Económica pero advierte que 'persisten los riesgos de mediano plazo'. La apuesta de Hacienda de crecer la recaudación del ISR casi 15% en 2027 luce poco realista cuando al mes de julio ese impuesto acumula una contracción nominal de -0.7%.",
+          "url": "https://www.elfinanciero.com.mx/opinion/macario-schettino/2026/09/21/apuesta/",
+          "tag": "México",
+          "context_note": {
+            "es": "En un entorno donde los rendimientos globales están en máximos de décadas, una rebaja de calificación soberana elevaría el costo de financiamiento de México en el peor momento posible, amplificando la presión sobre el peso y las tasas domésticas.",
+            "en": "In an environment where global yields are at multi-decade highs, a sovereign rating downgrade would raise Mexico's financing costs at the worst possible moment, amplifying pressure on the peso and domestic interest rates."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México creció 1.4% en el segundo trimestre, pero la inversión fija sigue 4.9% por debajo de su máximo de 2024",
+          "body": "El PIB mexicano avanzó 1.4% trimestral entre abril y junio —su mayor alza desde principios de 2022— sostenido por un salto de 4.3% en la inversión fija y un repunte de 0.9% en el consumo privado, aunque las exportaciones de cómputo explican más de tres cuartas partes del aumento de mercancías y dependen masivamente de insumos importados. La recuperación es real pero estrecha: la inversión total permanece 4.9% por debajo del pico de 2024 y el consumo privado anual se desacelera de 3.8% a 2.1%.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/09/21/el-trimestre-que-sostuvo-el-crecimiento/",
+          "tag": "México",
+          "context_note": {
+            "es": "El dato de crecimiento positivo llega en el mismo momento en que Bank of America y Fitch cuestionan la trayectoria fiscal, lo que ilustra la paradoja mexicana: números de actividad que mejoran sobre una base frágil mientras las finanzas públicas se deterioran estructuralmente.",
+            "en": "The positive growth reading arrives at the same moment Bank of America and Fitch question the fiscal trajectory, illustrating Mexico's paradox: improving activity numbers on a fragile base while public finances deteriorate structurally."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Cuarta ronda del T-MEC se aplaza mientras el debate global sobre inversión ya superó los tratados comerciales",
+          "body": "El aplazamiento de la cuarta ronda de revisión del T-MEC, inicialmente prevista para esta semana, mantiene a México en un limbo de incertidumbre justo cuando en el Qatar Economic Forum —celebrado en Nueva York al margen de la Asamblea General de la ONU— los CEO de Citi, Goldman Sachs y Apollo debaten que la competencia por capital ya no depende de costos laborales sino de energía, infraestructura y certidumbre regulatoria. México sigue siendo atractivo por su integración con EE.UU., pero acumula déficits en exactamente las variables que ahora más importan a los grandes fondos.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2026/09/21/t-mec-e-inversiones-cambio-de-reglas/",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "El aplazamiento ocurre mientras Trump y Xi Jinping se preparan para una cumbre esta semana que cubrirá aranceles e inteligencia artificial, lo que podría redefinir flujos comerciales regionales y afectar el atractivo relativo de México como plataforma manufacturera.",
+            "en": "The postponement occurs as Trump and Xi Jinping prepare for a summit this week covering tariffs and artificial intelligence, which could redefine regional trade flows and affect Mexico's relative attractiveness as a manufacturing platform."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Gobiernos y empresas invierten miles de millones en drones submarinos ante la vulnerabilidad de cables e infraestructura oceánica",
+          "body": "La italiana Fincantieri anunció la adquisición de participaciones mayoritarias en cuatro empresas por unos 600 millones de euros para expandir capacidades en drones submarinos y comunicaciones subsea, mientras más de 1.5 millones de kilómetros de cables de comunicación submarina están actualmente en servicio globalmente. El sabotaje del gasoducto Nord Stream en 2022 y daños en infraestructura cerca de Taiwán y el Ártico han convertido el fondo oceánico en el nuevo teatro de la guerra híbrida, con implicaciones directas para aseguradoras, operadores de telecomunicaciones y fondos de infraestructura.",
+          "url": "https://www.cnbc.com/2026/09/19/underwater-war-sea-drones-defense-tech.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "En una semana donde la Asamblea General de la ONU concentra tensiones entre EE.UU., Irán y China, la securitización de infraestructura submarina añade una dimensión de riesgo sistémico que los modelos de valuación de activos raramente precio: un cable cortado puede desconectar mercados enteros.",
+            "en": "In a week where the UN General Assembly concentrates tensions between the U.S., Iran, and China, the securitization of submarine infrastructure adds a systemic risk dimension that asset valuation models rarely price: a severed cable can disconnect entire markets."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The first panacea for a mismanaged nation is inflation of the currency; the second is war. Both bring a temporary prosperity; both bring a permanent ruin.",
+        "attribution": "Ernest Hemingway, Notes on the Next War, 1935"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, markets found relief wherever they could this week: oil fell, yields retreated, and the Nasdaq hit a record — all while the Fed keeps its finger on the trigger and the Middle East threatens to unwind every one of those gains before the close. Mexico, meanwhile, has its own existential problems: Bank of America and Fitch are now openly discussing investment-grade status, and the Treasury is betting on a revenue surge that, based on current figures, looks more like an act of faith than fiscal policy.",
+      "narrative_thread": "Falling oil prices offer temporary relief to global markets, but a hawkish Fed, escalating Middle East geopolitics, and Mexico's deteriorating fiscal position are reminders that the respite is fragile and can reverse on a single headline.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 48,
+        "context_es": "El rally de activos de riesgo descansa sobre una caída del petróleo que puede deshacerse rápidamente, mientras la Fed mantiene sesgo hawkish y los focos geopolíticos permanecen abiertos.",
+        "context_en": "The risk-asset rally rests on an oil drop that could reverse quickly, while the Fed maintains a hawkish bias and multiple geopolitical flashpoints remain unresolved."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "S&P 500 rises 1.49% and Nasdaq hits record as oil and yields pull back",
+          "body": "The S&P 500 closed at 7,764.70 (+1.49%) and the Nasdaq notched its first record since June at 27,122.09 (+2.26%), driven by Intel (+12%), AMD (+10%), and Qualcomm (+9%), while WTI crude fell 4.5% to $95.78. The catalyst was expectations that lower energy prices would ease inflationary pressure on the Fed, though analysts like Ed Yardeni warn that Middle East supply risks 'are not going away.'",
+          "url": "https://www.cnbc.com/2026/09/20/stock-market-today-live-updates.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El avance llega después de que el Dow sufrió su peor semana desde marzo (-1.7%), lo que hace que este rebote sea bienvenido pero políticamente frágil: depende de que la tregua geopolítica en Medio Oriente dure más de 48 horas.",
+            "en": "The advance comes after the Dow posted its worst week since March (-1.7%), making this rebound welcome but politically fragile: it depends on the Middle East geopolitical truce lasting more than 48 hours."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "10-year Treasury yield falls to 4.95% after hitting 19-year high of 5.04%",
+          "body": "The 10-year Treasury yield dropped more than 4 basis points to 4.951% on Monday, after hitting a 19-year high of 5.041% the previous week, with European bonds also falling more than 5 basis points. Markets are digesting the Fed's quarter-point hike and closely watching speeches by Fed officials this week to gauge whether further rate increases will follow before year-end.",
+          "url": "https://www.cnbc.com/2026/09/21/treasury-yields-government-bonds.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Con el rendimiento a 30 años todavía en 5.284% y el BCE también subiendo tasas este mes, el mercado de bonos globales está en un punto de inflexión: cualquier dato de inflación o comentario hawkish puede empujar los yields de regreso a territorio de máximos históricos.",
+            "en": "With the 30-year yield still at 5.284% and the ECB also having hiked this month, the global bond market is at an inflection point: any inflation data or hawkish comment could push yields back toward historical highs."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Bank of America and Fitch warn Mexico's investment-grade rating is at risk from a widening fiscal deficit",
+          "body": "Bank of America estimates Mexico's 2026 fiscal deficit will be closer to 4.5% of GDP — not the 4.1% announced by the Treasury — and could reach 5% in 2027, well above the promised 3.9%; Fitch acknowledges the reasonable macroeconomic estimates in the General Economic Policy Criteria but warns that 'medium-term risks persist.' The Treasury's bet on growing income tax revenue by nearly 15% in 2027 looks unrealistic when that same tax shows a nominal contraction of -0.7% through July.",
+          "url": "https://www.elfinanciero.com.mx/opinion/macario-schettino/2026/09/21/apuesta/",
+          "tag": "México",
+          "context_note": {
+            "es": "En un entorno donde los rendimientos globales están en máximos de décadas, una rebaja de calificación soberana elevaría el costo de financiamiento de México en el peor momento posible, amplificando la presión sobre el peso y las tasas domésticas.",
+            "en": "In an environment where global yields are at multi-decade highs, a sovereign rating downgrade would raise Mexico's financing costs at the worst possible moment, amplifying pressure on the peso and domestic interest rates."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico grew 1.4% in Q2, but fixed investment remains 4.9% below its 2024 peak",
+          "body": "Mexican GDP advanced 1.4% quarter-on-quarter between April and June — its strongest increase since early 2022 — supported by a 4.3% jump in fixed investment and a 0.9% rebound in private consumption, though computer exports account for more than three-quarters of the merchandise export increase and rely heavily on imported inputs. The recovery is real but narrow: total investment remains 4.9% below its 2024 peak and annual private consumption growth has slowed from 3.8% to 2.1%.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/09/21/el-trimestre-que-sostuvo-el-crecimiento/",
+          "tag": "México",
+          "context_note": {
+            "es": "El dato de crecimiento positivo llega en el mismo momento en que Bank of America y Fitch cuestionan la trayectoria fiscal, lo que ilustra la paradoja mexicana: números de actividad que mejoran sobre una base frágil mientras las finanzas públicas se deterioran estructuralmente.",
+            "en": "The positive growth reading arrives at the same moment Bank of America and Fitch question the fiscal trajectory, illustrating Mexico's paradox: improving activity numbers on a fragile base while public finances deteriorate structurally."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Fourth USMCA round postponed as global investment debate moves beyond trade agreements",
+          "body": "The postponement of the fourth USMCA review round, originally scheduled for this week, keeps Mexico in a limbo of uncertainty just as the Qatar Economic Forum — held in New York on the sidelines of the UN General Assembly — saw the CEOs of Citi, Goldman Sachs, and Apollo debate how the competition for capital now hinges on energy, infrastructure, and regulatory certainty rather than labor costs. Mexico remains attractive due to its U.S. integration, but it is running deficits in precisely the variables that now matter most to large funds.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2026/09/21/t-mec-e-inversiones-cambio-de-reglas/",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "El aplazamiento ocurre mientras Trump y Xi Jinping se preparan para una cumbre esta semana que cubrirá aranceles e inteligencia artificial, lo que podría redefinir flujos comerciales regionales y afectar el atractivo relativo de México como plataforma manufacturera.",
+            "en": "The postponement occurs as Trump and Xi Jinping prepare for a summit this week covering tariffs and artificial intelligence, which could redefine regional trade flows and affect Mexico's relative attractiveness as a manufacturing platform."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Governments and companies pour billions into submarine drones as ocean-floor infrastructure emerges as new warfare frontier",
+          "body": "Italy's Fincantieri announced the acquisition of majority stakes in four companies for around 600 million euros to expand capabilities in underwater drones and subsea communications, as more than 1.5 million kilometers of submarine communications cables are currently in service globally. The 2022 sabotage of the Nord Stream pipeline and damage to infrastructure near Taiwan and the Arctic have turned the ocean floor into the new theater of hybrid warfare, with direct implications for insurers, telecom operators, and infrastructure funds.",
+          "url": "https://www.cnbc.com/2026/09/19/underwater-war-sea-drones-defense-tech.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "En una semana donde la Asamblea General de la ONU concentra tensiones entre EE.UU., Irán y China, la securitización de infraestructura submarina añade una dimensión de riesgo sistémico que los modelos de valuación de activos raramente precio: un cable cortado puede desconectar mercados enteros.",
+            "en": "In a week where the UN General Assembly concentrates tensions between the U.S., Iran, and China, the securitization of submarine infrastructure adds a systemic risk dimension that asset valuation models rarely price: a severed cable can disconnect entire markets."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The first panacea for a mismanaged nation is inflation of the currency; the second is war. Both bring a temporary prosperity; both bring a permanent ruin.",
+        "attribution": "Ernest Hemingway, Notes on the Next War, 1935"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-09-22.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "100.39",
+        "change": "▼ 0.0%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.96%",
+        "change": "▼ 0.7%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "14.66",
+        "change": "▼ 1.4%",
+        "direction": "down",
+        "chg_1w": "▼ 17.2%",
+        "direction_1w": "down"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$68.83",
+        "change": "▲ 2.7%",
+        "direction": "up",
+        "chg_1w": "▲ 4.7%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05800",
+            "chg_1d": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.54%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2975",
+            "chg_1d": {
+              "text": "▼ 0.31%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.82%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.05058",
+            "chg_1d": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.06%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3880",
+            "chg_1d": {
+              "text": "▼ 0.21%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.88%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0814",
+            "chg_1d": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.30%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04339",
+            "chg_1d": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "9.12",
+            "chg_1d": {
+              "text": "▼ 0.00%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.67%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.2402",
+            "chg_1d": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.55%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1287",
+            "chg_1d": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.28%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.87199",
+            "chg_1d": {
+              "text": "▲ 0.10%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.61%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.6884",
+            "chg_1d": {
+              "text": "▼ 0.14%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.34%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.4042",
+            "chg_1d": {
+              "text": "▲ 0.34%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.85%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.74800",
+            "chg_1d": {
+              "text": "▲ 0.15%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.78%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "157.16",
+            "chg_1d": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.22%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.3615",
+            "chg_1d": {
+              "text": "▲ 0.31%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.83%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19498",
+            "chg_1d": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.17002",
+            "chg_1d": {
+              "text": "▲ 0.34%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.89%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3041",
+            "chg_1d": {
+              "text": "▲ 0.10%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2738",
+            "chg_1d": {
+              "text": "▲ 0.58%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.13%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14585",
+            "chg_1d": {
+              "text": "▲ 0.38%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.06%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.64",
+            "chg_1d": {
+              "text": "▲ 0.31%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.50%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "19.7711",
+            "chg_1d": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.14680",
+            "chg_1d": {
+              "text": "▼ 0.10%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.60%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.8816",
+            "chg_1d": {
+              "text": "▼ 0.34%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.88%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.6703",
+            "chg_1d": {
+              "text": "▼ 0.24%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.94%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6103",
+            "chg_1d": {
+              "text": "▲ 0.24%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.24%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.85781",
+            "chg_1d": {
+              "text": "▲ 0.04%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.17%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "180.23",
+            "chg_1d": {
+              "text": "▼ 0.03%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.61%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.5776",
+            "chg_1d": {
+              "text": "▲ 0.21%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.89%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14951",
+            "chg_1d": {
+              "text": "▲ 0.14%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.34%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7668",
+            "chg_1d": {
+              "text": "▼ 0.10%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.06%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.13037",
+            "chg_1d": {
+              "text": "▲ 0.24%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.95%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2099",
+            "chg_1d": {
+              "text": "▲ 0.48%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.19%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11184",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.12%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.50",
+            "chg_1d": {
+              "text": "▲ 0.21%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.56%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Mercados",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, stock exchange trading floor, screens with data, long perspective shot, no people, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, stock exchange trading floor, screens with data, long perspective shot, no people, inspired by: S&P 500 sube 1.49% y Nasdaq marca récord mientras el petróleo y los rendimientos retroceden, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Ascending stock market chart lines in green, intersecting with descending oil barrel graphic in red, wide establishing shot, environmental context visible, inspired by: S&P 500 sube 1.49% y Nasdaq marca récord mientras el petróleo y los rendimientos retroceden, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of Ascending stock market chart lines in green, intersecting with descending oil barrel graphic in red, isolated detail, shallow depth of field, inspired by: S&P 500 sube 1.49% y Nasdaq marca récord mientras el petróleo y los rendimientos retroceden, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Ascending stock market chart lines in green, intersecting with descending oil barrel graphic in red, low angle with strong perspective and architectural framing, inspired by: S&P 500 sube 1.49% y Nasdaq marca récord mientras el petróleo y los rendimientos retroceden, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Ascending stock market chart lines in green, intersecting with descending oil barrel graphic in red — Wide shot",
+      "opt2": "Ascending stock market chart lines in green, intersecting with descending oil barrel graphic in red — Close-up",
+      "opt3": "Ascending stock market chart lines in green, intersecting with descending oil barrel graphic in red — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-22_hero.png"
+  }
+}
