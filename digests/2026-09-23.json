@@ -1,0 +1,704 @@
+{
+  "date": "2026-09-23",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, la Fed sube tasas, el Tesoro americano roza el 5%, y resulta que las corporaciones argentinas se financian más barato que su propio soberano — lo cual dice todo sobre lo que Wall Street piensa del Gobierno de Milei y nada bueno sobre lo que viene. Mientras tanto, Meta lanza un modelo de IA y el Nasdaq celebra como si la inflación no fuera problema de nadie, justo cuando un gobernador de la Fed advierte que los data centers de IA podrían estar recalentando la economía. La ironía se sirve sola.",
+      "narrative_thread": "La tensión entre tasas elevadas, presiones inflacionarias vinculadas a la IA y el reordenamiento geopolítico en torno a Irán y China define una jornada donde cada activo cotiza con un ojo puesto en Washington y el otro en la pantalla del radar de la Fed.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "El Nasdaq toca récords por el impulso de Meta, pero los rendimientos del Tesoro cerca del 5% y la advertencia de la Fed sobre la inflación de IA mantienen al mercado en equilibrio frágil.",
+        "context_en": "The Nasdaq hits records on Meta's AI surge, but Treasury yields near 5% and Fed warnings about AI-driven inflation keep the market in a fragile equilibrium."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Rendimientos del Tesoro se mantienen cerca del 5% mientras la Fed advierte sobre inflación impulsada por IA",
+          "body": "El bono del Tesoro estadounidense a 10 años cotizó en 4.959% el martes, mientras el presidente de la Fed de Chicago, Austan Goolsbee, advirtió que la construcción de data centers de IA podría estar recalentando la economía y empujando la inflación más allá de lo previsto. Goolsbee señaló que las estimaciones de pico inflacionario se han pospuesto repetidamente — de Q4 2025 a 'algún momento en 2027' — en lo que calificó como 'un patrón nada reconfortante', lo que eleva las probabilidades de nuevas alzas.",
+          "url": "https://www.cnbc.com/2026/09/22/treasury-yield-us-bond-market-trump.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "El rendimiento del Tesoro a 10 años superando el 5% es el ancla que encarece el costo de capital global esta semana, con impacto directo en mercados emergentes como Argentina y en el apetito por activos de riesgo.",
+            "en": "The 10-year Treasury yield pushing above 5% is the anchor raising global capital costs this week, with direct impact on emerging markets like Argentina and overall risk appetite."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "Axios",
+          "headline": "La Fed identifica la construcción de data centers de IA como nuevo vector de inflación",
+          "body": "Un funcionario de la Reserva Federal advirtió que el boom de inversión en infraestructura de IA podría estar generando demanda agregada suficiente para alimentar la inflación de maneras que obligarían al banco central a responder con política más restrictiva. El riesgo es que el mercado esté celebrando la revolución de la IA precisamente mientras esta se convierte en el argumento para que la Fed mantenga las tasas elevadas por más tiempo.",
+          "url": "https://www.axios.com/2026/09/21/when-ai-is-part-of-the-inflation-problem#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI",
+          "tag": "Macro",
+          "context_note": {
+            "es": "Esta narrativa conecta directamente con el rally de Meta y el Nasdaq de hoy: el mismo motor que impulsa las acciones tecnológicas podría ser el argumento que le da cobertura a la Fed para no recortar tasas en 2026.",
+            "en": "This narrative connects directly to today's Meta and Nasdaq rally: the same engine driving tech stocks could be the Fed's justification for keeping rates elevated through 2026."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Meta dispara al Nasdaq a récord histórico con el lanzamiento de su modelo de IA Muse",
+          "body": "Las acciones de Meta subieron más de 20% en los últimos cinco días tras el lanzamiento de Muse, su nuevo agente de IA que superó a ChatGPT como la aplicación gratuita más descargada en iOS con 730,000 descargas en cinco días, llevando al ETF Magnificent Seven a un segundo récord consecutivo. El rally plantea la pregunta incómoda de si los mercados están descontando un futuro de IA transformador o simplemente comprando momentum en un entorno donde la narrativa vende más que los fundamentales.",
+          "url": "https://www.cnbc.com/2026/09/22/cnbc-daily-open-ai-meta-muse.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El rally de Meta ocurre simultáneamente con la advertencia de la Fed sobre la IA como fuente de inflación, creando una paradoja: los inversores compran el activo que el banco central podría usar como excusa para no bajar tasas.",
+            "en": "Meta's rally happens simultaneously with the Fed's warning about AI as an inflation source, creating a paradox: investors are buying the asset the central bank could use as justification for keeping rates high."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Empresas argentinas se financian al 5.1% mientras el soberano paga más del doble y el riesgo país sube a 533 puntos",
+          "body": "El riesgo país argentino cerró el lunes en 533 puntos básicos — su nivel más alto en un mes — con bonos soberanos rindiendo por encima del 10%, mientras las corporaciones locales accedieron a dólares a una tasa promedio de apenas 5.1% en agosto, según datos de mercado. Consultoras como Econviews y GMA Capital advierten que el deterioro soberano ya no se explica solo por el shock externo de la Fed, sino por factores idiosincráticos: caída del PBI del 0.6% en el segundo trimestre, debilidad del oficialismo en encuestas y la sombra electoral de 2027.",
+          "url": "https://www.lanacion.com.ar/economia/riesgo-pais-las-empresas-argentinas-consiguen-dolares-a-la-mitad-de-la-tasa-que-pagaria-el-gobierno-nid22092026/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "Caputo presentó ante JP Morgan en Nueva York el mismo lunes que el riesgo país tocó su máximo mensual — una coincidencia que resume la distancia entre la narrativa oficial y la percepción del mercado sobre Argentina.",
+            "en": "Caputo was presenting to JP Morgan in New York on the same Monday that country risk hit its monthly high — a coincidence that encapsulates the gap between the official narrative and market perception of Argentina."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "La 'Operación Paria Económico' de Trump contra Irán choca con China en vísperas de la cumbre Xi-Trump",
+          "body": "La campaña del Tesoro estadounidense para demoler la economía iraní — bautizada 'Operación Paria Económico' por el secretario Scott Bessent — no puede funcionar sin apuntar a los refinadores, terminales y bancos chinos que absorben más del 90% del petróleo iraní, según estimaciones. Con Xi Jinping llegando a Washington el miércoles para negociaciones comerciales, Washington acaba de introducir un nuevo punto de fricción máxima en una relación ya sobrecargada, con el petróleo y las sanciones como campo de batalla.",
+          "url": "http://foreignpolicy.com/2026/09/22/operation-economic-outcast-trump-united-states-iran-china-sanctions-oil-markets-bessent/",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "El Brent bajó a 99.25 dólares el martes tras señales de posible reapertura del Estrecho de Ormuz, pero la reunión Xi-Trump del jueves mantiene la incertidumbre energética y geopolítica como variable dominante de la semana.",
+            "en": "Brent fell to $99.25 on Tuesday after signals of a possible Hormuz reopening, but Thursday's Xi-Trump meeting keeps energy and geopolitical uncertainty as the week's dominant variable."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "La IA china conquista el Sur Global sin necesidad de que Beijing la empuje",
+          "body": "El modelo de código abierto Qwen de Alibaba acumula 151,448 derivados en Hugging Face — 4.7 veces más que Meta's Llama — y genera 39.6 millones de descargas mensuales, superando ampliamente a los modelos occidentales en mercados de coste sensible del Sur Global. A diferencia del Belt and Road, la adopción de IA china es orgánica y liderada por desarrolladores locales, lo que la hace estructuralmente más difícil de desalojar mediante sanciones o presión diplomática estadounidense.",
+          "url": "http://foreignpolicy.com/2026/09/21/the-real-reason-chinese-ai-is-winning-the-global-south/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El dominio de la IA china de código abierto en mercados emergentes añade una dimensión tecnológica a las negociaciones Xi-Trump de esta semana, donde el acceso a chips y modelos de IA es tan crítico como los aranceles sobre bienes físicos.",
+            "en": "Chinese open-weight AI dominance in emerging markets adds a technological dimension to this week's Xi-Trump negotiations, where access to chips and AI models is as critical as tariffs on physical goods."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Hacienda mexicana responde a Guillermo Ortiz en duelo público sobre los números reales de la economía",
+          "body": "El exsecretario de Hacienda y exgobernador de Banco de México Guillermo Ortiz publicó en Nexos un análisis cuestionando si los mexicanos están mejor bajo Claudia Sheinbaum, poniendo sobre la mesa indicadores de pobreza, inversión e informalidad; la Secretaría de Hacienda de Édgar Amador respondió con un contraataque detallado recordándole a Ortiz el aumento de pobreza ocurrido bajo su propia gestión. El intercambio abre un debate técnico inusualmente público sobre la credibilidad de los datos fiscales mexicanos en un momento en que la inversión y el rumbo del gasto público son la pregunta central para los mercados.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2026/09/22/cuando-hacienda-le-contesta-a-hacienda/",
+          "tag": "México",
+          "context_note": {
+            "es": "La disputa pública entre Hacienda y uno de los economistas más respetados de México ocurre mientras los mercados evalúan la solidez fiscal del país bajo presión de tasas globales elevadas y un entorno de inversión complicado por las tensiones comerciales con EE.UU.",
+            "en": "The public dispute between Mexico's Finance Ministry and one of its most respected economists unfolds as markets assess the country's fiscal credibility amid elevated global rates and investment uncertainty from U.S. trade tensions."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The market can remain irrational longer than you can remain solvent.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the Fed hikes rates, the American Treasury flirts with 5%, and it turns out Argentine corporations are borrowing more cheaply than their own sovereign — which says everything about what Wall Street thinks of Milei's government and nothing good about what's coming. Meanwhile, Meta launches an AI model and the Nasdaq celebrates as if inflation were nobody's problem, just as a Fed governor warns that AI data centers may be overheating the economy. The irony serves itself.",
+      "narrative_thread": "The tension between elevated rates, AI-driven inflationary pressures, and geopolitical realignment around Iran and China defines a session where every asset trades with one eye on Washington and the other on the Fed's radar screen.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 42,
+        "context_es": "El Nasdaq toca récords por el impulso de Meta, pero los rendimientos del Tesoro cerca del 5% y la advertencia de la Fed sobre la inflación de IA mantienen al mercado en equilibrio frágil.",
+        "context_en": "The Nasdaq hits records on Meta's AI surge, but Treasury yields near 5% and Fed warnings about AI-driven inflation keep the market in a fragile equilibrium."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Treasury yields hold near 5% as Fed warns of AI-driven inflation",
+          "body": "The 10-year U.S. Treasury note traded at 4.959% on Tuesday as Chicago Fed President Austan Goolsbee warned that AI data center construction could be overheating the economy and pushing inflation beyond projections. Goolsbee noted that inflation peak estimates have been repeatedly delayed — from Q4 2025 to 'sometime in 2027' — in what he called 'a pattern that is not comforting,' raising the probability of further rate hikes.",
+          "url": "https://www.cnbc.com/2026/09/22/treasury-yield-us-bond-market-trump.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "El rendimiento del Tesoro a 10 años superando el 5% es el ancla que encarece el costo de capital global esta semana, con impacto directo en mercados emergentes como Argentina y en el apetito por activos de riesgo.",
+            "en": "The 10-year Treasury yield pushing above 5% is the anchor raising global capital costs this week, with direct impact on emerging markets like Argentina and overall risk appetite."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "Axios",
+          "headline": "The Fed identifies AI data center construction as a new inflation vector",
+          "body": "A Federal Reserve official warned that the AI infrastructure investment boom could be generating enough aggregate demand to fuel inflation in ways that would force the central bank to respond with more restrictive policy. The risk is that markets are celebrating the AI revolution precisely as it becomes the argument for the Fed to keep rates elevated for longer.",
+          "url": "https://www.axios.com/2026/09/21/when-ai-is-part-of-the-inflation-problem#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI",
+          "tag": "Macro",
+          "context_note": {
+            "es": "Esta narrativa conecta directamente con el rally de Meta y el Nasdaq de hoy: el mismo motor que impulsa las acciones tecnológicas podría ser el argumento que le da cobertura a la Fed para no recortar tasas en 2026.",
+            "en": "This narrative connects directly to today's Meta and Nasdaq rally: the same engine driving tech stocks could be the Fed's justification for keeping rates elevated through 2026."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Meta's Muse AI launch drives Nasdaq to record high",
+          "body": "Meta shares surged more than 20% over five days following the launch of Muse, its new AI agent that overtook ChatGPT as the most downloaded free iOS app with 730,000 downloads in five days, lifting the Magnificent Seven ETF to a second consecutive record. The rally raises the uncomfortable question of whether markets are pricing in a transformative AI future or simply chasing momentum in an environment where narrative sells better than fundamentals.",
+          "url": "https://www.cnbc.com/2026/09/22/cnbc-daily-open-ai-meta-muse.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El rally de Meta ocurre simultáneamente con la advertencia de la Fed sobre la IA como fuente de inflación, creando una paradoja: los inversores compran el activo que el banco central podría usar como excusa para no bajar tasas.",
+            "en": "Meta's rally happens simultaneously with the Fed's warning about AI as an inflation source, creating a paradox: investors are buying the asset the central bank could use as justification for keeping rates high."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "La Nacion",
+          "headline": "Argentine corporates borrow at 5.1% while the sovereign pays more than double, country risk hits 533 bps",
+          "body": "Argentina's country risk closed Monday at 533 basis points — its highest level in a month — with sovereign bonds yielding above 10%, while local corporations accessed dollars at an average rate of just 5.1% in August, according to market data. Consultancies including Econviews and GMA Capital warn that the sovereign's deterioration can no longer be explained solely by the Fed's external shock, but by idiosyncratic factors: a 0.6% GDP contraction in Q2, weakening ruling-party poll numbers, and the looming shadow of 2027 elections.",
+          "url": "https://www.lanacion.com.ar/economia/riesgo-pais-las-empresas-argentinas-consiguen-dolares-a-la-mitad-de-la-tasa-que-pagaria-el-gobierno-nid22092026/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "Caputo presentó ante JP Morgan en Nueva York el mismo lunes que el riesgo país tocó su máximo mensual — una coincidencia que resume la distancia entre la narrativa oficial y la percepción del mercado sobre Argentina.",
+            "en": "Caputo was presenting to JP Morgan in New York on the same Monday that country risk hit its monthly high — a coincidence that encapsulates the gap between the official narrative and market perception of Argentina."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Trump's 'Operation Economic Outcast' against Iran collides with China on the eve of the Xi-Trump summit",
+          "body": "The U.S. Treasury's campaign to demolish Iran's economy — dubbed 'Operation Economic Outcast' by Secretary Scott Bessent — cannot work without targeting the Chinese refiners, terminals, and banks that absorb more than 90% of Iranian oil, according to estimates. With Xi Jinping arriving in Washington on Wednesday for trade negotiations, the U.S. has introduced a new maximum-friction point into an already strained relationship, with oil and sanctions as the battlefield.",
+          "url": "http://foreignpolicy.com/2026/09/22/operation-economic-outcast-trump-united-states-iran-china-sanctions-oil-markets-bessent/",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "El Brent bajó a 99.25 dólares el martes tras señales de posible reapertura del Estrecho de Ormuz, pero la reunión Xi-Trump del jueves mantiene la incertidumbre energética y geopolítica como variable dominante de la semana.",
+            "en": "Brent fell to $99.25 on Tuesday after signals of a possible Hormuz reopening, but Thursday's Xi-Trump meeting keeps energy and geopolitical uncertainty as the week's dominant variable."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Chinese AI conquers the Global South without Beijing having to push it",
+          "body": "Alibaba's open-weight model Qwen has accumulated 151,448 derivatives on Hugging Face — 4.7 times more than Meta's Llama — and generates 39.6 million monthly downloads, far outpacing Western models in cost-sensitive Global South markets. Unlike the Belt and Road Initiative, Chinese AI adoption is organic and developer-led, making it structurally harder to dislodge through U.S. sanctions or diplomatic pressure.",
+          "url": "http://foreignpolicy.com/2026/09/21/the-real-reason-chinese-ai-is-winning-the-global-south/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El dominio de la IA china de código abierto en mercados emergentes añade una dimensión tecnológica a las negociaciones Xi-Trump de esta semana, donde el acceso a chips y modelos de IA es tan crítico como los aranceles sobre bienes físicos.",
+            "en": "Chinese open-weight AI dominance in emerging markets adds a technological dimension to this week's Xi-Trump negotiations, where access to chips and AI models is as critical as tariffs on physical goods."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico's Finance Ministry fires back at Guillermo Ortiz in a public duel over the economy's real numbers",
+          "body": "Former Finance Secretary and ex-Banxico Governor Guillermo Ortiz published an analysis in Nexos questioning whether Mexicans are better off under Claudia Sheinbaum, citing indicators on poverty, investment, and informality; Finance Secretary Édgar Amador's ministry responded with a detailed counter-attack reminding Ortiz of poverty increases during his own tenure. The exchange opens an unusually public technical debate over the credibility of Mexico's fiscal data at a moment when investment trajectory and public spending are the central questions for markets.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2026/09/22/cuando-hacienda-le-contesta-a-hacienda/",
+          "tag": "México",
+          "context_note": {
+            "es": "La disputa pública entre Hacienda y uno de los economistas más respetados de México ocurre mientras los mercados evalúan la solidez fiscal del país bajo presión de tasas globales elevadas y un entorno de inversión complicado por las tensiones comerciales con EE.UU.",
+            "en": "The public dispute between Mexico's Finance Ministry and one of its most respected economists unfolds as markets assess the country's fiscal credibility amid elevated global rates and investment uncertainty from U.S. trade tensions."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The market can remain irrational longer than you can remain solvent.",
+        "attribution": "John Maynard Keynes, atribuido, circa 1930s"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-09-23.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "100.90",
+        "change": "▲ 0.5%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "4.97%",
+        "change": "▼ 0.6%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "14.33",
+        "change": "▼ 3.6%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$69.10",
+        "change": "▲ 3.1%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05734",
+            "chg_1d": {
+              "text": "▼ 1.28%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.15%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2948",
+            "chg_1d": {
+              "text": "▼ 0.70%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.34%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.05027",
+            "chg_1d": {
+              "text": "▼ 0.78%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.59%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3840",
+            "chg_1d": {
+              "text": "▼ 1.27%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.28%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0808",
+            "chg_1d": {
+              "text": "▼ 0.86%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.40%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04320",
+            "chg_1d": {
+              "text": "▼ 0.56%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.33%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "9.06",
+            "chg_1d": {
+              "text": "▼ 0.93%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.4400",
+            "chg_1d": {
+              "text": "▲ 1.30%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.16%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1405",
+            "chg_1d": {
+              "text": "▲ 0.59%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.20%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.87673",
+            "chg_1d": {
+              "text": "▲ 0.51%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.56%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.6966",
+            "chg_1d": {
+              "text": "▲ 0.02%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.14%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.4093",
+            "chg_1d": {
+              "text": "▲ 0.43%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.75%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75335",
+            "chg_1d": {
+              "text": "▲ 0.73%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.82%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "157.93",
+            "chg_1d": {
+              "text": "▲ 0.36%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.23%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.3927",
+            "chg_1d": {
+              "text": "▲ 0.71%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.36%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19453",
+            "chg_1d": {
+              "text": "▼ 0.59%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.20%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.17055",
+            "chg_1d": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.76%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.3027",
+            "chg_1d": {
+              "text": "▼ 0.57%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.06%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2742",
+            "chg_1d": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.95%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14655",
+            "chg_1d": {
+              "text": "▲ 0.14%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.02%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.72",
+            "chg_1d": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 1.43%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "19.8921",
+            "chg_1d": {
+              "text": "▲ 0.78%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.60%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.14060",
+            "chg_1d": {
+              "text": "▼ 0.51%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.56%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.8633",
+            "chg_1d": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.76%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.6381",
+            "chg_1d": {
+              "text": "▼ 0.49%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.70%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6074",
+            "chg_1d": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.19%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.85927",
+            "chg_1d": {
+              "text": "▲ 0.22%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "180.13",
+            "chg_1d": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.66%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.6043",
+            "chg_1d": {
+              "text": "▲ 1.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.30%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14933",
+            "chg_1d": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.14%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7676",
+            "chg_1d": {
+              "text": "▲ 0.57%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.13092",
+            "chg_1d": {
+              "text": "▲ 0.49%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.70%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2105",
+            "chg_1d": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.89%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11250",
+            "chg_1d": {
+              "text": "▲ 0.71%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.96%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.58",
+            "chg_1d": {
+              "text": "▲ 0.34%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.37%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Tasas",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: Rendimientos del Tesoro se mantienen cerca del 5% mientras la Fed advierte sobre inflación impulsada por IA, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Upward climbing thermometer needle frozen at 5% mark, glowing with heat intensity, wide establishing shot, environmental context visible, inspired by: Rendimientos del Tesoro se mantienen cerca del 5% mientras la Fed advierte sobre inflación impulsada por IA, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of Upward climbing thermometer needle frozen at 5% mark, glowing with heat intensity, isolated detail, shallow depth of field, inspired by: Rendimientos del Tesoro se mantienen cerca del 5% mientras la Fed advierte sobre inflación impulsada por IA, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Upward climbing thermometer needle frozen at 5% mark, glowing with heat intensity, low angle with strong perspective and architectural framing, inspired by: Rendimientos del Tesoro se mantienen cerca del 5% mientras la Fed advierte sobre inflación impulsada por IA, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Upward climbing thermometer needle frozen at 5% mark, glowing with heat intensity — Wide shot",
+      "opt2": "Upward climbing thermometer needle frozen at 5% mark, glowing with heat intensity — Close-up",
+      "opt3": "Upward climbing thermometer needle frozen at 5% mark, glowing with heat intensity — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-23_hero.png"
+  }
+}
