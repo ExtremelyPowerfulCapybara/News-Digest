@@ -1,0 +1,680 @@
+{
+  "date": "2026-09-24",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, la Fed subió tasas el mes pasado y ya tiene a sus propios presidentes regionales en LinkedIn justificando la decisión — señal inequívoca de que el trabajo no está terminado. Mientras tanto, Trump amenazó con aniquilar Irán ante la ONU, Xi llega a Washington sin que nadie espere gran cosa, y México sigue creciendo al ritmo de quien preferiría estar dormido. Día ocupado para un martes de otoño.",
+      "narrative_thread": "La presión inflacionaria persistente mantiene a los bancos centrales en modo restrictivo mientras la geopolítica — desde la UNGA hasta la cumbre Trump-Xi — añade capas de incertidumbre a un entorno de crecimiento ya frágil.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 38,
+        "context_es": "El respaldo explícito de la Fed a más alzas, la debilidad del crecimiento mexicano y la baja expectativa sobre la cumbre Trump-Xi generan un tono de cautela sin pánico declarado.",
+        "context_en": "Explicit Fed support for further hikes, Mexico's sluggish growth data, and muted expectations for the Trump-Xi summit combine to produce a cautious tone without outright panic."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Fed sube tasas y Collins advierte: la inflación seguirá 'notablemente' por encima del 2%",
+          "body": "La presidenta de la Fed de Boston, Susan Collins, respaldó públicamente el alza de un cuarto de punto de la semana pasada y advirtió que ve una mayor probabilidad de que la inflación se mantenga 'notablemente' por encima del objetivo del 2%. Los mercados están divididos al 53% sobre si habrá otro incremento en octubre, lo que convierte cada declaración de un funcionario de la Fed en combustible directo para la volatilidad de bonos y renta variable.",
+          "url": "https://www.cnbc.com/2026/09/23/federal-reserve-inflation-interest-rates-ecb.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Los comentarios de Collins llegan en la misma semana en que el BCE también advierte sobre una 'segunda ola' de presiones energéticas, señalando que el problema inflacionario es global y no resuelto.",
+            "en": "Collins's comments arrive the same week the ECB also warns of a 'second wave' of energy-driven inflation, signaling the price-stability problem is global and unresolved."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Trump amenaza con 'aniquilar' a Irán en la ONU y firma acuerdo militar con Dinamarca sobre Groenlandia",
+          "body": "En su discurso ante la Asamblea General de la ONU, Trump presentó a Irán una disyuntiva binaria: pacto comercial o destrucción total, y afirmó creer que habrá un acuerdo después de las elecciones de medio término. Paralelamente, firmó un acuerdo que amplía significativamente la presencia militar estadounidense en Groenlandia, consolidando una demanda territorial que hace un año era considerada extravagante.",
+          "url": "http://foreignpolicy.com/2026/09/22/unga-speech-guterres-trump-united-nations-zelensky/",
+          "tag": "Política",
+          "context_note": {
+            "es": "La retórica sobre Irán en la UNGA ocurre mientras la Fed y el BCE citan el riesgo de una 'segunda ola' de precios energéticos — cualquier escalada en Oriente Medio tiene transmisión directa al petróleo y, por tanto, a la inflación que los bancos centrales intentan controlar.",
+            "en": "The Iran rhetoric at UNGA comes as the Fed and ECB cite the risk of a 'second wave' of energy prices — any escalation in the Middle East transmits directly to oil and therefore to the very inflation central banks are trying to tame."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Trump y Xi se reúnen esta semana: la autosuficiencia de China cambia las reglas del juego comercial",
+          "body": "Pese a los aranceles y la diversificación de cadenas de suministro, China ya representa el 40% de las exportaciones mundiales de contenedores — un hito que analistas esperaban para 2030 pero que llegó este verano. El mejor escenario que las empresas contemplan para la cumbre Trump-Xi es una extensión de la tregua comercial del otoño pasado, no un avance estructural.",
+          "url": "https://www.cnbc.com/2026/09/23/trump-xi-meeting-why-chinas-self-sufficiency-changes-the-calculus.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "Con la demanda de componentes de IA sosteniendo las exportaciones chinas incluso después de los aranceles, el argumento de que la presión comercial debilita a China se vuelve cada vez más difícil de sostener ante los datos de este año.",
+            "en": "With AI component demand sustaining Chinese exports even after tariffs, the argument that trade pressure weakens China becomes increasingly hard to support given this year's data."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México crece apenas 0.1% mensual en agosto según el IOAE; consumo minorista acumula dos meses de caída",
+          "body": "El Indicador Oportuno de Actividad Económica del INEGI anticipa un alza de solo 0.1% mensual en agosto, tras meses de contracción en mayo y junio, mientras las ventas minoristas cayeron 0.1% mensual en julio — su menor ritmo anual desde abril de 2025. Los analistas de Citi revisaron ligeramente al alza el pronóstico de PIB 2026 a 1.4%, pero el dato sigue siendo consistente con una economía que avanza sin convicción.",
+          "url": "https://www.elfinanciero.com.mx/opinion/victor-piz/2026/09/23/aun-perciben-senales-de-estancamiento-economico/",
+          "tag": "México",
+          "context_note": {
+            "es": "El estancamiento del consumo interno en México llega en un momento en que Banxico enfrenta presión para recortar tasas, pero la Fed acaba de subir — la divergencia de política monetaria entre ambos países complica cualquier decisión de relajación.",
+            "en": "Mexico's domestic consumption stagnation arrives just as Banxico faces pressure to cut rates, but the Fed just hiked — the monetary policy divergence between the two countries complicates any easing decision."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Circle recibe $100 millones de Binance para expandir USDC globalmente y desafiar a Tether",
+          "body": "Binance adquirió acciones de Circle por $100 millones a $80.84 por acción como parte de un acuerdo de cinco años en el que el mayor exchange cripto del mundo promoverá USDC en su plataforma a cambio de una comisión mensual vinculada a los saldos en circulación. La alianza convierte a USDC — actualmente con $75,000 millones en circulación frente a los $183,000 millones de Tether — en el retador más serio del dominio internacional de USDT.",
+          "url": "https://www.cnbc.com/2026/09/22/circle-lands-100-million-from-binance-to-ramp-up-global-usdc-expansion-.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El acuerdo ocurre mientras el Congreso de EE.UU. avanza en regulación de stablecoins — Circle apuesta a que USDC, construido sobre cumplimiento regulatorio, estará mejor posicionado que Tether cuando esa legislación entre en vigor.",
+            "en": "The deal comes as the U.S. Congress advances stablecoin legislation — Circle is betting that USDC, built on regulatory compliance, will be better positioned than Tether once that framework takes effect."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "MarketWatch",
+          "headline": "El mercado de bonos lanza señales de alerta para las acciones: estos sectores ya tambalean",
+          "body": "La curva de rendimientos podría volver a invertirse — un fenómeno históricamente asociado a recesión — presionando sectores ya debilitados por el entorno de tasas altas. La pregunta ya no es si la señal de los bonos es confiable, sino si esta vez el retraso entre inversión y recesión será tan largo que los mercados lo descuenten demasiado tarde.",
+          "url": "https://www.marketwatch.com/story/the-bond-market-is-flashing-a-warning-for-stocks-these-sectors-are-already-wobbling-015dc707",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "Con la Fed respaldando alzas adicionales según declaraciones de Collins hoy mismo, la presión sobre el extremo largo de la curva se intensifica — el momento de la posible inversión ya no es hipotético sino inminente.",
+            "en": "With the Fed backing additional hikes per Collins's statement today, pressure on the long end of the curve intensifies — the timing of a potential inversion is no longer hypothetical but imminent."
+          },
+          "thread_tag": "Tasas: Fed"
+        }
+      ],
+      "quote": {
+        "text": "Inflation is always and everywhere a monetary phenomenon in the sense that it is and can be produced only by a more rapid increase in the quantity of money than in output.",
+        "attribution": "Milton Friedman, 'A Monetary History of the United States', 1963"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the Fed hiked rates last month and now has its own regional presidents on LinkedIn explaining the decision — an unmistakable sign that the job isn't done. Meanwhile, Trump threatened to annihilate Iran before the UN, Xi is heading to Washington with expectations set firmly at zero, and Mexico keeps growing at the pace of someone who would rather be asleep. Busy day for a Tuesday in autumn.",
+      "narrative_thread": "Persistent inflationary pressure keeps central banks in restrictive mode while geopolitics — from UNGA to the Trump-Xi summit — adds layers of uncertainty to an already fragile growth environment.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 38,
+        "context_es": "El respaldo explícito de la Fed a más alzas, la debilidad del crecimiento mexicano y la baja expectativa sobre la cumbre Trump-Xi generan un tono de cautela sin pánico declarado.",
+        "context_en": "Explicit Fed support for further hikes, Mexico's sluggish growth data, and muted expectations for the Trump-Xi summit combine to produce a cautious tone without outright panic."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Fed hikes rates and Collins warns: inflation will remain 'notably' above 2% target",
+          "body": "Boston Fed President Susan Collins publicly backed last week's quarter-point rate hike and warned that she sees a greater likelihood that inflation will remain 'notably' above the 2% target. Markets are split 53% on whether another hike will come in October, making every Fed official's statement direct fuel for bond and equity volatility.",
+          "url": "https://www.cnbc.com/2026/09/23/federal-reserve-inflation-interest-rates-ecb.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Los comentarios de Collins llegan en la misma semana en que el BCE también advierte sobre una 'segunda ola' de presiones energéticas, señalando que el problema inflacionario es global y no resuelto.",
+            "en": "Collins's comments arrive the same week the ECB also warns of a 'second wave' of energy-driven inflation, signaling the price-stability problem is global and unresolved."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Trump threatens to 'annihilate' Iran at the UN and signs military deal with Denmark over Greenland",
+          "body": "In his speech to the UN General Assembly, Trump presented Iran a binary choice: trade deal or total destruction, and said he believes an agreement will come after the midterm elections. He also signed a deal significantly expanding U.S. military presence in Greenland, cementing a territorial demand that a year ago was considered eccentric.",
+          "url": "http://foreignpolicy.com/2026/09/22/unga-speech-guterres-trump-united-nations-zelensky/",
+          "tag": "Política",
+          "context_note": {
+            "es": "La retórica sobre Irán en la UNGA ocurre mientras la Fed y el BCE citan el riesgo de una 'segunda ola' de precios energéticos — cualquier escalada en Oriente Medio tiene transmisión directa al petróleo y, por tanto, a la inflación que los bancos centrales intentan controlar.",
+            "en": "The Iran rhetoric at UNGA comes as the Fed and ECB cite the risk of a 'second wave' of energy prices — any escalation in the Middle East transmits directly to oil and therefore to the very inflation central banks are trying to tame."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Trump and Xi meet this week: China's self-sufficiency changes the trade calculus",
+          "body": "Despite tariffs and supply chain diversification, China now accounts for 40% of global container exports — a milestone analysts had penciled in for 2030 but which arrived this summer. The best scenario businesses are hoping for from the Trump-Xi summit is an extension of last fall's trade truce, not any structural breakthrough.",
+          "url": "https://www.cnbc.com/2026/09/23/trump-xi-meeting-why-chinas-self-sufficiency-changes-the-calculus.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "Con la demanda de componentes de IA sosteniendo las exportaciones chinas incluso después de los aranceles, el argumento de que la presión comercial debilita a China se vuelve cada vez más difícil de sostener ante los datos de este año.",
+            "en": "With AI component demand sustaining Chinese exports even after tariffs, the argument that trade pressure weakens China becomes increasingly hard to support given this year's data."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico grows just 0.1% monthly in August per IOAE; retail sales post second consecutive monthly decline",
+          "body": "INEGI's Leading Economic Activity Indicator projects a monthly gain of only 0.1% in August, following contractions in May and June, while retail sales fell 0.1% month-on-month in July — their weakest annual pace since April 2025. Citi analysts nudged up their 2026 GDP forecast to 1.4%, but the figure remains consistent with an economy moving forward without conviction.",
+          "url": "https://www.elfinanciero.com.mx/opinion/victor-piz/2026/09/23/aun-perciben-senales-de-estancamiento-economico/",
+          "tag": "México",
+          "context_note": {
+            "es": "El estancamiento del consumo interno en México llega en un momento en que Banxico enfrenta presión para recortar tasas, pero la Fed acaba de subir — la divergencia de política monetaria entre ambos países complica cualquier decisión de relajación.",
+            "en": "Mexico's domestic consumption stagnation arrives just as Banxico faces pressure to cut rates, but the Fed just hiked — the monetary policy divergence between the two countries complicates any easing decision."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Circle raises $100 million from Binance to expand USDC globally and challenge Tether",
+          "body": "Binance acquired Circle shares worth $100 million at $80.84 per share as part of a five-year deal in which the world's largest crypto exchange will promote USDC on its platform in exchange for a monthly fee tied to outstanding balances. The alliance makes USDC — currently at $75 billion in circulation versus Tether's $183 billion — the most serious challenger yet to USDT's international dominance.",
+          "url": "https://www.cnbc.com/2026/09/22/circle-lands-100-million-from-binance-to-ramp-up-global-usdc-expansion-.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El acuerdo ocurre mientras el Congreso de EE.UU. avanza en regulación de stablecoins — Circle apuesta a que USDC, construido sobre cumplimiento regulatorio, estará mejor posicionado que Tether cuando esa legislación entre en vigor.",
+            "en": "The deal comes as the U.S. Congress advances stablecoin legislation — Circle is betting that USDC, built on regulatory compliance, will be better positioned than Tether once that framework takes effect."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "MarketWatch",
+          "headline": "The bond market is flashing a warning for stocks: these sectors are already wobbling",
+          "body": "The yield curve could invert again — a phenomenon historically associated with recession — putting pressure on sectors already weakened by the high-rate environment. The question is no longer whether the bond market's signal is reliable, but whether this time the lag between inversion and recession will be long enough that markets price it in too late.",
+          "url": "https://www.marketwatch.com/story/the-bond-market-is-flashing-a-warning-for-stocks-these-sectors-are-already-wobbling-015dc707",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "Con la Fed respaldando alzas adicionales según declaraciones de Collins hoy mismo, la presión sobre el extremo largo de la curva se intensifica — el momento de la posible inversión ya no es hipotético sino inminente.",
+            "en": "With the Fed backing additional hikes per Collins's statement today, pressure on the long end of the curve intensifies — the timing of a potential inversion is no longer hypothetical but imminent."
+          },
+          "thread_tag": "Tasas: Fed"
+        }
+      ],
+      "quote": {
+        "text": "Inflation is always and everywhere a monetary phenomenon in the sense that it is and can be produced only by a more rapid increase in the quantity of money than in output.",
+        "attribution": "Milton Friedman, 'A Monetary History of the United States', 1963"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-09-24.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "101.30",
+        "change": "▲ 0.2%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "5.11%",
+        "change": "▲ 3.0%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "16.02",
+        "change": "▲ 5.5%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$67.71",
+        "change": "▼ 1.6%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05695",
+            "chg_1d": {
+              "text": "▼ 1.56%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.25%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2947",
+            "chg_1d": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.29%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.05009",
+            "chg_1d": {
+              "text": "▼ 0.89%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.35%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3817",
+            "chg_1d": {
+              "text": "▼ 1.52%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.33%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0804",
+            "chg_1d": {
+              "text": "▼ 1.20%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.37%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04307",
+            "chg_1d": {
+              "text": "▼ 0.66%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.25%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "9.04",
+            "chg_1d": {
+              "text": "▼ 0.73%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.59%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.5587",
+            "chg_1d": {
+              "text": "▲ 1.58%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.30%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1747",
+            "chg_1d": {
+              "text": "▲ 1.47%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.99%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.87943",
+            "chg_1d": {
+              "text": "▲ 0.68%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.92%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.7020",
+            "chg_1d": {
+              "text": "▲ 0.04%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.4117",
+            "chg_1d": {
+              "text": "▲ 0.36%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.91%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75626",
+            "chg_1d": {
+              "text": "▲ 0.91%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.02%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "158.78",
+            "chg_1d": {
+              "text": "▲ 0.84%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.70%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.3932",
+            "chg_1d": {
+              "text": "▲ 0.11%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.30%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19325",
+            "chg_1d": {
+              "text": "▼ 1.45%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.98%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16995",
+            "chg_1d": {
+              "text": "▼ 0.78%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.2951",
+            "chg_1d": {
+              "text": "▼ 1.41%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.06%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2728",
+            "chg_1d": {
+              "text": "▼ 1.09%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14615",
+            "chg_1d": {
+              "text": "▼ 0.55%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.03%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.68",
+            "chg_1d": {
+              "text": "▼ 0.62%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.71%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "19.9660",
+            "chg_1d": {
+              "text": "▲ 0.90%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.37%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.13710",
+            "chg_1d": {
+              "text": "▼ 0.67%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.92%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.8842",
+            "chg_1d": {
+              "text": "▲ 0.78%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.06%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.6208",
+            "chg_1d": {
+              "text": "▼ 0.64%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.00%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6052",
+            "chg_1d": {
+              "text": "▼ 0.31%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.85994",
+            "chg_1d": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.10%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "180.55",
+            "chg_1d": {
+              "text": "▲ 0.16%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.77%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.6199",
+            "chg_1d": {
+              "text": "▲ 1.54%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.39%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14921",
+            "chg_1d": {
+              "text": "▼ 0.04%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7721",
+            "chg_1d": {
+              "text": "▲ 1.43%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.07%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.13122",
+            "chg_1d": {
+              "text": "▲ 0.64%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.01%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2106",
+            "chg_1d": {
+              "text": "▲ 0.33%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.99%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11284",
+            "chg_1d": {
+              "text": "▲ 0.87%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.10%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.69",
+            "chg_1d": {
+              "text": "▲ 0.80%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.78%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Tasas",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: Fed sube tasas y Collins advierte: la inflación seguirá 'notablemente' por encima del 2%, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Upward-trending arrow or thermometer rising above a horizontal line marked at 2%, rendered in bold ink strokes, wide establishing shot, environmental context visible, inspired by: Fed sube tasas y Collins advierte: la inflación seguirá 'notablemente' por encima del 2%, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of Upward-trending arrow or thermometer rising above a horizontal line marked at 2%, rendered in bold ink strokes, isolated detail, shallow depth of field, inspired by: Fed sube tasas y Collins advierte: la inflación seguirá 'notablemente' por encima del 2%, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Upward-trending arrow or thermometer rising above a horizontal line marked at 2%, rendered in bold ink strokes, low angle with strong perspective and architectural framing, inspired by: Fed sube tasas y Collins advierte: la inflación seguirá 'notablemente' por encima del 2%, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Upward-trending arrow or thermometer rising above a horizontal line marked at 2%, rendered in bold ink strokes — Wide shot",
+      "opt2": "Upward-trending arrow or thermometer rising above a horizontal line marked at 2%, rendered in bold ink strokes — Close-up",
+      "opt3": "Upward-trending arrow or thermometer rising above a horizontal line marked at 2%, rendered in bold ink strokes — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-24_hero.png"
+  }
+}
