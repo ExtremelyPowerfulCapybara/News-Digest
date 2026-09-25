@@ -1,0 +1,704 @@
+{
+  "date": "2026-09-25",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, los bonos del Tesoro a 10 años tocaron 5.135% —su nivel más alto desde julio de 2007— mientras la Fed de Nueva York confirma que otro alza antes de fin de año no es posibilidad sino expectativa. Al mismo tiempo, Trump recibe a Xi en la pista de aterrizaje con flores y cazas supersónicos, comprando dos meses más de tregua comercial. El mercado está navegando entre tasas que no perdonan y una diplomacia que improvisa en tiempo real.",
+      "narrative_thread": "La confluencia de una Fed que endurece sin señales claras, rendimientos del Tesoro en máximos de dos décadas y una tregua comercial EE.UU.-China de geometría variable define el tono global: cautela armada con oportunismo geopolítico.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 38,
+        "context_es": "Los rendimientos en máximos de 17 años y la probabilidad de 77.5% de otro alza en octubre pesan sobre el apetito de riesgo, pero la tregua EE.UU.-China evita un deterioro más pronunciado.",
+        "context_en": "Yields at 17-year highs and a 77.5% probability of another October hike weigh on risk appetite, but the U.S.-China truce prevents a sharper deterioration."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Fed de Nueva York ve 'razonable' otro alza de tasas antes de fin de año; bono a 10 años toca máximo de 17 años",
+          "body": "El presidente de la Fed de Nueva York, John Williams, declaró en Londres que es 'razonable' anticipar otro alza de tasas antes de diciembre, días después de que el banco central elevara el fondeo a 3.75%-4.00%; el bono del Tesoro a 10 años respondió subiendo hasta 5.135%, su nivel más alto desde julio de 2007. La probabilidad implícita de un alza en octubre ya cotiza en 77.5% según CME FedWatch, lo que presiona valuaciones de renta variable y encarece el costo de capital globalmente.",
+          "url": "https://www.cnbc.com/2026/09/24/feds-williams-another-rate-hike-by-year-end.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Williams se suma a los comentarios hawkish de la gobernadora Barr y la presidenta Collins esta semana, consolidando un coro que el mercado ya no puede ignorar: la Fed no ha terminado.",
+            "en": "Williams joins hawkish remarks from Governor Barr and President Collins this week, cementing a chorus the market can no longer ignore: the Fed is not done."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Trump recibe a Xi en la pista con jets de combate; tregua comercial EE.UU.-China se extiende hasta el 10 de enero",
+          "body": "El presidente Trump recibió al líder chino Xi Jinping en la Base Aérea Andrews —el primer mandatario estadounidense en saludar a un líder extranjero en la pista en seis décadas— mientras el secretario del Tesoro Bessent anunció que el acuerdo arancelario bilateral se extiende hasta el 10 de enero. La tregua compra tiempo, pero los aliados asiáticos de Washington ya advierten que no aceptarán concesiones sobre Taiwán o seguridad regional como moneda de cambio en ningún gran acuerdo.",
+          "url": "https://www.cnbc.com/2026/09/24/trump-xi-china-visit-tariff-iran-yields-.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "La extensión del acuerdo llega en plena AGNU, con Irán desafiando a EE.UU. en el mismo foro y los rendimientos del Tesoro en máximos —cualquier ruptura de la tregua añadiría presión inflacionaria a una economía ya bajo tensión de tasas.",
+            "en": "The deal extension arrives amid the UNGA, with Iran defying the U.S. in the same forum and Treasury yields at highs — any truce breakdown would add inflationary pressure to an economy already under rate stress."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Diesel en EE.UU. alcanza récord histórico de $6.31 por galón; economistas advierten efecto cascada en toda la cadena de precios",
+          "body": "El precio del diésel en Estados Unidos marcó un máximo histórico de $6.31 por galón —$8 en California— impulsado por la guerra con Irán y la disrupción en el Estrecho de Ormuz, encareciendo el transporte de carga ferroviaria y por carretera en toda la economía. Dado que el diésel es el insumo físico más transversal de la economía estadounidense, los expertos advierten que el aumento terminará incrustado en precios de alimentos, manufactura y logística, complicando aún más la tarea antiinflacionaria de la Fed.",
+          "url": "https://www.cnbc.com/2026/09/17/diesel-gas-prices-oil-us-economy.html",
+          "tag": "Energía",
+          "context_note": {
+            "es": "Con la inflación ya por encima del 3% y la Fed señalando más alzas, un choque de costos vía diésel crea un escenario stagflacionario que ningún modelo de tasa de interés resuelve fácilmente.",
+            "en": "With inflation already above 3% and the Fed signaling more hikes, a diesel cost shock creates a stagflationary scenario that no interest rate model easily resolves."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Aliados asiáticos de EE.UU. exigen que la cumbre Trump-Xi no sacrifique seguridad regional a cambio de concesiones comerciales",
+          "body": "Japón, Filipinas y Corea del Sur observan con alarma la cumbre Washington-Pekín, temiendo que Trump ofrezca concesiones sobre Taiwán —incluyendo el congelamiento de un paquete de armas de $14,000 millones— a cambio de cooperación china en la guerra contra Irán o alivio arancelario. La cancelación abrupta de ejercicios conjuntos EE.UU.-Corea del Sur el mes pasado y la transferencia de arsenales desde el Indo-Pacífico hacia el frente iraní ya han erosionado la confianza en la firmeza del compromiso estadounidense con la región.",
+          "url": "https://www.cnbc.com/2026/09/24/uss-asian-allies-want-a-trump-xi-truce-but-not-at-their-expense.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El riesgo geopolítico en el Indo-Pacífico es directamente relevante para mercados de capitales: una señal de debilitamiento del paraguas de seguridad estadounidense sobre Taiwán desestabilizaría cadenas de suministro semiconductoras globales de forma inmediata.",
+            "en": "Geopolitical risk in the Indo-Pacific is directly relevant to capital markets: any signal of a weakening U.S. security umbrella over Taiwan would immediately destabilize global semiconductor supply chains."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Inversores extranjeros han vendido $26,000 millones en acciones indias en 2026; Bernstein advierte que las grandes empresas del país viven en 'una era económica pasada'",
+          "body": "Bernstein publicó un reporte señalando que los grandes corporativos indios —incluyendo Reliance Industries y el grupo Tata, enredado en una batalla de directorio— no justifican sus altas valuaciones porque 'consolidan su pasado' en vez de invertir en tecnologías emergentes como semiconductores o vehículos eléctricos; los inversores extranjeros han vendido acciones indias por un récord de $26,000 millones en lo que va del año. El Nifty 50 cae más del 10% desde enero, mientras las empresas medianas —más expuestas a manufactura y fintech— reportaron crecimiento de utilidades del 31% frente al 11% de las grandes, un divorcio entre el índice referencial y la economía real que confunde a los asignadores de capital institucional.",
+          "url": "https://www.cnbc.com/2026/09/22/foreign-investors-bernstein-india-tata-reliance.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "La salida récord de capital extranjero de India ocurre en paralelo a la presión diplomática de EE.UU. sobre aranceles al petróleo ruso —un frente adicional de incertidumbre que complica la narrativa de India como destino de inversión alternativo a China.",
+            "en": "The record foreign capital outflow from India occurs alongside U.S. diplomatic pressure over Russian oil tariffs — an additional uncertainty front that complicates India's narrative as an investment alternative to China."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Recortes de ayuda de EE.UU. dejan al mundo 'ciego' ante crisis alimentarias; Estrecho de Ormuz y Ucrania amenazan con catástrofe agroalimentaria en 2027",
+          "body": "Phil Hogan, favorito para dirigir la FAO, advirtió en Singapur que el desmantelamiento de USAID por la administración Trump obliga a otros países a cubrir el financiamiento de la agencia, justo cuando el conflicto en el Estrecho de Ormuz y la guerra en Ucrania han paralizado exportaciones de fertilizantes y energía, elevando el riesgo de una catástrofe alimentaria global en 2027. Más de 266 millones de personas enfrentan hambre aguda este año según la ONU, y la reducción de fondos para monitoreo y alerta temprana significa que el mundo llegará a la próxima crisis sin los instrumentos para anticiparla.",
+          "url": "https://www.cnbc.com/2026/09/24/hormuz-blacksea-ukraine-iran-food-security-united-nations-.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La intersección entre el choque energético del Estrecho de Ormuz, los precios récord del diésel en EE.UU. y el colapso del financiamiento humanitario crea un vector inflacionario alimentario que los bancos centrales no pueden combatir con tasas de interés.",
+            "en": "The intersection of the Hormuz energy shock, record U.S. diesel prices, and the collapse of humanitarian funding creates a food inflation vector that central banks cannot fight with interest rates."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "INEGI: 1.6 millones de mexicanos afectados por desplazamiento forzado; cuatro de cada diez hogares dependen de transferencias gubernamentales",
+          "body": "La Encuesta Intercensal 2025 del INEGI revela que entre 2020 y 2025 unos 509,900 hogares —que incluyen aproximadamente 1.6 millones de personas— fueron afectados por el desplazamiento de al menos un integrante debido a violencia o inseguridad, mientras la proporción de hogares que reciben ingresos de programas gubernamentales saltó de 25% a 41.4% en el mismo periodo. La combinación de gasto social creciente para sostener ingresos en zonas de alta inseguridad y una base productiva erosionada por el desplazamiento interno configura un círculo fiscal que presionará las finanzas públicas mexicanas en el mediano plazo.",
+          "url": "https://www.elfinanciero.com.mx/opinion/alejo-sanchez-cano/2026/09/24/desplazados-inseguridad-e-inequidad-social/",
+          "tag": "México",
+          "context_note": {
+            "es": "Estos datos llegan en un momento en que la calificación crediticia soberana de México y la percepción de riesgo país están bajo escrutinio; la dependencia creciente de transferencias gubernamentales en un contexto de finanzas públicas ajustadas añade presión sobre el perfil fiscal que los mercados de deuda ya están monitoreando.",
+            "en": "These data arrive as Mexico's sovereign credit rating and country risk perception are under scrutiny; growing dependence on government transfers in a context of tight public finances adds pressure on the fiscal profile that debt markets are already monitoring."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The Fed's job is never done as long as inflation is above target. The question is whether we're willing to accept the pain required to finish it.",
+        "attribution": "Kevin Warsh, Presidente de la Reserva Federal, discurso ante el Economic Club of New York, 2026"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the 10-year Treasury touched 5.135% — its highest level since July 2007 — as the New York Fed confirms another hike before year-end is not a possibility but an expectation. Meanwhile, Trump receives Xi on the tarmac with flowers and fighter jets overhead, buying two more months of commercial truce. Markets are navigating between unforgiving rates and diplomacy that improvises in real time.",
+      "narrative_thread": "The confluence of a Fed tightening without clear forward guidance, Treasury yields at two-decade highs, and a U.S.-China trade truce of variable geometry defines the global tone: armed caution with geopolitical opportunism.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 38,
+        "context_es": "Los rendimientos en máximos de 17 años y la probabilidad de 77.5% de otro alza en octubre pesan sobre el apetito de riesgo, pero la tregua EE.UU.-China evita un deterioro más pronunciado.",
+        "context_en": "Yields at 17-year highs and a 77.5% probability of another October hike weigh on risk appetite, but the U.S.-China truce prevents a sharper deterioration."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "NY Fed sees another rate hike before year-end as 'reasonable'; 10-year Treasury hits 17-year high",
+          "body": "New York Fed President John Williams said in London it is 'reasonable' to expect another rate hike before December, days after the central bank raised the fed funds rate to 3.75%-4.00%; the 10-year Treasury responded by rising to 5.135%, its highest level since July 2007. The implied probability of an October hike now stands at 77.5% according to CME FedWatch, pressuring equity valuations and raising the cost of capital globally.",
+          "url": "https://www.cnbc.com/2026/09/24/feds-williams-another-rate-hike-by-year-end.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "Williams se suma a los comentarios hawkish de la gobernadora Barr y la presidenta Collins esta semana, consolidando un coro que el mercado ya no puede ignorar: la Fed no ha terminado.",
+            "en": "Williams joins hawkish remarks from Governor Barr and President Collins this week, cementing a chorus the market can no longer ignore: the Fed is not done."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Trump greets Xi on the tarmac with fighter jets; U.S.-China trade truce extended to January 10",
+          "body": "President Trump welcomed Chinese leader Xi Jinping at Andrews Air Force Base — the first U.S. president in six decades to greet a foreign leader on the tarmac — as Treasury Secretary Bessent announced that the bilateral tariff agreement is extended to January 10. The truce buys time, but Washington's Asian allies are already warning they will not accept concessions on Taiwan or regional security as bargaining chips in any broader deal.",
+          "url": "https://www.cnbc.com/2026/09/24/trump-xi-china-visit-tariff-iran-yields-.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "La extensión del acuerdo llega en plena AGNU, con Irán desafiando a EE.UU. en el mismo foro y los rendimientos del Tesoro en máximos —cualquier ruptura de la tregua añadiría presión inflacionaria a una economía ya bajo tensión de tasas.",
+            "en": "The deal extension arrives amid the UNGA, with Iran defying the U.S. in the same forum and Treasury yields at highs — any truce breakdown would add inflationary pressure to an economy already under rate stress."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "U.S. diesel hits all-time record of $6.31 per gallon; economists warn of cascading price effects across the entire supply chain",
+          "body": "Diesel prices in the United States hit a historic high of $6.31 per gallon — $8 in California — driven by the war with Iran and disruption at the Strait of Hormuz, raising freight costs by road and rail across the economy. Because diesel is the most universal physical input in the U.S. economy, experts warn the increase will become embedded in food, manufacturing, and logistics prices, further complicating the Fed's inflation-fighting task.",
+          "url": "https://www.cnbc.com/2026/09/17/diesel-gas-prices-oil-us-economy.html",
+          "tag": "Energía",
+          "context_note": {
+            "es": "Con la inflación ya por encima del 3% y la Fed señalando más alzas, un choque de costos vía diésel crea un escenario stagflacionario que ningún modelo de tasa de interés resuelve fácilmente.",
+            "en": "With inflation already above 3% and the Fed signaling more hikes, a diesel cost shock creates a stagflationary scenario that no interest rate model easily resolves."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "U.S. Asian allies demand Trump-Xi summit not sacrifice regional security for trade concessions",
+          "body": "Japan, the Philippines, and South Korea are watching the Washington-Beijing summit with alarm, fearing Trump may offer concessions on Taiwan — including freezing a $14 billion arms package — in exchange for Chinese cooperation on the Iran war or tariff relief. The abrupt cancellation of joint U.S.-South Korea exercises last month and the transfer of arsenals from the Indo-Pacific to the Iranian front have already eroded confidence in the firmness of the U.S. commitment to the region.",
+          "url": "https://www.cnbc.com/2026/09/24/uss-asian-allies-want-a-trump-xi-truce-but-not-at-their-expense.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El riesgo geopolítico en el Indo-Pacífico es directamente relevante para mercados de capitales: una señal de debilitamiento del paraguas de seguridad estadounidense sobre Taiwán desestabilizaría cadenas de suministro semiconductoras globales de forma inmediata.",
+            "en": "Geopolitical risk in the Indo-Pacific is directly relevant to capital markets: any signal of a weakening U.S. security umbrella over Taiwan would immediately destabilize global semiconductor supply chains."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Foreign investors have sold a record $26 billion in Indian equities in 2026; Bernstein warns large corporates are stuck in a 'bygone economic era'",
+          "body": "Bernstein published a report stating that India's large corporates — including Reliance Industries and the Tata Group, embroiled in a boardroom battle — do not justify their high valuations because they are 'consolidating their past' rather than investing in emerging technologies such as semiconductors or electric vehicles; foreign investors have sold a record $26 billion in Indian equities so far this year. The Nifty 50 is down more than 10% since January, while mid-cap companies — more exposed to manufacturing and fintech — reported earnings growth of 31% versus 11% for large caps, a divorce between the benchmark index and the real economy that is confusing institutional capital allocators.",
+          "url": "https://www.cnbc.com/2026/09/22/foreign-investors-bernstein-india-tata-reliance.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "La salida récord de capital extranjero de India ocurre en paralelo a la presión diplomática de EE.UU. sobre aranceles al petróleo ruso —un frente adicional de incertidumbre que complica la narrativa de India como destino de inversión alternativo a China.",
+            "en": "The record foreign capital outflow from India occurs alongside U.S. diplomatic pressure over Russian oil tariffs — an additional uncertainty front that complicates India's narrative as an investment alternative to China."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "U.S. aid cuts leave the world 'blind' to food crises; Hormuz Strait and Ukraine threaten agrifood catastrophe in 2027",
+          "body": "Phil Hogan, frontrunner to lead the FAO, warned in Singapore that the dismantling of USAID by the Trump administration forces other countries to cover the agency's funding gap, precisely as the conflict at the Strait of Hormuz and the war in Ukraine have halted fertilizer and energy exports, raising the risk of a global food catastrophe in 2027. More than 266 million people face acute hunger this year according to the UN, and reduced funding for monitoring and early warning means the world will arrive at the next crisis without the tools to anticipate it.",
+          "url": "https://www.cnbc.com/2026/09/24/hormuz-blacksea-ukraine-iran-food-security-united-nations-.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La intersección entre el choque energético del Estrecho de Ormuz, los precios récord del diésel en EE.UU. y el colapso del financiamiento humanitario crea un vector inflacionario alimentario que los bancos centrales no pueden combatir con tasas de interés.",
+            "en": "The intersection of the Hormuz energy shock, record U.S. diesel prices, and the collapse of humanitarian funding creates a food inflation vector that central banks cannot fight with interest rates."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "INEGI: 1.6 million Mexicans affected by forced displacement; four in ten households now depend on government transfers",
+          "body": "INEGI's 2025 Intercensal Survey reveals that between 2020 and 2025, approximately 509,900 households — encompassing roughly 1.6 million people — were affected by the displacement of at least one member due to violence or insecurity, while the share of households receiving income from government programs jumped from 25% to 41.4% in the same period. The combination of rising social spending to sustain incomes in high-insecurity areas and a productive base eroded by internal displacement creates a fiscal feedback loop that will pressure Mexican public finances in the medium term.",
+          "url": "https://www.elfinanciero.com.mx/opinion/alejo-sanchez-cano/2026/09/24/desplazados-inseguridad-e-inequidad-social/",
+          "tag": "México",
+          "context_note": {
+            "es": "Estos datos llegan en un momento en que la calificación crediticia soberana de México y la percepción de riesgo país están bajo escrutinio; la dependencia creciente de transferencias gubernamentales en un contexto de finanzas públicas ajustadas añade presión sobre el perfil fiscal que los mercados de deuda ya están monitoreando.",
+            "en": "These data arrive as Mexico's sovereign credit rating and country risk perception are under scrutiny; growing dependence on government transfers in a context of tight public finances adds pressure on the fiscal profile that debt markets are already monitoring."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The Fed's job is never done as long as inflation is above target. The question is whether we're willing to accept the pain required to finish it.",
+        "attribution": "Kevin Warsh, Chairman of the Federal Reserve, speech at the Economic Club of New York, 2026"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-09-25.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "101.00",
+        "change": "▼ 0.3%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "5.16%",
+        "change": "▲ 0.9%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "15.08",
+        "change": "▼ 3.8%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$67.25",
+        "change": "▼ 0.7%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05655",
+            "chg_1d": {
+              "text": "▼ 0.81%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.58%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2927",
+            "chg_1d": {
+              "text": "▼ 0.57%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.90%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04956",
+            "chg_1d": {
+              "text": "▼ 1.05%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.98%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3791",
+            "chg_1d": {
+              "text": "▼ 0.91%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.49%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0799",
+            "chg_1d": {
+              "text": "▼ 0.58%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.58%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04266",
+            "chg_1d": {
+              "text": "▼ 0.92%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.61%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.91",
+            "chg_1d": {
+              "text": "▼ 1.19%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.21%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.6837",
+            "chg_1d": {
+              "text": "▲ 0.81%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.65%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1764",
+            "chg_1d": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.69%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.87642",
+            "chg_1d": {
+              "text": "▼ 0.25%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.61%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.7037",
+            "chg_1d": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.09%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.4137",
+            "chg_1d": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.02%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75432",
+            "chg_1d": {
+              "text": "▼ 0.12%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.99%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "157.65",
+            "chg_1d": {
+              "text": "▼ 0.39%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.38%",
+              "cls": "chg-up"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.4162",
+            "chg_1d": {
+              "text": "▲ 0.58%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.94%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19318",
+            "chg_1d": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.69%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16931",
+            "chg_1d": {
+              "text": "▼ 0.48%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.08%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.2951",
+            "chg_1d": {
+              "text": "▼ 0.34%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.60%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2731",
+            "chg_1d": {
+              "text": "▼ 0.01%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.32%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14572",
+            "chg_1d": {
+              "text": "▼ 0.35%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.30%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.45",
+            "chg_1d": {
+              "text": "▼ 0.62%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.31%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.1771",
+            "chg_1d": {
+              "text": "▲ 1.06%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.02%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.14100",
+            "chg_1d": {
+              "text": "▲ 0.25%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.61%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.9063",
+            "chg_1d": {
+              "text": "▲ 0.48%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.08%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.6489",
+            "chg_1d": {
+              "text": "▲ 0.14%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.52%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6130",
+            "chg_1d": {
+              "text": "▲ 0.48%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.86068",
+            "chg_1d": {
+              "text": "▲ 0.13%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.38%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "179.88",
+            "chg_1d": {
+              "text": "▼ 0.14%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.6379",
+            "chg_1d": {
+              "text": "▲ 0.92%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.55%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14917",
+            "chg_1d": {
+              "text": "▲ 0.11%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.09%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7722",
+            "chg_1d": {
+              "text": "▲ 0.34%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.60%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.13074",
+            "chg_1d": {
+              "text": "▼ 0.14%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.52%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2109",
+            "chg_1d": {
+              "text": "▲ 0.34%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.93%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11252",
+            "chg_1d": {
+              "text": "▼ 0.01%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.90%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.52",
+            "chg_1d": {
+              "text": "▼ 0.28%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.29%",
+              "cls": "chg-up"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Tasas",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: Fed de Nueva York ve 'razonable' otro alza de tasas antes de fin de año; bono a 10 años toca máximo de 17 años, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, An upward-trending arrow or climbing line chart rendered in bold, ascending strokes, piercing through layered ascending bars, wide establishing shot, environmental context visible, inspired by: Fed de Nueva York ve 'razonable' otro alza de tasas antes de fin de año; bono a 10 años toca máximo de 17 años, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of An upward-trending arrow or climbing line chart rendered in bold, ascending strokes, piercing through layered ascending bars, isolated detail, shallow depth of field, inspired by: Fed de Nueva York ve 'razonable' otro alza de tasas antes de fin de año; bono a 10 años toca máximo de 17 años, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, An upward-trending arrow or climbing line chart rendered in bold, ascending strokes, piercing through layered ascending bars, low angle with strong perspective and architectural framing, inspired by: Fed de Nueva York ve 'razonable' otro alza de tasas antes de fin de año; bono a 10 años toca máximo de 17 años, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Upward-trending arrow or climbing line chart rendered in bold, ascending strokes, piercing through layered ascending bars — Wide shot",
+      "opt2": "Upward-trending arrow or climbing line chart rendered in bold, ascending strokes, piercing through layered ascending bars — Close-up",
+      "opt3": "Upward-trending arrow or climbing line chart rendered in bold, ascending strokes, piercing through layered ascending bars — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-25_hero.png"
+  }
+}
