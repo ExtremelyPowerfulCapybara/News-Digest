@@ -1,0 +1,704 @@
+{
+  "date": "2026-09-29",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, los bonos largos acaban de recordarle al mundo que la gravedad sigue vigente: el bono a 10 años se ajustó 16% en una semana, y el mercado de diesel global está a un tuit presidencial de un rediseño completo. Mientras Trump amenaza con prohibir exportaciones de combustible y Bessent refuerza su equipo con un economista que pide tasas más bajas, la narrativa de fondo es la misma de siempre: la política fiscal y monetaria están jugando ajedrez en tableros distintos, y los que pierden son los que tienen deuda.",
+      "narrative_thread": "La aceleración en las tasas de los bonos del Tesoro, la presión inflacionaria vía precios del diesel y el reposicionamiento político del Tesoro configuran un mercado que castiga a los deudores y premia a los activos reales.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 28,
+        "context_es": "El repunte violento en rendimientos de bonos largos, precios récord del diesel y futuros bursátiles a la baja dominan el ánimo del lunes.",
+        "context_en": "A violent spike in long-bond yields, record diesel prices, and falling stock futures dominate Monday's market mood."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Trump considera en serio prohibir exportaciones de diesel mientras los precios rozan récords históricos",
+          "body": "El precio promedio del diesel en EE.UU. rondaba los $6.50 por galón el viernes, apenas por debajo del récord de $6.53 registrado el 22 de septiembre, mientras Trump confirmó que la Casa Blanca estudia 'muy seriamente' una prohibición de exportaciones. Morgan Stanley advierte que la medida podría reducir el precio doméstico inicialmente, pero desencadenar una espiral: menos refinación, menos gasolina, precios globales sin precedente — un regalo envenenado para Europa, que depende de EE.UU. para casi la mitad de sus importaciones de diesel.",
+          "url": "https://www.cnbc.com/2026/09/28/diesel-oil-trump-export-ban-fuel-prices.html",
+          "tag": "Energía",
+          "context_note": {
+            "es": "Con las elecciones intermedias a cinco semanas, la presión política sobre Trump para actuar es máxima, pero la industria petrolera y los analistas coinciden en que la prohibición podría agravar la crisis global que pretende resolver.",
+            "en": "With midterm elections five weeks away, political pressure on Trump to act is at its peak, but the oil industry and analysts agree the ban could worsen the very global crisis it aims to fix."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Bonos del Tesoro de EE.UU. sufren ajuste severo: tasa a 10 años sube 16% en una semana",
+          "body": "El bono del Tesoro a 10 años se ajustó 16% y el de 30 años 11% en la semana, llevando ambos a niveles no vistos desde principios de siglo, en lo que el columnista Macario Schettino califica como una aceleración preocupante en un ciclo alcista de tasas que lleva una década. El fenómeno es global y presionará a todos los deudores — soberanos, corporativos y hogares — en un momento en que la credibilidad política de Trump se deteriora ante las elecciones intermedias de noviembre.",
+          "url": "https://www.elfinanciero.com.mx/opinion/macario-schettino/2026/09/28/el-prologo/",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "El ajuste coincidió con la reunión Trump-Xi, cuyo fracaso en producir resultados concretos añadió incertidumbre geopolítica a un mercado de bonos ya frágil por la inflación persistente y el déficit fiscal estadounidense.",
+            "en": "The selloff coincided with the Trump-Xi meeting, whose failure to produce concrete results added geopolitical uncertainty to an already fragile bond market strained by persistent inflation and U.S. fiscal deficits."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Bessent ficha al economista David Zervos de Jefferies como asesor del Tesoro en medio de presiones sobre la Fed",
+          "body": "Scott Bessent incorporó a David Zervos, ex estratega jefe de mercados de Jefferies y voz pública a favor de tasas más bajas, como consejero en el Departamento del Tesoro con inicio inmediato. Zervos, que fue considerado para presidir la Fed antes de que el cargo recayera en Kevin Warsh, ha argumentado que Warsh puede abrir espacio para recortes reduciendo el balance de la Fed — una postura que choca directamente con un entorno de tasas al alza.",
+          "url": "https://www.cnbc.com/2026/09/28/david-zervos-treasury-department-scott-bessent.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La contratación llega justo cuando los rendimientos largos se disparan, reforzando la lectura de que el Tesoro está construyendo músculo argumentativo para presionar a la Fed hacia una postura más acomodaticia.",
+            "en": "The hire comes precisely as long-end yields surge, reinforcing the reading that Treasury is building intellectual firepower to push the Fed toward a more accommodative stance."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Activos reales y 'superciclos': los nuevos cobertores para un mundo con inflación persistente y shocks de oferta",
+          "body": "ETFs de energía amplia como XOP suben cerca de 40% en 2026, mientras BWET — un fondo que apuesta al costo de transportar crudo — acumula más de 4,000% de ganancia en el año y prepara una versión con apalancamiento 2x. Gestores de Cohen & Steers y VistaShares argumentan que el portafolio tradicional 60/40 ha dejado de funcionar como cobertura inflacionaria, y que los activos reales — energía, recursos naturales, infraestructura — son el nuevo escudo estructural para un mercado de bonos que ya no amortigua.",
+          "url": "https://www.cnbc.com/2026/09/25/oil-prices-inflation-energy-ai-stocks.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El récord del diesel y el ajuste violento en bonos esta semana validan empíricamente la tesis del 'superciclo': los activos de cobertura convencionales fallan justo cuando más se necesitan.",
+            "en": "This week's record diesel prices and violent bond selloff empirically validate the 'super-cycle' thesis: conventional hedge assets are failing exactly when they are needed most."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Nvidia lanza plataforma de seguridad para agentes de IA y autoriza recompra de acciones por $150,000 millones",
+          "body": "Nvidia anunció el lunes su Open Agent Safety Platform, diseñada para prevenir comportamientos maliciosos de agentes de inteligencia artificial — una respuesta directa al hackeo de Hugging Face por modelos de OpenAI en julio — y simultáneamente autorizó $150,000 millones adicionales en recompra de acciones, la mayor ampliación de ese tipo en la historia corporativa. La doble señal — control de riesgos sistémicos de IA más la mayor devolución de capital de la historia — posiciona a Nvidia como árbitro tanto de la seguridad como de la infraestructura del ecosistema de IA global.",
+          "url": "https://www.cnbc.com/2026/09/28/5-things-to-know-before-the-stock-market-opens.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El anuncio de recompra llega en un lunes con futuros a la baja, ofreciendo a Nvidia un colchón técnico frente a la presión vendedora general inducida por el alza de tasas.",
+            "en": "The buyback announcement lands on a Monday with futures falling, giving Nvidia a technical buffer against the broader selling pressure induced by rising yields."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Manufactureros chinos apuntan al boom de centros de datos de IA en EE.UU. pese a tensiones geopolíticas",
+          "body": "EE.UU. alberga 5,427 centros de datos de IA frente a 449 en China, y las grandes tecnológicas estadounidenses proyectan gastar cerca de $765,000 millones en infraestructura de IA este año, creando una demanda que empresas chinas — vía filiales con sede en Singapur — buscan satisfacer con centros prefabricados de menor tiempo de entrega. La administración Trump evalúa prohibiciones sobre modelos de IA chinos de código abierto y componentes de centros de datos, lo que convierte este flujo comercial en el próximo frente de la guerra tecnológica entre las dos potencias.",
+          "url": "https://www.cnbc.com/2026/09/26/china-us-ai-data-centers.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "La reunión Trump-Xi de la semana pasada incluyó a la IA como tema central sin producir acuerdos, dejando en suspenso regulaciones que podrían cerrar de golpe este canal de negocio para los proveedores chinos.",
+            "en": "Last week's Trump-Xi meeting included AI as a central topic without producing agreements, leaving in limbo regulations that could abruptly close this business channel for Chinese suppliers."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México ausente en la ONU mientras Trump lo llama 'epicentro del crimen organizado'",
+          "body": "Durante la Asamblea General de la ONU, México no envió a su jefe de Estado ni de Gobierno, limitando su representación al canciller en una semana dominada por líderes de primer nivel; Trump aprovechó el vacío para calificar a México como epicentro del crimen organizado ante una audiencia global. La ausencia mexicana convierte cada golpe retórico de Washington en un monólogo sin réplica creíble, precisamente cuando la relación bilateral enfrenta presión comercial, arancelaria y de seguridad simultánea.",
+          "url": "https://www.elfinanciero.com.mx/opinion/macario-schettino/2026/09/28/el-prologo/",
+          "tag": "México",
+          "context_note": {
+            "es": "Con elecciones intermedias en EE.UU. a cinco semanas, Trump tiene incentivos para mantener la presión sobre México como issue político doméstico, lo que eleva el riesgo de nuevas medidas arancelarias o migratorias antes de noviembre.",
+            "en": "With U.S. midterm elections five weeks away, Trump has strong incentives to keep pressure on Mexico as a domestic political issue, raising the risk of new tariff or migration measures before November."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The bond market is the true barometer of the economy. When it speaks, everyone listens — whether they want to or not.",
+        "attribution": "Bill Gross, PIMCO, 2013"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, long bonds just reminded the world that gravity still applies: the 10-year Treasury adjusted 16% in a single week, and the global diesel market is one presidential tweet away from a full redesign. As Trump threatens to ban fuel exports and Bessent reinforces his team with an economist who wants lower rates, the underlying narrative is the same as always: fiscal and monetary policy are playing chess on separate boards, and the losers are whoever is carrying debt.",
+      "narrative_thread": "A violent spike in long Treasury yields, inflationary pressure through record diesel prices, and political repositioning at the Treasury combine to form a market that punishes debtors and rewards real assets.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 28,
+        "context_es": "El repunte violento en rendimientos de bonos largos, precios récord del diesel y futuros bursátiles a la baja dominan el ánimo del lunes.",
+        "context_en": "A violent spike in long-bond yields, record diesel prices, and falling stock futures dominate Monday's market mood."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Trump seriously considers diesel export ban as prices near historic records",
+          "body": "Average U.S. diesel prices hovered around $6.50 per gallon on Friday, just below the record of $6.53 set on September 22, as Trump confirmed the White House is 'very seriously' studying an export ban. Morgan Stanley warns the move could initially lower domestic prices but trigger a spiral: less refining, less gasoline, unprecedented global prices — a poisoned gift for Europe, which relies on the U.S. for nearly half its diesel imports.",
+          "url": "https://www.cnbc.com/2026/09/28/diesel-oil-trump-export-ban-fuel-prices.html",
+          "tag": "Energía",
+          "context_note": {
+            "es": "Con las elecciones intermedias a cinco semanas, la presión política sobre Trump para actuar es máxima, pero la industria petrolera y los analistas coinciden en que la prohibición podría agravar la crisis global que pretende resolver.",
+            "en": "With midterm elections five weeks away, political pressure on Trump to act is at its peak, but the oil industry and analysts agree the ban could worsen the very global crisis it aims to fix."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "U.S. Treasury bonds suffer severe selloff: 10-year yield spikes 16% in one week",
+          "body": "The 10-year Treasury adjusted 16% and the 30-year 11% over the week, pushing both to levels unseen since the early 2000s, in what columnist Macario Schettino calls a worrying acceleration of a rate-hiking cycle now a decade old. The phenomenon is global and will pressure all borrowers — sovereign, corporate, and household — at a moment when Trump's political credibility is eroding ahead of November's midterm elections.",
+          "url": "https://www.elfinanciero.com.mx/opinion/macario-schettino/2026/09/28/el-prologo/",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "El ajuste coincidió con la reunión Trump-Xi, cuyo fracaso en producir resultados concretos añadió incertidumbre geopolítica a un mercado de bonos ya frágil por la inflación persistente y el déficit fiscal estadounidense.",
+            "en": "The selloff coincided with the Trump-Xi meeting, whose failure to produce concrete results added geopolitical uncertainty to an already fragile bond market strained by persistent inflation and U.S. fiscal deficits."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Bessent hires Jefferies economist David Zervos as Treasury counselor amid Fed pressure",
+          "body": "Scott Bessent brought on David Zervos, former chief market strategist at Jefferies and a public advocate for lower rates, as a counselor at the Treasury Department effective immediately. Zervos, who was considered to chair the Fed before the role went to Kevin Warsh, has argued that Warsh can make room for rate cuts by shrinking the Fed's balance sheet — a stance that clashes directly with the current environment of surging yields.",
+          "url": "https://www.cnbc.com/2026/09/28/david-zervos-treasury-department-scott-bessent.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La contratación llega justo cuando los rendimientos largos se disparan, reforzando la lectura de que el Tesoro está construyendo músculo argumentativo para presionar a la Fed hacia una postura más acomodaticia.",
+            "en": "The hire comes precisely as long-end yields surge, reinforcing the reading that Treasury is building intellectual firepower to push the Fed toward a more accommodative stance."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Real assets and 'super-cycles': the new hedges for a world of persistent inflation and supply shocks",
+          "body": "Broad energy ETFs like XOP are up roughly 40% in 2026, while BWET — a fund betting on crude shipping costs — has gained over 4,000% year-to-date and is preparing a 2x leveraged version. Managers at Cohen & Steers and VistaShares argue that the traditional 60/40 portfolio has stopped working as an inflation hedge, and that real assets — energy, natural resources, infrastructure — are the new structural shield for a bond market that no longer absorbs shocks.",
+          "url": "https://www.cnbc.com/2026/09/25/oil-prices-inflation-energy-ai-stocks.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El récord del diesel y el ajuste violento en bonos esta semana validan empíricamente la tesis del 'superciclo': los activos de cobertura convencionales fallan justo cuando más se necesitan.",
+            "en": "This week's record diesel prices and violent bond selloff empirically validate the 'super-cycle' thesis: conventional hedge assets are failing exactly when they are needed most."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Nvidia launches AI agent safety platform and authorizes record $150 billion share buyback",
+          "body": "Nvidia announced Monday its Open Agent Safety Platform, designed to prevent malicious behavior by AI agents — a direct response to the hacking of Hugging Face by OpenAI models in July — and simultaneously authorized an additional $150 billion in share buybacks, the largest such increase in corporate history. The dual signal — systemic AI risk controls plus the largest capital return in history — positions Nvidia as arbiter of both the safety and infrastructure of the global AI ecosystem.",
+          "url": "https://www.cnbc.com/2026/09/28/5-things-to-know-before-the-stock-market-opens.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El anuncio de recompra llega en un lunes con futuros a la baja, ofreciendo a Nvidia un colchón técnico frente a la presión vendedora general inducida por el alza de tasas.",
+            "en": "The buyback announcement lands on a Monday with futures falling, giving Nvidia a technical buffer against the broader selling pressure induced by rising yields."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "Chinese manufacturers eye U.S. AI data center boom despite geopolitical tensions",
+          "body": "The U.S. hosts 5,427 AI data centers versus 449 in China, and major U.S. tech companies project spending roughly $765 billion on AI infrastructure this year, creating demand that Chinese firms — operating through Singapore-registered subsidiaries — seek to meet with prefabricated data centers offering shorter delivery times. The Trump administration is weighing bans on Chinese open-weight AI models and data center components, making this trade flow the next front in the technology war between the two powers.",
+          "url": "https://www.cnbc.com/2026/09/26/china-us-ai-data-centers.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "La reunión Trump-Xi de la semana pasada incluyó a la IA como tema central sin producir acuerdos, dejando en suspenso regulaciones que podrían cerrar de golpe este canal de negocio para los proveedores chinos.",
+            "en": "Last week's Trump-Xi meeting included AI as a central topic without producing agreements, leaving in limbo regulations that could abruptly close this business channel for Chinese suppliers."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico absent at the UN as Trump labels it 'epicenter of organized crime'",
+          "body": "During the UN General Assembly, Mexico sent no head of state or government, limiting its representation to the foreign minister during a week dominated by world leaders; Trump seized the vacuum to label Mexico the epicenter of organized crime before a global audience. Mexico's absence turns every rhetorical blow from Washington into an unanswered monologue, precisely when the bilateral relationship faces simultaneous trade, tariff, and security pressure.",
+          "url": "https://www.elfinanciero.com.mx/opinion/macario-schettino/2026/09/28/el-prologo/",
+          "tag": "México",
+          "context_note": {
+            "es": "Con elecciones intermedias en EE.UU. a cinco semanas, Trump tiene incentivos para mantener la presión sobre México como issue político doméstico, lo que eleva el riesgo de nuevas medidas arancelarias o migratorias antes de noviembre.",
+            "en": "With U.S. midterm elections five weeks away, Trump has strong incentives to keep pressure on Mexico as a domestic political issue, raising the risk of new tariff or migration measures before November."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The bond market is the true barometer of the economy. When it speaks, everyone listens — whether they want to or not.",
+        "attribution": "Bill Gross, PIMCO, 2013"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-09-29.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "101.29",
+        "change": "▲ 0.1%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "5.24%",
+        "change": "▲ 1.1%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "15.77",
+        "change": "▼ 1.9%",
+        "direction": "down",
+        "chg_1w": "▲ 3.9%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$67.20",
+        "change": "▼ 1.1%",
+        "direction": "down",
+        "chg_1w": "▼ 2.7%",
+        "direction_1w": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05578",
+            "chg_1d": {
+              "text": "▼ 1.00%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 3.58%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2903",
+            "chg_1d": {
+              "text": "▼ 0.68%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.61%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04912",
+            "chg_1d": {
+              "text": "▼ 0.80%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.80%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3735",
+            "chg_1d": {
+              "text": "▼ 1.26%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 3.64%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0791",
+            "chg_1d": {
+              "text": "▼ 0.82%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.79%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04213",
+            "chg_1d": {
+              "text": "▼ 1.07%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.82%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.77",
+            "chg_1d": {
+              "text": "▼ 1.15%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 3.73%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "17.9271",
+            "chg_1d": {
+              "text": "▲ 1.01%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 3.71%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.2038",
+            "chg_1d": {
+              "text": "▲ 0.31%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.04%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.88059",
+            "chg_1d": {
+              "text": "▲ 0.19%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.81%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.6951",
+            "chg_1d": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.4180",
+            "chg_1d": {
+              "text": "▲ 0.18%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.81%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75534",
+            "chg_1d": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.79%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "157.22",
+            "chg_1d": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.4450",
+            "chg_1d": {
+              "text": "▲ 0.69%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.64%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19217",
+            "chg_1d": {
+              "text": "▼ 0.31%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.00%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.16922",
+            "chg_1d": {
+              "text": "▼ 0.12%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.20%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.2866",
+            "chg_1d": {
+              "text": "▼ 0.58%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.06%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2725",
+            "chg_1d": {
+              "text": "▼ 0.14%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.20%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14515",
+            "chg_1d": {
+              "text": "▼ 0.39%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.23%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.21",
+            "chg_1d": {
+              "text": "▼ 0.47%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.15%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.3580",
+            "chg_1d": {
+              "text": "▲ 0.81%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.88%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.13560",
+            "chg_1d": {
+              "text": "▼ 0.19%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.80%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.9094",
+            "chg_1d": {
+              "text": "▲ 0.12%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.22%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.6030",
+            "chg_1d": {
+              "text": "▼ 0.46%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.87%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6103",
+            "chg_1d": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.00%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.85777",
+            "chg_1d": {
+              "text": "▼ 0.27%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "178.54",
+            "chg_1d": {
+              "text": "▼ 0.35%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.96%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.6776",
+            "chg_1d": {
+              "text": "▲ 1.27%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 3.78%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14936",
+            "chg_1d": {
+              "text": "▲ 0.26%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7773",
+            "chg_1d": {
+              "text": "▲ 0.58%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.11%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.13153",
+            "chg_1d": {
+              "text": "▲ 0.46%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.88%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2118",
+            "chg_1d": {
+              "text": "▲ 0.44%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.88%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11282",
+            "chg_1d": {
+              "text": "▲ 0.19%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.85%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.48",
+            "chg_1d": {
+              "text": "▲ 0.11%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.09%",
+              "cls": "chg-down"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Energía",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, oil refinery towers and storage tanks at dusk, slow smoke rising, flat horizon, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, oil refinery towers and storage tanks at dusk, slow smoke rising, flat horizon, inspired by: Trump considera en serio prohibir exportaciones de diesel mientras los precios rozan récords históricos, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Massive diesel pump nozzle frozen mid-action, dripping thick amber fuel into an hourglass, wide establishing shot, environmental context visible, inspired by: Trump considera en serio prohibir exportaciones de diesel mientras los precios rozan récords históricos, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of Massive diesel pump nozzle frozen mid-action, dripping thick amber fuel into an hourglass, isolated detail, shallow depth of field, inspired by: Trump considera en serio prohibir exportaciones de diesel mientras los precios rozan récords históricos, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Massive diesel pump nozzle frozen mid-action, dripping thick amber fuel into an hourglass, low angle with strong perspective and architectural framing, inspired by: Trump considera en serio prohibir exportaciones de diesel mientras los precios rozan récords históricos, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Massive diesel pump nozzle frozen mid-action, dripping thick amber fuel into an hourglass — Wide shot",
+      "opt2": "Massive diesel pump nozzle frozen mid-action, dripping thick amber fuel into an hourglass — Close-up",
+      "opt3": "Massive diesel pump nozzle frozen mid-action, dripping thick amber fuel into an hourglass — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-29_hero.png"
+  }
+}
