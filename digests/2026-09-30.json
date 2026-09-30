@@ -1,0 +1,680 @@
+{
+  "date": "2026-09-30",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, los bonos del Tesoro a 30 años tocaron esta semana su nivel más alto desde 2002, el rendimiento a 10 años supera el 5.25% y los mercados ya descuentan con 72% de probabilidad otro alza de la Fed en octubre — mientras tanto, McDonald's usa inteligencia artificial para cobrarle más a quien vive dos millas al norte. El mundo funciona exactamente como se prometió. Lo que une todas las historias de hoy es simple: el costo del dinero sube, los activos caen, y quien no tiene un proveedor local de cobre ni un fondo de China adecuado está mirando el marcador desde las gradas.",
+      "narrative_thread": "El alza sostenida de tasas en EE.UU. reordena flujos globales de capital — presionando monedas emergentes, hundiendo bolsas asiáticas y poniendo a prueba la resiliencia fiscal de economías como México que dependen del diferencial de tasas para sostener sus divisas.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "Con rendimientos del Tesoro a 30 años en máximos de 24 años, probabilidad de 72% de otro alza Fed en octubre y bolsas indias en su racha perdedora más larga desde la burbuja puntocom, el apetito por riesgo está en mínimos del ciclo.",
+        "context_en": "With 30-year Treasury yields at 24-year highs, a 72% market-implied probability of another Fed hike in October, and Indian equities in their longest losing streak since the dot-com bust, risk appetite is at cycle lows."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Rendimientos del Tesoro a 30 años escalan a máximos de 2002 con mercado descontando nueva alza de la Fed en octubre",
+          "body": "El bono del Tesoro a 30 años alcanzó 5.6% esta semana — su nivel más alto desde junio de 2002 — mientras el mercado asigna 72% de probabilidad a otro alza de 25 puntos base en la reunión de octubre de la Fed. Los activos de riesgo globales sufren presión directa: cada punto adicional en la curva larga encarece hipotecas, crédito corporativo y hace menos atractivo todo lo que no sea deuda soberana estadounidense.",
+          "url": "https://www.cnbc.com/2026/09/29/treasury-yields-bonds.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "La Fed ya subió 25 puntos base en su reunión más reciente con voto unánime 12-0; otro alza consecutiva en octubre consolidaría el ciclo restrictivo más agresivo desde Volcker y elevaría la prima de plazo que los inversores exigen por sostener deuda larga.",
+            "en": "The Fed already hiked 25 bps at its most recent meeting in a unanimous 12-0 vote; a consecutive October hike would cement the most aggressive tightening cycle since Volcker and further lift the term premium investors demand for holding long-duration debt."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Cumbre Trump-Xi fue teatro doméstico: rebaja arancelaria de $30,000 millones y tregua extendida dos meses",
+          "body": "El segundo encuentro del año entre Trump y Xi produjo una rebaja arancelaria de 30,000 millones de dólares en bienes de consumo — cortinas, equipo deportivo y luces navideñas por el lado americano; carne y soya por el chino — pero sin avances sustantivos en tecnología ni seguridad. La tregua comercial, que mantiene aranceles reducidos y el flujo de tierras raras, se extendió apenas dos meses, señalando que ambas partes prefieren el statu quo gestionado a un acuerdo estructural.",
+          "url": "https://www.cnbc.com/2026/09/28/cnbcs-the-china-connection-trump-xi-summit-about-domestic-messaging.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "La señal de que China podría permitir a ByteDance y Alibaba comprar chips Nvidia de gama alta — reportada por The Information — es el movimiento más concreto bajo la superficie y el que más importa para los flujos de inversión en IA a corto plazo.",
+            "en": "The signal that China could allow ByteDance and Alibaba to buy high-end Nvidia chips — reported by The Information — is the most concrete sub-surface development and the one that matters most for near-term AI investment flows."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "México exporta $380,000 millones en manufactura pero importa 86 centavos de insumos por cada dólar exportado",
+          "body": "Las exportaciones manufactureras no automotrices de México crecieron 63.2% anual a agosto, con equipo eléctrico y electrónico avanzando 122%, pero por cada dólar adicional exportado el país erogó 86 centavos en componentes comprados en el exterior. La oportunidad concreta: cada punto porcentual de sustitución de esos insumos con proveeduría local equivale a más de 1,000 millones de dólares anuales de producción nueva — y México ya tiene el cobre, los ensambladores y los clústeres manufactureros para intentarlo.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/09/29/las-cuatro-oportunidades-de-mexico/",
+          "tag": "México",
+          "context_note": {
+            "es": "Foxconn produce en Guadalajara los servidores de IA más avanzados de Nvidia pero fabrica el 80-90% de sus componentes clave internamente; la inversión taiwanesa registrada en México apenas sumó 40 millones de dólares en 2025 contra un déficit comercial bilateral de 45,000 millones — la brecha ilustra exactamente el eslabón perdido.",
+            "en": "Foxconn builds Nvidia's most advanced AI servers in Guadalajara but manufactures 80-90% of key components in-house; registered Taiwanese investment in Mexico totaled just $40 million in 2025 against a $45 billion bilateral trade deficit — that gap captures precisely the missing link."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Moody's advierte riesgo de perder grado de inversión en México mientras el diferencial de tasas con la Fed se estrecha",
+          "body": "La reducción del diferencial entre la tasa de Banxico y la Fed — tras el alza de 25 puntos base de la Fed sin movimiento equivalente en México — erosiona el carry-trade que sostenía al peso y coincide con advertencias de Moody's sobre el déficit fiscal, Pemex como 'hoyo negro' y la ausencia de crecimiento económico. Países que han perdido el grado de inversión soberana experimentaron caídas abruptas en sus monedas y espirales inflacionarias que golpean primero a los sectores de menores ingresos.",
+          "url": "https://www.elfinanciero.com.mx/opinion/benito-solis/2026/09/29/para-mejorar-las-finanzas-publicas-es-indispensable-el-crecimiento-economico/",
+          "tag": "México",
+          "context_note": {
+            "es": "El presupuesto 2027 proyecta un déficit elevado y apuesta a mayor recaudación sobre grandes contribuyentes — una estrategia que históricamente comprime la inversión privada precisamente cuando el país necesita desarrollar la proveeduría local que sus exportaciones exigen.",
+            "en": "The 2027 budget projects a wide deficit and bets on higher taxation of large taxpayers — a strategy that historically compresses private investment precisely when the country needs to build the local supply chains its export boom demands."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "Bloomberg",
+          "headline": "Bolsa india cae por octava semana consecutiva — racha más larga desde la burbuja puntocom",
+          "body": "El índice de referencia indio acumula una caída de 2.3% solo esta semana y está en camino de registrar su octava baja semanal consecutiva, la secuencia negativa más prolongada desde el colapso de las puntocom a principios de siglo. El deterioro se ve agravado por la presión en los márgenes del sector energético: Reliance y Nayara comenzaron a racionar ventas de diésel y gasolina porque los precios del crudo suben más rápido que los precios minoristas regulados que no pueden ajustar.",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-29/indian-stocks-are-breaking-long-held-supports-as-selloff-deepens",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El racionamiento de combustible en las mayores refinadoras privadas de India es un indicador adelantado de presión fiscal sobre los subsidios implícitos del gobierno: si los precios regulados no suben, las pérdidas se socializan vía subsidio o se acumulan en los balances corporativos, ninguna salida es indolora.",
+            "en": "Fuel rationing at India's largest private refiners is a leading indicator of fiscal pressure on implicit government subsidies: if regulated prices don't rise, losses get socialized via subsidy or accumulate on corporate balance sheets — neither exit is painless."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "McDonald's usa IA para fijar precios por barrio — el mismo Big Mac cuesta 21% más a dos millas de distancia",
+          "body": "El motor de precios con aprendizaje automático de McDonald's analiza millones de transacciones diarias en casi 14,000 restaurantes y genera 'el precio óptimo' por producto y por local, ampliando brechas entre sucursales del mismo vecindario — un Big Mac cuesta $5.69 en una tienda de Fresno y $6.89 a dos millas. La compañía enfrenta tensión con franquiciados que reportan presiones para adoptar la herramienta, y el esquema ya atrae escrutinio antimonopolio por el uso de datos de precios de competidores como Wendy's y Burger King.",
+          "url": "https://www.cnbc.com/2026/09/29/inside-mcdonalds-push-ai-price-big-mac.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La discriminación de precios algorítmica a escala masiva en el sector de comida rápida — uno de los termómetros más sensibles de inflación percibida por el consumidor de bajos ingresos — llega en un momento en que la Fed justifica alzas adicionales precisamente en la persistencia inflacionaria; es exactamente el tipo de práctica que complica la narrativa de que la inflación es solo un problema de oferta.",
+            "en": "Algorithmic price discrimination at scale in fast food — one of the most sensitive inflation gauges for low-income consumers — arrives precisely as the Fed justifies further hikes on persistent inflation; it is exactly the kind of practice that complicates the narrative that inflation is purely a supply-side problem."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The most important thing to remember is that inflation is not an act of God, that inflation is not a catastrophe of the elements or a disease that comes like the plague. Inflation is a policy.",
+        "attribution": "Ludwig von Mises, 'Economic Policy: Thoughts for Today and Tomorrow', 1979"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, 30-year Treasury yields hit their highest level since 2002 this week, the 10-year trades above 5.25%, and markets are now pricing a 72% probability of another Fed hike in October — meanwhile, McDonald's is using artificial intelligence to charge you more depending on which side of town you live on. The world is working exactly as advertised. What ties today's stories together is simple: money is getting more expensive, assets are falling, and anyone without a local copper supplier or a properly constructed China fund is watching the scoreboard from the stands.",
+      "narrative_thread": "Sustained U.S. rate hikes are reshuffling global capital flows — pressuring emerging market currencies, dragging Asian equities lower, and stress-testing the fiscal resilience of economies like Mexico that rely on rate differentials to prop up their currencies.",
+      "sentiment": {
+        "label_es": "Aversión al Riesgo",
+        "label_en": "Risk-Off",
+        "position": 22,
+        "context_es": "Con rendimientos del Tesoro a 30 años en máximos de 24 años, probabilidad de 72% de otro alza Fed en octubre y bolsas indias en su racha perdedora más larga desde la burbuja puntocom, el apetito por riesgo está en mínimos del ciclo.",
+        "context_en": "With 30-year Treasury yields at 24-year highs, a 72% market-implied probability of another Fed hike in October, and Indian equities in their longest losing streak since the dot-com bust, risk appetite is at cycle lows."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "30-year Treasury yields climb to 2002 highs as market prices in another Fed hike for October",
+          "body": "The 30-year Treasury bond hit 5.6% this week — its highest level since June 2002 — while markets assign a 72% probability to another 25-basis-point hike at the Fed's October meeting. Global risk assets face direct pressure: every additional point on the long end raises the cost of mortgages, corporate credit, and makes everything that isn't U.S. sovereign debt less attractive.",
+          "url": "https://www.cnbc.com/2026/09/29/treasury-yields-bonds.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "La Fed ya subió 25 puntos base en su reunión más reciente con voto unánime 12-0; otro alza consecutiva en octubre consolidaría el ciclo restrictivo más agresivo desde Volcker y elevaría la prima de plazo que los inversores exigen por sostener deuda larga.",
+            "en": "The Fed already hiked 25 bps at its most recent meeting in a unanimous 12-0 vote; a consecutive October hike would cement the most aggressive tightening cycle since Volcker and further lift the term premium investors demand for holding long-duration debt."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Trump-Xi summit was domestic theater: $30 billion tariff rollback and trade truce extended two months",
+          "body": "The second Trump-Xi meeting of the year produced a $30 billion tariff rollback on consumer goods — curtains, sports equipment, and Christmas lights on the American side; beef and soymeal on the Chinese — but no substantive progress on technology or security. The trade truce, which keeps tariffs reduced and rare earths flowing, was extended a mere two months, signaling both sides prefer managed status quo over a structural deal.",
+          "url": "https://www.cnbc.com/2026/09/28/cnbcs-the-china-connection-trump-xi-summit-about-domestic-messaging.html",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "La señal de que China podría permitir a ByteDance y Alibaba comprar chips Nvidia de gama alta — reportada por The Information — es el movimiento más concreto bajo la superficie y el que más importa para los flujos de inversión en IA a corto plazo.",
+            "en": "The signal that China could allow ByteDance and Alibaba to buy high-end Nvidia chips — reported by The Information — is the most concrete sub-surface development and the one that matters most for near-term AI investment flows."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Mexico exports $380 billion in manufacturing but spends 86 cents on imported inputs for every dollar exported",
+          "body": "Mexico's non-automotive manufactured exports grew 63.2% year-on-year through August, with electrical and electronic equipment surging 122%, yet for every additional dollar exported the country spent 86 cents on components sourced abroad. The concrete opportunity: each percentage point of those inputs replaced by domestic suppliers is worth more than $1 billion in new annual domestic production — and Mexico already has the copper, the assemblers, and the manufacturing clusters to try.",
+          "url": "https://www.elfinanciero.com.mx/opinion/enrique-quintana/2026/09/29/las-cuatro-oportunidades-de-mexico/",
+          "tag": "México",
+          "context_note": {
+            "es": "Foxconn produce en Guadalajara los servidores de IA más avanzados de Nvidia pero fabrica el 80-90% de sus componentes clave internamente; la inversión taiwanesa registrada en México apenas sumó 40 millones de dólares en 2025 contra un déficit comercial bilateral de 45,000 millones — la brecha ilustra exactamente el eslabón perdido.",
+            "en": "Foxconn builds Nvidia's most advanced AI servers in Guadalajara but manufactures 80-90% of key components in-house; registered Taiwanese investment in Mexico totaled just $40 million in 2025 against a $45 billion bilateral trade deficit — that gap captures precisely the missing link."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Moody's warns Mexico risks losing investment-grade rating as rate differential with the Fed narrows",
+          "body": "The shrinking gap between Banxico's rate and the Fed's — after the Fed's 25-basis-point hike went unmatched by Mexico — is eroding the carry-trade dynamic that had supported the peso, and coincides with Moody's warnings about the fiscal deficit, Pemex as a 'black hole,' and the absence of economic growth. Countries that have lost sovereign investment-grade status experienced sharp currency depreciations and inflationary spirals that hit lower-income sectors first.",
+          "url": "https://www.elfinanciero.com.mx/opinion/benito-solis/2026/09/29/para-mejorar-las-finanzas-publicas-es-indispensable-el-crecimiento-economico/",
+          "tag": "México",
+          "context_note": {
+            "es": "El presupuesto 2027 proyecta un déficit elevado y apuesta a mayor recaudación sobre grandes contribuyentes — una estrategia que históricamente comprime la inversión privada precisamente cuando el país necesita desarrollar la proveeduría local que sus exportaciones exigen.",
+            "en": "The 2027 budget projects a wide deficit and bets on higher taxation of large taxpayers — a strategy that historically compresses private investment precisely when the country needs to build the local supply chains its export boom demands."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "Bloomberg",
+          "headline": "Indian equities fall for an eighth straight week — longest losing streak since the dot-com bubble",
+          "body": "India's benchmark index has lost 2.3% this week alone and is on track for its eighth consecutive weekly decline, the longest losing streak since the dot-com collapse of the early 2000s. The deterioration is compounded by margin pressure in the energy sector: Reliance and Nayara have begun rationing diesel and gasoline sales because crude prices are rising faster than the regulated retail prices they cannot adjust.",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-29/indian-stocks-are-breaking-long-held-supports-as-selloff-deepens",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "El racionamiento de combustible en las mayores refinadoras privadas de India es un indicador adelantado de presión fiscal sobre los subsidios implícitos del gobierno: si los precios regulados no suben, las pérdidas se socializan vía subsidio o se acumulan en los balances corporativos, ninguna salida es indolora.",
+            "en": "Fuel rationing at India's largest private refiners is a leading indicator of fiscal pressure on implicit government subsidies: if regulated prices don't rise, losses get socialized via subsidy or accumulate on corporate balance sheets — neither exit is painless."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "CNBC",
+          "headline": "McDonald's deploys AI to set neighborhood-level prices — same Big Mac costs 21% more two miles away",
+          "body": "McDonald's machine-learning pricing engine analyzes millions of daily transactions across nearly 14,000 restaurants and generates 'the optimal price' per item per location, widening gaps between stores in the same neighborhood — a Big Mac sells for $5.69 at one Fresno location and $6.89 at another two miles away. The company faces tension with franchisees who report pressure to adopt the tool, and the system is drawing antitrust scrutiny for pulling competitor price data from Wendy's and Burger King.",
+          "url": "https://www.cnbc.com/2026/09/29/inside-mcdonalds-push-ai-price-big-mac.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La discriminación de precios algorítmica a escala masiva en el sector de comida rápida — uno de los termómetros más sensibles de inflación percibida por el consumidor de bajos ingresos — llega en un momento en que la Fed justifica alzas adicionales precisamente en la persistencia inflacionaria; es exactamente el tipo de práctica que complica la narrativa de que la inflación es solo un problema de oferta.",
+            "en": "Algorithmic price discrimination at scale in fast food — one of the most sensitive inflation gauges for low-income consumers — arrives precisely as the Fed justifies further hikes on persistent inflation; it is exactly the kind of practice that complicates the narrative that inflation is purely a supply-side problem."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The most important thing to remember is that inflation is not an act of God, that inflation is not a catastrophe of the elements or a disease that comes like the plague. Inflation is a policy.",
+        "attribution": "Ludwig von Mises, 'Economic Policy: Thoughts for Today and Tomorrow', 1979"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-09-30.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "101.22",
+        "change": "▼ 0.1%",
+        "direction": "down",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "5.25%",
+        "change": "▲ 0.3%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "16.09",
+        "change": "▲ 0.3%",
+        "direction": "up",
+        "chg_1w": "▲ 2.7%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$67.40",
+        "change": "▲ 0.3%",
+        "direction": "up",
+        "chg_1w": "▼ 0.5%",
+        "direction_1w": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05541",
+            "chg_1d": {
+              "text": "▼ 0.41%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.80%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2868",
+            "chg_1d": {
+              "text": "▼ 1.32%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.59%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04876",
+            "chg_1d": {
+              "text": "▼ 0.35%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.66%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3710",
+            "chg_1d": {
+              "text": "▼ 0.62%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 3.02%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0786",
+            "chg_1d": {
+              "text": "▼ 0.41%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.29%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04170",
+            "chg_1d": {
+              "text": "▼ 0.67%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 3.15%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.69",
+            "chg_1d": {
+              "text": "▼ 0.70%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 3.63%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "18.0465",
+            "chg_1d": {
+              "text": "▲ 0.41%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.88%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1752",
+            "chg_1d": {
+              "text": "▼ 0.91%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.21%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.87989",
+            "chg_1d": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.15%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.6960",
+            "chg_1d": {
+              "text": "▼ 0.21%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.23%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.4178",
+            "chg_1d": {
+              "text": "▲ 0.01%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.52%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75250",
+            "chg_1d": {
+              "text": "▼ 0.26%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.36%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "156.91",
+            "chg_1d": {
+              "text": "▼ 0.29%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.86%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.4871",
+            "chg_1d": {
+              "text": "▲ 1.34%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.66%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19323",
+            "chg_1d": {
+              "text": "▲ 0.92%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.21%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.17002",
+            "chg_1d": {
+              "text": "▲ 0.99%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.2939",
+            "chg_1d": {
+              "text": "▲ 0.71%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.44%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2740",
+            "chg_1d": {
+              "text": "▲ 0.93%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.31%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14541",
+            "chg_1d": {
+              "text": "▲ 0.66%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.57%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.32",
+            "chg_1d": {
+              "text": "▲ 0.63%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 1.07%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.5098",
+            "chg_1d": {
+              "text": "▲ 0.35%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.73%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.13650",
+            "chg_1d": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.15%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.8816",
+            "chg_1d": {
+              "text": "▼ 0.98%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.06%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.6100",
+            "chg_1d": {
+              "text": "▼ 0.28%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.37%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6113",
+            "chg_1d": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.37%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.85522",
+            "chg_1d": {
+              "text": "▼ 0.33%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.50%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "178.33",
+            "chg_1d": {
+              "text": "▼ 0.35%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.00%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.6951",
+            "chg_1d": {
+              "text": "▲ 0.63%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 3.11%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14934",
+            "chg_1d": {
+              "text": "▲ 0.21%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.23%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7729",
+            "chg_1d": {
+              "text": "▼ 0.70%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▲ 0.44%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.13141",
+            "chg_1d": {
+              "text": "▲ 0.28%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.37%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2117",
+            "chg_1d": {
+              "text": "▲ 0.22%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.75%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11238",
+            "chg_1d": {
+              "text": "▼ 0.05%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.13%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.43",
+            "chg_1d": {
+              "text": "▼ 0.07%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.63%",
+              "cls": "chg-down"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Tasas",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: Rendimientos del Tesoro a 30 años escalan a máximos de 2002 con mercado descontando nueva alza de la Fed en octubre, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, A towering 30-year Treasury bond certificate climbing upward with ascending numerical markers 2002-2024, wide establishing shot, environmental context visible, inspired by: Rendimientos del Tesoro a 30 años escalan a máximos de 2002 con mercado descontando nueva alza de la Fed en octubre, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of A towering 30-year Treasury bond certificate climbing upward with ascending numerical markers 2002-2024, isolated detail, shallow depth of field, inspired by: Rendimientos del Tesoro a 30 años escalan a máximos de 2002 con mercado descontando nueva alza de la Fed en octubre, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, A towering 30-year Treasury bond certificate climbing upward with ascending numerical markers 2002-2024, low angle with strong perspective and architectural framing, inspired by: Rendimientos del Tesoro a 30 años escalan a máximos de 2002 con mercado descontando nueva alza de la Fed en octubre, overall tone: Risk-Off, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Towering 30-year Treasury bond certificate climbing upward with ascending numerical markers 2002-2024 — Wide shot",
+      "opt2": "Towering 30-year Treasury bond certificate climbing upward with ascending numerical markers 2002-2024 — Close-up",
+      "opt3": "Towering 30-year Treasury bond certificate climbing upward with ascending numerical markers 2002-2024 — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-09-30_hero.png"
+  }
+}
