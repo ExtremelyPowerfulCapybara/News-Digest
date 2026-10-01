@@ -1,0 +1,704 @@
+{
+  "date": "2026-10-01",
+  "digest": {
+    "es": {
+      "editor_note": "Estimados humanos, el mercado laboral estadounidense rebotó en septiembre con 90,000 empleos privados según ADP — suficiente para mantener viva la narrativa de 'aterrizaje suave' y, por tanto, las apuestas sobre la Fed. Mientras tanto, un exfuncionario de la Reserva Federal fue condenado por espiar para China, lo que añade una capa de tragicomedia institucional al día. El trimestre cierra con más preguntas que respuestas.",
+      "narrative_thread": "El cierre del tercer trimestre revela un mundo reordenándose bajo presión: datos laborales que sostienen la narrativa de la Fed, bonos que acumulan pérdidas históricas, y potencias medianas —México, Canadá, Brasil— buscando a tientas una posición en un orden global que ya no reconocen.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 45,
+        "context_es": "El rebote del empleo ADP alivia el nerviosismo inmediato, pero los bonos siguen bajo presión y la reconfiguración geopolítica añade incertidumbre estructural.",
+        "context_en": "The ADP jobs rebound eases immediate anxiety, but bonds continue under pressure and geopolitical reshuffling adds structural uncertainty."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "Empleo privado en EE.UU. rebota a 90,000 en septiembre, por encima de estimados",
+          "body": "El procesador de nóminas ADP reportó 90,000 nuevos empleos privados en septiembre, superando el consenso de 68,000 y triplicando el revisado agosto de 36,000. El dato consolida la narrativa de un mercado laboral estable que da cobertura a la Fed para mantener tasas restrictivas, con el reporte oficial de nóminas no agrícolas llegando el viernes.",
+          "url": "https://www.cnbc.com/2026/09/30/private-sector-jobs-rose-by-90000-in-september-better-than-expected-adp-reports.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "La Fed subió tasas un cuarto de punto en septiembre citando inflación persistente; un mercado laboral sólido reduce la presión para pivotar y mantiene los rendimientos de bonos cerca de máximos de 19 años.",
+            "en": "The Fed raised rates a quarter point in September citing persistent inflation; a solid labor market reduces pressure to pivot and keeps bond yields near 19-year highs."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Bonos acumulan pérdidas históricas y ofrecen el mejor punto de entrada en décadas, según analistas",
+          "body": "El ETF iShares Core U.S. Aggregate Bond (AGG) acumula una caída de 4.8% en precio este año con retorno total negativo de 2.2%, mientras el S&P 500 avanza 14%, ampliando la brecha a 15 puntos porcentuales en favor de acciones en la última década. El rebalanceo trimestral que favorece bonos se acerca, pero los flujos institucionales son escasos: los inversores temen a la renta fija como si fuera renta variable con cupón.",
+          "url": "https://www.cnbc.com/2026/09/29/investors-who-have-shunned-diversification-face-maybe-the-best-buying-opportunity-for-bonds-in-decades.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "Con rendimientos del Tesoro a cinco años cerca del 5% garantizado y la Fed sin señales claras de recorte, el argumento para entrar en bonos es matemáticamente sólido aunque políticamente impopular entre gestores que han sufrido años de castigo.",
+            "en": "With five-year Treasuries offering nearly 5% guaranteed yield and the Fed showing no clear pivot signals, the case for entering bonds is mathematically sound even if politically unpopular among managers burned for years."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Exfuncionario de la Fed condenado por pasar información sensible a espías chinos durante más de una década",
+          "body": "John Harold Rogers, economista senior de la Reserva Federal, fue arrestado en enero de 2025 y condenado en 2026 por filtrar documentos internos del banco central a un agente del gobierno chino que conoció en 2013 en Shanghái, según una investigación de CNBC con acceso a mensajes, grabaciones y evidencia del juicio. El caso expone vulnerabilidades de contrainteligencia dentro de la institución que fija la política monetaria más influyente del mundo, justo cuando las tensiones EE.UU.-China escalan en frentes comerciales y tecnológicos.",
+          "url": "https://www.cnbc.com/2026/09/30/john-rogers-fed-china-espionage-case.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La condena ocurre mientras la Fed delibera sobre política monetaria en un entorno de inflación persistente; cualquier sospecha de filtración de información privilegiada sobre decisiones de tasas tiene implicaciones directas para la integridad de los mercados.",
+            "en": "The conviction comes as the Fed deliberates on monetary policy amid persistent inflation; any suspicion of leaked privileged information about rate decisions has direct implications for market integrity."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Sarukhan: la estrategia de concesiones tácticas de Sheinbaum no alcanzará para lo que viene con EE.UU.",
+          "body": "El exembajador Arturo Sarukhan advierte que México enfrenta simultáneamente la negociación arancelaria y la revisión del T-MEC con Washington, sin los grados de libertad que tiene Canadá tras el colapso de las negociaciones Ottawa-Washington y la imposición de aranceles del 50%. A diferencia de Carney, quien pivotea hacia la UE y diversifica alianzas, México no puede elegir bando por geografía e interdependencia, pero tampoco su estrategia actual de no confrontación sobrevivirá la presión que se avecina.",
+          "url": "https://www.elfinanciero.com.mx/opinion/arturo-sarukhan/2026/09/30/nuestra-hoja-de-ruta-norteamericana/",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "El análisis llega mientras la Secretaría de Economía negocia simultáneamente aranceles y T-MEC en Washington, con el precedente canadiense de aranceles al 50% como advertencia sobre el costo de no tener una estrategia estructural.",
+            "en": "The analysis arrives as the Ministry of Economy simultaneously negotiates tariffs and USMCA in Washington, with the Canadian precedent of 50% tariffs as a warning about the cost of lacking a structural strategy."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Corea del Sur amplía apuesta en México hacia cadenas de valor en aeroespacial, IA y electromovilidad",
+          "body": "La visita del presidente surcoreano Lee Jae-myung a México resultó en acuerdos con POSCO International y Korea Aerospace Industries en aeroespacial, un memorándum de HS Hyosung en San Luis Potosí, y compromisos exploratorios de NAVER en infraestructura de IA, con comercio bilateral en 30,000 millones de dólares y más de 2,000 empresas coreanas operando en el país. El reto es que México compite con otros destinos asiáticos por exactamente el mismo capital manufacturero de alto valor, y la ventaja del nearshoring no es permanente.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2026/09/30/corea-mira-a-mexico-mucho-mas-alla-de-los-microchips/",
+          "tag": "México",
+          "context_note": {
+            "es": "La diversificación de cadenas de suministro asiáticas hacia México cobra urgencia mientras el T-MEC enfrenta revisión y los aranceles estadounidenses presionan a las empresas a reubicar producción dentro de Norteamérica.",
+            "en": "The diversification of Asian supply chains toward Mexico gains urgency as USMCA faces review and U.S. tariffs pressure companies to relocate production within North America."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Schettino: los datos del tercer trimestre mexicano no convencen — exportaciones electrónicas suben pero producción cae 3%",
+          "body": "El columnista Macario Schettino señala que el crecimiento de julio en México se concentra en comercio al mayoreo y edificación, con una anomalía estadística notable: las exportaciones de 'máquinas para procesamiento de datos' se triplicaron entre enero y julio, pero el valor de producción de la industria electrónica cayó 3% en el mismo período en términos nominales. La paradoja — exportaciones que se multiplican sin producción que crezca — reaviva dudas sobre la calidad de los datos del INEGI, con antecedentes en las revisiones de infraestructura de 2022-2023.",
+          "url": "https://www.elfinanciero.com.mx/opinion/macario-schettino/2026/09/30/fin-de-septiembre/",
+          "tag": "México",
+          "context_note": {
+            "es": "El cuestionamiento llega cuando el nearshoring electrónico es la narrativa central que justifica el optimismo sobre México; si los datos de exportación no se traducen en producción real, el argumento de inversión se debilita justo cuando el T-MEC se renegocia.",
+            "en": "The questioning arrives as electronic nearshoring is the central narrative justifying optimism about Mexico; if export data does not translate into real production, the investment case weakens precisely as USMCA is being renegotiated."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Brasil enfrenta elecciones presidenciales sin una estrategia viable para gestionar su dependencia de China",
+          "body": "Con elecciones presidenciales en octubre, Brasil enfrenta a Lula — quien firmó 20 acuerdos con Beijing en mayo de 2025 incluyendo IA — contra Flávio Bolsonaro, quien promete alinearse con Washington, aunque ninguno ofrece un plan concreto para reducir la dependencia estructural de China que se ha extendido desde commodities hacia industrias estratégicas. El dilema brasileño es un espejo del que enfrentan México y Canadá: la geografía y la economía imponen límites que la retórica electoral no puede resolver.",
+          "url": "http://foreignpolicy.com/2026/09/28/brazil-election-president-lula-bolsonaro-china-america/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El caso brasileño ilustra la trampa estructural que enfrentan las economías emergentes en el G2: la dependencia de China es demasiado profunda para revertirse con un cambio de gobierno, pero ignorarla en un mundo de tensión EE.UU.-China tiene costos crecientes.",
+            "en": "The Brazilian case illustrates the structural trap facing emerging economies in the G2 era: dependence on China is too deep to reverse with a change of government, but ignoring it in a world of U.S.-China tension carries growing costs."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The curious task of economics is to demonstrate to men how little they really know about what they imagine they can design.",
+        "attribution": "Friedrich Hayek, The Fatal Conceit, 1988"
+      }
+    },
+    "en": {
+      "editor_note": "Estimados humanos, the U.S. private labor market bounced back in September with 90,000 jobs per ADP — enough to keep the soft-landing narrative alive and, consequently, the bets on the Fed. Meanwhile, a former Federal Reserve official was convicted of spying for China, adding a layer of institutional tragicomedy to the day. The quarter closes with more questions than answers.",
+      "narrative_thread": "The close of the third quarter reveals a world reordering under pressure: labor data supporting the Fed's narrative, bonds accumulating historic losses, and mid-sized powers — Mexico, Canada, Brazil — groping for a position in a global order they no longer recognize.",
+      "sentiment": {
+        "label_es": "Cauteloso",
+        "label_en": "Cautious",
+        "position": 45,
+        "context_es": "El rebote del empleo ADP alivia el nerviosismo inmediato, pero los bonos siguen bajo presión y la reconfiguración geopolítica añade incertidumbre estructural.",
+        "context_en": "The ADP jobs rebound eases immediate anxiety, but bonds continue under pressure and geopolitical reshuffling adds structural uncertainty."
+      },
+      "stories": [
+        {
+          "source": "CNBC",
+          "headline": "U.S. private employment rebounds to 90,000 in September, beating estimates",
+          "body": "Payroll processor ADP reported 90,000 new private jobs in September, surpassing the 68,000 consensus and tripling the revised August figure of 36,000. The data reinforces the narrative of a stable labor market that gives the Fed cover to maintain restrictive rates, with the official nonfarm payrolls report arriving Friday.",
+          "url": "https://www.cnbc.com/2026/09/30/private-sector-jobs-rose-by-90000-in-september-better-than-expected-adp-reports.html",
+          "tag": "Tasas",
+          "context_note": {
+            "es": "La Fed subió tasas un cuarto de punto en septiembre citando inflación persistente; un mercado laboral sólido reduce la presión para pivotar y mantiene los rendimientos de bonos cerca de máximos de 19 años.",
+            "en": "The Fed raised rates a quarter point in September citing persistent inflation; a solid labor market reduces pressure to pivot and keeps bond yields near 19-year highs."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Bonds accumulate historic losses and offer the best entry point in decades, analysts say",
+          "body": "The iShares Core U.S. Aggregate Bond ETF (AGG) has fallen 4.8% in price this year with a negative total return of 2.2%, while the S&P 500 advances 14%, widening the gap to 15 percentage points in favor of equities over the past decade. The quarterly rebalancing that favors bonds is approaching, but institutional flows are scarce: investors fear fixed income as if it were equity with a coupon.",
+          "url": "https://www.cnbc.com/2026/09/29/investors-who-have-shunned-diversification-face-maybe-the-best-buying-opportunity-for-bonds-in-decades.html",
+          "tag": "Mercados",
+          "context_note": {
+            "es": "Con rendimientos del Tesoro a cinco años cerca del 5% garantizado y la Fed sin señales claras de recorte, el argumento para entrar en bonos es matemáticamente sólido aunque políticamente impopular entre gestores que han sufrido años de castigo.",
+            "en": "With five-year Treasuries offering nearly 5% guaranteed yield and the Fed showing no clear pivot signals, the case for entering bonds is mathematically sound even if politically unpopular among managers burned for years."
+          },
+          "thread_tag": "Tasas: Fed"
+        },
+        {
+          "source": "CNBC",
+          "headline": "Former Fed official convicted of passing sensitive information to Chinese spies for over a decade",
+          "body": "John Harold Rogers, a senior Federal Reserve economist, was arrested in January 2025 and convicted in 2026 for leaking internal central bank documents to a Chinese government agent he met in 2013 in Shanghai, according to a CNBC investigation with access to messages, recordings, and trial evidence. The case exposes counterintelligence vulnerabilities within the institution that sets the world's most influential monetary policy, just as U.S.-China tensions escalate on trade and technology fronts.",
+          "url": "https://www.cnbc.com/2026/09/30/john-rogers-fed-china-espionage-case.html",
+          "tag": "Macro",
+          "context_note": {
+            "es": "La condena ocurre mientras la Fed delibera sobre política monetaria en un entorno de inflación persistente; cualquier sospecha de filtración de información privilegiada sobre decisiones de tasas tiene implicaciones directas para la integridad de los mercados.",
+            "en": "The conviction comes as the Fed deliberates on monetary policy amid persistent inflation; any suspicion of leaked privileged information about rate decisions has direct implications for market integrity."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Sarukhan: Sheinbaum's tactical concessions strategy won't be enough for what's coming with the U.S.",
+          "body": "Former ambassador Arturo Sarukhan warns that Mexico simultaneously faces tariff negotiations and USMCA review with Washington, without the degrees of freedom Canada has following the collapse of Ottawa-Washington talks and the imposition of 50% tariffs. Unlike Carney, who pivots toward the EU and diversifies alliances, Mexico cannot choose sides due to geography and interdependence, nor will its current non-confrontation strategy survive the pressure ahead.",
+          "url": "https://www.elfinanciero.com.mx/opinion/arturo-sarukhan/2026/09/30/nuestra-hoja-de-ruta-norteamericana/",
+          "tag": "Comercio",
+          "context_note": {
+            "es": "El análisis llega mientras la Secretaría de Economía negocia simultáneamente aranceles y T-MEC en Washington, con el precedente canadiense de aranceles al 50% como advertencia sobre el costo de no tener una estrategia estructural.",
+            "en": "The analysis arrives as the Ministry of Economy simultaneously negotiates tariffs and USMCA in Washington, with the Canadian precedent of 50% tariffs as a warning about the cost of lacking a structural strategy."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "South Korea expands its bet on Mexico toward value chains in aerospace, AI, and e-mobility",
+          "body": "South Korean President Lee Jae-myung's visit to Mexico resulted in agreements with POSCO International and Korea Aerospace Industries in aerospace, a memorandum from HS Hyosung in San Luis Potosí, and exploratory commitments from NAVER in AI infrastructure, with bilateral trade at $30 billion and over 2,000 Korean companies operating in the country. The challenge is that Mexico competes with other Asian destinations for exactly the same high-value manufacturing capital, and the nearshoring advantage is not permanent.",
+          "url": "https://www.elfinanciero.com.mx/opinion/jeanette-leyva/2026/09/30/corea-mira-a-mexico-mucho-mas-alla-de-los-microchips/",
+          "tag": "México",
+          "context_note": {
+            "es": "La diversificación de cadenas de suministro asiáticas hacia México cobra urgencia mientras el T-MEC enfrenta revisión y los aranceles estadounidenses presionan a las empresas a reubicar producción dentro de Norteamérica.",
+            "en": "The diversification of Asian supply chains toward Mexico gains urgency as USMCA faces review and U.S. tariffs pressure companies to relocate production within North America."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "El Financiero",
+          "headline": "Schettino: Mexico's Q3 data unconvincing — electronic exports triple but industry output falls 3%",
+          "body": "Columnist Macario Schettino notes that Mexico's July growth is concentrated in wholesale trade and building construction, with a notable statistical anomaly: exports of 'data processing machines' tripled between January and July, but the electronic industry's production value fell 3% in the same period in nominal terms. The paradox — exports multiplying without production growth — revives doubts about INEGI data quality, with precedents in the infrastructure revisions of 2022-2023.",
+          "url": "https://www.elfinanciero.com.mx/opinion/macario-schettino/2026/09/30/fin-de-septiembre/",
+          "tag": "México",
+          "context_note": {
+            "es": "El cuestionamiento llega cuando el nearshoring electrónico es la narrativa central que justifica el optimismo sobre México; si los datos de exportación no se traducen en producción real, el argumento de inversión se debilita justo cuando el T-MEC se renegocia.",
+            "en": "The questioning arrives as electronic nearshoring is the central narrative justifying optimism about Mexico; if export data does not translate into real production, the investment case weakens precisely as USMCA is being renegotiated."
+          },
+          "thread_tag": null
+        },
+        {
+          "source": "Foreign Policy",
+          "headline": "Brazil faces presidential elections with no viable strategy for managing its dependence on China",
+          "body": "With presidential elections in October, Brazil pits Lula — who signed 20 agreements with Beijing in May 2025 including AI — against Flávio Bolsonaro, who promises alignment with Washington, though neither offers a concrete plan to reduce the structural dependence on China that has expanded from commodities into strategic industries. Brazil's dilemma mirrors that of Mexico and Canada: geography and economics impose limits that electoral rhetoric cannot resolve.",
+          "url": "http://foreignpolicy.com/2026/09/28/brazil-election-president-lula-bolsonaro-china-america/",
+          "tag": "Macro",
+          "context_note": {
+            "es": "El caso brasileño ilustra la trampa estructural que enfrentan las economías emergentes en el G2: la dependencia de China es demasiado profunda para revertirse con un cambio de gobierno, pero ignorarla en un mundo de tensión EE.UU.-China tiene costos crecientes.",
+            "en": "The Brazilian case illustrates the structural trap facing emerging economies in the G2 era: dependence on China is too deep to reverse with a change of government, but ignoring it in a world of U.S.-China tension carries growing costs."
+          },
+          "thread_tag": null
+        }
+      ],
+      "quote": {
+        "text": "The curious task of economics is to demonstrate to men how little they really know about what they imagine they can design.",
+        "attribution": "Friedrich Hayek, The Fatal Conceit, 1988"
+      }
+    },
+    "archive_url": "https://newsletter.mustardhq.dev/2026-10-01.html"
+  },
+  "market": {
+    "tickers": [
+      {
+        "label": "DXY",
+        "value": "101.73",
+        "change": "▲ 0.3%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "10Y UST",
+        "value": "5.29%",
+        "change": "▲ 0.7%",
+        "direction": "up",
+        "chg_1w": "▲ 0.0%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "VIX",
+        "value": "16.32",
+        "change": "▼ 0.1%",
+        "direction": "down",
+        "chg_1w": "▲ 9.8%",
+        "direction_1w": "up"
+      },
+      {
+        "label": "MSCI EM",
+        "value": "$66.79",
+        "change": "▼ 0.9%",
+        "direction": "down",
+        "chg_1w": "▼ 0.7%",
+        "direction_1w": "down"
+      }
+    ],
+    "currency": {
+      "bases": [
+        "MXN",
+        "USD",
+        "BRL",
+        "EUR",
+        "CNY"
+      ],
+      "matrix": {
+        "MXN": [
+          {
+            "pair": "MXN / USD",
+            "rate": "0.05506",
+            "chg_1d": {
+              "text": "▼ 0.66%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.34%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / BRL",
+            "rate": "0.2849",
+            "chg_1d": {
+              "text": "▼ 1.19%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.63%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / EUR",
+            "rate": "0.04874",
+            "chg_1d": {
+              "text": "▼ 0.27%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.66%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CNY",
+            "rate": "0.3688",
+            "chg_1d": {
+              "text": "▼ 0.72%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.52%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / CAD",
+            "rate": "0.0785",
+            "chg_1d": {
+              "text": "▼ 0.24%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.61%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / GBP",
+            "rate": "0.04161",
+            "chg_1d": {
+              "text": "▼ 0.65%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.50%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "MXN / JPY",
+            "rate": "8.70",
+            "chg_1d": {
+              "text": "▼ 0.29%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 2.84%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "USD": [
+          {
+            "pair": "USD / MXN",
+            "rate": "18.1636",
+            "chg_1d": {
+              "text": "▲ 0.66%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.40%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / BRL",
+            "rate": "5.1750",
+            "chg_1d": {
+              "text": "▼ 0.54%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.30%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / EUR",
+            "rate": "0.88527",
+            "chg_1d": {
+              "text": "▲ 0.40%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.70%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / CNY",
+            "rate": "6.6987",
+            "chg_1d": {
+              "text": "▼ 0.06%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.18%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / CAD",
+            "rate": "1.4251",
+            "chg_1d": {
+              "text": "▲ 0.42%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.74%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "USD / GBP",
+            "rate": "0.75574",
+            "chg_1d": {
+              "text": "▲ 0.01%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.16%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "USD / JPY",
+            "rate": "157.99",
+            "chg_1d": {
+              "text": "▲ 0.37%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.52%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "BRL": [
+          {
+            "pair": "BRL / MXN",
+            "rate": "3.5099",
+            "chg_1d": {
+              "text": "▲ 1.21%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.70%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / USD",
+            "rate": "0.19324",
+            "chg_1d": {
+              "text": "▲ 0.54%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.30%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / EUR",
+            "rate": "0.17107",
+            "chg_1d": {
+              "text": "▲ 0.94%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.00%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CNY",
+            "rate": "1.2944",
+            "chg_1d": {
+              "text": "▲ 0.47%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.11%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / CAD",
+            "rate": "0.2754",
+            "chg_1d": {
+              "text": "▲ 0.96%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.04%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / GBP",
+            "rate": "0.14604",
+            "chg_1d": {
+              "text": "▲ 0.54%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.14%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "BRL / JPY",
+            "rate": "30.53",
+            "chg_1d": {
+              "text": "▲ 0.91%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.22%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "EUR": [
+          {
+            "pair": "EUR / MXN",
+            "rate": "20.5176",
+            "chg_1d": {
+              "text": "▲ 0.27%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 1.69%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / USD",
+            "rate": "1.12960",
+            "chg_1d": {
+              "text": "▼ 0.40%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.69%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / BRL",
+            "rate": "5.8457",
+            "chg_1d": {
+              "text": "▼ 0.93%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.99%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CNY",
+            "rate": "7.5669",
+            "chg_1d": {
+              "text": "▼ 0.46%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.88%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / CAD",
+            "rate": "1.6098",
+            "chg_1d": {
+              "text": "▲ 0.02%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.04%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "EUR / GBP",
+            "rate": "0.85369",
+            "chg_1d": {
+              "text": "▼ 0.39%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.85%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "EUR / JPY",
+            "rate": "178.47",
+            "chg_1d": {
+              "text": "▼ 0.02%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 1.20%",
+              "cls": "chg-down"
+            }
+          }
+        ],
+        "CNY": [
+          {
+            "pair": "CNY / MXN",
+            "rate": "2.7115",
+            "chg_1d": {
+              "text": "▲ 0.73%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 2.58%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / USD",
+            "rate": "0.14928",
+            "chg_1d": {
+              "text": "▲ 0.06%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.19%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / BRL",
+            "rate": "0.7725",
+            "chg_1d": {
+              "text": "▼ 0.47%",
+              "cls": "chg-down"
+            },
+            "chg_1w": {
+              "text": "▼ 0.11%",
+              "cls": "chg-down"
+            }
+          },
+          {
+            "pair": "CNY / EUR",
+            "rate": "0.13216",
+            "chg_1d": {
+              "text": "▲ 0.46%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.88%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / CAD",
+            "rate": "0.2127",
+            "chg_1d": {
+              "text": "▲ 0.49%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.93%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / GBP",
+            "rate": "0.11282",
+            "chg_1d": {
+              "text": "▲ 0.07%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▲ 0.02%",
+              "cls": "chg-up"
+            }
+          },
+          {
+            "pair": "CNY / JPY",
+            "rate": "23.59",
+            "chg_1d": {
+              "text": "▲ 0.44%",
+              "cls": "chg-up"
+            },
+            "chg_1w": {
+              "text": "▼ 0.33%",
+              "cls": "chg-down"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "visual": {
+    "hero_category": "Tasas",
+    "hero_category_source": "lead_story",
+    "hero_prompt_template": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: {headline}, overall tone: {sentiment}, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_prompt_version": "v1",
+    "hero_prompt": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, central bank building exterior, stone columns, overcast sky, empty stone steps, inspired by: Empleo privado en EE.UU. rebota a 90,000 en septiembre, por encima de estimados, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+    "hero_options": {
+      "opt1": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Upward-trending arrow or line chart climbing steeply, rendered in bold ink strokes, wide establishing shot, environmental context visible, inspired by: Empleo privado en EE.UU. rebota a 90,000 en septiembre, por encima de estimados, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt2": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, close-up of Upward-trending arrow or line chart climbing steeply, rendered in bold ink strokes, isolated detail, shallow depth of field, inspired by: Empleo privado en EE.UU. rebota a 90,000 en septiembre, por encima de estimados, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos.",
+      "opt3": "Premium editorial illustration for a high-end financial and geopolitical newsletter, hand-drawn ink and graphite style with refined linework and subtle cross-hatching, monochrome base with controlled muted color accents (20–25%), slightly textured paper background, Upward-trending arrow or line chart climbing steeply, rendered in bold ink strokes, low angle with strong perspective and architectural framing, inspired by: Empleo privado en EE.UU. rebota a 90,000 en septiembre, por encima de estimados, overall tone: Cautious, minimal composition, strong negative space, realistic proportions, calm but tense atmosphere, modern whitepaper-inspired editorial aesthetic, not photorealistic, not cinematic, no text, no logos."
+    },
+    "hero_option_summaries": {
+      "opt1": "Upward-trending arrow or line chart climbing steeply, rendered in bold ink strokes — Wide shot",
+      "opt2": "Upward-trending arrow or line chart climbing steeply, rendered in bold ink strokes — Close-up",
+      "opt3": "Upward-trending arrow or line chart climbing steeply, rendered in bold ink strokes — Low angle"
+    },
+    "hero_selected": null,
+    "hero_image": "https://newsletter.mustardhq.dev/images/2026-10-01_hero.png"
+  }
+}
