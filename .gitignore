@@ -1,0 +1,2 @@
+# Daily TTS audio is served directly from disk on the production server, never committed.
+docs/audio/

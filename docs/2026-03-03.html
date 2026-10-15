@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell &mdash; March 03, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  /* Header */
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* Ticker */
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  /* Weather */
+  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
+  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
+  .weather-temp { font-size: 11px; color: #ccc; }
+  .weather-humidity { font-size: 11px; color: #ccc; }
+  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+
+  /* Editor note */
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* Divider */
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  /* Sentiment gauge */
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  /* Stories */
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  /* Currency table */
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+  .up   { color: #4a9e6a; font-size: 11px; }
+  .down { color: #b84a3a; font-size: 11px; }
+  .flat { color: #aab4bc; font-size: 11px; }
+
+  /* Quote */
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  /* Week in review */
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  /* Footer */
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  /* ── Mobile ── */
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .tick-label { font-size: 7px; }
+    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
+    .weather-desc { margin-left: 0; width: 100%; }
+    .editor-note { padding: 20px 20px; }
+    .editor-note p { font-size: 14px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .story-headline { font-size: 17px; }
+    .currency { padding: 20px 20px; }
+    .currency-table { font-size: 11px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>TUESDAY, MARCH 03, 2026</span>
+      <span>ISSUE NO. 5</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">USD/MXN</span>
+        <span class="tick-val">17.50</span>
+        <span class="tick-up">▲ 1.1%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">S&P 500</span>
+        <span class="tick-val">6,882</span>
+        <span class="tick-down">▼ 0.4%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">CETES 28D</span>
+        <span class="tick-val">6.83%</span>
+        <span class="tick-up">▲ 0.00pp</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">IPC BMV</span>
+        <span class="tick-val">70,584.75</span>
+        <span class="tick-down">▼ 1.1%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather">
+    <span class="weather-city">Mexico City</span>
+    <span class="weather-temp">24°C / 8°C</span>
+    <span class="weather-humidity">Humidity 54%</span>
+    <span class="weather-desc">Clear skies</span>
+  </div>
+
+  <div class="editor-note">
+    <p>Fellow Humans, a war is now pricing into everything. U.S. and Israeli airstrikes on Iran have effectively shut down the Strait of Hormuz, Brent is up nearly 7%, and the Fed's already precarious inflation calculus just got significantly more complicated. We are three days into a conflict with no exit ramp, a dead Supreme Leader, and a president who says four to five weeks — minimum.</p>
+    <div class="editor-sig">&mdash; Cora Lation, Director of Mildly Concerning Developments</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label">Market Sentiment</span>
+      <span class="sentiment-reading risk-off">Risk-Off</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker risk-off" style="left:12%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span>Risk-Off</span><span>Neutral</span><span>Risk-On</span>
+    </div>
+    <div class="sentiment-context">Active U.S.-Israeli military campaign against Iran, Hormuz disruption, and a 6.7% oil spike are driving acute risk aversion across energy, rates, and broader markets.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Associated Press</span>
+    <span class="story-tag">Politics</span>
+  </div>
+  <div class="story-headline">U.S.-Israeli Strikes on Iran Escalate; Khamenei Dead, Hormuz Effectively Closed</div>
+  <div class="story-body">Joint U.S.-Israeli airstrikes continued for a third day across Tehran and Iranian-allied targets in Lebanon, Qatar, and Saudi Arabia, killing Supreme Leader Ayatollah Ali Khamenei. Three American fighter jets were downed by friendly Kuwaiti fire during an Iranian air assault. Trump says the campaign will likely run four to five weeks, with no diplomatic off-ramp in sight — a scenario that markets are only beginning to price.</div>
+  <a href="https://apnews.com/article/iran-israel-us-03-02-2026-cb42936de1d8c261be8f30f11c6665fa" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Yahoo Finance / Bloomberg</span>
+    <span class="story-tag">Energy</span>
+  </div>
+  <div class="story-headline">Brent Surges 6.7% as Hormuz Traffic Halts; RBC Sees $100+ Oil in Prolonged Conflict</div>
+  <div class="story-body">Brent crude settled near $78 a barrel — its biggest single-day gain since June 2025 — after Iran's IRGC declared it would block oil from leaving the region and Saudi Aramco halted operations at its Ras Tanura refinery following a drone strike. Diesel futures hit a near three-year high. RBC's Helima Croft warned of oil in the triple digits in a prolonged conflict scenario; JPMorgan estimates a 25-day Hormuz closure would force producer nations to cut output as storage fills.</div>
+  <a href="https://finance.yahoo.com/news/oil-spikes-hormuz-disruptions-middle-073109204.html" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Yahoo Finance / Bloomberg</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="story-headline">Oil Shock Complicates Fed's Path as Inflation Risk Reignites</div>
+  <div class="story-body">A sustained energy price shock of this magnitude would feed directly into headline inflation at a moment when the Federal Reserve is already navigating a narrow corridor between price stability and growth support. U.S. Secretary of State Marco Rubio said a program to mitigate energy cost impacts would begin Tuesday, though the mechanism remains vague. Central banks globally are now watching the Strait of Hormuz as closely as any data release.</div>
+  <a href="https://finance.yahoo.com/news/oil-spikes-hormuz-disruptions-middle-073109204.html" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">EWTN News</span>
+    <span class="story-tag">Mexico</span>
+  </div>
+  <div class="story-headline">Mexico Border Shelters Pivot to 'Reverse Migration' as U.S. Deportation Flows Intensify</div>
+  <div class="story-body">Catholic migrant shelters along Mexico's northern and southern borders are adapting to a structural shift: mass northward migration has slowed to a trickle, with U.S. Border Patrol recording just 237,538 encounters in fiscal 2025 — the lowest since 1970 — while repatriated migrants and those awaiting Mexican asylum processing now dominate shelter populations. The shelter in Tapachula, once housing 500 people continuously, now serves 80–120 daily. The human geography of the U.S.-Mexico corridor is being redrawn in real time.</div>
+  <a href="https://www.ewtnnews.com/world/americas/reverse-migration-catholic-shelters-in-mexico-serve-repatriated-migrants-and-foreigners-who" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">The Local Germany</span>
+    <span class="story-tag">Markets</span>
+  </div>
+  <div class="story-headline">IG Metall Takes On Tesla in High-Stakes Works Council Election at Berlin Gigafactory</div>
+  <div class="story-body">Germany's IG Metall union launched a three-day ballot this week to reclaim control of the works council at Tesla's Gruenheide plant, which employs roughly 10,000 workers. The union, which won 39% in 2024 before being outmaneuvered by four pro-management lists, is accusing Tesla of union busting, covert redundancies, and discriminatory promotion practices. The outcome matters beyond Tesla: a non-union works council majority at a major German automotive plant remains almost without precedent in the country's industrial history.</div>
+  <a href="https://www.thelocal.de/20260302/labour-union-gears-up-to-take-on-tesla-in-germany" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">The Real Deal</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="story-headline">Miami-Dade Developer Gold Rush Targets 10,000 Public Housing Units Under Federal RAD Program</div>
+  <div class="story-body">More than half a dozen redevelopment projects have cleared Miami-Dade commissioners in the past year under HUD's Rental Assistance Demonstration program, with Swerdlow Group alone planning 5,730 units across 35 acres in the Little River neighborhood — 314 reserved for existing tenants. Developers gain long-term land leases at deep discounts on prime urban sites; the county gets lease revenue and a partial answer to its status as the U.S. affordability crisis epicenter. New York leads nationally with 40,000 RAD units complete and 22,000 in the pipeline.</div>
+  <a href="https://therealdeal.com/magazine/march-2026/inside-the-developer-gold-rush-to-update-miami-dades-aging-public-housing/" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Financial Post / Globe Newswire</span>
+    <span class="story-tag">Mexico</span>
+  </div>
+  <div class="story-headline">Endeavour Silver Overhauls Leadership as Terronera Ramp-Up Enters Execution Phase</div>
+  <div class="story-body">Endeavour Silver (NYSE: EXK) appointed George Paspalas — former CEO of MAG Silver, which was sold to Pan American Silver — to its board, while COO Don Gray retires April 30 after steering the Terronera project from exploration to production. Luis Castro steps in as COO. The reshuffle signals the company is shifting from development mode to operational delivery at a moment when silver's geopolitical safe-haven bid is arguably firming.</div>
+  <a href="https://financialpost.com/globe-newswire/endeavour-silver-announces-board-and-management-updates" class="read-more">Read more &rarr;</a>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="section-title">Currency Table</div>
+    <table class="currency-table">
+      <thead>
+        <tr>
+          <th>Pair</th><th>Rate</th><th style="text-align:right;">Day</th><th style="text-align:right;">Week</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.4987</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.05%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.86%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.2876</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.37%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.30%</td>
+      </tr>
+      <tr>
+        <td class="pair">CAD / MXN</td>
+        <td>12.7623</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.74%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.79%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>120.7253</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.66%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 2.10%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="quote-text">Oil is the lifeblood of the industrial civilization and its flow is not guaranteed.</div>
+    <div class="quote-attr">Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991</div>
+  </div>
+
+  
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by">by Adrian</span>
+  </div>
+
+</div>
+</body>
+</html>

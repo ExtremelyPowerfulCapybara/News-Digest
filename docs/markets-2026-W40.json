@@ -1,0 +1,16 @@
+{
+  "filename": "markets-2026-W40.png",
+  "week_start": "2026-09-28",
+  "week_end": "2026-10-02",
+  "kind": "full",
+  "assets": 13,
+  "generated": "2026-10-15T16:11:04+00:00",
+  "best": {
+    "label": "Nikkei 225",
+    "change": 2.9
+  },
+  "worst": {
+    "label": "Gold",
+    "change": -3.7
+  }
+}

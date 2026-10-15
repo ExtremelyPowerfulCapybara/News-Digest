@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentiment Timeline · D Refined</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #e8ecef;
+    font-family: Arial, sans-serif;
+    padding: 64px 32px;
+    display: flex;
+    justify-content: center;
+  }
+  .card {
+    background: #f0f3f5;
+    border: 1px solid #cdd4d9;
+    padding: 28px 32px;
+    width: 680px;
+  }
+  .option-tag {
+    font-size: 8px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #fff;
+    background: #3a4a54;
+    display: inline-block;
+    padding: 3px 8px;
+    margin-bottom: 18px;
+  }
+  .chart-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: #aab4bc;
+    margin-bottom: 16px;
+  }
+  .chart-wrap {
+    position: relative;
+    height: 220px;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="option-tag">D · Refined</div>
+  <p class="chart-label">Sentiment Timeline</p>
+  <div class="chart-wrap"><canvas id="chart"></canvas></div>
+</div>
+
+<script>
+  const dates    = ["Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 31","Apr 1","Apr 2","Apr 3","Apr 4","Apr 7","Apr 8","Apr 9"];
+  const position = [68, 71, 66, 69, 72, 65, 58, 42, 35, 29, 38, 44, 51];
+  const ptColors = position.map(v => v >= 60 ? "#6abf7b" : v <= 40 ? "#d4695a" : "#e8a030");
+
+  // ── Plugin: colored zone bands ────────────────
+  const zones = {
+    id: "zones",
+    beforeDraw(chart) {
+      const { ctx, chartArea: { left, right }, scales: { y } } = chart;
+      [
+        { min: 0,  max: 40,  color: "rgba(212,105,90,0.26)"  },
+        { min: 40, max: 60,  color: "rgba(232,160,48,0.22)"  },
+        { min: 60, max: 100, color: "rgba(106,191,123,0.26)" },
+      ].forEach(({ min, max, color }) => {
+        ctx.save();
+        ctx.fillStyle = color;
+        ctx.fillRect(left, y.getPixelForValue(max), right - left, y.getPixelForValue(min) - y.getPixelForValue(max));
+        ctx.restore();
+      });
+    }
+  };
+
+  // ── Plugin: zone labels in right padding ──────
+  const zoneLabels = {
+    id: "zoneLabels",
+    afterDraw(chart) {
+      const { ctx, chartArea: { right }, scales: { y } } = chart;
+      [
+        { mid: 20,  label: "RISK-OFF", color: "#d4695a" },
+        { mid: 50,  label: "CAUTIOUS", color: "#c8922a" },
+        { mid: 80,  label: "RISK-ON",  color: "#4fa868" },
+      ].forEach(({ mid, label, color }) => {
+        ctx.save();
+        ctx.font = "700 7.5px Arial";
+        ctx.fillStyle = color;
+        ctx.textAlign = "left";
+        ctx.fillText(label, right + 10, y.getPixelForValue(mid) + 3);
+        ctx.restore();
+      });
+    }
+  };
+
+  // ── Plugin: faint gridlines every 5 units ────
+  const faintGrid = {
+    id: "faintGrid",
+    beforeDraw(chart) {
+      const { ctx, chartArea: { left, right }, scales: { y } } = chart;
+      ctx.save();
+      ctx.strokeStyle = "rgba(140,158,170,0.65)";
+      ctx.lineWidth = 0.5;
+      for (let v = 5; v < 100; v += 5) {
+        if ([25, 50, 75].includes(v)) continue; // skip — main grid handles these
+        const py = y.getPixelForValue(v);
+        ctx.beginPath();
+        ctx.moveTo(left, py);
+        ctx.lineTo(right, py);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+  };
+
+  // ── Plugin: dashed midline at 50 ─────────────
+  const midline = {
+    id: "midline",
+    beforeDraw(chart) {
+      const { ctx, chartArea: { left, right }, scales: { y } } = chart;
+      const py = y.getPixelForValue(50);
+      ctx.save();
+      ctx.setLineDash([4, 4]);
+      ctx.strokeStyle = "rgba(58,74,84,0.25)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(left, py);
+      ctx.lineTo(right, py);
+      ctx.stroke();
+      ctx.restore();
+    }
+  };
+
+  new Chart(document.getElementById("chart"), {
+    type: "line",
+    data: {
+      labels: dates,
+      datasets: [{
+        data: position,
+        borderColor: "#3a4a54",
+        borderWidth: 2,
+        pointBackgroundColor: ptColors,
+        pointBorderColor: ptColors,
+        pointRadius: 5,
+        pointHoverRadius: 7,
+        fill: false,
+        tension: 0.3,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: {
+        padding: { right: 72 }   // space for zone labels
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: "#3a4a54",
+          titleFont: { family: "Arial", size: 9 },
+          bodyFont: { family: "Arial", size: 9 },
+          callbacks: {
+            label: ctx => {
+              const v = ctx.raw;
+              const l = v >= 60 ? "Risk-On" : v <= 40 ? "Risk-Off" : "Cautious";
+              return ` ${v} · ${l}`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+            font: { family: "Arial", size: 8 },
+            color: "#aab4bc",
+            maxRotation: 45,
+            autoSkip: true,
+            maxTicksLimit: 10,
+          },
+          grid: { display: false },
+          border: { display: false },
+        },
+        y: {
+          min: 0, max: 100,
+          ticks: {
+            font: { family: "Arial", size: 8 },
+            color: "#8a9aa4",
+          },
+          afterBuildTicks(scale) {
+            scale.ticks = [0, 25, 50, 75, 100].map(v => ({ value: v }));
+          },
+          grid: {
+            color: "#8fa4b4",
+            lineWidth: 1,
+          },
+          border: { display: false },
+        }
+      }
+    },
+    plugins: [zones, faintGrid, zoneLabels, midline]
+  });
+</script>
+</body>
+</html>

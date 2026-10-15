@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">The Opening Bell — Context before the noise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Palette: matches the archive renderer exactly ── */
+    :root {
+      --bg:           #dde3e8;   /* archive page bg */
+      --bg-card:      #f0f3f5;   /* archive wrap bg */
+      --bg-quote:     #e8edf0;   /* archive quote/hover bg */
+      --ink:          #1a1a1a;
+      --ink-slate:    #3a4a54;   /* archive narrative thread / currency values */
+      --ink-mid:      #555;
+      --ink-light:    #777;
+      --ink-faint:    #aab4bc;
+      --ink-vfaint:   #999;
+      --rule:         #cdd4d9;
+      --rule-light:   #e4e9ec;
+      --cream:        #f5f2ed;   /* text on dark bg */
+      --ticker-text:  #d4cfc8;
+      --accent:       #3a4a54;   /* primary accent — archive slate */
+      --green:        #6abf7b;   /* archive tick-up */
+      --red:          #d4695a;   /* archive tick-down */
+      --amber:        #d4b87a;   /* archive commodity tab */
+      --purple:       #b49ed4;   /* archive crypto tab */
+      --serif:        'Playfair Display', Georgia, serif;
+      --sans:         'DM Sans', system-ui, sans-serif;
+      --mono:         'DM Mono', monospace;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+    /* ════════════════════════════════════════
+       SCROLLING TICKER STRIP
+    ════════════════════════════════════════ */
+    .top-strip {
+      background: var(--ink);
+      padding: 7px 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .top-strip::before, .top-strip::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; width: 48px; z-index: 2; pointer-events: none;
+    }
+    .top-strip::before { left: 0;  background: linear-gradient(to right, var(--ink), transparent); }
+    .top-strip::after  { right: 0; background: linear-gradient(to left,  var(--ink), transparent); }
+    .ticker-track {
+      display: flex;
+      animation: tickerScroll 30s linear infinite;
+      width: max-content;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    @keyframes tickerScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-set {
+      display: flex;
+      gap: 0;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 10px;
+      white-space: nowrap;
+      padding: 0 24px;
+    }
+    .tick-sep { color: #2e2e2e; padding: 0 16px; }
+    .tick-label { color: #3a3a3a; letter-spacing: 1.5px; text-transform: uppercase; margin-right: 7px; }
+    .tick-val   { color: #888; }
+    .tick-up    { color: var(--green); }
+    .tick-dn    { color: var(--red); }
+
+    /* ════════════════════════════════════════
+       MASTHEAD — dark, same as archive header
+    ════════════════════════════════════════ */
+    .masthead {
+      background: var(--ink);
+      padding: 52px 24px 48px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid var(--ink-slate);
+    }
+    /* Horizontal rule lines — like the archive's lined paper feel */
+    .masthead::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent, transparent 39px,
+        rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px
+      );
+      pointer-events: none;
+    }
+    .masthead-inner { max-width: 880px; margin: 0 auto; position: relative; }
+
+    .masthead-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .masthead-eyebrow::before {
+      content: '';
+      display: block; width: 24px; height: 1px;
+      background: var(--ink-faint); flex-shrink: 0;
+    }
+    .masthead-name {
+      font-family: var(--serif);
+      font-size: clamp(42px, 7vw, 80px);
+      font-weight: 900;
+      color: var(--cream);
+      line-height: 1;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+    .masthead-tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(15px, 2.2vw, 19px);
+      color: #555;
+      margin-bottom: 44px;
+      max-width: 460px;
+    }
+
+    .subscribe-row {
+      display: flex;
+      max-width: 480px;
+      border: 1px solid #2e2e2e;
+    }
+    .subscribe-input {
+      flex: 1; min-width: 0;
+      padding: 13px 18px;
+      background: #111;
+      border: none; outline: none;
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--ticker-text);
+    }
+    .subscribe-input::placeholder { color: #333; }
+    .subscribe-input:focus { background: #161616; }
+    .subscribe-btn {
+      padding: 13px 24px;
+      background: var(--ink-slate);
+      border: none; cursor: pointer;
+      font-family: var(--mono);
+      font-size: 9px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--cream);
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .subscribe-btn:hover { background: #4a5e6e; }
+    .subscribe-note {
+      margin-top: 11px;
+      font-size: 10px; color: #3a3a3a; letter-spacing: 0.5px;
+    }
+
+    /* ════════════════════════════════════════
+       RULE BAND — slate, like the archive's
+       2px border-bottom on the header
+    ════════════════════════════════════════ */
+    .rule-band { background: var(--ink-slate); height: 3px; }
+
+    /* ════════════════════════════════════════
+       SHARED SECTION HEADER
+    ════════════════════════════════════════ */
+    .section-header {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 32px;
+    }
+    .section-label {
+      font-family: var(--mono);
+      font-size: 9px; font-weight: 500;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--ink-faint); white-space: nowrap;
+    }
+    .section-rule { flex: 1; height: 1px; background: var(--rule); }
+
+    /* ════════════════════════════════════════
+       PITCH
+    ════════════════════════════════════════ */
+    .pitch { padding: 68px 24px 60px; }
+    .pitch-intro {
+      font-family: var(--serif);
+      font-size: clamp(21px, 2.8vw, 28px);
+      line-height: 1.45;
+      color: var(--ink-slate);
+      max-width: 640px;
+      margin-bottom: 52px;
+    }
+    .pitch-intro em { font-style: italic; color: var(--ink); }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .pillar { background: var(--bg-card); padding: 30px 26px; }
+    .pillar-number {
+      font-family: var(--mono);
+      font-size: 9px; letter-spacing: 2px; color: var(--ink-faint);
+      margin-bottom: 12px;
+    }
+    .pillar-heading {
+      font-family: var(--serif);
+      font-size: 17px; font-weight: 700;
+      margin-bottom: 9px; line-height: 1.2;
+      color: var(--ink);
+    }
+    .pillar-body { font-size: 13px; color: var(--ink-mid); line-height: 1.65; }
+
+    /* ════════════════════════════════════════
+       FOCUS SELECTOR
+    ════════════════════════════════════════ */
+    .focus-section { padding: 0 24px 68px; }
+    .focus-intro {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .focus-heading {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 700; line-height: 1.2;
+      color: var(--ink);
+    }
+    .focus-heading em { font-style: italic; color: var(--ink-slate); }
+    .focus-coming-soon {
+      font-family: var(--mono);
+      font-size: 8px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--ink-faint);
+      border: 1px solid var(--rule);
+      padding: 5px 10px; white-space: nowrap;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .focus-card {
+      background: var(--bg-card);
+      border: 1px solid var(--rule);
+      padding: 20px 18px 16px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      user-select: none;
+      position: relative;
+    }
+    .focus-card:hover { border-color: #b0bcc5; background: #edf0f3; }
+    .focus-card.selected {
+      border-color: var(--ink-slate);
+      background: var(--bg-quote);
+    }
+    .focus-card.selected .focus-card-check { opacity: 1; }
+    .focus-card-check {
+      position: absolute; top: 11px; right: 11px;
+      width: 16px; height: 16px;
+      background: var(--ink-slate);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 9px; color: var(--cream);
+      opacity: 0; transition: opacity 0.15s;
+    }
+    .focus-card-icon { font-size: 17px; margin-bottom: 9px; display: block; line-height: 1; }
+    .focus-card-name {
+      font-family: var(--serif);
+      font-size: 14px; font-weight: 700;
+      margin-bottom: 4px; line-height: 1.2;
+      color: var(--ink);
+    }
+    .focus-card-desc { font-size: 11px; color: var(--ink-mid); line-height: 1.5; }
+    .focus-card-examples { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; }
+    .focus-tag {
+      font-family: var(--mono);
+      font-size: 7.5px; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--ink-faint);
+      border: 1px solid var(--rule);
+      padding: 2px 6px;
+    }
+    .focus-card.selected .focus-tag {
+      border-color: #b0bcc5; color: var(--ink-slate);
+    }
+
+    .focus-subscribe {
+      background: var(--bg-card);
+      border: 1px solid var(--rule);
+      padding: 22px 26px;
+      display: flex; align-items: center; gap: 24px;
+    }
+    .focus-subscribe-text { flex: 1; }
+    .focus-subscribe-label {
+      font-family: var(--mono);
+      font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--ink-faint); margin-bottom: 4px;
+    }
+    .focus-subscribe-selected {
+      font-size: 13px; color: var(--ink-faint);
+      font-family: var(--serif); font-style: italic;
+      transition: color 0.15s;
+    }
+    .focus-subscribe-selected.has-selection {
+      color: var(--ink-slate); font-style: normal;
+    }
+    .focus-subscribe-form {
+      display: flex; border: 1px solid var(--rule); flex-shrink: 0;
+    }
+    .focus-subscribe-input {
+      padding: 10px 14px;
+      background: var(--bg);
+      border: none; outline: none;
+      font-family: var(--sans); font-size: 13px; color: var(--ink);
+      width: 210px;
+    }
+    .focus-subscribe-input::placeholder { color: var(--ink-faint); }
+    .focus-subscribe-btn {
+      padding: 10px 18px;
+      background: var(--ink);
+      border: none; cursor: pointer;
+      font-family: var(--mono); font-size: 9px;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--cream); white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .focus-subscribe-btn:hover { background: #2e2e2e; }
+
+    /* ════════════════════════════════════════
+       SAMPLE ISSUE — matches archive card
+    ════════════════════════════════════════ */
+    .sample { padding: 0 24px 68px; }
+    .sample-frame {
+      background: var(--bg-card);
+      border: 1px solid var(--rule);
+      overflow: hidden;
+    }
+    /* Archive-style header: dark with pub-name in serif */
+    .sample-header {
+      background: var(--ink);
+      padding: 18px 32px;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 2px solid var(--ink-slate);
+    }
+    .sample-header-name {
+      font-family: var(--serif);
+      font-size: 17px; font-weight: 700; color: var(--cream);
+    }
+    .sample-header-meta {
+      font-family: var(--mono);
+      font-size: 9px; color: #444;
+      letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    /* Mini ticker bar — matches archive .ticker */
+    .sample-ticker {
+      background: var(--ink);
+      padding: 8px 32px;
+      display: flex; gap: 0;
+      border-bottom: 2px solid var(--bg-card);
+    }
+    .sample-tick {
+      flex: 1; text-align: center;
+      padding: 4px 8px;
+      border-left: 1px solid #2e2e2e;
+      font-family: var(--mono); font-size: 9px;
+    }
+    .sample-tick:first-child { border-left: none; }
+    .sample-tick-label { display: block; font-size: 7.5px; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 3px; }
+    .sample-tick-val { color: var(--ticker-text); }
+
+    .sample-body { padding: 28px 32px; }
+    .sample-editor-note {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14.5px; color: #444; line-height: 1.8;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 22px;
+    }
+    .sample-stories { display: flex; flex-direction: column; }
+    .sample-story {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 14px; align-items: start;
+    }
+    .sample-story:last-child { border-bottom: none; }
+    .story-num {
+      font-family: var(--mono);
+      font-size: 9px; color: var(--ink-faint);
+      padding-top: 3px; letter-spacing: 1px;
+    }
+    .story-headline {
+      font-family: var(--serif);
+      font-size: 14px; font-weight: 700;
+      color: var(--ink); line-height: 1.35; margin-bottom: 4px;
+    }
+    .story-deck { font-size: 12px; color: var(--ink-mid); line-height: 1.5; }
+    .story-tag {
+      font-family: var(--mono);
+      font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--ink-faint);
+      border: 1px solid var(--rule);
+      padding: 2px 6px; white-space: nowrap; margin-top: 2px;
+    }
+    .sample-blur {
+      background: linear-gradient(to bottom, transparent, var(--bg-card) 80%);
+      height: 72px; margin-top: -72px; position: relative;
+    }
+    .sample-cta { text-align: center; padding: 16px 32px 28px; }
+    .sample-cta p {
+      font-size: 12px; color: var(--ink-faint);
+      margin-bottom: 14px; font-style: italic;
+    }
+    .sample-cta-form {
+      display: flex; max-width: 380px; margin: 0 auto;
+      border: 1px solid var(--rule);
+    }
+    .sample-cta-input {
+      flex: 1; padding: 11px 14px;
+      background: var(--bg); border: none; outline: none;
+      font-family: var(--sans); font-size: 13px; color: var(--ink); min-width: 0;
+    }
+    .sample-cta-input::placeholder { color: var(--ink-faint); }
+    .sample-cta-btn {
+      padding: 11px 18px;
+      background: var(--ink-slate); border: none; cursor: pointer;
+      font-family: var(--mono); font-size: 9px;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--cream); white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .sample-cta-btn:hover { background: #4a5e6e; }
+
+    /* ════════════════════════════════════════
+       SPECS BAR
+    ════════════════════════════════════════ */
+    .specs-bar { background: var(--ink); padding: 36px 24px; }
+    .specs-grid {
+      max-width: 880px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: #2e2e2e;
+    }
+    .spec { background: var(--ink); padding: 22px 26px; }
+    .spec-val {
+      font-family: var(--serif);
+      font-size: 26px; font-weight: 700;
+      color: var(--cream); margin-bottom: 6px; line-height: 1;
+    }
+    .spec-label {
+      font-family: var(--mono);
+      font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+      color: #555;
+    }
+
+    /* ════════════════════════════════════════
+       BOTTOM CTA
+    ════════════════════════════════════════ */
+    .bottom-cta { padding: 76px 24px; text-align: center; }
+    .bottom-cta-heading {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700; line-height: 1.2; margin-bottom: 12px;
+      color: var(--ink);
+    }
+    .bottom-cta-sub {
+      font-family: var(--serif);
+      font-style: italic; font-size: 16px;
+      color: var(--ink-slate); margin-bottom: 36px;
+    }
+    .bottom-subscribe-row {
+      display: flex; max-width: 440px; margin: 0 auto;
+      border: 1px solid var(--rule);
+    }
+    .bottom-subscribe-input {
+      flex: 1; padding: 13px 18px;
+      background: var(--bg-card);
+      border: none; outline: none;
+      font-family: var(--sans); font-size: 13px; color: var(--ink); min-width: 0;
+    }
+    .bottom-subscribe-input::placeholder { color: var(--ink-faint); }
+    .bottom-subscribe-btn {
+      padding: 13px 24px;
+      background: var(--ink); border: none; cursor: pointer;
+      font-family: var(--mono); font-size: 9px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--cream); white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .bottom-subscribe-btn:hover { background: #2e2e2e; }
+
+    /* ════════════════════════════════════════
+       FOOTER — matches archive .footer
+    ════════════════════════════════════════ */
+    .footer {
+      background: var(--ink);
+      padding: 22px 24px;
+    }
+    .footer-inner {
+      max-width: 880px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 14px; color: var(--cream);
+    }
+    .footer-meta {
+      font-family: var(--mono);
+      font-size: 9px; color: #555;
+      letter-spacing: 1.5px; text-transform: uppercase; margin-top: 3px;
+    }
+    .footer-links {
+      display: flex; gap: 22px;
+      font-family: var(--mono); font-size: 9px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: #555;
+    }
+    .footer-links a:hover { color: var(--cream); }
+
+    /* ─── Animations ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .masthead-eyebrow { animation: fadeUp 0.5s ease both; }
+    .masthead-name    { animation: fadeUp 0.5s ease 0.1s both; }
+    .masthead-tagline { animation: fadeUp 0.5s ease 0.2s both; }
+    .subscribe-row    { animation: fadeUp 0.5s ease 0.3s both; }
+    .subscribe-note   { animation: fadeUp 0.5s ease 0.4s both; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 680px) {
+      .pillars            { grid-template-columns: 1fr; }
+      .focus-grid         { grid-template-columns: repeat(2, 1fr); }
+      .focus-intro        { grid-template-columns: 1fr; gap: 12px; }
+      .focus-subscribe    { flex-direction: column; align-items: stretch; }
+      .focus-subscribe-form { width: 100%; }
+      .focus-subscribe-input { width: 100%; flex: 1; }
+      .specs-grid         { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner       { flex-direction: column; gap: 14px; text-align: center; }
+      .footer-links       { flex-wrap: wrap; justify-content: center; }
+      .subscribe-row, .bottom-subscribe-row { flex-direction: column; }
+      .subscribe-btn, .bottom-subscribe-btn { width: 100%; padding: 13px; }
+      .sample-ticker      { display: none; }
+      .sample-story       { grid-template-columns: auto 1fr; }
+      .story-tag          { display: none; }
+    }
+    @media (max-width: 420px) {
+      .focus-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ TICKER STRIP ════════════════════════════════ -->
+  <div class="top-strip" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-set" id="ticker-a"></div>
+      <div class="ticker-set" id="ticker-b"></div>
+    </div>
+  </div>
+
+  <!-- ═══ MASTHEAD ════════════════════════════════════ -->
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-eyebrow" id="eyebrow-text">Global macro &amp; financial intelligence</div>
+      <h1 class="masthead-name" id="newsletter-name">The Opening Bell</h1>
+      <p class="masthead-tagline" id="newsletter-tagline">Context before the noise.</p>
+
+      <form class="subscribe-row" onsubmit="handleSubscribe(event)" aria-label="Hero subscribe">
+        <label for="hero-email" class="sr-only">Email address</label>
+        <input id="hero-email" class="subscribe-input" type="email" placeholder="your@email.com" required autocomplete="email">
+        <button class="subscribe-btn" type="submit">Subscribe free</button>
+      </form>
+      <p class="subscribe-note" id="subscribe-note">Weekdays, before the market opens. No spam, ever.</p>
+    </div>
+  </header>
+
+  <div class="rule-band"></div>
+
+  <!-- ═══ PITCH ════════════════════════════════════════ -->
+  <section class="pitch">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What it is</span>
+        <div class="section-rule"></div>
+      </div>
+      <p class="pitch-intro" id="pitch-text">
+        A daily briefing on global markets, macro policy, and emerging economies —
+        written for people who need to <em>understand</em> what's moving the world
+        before 9 AM, not recap it at noon.
+      </p>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-number">01</div>
+          <h3 class="pillar-heading">Morning intelligence</h3>
+          <p class="pillar-body">Published every weekday before the opening bell. Curated from vetted global sources — wires, regional press, FT, WSJ, Bloomberg.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-number">02</div>
+          <h3 class="pillar-heading">Bilingual by design</h3>
+          <p class="pillar-body">Every issue in Spanish and English. Toggle between them in one click. No machine-translated filler — both versions are written.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-number">03</div>
+          <h3 class="pillar-heading">Markets in context</h3>
+          <p class="pillar-body">Live macro tickers, currency cross-rates, central bank calendars, commodities — the data that frames the narrative.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOCUS SELECTOR ══════════════════════════════ -->
+  <section class="focus-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Choose your focus</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="focus-intro">
+        <h2 class="focus-heading">
+          We're building <em>market sections</em>.<br>Tell us what you care about.
+        </h2>
+        <div class="focus-coming-soon">Coming soon</div>
+      </div>
+      <div class="focus-grid" id="focus-grid"></div>
+      <div class="focus-subscribe">
+        <div class="focus-subscribe-text">
+          <div class="focus-subscribe-label">Your selection</div>
+          <div class="focus-subscribe-selected" id="focus-selected-label">
+            Select the markets that matter to you, then subscribe.
+          </div>
+        </div>
+        <form class="focus-subscribe-form" onsubmit="handleFocusSubscribe(event)">
+          <input class="focus-subscribe-input" type="email" placeholder="your@email.com" required autocomplete="email">
+          <button class="focus-subscribe-btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SAMPLE ISSUE ═════════════════════════════════ -->
+  <section class="sample">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Sample issue</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="sample-frame">
+        <!-- Header — archive style -->
+        <div class="sample-header">
+          <div class="sample-header-name" id="sample-name">The Opening Bell</div>
+          <div class="sample-header-meta">Thursday · 10 April 2026 · Issue #34</div>
+        </div>
+        <!-- Mini ticker — like the archive .ticker block -->
+        <div class="sample-ticker">
+          <div class="sample-tick">
+            <span class="sample-tick-label">DXY</span>
+            <span class="sample-tick-val">104.32 <span class="tick-dn">▾</span></span>
+          </div>
+          <div class="sample-tick">
+            <span class="sample-tick-label">10Y UST</span>
+            <span class="sample-tick-val">4.38% <span class="tick-dn">▾</span></span>
+          </div>
+          <div class="sample-tick">
+            <span class="sample-tick-label">VIX</span>
+            <span class="sample-tick-val">22.1 <span class="tick-up">▴</span></span>
+          </div>
+          <div class="sample-tick">
+            <span class="sample-tick-label">MXN/USD</span>
+            <span class="sample-tick-val">17.24 <span class="tick-up">▴</span></span>
+          </div>
+          <div class="sample-tick">
+            <span class="sample-tick-label">Brent</span>
+            <span class="sample-tick-val">74.60 <span class="tick-dn">▾</span></span>
+          </div>
+        </div>
+        <div class="sample-body">
+          <div class="sample-editor-note">
+            "The tariff clock reset again. After three weeks of escalation, both sides are
+            back at the table — but the damage to supply chains is already priced into
+            earnings. What the market hasn't fully absorbed is the secondary effect on EM
+            sovereign spreads, which widened 40bps in a single session..."
+          </div>
+          <div class="sample-stories">
+            <div class="sample-story">
+              <span class="story-num">01</span>
+              <div>
+                <div class="story-headline">US–China trade talks resume; tariff pause extended 90 days</div>
+                <div class="story-deck">Treasury officials confirmed a temporary hold on 145% levies as both sides negotiate a framework, though no binding agreement is on the table.</div>
+              </div>
+              <span class="story-tag">Global</span>
+            </div>
+            <div class="sample-story">
+              <span class="story-num">02</span>
+              <div>
+                <div class="story-headline">ECB signals further cuts as eurozone growth stalls below forecast</div>
+                <div class="story-deck">Flash PMI data for March showed composite activity at 47.8, below the expansion threshold for the second consecutive month.</div>
+              </div>
+              <span class="story-tag">Europe</span>
+            </div>
+            <div class="sample-story">
+              <span class="story-num">03</span>
+              <div>
+                <div class="story-headline">EM sovereign spreads spike as dollar strengthens on risk-off flow</div>
+                <div class="story-deck">EMBI+ spread widened to its highest level since Q3 2023 as investors rotated out of developing-market debt amid trade uncertainty.</div>
+              </div>
+              <span class="story-tag">EM</span>
+            </div>
+          </div>
+        </div>
+        <div class="sample-blur"></div>
+        <div class="sample-cta">
+          <p>This issue has 5 more stories, live market data, and a currency rate table.</p>
+          <form class="sample-cta-form" onsubmit="handleSubscribe(event)">
+            <input class="sample-cta-input" type="email" placeholder="your@email.com" required>
+            <button class="sample-cta-btn" type="submit">Read full issue</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SPECS BAR ════════════════════════════════════ -->
+  <div class="specs-bar">
+    <div class="specs-grid">
+      <div class="spec">
+        <div class="spec-val" id="spec-issues">33+</div>
+        <div class="spec-label">Issues published</div>
+      </div>
+      <div class="spec">
+        <div class="spec-val">5×</div>
+        <div class="spec-label">Issues per week</div>
+      </div>
+      <div class="spec">
+        <div class="spec-val">2</div>
+        <div class="spec-label">Languages</div>
+      </div>
+      <div class="spec">
+        <div class="spec-val">Free</div>
+        <div class="spec-label">Always</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ BOTTOM CTA ════════════════════════════════════ -->
+  <section class="bottom-cta">
+    <div class="container">
+      <h2 class="bottom-cta-heading" id="cta-heading">One briefing.<br>Every market.</h2>
+      <p class="bottom-cta-sub" id="cta-sub">Join readers across six time zones, every weekday morning.</p>
+      <form class="bottom-subscribe-row" onsubmit="handleSubscribe(event)">
+        <input class="bottom-subscribe-input" type="email" placeholder="your@email.com" required autocomplete="email">
+        <button class="bottom-subscribe-btn" type="submit">Subscribe free</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER — matches archive footer ═════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name" id="footer-name">The Opening Bell</div>
+        <div class="footer-meta" id="footer-meta">By Los 3 · Mexico City · Madrid · Buenos Aires</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Archive</a>
+        <a href="mailto:" id="footer-contact" style="display:none;">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ══════════════════════════════════════════════════
+       BRANDING CONFIG — edit to rebrand the whole page
+    ══════════════════════════════════════════════════ */
+    const NEWSLETTER_CONFIG = {
+      name:          "The Opening Bell",
+      tagline:       "Context before the noise.",
+      eyebrow:       "Global macro & financial intelligence",
+      pitch:         "A daily briefing on global markets, macro policy, and emerging economies — written for people who need to <em>understand</em> what's moving the world before 9 AM, not recap it at noon.",
+      subscribeNote: "Weekdays, before the market opens. No spam, ever.",
+      ctaHeading:    "One briefing.\nEvery market.",
+      ctaSub:        "Join readers across six time zones, every weekday morning.",
+      team:          "By Los 3 · Mexico City · Madrid · Buenos Aires",
+      issueCount:    "33+",
+      contactEmail:  "",
+    };
+
+    /* ══════════════════════════════════════════════════
+       FOCUS MARKETS — add/remove sections freely
+    ══════════════════════════════════════════════════ */
+    const FOCUS_MARKETS = [
+      { id: "americas",    icon: "🌎", name: "Americas",         desc: "US, Mexico, Brazil, LatAm macro and policy",          tags: ["Fed","Banxico","COPOM","MXN","BRL"] },
+      { id: "europe",      icon: "🌍", name: "Europe",           desc: "ECB, eurozone economies, UK and Eastern Europe",       tags: ["ECB","EUR","GBP","PMI"] },
+      { id: "asia",        icon: "🌏", name: "Asia-Pacific",     desc: "China, Japan, South Korea, Southeast Asia",            tags: ["PBOC","BOJ","CNY","Nikkei"] },
+      { id: "em",          icon: "📡", name: "Emerging Markets", desc: "EM flows, spreads, and frontier economies",            tags: ["EMBI+","spreads","EM FX","carry"] },
+      { id: "commodities", icon: "⚡", name: "Commodities",      desc: "Energy, metals, agriculture, and trade flows",         tags: ["Brent","Gold","Copper","Wheat"] },
+      { id: "crypto",      icon: "₿",  name: "Crypto & Digital", desc: "Bitcoin, ETH, DeFi, stablecoins, regulation",          tags: ["BTC","ETH","SOL","stablecoins"] },
+    ];
+
+    /* ══════════════════════════════════════════════════
+       TICKER DATA
+    ══════════════════════════════════════════════════ */
+    const TICKER_ITEMS = [
+      { label:"S&P 500",   val:"5,268",  chg:"+0.9%",  dir:"up" },
+      { label:"Nasdaq",    val:"16,441", chg:"+1.1%",  dir:"up" },
+      { label:"Euro Stoxx",val:"4,890",  chg:"-0.3%",  dir:"dn" },
+      { label:"Nikkei",    val:"34,502", chg:"-0.7%",  dir:"dn" },
+      { label:"DXY",       val:"104.32", chg:"-0.4%",  dir:"dn" },
+      { label:"10Y UST",   val:"4.38%",  chg:"-0.05",  dir:"dn" },
+      { label:"VIX",       val:"22.1",   chg:"+1.8",   dir:"up" },
+      { label:"Brent",     val:"74.60",  chg:"-1.1%",  dir:"dn" },
+      { label:"Gold",      val:"3,218",  chg:"+0.6%",  dir:"up" },
+      { label:"BTC",       val:"82,440", chg:"+2.3%",  dir:"up" },
+      { label:"MXN/USD",   val:"17.24",  chg:"+0.3%",  dir:"up" },
+      { label:"EUR/USD",   val:"1.093",  chg:"+0.2%",  dir:"up" },
+    ];
+
+    /* ── Init ── */
+    (function init() {
+      applyConfig();
+      buildTicker();
+      buildFocusGrid();
+    })();
+
+    function applyConfig() {
+      const c = NEWSLETTER_CONFIG;
+      document.title = `${c.name} — ${c.tagline}`;
+      setText('newsletter-name',    c.name);
+      setText('newsletter-tagline', c.tagline);
+      setText('eyebrow-text',       c.eyebrow);
+      setText('sample-name',        c.name);
+      setText('footer-name',        c.name);
+      setText('footer-meta',        c.team);
+      setText('subscribe-note',     c.subscribeNote);
+      setText('spec-issues',        c.issueCount);
+      setHTML('pitch-text',         c.pitch);
+      const ctaH = document.getElementById('cta-heading');
+      if (ctaH) ctaH.innerHTML = c.ctaHeading.replace('\n','<br>');
+      setText('cta-sub', c.ctaSub);
+      const contact = document.getElementById('footer-contact');
+      if (c.contactEmail) { contact.href = `mailto:${c.contactEmail}`; contact.style.display = ''; }
+    }
+
+    function buildTicker() {
+      const html = TICKER_ITEMS.map((t, i) => {
+        const sep = i > 0 ? `<span class="tick-sep">·</span>` : '';
+        const arrow = t.dir === 'up' ? '▴' : '▾';
+        const cls   = t.dir === 'up' ? 'tick-up' : 'tick-dn';
+        return `${sep}<span class="top-strip-item"><span class="tick-label">${t.label}</span><span class="tick-val">${t.val} <span class="${cls}">${arrow} ${t.chg}</span></span></span>`;
+      }).join('');
+      document.getElementById('ticker-a').innerHTML = html;
+      document.getElementById('ticker-b').innerHTML = html;
+    }
+
+    const selectedFocus = new Set();
+
+    function buildFocusGrid() {
+      document.getElementById('focus-grid').innerHTML = FOCUS_MARKETS.map(m => `
+        <div class="focus-card" data-id="${m.id}" onclick="toggleFocus('${m.id}',this)"
+             role="checkbox" aria-checked="false" tabindex="0">
+          <div class="focus-card-check">✓</div>
+          <span class="focus-card-icon">${m.icon}</span>
+          <div class="focus-card-name">${m.name}</div>
+          <div class="focus-card-desc">${m.desc}</div>
+          <div class="focus-card-examples">${m.tags.map(t=>`<span class="focus-tag">${t}</span>`).join('')}</div>
+        </div>`).join('');
+
+      document.querySelectorAll('.focus-card').forEach(card => {
+        card.addEventListener('keydown', e => {
+          if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); card.click(); }
+        });
+      });
+    }
+
+    function toggleFocus(id, card) {
+      selectedFocus.has(id) ? selectedFocus.delete(id) : selectedFocus.add(id);
+      card.classList.toggle('selected');
+      card.setAttribute('aria-checked', card.classList.contains('selected'));
+      const label = document.getElementById('focus-selected-label');
+      if (selectedFocus.size === 0) {
+        label.textContent = 'Select the markets that matter to you, then subscribe.';
+        label.classList.remove('has-selection');
+      } else {
+        label.textContent = FOCUS_MARKETS.filter(m => selectedFocus.has(m.id)).map(m => m.name).join(', ');
+        label.classList.add('has-selection');
+      }
+    }
+
+    function handleSubscribe(e) { e.preventDefault(); confirmSubscribe(e.target); }
+    function handleFocusSubscribe(e) { e.preventDefault(); confirmSubscribe(e.target); }
+
+    function confirmSubscribe(form) {
+      const btn = form.querySelector('button[type="submit"]');
+      const orig = btn.textContent;
+      btn.textContent = 'Done ✓';
+      btn.style.background = '#4a9e6a';
+      btn.disabled = true;
+      form.querySelector('input[type="email"]').value = '';
+      setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; }, 3000);
+    }
+
+    function setText(id, v) { const el = document.getElementById(id); if (el) el.textContent = v; }
+    function setHTML(id, v) { const el = document.getElementById(id); if (el) el.innerHTML = v; }
+  </script>
+</body>
+</html>

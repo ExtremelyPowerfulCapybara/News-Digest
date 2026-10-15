@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { background: #e8ecef; font-family: Arial, sans-serif; padding: 40px 24px; }
+
+  .archive-card {
+    background: #f0f3f5;
+    border: 1px solid #cdd4d9;
+    padding: 28px 32px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .chart-label {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #aab4bc;
+    margin-bottom: 16px;
+  }
+
+  .sc-table { width: 100%; border-collapse: collapse; }
+  .sc-day {
+    font-size: 8px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #aab4bc;
+    width: 52px; white-space: nowrap;
+    padding: 0 8px 8px 0; vertical-align: middle;
+  }
+  .sc-track-cell { padding: 0 8px 8px 0; vertical-align: middle; }
+  .sc-track { background: #e4e9ec; height: 20px; width: 100%; }
+  .sc-bar { height: 20px; display: flex; align-items: center; padding-left: 7px; min-width: 4%; }
+  .sc-val { font-size: 9px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+  .sc-label {
+    font-size: 9px; font-weight: 700; white-space: nowrap;
+    padding: 0 0 8px 0; vertical-align: middle;
+    width: 80px; text-align: right;
+  }
+</style>
+</head>
+<body>
+<div class="archive-card">
+  <p class="chart-label">Sentiment Timeline</p>
+  <table class="sc-table">
+    <tbody>
+      <tr>
+        <td class="sc-day">Apr 9</td>
+        <td class="sc-track-cell"><div class="sc-track"><div class="sc-bar" style="width:52%; background:#e8a030;"><span class="sc-val">54</span></div></div></td>
+        <td class="sc-label" style="color:#e8a030;">Cauteloso</td>
+      </tr>
+      <tr>
+        <td class="sc-day">Apr 8</td>
+        <td class="sc-track-cell"><div class="sc-track"><div class="sc-bar" style="width:43%; background:#e8a030;"><span class="sc-val">44</span></div></div></td>
+        <td class="sc-label" style="color:#e8a030;">Cauteloso</td>
+      </tr>
+      <tr>
+        <td class="sc-day">Apr 7</td>
+        <td class="sc-track-cell"><div class="sc-track"><div class="sc-bar" style="width:37%; background:#d4695a;"><span class="sc-val">38</span></div></div></td>
+        <td class="sc-label" style="color:#d4695a;">Aversión</td>
+      </tr>
+      <tr>
+        <td class="sc-day">Apr 4</td>
+        <td class="sc-track-cell"><div class="sc-track"><div class="sc-bar" style="width:27%; background:#d4695a;"><span class="sc-val">29</span></div></div></td>
+        <td class="sc-label" style="color:#d4695a;">Aversión</td>
+      </tr>
+      <tr>
+        <td class="sc-day">Apr 3</td>
+        <td class="sc-track-cell"><div class="sc-track"><div class="sc-bar" style="width:33%; background:#d4695a;"><span class="sc-val">35</span></div></div></td>
+        <td class="sc-label" style="color:#d4695a;">Aversión</td>
+      </tr>
+      <tr>
+        <td class="sc-day">Apr 2</td>
+        <td class="sc-track-cell"><div class="sc-track"><div class="sc-bar" style="width:40%; background:#e8a030;"><span class="sc-val">42</span></div></div></td>
+        <td class="sc-label" style="color:#e8a030;">Cauteloso</td>
+      </tr>
+      <tr>
+        <td class="sc-day">Apr 1</td>
+        <td class="sc-track-cell"><div class="sc-track"><div class="sc-bar" style="width:56%; background:#e8a030;"><span class="sc-val">58</span></div></div></td>
+        <td class="sc-label" style="color:#e8a030;">Cauteloso</td>
+      </tr>
+      <tr>
+        <td class="sc-day">Mar 31</td>
+        <td class="sc-track-cell"><div class="sc-track"><div class="sc-bar" style="width:63%; background:#6abf7b;"><span class="sc-val">65</span></div></div></td>
+        <td class="sc-label" style="color:#6abf7b;">Apetito</td>
+      </tr>
+      <tr>
+        <td class="sc-day">Mar 28</td>
+        <td class="sc-track-cell"><div class="sc-track"><div class="sc-bar" style="width:70%; background:#6abf7b;"><span class="sc-val">72</span></div></div></td>
+        <td class="sc-label" style="color:#6abf7b;">Apetito</td>
+      </tr>
+      <tr>
+        <td class="sc-day">Mar 27</td>
+        <td class="sc-track-cell"><div class="sc-track"><div class="sc-bar" style="width:67%; background:#6abf7b;"><span class="sc-val">69</span></div></div></td>
+        <td class="sc-label" style="color:#6abf7b;">Apetito</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Overview — The Periphery</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #faf9f7;
+      padding: 2rem 1rem 6rem;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 2px solid #1a1a1a;
+      padding-bottom: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .site-header h1 {
+      font-size: 1.6rem;
+      font-weight: normal;
+      letter-spacing: 0.01em;
+    }
+
+    .site-header .meta {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 0.4rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Table of contents */
+    .toc {
+      background: #f0eeea;
+      border-left: 3px solid #1a1a1a;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .toc h2 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .toc ol {
+      padding-left: 1.2rem;
+    }
+
+    .toc li {
+      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+    }
+
+    .toc a {
+      color: #1a1a1a;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .toc a:hover {
+      border-bottom-color: #1a1a1a;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: normal;
+      border-bottom: 1px solid #d0cec9;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    h3 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #333;
+      margin: 2rem 0 0.7rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Callout boxes */
+    .callout {
+      background: #f0eeea;
+      border-left: 3px solid #888;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .callout.important {
+      border-left-color: #c0392b;
+      background: #fdf5f4;
+    }
+
+    .callout.tip {
+      border-left-color: #2980b9;
+      background: #f4f8fc;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 1.2rem 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    th {
+      background: #1a1a1a;
+      color: #fff;
+      text-align: left;
+      padding: 0.55rem 0.8rem;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+
+    td {
+      padding: 0.5rem 0.8rem;
+      border-bottom: 1px solid #e0ddd8;
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) td {
+      background: #f5f4f1;
+    }
+
+    /* Code */
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.84em;
+      background: #eeecea;
+      padding: 0.15em 0.35em;
+      border-radius: 2px;
+    }
+
+    pre {
+      background: #1a1a1a;
+      color: #e8e6e2;
+      padding: 1.1rem 1.25rem;
+      border-radius: 3px;
+      overflow-x: auto;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      margin: 1.2rem 0;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: inherit;
+      color: inherit;
+    }
+
+    /* Step flow */
+    .step-flow {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+    }
+
+    .step-flow li {
+      counter-increment: step;
+      padding: 0.9rem 0.9rem 0.9rem 3.2rem;
+      margin-bottom: 0.6rem;
+      background: #f5f4f1;
+      border-radius: 3px;
+      position: relative;
+    }
+
+    .step-flow li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0.9rem;
+      top: 0.9rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #fff;
+      background: #1a1a1a;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-flow li strong {
+      display: block;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.88rem;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Action buttons */
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.2rem 0;
+    }
+
+    .action-card {
+      border: 1px solid #d0cec9;
+      padding: 1rem;
+      border-radius: 3px;
+    }
+
+    .action-card .label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .action-card.select .label { color: #27ae60; }
+    .action-card.regen .label  { color: #e67e22; }
+    .action-card.skip .label   { color: #7f8c8d; }
+
+    .action-card p {
+      font-size: 0.88rem;
+      margin: 0;
+      color: #444;
+    }
+
+    /* Debug section */
+    .debug-item {
+      border: 1px solid #e0ddd8;
+      border-radius: 3px;
+      margin-bottom: 1.2rem;
+      overflow: hidden;
+    }
+
+    .debug-item .problem {
+      background: #f5f4f1;
+      padding: 0.6rem 1rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .debug-item .detail {
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .debug-item .detail p {
+      margin-bottom: 0.5rem;
+    }
+
+    .debug-item .detail strong {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #666;
+    }
+
+    /* Safety rules */
+    .rule {
+      display: flex;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #e8e6e2;
+      font-size: 0.93rem;
+    }
+
+    .rule:last-child { border-bottom: none; }
+
+    .rule-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid #d0cec9;
+      margin-top: 5rem;
+      padding-top: 1.2rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      color: #888;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 600px) {
+      body { font-size: 16px; padding: 1rem 1rem 4rem; }
+      .action-grid { grid-template-columns: 1fr; }
+      pre { font-size: 0.76rem; }
+      table { font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header class="site-header">
+    <h1>System Overview — The Periphery</h1>
+    <div class="meta">Mexico Finance Brief &middot; Internal documentation &middot; Updated 2026-04-07</div>
+  </header>
+
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#what-it-does">What the system does</a></li>
+      <li><a href="#pipeline">End-to-end pipeline</a></li>
+      <li><a href="#folders">Folder structure</a></li>
+      <li><a href="#files">Key files</a></li>
+      <li><a href="#env">Environment variables</a></li>
+      <li><a href="#cron">Cron jobs</a></li>
+      <li><a href="#daily-ops">Daily operation</a></li>
+      <li><a href="#debugging">Debugging guide</a></li>
+      <li><a href="#design">Design decisions</a></li>
+      <li><a href="#safety">Safety &amp; invariants</a></li>
+    </ol>
+  </nav>
+
+
+  <!-- ─── SECTION 1 ─── -->
+  <section id="what-it-does">
+    <h2>1. What the System Does</h2>
+
+    <p>The Periphery is a fully automated newsletter pipeline that runs every weekday morning on a VPS. It fetches financial news, writes a bilingual digest using Claude, pulls live market data, sends an email to subscribers, and publishes a web archive page — all without human intervention.</p>
+
+    <p>The one exception: <strong>every morning, a collaborator reviews three AI-generated hero images in Telegram and selects one</strong>. That selection triggers the final render and site publish. Everything else is automatic.</p>
+
+    <h3>What happens every morning</h3>
+    <ol class="step-flow">
+      <li><strong>7:00 AM — Main pipeline runs</strong> Fetches news, calls Claude to write the digest, pulls market data, sends the email, builds the archive page.</li>
+      <li><strong>7:06 AM — Image candidates generated</strong> Reads today's digest, generates 3 hero images via OpenAI, and sends them to Telegram for review.</li>
+      <li><strong>~7:15 AM — You review Telegram</strong> Three candidate images appear with Select buttons. You pick one (or regenerate or skip).</li>
+      <li><strong>Within 2 minutes — Site updates</strong> The handler detects your selection, embeds the image in the archive page, and publishes the updated site.</li>
+    </ol>
+  </section>
+
+
+  <!-- ─── SECTION 2 ─── -->
+  <section id="pipeline">
+    <h2>2. End-to-End Pipeline</h2>
+
+    <h3>main.py — 7:00 AM (weekdays)</h3>
+    <p>The main pipeline runs as a single Python process and completes in roughly 3–5 minutes.</p>
+    <table>
+      <thead><tr><th>Step</th><th>What happens</th></tr></thead>
+      <tbody>
+        <tr><td>Fetch market data</td><td>Yahoo Finance queried in parallel: DXY, 10Y UST, VIX, MSCI EM, equities, commodities, crypto, and FX cross-rates for 8 currencies</td></tr>
+        <tr><td>Fetch news</td><td>NewsAPI queried across 7 Spanish topics, filtered to 14 curated outlets, deduplicated against the last 5 days</td></tr>
+        <tr><td>Score articles</td><td>Each article scored for freshness, source authority, and topic relevance; top 12 go to Claude</td></tr>
+        <tr><td>Summarize</td><td>Claude returns a bilingual JSON: 5–7 stories, editor note, narrative thread, sentiment score (5–95), quote of the day</td></tr>
+        <tr><td>Generate image prompts</td><td>Lead story tag and sentiment are mapped to 3 compositional image prompts — no API call yet, just text</td></tr>
+        <tr><td>Save digest</td><td>Full JSON saved to <code>digests/YYYY-MM-DD.json</code></td></tr>
+        <tr><td>Send email</td><td>Gmail SMTP delivers the HTML newsletter to all subscribers</td></tr>
+        <tr><td>Build archive</td><td><code>docs/YYYY-MM-DD.html</code> written; <code>docs/index.html</code> fully rebuilt</td></tr>
+        <tr><td>Telegram notification</td><td>Lightweight message sent with today's lead headline and archive link</td></tr>
+      </tbody>
+    </table>
+
+    <h3>generate_candidates.py — 7:06 AM (weekdays)</h3>
+    <p>Six minutes after <code>main.py</code>, this script picks up the digest and creates actual images.</p>
+    <table>
+      <thead><tr><th>Step</th><th>What happens</th></tr></thead>
+      <tbody>
+        <tr><td>Read digest</td><td>Loads <code>digests/YYYY-MM-DD.json</code> to retrieve the 3 image prompts</td></tr>
+        <tr><td>Guard check</td><td>Exits immediately if hero image already locked, or if candidate files already exist on disk</td></tr>
+        <tr><td>Generate images</td><td>OpenAI Images API called 3 times; PNGs saved to <code>tmp_images/YYYY-MM-DD/r1_opt1.png</code> etc.</td></tr>
+        <tr><td>Update digest</td><td>Candidate file paths written back into the digest JSON</td></tr>
+        <tr><td>Send to Telegram</td><td>Context message sent, then each photo with a Select button, then Regenerate / Skip controls</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Human interaction in Telegram</h3>
+    <p>You receive the images and choose what to do:</p>
+    <div class="action-grid">
+      <div class="action-card select">
+        <div class="label">Select</div>
+        <p>Pick this image for today's issue. Site updates automatically within 2 minutes.</p>
+      </div>
+      <div class="action-card regen">
+        <div class="label">Regenerate</div>
+        <p>Generate a fresh batch of 3 candidates. Maximum 2 regenerations per issue.</p>
+      </div>
+      <div class="action-card skip">
+        <div class="label">Skip</div>
+        <p>No image today. Archive page publishes without a hero. Always acceptable.</p>
+      </div>
+    </div>
+
+    <h3>telegram_handler.py — every 2 minutes (all day)</h3>
+    <p>This script polls Telegram continuously and handles each action:</p>
+    <table>
+      <thead><tr><th>Action</th><th>What the handler does</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Select</strong></td>
+          <td>Copies selected image to <code>docs/images/YYYY-MM-DD.png</code> &rarr; verifies file &rarr; updates digest with <code>hero_image</code> &rarr; rerenders archive HTML &rarr; rsyncs <code>docs/</code> to web root &rarr; deletes non-selected tmp files</td>
+        </tr>
+        <tr>
+          <td><strong>Regenerate</strong></td>
+          <td>Increments round counter &rarr; generates 3 new images (round 2, 3…) &rarr; deletes previous-round tmp files &rarr; sends new candidates to Telegram</td>
+        </tr>
+        <tr>
+          <td><strong>Skip</strong></td>
+          <td>Acknowledges; no changes to digest or site</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <!-- ─── SECTION 3 ─── -->
+  <section id="folders">
+    <h2>3. Folder Structure</h2>
+
+    <pre><code>mexico-finance-brief/
+├── bot/                 All Python source
+├── digests/             One JSON file per issue (YYYY-MM-DD.json)
+├── docs/                Published web archive (GitHub Pages root)
+│   ├── images/          Selected hero images — YYYY-MM-DD.png
+│   ├── index.html       Archive landing page — rebuilt every run
+│   └── YYYY-MM-DD.html  One page per issue
+├── tmp_images/          Candidate images waiting for selection
+│   └── YYYY-MM-DD/      r1_opt1.png, r1_opt2.png, r1_opt3.png ...
+└── logs/                Cron output
+    ├── main.log
+    ├── candidates.log
+    └── telegram_handler.log</code></pre>
+
+    <table>
+      <thead><tr><th>Folder</th><th>Written when</th><th>Safe to delete?</th></tr></thead>
+      <tbody>
+        <tr><td><code>digests/</code></td><td>Every run; updated by image and selection steps</td><td>No — historical record</td></tr>
+        <tr><td><code>docs/</code></td><td>Every run; rerendered after selection</td><td>No — served publicly</td></tr>
+        <tr><td><code>docs/images/</code></td><td>After a Telegram Select action</td><td>No — source of truth for published images</td></tr>
+        <tr><td><code>tmp_images/</code></td><td>During <code>generate_candidates.py</code></td><td>Yes — after selection, nothing here is needed</td></tr>
+        <tr><td><code>logs/</code></td><td>Continuously by cron</td><td>Yes — for disk space, but check before deleting</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <!-- ─── SECTION 4 ─── -->
+  <section id="files">
+    <h2>4. Key Files</h2>
+
+    <h3>bot/main.py</h3>
+    <p><strong>Purpose:</strong> Entry point. Runs the entire morning pipeline in sequence.<br>
+    <strong>When:</strong> Cron at 7:00 AM weekdays.<br>
+    <strong>Reads:</strong> NewsAPI, Yahoo Finance, Anthropic Claude.<br>
+    <strong>Writes:</strong> <code>digests/YYYY-MM-DD.json</code>, <code>docs/YYYY-MM-DD.html</code>, <code>docs/index.html</code>.</p>
+
+    <h3>bot/generate_candidates.py</h3>
+    <p><strong>Purpose:</strong> Generates 3 hero image candidates and sends them to Telegram.<br>
+    <strong>When:</strong> Cron at 7:06 AM weekdays.<br>
+    <strong>Reads:</strong> <code>digests/YYYY-MM-DD.json</code> (specifically <code>visual.hero_options</code>).<br>
+    <strong>Writes:</strong> <code>tmp_images/YYYY-MM-DD/r1_opt*.png</code>; updates the digest with candidate paths.<br>
+    <strong>Idempotent:</strong> Safe to re-run — exits if candidates already exist or hero is locked.</p>
+
+    <h3>bot/telegram_handler.py</h3>
+    <p><strong>Purpose:</strong> Polls Telegram for button presses and runs the corresponding action (copy, rerender, publish, regenerate).<br>
+    <strong>When:</strong> Cron every 2 minutes around the clock.<br>
+    <strong>Reads:</strong> Telegram API, <code>digests/</code>, <code>tmp_images/</code>.<br>
+    <strong>Writes:</strong> <code>docs/images/YYYY-MM-DD.png</code>, digest JSON, <code>docs/YYYY-MM-DD.html</code>, web root via rsync.</p>
+
+    <h3>bot/image_candidates.py</h3>
+    <p><strong>Purpose:</strong> Low-level image generation. Calls OpenAI Images API and saves the PNG.<br>
+    <strong>When:</strong> Called by <code>generate_candidates.py</code> and on regeneration from <code>telegram_handler.py</code>.<br>
+    <strong>Reads:</strong> <code>OPENAI_API_KEY</code> and image model settings from environment.<br>
+    <strong>Writes:</strong> PNG files to <code>tmp_images/</code>.</p>
+
+    <h3>bot/image_gen.py</h3>
+    <p><strong>Purpose:</strong> Builds image <em>prompts</em> (not images). Reads the lead story tag and mood from the digest, maps them to 3 compositional prompt variants. No API call.<br>
+    <strong>When:</strong> Called inside <code>main.py</code> before the digest is saved.<br>
+    <strong>Reads:</strong> Digest dict in memory.<br>
+    <strong>Writes:</strong> Nothing — returns a <code>visual</code> metadata dict that gets saved inside the digest JSON.</p>
+
+    <h3>bot/rerender.py</h3>
+    <p><strong>Purpose:</strong> Re-renders a single archive page from its saved digest. Used after image selection to embed the hero image in the HTML.<br>
+    <strong>When:</strong> Called by <code>telegram_handler.py</code> after selection. Can also be run manually.<br>
+    <strong>Reads:</strong> <code>digests/YYYY-MM-DD.json</code>.<br>
+    <strong>Writes:</strong> <code>docs/YYYY-MM-DD.html</code> (overwrites).</p>
+
+    <h3>bot/publish_site.py</h3>
+    <p><strong>Purpose:</strong> Rsyncs <code>docs/</code> to the live web root.<br>
+    <strong>When:</strong> Called by <code>telegram_handler.py</code> after rerender. Skips silently if <code>PUBLISH_WEB_ROOT</code> not set.<br>
+    <strong>Reads:</strong> <code>PUBLISH_WEB_ROOT</code> from environment.<br>
+    <strong>Writes:</strong> Destination directory at <code>PUBLISH_WEB_ROOT</code>.</p>
+  </section>
+
+
+  <!-- ─── SECTION 5 ─── -->
+  <section id="env">
+    <h2>5. Environment Variables</h2>
+
+    <p>All secrets live in <code>bot/.env</code> on the VPS. This file is never committed to the repo.</p>
+
+    <table>
+      <thead><tr><th>Variable</th><th>Required</th><th>Purpose</th><th>If missing</th></tr></thead>
+      <tbody>
+        <tr><td><code>NEWS_API_KEY</code></td><td>Yes</td><td>Authenticates to NewsAPI for article fetching</td><td>Run fails at news fetch step</td></tr>
+        <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Yes</td><td>Authenticates to Claude for summarization</td><td>Run fails at summarization step</td></tr>
+        <tr><td><code>EMAIL_SENDER</code></td><td>Yes</td><td>Gmail address to send from</td><td>Email delivery fails</td></tr>
+        <tr><td><code>EMAIL_PASSWORD</code></td><td>Yes</td><td>Gmail App Password (not login password)</td><td>Email delivery fails</td></tr>
+        <tr><td><code>SUBSCRIBERS</code></td><td>Yes</td><td>Comma-separated recipient emails</td><td>No one receives the newsletter</td></tr>
+        <tr><td><code>TELEGRAM_TOKEN</code></td><td>For images</td><td>Authenticates the Telegram bot</td><td>No Telegram messages; image flow disabled</td></tr>
+        <tr><td><code>TELEGRAM_CHAT_ID</code></td><td>For images</td><td>Target chat for Telegram messages</td><td>No Telegram messages; image flow disabled</td></tr>
+        <tr><td><code>OPENAI_API_KEY</code></td><td>For images</td><td>Authenticates to OpenAI Images API</td><td>Image generation fails</td></tr>
+        <tr><td><code>PUBLIC_ARCHIVE_BASE_URL</code></td><td>Recommended</td><td>Base URL for archive links in Telegram</td><td>Telegram notification omits archive link</td></tr>
+        <tr><td><code>PUBLISH_WEB_ROOT</code></td><td>Recommended</td><td>Destination for rsync publish</td><td>Site not updated after image selection</td></tr>
+        <tr><td><code>SKIP_EMAIL</code></td><td>No</td><td>Set <code>true</code> to skip SMTP delivery</td><td>—</td></tr>
+        <tr><td><code>MOCK</code></td><td>No</td><td>Set <code>true</code> to load saved digest (no API calls)</td><td>—</td></tr>
+        <tr><td><code>FORCE_FRIDAY</code></td><td>No</td><td>Set <code>true</code> to simulate Friday mode</td><td>—</td></tr>
+        <tr><td><code>OPENAI_IMAGE_MODEL</code></td><td>No</td><td>Override image model (default: <code>gpt-image-1</code>)</td><td>—</td></tr>
+        <tr><td><code>OPENAI_IMAGE_SIZE</code></td><td>No</td><td>Override image size (default: <code>1024x1024</code>)</td><td>—</td></tr>
+        <tr><td><code>OPENAI_IMAGE_QUALITY</code></td><td>No</td><td>Override image quality (default: <code>medium</code>)</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <!-- ─── SECTION 6 ─── -->
+  <section id="cron">
+    <h2>6. Cron Jobs</h2>
+
+    <p>Add these to <code>crontab -e</code> on the VPS. All times are Mexico City time.</p>
+
+    <pre><code>CRON_TZ=America/Mexico_City
+
+# Morning pipeline — weekdays at 7:00 AM
+0 7 * * 1-5 cd /home/adrian/project/bot && /home/adrian/project/venv/bin/python main.py >> /home/adrian/project/logs/main.log 2>&1
+
+# Image candidate generation — weekdays at 7:06 AM
+6 7 * * 1-5 cd /home/adrian/project/bot && /home/adrian/project/venv/bin/python generate_candidates.py >> /home/adrian/project/logs/candidates.log 2>&1
+
+# Telegram handler — every 2 minutes
+*/2 * * * * cd /home/adrian/project/bot && /home/adrian/project/venv/bin/python telegram_handler.py >> /home/adrian/project/logs/telegram_handler.log 2>&1</code></pre>
+
+    <div class="callout important">
+      <strong>Why the 6-minute gap matters:</strong> <code>generate_candidates.py</code> reads the digest that <code>main.py</code> writes. If it runs before <code>main.py</code> finishes, no digest exists yet and it exits silently. 6 minutes is a conservative buffer.
+    </div>
+
+    <h3>What happens when something fails</h3>
+    <table>
+      <thead><tr><th>Failure</th><th>Effect</th><th>Recovery</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>main.py</code> fails</td>
+          <td>No digest, no email, no image candidates today</td>
+          <td>Check <code>logs/main.log</code>; fix the issue; re-run manually</td>
+        </tr>
+        <tr>
+          <td><code>generate_candidates.py</code> fails</td>
+          <td>No images sent to Telegram today</td>
+          <td>Re-run manually — it's idempotent and safe to retry</td>
+        </tr>
+        <tr>
+          <td><code>telegram_handler.py</code> fails one cycle</td>
+          <td>One 2-minute window missed</td>
+          <td>Self-healing — next cycle picks up pending updates via offset</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <!-- ─── SECTION 7 ─── -->
+  <section id="daily-ops">
+    <h2>7. Daily Operation</h2>
+
+    <div class="callout tip">
+      The newsletter was already sent to subscribers at 7:00 AM. Your only job is to review and select the hero image.
+    </div>
+
+    <h3>Every morning checklist</h3>
+    <ol>
+      <li><strong>Open Telegram</strong> around 7:15 AM. You should see a context card followed by three candidate images.</li>
+      <li><strong>Read the lead headline</strong> shown in the context card. This is the story the image should support.</li>
+      <li><strong>Tap the Select button</strong> under the image that best matches the story's tone. You'll see a confirmation toast within a second.</li>
+      <li><strong>Done.</strong> The site updates automatically within 2 minutes.</li>
+    </ol>
+
+    <h3>When to use Regenerate</h3>
+    <p>Use it when none of the three images feel right — the tone is off, they're too generic, or they don't match the lead story. You have <strong>2 regenerations</strong> per issue before the button stops working.</p>
+
+    <h3>When to use Skip</h3>
+    <p>Use it when:</p>
+    <ul>
+      <li>You don't have time to review today</li>
+      <li>None of the images are acceptable and you're out of regenerations</li>
+      <li>The story topic doesn't suit a visual</li>
+    </ul>
+    <p>Skipping is always acceptable. The archive page publishes without a hero image and still looks correct.</p>
+  </section>
+
+
+  <!-- ─── SECTION 8 ─── -->
+  <section id="debugging">
+    <h2>8. Debugging Guide</h2>
+
+    <div class="debug-item">
+      <div class="problem">No Telegram message received</div>
+      <div class="detail">
+        <p><strong>Where to look:</strong> <code>logs/candidates.log</code> and <code>logs/main.log</code></p>
+        <p><strong>Likely cause:</strong> <code>main.py</code> failed before saving the digest, <code>TELEGRAM_TOKEN</code> or <code>TELEGRAM_CHAT_ID</code> not set, or OpenAI call failed.</p>
+        <p><strong>Quick fix:</strong> Check both logs. If the digest exists, re-run manually:</p>
+        <pre><code>cd /home/adrian/project/bot && python generate_candidates.py</code></pre>
+      </div>
+    </div>
+
+    <div class="debug-item">
+      <div class="problem">Images not generated (context message appeared but no photos)</div>
+      <div class="detail">
+        <p><strong>Where to look:</strong> <code>logs/candidates.log</code></p>
+        <p><strong>Likely cause:</strong> <code>OPENAI_API_KEY</code> missing or invalid, OpenAI rate limit, or malformed digest (no <code>hero_options</code> field).</p>
+        <p><strong>Quick fix:</strong> Check <code>logs/candidates.log</code> for the error. Verify the digest has image prompts:</p>
+        <pre><code>python -c "import json; d=json.load(open('digests/$(date +%F).json')); print(d.get('visual',{}).get('hero_options'))"</code></pre>
+      </div>
+    </div>
+
+    <div class="debug-item">
+      <div class="problem">Selection not working (nothing happens after tapping Select)</div>
+      <div class="detail">
+        <p><strong>Where to look:</strong> <code>logs/telegram_handler.log</code></p>
+        <p><strong>Likely cause:</strong> <code>telegram_handler.py</code> cron not running, <code>PUBLISH_WEB_ROOT</code> not set, or candidate file deleted before selection.</p>
+        <p><strong>Quick fix:</strong> Run the handler manually to see live output:</p>
+        <pre><code>cd /home/adrian/project/bot && python telegram_handler.py</code></pre>
+      </div>
+    </div>
+
+    <div class="debug-item">
+      <div class="problem">Image not visible on the published site</div>
+      <div class="detail">
+        <p><strong>Where to look:</strong> <code>docs/images/</code>, <code>logs/telegram_handler.log</code></p>
+        <p><strong>Likely cause:</strong> rsync failed, <code>PUBLISH_WEB_ROOT</code> not set, or path mismatch.</p>
+        <p><strong>Quick fix:</strong></p>
+        <ol>
+          <li>Confirm the PNG exists: <code>ls docs/images/</code></li>
+          <li>Check the digest's <code>hero_image</code> value is set correctly</li>
+          <li>Manually publish: <code>python publish_site.py</code></li>
+          <li>If needed, rerender then publish: <code>python rerender.py YYYY-MM-DD &amp;&amp; python publish_site.py</code></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── SECTION 9 ─── -->
+  <section id="design">
+    <h2>9. Design Decisions</h2>
+
+    <h3>Why images are generated separately from main.py</h3>
+    <p>Image generation takes 30–60 seconds per image (3 per issue = up to 3 minutes). Running it inside <code>main.py</code> would delay email delivery. Separating it into <code>generate_candidates.py</code> keeps the main run fast and makes the image step independently retryable if it fails.</p>
+
+    <h3>Why Telegram for image selection</h3>
+    <p>It's the lowest-friction editorial interface for a small team. No web dashboard to build or maintain. Button callbacks work on mobile. The only infrastructure needed is a bot token and a chat ID.</p>
+
+    <h3>Why tmp_images/ vs docs/images/</h3>
+    <p>Most candidate images are discarded. Only the selected image earns a permanent place in <code>docs/images/</code>. This keeps the published directory clean and avoids serving rejected images on the live site.</p>
+
+    <h3>Why rsync for publishing</h3>
+    <p>The VPS serves the site directly from <code>PUBLISH_WEB_ROOT</code>. rsync with <code>--delete</code> ensures the destination exactly mirrors <code>docs/</code>: new files are added, removed files are deleted, unchanged files are skipped. Fast, reliable, no framework needed.</p>
+  </section>
+
+
+  <!-- ─── SECTION 10 ─── -->
+  <section id="safety">
+    <h2>10. Safety &amp; Invariants</h2>
+
+    <div class="rule">
+      <div class="rule-icon">&#128274;</div>
+      <div><strong><code>hero_image</code> in the digest is a lock.</strong> Once set, <code>generate_candidates.py</code> and <code>telegram_handler.py</code> exit immediately. Do not clear it manually unless you intend to re-run the entire image flow.</div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-icon">&#9888;</div>
+      <div><strong>Do not edit digest JSON while <code>telegram_handler.py</code> is polling.</strong> The handler reads and writes the same file. Concurrent edits can corrupt it. Stop the cron or wait until the handler is idle before editing manually.</div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-icon">&#9989;</div>
+      <div><strong><code>tmp_images/</code> can be safely deleted.</strong> These are temporary files. If deleted after selection, nothing breaks — the selected image is already in <code>docs/images/</code>. If deleted before selection, re-run <code>generate_candidates.py</code>.</div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-icon">&#128247;</div>
+      <div><strong><code>docs/images/</code> is the source of truth for published images.</strong> The archive HTML references <code>/images/YYYY-MM-DD.png</code>. Do not rename or move files here without also updating the digest and rerendering the archive page.</div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-icon">&#128196;</div>
+      <div><strong>Do not delete files from <code>digests/</code>.</strong> The archive index is rebuilt from all digest files on every run. Deleting a digest removes that issue from the historical record permanently.</div>
+    </div>
+
+    <div class="rule">
+      <div class="rule-icon">&#128260;</div>
+      <div><strong><code>docs/index.html</code> is auto-generated.</strong> It is overwritten on every run. Any manual edits will be lost at the next run.</div>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    The Periphery / Mexico Finance Brief &mdash; Internal documentation &mdash; 2026-04-07
+  </footer>
+
+</div>
+</body>
+</html>

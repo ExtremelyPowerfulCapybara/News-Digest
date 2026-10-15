@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell -- March 11, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* ── Language toggle ── */
+  .lang-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .lang-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+
+  .lang-en { display: none; }
+
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
+  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
+  .weather-temp { font-size: 11px; color: #ccc; }
+  .weather-humidity { font-size: 11px; color: #ccc; }
+  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
+    .weather-desc { margin-left: 0; width: 100%; }
+    .editor-note { padding: 20px 20px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .currency { padding: 20px 20px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>WEDNESDAY, MARCH 11, 2026</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <span>NO. 12</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">USD/MXN</span>
+        <span class="tick-val">17.59</span>
+        <span class="tick-down">▼ 0.5%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">S&P 500</span>
+        <span class="tick-val">6,772</span>
+        <span class="tick-down">▼ 0.3%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">CETES 28D</span>
+        <span class="tick-val">6.81%</span>
+        <span class="tick-up">▲ 0.00pp</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">IPC BMV</span>
+        <span class="tick-val">67,268.45</span>
+        <span class="tick-down">▼ 0.2%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather">
+    <span class="weather-city">Mexico City</span>
+    <span class="weather-temp">25°C / 12°C</span>
+    <span class="weather-humidity">Humidity 49%</span>
+    <span class="weather-desc">Clear skies</span>
+  </div>
+
+  <div class="editor-note">
+    <div class="lang-es"><p>Estimados humanos, el Estrecho de Ormuz concentra el 20% del petróleo mundial y esta semana decidió recordárnoslo con toda la fuerza de un conflicto que los analistas ya califican como la mayor interrupción de suministro en la historia del mercado petrolero. El WTI tocó casi 120 dólares el lunes antes de retroceder a 80 tras las señales de Trump — la misma volatilidad que, según los veteranos del sector, es exactamente lo que ocurre cuando la geopolítica y un presidente impredecible comparten la misma sala. Para México, que es simultáneamente productor y gran importador de combustibles, el dilema fiscal que esto crea es, francamente, digno de estudio.</p></div>
+    <div class="lang-en"><p>Dear humans, the Strait of Hormuz carries 20% of the world's oil and this week decided to remind us of that fact with the full force of a conflict that analysts are already calling the largest supply disruption in the history of the petroleum market. WTI touched nearly $120 on Monday before retreating to $80 on Trump's signals — precisely the kind of volatility that occurs, as sector veterans well know, when geopolitics and an unpredictable president share the same room. For Mexico, simultaneously a producer and a major fuel importer, the fiscal dilemma this creates is, frankly, a case study worth keeping.</p></div>
+    <div class="editor-sig">&mdash; Bea Rish, Director of Things That Are Technically Not a Crisis</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label"
+            data-es="Sentimiento del D&#237;a"
+            data-en="Market Sentiment">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading cautious lang-es">Cauteloso</span>
+      <span class="sentiment-reading cautious lang-en">Cautious</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker cautious" style="left:42%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
+      <span data-es="Neutral"          data-en="Neutral">Neutral</span>
+      <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
+    </div>
+    <div class="sentiment-context lang-es">Los mercados oscilan entre el alivio por señales de desescalada en Irán y la incertidumbre estructural sobre el suministro energético global, con bolsas recuperando terreno pero volatilidad persistente.</div>
+    <div class="sentiment-context lang-en">Markets swing between relief over Iran de-escalation signals and structural uncertainty over global energy supply, with equities recovering ground but persistent volatility.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">La Tercera</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Petróleo retrocede a 80 dólares tras escoltas navales de EE.UU. en Ormuz, pero analistas advierten crisis sin precedente</div>
+    <div class="story-body">El WTI cayó 1.5% a 79.96 dólares por barril — su nivel más bajo desde el 3 de marzo — después de que el secretario de Energía de EE.UU., Chris Wright, anunciara que la Marina escoltó con éxito un petrolero por el Estrecho de Ormuz. El alivio es frágil: Rapidan Energy Group califica la interrupción como la mayor en la historia del mercado petrolero, y el CEO de Saudi Aramco, Amin Nasser, advirtió de consecuencias 'catastróficas'. La AIE convocó reunión extraordinaria para evaluar la liberación de 1,200 millones de barriles en reservas de emergencia.</div>
+    <a href="https://www.latercera.com/pulso/noticia/precio-del-petroleo-hoy-martes-1003/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Oil retreats to $80 after U.S. naval escorts in Hormuz, but analysts warn of unprecedented crisis</div>
+    <div class="story-body">WTI fell 1.5% to $79.96 per barrel — its lowest level since March 3 — after U.S. Energy Secretary Chris Wright announced the Navy successfully escorted a tanker through the Strait of Hormuz. The relief is fragile: Rapidan Energy Group calls the disruption the largest in petroleum market history, and Saudi Aramco CEO Amin Nasser warned of 'catastrophic consequences.' The IEA convened an emergency meeting to evaluate the release of 1.2 billion barrels from strategic reserves.</div>
+    <a href="https://www.latercera.com/pulso/noticia/precio-del-petroleo-hoy-martes-1003/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Diario Financiero</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Tres escenarios para el petróleo: desde recuperación rápida hasta catástrofe energética sostenida</div>
+    <div class="story-body">El analista de Capital Economics Kerian Tompkins describe un panorama donde Qatar detuvo toda producción de GNL e Irak, Kuwait y Arabia Saudí anunciaron recortes, mientras el tráfico por Ormuz — que representa el 25% del comercio mundial de crudo — está prácticamente paralizado. En el escenario más optimista, un conflicto breve generaría una pérdida de 350 millones de barriles y los precios caerían rápidamente; en los escenarios adversos, el impacto inflacionario global sería estructural y prolongado. Irán descartó este martes cualquier alto el fuego mientras Netanyahu afirmó que 'aún no han terminado'.</div>
+    <a href="https://www.df.cl/internacional/el-impacto-sobre-petroleo-bajo-tres-escenarios-de-guerra-en-el-medio" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Three scenarios for oil: from quick recovery to sustained energy catastrophe</div>
+    <div class="story-body">Capital Economics analyst Kerian Tompkins describes a landscape where Qatar has halted all LNG production and Iraq, Kuwait, and Saudi Arabia have announced output cuts, while Hormuz traffic — representing 25% of global crude trade — is nearly paralyzed. In the most optimistic scenario, a brief conflict would generate a loss of 350 million barrels and prices would fall quickly; in adverse scenarios, global inflationary impact would be structural and prolonged. Iran ruled out any ceasefire on Tuesday while Netanyahu stated they 'are not yet finished.'</div>
+    <a href="https://www.df.cl/internacional/el-impacto-sobre-petroleo-bajo-tres-escenarios-de-guerra-en-el-medio" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Aristegui Noticias</span>
+    <span class="story-tag">México</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Alza del petróleo pone a Hacienda de México entre la espada y la pared: ingresos extra de 400,000 mdp versus presión inflacionaria</div>
+    <div class="story-body">El IMCO calcula que con el precio de la mezcla mexicana cerca de 90 dólares por barril — nivel actual — el gobierno recibiría más de 400,000 millones de pesos en ingresos adicionales, a razón de 11,600 millones por cada dólar sobre lo presupuestado. El problema es que México es importador neto de combustibles, por lo que el alza se traslada directamente a precios internos; subsidiar el IEPS para contener las gasolinas consumiría buena parte de ese excedente. 'Si vemos inflación por encima del 4%, es un problema', advirtió el director de Desarrollo Económico del IMCO, Óscar Ocampo.</div>
+    <a href="https://aristeguinoticias.com/1003/dinero-y-economia/alza-en-precios-del-petroleo-tendria-impacto-fiscal-y-presiones-inflacionarias-en-mexico-imco/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Oil surge puts Mexico's Finance Ministry between a rock and a hard place: 400 billion pesos in extra revenue versus inflationary pressure</div>
+    <div class="story-body">IMCO calculates that with the Mexican export blend near $90 per barrel — its current level — the government would receive more than 400 billion pesos in additional revenue, at a rate of 11.6 billion pesos for every dollar above the budgeted price. The catch: Mexico is a net fuel importer, meaning the price increase passes directly to domestic consumers; subsidizing fuel taxes to contain gasoline prices would absorb much of that windfall. 'If we see inflation above 4%, that's a problem,' warned IMCO Economic Development Director Óscar Ocampo.</div>
+    <a href="https://aristeguinoticias.com/1003/dinero-y-economia/alza-en-precios-del-petroleo-tendria-impacto-fiscal-y-presiones-inflacionarias-en-mexico-imco/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Diario Financiero</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Hacienda de Chile advierte: bajar impuesto corporativo al 23% beneficia principalmente al 1% de mayores ingresos</div>
+    <div class="story-body">Un informe del Ministerio de Hacienda saliente, elaborado con la Universidad de Santiago, calcula que la reintegración total del sistema tributario costaría al fisco unos 810 millones de dólares anuales, y que el 51.3% del beneficio recaería en apenas 11,847 contribuyentes del tramo superior, con un beneficio promedio de 12.2 millones de pesos por persona. El reporte llega justo cuando el nuevo ministro Jorge Quiroz — que asume este miércoles — debe ingresar al Congreso antes del 31 de marzo una reforma que contempla bajar la tasa corporativa del 27% al 23%. El timing del informe, redactado por el gobierno saliente, difícilmente es accidental.</div>
+    <a href="https://www.df.cl/economia-y-politica/df-tax/mensaje-para-quiroz-informe-de-hacienda-calcula-que-reducir-el-impuesto" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Chile's Finance Ministry warns: cutting corporate tax to 23% primarily benefits the top 1% of earners</div>
+    <div class="story-body">A report from the outgoing Finance Ministry, produced with the University of Santiago, calculates that full tax system reintegration would cost the treasury approximately $810 million annually, with 51.3% of the benefit flowing to just 11,847 top-bracket taxpayers, averaging 12.2 million pesos per person. The report lands just as incoming Finance Minister Jorge Quiroz — taking office Wednesday — must submit to Congress by March 31 a reform that includes cutting the corporate rate from 27% to 23%. The timing of the report, drafted by the outgoing government, is hardly accidental.</div>
+    <a href="https://www.df.cl/economia-y-politica/df-tax/mensaje-para-quiroz-informe-de-hacienda-calcula-que-reducir-el-impuesto" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Cointelegraph ES</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">ETF de Bitcoin suman 167 millones de dólares en un día; fondos de altcoins siguen sangrando</div>
+    <div class="story-body">Los ETF de Bitcoin al contado en EE.UU. registraron entradas netas de 167 millones de dólares el lunes — rompiendo dos sesiones de salidas — mientras BTC tocaba los 70,000 dólares. En contraste, los ETF de Ether acumulan 225 millones en salidas en tres días, y los de XRP y Solana también registraron flujos negativos pese a que los tokens subyacentes subieron entre 3% y 5%. Los analistas de CryptoQuant advierten que el ratio de beneficios entre holders de largo y corto plazo sugiere tensión creciente, pero sin señales de capitulación definitiva aún.</div>
+    <a href="https://cointelegraph.es/news/bitcoin-etf-167-million-inflows-altcoin-funds-bleed" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Bitcoin ETFs post $167 million in daily inflows; altcoin funds continue to bleed</div>
+    <div class="story-body">U.S. spot Bitcoin ETFs recorded net inflows of $167 million on Monday — snapping a two-session outflow streak — as BTC touched $70,000. In contrast, Ether ETFs have accumulated $225 million in outflows over three days, with XRP and Solana funds also registering negative flows despite the underlying tokens rising 3%-5%. CryptoQuant analysts warn that the ratio of long- to short-term holder profit taking suggests growing market stress, but no definitive capitulation signal yet.</div>
+    <a href="https://cointelegraph.es/news/bitcoin-etf-167-million-inflows-altcoin-funds-bleed" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Cointelegraph ES</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">AirTrunk de Blackstone obtiene préstamo récord de 1,240 millones de dólares para centro de datos de IA en Tokio</div>
+    <div class="story-body">Un consorcio de 12 bancos liderado por SMBC, MUFG, Crédit Agricole y Société Générale financió la mayor operación de este tipo en Japón para expandir el campus TOK1 de AirTrunk hasta más de 300 megavatios de capacidad. La inversión total de Blackstone y CPP Investments en infraestructura de datos en Japón supera ya los 8,000 millones de dólares, con cuatro campus planificados que ofrecerán 530 MW combinados. La operación refleja la carrera global por infraestructura de IA en un momento en que la demanda de cómputo supera con creces la oferta disponible.</div>
+    <a href="https://cointelegraph.es/news/blackstone-airtrunk-1-24b-loan-tokyo-ai-data-center-expansion" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Blackstone's AirTrunk secures record $1.24 billion loan for AI data center in Tokyo</div>
+    <div class="story-body">A 12-bank consortium led by SMBC, MUFG, Crédit Agricole, and Société Générale financed the largest such deal in Japanese history to expand AirTrunk's TOK1 campus to over 300 megawatts of capacity. Blackstone and CPP Investments' total data infrastructure investment in Japan now exceeds $8 billion, with four planned campuses delivering a combined 530 MW. The deal reflects the global race for AI infrastructure at a moment when compute demand far outpaces available supply.</div>
+    <a href="https://cointelegraph.es/news/blackstone-airtrunk-1-24b-loan-tokyo-ai-data-center-expansion" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">La Voz de Galicia</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Exministros españoles en A Coruña: 'Las consecuencias del petróleo se verán en el supermercado y en los bancos centrales'</div>
+    <div class="story-body">Los exministros García-Margallo y Miguel Sebastián coincidieron en que los mercados no encontrarán estabilidad hasta que se conozca el objetivo real de Trump en Irán, cuyas declaraciones contradictorias — amenaza de golpear 'veinte veces más fuerte' seguida de apertura al diálogo en pocas horas — generan una montaña rusa en las bolsas europeas. Sebastián precisó que España está 'muy lejos' del 11% de inflación alcanzado durante la crisis de Ucrania, estimando un IPC de poco más del 3% en marzo, pero advirtió que el encarecimiento del petróleo terminará trasladándose a precios de consumo y condicionará las decisiones de los bancos centrales.</div>
+    <a href="https://www.lavozdegalicia.es/noticia/coruna/2026/03/10/exministros-margallo-sebastian-coruna-subida-petroleo-va-ver-precios-supermercado/00031773149878432341553.htm" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Former Spanish ministers in A Coruña: 'The consequences of higher oil will show up in supermarkets and central banks'</div>
+    <div class="story-body">Former ministers García-Margallo and Miguel Sebastián agreed that markets will find no stability until Trump's actual objective in Iran becomes clear, with his contradictory statements — threatening to strike 'twenty times harder' followed within hours by openness to dialogue — driving a rollercoaster in European equities. Sebastián noted Spain is 'far from' the 11% inflation reached during the Ukraine crisis, estimating a CPI slightly above 3% in March, but warned that rising oil costs will ultimately feed through to consumer prices and shape central bank decisions.</div>
+    <a href="https://www.lavozdegalicia.es/noticia/coruna/2026/03/10/exministros-margallo-sebastian-coruna-subida-petroleo-va-ver-precios-supermercado/00031773149878432341553.htm" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="section-title"
+         data-es="Tipo de Cambio"
+         data-en="Exchange Rates">Tipo de Cambio</div>
+    <table class="currency-table">
+      <thead>
+        <tr>
+          <th data-es="Par"  data-en="Pair">Par</th>
+          <th data-es="Tipo" data-en="Rate">Tipo</th>
+          <th style="text-align:right;">1D</th>
+          <th style="text-align:right;">1W</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.5870</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.49%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.03%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.3971</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.71%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.36%</td>
+      </tr>
+      <tr>
+        <td class="pair">CAD / MXN</td>
+        <td>12.9788</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.21%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.65%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>120.7348</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.15%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.50%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="lang-es">
+      <div class="quote-text">The world is not going to run out of oil. But it may run out of cheap oil, and that is a very different thing.</div>
+      <div class="quote-attr">Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991</div>
+    </div>
+    <div class="lang-en">
+      <div class="quote-text">The world is not going to run out of oil. But it may run out of cheap oil, and that is a very different thing.</div>
+      <div class="quote-attr">Daniel Yergin, The Prize: The Epic Quest for Oil, Money & Power, 1991</div>
+    </div>
+  </div>
+
+  
+
+  
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by lang-es">por Bea Rish, Director of Things That Are Technically Not a Crisis</span>
+    <span class="footer-by lang-en">by Bea Rish, Director of Things That Are Technically Not a Crisis</span>
+  </div>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // swap static labels
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = lang === 'es' ? el.dataset.es : el.dataset.en;
+    });
+    localStorage.setItem('nlLang', lang);
+  }
+  (function(){
+    var saved = localStorage.getItem('nlLang') || 'es';
+    setLang(saved);
+  })();
+</script>
+
+</body>
+</html>

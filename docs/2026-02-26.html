@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell &mdash; February 26, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  /* Header */
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* Ticker */
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  /* Weather */
+  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
+  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
+  .weather-temp { font-size: 11px; color: #ccc; }
+  .weather-humidity { font-size: 11px; color: #ccc; }
+  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+
+  /* Editor note */
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* Divider */
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  /* Sentiment gauge */
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  /* Stories */
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  /* Currency table */
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+  .up   { color: #4a9e6a; font-size: 11px; }
+  .down { color: #b84a3a; font-size: 11px; }
+  .flat { color: #aab4bc; font-size: 11px; }
+
+  /* Quote */
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  /* Week in review */
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  /* Footer */
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  /* ── Mobile ── */
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .tick-label { font-size: 7px; }
+    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
+    .weather-desc { margin-left: 0; width: 100%; }
+    .editor-note { padding: 20px 20px; }
+    .editor-note p { font-size: 14px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .story-headline { font-size: 17px; }
+    .currency { padding: 20px 20px; }
+    .currency-table { font-size: 11px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>THURSDAY, FEBRUARY 26, 2026</span>
+      <span>ISSUE NO. 4</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">USD/MXN</span>
+        <span class="tick-val">17.18</span>
+        <span class="tick-up">▲ 0.0%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">S&P 500</span>
+        <span class="tick-val">6,907</span>
+        <span class="tick-val">6,905</span>
+        <span class="tick-up">▲ 0.2%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">CETES 28D</span>
+        <span class="tick-val">6.84%</span>
+        <span class="tick-up">▲ 0.00pp</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">IPC BMV</span>
+        <span class="tick-val">71,171.93</span>
+        <span class="tick-up">▲ 0.0%</span>
+        <span class="tick-val">71,232.25</span>
+        <span class="tick-up">▲ 0.1%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather">
+    <span class="weather-city">Mexico City</span>
+    <span class="weather-temp">25°C / 7°C</span>
+    <span class="weather-humidity">Humidity 16%</span>
+    <span class="weather-desc">Clear skies</span>
+  </div>
+
+  <div class="editor-note">
+    <p>Fellow Humans, the dominant story this morning is not the Nasdaq bounce or Nvidia's earnings — it's Saudi Arabia quietly ramping oil output in anticipation of a US strike on Iran, which tells you everything about where geopolitical risk is actually priced. Markets are choosing to look at the cheerful side of the ledger today, but the Middle East is doing its best to remind everyone that complacency has a cost.</p>
+    <p>Fellow Humans, prediction markets are busy establishing their first case law this morning, with Kalshi fining an MrBeast editor for insider-trading YouTube outcomes while a separate $100,000 bet on a government alien disclosure sits unresolved and faintly terrifying. Meanwhile, the actual geopolitical news — Ukraine peace sequencing, Modi at the Knesset, cartels designated terrorists after El Mencho's death — is moving fast enough that the aliens story almost makes sense by comparison.</p>
+    <div class="editor-sig">&mdash; Buck N. Yields, Assistant to the Regional Hegemon</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label">Market Sentiment</span>
+      <span class="sentiment-reading cautious">Cautious</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker cautious" style="left:42%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span>Risk-Off</span><span>Neutral</span><span>Risk-On</span>
+    </div>
+    <div class="sentiment-context">Equity markets rebounding from AI panic while Saudi Arabia pre-positions for a potential Iran conflict and geopolitical risk premiums quietly build in oil.</div>
+    <div class="sentiment-context">Geopolitical uncertainty across Ukraine, the Middle East, and US-Mexico cartel dynamics keeps markets in a watchful holding pattern, with no decisive risk catalyst in either direction.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">OilPrice.com</span>
+    <span class="story-tag">Energy</span>
+  </div>
+  <div class="story-headline">Saudi Arabia Pre-Positions Oil Supply for Potential US Strike on Iran</div>
+  <div class="story-body">Saudi crude shipments surged to 7.3 million barrels per day in the first 24 days of February 2026 — the highest since April 2023 — as Riyadh activates a contingency plan to offset supply disruptions if the US strikes Iran. Trump has publicly floated a 'limited military strike' to force Tehran into a new nuclear deal, while Iran has warned of immediate retaliation and potential closure of the Strait of Hormuz, which handles 20-30% of global seaborne oil. Saudi spare capacity stands at roughly 2.4 million bpd, a buffer that would be tested severely in a full disruption scenario.</div>
+  <a href="https://oilprice.com/Latest-Energy-News/World-News/Saudi-Arabia-Boosting-Oil-Output-In-Anticipation-of-US-Attacks-On-Iran.html" class="read-more">Read more &rarr;</a>
+    <span class="story-source">Yahoo Entertainment / Reuters</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="story-headline">Zelenskiy and Trump agree Ukraine talks should escalate to leaders' summit in March</div>
+  <div class="story-body">Following a phone call that included Steve Witkoff and Jared Kushner, Zelenskiy confirmed that trilateral US-Ukraine-Russia talks are set for early March, with the explicit goal of advancing to a presidential-level meeting. Ukraine is simultaneously negotiating a 'prosperity package' covering reconstruction financing, with Kyiv targeting $800 billion in public and private funds over a decade. The territorial question remains the core impasse, with Moscow and Kyiv still far apart.</div>
+  <a href="https://www.yahoo.com/news/articles/ukrainian-negotiators-meet-us-team-103259401.html" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">New York Post</span>
+    <span class="story-tag">Markets</span>
+  </div>
+  <div class="story-headline">Nasdaq Rebounds 250 Points as Markets Shrug Off AI Unemployment Doomsday Report</div>
+  <div class="story-body">Tech stocks clawed back losses Wednesday after a Citrini Research essay warning of AI-driven unemployment above 10% and a 38% S&P 500 plunge by June 2028 rattled markets earlier in the week, sending the Dow down over 800 points on Monday. White House CEA acting chair Pierre Yared dismissed the paper as 'science fiction' that 'violates basic accounting in economics,' while Citadel Securities argued historical waves of technological change have not rendered labor obsolete. Nvidia reported earnings after the bell, providing the sector's next real test of sentiment.</div>
+  <a href="https://nypost.com/2026/02/25/business/tech-stocks-shake-off-panic-over-ai-doomsday-scenario-where-unemployment-hits-10/" class="read-more">Read more &rarr;</a>
+    <span class="story-source">WND / The Daily Signal</span>
+    <span class="story-tag">Mexico</span>
+  </div>
+  <div class="story-headline">Rep. Chip Roy pushes bill to permanently codify cartel terrorist designations after El Mencho killing</div>
+  <div class="story-body">Following a US-led operation that killed Jalisco New Generation Cartel leader El Mencho, Rep. Chip Roy is pressing House colleagues to pass the Drug Cartel Terrorist Designation Act, which would enshrine Trump's executive order into statute. Violence in Puerto Vallarta has killed over 70 people since the operation, and the US Embassy has issued shelter-in-place guidance for Americans in parts of Mexico. Roy's argument: executive orders can be reversed by the next administration; legislation cannot.</div>
+  <a href="https://www.wnd.com/2026/02/chip-roy-pushes-terrorist-designation-mexican-drug-cartels/" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">DW (English)</span>
+    <span class="story-tag">Politics</span>
+  </div>
+  <div class="story-headline">Cuban Coast Guard Kills Four on US-Flagged Speedboat, Escalating US-Cuba Tensions</div>
+  <div class="story-body">Cuba's Interior Ministry confirmed its coast guard shot dead four people and wounded six aboard a Florida-registered speedboat one nautical mile from its northern coast, claiming the vessel fired first. Havana subsequently alleged the occupants were armed Cuban-Americans attempting to 'infiltrate the island and unleash terrorism.' Secretary of State Marco Rubio, traveling in the Caribbean, said the US would not rely on Cuba's account and would 'respond accordingly' once facts are established — a geopolitical flashpoint arriving at a moment when the US is already strangling Cuba's fuel supply.</div>
+  <a href="https://www.dw.com/en/cuban-coast-guard-shoots-dead-four-on-us-flagged-speedboat/a-76126495" class="read-more">Read more &rarr;</a>
+    <span class="story-source">Fortune</span>
+    <span class="story-tag">Politics</span>
+  </div>
+  <div class="story-headline">Larry Summers to resign from Harvard as Epstein document review continues</div>
+  <div class="story-body">Former Treasury Secretary Larry Summers will retire from Harvard at the end of the academic year, remaining on leave until then, after his name appeared hundreds of times in Justice Department Epstein file releases. Emails revealed Summers consulting Epstein on a personal relationship and using a racial slur in a separate exchange; Summers had previously called his association with Epstein 'a major error in judgement.' The resignation follows Nobel laureate Richard Axel's departure from Columbia, signaling that the Epstein document releases are still extracting institutional casualties.</div>
+  <a href="https://fortune.com/2026/02/25/larry-summers-to-resign-from-harvard-with-epstein-ties-under-review/" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">DW (English)</span>
+    <span class="story-tag">Politics</span>
+  </div>
+  <div class="story-headline">US Greenlights Resale of Venezuelan Oil to Cuba's Private Sector</div>
+  <div class="story-body">The US Treasury's OFAC announced it would adopt a favorable licensing policy for resale of Venezuelan-origin oil to Cuba, provided transactions benefit the Cuban private sector rather than the government, military, or intelligence services. The partial easing follows a near-total fuel blockade that has left Cuban hospitals cutting services and streets piling up with uncollected rubbish. The carve-out is narrow and the humanitarian situation on the island remains acute, with Canada separately pledging CAD $8 million in aid via the UN.</div>
+  <a href="https://www.dw.com/en/us-eases-restrictions-on-venezuelan-fuel-for-cuba/a-76126101" class="read-more">Read more &rarr;</a>
+    <span class="story-source">Financial Post / CBS News</span>
+    <span class="story-tag">Markets</span>
+  </div>
+  <div class="story-headline">Kalshi fines MrBeast editor for insider trading, opens enforcement precedent for prediction markets</div>
+  <div class="story-body">Kalshi suspended editor Artem Kaptur for two years and fined him approximately $20,000 after he netted around $5,000 betting on MrBeast video outcomes using non-public information obtained through his job. In a separate action, former California gubernatorial candidate Kyle Langford received a five-year ban for betting $200 on his own candidacy. Kalshi has reported both cases to the CFTC and disclosed it has opened 200 insider trading investigations over the past year — a number that underscores how rapidly enforcement is scaling alongside the industry.</div>
+  <a href="https://financialpost.com/news/retail-marketing/e-commerce-solutions/kalshi-fines-mrbeast-employee-insider-trading" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">CryptoSlate</span>
+    <span class="story-tag">Markets</span>
+  </div>
+  <div class="story-headline">US Strategic Bitcoin Reserve May Be 30% Smaller Than Advertised Due to Bitfinex Litigation</div>
+  <div class="story-body">Of the roughly 328,372 BTC the US government controls — worth approximately $21.6 billion — some 94,643 BTC is tied to the 2016 Bitfinex hack and subject to potential court-ordered restitution, which would mechanically shrink the reserve to around 234,000 BTC. Prosecutors have already asked a federal court to approve returning the assets to Bitfinex as in-kind restitution, and Trump's executive order explicitly carves out court-ordered dispositions. The distinction matters: a restitution transfer is not a sovereign sale, but markets counting every government-held coin as permanently strategic are building on contested ground.</div>
+  <a href="https://cryptoslate.com/?p=521045" class="read-more">Read more &rarr;</a>
+    <span class="story-source">The Atlantic</span>
+    <span class="story-tag">Markets</span>
+  </div>
+  <div class="story-headline">Nearly $200,000 bet on US alien disclosure triggers insider trading speculation on Kalshi</div>
+  <div class="story-body">A single trader placed two bets totalling close to $200,000 on Kalshi Monday night, wagering that the Trump administration will confirm alien life or technology exists by end of December — briefly pushing implied odds above one-in-three. The trades arrived days after any public alien-related news had subsided, with no congressional hearings or credible leaks circulating online at the time. Kalshi's own enforcement team is actively investigating insider trading across its platform, making this particular wager an uncomfortable data point.</div>
+  <a href="https://www.theatlantic.com/technology/2026/02/kalshi-aliens-insider-trading/686144/" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Newser / New York Times</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="story-headline">Op-Ed: China Deploys AI in Factories While America Debates It in Conference Rooms</div>
+  <div class="story-body">Former White House economist Jonas Nahm argues in the NYT that the US-China AI gap is a manufacturing execution problem, not just an R&D competition: Tesla's Shanghai factory dramatically outperforms its California counterpart on output per worker, and China has over 30,000 'smart factories' already operational. Xiaomi's Beijing plant produces a car every 76 seconds using 700 robots and AI-driven defect detection, while US manufacturers — especially smaller ones — are stuck with outdated equipment and manual data entry. Nahm's prescription is blunt: Washington must shift focus from trade flows to factory-floor deployment.</div>
+  <a href="https://www.newser.com/story/384305/op-ed-we-keep-inventing-ai-but-china-is-actually-using-it.html" class="read-more">Read more &rarr;</a>
+    <span class="story-source">Al Jazeera English</span>
+    <span class="story-tag">Politics</span>
+  </div>
+  <div class="story-headline">Modi addresses Knesset, declares India stands with Israel 'with full conviction'</div>
+  <div class="story-body">In the first address by an Indian leader to Israel's parliament, Prime Minister Modi received a standing ovation and affirmed that India 'stands with Israel firmly' while condemning the October 7 attacks as 'barbaric.' The visit deepens a defence-heavy bilateral relationship: India spent $20.5 billion on Israeli weapons between 2020 and 2024, and the two countries signed a bilateral investment treaty in September 2025. Modi's alignment carries weight given that Indian public opinion has grown increasingly critical of Israel's Gaza campaign, which has killed at least 72,000 people.</div>
+  <a href="https://www.aljazeera.com/news/2026/2/25/indias-modi-addresses-israeli-parliament-on-first-day-of-visit" class="read-more">Read more &rarr;</a>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">New Zealand Herald</span>
+    <span class="story-tag">Rates</span>
+  </div>
+  <div class="story-headline">BNZ Reverses Mortgage Rate Hike, Cuts 3-Year Fixed Rate Back Below 5%</div>
+  <div class="story-body">Bank of New Zealand reversed its December rate hike cycle, cutting three, four, and five-year fixed home loan rates by 10-40 basis points effective Wednesday, bringing its three-year rate to 4.99%. The move follows a more dovish-than-expected Reserve Bank of New Zealand OCR decision, which signaled a later and shallower tightening path than markets had priced, causing wholesale rates to ease. Westpac made comparable cuts last week; the back-and-forth on longer-term mortgage pricing reflects ongoing market uncertainty about the terminal rate path.</div>
+  <a href="https://www.nzherald.co.nz/business/mortgage-rate-u-turn-bnz-cuts-long-term-rates-3yr-loan-dips-back-under-5/P37Z4NGUPJDSTJR7BLG3FGWW7U/" class="read-more">Read more &rarr;</a>
+    <span class="story-source">The Punch</span>
+    <span class="story-tag">Trade</span>
+  </div>
+  <div class="story-headline">Tinubu extends Nigeria's raw shea nut export ban by one year through February 2027</div>
+  <div class="story-body">President Tinubu approved a one-year extension of the ban on raw shea nut exports, channelling supply through the Nigerian Commodity Exchange framework and withdrawing all existing waivers. The policy rationale is value-addition arbitrage: processed shea butter fetches 10 to 20 times the price of raw nuts in international markets. The Federal Ministry of Finance has been directed to open a dedicated NESS Support Window to finance domestic processing capacity.</div>
+  <a href="https://punchng.com/tinubu-extends-raw-shea-nut-export-ban-by-one-year/" class="read-more">Read more &rarr;</a>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="section-title">Currency Table</div>
+    <table class="currency-table">
+      <thead>
+        <tr>
+          <th>Pair</th><th>Rate</th><th style="text-align:right;">Day</th><th style="text-align:right;">Week</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.1850</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.04%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.42%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.2827</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.27%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.14%</td>
+      </tr>
+      <tr>
+        <td class="pair">CAD / MXN</td>
+        <td>12.5730</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.28%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.27%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>117.5609</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.58%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.38%</td>
+        <td>17.1882</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.05%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.40%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.2871</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.30%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.12%</td>
+      </tr>
+      <tr>
+        <td class="pair">CAD / MXN</td>
+        <td>12.5643</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.21%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.34%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>117.5828</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.56%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.37%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="quote-text">The market can remain irrational longer than you can remain solvent.</div>
+    <div class="quote-attr">John Maynard Keynes, A Tract on Monetary Reform, 1923</div>
+    <div class="quote-text">The markets are not an invention of Wall Street. They are a result of human nature — the desire to truck, barter, and exchange.</div>
+    <div class="quote-attr">Milton Friedman, Free to Choose, 1980</div>
+  </div>
+
+  
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by">by Adrian</span>
+  </div>
+
+</div>
+</body>
+</html>

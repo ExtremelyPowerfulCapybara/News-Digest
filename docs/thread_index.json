@@ -1,0 +1,146 @@
+{
+  "Banxico: tasa": [
+    {
+      "date": "2026-04-03",
+      "headline": "Hacienda proyecta PIB de 2.4% en 2027 y peso en 18.60 por dólar, pese a revisión del T-MEC"
+    }
+  ],
+  "Energía: Ormuz": [
+    {
+      "date": "2026-04-04",
+      "headline": "Irán cobra peajes y exige códigos secretos en Ormuz; buques de EE.UU. e Israel son rechazados"
+    }
+  ],
+  "Argentina: FMI": [
+    {
+      "date": "2026-04-04",
+      "headline": "FMI inquieto por reservas negativas de Argentina: reunión del directorio se pospone hasta después del 18 de abril"
+    }
+  ],
+  "EE.UU.: inmigración": [
+    {
+      "date": "2026-04-04",
+      "headline": "Nueva ley en EE.UU. excluye a migrantes con green card de préstamos SBA para pequeñas empresas"
+    },
+    {
+      "date": "2026-04-06",
+      "headline": "Brookings: inmigración neta cayó 62% o más en Nueva York, Los Ángeles y Chicago en el último año"
+    },
+    {
+      "date": "2026-04-07",
+      "headline": "Sobreviviente de la ESMA con pasaporte español fue retirada de un vuelo sin explicación bajo la política migratoria de Trump"
+    },
+    {
+      "date": "2026-09-02",
+      "headline": "Sobreviviente de la ESMA con pasaporte español fue retirada de un vuelo sin explicación bajo la política migratoria de Trump"
+    }
+  ],
+  "Tasas: bonos globales": [
+    {
+      "date": "2026-09-04",
+      "headline": "Era de tasas altas: rendimientos globales en máximos de décadas amenazan finanzas públicas y empresas con deuda flotante"
+    }
+  ],
+  "Comercio: China-EE.UU.": [
+    {
+      "date": "2026-09-04",
+      "headline": "China rechaza declaración del G20 sobre desequilibrios comerciales y acusa a socios de 'promover proteccionismo'"
+    }
+  ],
+  "Tasas: Fed": [
+    {
+      "date": "2026-09-07",
+      "headline": "Venta masiva de bonos globales aviva el fantasma de inflación estructural persistente"
+    },
+    {
+      "date": "2026-09-08",
+      "headline": "Bitcoin cae por debajo de $80,000 tras dato de empleo que reaviva apuestas de alza de la Fed"
+    },
+    {
+      "date": "2026-09-17",
+      "headline": "Rendimientos del bono a 10 años alcanzan máximos desde 2007 ante inminente decisión de la Fed"
+    },
+    {
+      "date": "2026-09-18",
+      "headline": "Fed sube tasas por primera vez en tres años; Warsh desafía el mandato político de Trump"
+    },
+    {
+      "date": "2026-09-21",
+      "headline": "Warsh habla de 'una dosis de acomodación' y Wall Street teme que las alzas no hayan terminado"
+    },
+    {
+      "date": "2026-09-22",
+      "headline": "S&P 500 sube 1.49% y Nasdaq marca récord mientras el petróleo y los rendimientos retroceden"
+    },
+    {
+      "date": "2026-09-23",
+      "headline": "Rendimientos del Tesoro se mantienen cerca del 5% mientras la Fed advierte sobre inflación impulsada por IA"
+    },
+    {
+      "date": "2026-09-24",
+      "headline": "Fed sube tasas y Collins advierte: la inflación seguirá 'notablemente' por encima del 2%"
+    },
+    {
+      "date": "2026-09-25",
+      "headline": "Fed de Nueva York ve 'razonable' otro alza de tasas antes de fin de año; bono a 10 años toca máximo de 17 años"
+    },
+    {
+      "date": "2026-09-28",
+      "headline": "El rendimiento del Treasury a 10 años alcanza máximos de 19 años: qué lo está impulsando"
+    },
+    {
+      "date": "2026-09-29",
+      "headline": "Bonos del Tesoro de EE.UU. sufren ajuste severo: tasa a 10 años sube 16% en una semana"
+    },
+    {
+      "date": "2026-09-30",
+      "headline": "Rendimientos del Tesoro a 30 años escalan a máximos de 2002 con mercado descontando nueva alza de la Fed en octubre"
+    },
+    {
+      "date": "2026-10-01",
+      "headline": "Empleo privado en EE.UU. rebota a 90,000 en septiembre, por encima de estimados"
+    },
+    {
+      "date": "2026-10-05",
+      "headline": "Las acciones de la Bolsa de Valores Nacional de India caen por debajo del precio de salida en un debut decepcionante"
+    },
+    {
+      "date": "2026-10-06",
+      "headline": "Rendimientos del Tesoro sobre el 5%: ¿apocalipsis fiscal o señal de economía resiliente?"
+    },
+    {
+      "date": "2026-10-07",
+      "headline": "Préstamos de auto a 84 meses baten récord: la señal de estrés que el consumidor estadounidense no puede ocultar"
+    },
+    {
+      "date": "2026-10-08",
+      "headline": "S&P 500 supera 7,800 puntos mientras Fed publica minutas de su primer alza desde 2023"
+    },
+    {
+      "date": "2026-10-09",
+      "headline": "FMI alerta: 2027 será un año de deuda récord, inflación persistente y riesgos de IA"
+    },
+    {
+      "date": "2026-10-12",
+      "headline": "Bonos basura 'parpadean en amarillo': spreads en máximos de abril mientras el Treasury a 10 años toca niveles de 2002"
+    },
+    {
+      "date": "2026-10-13",
+      "headline": "México acumula 20 billones en deuda; Banxico enfrentaría presión para recortar tasas pese a falta de consolidación fiscal"
+    },
+    {
+      "date": "2026-10-14",
+      "headline": "FMI advierte sobre colapso 'desordenado' de bonos soberanos ante deuda récord e inflación persistente"
+    },
+    {
+      "date": "2026-10-15",
+      "headline": "IPC de septiembre sube al 3,7%: la inflación energética presiona a la Fed a seguir subiendo tipos"
+    }
+  ],
+  "México: crecimiento": [
+    {
+      "date": "2026-09-17",
+      "headline": "Hacienda proyecta 1.8% de crecimiento para México en 2026, pero el motor manufacturero podría estar cambiando de manos"
+    }
+  ]
+}

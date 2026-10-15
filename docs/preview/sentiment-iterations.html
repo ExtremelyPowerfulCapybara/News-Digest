@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentiment Timeline · Iterations</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #e8ecef;
+    font-family: Arial, sans-serif;
+    padding: 40px 32px;
+  }
+
+  .page-title {
+    font-size: 9px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: #8a9aa4;
+    text-align: center; margin-bottom: 36px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: #f0f3f5;
+    border: 1px solid #cdd4d9;
+    padding: 28px 32px;
+  }
+
+  .option-tag {
+    font-size: 8px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #fff;
+    background: #3a4a54;
+    display: inline-block;
+    padding: 3px 8px;
+    margin-bottom: 18px;
+  }
+
+  .chart-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: #aab4bc;
+    margin-bottom: 16px;
+  }
+
+  .chart-wrap {
+    position: relative;
+    height: 160px;
+  }
+</style>
+</head>
+<body>
+
+<p class="page-title">Sentiment Timeline · Line Chart Iterations</p>
+
+<div class="grid">
+
+  <!-- 1: Clean minimal -->
+  <div class="card">
+    <div class="option-tag">A · Minimal</div>
+    <p class="chart-label">Sentiment Timeline</p>
+    <div class="chart-wrap"><canvas id="c1"></canvas></div>
+  </div>
+
+  <!-- 2: Filled gradient area -->
+  <div class="card">
+    <div class="option-tag">B · Gradient Fill</div>
+    <p class="chart-label">Sentiment Timeline</p>
+    <div class="chart-wrap"><canvas id="c2"></canvas></div>
+  </div>
+
+  <!-- 3: Color-coded points, bold line -->
+  <div class="card">
+    <div class="option-tag">C · Color-Coded Points</div>
+    <p class="chart-label">Sentiment Timeline</p>
+    <div class="chart-wrap"><canvas id="c3"></canvas></div>
+  </div>
+
+  <!-- 4: Sentiment zones background -->
+  <div class="card">
+    <div class="option-tag">D · Sentiment Zones</div>
+    <p class="chart-label">Sentiment Timeline</p>
+    <div class="chart-wrap"><canvas id="c4"></canvas></div>
+  </div>
+
+  <!-- 5: Stepped line -->
+  <div class="card">
+    <div class="option-tag">E · Stepped</div>
+    <p class="chart-label">Sentiment Timeline</p>
+    <div class="chart-wrap"><canvas id="c5"></canvas></div>
+  </div>
+
+  <!-- 6: Filled + color-coded points -->
+  <div class="card">
+    <div class="option-tag">F · Fill + Color Points</div>
+    <p class="chart-label">Sentiment Timeline</p>
+    <div class="chart-wrap"><canvas id="c6"></canvas></div>
+  </div>
+
+</div>
+
+<script>
+  const dates    = ["Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 31","Apr 1","Apr 2","Apr 3","Apr 4","Apr 7","Apr 8","Apr 9"];
+  const position = [68, 71, 66, 69, 72, 65, 58, 42, 35, 29, 38, 44, 51];
+
+  const colors = position.map(v =>
+    v >= 60 ? "#6abf7b" : v <= 40 ? "#d4695a" : "#e8a030"
+  );
+
+  const axisBase = {
+    x: {
+      ticks: {
+        font: { family: "Arial", size: 8 },
+        color: "#aab4bc",
+        maxRotation: 45,
+        autoSkip: true,
+        maxTicksLimit: 8,
+      },
+      grid: { display: false },
+      border: { display: false },
+    },
+    y: {
+      min: 0, max: 100,
+      ticks: {
+        font: { family: "Arial", size: 8 },
+        color: "#aab4bc",
+        maxTicksLimit: 4,
+        callback: v => v,
+      },
+      grid: { color: "#dde3e8" },
+      border: { display: false },
+    }
+  };
+
+  const noPlugins = {
+    legend: { display: false },
+    tooltip: {
+      backgroundColor: "#3a4a54",
+      titleFont: { family: "Arial", size: 9 },
+      bodyFont: { family: "Arial", size: 9 },
+      callbacks: {
+        label: ctx => {
+          const v = ctx.raw;
+          const l = v >= 60 ? "Risk-On" : v <= 40 ? "Risk-Off" : "Cautious";
+          return ` ${v} · ${l}`;
+        }
+      }
+    }
+  };
+
+  // A: Minimal — thin dark line, tiny points, no fill
+  new Chart(document.getElementById("c1"), {
+    type: "line",
+    data: {
+      labels: dates,
+      datasets: [{
+        data: position,
+        borderColor: "#3a4a54",
+        borderWidth: 1.5,
+        pointBackgroundColor: "#3a4a54",
+        pointBorderColor: "#3a4a54",
+        pointRadius: 3,
+        pointHoverRadius: 5,
+        fill: false,
+        tension: 0.3,
+      }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: noPlugins, scales: axisBase }
+  });
+
+  // B: Gradient fill
+  const ctx2 = document.getElementById("c2").getContext("2d");
+  const grad2 = ctx2.createLinearGradient(0, 0, 0, 160);
+  grad2.addColorStop(0, "rgba(58,74,84,0.18)");
+  grad2.addColorStop(1, "rgba(58,74,84,0)");
+  new Chart(ctx2, {
+    type: "line",
+    data: {
+      labels: dates,
+      datasets: [{
+        data: position,
+        borderColor: "#3a4a54",
+        borderWidth: 1.5,
+        pointBackgroundColor: "#3a4a54",
+        pointBorderColor: "#f0f3f5",
+        pointBorderWidth: 2,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        fill: true,
+        backgroundColor: grad2,
+        tension: 0.4,
+      }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: noPlugins, scales: axisBase }
+  });
+
+  // C: Color-coded points, bold line
+  new Chart(document.getElementById("c3"), {
+    type: "line",
+    data: {
+      labels: dates,
+      datasets: [{
+        data: position,
+        borderColor: "#3a4a54",
+        borderWidth: 2,
+        pointBackgroundColor: colors,
+        pointBorderColor: colors,
+        pointRadius: 6,
+        pointHoverRadius: 8,
+        fill: false,
+        tension: 0.3,
+      }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: noPlugins, scales: axisBase }
+  });
+
+  // D: Sentiment zone bands
+  const zoneBg = {
+    id: "zoneBg",
+    beforeDraw(chart) {
+      const { ctx, chartArea: { top, bottom, left, right }, scales: { y } } = chart;
+      const pairs = [
+        { min: 0,  max: 40,  color: "rgba(212,105,90,0.07)" },
+        { min: 40, max: 60,  color: "rgba(232,160,48,0.07)" },
+        { min: 60, max: 100, color: "rgba(106,191,123,0.07)" },
+      ];
+      pairs.forEach(({ min, max, color }) => {
+        const yTop = y.getPixelForValue(max);
+        const yBot = y.getPixelForValue(min);
+        ctx.save();
+        ctx.fillStyle = color;
+        ctx.fillRect(left, yTop, right - left, yBot - yTop);
+        ctx.restore();
+      });
+    }
+  };
+  new Chart(document.getElementById("c4"), {
+    type: "line",
+    data: {
+      labels: dates,
+      datasets: [{
+        data: position,
+        borderColor: "#3a4a54",
+        borderWidth: 1.5,
+        pointBackgroundColor: colors,
+        pointBorderColor: colors,
+        pointRadius: 5,
+        pointHoverRadius: 7,
+        fill: false,
+        tension: 0.3,
+      }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: noPlugins, scales: axisBase },
+    plugins: [zoneBg]
+  });
+
+  // E: Stepped
+  new Chart(document.getElementById("c5"), {
+    type: "line",
+    data: {
+      labels: dates,
+      datasets: [{
+        data: position,
+        borderColor: "#3a4a54",
+        borderWidth: 1.5,
+        pointBackgroundColor: colors,
+        pointBorderColor: colors,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        fill: false,
+        stepped: true,
+      }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: noPlugins, scales: axisBase }
+  });
+
+  // F: Gradient fill + color-coded points
+  const ctx6 = document.getElementById("c6").getContext("2d");
+  const grad6 = ctx6.createLinearGradient(0, 0, 0, 160);
+  grad6.addColorStop(0, "rgba(106,191,123,0.15)");
+  grad6.addColorStop(0.5, "rgba(232,160,48,0.08)");
+  grad6.addColorStop(1, "rgba(212,105,90,0.05)");
+  new Chart(ctx6, {
+    type: "line",
+    data: {
+      labels: dates,
+      datasets: [{
+        data: position,
+        borderColor: "#3a4a54",
+        borderWidth: 1.5,
+        pointBackgroundColor: colors,
+        pointBorderColor: "#f0f3f5",
+        pointBorderWidth: 2,
+        pointRadius: 6,
+        pointHoverRadius: 8,
+        fill: true,
+        backgroundColor: grad6,
+        tension: 0.4,
+      }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: noPlugins, scales: axisBase }
+  });
+</script>
+</body>
+</html>

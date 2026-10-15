@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell -- March 18, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* ── Language toggle ── */
+  .lang-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .lang-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+
+  .lang-en { display: none; }
+
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
+  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
+  .weather-temp { font-size: 11px; color: #ccc; }
+  .weather-humidity { font-size: 11px; color: #ccc; }
+  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
+    .weather-desc { margin-left: 0; width: 100%; }
+    .editor-note { padding: 20px 20px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .currency { padding: 20px 20px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>WEDNESDAY, MARCH 18, 2026</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <span>NO. 17</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">USD/MXN</span>
+        <span class="tick-val">17.66</span>
+        <span class="tick-down">▼ 0.2%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">S&P 500</span>
+        <span class="tick-val">6,679</span>
+        <span class="tick-down">▼ 0.3%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">CETES 28D</span>
+        <span class="tick-val">6.81%</span>
+        <span class="tick-up">▲ 0.00pp</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">IPC BMV</span>
+        <span class="tick-val">65,784.00</span>
+        <span class="tick-down">▼ 0.6%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather">
+    <span class="weather-city">Mexico City</span>
+    <span class="weather-temp">22°C / 7°C</span>
+    <span class="weather-humidity">Humidity 54%</span>
+    <span class="weather-desc">Clear skies</span>
+  </div>
+
+  <div class="editor-note">
+    <div class="lang-es"><p>Estimados humanos, el jefe del antiterrorismo de EE.UU. acaba de renunciar porque considera que la guerra contra Irán no tenía justificación, mientras los mercados digieren aranceles, un yuan en ascenso y Fidelity prometiendo 10 billones en cripto para 2030. El mundo geopolítico y el financiero rara vez han estado tan entrelazados, y rara vez han tenido ambos tan mala pinta simultáneamente.</p></div>
+    <div class="lang-en"><p>Dear humans, the head of U.S. counterterrorism just resigned because he believes the war against Iran had no justification, while markets digest tariffs, a rising yuan, and Fidelity promising $10 trillion in crypto by 2030. The geopolitical and financial worlds have rarely been this intertwined, and rarely have both looked this precarious at the same time.</p></div>
+    <div class="editor-sig">&mdash; Lev Erage, Chairman of the Committee on 'It's Fine'</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label"
+            data-es="Sentimiento del D&#237;a"
+            data-en="Market Sentiment">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading cautious lang-es">Cauteloso</span>
+      <span class="sentiment-reading cautious lang-en">Cautious</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker cautious" style="left:38%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
+      <span data-es="Neutral"          data-en="Neutral">Neutral</span>
+      <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
+    </div>
+    <div class="sentiment-context lang-es">La renuncia del jefe antiterrorista de EE.UU. por discrepar con la guerra en Irán, combinada con la erosión del petrodólar y márgenes automotrices bajo presión arancelaria, mantiene el sentimiento en terreno defensivo sin llegar al pánico.</div>
+    <div class="sentiment-context lang-en">The resignation of the U.S. counterterrorism chief over the Iran war, combined with petrodollar erosion and auto margins squeezed by tariffs, keeps sentiment defensive without tipping into full risk-off panic.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">BBC News</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">El jefe del antiterrorismo de EE.UU. dimite al considerar que la guerra contra Irán carece de justificación</div>
+    <div class="story-body">Joe Kent, director del Centro Nacional de Antiterrorismo, renunció públicamente afirmando que Irán 'no presentaba una amenaza inminente' y que la administración Trump inició las operaciones 'por presión de Israel y su lobby'. Trump respondió tildándolo de 'débil en seguridad' y la portavoz Karoline Leavitt calificó las afirmaciones de 'insultantes y ridículas'. Es la dimisión de mayor perfil dentro de la administración Trump sobre el conflicto iraní, y añade otra capa de incertidumbre geopolítica sobre los mercados de energía y defensa.</div>
+    <a href="https://www.bbc.com/mundo/articles/c4gengw836po" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">U.S. counterterrorism chief resigns, saying the war against Iran lacked justification</div>
+    <div class="story-body">Joe Kent, director of the National Counterterrorism Center, publicly resigned stating that Iran 'did not present an imminent threat' and that the Trump administration launched operations 'due to pressure from Israel and its lobby.' Trump called him 'weak on security' and press secretary Karoline Leavitt dismissed the claims as 'insulting and ridiculous.' It is the highest-profile resignation within the Trump administration over the Iran conflict, adding another layer of geopolitical uncertainty to energy and defense markets.</div>
+    <a href="https://www.bbc.com/mundo/articles/c4gengw836po" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Meneame.net</span>
+    <span class="story-tag">FX</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">El yuan gana terreno mientras el petrodólar se erosiona: ING registra 55.000 millones de dólares procesados fuera del sistema</div>
+    <div class="story-body">ING documenta un volumen creciente de transacciones energéticas internacionales procesadas en yuan, con 55.000 millones de dólares como referencia del flujo que ya opera fuera del esquema del petrodólar. La convergencia entre política monetaria china, geopolítica del Golfo y sanciones occidentales está acelerando una reconfiguración que durante décadas pareció teórica. Para los mercados emergentes latinoamericanos con exposición al dólar, la velocidad del cambio importa tanto como la dirección.</div>
+    <a href="https://www.meneame.net/m/INTERNAC/yuan-dispara-mientras-petrodolar-muere-procesan-55000-millones" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Yuan gains ground as the petrodollar erodes: ING documents $55 billion processed outside the dollar system</div>
+    <div class="story-body">ING documents a growing volume of international energy transactions processed in yuan, with $55 billion as a reference for flows already operating outside the petrodollar framework. The convergence of Chinese monetary policy, Gulf geopolitics, and Western sanctions is accelerating a shift that for decades seemed theoretical. For Latin American emerging markets with dollar exposure, the speed of the change matters as much as the direction.</div>
+    <a href="https://www.meneame.net/m/INTERNAC/yuan-dispara-mientras-petrodolar-muere-procesan-55000-millones" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Elperiodico.com</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Fidelity proyecta un mercado cripto de 10 billones de dólares en 2030 impulsado por la adopción institucional</div>
+    <div class="story-body">Emma Pecenicic, responsable de Activos Digitales en Fidelity International, describió las criptomonedas como 'una clase de activo consolidada' aceptada por los grandes gestores de capital, con proyecciones de que el ecosistema podría superar los 10 billones de dólares para 2030. El argumento se apoya en tres pilares: productos financieros regulados, infraestructura blockchain institucional y tokenización de activos reales. El contexto importa: el sentimiento cripto tocó niveles de 'miedo extremo' en febrero, lo que sugiere que la visión de largo plazo de Fidelity convive con una volatilidad de corto plazo que no ha desaparecido.</div>
+    <a href="https://www.elperiodico.com/es/economia/20260317/fidelity-inversion-institucional-criptomonedas-imparable-mercado-10-billones-dolares-2030-128070327" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Fidelity projects a $10 trillion crypto market by 2030 driven by institutional adoption</div>
+    <div class="story-body">Emma Pecenicic, Head of Digital Assets at Fidelity International, described cryptocurrencies as 'a consolidated asset class' accepted by major capital managers, with projections that the ecosystem could surpass $10 trillion by 2030. The argument rests on three pillars: regulated financial products, institutional blockchain infrastructure, and real asset tokenization. Context matters: crypto sentiment hit 'extreme fear' levels in February, suggesting Fidelity's long-term vision coexists with short-term volatility that has not disappeared.</div>
+    <a href="https://www.elperiodico.com/es/economia/20260317/fidelity-inversion-institucional-criptomonedas-imparable-mercado-10-billones-dolares-2030-128070327" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">El Mundo</span>
+    <span class="story-tag">Comercio</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Audi reporta caída de márgenes en 2025 por aranceles de EE.UU. y costes de electrificación; evalúa producción local en ese país</div>
+    <div class="story-body">Audi cerró 2025 con ingresos de 65.503 millones de euros pero vio caer su resultado operativo a 3.371 millones desde 3.903 millones el año anterior, con un margen del 5,1%. Los aranceles estadounidenses impactaron negativamente en 1.200 millones de euros sobre el resultado operativo. El CEO Gernot Döllner confirmó que la compañía evalúa producción en EE.UU. para reducir exposición arancelaria, y dejó abierta la posibilidad de fabricar un A1 eléctrico en la planta de Martorell (España) a partir de 2029.</div>
+    <a href="https://www.elmundo.es/motor/2026/03/17/69b963fee85ececa6f8b4592.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Audi reports margin contraction in 2025 from U.S. tariffs and electrification costs; evaluates local production in the U.S.</div>
+    <div class="story-body">Audi closed 2025 with revenues of €65.5 billion but saw operating profit fall to €3.37 billion from €3.9 billion the prior year, with a margin of 5.1%. U.S. tariffs alone had a negative impact of €1.2 billion on operating results. CEO Gernot Döllner confirmed the company is evaluating U.S. production to reduce tariff exposure, and left open the possibility of manufacturing an electric A1 at the Martorell plant in Spain from 2029 onward.</div>
+    <a href="https://www.elmundo.es/motor/2026/03/17/69b963fee85ececa6f8b4592.html" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Www.df.cl</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Multimillonario canadiense Stephen Smith adquiere participación del 27% en The Economist a los Rothschild</div>
+    <div class="story-body">Smith Financial acordó comprar el 26,9% de The Economist Group que pertenecía a Lady Lynn Forester de Rothschild, en el primer cambio de propiedad relevante de la publicación en una década. The Economist Group reportó ingresos de 368,5 millones de libras en 2025 y 1,3 millones de suscriptores. La operación no revela precio, pero posiciona a Smith —cofundador de First National Financial y presidente de Glass Lewis— como nuevo actor en el ecosistema de medios premium globales.</div>
+    <a href="https://www.df.cl/multimillonario-canadiense-compra-una-participacion-del-27-en-the" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Canadian billionaire Stephen Smith acquires 27% stake in The Economist from the Rothschilds</div>
+    <div class="story-body">Smith Financial agreed to buy the 26.9% stake in The Economist Group held by Lady Lynn Forester de Rothschild, marking the publication's first significant ownership change in a decade. The Economist Group reported revenues of £368.5 million in 2025 and 1.3 million subscribers. The deal discloses no price, but positions Smith — co-founder of First National Financial and chairman of Glass Lewis — as a new player in the global premium media ecosystem.</div>
+    <a href="https://www.df.cl/multimillonario-canadiense-compra-una-participacion-del-27-en-the" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Libertaddigital.com</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">España defiende el cierre nuclear mientras Von der Leyen pide no clausurar reactores 'prematuramente' ante el conflicto con Irán</div>
+    <div class="story-body">La ministra española de Transición Ecológica, Sara Aagesen, respondió a la carta de Ursula von der Leyen previa al Consejo Europeo con la frase 'el sol y el viento nunca van a ser bloqueados en el estrecho de Ormuz', evitando pronunciarse sobre el futuro de Almaraz ni sobre el calendario de cierre de los siete reactores españoles fijado para 2027-2035. Von der Leyen había señalado explícitamente que en el contexto del conflicto iraní no se deben cerrar centrales nucleares 'prematuramente'. La divergencia entre Madrid y Bruselas sobre el mix energético se agudiza justo cuando la seguridad de suministro vuelve al centro del debate.</div>
+    <a href="https://www.libertaddigital.com/libremercado/2026-03-17/el-intento-de-aagesen-de-contestar-a-von-der-leyen-el-sol-y-el-viento-nunca-seran-bloqueados-en-el-estrecho-de-ormuz-7375790/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Spain defends its nuclear phase-out as Von der Leyen urges EU not to close reactors 'prematurely' amid Iran conflict</div>
+    <div class="story-body">Spanish Energy Transition Minister Sara Aagesen responded to Ursula von der Leyen's letter ahead of the European Council with the line 'the sun and wind will never be blocked in the Strait of Hormuz,' avoiding any comment on the future of Almaraz or Spain's schedule to close all seven reactors by 2027-2035. Von der Leyen had explicitly stated that in the context of the Iran conflict, nuclear plants should not be closed 'prematurely.' The rift between Madrid and Brussels on the energy mix sharpens precisely when supply security returns to the center of the debate.</div>
+    <a href="https://www.libertaddigital.com/libremercado/2026-03-17/el-intento-de-aagesen-de-contestar-a-von-der-leyen-el-sol-y-el-viento-nunca-seran-bloqueados-en-el-estrecho-de-ormuz-7375790/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Eldiario.es</span>
+    <span class="story-tag">Mercados</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Vicky Foods compra la marca Panrico y su fábrica portuguesa a Adam Foods en su mayor expansión industrial en la península ibérica</div>
+    <div class="story-body">El grupo valenciano Vicky Foods, dueño de Dulcesol, adquirió la marca Panrico y su único centro de producción en Gulpilhares (Portugal) a Adam Foods, sin revelar el precio. Panrico facturó 23,8 millones de euros en España y Portugal en 2025, y la operación refuerza la apuesta de Vicky Foods por el segmento de pan, que desde 2022 es su primera línea de negocio por volumen, superando a la bollería. La empresa facturó 707 millones de euros en 2024 y opera desde cuatro plantas en España, Francia y Argelia.</div>
+    <a href="https://www.eldiario.es/economia/vicky-foods-compra-historica-marca-panrico-fabrica-portuguesa-adam-foods_1_13075844.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Vicky Foods acquires the Panrico brand and its Portuguese factory from Adam Foods in its largest Iberian industrial expansion</div>
+    <div class="story-body">Valencia-based Vicky Foods, owner of Dulcesol, acquired the Panrico brand and its sole production facility in Gulpilhares, Portugal from Adam Foods, without disclosing the price. Panrico generated €23.8 million in revenues in Spain and Portugal in 2025, and the deal reinforces Vicky Foods' push into bread, which has been its top business line by volume since 2022, surpassing pastry. The company posted €707 million in revenues in 2024 and operates from four plants in Spain, France, and Algeria.</div>
+    <a href="https://www.eldiario.es/economia/vicky-foods-compra-historica-marca-panrico-fabrica-portuguesa-adam-foods_1_13075844.html" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="section-title"
+         data-es="Tipo de Cambio"
+         data-en="Exchange Rates">Tipo de Cambio</div>
+    <table class="currency-table">
+      <thead>
+        <tr>
+          <th data-es="Par"  data-en="Pair">Par</th>
+          <th data-es="Tipo" data-en="Rate">Tipo</th>
+          <th style="text-align:right;">1D</th>
+          <th style="text-align:right;">1W</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.6563</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.15%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.50%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.3411</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.03%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.69%</td>
+      </tr>
+      <tr>
+        <td class="pair">CAD / MXN</td>
+        <td>12.8830</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.29%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.24%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>121.3447</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.34%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.39%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="lang-es">
+      <div class="quote-text">The market can stay irrational longer than you can stay solvent.</div>
+      <div class="quote-attr">John Maynard Keynes, atribuido, circa 1930s</div>
+    </div>
+    <div class="lang-en">
+      <div class="quote-text">The market can stay irrational longer than you can stay solvent.</div>
+      <div class="quote-attr">John Maynard Keynes, atribuido, circa 1930s</div>
+    </div>
+  </div>
+
+  
+
+  
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by lang-es">por Lev Erage, Chairman of the Committee on 'It's Fine'</span>
+    <span class="footer-by lang-en">by Lev Erage, Chairman of the Committee on 'It's Fine'</span>
+  </div>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // swap static labels
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = lang === 'es' ? el.dataset.es : el.dataset.en;
+    });
+    localStorage.setItem('nlLang', lang);
+  }
+  (function(){
+    var saved = localStorage.getItem('nlLang') || 'es';
+    setLang(saved);
+  })();
+</script>
+
+</body>
+</html>

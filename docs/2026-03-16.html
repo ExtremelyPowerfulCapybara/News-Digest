@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell -- March 16, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* ── Language toggle ── */
+  .lang-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .lang-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+
+  .lang-en { display: none; }
+
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  .weather { background: #1a1a1a; padding: 9px 48px; display: flex; gap: 20px; align-items: center; margin-top: 3px; }
+  .weather-city { font-size: 11px; font-weight: 500; color: #f5f2ed; }
+  .weather-temp { font-size: 11px; color: #ccc; }
+  .weather-humidity { font-size: 11px; color: #ccc; }
+  .weather-desc { font-size: 10px; color: #666; font-style: italic; margin-left: auto; }
+
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+  .read-more:hover { color: #555; border-color: #555; }
+
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .weather { padding: 9px 20px; flex-wrap: wrap; gap: 8px; }
+    .weather-desc { margin-left: 0; width: 100%; }
+    .editor-note { padding: 20px 20px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .currency { padding: 20px 20px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>MONDAY, MARCH 16, 2026</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <span>NO. 15</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">USD/MXN</span>
+        <span class="tick-val">17.77</span>
+        <span class="tick-down">▼ 0.4%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">S&P 500</span>
+        <span class="tick-val">6,706</span>
+        <span class="tick-up">▲ 0.5%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">CETES 28D</span>
+        <span class="tick-val">6.81%</span>
+        <span class="tick-up">▲ 0.00pp</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">IPC BMV</span>
+        <span class="tick-val">65,648.91</span>
+        <span class="tick-down">▼ 0.7%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weather">
+    <span class="weather-city">Mexico City</span>
+    <span class="weather-temp">22°C / 11°C</span>
+    <span class="weather-humidity">Humidity 41%</span>
+    <span class="weather-desc">Partly cloudy</span>
+  </div>
+
+  <div class="editor-note">
+    <div class="lang-es"><p>Estimados humanos, mientras el estrecho de Ormuz permanece bloqueado y Dubái aplaga incendios en el Burj Al Arab con una campaña de Instagram, los mercados globales digieren una realidad incómoda: esta guerra no tiene fecha de vencimiento visible. Trump dice que Irán quiere negociar; Irán dice que nadie ha propuesto nada — ambos probablemente tienen razón en su propia dimensión de la realidad.</p></div>
+    <div class="lang-en"><p>Dear humans, while the Strait of Hormuz remains blocked and Dubai is trying to put out fires at the Burj Al Arab with an Instagram campaign, global markets are digesting an uncomfortable reality: this war has no visible expiration date. Trump says Iran wants to negotiate; Iran says no one has proposed anything — both are probably right in their own dimension of reality.</p></div>
+    <div class="editor-sig">&mdash; Phil Ation, Head of Preemptive Disappointment</div>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label"
+            data-es="Sentimiento del D&#237;a"
+            data-en="Market Sentiment">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading risk-off lang-es">Aversión al Riesgo</span>
+      <span class="sentiment-reading risk-off lang-en">Risk-Off</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker risk-off" style="left:22%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
+      <span data-es="Neutral"          data-en="Neutral">Neutral</span>
+      <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
+    </div>
+    <div class="sentiment-context lang-es">El conflicto Israel-EE.UU.-Irán paraliza el estrecho de Ormuz, dispara los fletes petroleros a máximos históricos y obliga a empresas globales a diseñar planes de contingencia ante el encarecimiento de materias primas.</div>
+    <div class="sentiment-context lang-en">The Israel-US-Iran conflict is paralyzing the Strait of Hormuz, sending tanker rates to record highs, and forcing global companies to draft contingency plans amid surging commodity costs.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Df.cl</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Trump dice que Irán quiere negociar; Teherán responde que no hay ninguna propuesta sobre la mesa</div>
+    <div class="story-body">El presidente Donald Trump afirmó el sábado que Irán busca un acuerdo para poner fin al conflicto, pero que Washington exige condiciones más duras — incluyendo el abandono de las ambiciones nucleares de Teherán. El canciller iraní Abbas Araghchi lo desmintió parcialmente: Irán está abierto a iniciativas regionales, pero aclaró que nadie ha presentado una propuesta concreta. Entretanto, los ataques de represalia iraní contra instalaciones del Golfo continuaron durante el domingo, y los EAU reportaron haber interceptado misiles y drones sobre zonas de Dubái.</div>
+    <a href="https://www.df.cl/internacional/trump-afirma-que-iran-quiere-poner-fin-a-la-guerra-y-teheran-dice-que-no" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Trump says Iran wants to negotiate; Tehran responds that no proposal is on the table</div>
+    <div class="story-body">President Donald Trump stated on Saturday that Iran is seeking a deal to end the conflict, but that Washington demands tougher conditions — including Tehran abandoning its nuclear ambitions. Iranian Foreign Minister Abbas Araghchi partially contradicted him: Iran is open to regional initiatives, but clarified that no specific proposal has been presented. Meanwhile, Iranian retaliatory strikes against Gulf installations continued through Sunday, with the UAE reporting the interception of missiles and drones over areas of Dubai.</div>
+    <a href="https://www.df.cl/internacional/trump-afirma-que-iran-quiere-poner-fin-a-la-guerra-y-teheran-dice-que-no" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">RT Actualidad</span>
+    <span class="story-tag">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">El magnate surcoreano que apostó a la guerra: Sinokor controla el 40% de los superpetroleros libres y cobra $500,000 diarios por buque</div>
+    <div class="story-body">Ga-hyun Chung, al frente del grupo naviero Sinokor, acumuló discretamente unos 150 superpetroleros antes del inicio del conflicto israelí-estadounidense contra Irán el 28 de febrero, trasladando al menos seis buques vacíos al Golfo Pérsico semanas antes del ataque. Con el estrecho de Ormuz bloqueado y el almacenamiento regional al límite, sus embarcaciones ahora se alquilan como almacenes flotantes a 500,000 dólares diarios, casi diez veces la tarifa del año anterior. La interrupción del transporte marítimo, según veteranos del sector, tardará en resolverse incluso tras el cese de hostilidades, garantizando beneficios extraordinarios para Sinokor durante semanas adicionales.</div>
+    <a href="https://actualidad.rt.com/actualidad/593039-asi-misterioso-magnate-beneficiarse-guerra-iran" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">The South Korean tycoon who bet on the war: Sinokor controls 40% of unsanctioned supertankers and charges $500,000 per vessel per day</div>
+    <div class="story-body">Ga-hyun Chung, head of the Sinokor shipping group, quietly accumulated around 150 supertankers before the Israeli-American conflict against Iran began on February 28, moving at least six empty vessels into the Persian Gulf weeks ahead of the attack. With the Strait of Hormuz blocked and regional storage near capacity, his ships are now being rented as floating storage at $500,000 per day — nearly ten times last year's rate. Industry veterans say the shipping disruption will take time to resolve even after hostilities cease, guaranteeing extraordinary profits for Sinokor for weeks to come.</div>
+    <a href="https://actualidad.rt.com/actualidad/593039-asi-misterioso-magnate-beneficiarse-guerra-iran" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Nacion.com</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Dubái intenta preservar su imagen de 'ciudad segura' con influencers mientras el Burj Al Arab arde y el aeropuerto es atacado</div>
+    <div class="story-body">Emiratos Árabes Unidos ha recibido más de 1,800 misiles y drones iraníes desde el inicio del conflicto, la mayoría interceptados, pero algunos han alcanzado la fachada del Burj Al Arab, el aeropuerto y el puerto de Jebel Ali. Las autoridades respondieron con una campaña en Instagram —5.8 millones de seguidores del canal oficial de Dubái— y videos de influencers proclamando que el emirato es 'el país más seguro del mundo', mientras reprimen la difusión de imágenes de los ataques. El 90% de los residentes son extranjeros, y las tumbonas de Jumeirah Beach Residence, en plena temporada alta, empiezan a quedar vacías.</div>
+    <a href="https://www.nacion.com/el-mundo/dubai-intenta-proteger-su-imagen-turistica-tras/ITDJSLMFOBHATDPZPXETTTQKOQ/story/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Dubai tries to preserve its 'safe city' image with influencers while the Burj Al Arab burns and the airport is attacked</div>
+    <div class="story-body">The United Arab Emirates has received more than 1,800 Iranian missiles and drones since the conflict began, most intercepted, but some have struck the façade of the Burj Al Arab, the airport, and the port of Jebel Ali. Authorities responded with an Instagram campaign — the official Dubai channel has 5.8 million followers — and influencer videos proclaiming the emirate is 'the safest country in the world,' while suppressing the spread of images showing the attacks. With 90% of residents being foreign nationals, the sun loungers at Jumeirah Beach Residence, normally packed during peak season, are beginning to empty out.</div>
+    <a href="https://www.nacion.com/el-mundo/dubai-intenta-proteger-su-imagen-turistica-tras/ITDJSLMFOBHATDPZPXETTTQKOQ/story/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Expansion.com</span>
+    <span class="story-tag">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">El 44% de los empresarios españoles ya rediseña su estrategia ante el encarecimiento de materias primas por la guerra en Irán</div>
+    <div class="story-body">Un informe de KPMG y CEOE revela que casi la mitad de los directivos españoles encuestados está elaborando planes de contingencia frente al impacto del conflicto en Oriente Próximo sobre sus cadenas de suministro. La consultora Funcas proyecta que el IPC escalaría hasta el 3.6% en marzo, aunque advierte una alta incertidumbre en sus cálculos. Los riesgos más citados son pérdida de competitividad (41%), incremento en costes de materias primas (41%) y mayor exposición geopolítica mediante ruptura de cadenas de suministro (39%).</div>
+    <a href="https://www.expansion.com/economia/2026/03/15/69b455c3e5fdea023c8b45b5.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">44% of Spanish business leaders are already redesigning their strategy amid rising commodity costs from the Iran war</div>
+    <div class="story-body">A report by KPMG and Spain's CEOE business confederation reveals that nearly half of surveyed executives are drafting contingency plans to absorb the impact of the Middle East conflict on their supply chains. The think tank Funcas projects CPI could climb to 3.6% in March, though it flags high uncertainty in its calculations. The most commonly cited risks are loss of competitiveness (41%), rising raw material costs (41%), and increased geopolitical exposure through supply chain disruption (39%).</div>
+    <a href="https://www.expansion.com/economia/2026/03/15/69b455c3e5fdea023c8b45b5.html" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">RT Actualidad</span>
+    <span class="story-tag">Comercio</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">China y EE.UU. reanudan consultas comerciales en París con los aranceles y las tierras raras como ejes centrales</div>
+    <div class="story-body">El vice primer ministro chino He Lifeng y el secretario del Tesoro estadounidense Scott Bessent encabezan una nueva ronda de negociaciones en la sede de la OCDE en París, orientada a preparar la visita de Trump a Pekín en abril. Los temas sobre la mesa incluyen la modificación de aranceles, el flujo de minerales de tierras raras, los controles de exportación tecnológica y las compras chinas de productos agrícolas. El experto Scott Kennedy resumió el objetivo mínimo de ambas partes: reunirse y evitar 'una ruptura y una nueva escalada de tensiones'.</div>
+    <a href="https://actualidad.rt.com/actualidad/593061-china-eeuu-francia-consultas-comercio" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">China and US resume trade consultations in Paris with tariffs and rare earths as central issues</div>
+    <div class="story-body">Chinese Vice Premier He Lifeng and US Treasury Secretary Scott Bessent are leading a new round of negotiations at OECD headquarters in Paris, aimed at preparing for Trump's visit to Beijing in April. Items on the table include tariff modifications, rare earth mineral flows, technology export controls, and Chinese purchases of US agricultural products. Expert Scott Kennedy summarized the minimum objective for both sides: meet and avoid 'a breakdown and a new escalation of tensions.'</div>
+    <a href="https://actualidad.rt.com/actualidad/593061-china-eeuu-francia-consultas-comercio" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">DW Español</span>
+    <span class="story-tag">Política</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Países nórdicos y Canadá pactan reforzar cooperación en el Ártico ante las ambiciones de Rusia y EE.UU.</div>
+    <div class="story-body">Los mandatarios de Suecia, Dinamarca, Finlandia, Islandia, Noruega y Canadá se reunieron en Oslo para reafirmar su compromiso conjunto en defensa, energía limpia, tecnología y acceso a recursos minerales, en un comunicado que menciona explícitamente 'la guerra en Ucrania, el levantamiento de sanciones contra Rusia por parte de EE.UU. y la guerra en Medio Oriente'. La primera ministra danesa Mette Frederiksen fue la más directa: 'Países como los nuestros deben permanecer unidos'. Los seis estados son miembros de la OTAN.</div>
+    <a href="https://www.dw.com/es/pa%C3%ADses-n%C3%B3rdicos-y-canad%C3%A1-refuerzan-cooperaci%C3%B3n-en-el-%C3%A1rtico-ante-las-crecientes-amenazas/a-76366907" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Nordic countries and Canada agree to strengthen Arctic cooperation in the face of Russian and US ambitions</div>
+    <div class="story-body">The leaders of Sweden, Denmark, Finland, Iceland, Norway, and Canada met in Oslo to reaffirm their joint commitment to defense, clean energy, technology, and access to mineral resources, in a communiqué that explicitly references 'the war in Ukraine, the US lifting of sanctions against Russia, and the war in the Middle East.' Danish Prime Minister Mette Frederiksen was the most direct: 'Countries like ours must remain united.' All six states are NATO members.</div>
+    <a href="https://www.dw.com/es/pa%C3%ADses-n%C3%B3rdicos-y-canad%C3%A1-refuerzan-cooperaci%C3%B3n-en-el-%C3%A1rtico-ante-las-crecientes-amenazas/a-76366907" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <div class="story-meta">
+    <span class="story-source">Xataka México</span>
+    <span class="story-tag">México</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Home Depot invertirá 4,790 millones de pesos en México en 2026, apuntando al programa de Viviendas del Bienestar</div>
+    <div class="story-body">La cadena estadounidense de materiales de construcción anunció un incremento de inversión del 25% respecto a 2025, distribuyendo el capital entre apertura de tiendas, tecnología con inteligencia artificial y logística. El catalizador declarado es el programa de vivienda social del gobierno federal, con el que Home Depot ya colabora junto a desarrolladores e Infonavit, aunque con márgenes más ajustados. La empresa planea crecer de 142 a entre 160 y 165 tiendas en México, como parte de un plan de 1,300 millones de dólares para el período 2025-2028.</div>
+    <a href="https://www.xataka.com.mx/otros-1/home-depot-invertira-4-790-millones-pesos-mexico-tiene-objetivo-aprovechar-viviendas-bienestar" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Home Depot will invest 4.79 billion pesos in Mexico in 2026, targeting the government's social housing program</div>
+    <div class="story-body">The US home improvement chain announced a 25% increase in investment versus 2025, allocating capital across store openings, AI-integrated technology, and logistics. The stated catalyst is the federal government's social housing program, with which Home Depot already works alongside developers and Infonavit, albeit at tighter margins. The company plans to grow from 142 to between 160 and 165 stores in Mexico, as part of a $1.3 billion plan covering the 2025–2028 period.</div>
+    <a href="https://www.xataka.com.mx/otros-1/home-depot-invertira-4-790-millones-pesos-mexico-tiene-objetivo-aprovechar-viviendas-bienestar" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="section-title"
+         data-es="Tipo de Cambio"
+         data-en="Exchange Rates">Tipo de Cambio</div>
+    <table class="currency-table">
+      <thead>
+        <tr>
+          <th data-es="Par"  data-en="Pair">Par</th>
+          <th data-es="Tipo" data-en="Rate">Tipo</th>
+          <th style="text-align:right;">1D</th>
+          <th style="text-align:right;">1W</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>17.7736</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.34%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.57%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.4345</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.55%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.53%</td>
+      </tr>
+      <tr>
+        <td class="pair">CAD / MXN</td>
+        <td>13.0147</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.52%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.06%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>122.5490</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.04%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.34%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="lang-es">
+      <div class="quote-text">Oil is the lifeblood of the industrial civilisation and the despoliation of nature is built into our economic system.</div>
+      <div class="quote-attr">James Lovelock, The Revenge of Gaia, 2006</div>
+    </div>
+    <div class="lang-en">
+      <div class="quote-text">Oil is the lifeblood of the industrial civilisation and the despoliation of nature is built into our economic system.</div>
+      <div class="quote-attr">James Lovelock, The Revenge of Gaia, 2006</div>
+    </div>
+  </div>
+
+  
+
+  
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by lang-es">por Phil Ation, Head of Preemptive Disappointment</span>
+    <span class="footer-by lang-en">by Phil Ation, Head of Preemptive Disappointment</span>
+  </div>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // swap static labels
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = lang === 'es' ? el.dataset.es : el.dataset.en;
+    });
+    localStorage.setItem('nlLang', lang);
+  }
+  (function(){
+    var saved = localStorage.getItem('nlLang') || 'es';
+    setLang(saved);
+  })();
+</script>
+
+</body>
+</html>

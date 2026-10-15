@@ -1,0 +1,16 @@
+{
+  "filename": "markets-2026-W41.png",
+  "week_start": "2026-10-05",
+  "week_end": "2026-10-09",
+  "kind": "full",
+  "assets": 13,
+  "generated": "2026-10-15T16:11:06+00:00",
+  "best": {
+    "label": "Brent",
+    "change": 2.4
+  },
+  "worst": {
+    "label": "Ethereum",
+    "change": -8.8
+  }
+}

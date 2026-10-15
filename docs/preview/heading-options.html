@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentiment Heading Options</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #e8ecef;
+    font-family: Arial, sans-serif;
+    padding: 40px 24px;
+    min-height: 100vh;
+  }
+
+  .page-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #8a9aa4;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Exact archive card styling */
+  .card {
+    background: #f0f3f5;
+    border: 1px solid #cdd4d9;
+    padding: 28px 32px;
+  }
+
+  .option-tag {
+    display: inline-block;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #3a4a54;
+    padding: 3px 8px;
+    margin-bottom: 18px;
+  }
+
+  /* Exact archive label styling */
+  .chart-label {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #aab4bc;
+    margin-bottom: 16px;
+  }
+
+  .chart-wrap {
+    position: relative;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  .divider {
+    height: 1px;
+    background: #dde3e8;
+    margin-bottom: 16px;
+  }
+
+  .sub-label {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #aab4bc;
+    margin-bottom: 14px;
+  }
+
+  .bar-wrap {
+    position: relative;
+    height: 50px;
+  }
+
+  /* Current option highlight */
+  .card.current {
+    border-color: #3a4a54;
+  }
+
+  .card.current .option-tag {
+    background: #8a9aa4;
+  }
+</style>
+</head>
+<body>
+
+<p class="page-label">Sentiment Timeline · Heading Options · Archive Context</p>
+
+<div class="grid">
+
+  <!-- CURRENT -->
+  <div class="card current">
+    <div class="option-tag">Current</div>
+    <p class="chart-label">Sentiment Timeline</p>
+    <div class="chart-wrap"><canvas id="c0"></canvas></div>
+    <div class="divider"></div>
+    <p class="sub-label">Stories per Issue</p>
+    <div class="bar-wrap"><canvas id="b0"></canvas></div>
+  </div>
+
+  <!-- A -->
+  <div class="card">
+    <div class="option-tag">Option A</div>
+    <p class="chart-label">Market Sentiment · All Issues</p>
+    <div class="chart-wrap"><canvas id="c1"></canvas></div>
+    <div class="divider"></div>
+    <p class="sub-label">Stories per Issue</p>
+    <div class="bar-wrap"><canvas id="b1"></canvas></div>
+  </div>
+
+  <!-- B -->
+  <div class="card">
+    <div class="option-tag">Option B</div>
+    <p class="chart-label">Risk Appetite · Daily Signal</p>
+    <div class="chart-wrap"><canvas id="c2"></canvas></div>
+    <div class="divider"></div>
+    <p class="sub-label">Coverage Volume</p>
+    <div class="bar-wrap"><canvas id="b2"></canvas></div>
+  </div>
+
+  <!-- C -->
+  <div class="card">
+    <div class="option-tag">Option C</div>
+    <p class="chart-label">Sentiment Score · 0–100</p>
+    <div class="chart-wrap"><canvas id="c3"></canvas></div>
+    <div class="divider"></div>
+    <p class="sub-label">Stories per Issue</p>
+    <div class="bar-wrap"><canvas id="b3"></canvas></div>
+  </div>
+
+  <!-- D -->
+  <div class="card">
+    <div class="option-tag">Option D</div>
+    <p class="chart-label">The Reading · Sentiment Over Time</p>
+    <div class="chart-wrap"><canvas id="c4"></canvas></div>
+    <div class="divider"></div>
+    <p class="sub-label">Stories per Issue</p>
+    <div class="bar-wrap"><canvas id="b4"></canvas></div>
+  </div>
+
+  <!-- E -->
+  <div class="card">
+    <div class="option-tag">Option E</div>
+    <p class="chart-label">The Signal</p>
+    <div class="chart-wrap"><canvas id="c5"></canvas></div>
+    <div class="divider"></div>
+    <p class="sub-label">The Volume</p>
+    <div class="bar-wrap"><canvas id="b5"></canvas></div>
+  </div>
+
+  <!-- F1 -->
+  <div class="card">
+    <div class="option-tag">Option F · Spanish</div>
+    <p class="chart-label">Sentimiento de Mercado</p>
+    <div class="chart-wrap"><canvas id="c6"></canvas></div>
+    <div class="divider"></div>
+    <p class="sub-label">Cobertura por Edición</p>
+    <div class="bar-wrap"><canvas id="b6"></canvas></div>
+  </div>
+
+  <!-- F2 -->
+  <div class="card">
+    <div class="option-tag">Option F · Bilingual</div>
+    <p class="chart-label">Market Mood · El Pulso</p>
+    <div class="chart-wrap"><canvas id="c7"></canvas></div>
+    <div class="divider"></div>
+    <p class="sub-label">Stories per Issue · Cobertura</p>
+    <div class="bar-wrap"><canvas id="b7"></canvas></div>
+  </div>
+
+</div>
+
+<script>
+  // Sample data — mirrors what a real week of data looks like
+  const dates    = ["Apr 1","Apr 2","Apr 3","Apr 4","Apr 7","Apr 8","Apr 9"];
+  const position = [58, 42, 35, 29, 38, 44, 51];
+  const stories  = [8, 7, 9, 8, 7, 9, 8];
+  const colors   = position.map(v =>
+    v >= 60 ? "#6abf7b" : v <= 40 ? "#d4695a" : "#e8a030"
+  );
+
+  const lineConfig = (canvasId) => ({
+    type: "line",
+    data: {
+      labels: dates,
+      datasets: [{
+        data: position,
+        borderColor: "#3a4a54",
+        borderWidth: 1.5,
+        pointBackgroundColor: colors,
+        pointBorderColor: colors,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        fill: false,
+        tension: 0.3,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        x: { display: false },
+        y: {
+          display: true,
+          min: 0, max: 100,
+          ticks: {
+            font: { family: "Arial", size: 7 },
+            color: "#aab4bc",
+            maxTicksLimit: 3,
+          },
+          grid: { color: "#dde3e8", drawBorder: false },
+          border: { display: false },
+        }
+      }
+    }
+  });
+
+  const barConfig = (canvasId) => ({
+    type: "bar",
+    data: {
+      labels: dates,
+      datasets: [{
+        data: stories,
+        backgroundColor: "#cdd4d9",
+        borderRadius: 1,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        x: { display: false },
+        y: {
+          display: true,
+          min: 0, max: 12,
+          ticks: {
+            font: { family: "Arial", size: 7 },
+            color: "#aab4bc",
+            maxTicksLimit: 3,
+          },
+          grid: { color: "#dde3e8", drawBorder: false },
+          border: { display: false },
+        }
+      }
+    }
+  });
+
+  for (let i = 0; i <= 7; i++) {
+    new Chart(document.getElementById(`c${i}`), lineConfig(`c${i}`));
+    new Chart(document.getElementById(`b${i}`), barConfig(`b${i}`));
+  }
+</script>
+</body>
+</html>
