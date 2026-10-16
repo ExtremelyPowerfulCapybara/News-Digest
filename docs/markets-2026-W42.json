@@ -4,13 +4,13 @@
   "week_end": "2026-10-16",
   "kind": "partial",
   "assets": 13,
-  "generated": "2026-10-16T12:36:23+00:00",
+  "generated": "2026-10-16T19:48:02+00:00",
   "best": {
     "label": "Brent",
-    "change": 1.2
+    "change": 4.7
   },
   "worst": {
-    "label": "Nikkei 225",
-    "change": -5.4
+    "label": "MSCI EM",
+    "change": -6.1
   }
 }
