@@ -1,0 +1,16 @@
+{
+  "filename": "markets-2026-W43.png",
+  "week_start": "2026-10-19",
+  "week_end": "2026-10-23",
+  "kind": "partial",
+  "assets": 13,
+  "generated": "2026-10-23T12:36:06+00:00",
+  "best": {
+    "label": "Brent",
+    "change": 0.4
+  },
+  "worst": {
+    "label": "Nikkei 225",
+    "change": -4.0
+  }
+}
