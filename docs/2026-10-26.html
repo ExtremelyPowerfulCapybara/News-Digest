@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Opening Bell -- October 26, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #dde3e8; font-family: 'DM Sans', sans-serif; padding: 40px 16px; }
+  .wrap { max-width: 640px; margin: 0 auto; background: #f0f3f5; border: 1px solid #cdd4d9; }
+
+  .header { padding: 40px 48px 28px; border-bottom: 2px solid #1a1a1a; }
+  .pub-label { font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .pub-name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #1a1a1a; line-height: 1.1; margin-bottom: 14px; }
+  .pub-meta { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #888; letter-spacing: 1px; }
+
+  /* ── Language toggle ── */
+  .lang-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .lang-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .lang-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+
+  .lang-en { display: none; }
+
+  .ticker { background: #1a1a1a; padding: 10px 48px; border-bottom: 3px solid #f0f3f5; }
+  .ticker-inner { display: flex; justify-content: space-between; }
+  .tick-item { text-align: center; flex: 1; padding: 6px 8px; border-left: 1px solid #2e2e2e; }
+  .tick-item:first-child { border-left: none; }
+  .tick-label { display: block; font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+  .tick-val { font-size: 12px; color: #d4cfc8; }
+  .tick-up { color: #6abf7b; font-size: 10px; margin-left: 4px; }
+  .tick-down { color: #d4695a; font-size: 10px; margin-left: 4px; }
+
+  /* ── Secondary market strip (tabbed) ── */
+  .mkt-strip { background: #1a1a1a; }
+  .mkt-tab-nav { display: flex; padding: 0 48px; border-bottom: 1px solid #222; }
+  .mkt-tab-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 8px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 7px 14px 6px; cursor: pointer; border: none; background: transparent;
+    color: #444; border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .mkt-tab-btn[data-group="eq"].active { color: #a8c8a0; border-bottom-color: #a8c8a0; }
+  .mkt-tab-btn[data-group="co"].active { color: #d4b87a; border-bottom-color: #d4b87a; }
+  .mkt-tab-btn[data-group="cr"].active { color: #b49ed4; border-bottom-color: #b49ed4; }
+  .mkt-tab-btn:not(.active):hover { color: #777; }
+  .mkt-panel { display: none; padding: 0 48px; }
+  .mkt-panel.visible { display: flex; }
+  .mkt-panel .tick-item { padding: 9px 8px; }
+
+  .editor-note { padding: 28px 48px; }
+  .editor-note p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #444; line-height: 1.8; }
+  .editor-sig { margin-top: 12px; font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+  .divider { display: flex; align-items: center; gap: 12px; padding: 0 48px; }
+  .divider .line { flex: 1; height: 1px; background: #cdd4d9; }
+
+  .sentiment { padding: 24px 48px; }
+  .sentiment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .sentiment-label { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-reading { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+  .sentiment-reading.risk-off { color: #b84a3a; }
+  .sentiment-reading.cautious { color: #9a6a1a; }
+  .sentiment-reading.risk-on  { color: #4a9e6a; }
+  .gauge-track { height: 6px; border-radius: 3px; background: linear-gradient(90deg, #b84a3a, #e8a030, #4a9e6a); position: relative; margin: 0 7px; }
+  .gauge-marker { position: absolute; top: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; border-radius: 50%; background: #f0f3f5; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+  .gauge-marker.risk-off { border: 2px solid #b84a3a; }
+  .gauge-marker.cautious { border: 2px solid #9a6a1a; }
+  .gauge-marker.risk-on  { border: 2px solid #4a9e6a; }
+  .gauge-ticks { display: flex; justify-content: space-between; margin-top: 7px; font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; }
+  .sentiment-context { margin-top: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: #555; line-height: 1.7; }
+
+  .story { padding: 24px 48px; }
+  .story-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .story-source { font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+  .story-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; margin-bottom: 10px; }
+  .story-headline-lead { font-size: 26px; }
+  .lead-label { font-size: 8px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 6px; }
+  .story-body { font-size: 13.5px; color: #555; line-height: 1.75; margin-bottom: 10px; }
+  .read-more { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border: 1px solid #1a1a1a; padding: 6px 14px; margin-top: 6px; transition: background 0.15s, color 0.15s; }
+  .read-more:hover { background: #1a1a1a; color: #f5f2ed; }
+  .thread-badge {
+    display: inline-block;
+    font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    background: #1a1a1a; color: #f5f2ed; padding: 3px 9px; border-radius: 2px;
+    margin-bottom: 8px;
+  }
+  .context-note {
+    font-size: 12.5px; color: #777; line-height: 1.7; font-style: italic;
+    border-left: 3px solid #cdd4d9; padding-left: 10px;
+    margin: 10px 0;
+  }
+  .narrative-thread { padding: 20px 48px; border-top: 1px solid #e4e9ec; border-bottom: 1px solid #e4e9ec; text-align: center; }
+  .nt-label { font-size: 8px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #aab4bc; margin-bottom: 10px; }
+  .nt-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; color: #3a4a54; line-height: 1.65; margin: 0; }
+
+  .currency { padding: 24px 48px; }
+  .section-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #aab4bc; margin-bottom: 14px; }
+  .currency-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .currency-toggle { display: flex; gap: 0; border: 1px solid #cdd4d9; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+  .currency-btn {
+    font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 8px; cursor: pointer; border: none; outline: none;
+    background: transparent; color: #aab4bc; transition: background 0.15s, color 0.15s;
+  }
+  .currency-btn.active { background: #1a1a1a; color: #f5f2ed; }
+  .currency-btn:not(.active):hover { background: #e4e9ec; color: #3a4a54; }
+  .currency-table { width: 100%; border-collapse: collapse; }
+  .currency-table th { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #cdd4d9; }
+  .currency-table th:not(:first-child) { text-align: right; }
+  .currency-table td { font-size: 12.5px; color: #3a4a54; padding: 9px 0; border-bottom: 1px solid #e4e9ec; }
+  .currency-table td:not(:first-child) { text-align: right; }
+  .currency-table tr:last-child td { border-bottom: none; }
+  .currency-table .pair { font-weight: 600; color: #1a1a1a; }
+
+  .quote { padding: 28px 48px; background: #e8edf0; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 0.5; color: #c8d0d6; display: block; margin-bottom: 8px; }
+  .quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: #3a4a54; line-height: 1.75; margin-bottom: 12px; }
+  .quote-attr { font-size: 9px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #8a9aa4; }
+
+  .week { padding: 24px 48px; }
+  .timeline { display: flex; flex-direction: column; }
+  .tl-row { display: flex; gap: 16px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+  .tl-day { font-size: 8px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #aab4bc; margin-bottom: 5px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8d0d6; border: 2px solid #f0f3f5; outline: 1px solid #c8d0d6; }
+  .tl-dot.active { background: #3a4a54; outline-color: #3a4a54; }
+  .tl-line { width: 1px; flex: 1; background: #dde3e8; min-height: 16px; margin: 3px 0; }
+  .tl-row:last-child .tl-line { display: none; }
+  .tl-content { padding-bottom: 20px; flex: 1; }
+  .tl-row:last-child .tl-content { padding-bottom: 0; }
+  .tl-tag { font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; border: 1px solid #cdd4d9; padding: 2px 6px; display: inline-block; margin-bottom: 5px; }
+  .tl-headline { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 4px; }
+  .tl-body { font-size: 12px; color: #777; line-height: 1.65; }
+
+  .sc-table { width: 100%; border-collapse: collapse; }
+  .sc-day { font-size: 8px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #aab4bc; width: 32px; white-space: nowrap; padding: 0 8px 8px 0; vertical-align: middle; }
+  .sc-track-cell { padding: 0 8px 8px 0; vertical-align: middle; }
+  .sc-track { background: #e4e9ec; height: 20px; width: 100%; }
+  .sc-bar { height: 20px; display: flex; align-items: center; padding-left: 7px; min-width: 4%; }
+  .sc-val { font-size: 9px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+  .sc-label { font-size: 9px; font-weight: 700; white-space: nowrap; padding: 0 0 8px 0; vertical-align: middle; width: 80px; text-align: right; }
+
+  .calendar { padding: 24px 48px; }
+  .cal-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #e4e9ec; }
+  .cal-row:last-child { border-bottom: none; }
+  .cal-date { font-size: 10px; color: #555; min-width: 46px; flex-shrink: 0; }
+  .cal-badge { font-size: 7.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 2px 5px; border: 1px solid; min-width: 50px; text-align: center; flex-shrink: 0; }
+  .cal-label { font-size: 12px; color: #1a1a1a; flex: 1; }
+  .cal-days { font-size: 9px; color: #aab4bc; white-space: nowrap; flex-shrink: 0; }
+
+  .weekly-mkt { background: #1a1a1a; padding: 16px 48px 14px; }
+  .wm-title { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: #555; margin-bottom: 2px; }
+  .wm-subtitle { font-size: 8px; color: #444; margin-bottom: 12px; }
+  .wm-table { width: 100%; border-collapse: collapse; }
+  .wm-table th { font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #444; text-align: left; padding: 0 0 8px; border-bottom: 1px solid #2a2a2a; }
+  .wm-table th:not(:first-child) { text-align: right; }
+  .wm-table td { font-size: 11px; padding: 8px 0; border-bottom: 1px solid #2a2a2a; }
+  .wm-table tr:last-child td { border-bottom: none; }
+  .wm-label { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #555; }
+  .wm-val { color: #d4cfc8; text-align: right; padding-left: 12px; }
+  .wm-chg { text-align: right; font-size: 10px; padding-left: 12px; }
+
+  .footer { background: #1a1a1a; padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: #f5f2ed; }
+  .footer-by { font-size: 10px; color: #666; letter-spacing: 1px; }
+
+  /* -- Hero image -- */
+  .hero-image { line-height: 0; }
+  .hero-image img { width: 100%; display: block; }
+
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .wrap { border: none; }
+    .header { padding: 28px 20px 20px; }
+    .pub-name { font-size: 26px; }
+    .ticker { padding: 6px 8px; }
+    .ticker-inner { flex-wrap: wrap; }
+    .tick-item { flex: 1 1 45%; padding: 8px 4px; }
+    .mkt-tab-nav { padding: 0 12px; }
+    .mkt-panel { padding: 0 8px; flex-wrap: wrap; }
+    .mkt-panel .tick-item { flex: 1 1 45%; }
+    .editor-note { padding: 20px 20px; }
+    .divider { padding: 0 20px; }
+    .sentiment { padding: 20px 20px; }
+    .story { padding: 20px 20px; }
+    .currency { padding: 20px 20px; }
+    .quote { padding: 20px 20px; }
+    .week { padding: 20px 20px; }
+    .footer { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="pub-label">Context before the noise</div>
+    <div class="pub-name">The Opening Bell</div>
+    <div class="pub-meta">
+      <span>MONDAY, OCTOBER 26, 2026</span>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <span>NO. 64</span>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="tick-item">
+        <span class="tick-label">DXY</span>
+        <span class="tick-val">101.87</span>
+        <span class="tick-up">▲ 0.1%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">10Y UST</span>
+        <span class="tick-val">4.99%</span>
+        <span class="tick-up">▲ 0.7%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">VIX</span>
+        <span class="tick-val">19.07</span>
+        <span class="tick-down">▼ 2.0%</span>
+      </div>
+      <div class="tick-item">
+        <span class="tick-label">MSCI EM</span>
+        <span class="tick-val">$62.01</span>
+        <span class="tick-up">▲ 0.5%</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="mkt-strip">
+    <div class="mkt-tab-nav"><button class="mkt-tab-btn" data-group="eq" onclick="setMktTab('eq')">Global Equities</button><button class="mkt-tab-btn" data-group="co" onclick="setMktTab('co')">Commodities</button><button class="mkt-tab-btn" data-group="cr" onclick="setMktTab('cr')">Crypto</button></div>
+    <div class="mkt-panel" id="mkt-eq">
+        <div class="tick-item">
+          <span class="tick-label">S&P 500</span>
+          <span class="tick-val">7,624</span>
+          <span class="tick-down">▼ 1.7%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Nasdaq</span>
+          <span class="tick-val">25,955</span>
+          <span class="tick-down">▼ 2.8%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Euro Stoxx</span>
+          <span class="tick-val">6,112</span>
+          <span class="tick-up">▲ 0.7%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Nikkei</span>
+          <span class="tick-val">62,190</span>
+          <span class="tick-down">▼ 0.8%</span>
+        </div>
+    </div>
+    <div class="mkt-panel" id="mkt-co">
+        <div class="tick-item">
+          <span class="tick-label">Brent</span>
+          <span class="tick-val">$110</span>
+          <span class="tick-down">▼ 1.4%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Gold</span>
+          <span class="tick-val">$4,031</span>
+          <span class="tick-up">▲ 0.6%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Copper</span>
+          <span class="tick-val">$6.53</span>
+          <span class="tick-up">▲ 0.3%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Wheat</span>
+          <span class="tick-val">$6.23</span>
+          <span class="tick-down">▼ 0.3%</span>
+        </div>
+    </div>
+    <div class="mkt-panel" id="mkt-cr">
+        <div class="tick-item">
+          <span class="tick-label">Bitcoin</span>
+          <span class="tick-val">$80,337</span>
+          <span class="tick-up">▲ 0.4%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Ethereum</span>
+          <span class="tick-val">$2,328</span>
+          <span class="tick-up">▲ 0.0%</span>
+        </div>
+        <div class="tick-item">
+          <span class="tick-label">Solana</span>
+          <span class="tick-val">$101.66</span>
+          <span class="tick-up">▲ 0.4%</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="editor-note">
+    <div class="lang-es"><p>Estimados humanos, esta semana arrancamos con dos bombas de relojería en la misma mesa: la Fed decide en dos días sobre tasas en un entorno donde el bono a 10 años roza el 5%, y Francia sigue ardiendo —literal y fiscalmente— mientras Moody's le perdona la vida pero le dice que el paciente está terminal. El oro recupera algo de terreno hoy pero los mercados de renta variable globales cayeron con fuerza ayer, señal de que nadie está muy cómodo de cara al miércoles.</p></div>
+    <div class="lang-en"><p>Dear humans, this week opens with two ticking time bombs on the same table: the Fed decides in two days on rates in an environment where the 10-year Treasury is flirting with 5%, and France keeps burning—literally and fiscally—while Moody's spares it a downgrade but essentially describes a terminal patient. Gold recovers some ground today but global equity markets fell sharply yesterday, a sign that nobody is particularly comfortable heading into Wednesday.</p></div>
+    <div class="editor-sig">&mdash; Lev Erage, Ambassador-at-Large for Unintended Consequences</div>
+  </div>
+
+  
+<div class="narrative-thread">
+  <div class="nt-label lang-es">Hilo del d&#237;a</div>
+  <div class="nt-label lang-en">Today&#39;s thread</div>
+  <p class="nt-text lang-es">La guerra en Irán, la inflación energética y la deuda soberana desbocada están convergiendo para poner a los bancos centrales —Fed, Banco Central de Chile, y pronto Banxico— ante la disyuntiva más incómoda en años: subir tasas para contener precios o ceder ante economías que ya flaquean.</p>
+  <p class="nt-text lang-en">The Iran war, energy inflation, and runaway sovereign debt are converging to put central banks—the Fed, Chile's central bank, and soon Banxico—before the most uncomfortable dilemma in years: hike rates to contain prices or yield to economies that are already faltering.</p>
+</div>
+
+  
+<div class="hero-image">
+  <img src="https://newsletter.mustardhq.dev/images/2026-10-26_hero.png" alt="Macro">
+</div>
+
+  <div style='height:1px; background:#cdd4d9;'></div>
+
+  <div class="sentiment">
+    <div class="sentiment-header">
+      <span class="sentiment-label"
+            data-es="Sentimiento del D&#237;a"
+            data-en="Market Sentiment">Sentimiento del D&#237;a</span>
+      <span class="sentiment-reading risk-off lang-es">Aversión al Riesgo</span>
+      <span class="sentiment-reading risk-off lang-en">Risk-Off</span>
+    </div>
+    <div class="gauge-track">
+      <div class="gauge-marker risk-off" style="left:28%;"></div>
+    </div>
+    <div class="gauge-ticks">
+      <span data-es="Avers. al Riesgo" data-en="Risk-Off">Avers. al Riesgo</span>
+      <span data-es="Neutral"          data-en="Neutral">Neutral</span>
+      <span data-es="Apetito de Riesgo" data-en="Risk-On">Apetito de Riesgo</span>
+    </div>
+    <div class="sentiment-context lang-es">El S&P 500 cayó 1,7% y el Nasdaq 2,8%, el VIX permanece elevado en 19, los bonos del Tesoro a 10 años rozan el 5% y el mercado descuenta alzas adicionales de la Fed en un contexto de guerra en Irán e inflación energética persistente.</div>
+    <div class="sentiment-context lang-en">The S&P 500 fell 1.7% and the Nasdaq 2.8%, the VIX remains elevated at 19, 10-year Treasuries hover near 5%, and markets are pricing in additional Fed hikes amid the Iran war and persistent energy inflation.</div>
+  </div>
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  
+  <div class="lead-label">&#9679; LEAD STORY</div>
+  <div class="story-meta">
+    <span class="story-source">Fortune</span>
+    <span class="story-tag" data-es="Macro" data-en="Macro">Macro</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline story-headline-lead">Moody's salva a Francia del recorte de nota pero describe un Estado en descomposición fiscal y política</div>
+    <div class="story-body">Moody's mantuvo la calificación de Francia en Aa3 con perspectiva negativa, advirtiendo que su deuda pública alcanza un récord de 4 billones de dólares —el 119% del PIB— y que la inestabilidad política impide la consolidación fiscal necesaria. La agencia prevé que el déficit sólo baje al 5,2% del PIB en 2027, peor que el 5% que plantea el presupuesto, y señala que se requiere un esfuerzo 'significativo y sostenido' más allá de las elecciones presidenciales para estabilizar la deuda.</div>
+    <div class="context-note">El artículo de El Mundo señala que la prima de riesgo francesa ronda los 145 puntos básicos y que el bono francés a 10 años tocó el 4,96% el 1 de octubre, niveles no vistos desde 2002; en ese contexto, el bono estadounidense a 10 años cotiza hoy al 4,99%, lo que reduce el margen de maniobra de Francia para refinanciarse.</div>
+    <a href="https://fortune.com/2026/10/24/france-debt-crisis-warning-moodys-governance-budget-deficit-presidential-election-politics/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline story-headline-lead">Moody's spares France a downgrade but describes a country where governance is breaking down</div>
+    <div class="story-body">Moody's kept France's rating at Aa3 with a negative outlook, warning that its public debt has hit a record $4 trillion—119% of GDP—and that political instability is preventing the fiscal consolidation the country needs. The agency expects the deficit to fall only to 5.2% of GDP in 2027, worse than the government's 5% target, and says a 'significant and sustained fiscal effort' beyond the presidential elections is required to stabilize the debt burden.</div>
+    <div class="context-note">El Mundo reports that France's risk premium hovers around 145 basis points and that the French 10-year bond touched 4.96% on October 1st, levels not seen since 2002; with the US 10-year at 4.99% today, France's refinancing margin is shrinking fast.</div>
+    <a href="https://fortune.com/2026/10/24/france-debt-crisis-warning-moodys-governance-budget-deficit-presidential-election-politics/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <span class="thread-badge" data-es="&#9679; Tasas: Fed" data-en="&#9679; Rates: Fed">&#9679; Tasas: Fed</span>
+  
+  <div class="story-meta">
+    <span class="story-source">CNBC</span>
+    <span class="story-tag" data-es="Tasas" data-en="Rates">Tasas</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">La Fed se reúne en dos días y el mercado ya descuenta un alza en diciembre; el bono a 10 años no da tregua</div>
+    <div class="story-body">Con la decisión de la Fed prevista para el miércoles, el mercado asigna un 71% de probabilidad a un alza de 25 puntos básicos en diciembre desde el nivel actual de 3,75%-4,00%, mientras el rendimiento del bono a 10 años cerró la semana pasada en 4,999% y el del bono a 30 años en 5,312%. El economista jefe de Fwdbonds, Chris Rupkey, advierte que el presidente Warsh probablemente dejará a los inversores en bonos 'desorientados' en su conferencia de prensa del miércoles, sin confirmar ni descartar un alza diciembre.</div>
+    <div class="context-note">El bono a 10 años cotiza hoy al 4,99% según los datos de mercado, consistente con el nivel reportado en el artículo; el Banco Central de Chile también se reúne mañana y el artículo de La Tercera señala que su dilema —inflación al alza versus recesión— se complica directamente por la trayectoria de la Fed.</div>
+    <a href="https://www.cnbc.com/2026/10/23/bonds-yields-us-treasurys.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Fed meets in two days; market prices 71% odds of December hike as 10-year yield refuses to retreat</div>
+    <div class="story-body">With the Fed decision due Wednesday, markets are pricing a 71% probability of a 25 basis point hike in December from the current 3.75%-4.00% range, while the 10-year Treasury yield closed last week at 4.999% and the 30-year at 5.312%. Fwdbonds chief economist Chris Rupkey warned that Chairman Warsh will likely leave bond investors 'dazed and confused' at Wednesday's press conference, neither confirming nor ruling out a December move.</div>
+    <div class="context-note">Today's market data shows the 10-year Treasury at 4.99%, consistent with levels reported in the article; La Tercera's piece on the Chilean central bank notes that its dilemma—rising inflation versus recession—is directly complicated by the Fed's rate trajectory.</div>
+    <a href="https://www.cnbc.com/2026/10/23/bonds-yields-us-treasurys.html" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  
+  
+  <div class="story-meta">
+    <span class="story-source">Al Jazeera English</span>
+    <span class="story-tag" data-es="Política" data-en="Politics">Política</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Obama campaña en Michigan y Ohio acusando a Trump de iniciar 'una guerra innecesaria' que disparó el precio del petróleo</div>
+    <div class="story-body">El expresidente Barack Obama calificó la guerra contra Irán de 'innecesaria' durante mítines en Ohio y Michigan, a 10 días de las elecciones de medio mandato del 3 de noviembre, argumentando que el cierre del Estrecho de Ormuz es la causa directa del encarecimiento de la gasolina —de menos de 3 dólares por galón antes de la guerra a más de 4,27 dólares actualmente— y de la inflación que golpea a las familias. Un sondeo del Institute for Global Affairs indica que el 81% de los votantes encuestados vincula el conflicto con el aumento del costo de vida.</div>
+    <div class="context-note">El Brent cotiza hoy a 110 dólares por barril según los datos de mercado, todavía por debajo de los 113 dólares que marcó el jueves pasado según el artículo de Al Jazeera sobre el Foro Mundial de Inversiones en Doha, pero en un nivel que sigue alimentando inflación energética global y debilitando la posición electoral republicana.</div>
+    <a href="https://www.aljazeera.com/news/2026/10/25/obamas-ohio-michigan-speeches-key-takeaways-on-trump-iran-war-midterms" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Obama campaigns in Michigan and Ohio, calling the Iran war 'unnecessary' and blaming it for surging gas prices</div>
+    <div class="story-body">Former President Barack Obama called the war on Iran 'unnecessary' at rallies in Ohio and Michigan, ten days before the November 3 midterm elections, arguing that the closure of the Strait of Hormuz directly caused gasoline prices to surge from under $3 per gallon before the war to more than $4.27 today. A survey by the Institute for Global Affairs found that 81% of respondents linked the conflict to the rising cost of living.</div>
+    <div class="context-note">Brent crude trades at $110 today per market data, still below the $113 it hit last Thursday according to Al Jazeera's World Investment Forum article, but at a level that continues to fuel global energy inflation and weaken Republican electoral standing.</div>
+    <a href="https://www.aljazeera.com/news/2026/10/25/obamas-ohio-michigan-speeches-key-takeaways-on-trump-iran-war-midterms" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  
+  
+  <div class="story-meta">
+    <span class="story-source">La Nacion</span>
+    <span class="story-tag" data-es="México" data-en="Mexico">México</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Milei admite por primera vez que los indicadores no evolucionan como esperaba y el Gobierno debate medidas de reactivación</div>
+    <div class="story-body">En una entrevista con Radio Rivadavia el jueves, el presidente Javier Milei reconoció que 'los indicadores no están evolucionando tan positivamente como esperábamos', mientras el riesgo país alcanzó esta semana su pico máximo reciente en 710 puntos. Funcionarios del Gobierno debaten en privado medidas de estímulo como un RIGI para Pymes y una posible desaceleración de la quita de subsidios en 2027, aunque Milei se mantiene inflexible en el rumbo y descarta cambios al programa económico.</div>
+    <div class="context-note">El ministro de Economía Luis Caputo advirtió al regreso del FMI sobre un shock externo global 'no muy venturoso'; el MSCI de mercados emergentes cotiza hoy en 62,01 dólares sin variación semanal, lo que refleja la presión estructural que enfrentan economías como la argentina en un entorno de tasas altas y guerra en Irán.</div>
+    <a href="https://www.lanacion.com.ar/politica/en-el-gobierno-debaten-medidas-de-reactivacion-economica-pero-milei-se-muestra-inflexible-nid25102026/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Milei admits for the first time that economic indicators are not evolving as expected; government debates stimulus measures</div>
+    <div class="story-body">In a Thursday interview with Radio Rivadavia, President Javier Milei acknowledged that 'indicators are not evolving as positively as we expected at first,' as Argentina's country risk hit a recent peak of 710 basis points this week. Government officials are privately debating stimulus measures such as a RIGI scheme for SMEs and a possible slowdown in subsidy cuts in 2027, though Milei remains publicly inflexible on the overall economic program.</div>
+    <div class="context-note">Economy Minister Luis Caputo warned upon returning from the IMF about a 'not very auspicious' global external shock; the MSCI EM trades today at $62.01 with no weekly change, reflecting the structural pressure facing economies like Argentina in a high-rate, Iran-war environment.</div>
+    <a href="https://www.lanacion.com.ar/politica/en-el-gobierno-debaten-medidas-de-reactivacion-economica-pero-milei-se-muestra-inflexible-nid25102026/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  
+  
+  <div class="story-meta">
+    <span class="story-source">CNBC</span>
+    <span class="story-tag" data-es="Mercados" data-en="Markets">Mercados</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Nvidia enfrenta su primera gran prueba como financiador de la IA: los neoclouds se desploman y el riesgo de crédito se dispara</div>
+    <div class="story-body">Las acciones de CoreWeave, Nebius e IREN —neoclouds respaldados por Nvidia— han caído al menos un 30% este mes, y el spread de los credit default swaps de CoreWeave superó el 11%, territorio de distress. Nvidia tiene 36.000 millones de dólares en compromisos fuera de balance para neoclouds y garantías de hasta 105.000 millones en el proyecto de centro de datos de OpenAI en Ohio, lo que pone a prueba por primera vez la solidez de la estrategia de Jensen Huang de actuar simultáneamente como fabricante de chips y financiador del ecosistema de IA.</div>
+    <div class="context-note">El Nasdaq cayó 2,8% ayer y el artículo sobre bonos del Tesoro de CNBC señala que el deterioro del crédito de los neoclouds fue uno de los factores que empujó a los inversores hacia la seguridad de los Treasuries la semana pasada; con el VIX en 19 y el mercado mirando a la Fed el miércoles, el contagio financiero del sector IA es hoy un riesgo sistémico de primera fila.</div>
+    <a href="https://www.cnbc.com/2026/10/24/nvidias-role-as-ai-financier-faces-first-big-test-as-neoclouds-take-market-hit.html" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Nvidia's role as AI financier faces first big test as neoclouds take market hit</div>
+    <div class="story-body">Shares of CoreWeave, Nebius and IREN—neoclouds backed by Nvidia—have fallen at least 30% this month, and the spread on CoreWeave's credit default swaps has soared past 11%, into distressed territory. Nvidia carries $36 billion in off-balance-sheet commitments to neoclouds and has guaranteed up to $105 billion on OpenAI's Ohio data center project, putting Jensen Huang's dual strategy of chip maker and ecosystem financier to its first serious stress test.</div>
+    <div class="context-note">The Nasdaq fell 2.8% yesterday and the CNBC Treasury bond article notes that deteriorating neocloud credit was one of the factors driving investors toward the safety of Treasuries last week; with the VIX at 19 and markets watching the Fed on Wednesday, financial contagion from the AI sector is now a front-rank systemic risk.</div>
+    <a href="https://www.cnbc.com/2026/10/24/nvidias-role-as-ai-financier-faces-first-big-test-as-neoclouds-take-market-hit.html" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  <span class="thread-badge" data-es="&#9679; Tasas: Fed" data-en="&#9679; Rates: Fed">&#9679; Tasas: Fed</span>
+  
+  <div class="story-meta">
+    <span class="story-source">Latercera.com</span>
+    <span class="story-tag" data-es="Tasas" data-en="Rates">Tasas</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">El Banco Central de Chile enfrenta mañana un dilema imposible: recesión, inflación al alza y la Fed presionando hacia arriba</div>
+    <div class="story-body">El Banco Central de Chile concluye mañana su reunión de política monetaria con el mercado esperando que mantenga la tasa en 4,5%, pero la encuesta de operadores financieros muestra que el número de agentes que apuesta a un alza en diciembre se duplicó de tres a seis respecto al mes anterior. Una exautoridad económica consultada por La Tercera resume el dilema: 'Si solo tomáramos en cuenta el estancamiento de la economía, la recomendación sería bajar la tasa, pero si consideráramos que la inflación va a llegar a 5% hacia fin de año y que la Reserva Federal va a seguir subiendo las tasas, la opción debiera ser al revés'.</div>
+    <div class="context-note">La reunión del Banco Central de Chile de mañana precede en un día a la decisión de la Fed el miércoles; el DXY cotiza hoy en 101,87 y el artículo señala que el dólar chileno se acerca a los $1.000, lo que añade presión inflacionaria importada y estrecha aún más el margen del consejo para recortar.</div>
+    <a href="https://www.latercera.com/pulso/noticia/la-encrucijada-de-fin-de-ano-del-banco-central/" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Chile's central bank faces an impossible dilemma tomorrow: recession, rising inflation and the Fed pushing rates higher</div>
+    <div class="story-body">Chile's central bank concludes its monetary policy meeting tomorrow with markets expecting rates to be held at 4.5%, but the financial operators survey shows the number of agents betting on a December hike doubled from three to six compared to last month. A former economic authority quoted by La Tercera summarizes the bind: 'If we only considered the economic stagnation, the recommendation would be to cut rates, but if we factor in inflation heading to 5% by year-end and the Fed continuing to hike, the option should be the opposite.'</div>
+    <div class="context-note">Chile's central bank meeting tomorrow precedes the Fed decision by one day; the DXY trades at 101.87 today and the article notes the Chilean peso is approaching 1,000 per dollar, adding imported inflationary pressure and further narrowing the board's room to cut.</div>
+    <a href="https://www.latercera.com/pulso/noticia/la-encrucijada-de-fin-de-ano-del-banco-central/" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="story">
+  
+  
+  <div class="story-meta">
+    <span class="story-source">CNA</span>
+    <span class="story-tag" data-es="Energía" data-en="Energy">Energía</span>
+  </div>
+  <div class="lang-es">
+    <div class="story-headline">Indonesia recorta exportaciones de gas a Singapur; el Gobierno asegura que el impacto en precios será mínimo en el corto plazo</div>
+    <div class="story-body">Indonesia inició el sábado una reducción de 31 millones de pies cúbicos estándar de gas diario en sus exportaciones a Singapur —equivalente a 17.000 millones de BTU por día durante 18 días— para redirigir suministros al consumo doméstico, aunque el ministro Tan See Leng afirmó que ello representa menos del 2% de las necesidades diarias totales de gas del país. Singapur cuenta con su planta de GNL de reserva y ha ordenado a sus generadoras mantener reservas de diésel suficientes para absorber interrupciones mayores, pero el primer ministro Lawrence Wong advirtió que espera que todas las partes que firmaron contratos comerciales de gas 'honren sus compromisos'.</div>
+    <div class="context-note">El Brent cotiza hoy a 110 dólares por barril en un mercado energético ya tensionado por los ataques en el Estrecho de Ormuz; cualquier perturbación adicional en el suministro regional de gas —aunque sea pequeña— amplifica la vulnerabilidad de las economías asiáticas dependientes de importaciones energéticas en este entorno.</div>
+    <a href="https://www.channelnewsasia.com/singapore/electricity-prices-indonesia-gas-supply-cut-tan-see-leng-6490121" class="read-more">Leer m&aacute;s &rarr;</a>
+  </div>
+  <div class="lang-en">
+    <div class="story-headline">Indonesia cuts gas exports to Singapore; government says short-term price impact will be minimal</div>
+    <div class="story-body">Indonesia on Saturday began reducing natural gas exports to Singapore by 31 million standard cubic feet per day—equivalent to 17 billion BTUs daily over 18 days—to redirect supplies to domestic electricity needs, though Minister Tan See Leng said the cut amounts to less than 2% of Singapore's total daily gas requirements. Singapore has its standby LNG facility and has required power generators to maintain sufficient diesel reserves, but Prime Minister Lawrence Wong warned that Singapore expects all parties that signed commercial gas contracts to 'honour their commitments.'</div>
+    <div class="context-note">Brent trades at $110 today in an energy market already strained by attacks on the Strait of Hormuz; any additional disruption in regional gas supply—however small—amplifies the vulnerability of Asian economies dependent on energy imports in this environment.</div>
+    <a href="https://www.channelnewsasia.com/singapore/electricity-prices-indonesia-gas-supply-cut-tan-see-leng-6490121" class="read-more">Read more &rarr;</a>
+  </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="currency">
+    <div class="currency-header">
+      <div class="section-title"
+           data-es="Tipo de Cambio"
+           data-en="Exchange Rates">Tipo de Cambio</div>
+      <div class="currency-toggle"><button class="currency-btn active" data-base="MXN" onclick="setCurrencyBase('MXN')">MXN</button><button class="currency-btn " data-base="USD" onclick="setCurrencyBase('USD')">USD</button><button class="currency-btn " data-base="BRL" onclick="setCurrencyBase('BRL')">BRL</button><button class="currency-btn " data-base="EUR" onclick="setCurrencyBase('EUR')">EUR</button><button class="currency-btn " data-base="CNY" onclick="setCurrencyBase('CNY')">CNY</button></div>
+    </div>
+    
+    <div class="currency-view" data-base="MXN" style="">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">MXN / USD</td>
+        <td>0.05354</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.23%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.44%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / BRL</td>
+        <td>0.2677</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.77%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 2.17%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / EUR</td>
+        <td>0.04781</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.43%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.29%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / CNY</td>
+        <td>0.3564</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.09%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.94%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / CAD</td>
+        <td>0.0750</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.30%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 2.08%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / GBP</td>
+        <td>0.04010</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.61%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.76%</td>
+      </tr>
+      <tr>
+        <td class="pair">MXN / JPY</td>
+        <td>8.42</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.78%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 2.17%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="USD" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">USD / MXN</td>
+        <td>18.6778</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.23%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.46%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / BRL</td>
+        <td>4.9993</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.00%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.75%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / EUR</td>
+        <td>0.89294</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.20%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.15%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / CNY</td>
+        <td>6.6565</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.32%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.51%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / CAD</td>
+        <td>1.4013</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.07%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.65%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / GBP</td>
+        <td>0.74890</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.38%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.33%</td>
+      </tr>
+      <tr>
+        <td class="pair">USD / JPY</td>
+        <td>157.35</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.54%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.74%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="BRL" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">BRL / MXN</td>
+        <td>3.7361</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.78%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 2.22%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / USD</td>
+        <td>0.20003</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.01%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.75%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / EUR</td>
+        <td>0.17861</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.21%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.91%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / CNY</td>
+        <td>1.3315</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.69%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.24%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / CAD</td>
+        <td>0.2803</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.09%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.09%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / GBP</td>
+        <td>0.14980</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.40%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.42%</td>
+      </tr>
+      <tr>
+        <td class="pair">BRL / JPY</td>
+        <td>31.47</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.56%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.01%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="EUR" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">EUR / MXN</td>
+        <td>20.9173</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.43%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.30%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / USD</td>
+        <td>1.11990</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.20%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.15%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / BRL</td>
+        <td>5.5987</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 1.20%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.90%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / CNY</td>
+        <td>7.4546</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.52%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.66%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / CAD</td>
+        <td>1.5693</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.13%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.80%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / GBP</td>
+        <td>0.83869</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.18%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.48%</td>
+      </tr>
+      <tr>
+        <td class="pair">EUR / JPY</td>
+        <td>176.21</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.34%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.89%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="currency-view" data-base="CNY" style="display:none;">
+      <table class="currency-table">
+        <thead>
+          <tr>
+            <th data-es="Par" data-en="Pair">Par</th>
+            <th data-es="Tipo" data-en="Rate">Tipo</th>
+            <th style="text-align:right;">1D</th>
+            <th style="text-align:right;">1W</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td class="pair">CNY / MXN</td>
+        <td>2.8059</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.09%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 1.98%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / USD</td>
+        <td>0.15023</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.32%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.52%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / BRL</td>
+        <td>0.7510</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.68%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.24%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / EUR</td>
+        <td>0.13415</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.52%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.67%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / CAD</td>
+        <td>0.2105</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.40%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.14%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / GBP</td>
+        <td>0.11251</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.70%</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.18%</td>
+      </tr>
+      <tr>
+        <td class="pair">CNY / JPY</td>
+        <td>23.64</td>
+        <td style="color:#4a9e6a; text-align:right;">▲ 0.87%</td>
+        <td style="color:#b84a3a; text-align:right;">▼ 0.23%</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
+
+  
+
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+<div class="calendar">
+  <div class="section-title"
+       data-es="Pr&oacute;ximas Fechas Clave"
+       data-en="Key Upcoming Dates">Pr&oacute;ximas Fechas Clave</div>
+  
+      <div class="cal-row">
+        <span class="cal-date" data-es="28 OCT" data-en="OCT 28">28 OCT</span>
+        <span class="cal-badge" style="color:#5a8abf; border-color:#5a8abf;">FED</span>
+        <span class="cal-label" data-es="FOMC — Decisión Fed" data-en="FOMC — Fed decision">FOMC — Decisión Fed</span>
+        <span class="cal-days" data-es="2d" data-en="2d">2d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date" data-es="05 NOV" data-en="NOV 05">05 NOV</span>
+        <span class="cal-badge" style="color:#4a9e6a; border-color:#4a9e6a;">BANXICO</span>
+        <span class="cal-label" data-es="Banxico — Decisión de tasa" data-en="Banxico — Rate decision">Banxico — Decisión de tasa</span>
+        <span class="cal-days" data-es="10d" data-en="10d">10d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date" data-es="10 NOV" data-en="NOV 10">10 NOV</span>
+        <span class="cal-badge" style="color:#7a9aaa; border-color:#7a9aaa;">BLS</span>
+        <span class="cal-label" data-es="BLS — CPI EE.UU. (oct)" data-en="BLS — U.S. CPI (Oct)">BLS — CPI EE.UU. (oct)</span>
+        <span class="cal-days" data-es="15d" data-en="15d">15d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date" data-es="09 DIC" data-en="DEC 09">09 DIC</span>
+        <span class="cal-badge" style="color:#5a8abf; border-color:#5a8abf;">FED</span>
+        <span class="cal-label" data-es="FOMC — Decisión Fed" data-en="FOMC — Fed decision">FOMC — Decisión Fed</span>
+        <span class="cal-days" data-es="44d" data-en="44d">44d</span>
+      </div>
+      <div class="cal-row">
+        <span class="cal-date" data-es="10 DIC" data-en="DEC 10">10 DIC</span>
+        <span class="cal-badge" style="color:#7a9aaa; border-color:#7a9aaa;">BLS</span>
+        <span class="cal-label" data-es="BLS — CPI EE.UU. (nov)" data-en="BLS — U.S. CPI (Nov)">BLS — CPI EE.UU. (nov)</span>
+        <span class="cal-days" data-es="45d" data-en="45d">45d</span>
+      </div>
+</div>
+
+  
+<div class="divider">
+  <div class="line"></div>
+  <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+    <rect x="7" y="0" width="4" height="4" fill="#b0bec8"/>
+    <rect x="0" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="14" y="7" width="4" height="4" fill="#b0bec8"/>
+    <rect x="7" y="14" width="4" height="4" fill="#b0bec8"/>
+  </svg>
+  <div class="line"></div>
+</div>
+
+  <div class="quote">
+    <span class="quote-mark">&ldquo;</span>
+    <div class="lang-es">
+      <div class="quote-text">If the demand for compute doesn't meet these really super lofty expectations, we're going to have a problem.</div>
+      <div class="quote-attr">David Trainer, fundador y CEO de New Constructs, vía CNBC</div>
+    </div>
+    <div class="lang-en">
+      <div class="quote-text">If the demand for compute doesn't meet these really super lofty expectations, we're going to have a problem.</div>
+      <div class="quote-attr">David Trainer, fundador y CEO de New Constructs, vía CNBC</div>
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="footer">
+    <span class="footer-name">The Opening Bell</span>
+    <span class="footer-by lang-es">por Lev Erage, Ambassador-at-Large for Unintended Consequences</span>
+    <span class="footer-by lang-en">by Lev Erage, Ambassador-at-Large for Unintended Consequences</span>
+  </div>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-es').forEach(el => el.style.display = lang === 'es' ? '' : 'none');
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    // swap static labels
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = lang === 'es' ? el.dataset.es : el.dataset.en;
+    });
+    localStorage.setItem('nlLang', lang);
+  }
+  (function(){
+    var saved = localStorage.getItem('nlLang') || 'es';
+    setLang(saved);
+  })();
+
+  function setCurrencyBase(base) {
+    document.querySelectorAll('.currency-view').forEach(el => {
+      el.style.display = el.dataset.base === base ? '' : 'none';
+    });
+    document.querySelectorAll('.currency-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.base === base);
+    });
+    localStorage.setItem('nlCurrencyBase', base);
+  }
+  (function(){
+    var savedBase = localStorage.getItem('nlCurrencyBase') || 'MXN';
+    setCurrencyBase(savedBase);
+  })();
+
+  function setMktTab(group) {
+    document.querySelectorAll('.mkt-panel').forEach(function(p) { p.classList.remove('visible'); });
+    var panel = document.getElementById('mkt-' + group);
+    if (panel) panel.classList.add('visible');
+    document.querySelectorAll('.mkt-tab-btn').forEach(function(b) {
+      b.classList.toggle('active', b.dataset.group === group);
+    });
+  }
+  (function(){ setMktTab('eq'); })();
+</script>
+
+</body>
+</html>
