@@ -1,0 +1,16 @@
+{
+  "filename": "markets-2026-W45.png",
+  "week_start": "2026-11-02",
+  "week_end": "2026-11-06",
+  "kind": "partial",
+  "assets": 13,
+  "generated": "2026-11-06T12:36:17+00:00",
+  "best": {
+    "label": "Gold",
+    "change": 4.6
+  },
+  "worst": {
+    "label": "Brent",
+    "change": -16.6
+  }
+}
