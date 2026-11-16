@@ -1,0 +1,16 @@
+{
+  "filename": "markets-2026-W46.png",
+  "week_start": "2026-11-09",
+  "week_end": "2026-11-13",
+  "kind": "full",
+  "assets": 13,
+  "generated": "2026-11-16T12:36:35+00:00",
+  "best": {
+    "label": "Nikkei 225",
+    "change": 6.5
+  },
+  "worst": {
+    "label": "Ethereum",
+    "change": -9.1
+  }
+}
