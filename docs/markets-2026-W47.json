@@ -1,0 +1,16 @@
+{
+  "filename": "markets-2026-W47.png",
+  "week_start": "2026-11-16",
+  "week_end": "2026-11-20",
+  "kind": "partial",
+  "assets": 13,
+  "generated": "2026-11-20T12:36:06+00:00",
+  "best": {
+    "label": "US dollar",
+    "change": 0.4
+  },
+  "worst": {
+    "label": "Copper",
+    "change": -9.0
+  }
+}
